@@ -1,12 +1,14 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
 <head>
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/css/bootstrap.min.css">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+<link rel="stylesheet" type="text/css" href="css/style.css">
+
   <title>Painel CABW - Contratos</title>
-  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/css/bootstrap.min.css">
-  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
-  <link rel="stylesheet" type="text/css" href="css/style.css">
 </head>
 <body class="contracts-page">
 
@@ -28,40 +30,70 @@
   </div>
 </nav>
 
-<main class="container-fluid mt-4 contracts-menu-page" aria-label="Menus de contratos">
-  <header class="contracts-page-header">
-    <h1>Contratos</h1>
-    <p>Selecione uma das áreas abaixo para acessar os respectivos painéis de informações contratuais.</p>
+<main class="container-fluid mt-4 contracts-menu-page" aria-label="Menus de contratos" data-contract-overview>
+  <header class="contracts-page-header contracts-page-header--wide">
+    <div>
+      <span class="contracts-eyebrow">Base de contratos CABW</span>
+      <h1>Contratos</h1>
+      <p>Selecione um painel para consultar os contratos classificados a partir do relatório financeiro de contratos da CABW.</p>
+    </div>
+    <div class="contracts-source-card">
+      <span>Total geral</span>
+      <strong data-all-contracts-count>136</strong>
+      <small data-all-contracts-paid>—</small>
+    </div>
   </header>
 
-  <section class="contract-menu-grid" aria-label="Áreas de contratos">
-    <a href="contratos-administrativos.html" class="home-card contract-menu-card" aria-label="Acessar Contratos Administrativos">
+  <section class="contract-menu-grid contract-menu-grid--dashboard" aria-label="Áreas de contratos">
+    <a href="contratos-administrativos.html" class="home-card contract-menu-card" aria-label="Acessar Contratos Administrativos" data-contract-summary="administrativos">
       <span class="contract-menu-card__icon" aria-hidden="true"><i class="bi bi-building-gear"></i></span>
       <h2>Contratos Administrativos</h2>
       <span class="home-card__rule" aria-hidden="true"></span>
-      <p>Acompanhe contratos de apoio administrativo, serviços, infraestrutura, fornecimentos e gestão interna.</p>
+      <p>Apoio administrativo, serviços internos, infraestrutura, pessoal, gestão da CABW e manutenção predial.</p>
+      <dl class="contract-menu-card__metrics">
+        <div><dt>Contratos</dt><dd data-summary-count>21</dd></div>
+        <div><dt>Valor contratado</dt><dd data-summary-value>—</dd></div>
+        <div><dt>Empenhado USD</dt><dd data-summary-paid>—</dd></div>
+      </dl>
       <span class="home-card__button">Acessar Painel</span>
     </a>
 
-    <a href="contratos-finalisticos.html" class="home-card contract-menu-card" aria-label="Acessar Contratos Finalísticos">
+    <a href="contratos-finalisticos.html" class="home-card contract-menu-card" aria-label="Acessar Contratos Finalísticos" data-contract-summary="finalisticos">
       <span class="contract-menu-card__icon" aria-hidden="true"><i class="bi bi-shield-check"></i></span>
       <h2>Contratos Finalísticos</h2>
       <span class="home-card__rule" aria-hidden="true"></span>
-      <p>Consulte contratos vinculados diretamente às atividades finalísticas, operacionais e estratégicas.</p>
+      <p>Atividades operacionais, logísticas, aquisições, manutenção, treinamento e suporte técnico às unidades apoiadas.</p>
+      <dl class="contract-menu-card__metrics">
+        <div><dt>Contratos</dt><dd data-summary-count>62</dd></div>
+        <div><dt>Valor contratado</dt><dd data-summary-value>—</dd></div>
+        <div><dt>Empenhado USD</dt><dd data-summary-paid>—</dd></div>
+      </dl>
       <span class="home-card__button">Acessar Painel</span>
     </a>
 
-    <a href="fms.html" class="home-card contract-menu-card" aria-label="Acessar FMS Foreign Military Sales">
+    <a href="fms.html" class="home-card contract-menu-card" aria-label="Acessar FMS Foreign Military Sales" data-contract-summary="fms">
       <span class="contract-menu-card__icon" aria-hidden="true"><i class="bi bi-globe-americas"></i></span>
       <h2>FMS <small>(Foreign Military Sales)</small></h2>
       <span class="home-card__rule" aria-hidden="true"></span>
-      <p>Acesse informações relacionadas aos processos e contratos de Foreign Military Sales.</p>
+      <p>Contratos cuja empresa é DEFENSE FINANCE &amp; ACCOUNTING SERVICE, classificados exclusivamente neste painel.</p>
+      <dl class="contract-menu-card__metrics">
+        <div><dt>Contratos</dt><dd data-summary-count>53</dd></div>
+        <div><dt>Valor contratado</dt><dd data-summary-value>—</dd></div>
+        <div><dt>Empenhado USD</dt><dd data-summary-paid>—</dd></div>
+      </dl>
       <span class="home-card__button">Acessar Painel</span>
     </a>
   </section>
+
+  <p class="contracts-source-note" data-contract-source>Fonte: RelContrFin09 06 26 16 07 00.XLS · 09/06/2026 16:07</p>
 </main>
+
+<script src="assets/js/contracts-data.js"></script>
+<script src="assets/js/contracts-panel.js"></script>
+
 
 <script src="https://code.jquery.com/jquery-3.6.0.slim.min.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/js/bootstrap.bundle.min.js"></script>
+
 </body>
 </html>

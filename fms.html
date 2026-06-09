@@ -1,14 +1,16 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
 <head>
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/css/bootstrap.min.css">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+<link rel="stylesheet" type="text/css" href="css/style.css">
+
   <title>Painel CABW - FMS (Foreign Military Sales)</title>
-  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/css/bootstrap.min.css">
-  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
-  <link rel="stylesheet" type="text/css" href="css/style.css">
 </head>
-<body class="contracts-page">
+<body class="contracts-page contracts-panel-page" data-contract-category="fms">
 
 <nav class="navbar navbar-expand-lg navbar-dark bg-primary">
   <a class="navbar-brand" href="index.html">Painel CABW</a>
@@ -31,17 +33,78 @@
 <main class="container-fluid mt-4 contract-detail-page">
   <a href="contratos.html" class="contract-back-link"><i class="bi bi-arrow-left" aria-hidden="true"></i> Voltar para Contratos</a>
 
-  <section class="contract-section-card" aria-labelledby="contract-section-title">
+  <header class="contract-panel-hero" aria-labelledby="contract-section-title">
     <span class="contract-menu-card__icon contract-section-card__icon" aria-hidden="true"><i class="bi bi-globe-americas"></i></span>
     <div>
+      <span class="contracts-eyebrow">Painel de contratos</span>
       <h1 id="contract-section-title">FMS (Foreign Military Sales)</h1>
-      <p>Acesse informações relacionadas aos processos e contratos de Foreign Military Sales.</p>
-      <p class="contract-section-card__status">Esta seção está preparada para receber os dados e indicadores do respectivo painel.</p>
+      <p>Contratos cuja empresa é DEFENSE FINANCE & ACCOUNTING SERVICE.</p>
+      <p class="contract-section-card__status">Regra de classificação: todo contrato com a empresa DEFENSE FINANCE & ACCOUNTING SERVICE aparece exclusivamente neste painel.</p>
+    </div>
+  </header>
+
+  <section class="contracts-kpi-grid" aria-label="Indicadores do painel">
+    <article class="contracts-kpi"><span>Contratos</span><strong data-kpi="count">—</strong></article>
+    <article class="contracts-kpi"><span>Valor contratado</span><strong data-kpi="value">—</strong></article>
+    <article class="contracts-kpi"><span>Total empenhado USD</span><strong data-kpi="paidUsd">—</strong></article>
+    <article class="contracts-kpi"><span>Total faturado USD</span><strong data-kpi="billedUsd">—</strong></article>
+  </section>
+
+  <section class="contracts-workbench" aria-label="Filtros de contratos">
+    <div class="contracts-filter-header">
+      <div>
+        <h2>Filtros</h2>
+        <p>Refine a consulta por empresa, unidade, ação, moeda, vigência ou busca textual.</p>
+      </div>
+      <button type="button" class="contracts-reset-button" id="resetContractFilters"><i class="bi bi-arrow-counterclockwise" aria-hidden="true"></i> Limpar filtros</button>
+    </div>
+    <div class="contracts-filter-grid">
+      <label class="contracts-field" for="filterEmpresa"><span>Empresa</span><select id="filterEmpresa"><option value="">Todas as empresas</option></select></label>
+      <label class="contracts-field" for="filterUnidade"><span>Unidade</span><select id="filterUnidade"><option value="">Todas as unidades</option></select></label>
+      <label class="contracts-field" for="filterAcao"><span>Ação</span><select id="filterAcao"><option value="">Todas as ações</option></select></label>
+      <label class="contracts-field" for="filterMoeda"><span>Moeda</span><select id="filterMoeda"><option value="">Todas as moedas</option></select></label>
+      <label class="contracts-field" for="filterStatus"><span>Vigência</span><select id="filterStatus"><option value="">Todas</option><option value="Vigente">Vigente</option><option value="Encerrado">Encerrado</option><option value="Sem data final">Sem data final</option></select></label>
+      <label class="contracts-field contracts-field--wide" for="filterContratoSearch"><span>Busca geral</span><input id="filterContratoSearch" type="search" placeholder="Contrato, número, empresa, objeto, ação..."></label>
     </div>
   </section>
+
+  <section class="contracts-table-card" aria-label="Relação de contratos">
+    <div class="contracts-table-toolbar">
+      <h2>Relação de contratos</h2>
+      <span data-contract-results>—</span>
+    </div>
+    <div class="contracts-table-wrap">
+      <table class="contracts-table" id="contractsTable">
+        <thead>
+          <tr>
+            <th>Contrato</th>
+            <th>Número</th>
+            <th>Unidade</th>
+            <th>Empresa</th>
+            <th>Objeto Resumido</th>
+            <th>Moeda</th>
+            <th class="text-right">Valor Contrato</th>
+            <th class="text-right">Empenhado USD</th>
+            <th class="text-right">Faturado USD</th>
+            <th>Data Final</th>
+            <th>Vigência</th>
+          </tr>
+        </thead>
+        <tbody></tbody>
+      </table>
+    </div>
+    <div class="contracts-mobile-list" id="contractsMobileList" aria-label="Contratos em cartões"></div>
+  </section>
+
+  <p class="contracts-source-note" data-contract-source>Fonte: RelContrFin09 06 26 16 07 00.XLS · 09/06/2026 16:07</p>
 </main>
+
+<script src="assets/js/contracts-data.js"></script>
+<script src="assets/js/contracts-panel.js"></script>
+
 
 <script src="https://code.jquery.com/jquery-3.6.0.slim.min.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/js/bootstrap.bundle.min.js"></script>
+
 </body>
 </html>

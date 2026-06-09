@@ -1327,3 +1327,442 @@ table.dataTable thead th {
     font-size: 1.2rem;
   }
 }
+
+
+/* ===== Contracts dashboard generated from CABW contract spreadsheet ===== */
+.contracts-page .contracts-page-header--wide,
+.contract-panel-hero {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 28px;
+  width: min(calc(100% - 64px), 1240px);
+  margin: 24px auto 28px;
+}
+
+.contracts-page-header--wide h1,
+.contract-panel-hero h1 {
+  margin: 4px 0 10px;
+}
+
+.contracts-eyebrow {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  color: var(--cabw-gold-700);
+  font-size: 0.78rem;
+  font-weight: 800;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+}
+
+.contracts-source-card {
+  min-width: 210px;
+  padding: 18px 22px;
+  background: var(--cabw-white);
+  border: 1px solid rgba(6, 38, 91, 0.08);
+  border-radius: 16px;
+  box-shadow: var(--cabw-card-shadow);
+  text-align: right;
+}
+
+.contracts-source-card span,
+.contracts-source-card small,
+.contracts-kpi span,
+.contract-menu-card__metrics dt {
+  color: rgba(6, 38, 91, 0.66);
+  font-size: 0.82rem;
+  font-weight: 700;
+}
+
+.contracts-source-card strong {
+  display: block;
+  color: var(--cabw-ink);
+  font-size: 2.2rem;
+  font-weight: 800;
+  line-height: 1.1;
+}
+
+.contract-menu-grid--dashboard {
+  align-items: stretch;
+}
+
+.contract-menu-card__metrics {
+  width: 100%;
+  margin: 20px 0 22px;
+  text-align: left;
+}
+
+.contract-menu-card__metrics div {
+  padding: 10px 0;
+  border-top: 1px solid rgba(6, 38, 91, 0.08);
+}
+
+.contract-menu-card__metrics dt {
+  margin-bottom: 4px;
+}
+
+.contract-menu-card__metrics dd {
+  margin: 0;
+  color: var(--cabw-ink);
+  font-weight: 800;
+  line-height: 1.35;
+}
+
+.contract-panel-hero {
+  justify-content: flex-start;
+  padding: 28px;
+  background: var(--cabw-white);
+  border-radius: 18px;
+  box-shadow: var(--cabw-card-shadow);
+}
+
+.contract-panel-hero p {
+  margin-bottom: 8px;
+}
+
+.contracts-kpi-grid,
+.contracts-workbench,
+.contracts-table-card {
+  width: min(calc(100% - 64px), 1240px);
+  margin: 0 auto 24px;
+}
+
+.contracts-kpi-grid {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: 18px;
+}
+
+.contracts-kpi {
+  min-height: 118px;
+  padding: 22px;
+  background: var(--cabw-white);
+  border: 1px solid rgba(6, 38, 91, 0.08);
+  border-radius: 14px;
+  box-shadow: var(--cabw-card-shadow);
+}
+
+.contracts-kpi strong {
+  display: block;
+  margin-top: 12px;
+  color: var(--cabw-ink);
+  font-size: clamp(1.05rem, 1.6vw, 1.55rem);
+  font-weight: 800;
+  line-height: 1.35;
+}
+
+.contracts-workbench,
+.contracts-table-card {
+  background: var(--cabw-white);
+  border: 1px solid rgba(6, 38, 91, 0.08);
+  border-radius: 18px;
+  box-shadow: var(--cabw-card-shadow);
+}
+
+.contracts-workbench {
+  padding: 24px;
+}
+
+.contracts-filter-header,
+.contracts-table-toolbar {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: 18px;
+  margin-bottom: 18px;
+}
+
+.contracts-filter-header h2,
+.contracts-table-toolbar h2 {
+  margin: 0 0 4px;
+  color: var(--cabw-ink);
+  font-size: 1.35rem;
+  font-weight: 800;
+}
+
+.contracts-filter-header p {
+  margin: 0;
+  color: rgba(6, 38, 91, 0.72);
+}
+
+.contracts-reset-button {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 11px 16px;
+  border: 0;
+  border-radius: 10px;
+  background: var(--cabw-navy-900);
+  color: #fff;
+  font-weight: 700;
+  cursor: pointer;
+  box-shadow: 0 10px 20px rgba(0, 27, 71, 0.16);
+}
+
+.contracts-reset-button:hover,
+.contracts-reset-button:focus {
+  background: var(--cabw-navy-950);
+}
+
+.contracts-filter-grid {
+  display: grid;
+  grid-template-columns: repeat(5, minmax(0, 1fr));
+  gap: 14px;
+}
+
+.contracts-field {
+  display: flex;
+  flex-direction: column;
+  gap: 7px;
+  margin: 0;
+}
+
+.contracts-field--wide {
+  grid-column: span 2;
+}
+
+.contracts-field span {
+  color: var(--cabw-ink);
+  font-size: 0.86rem;
+  font-weight: 800;
+}
+
+.contracts-field select,
+.contracts-field input {
+  width: 100%;
+  min-height: 44px;
+  padding: 0 12px;
+  border: 1px solid rgba(6, 38, 91, 0.18);
+  border-radius: 10px;
+  background: #fff;
+  color: var(--cabw-ink);
+  font-family: inherit;
+  font-size: 0.95rem;
+}
+
+.contracts-field select:focus,
+.contracts-field input:focus {
+  outline: 3px solid rgba(255, 210, 0, 0.34);
+  border-color: var(--cabw-gold-700);
+}
+
+.contracts-table-card {
+  padding: 18px 18px 22px;
+}
+
+.contracts-table-toolbar {
+  align-items: center;
+  margin-bottom: 14px;
+}
+
+.contracts-table-toolbar span {
+  color: rgba(6, 38, 91, 0.72);
+  font-weight: 700;
+}
+
+.contracts-table-wrap {
+  overflow-x: auto;
+  border-radius: 12px;
+}
+
+.contracts-table {
+  width: 100%;
+  min-width: 1180px;
+  border-collapse: separate;
+  border-spacing: 0;
+  color: var(--cabw-ink);
+}
+
+.contracts-table thead th {
+  padding: 13px 14px;
+  background: var(--cabw-navy-900);
+  color: #fff;
+  font-size: 0.82rem;
+  font-weight: 800;
+  text-transform: uppercase;
+  letter-spacing: 0.02em;
+  white-space: nowrap;
+}
+
+.contracts-table thead th:first-child {
+  border-top-left-radius: 10px;
+}
+
+.contracts-table thead th:last-child {
+  border-top-right-radius: 10px;
+}
+
+.contracts-table tbody td {
+  padding: 13px 14px;
+  border-bottom: 1px solid rgba(6, 38, 91, 0.07);
+  vertical-align: top;
+  font-size: 0.88rem;
+}
+
+.contracts-table tbody tr:nth-child(odd) td {
+  background: rgba(0, 43, 102, 0.035);
+}
+
+.contracts-object-cell {
+  min-width: 320px;
+  max-width: 460px;
+  line-height: 1.38;
+}
+
+.contract-status {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-width: 82px;
+  padding: 5px 9px;
+  border-radius: 999px;
+  font-size: 0.74rem;
+  font-weight: 800;
+}
+
+.contract-status--vigente {
+  background: rgba(0, 112, 74, 0.11);
+  color: #006d49;
+}
+
+.contract-status--encerrado {
+  background: rgba(79, 85, 101, 0.12);
+  color: #4d5566;
+}
+
+.contract-status--sem-data-final {
+  background: rgba(240, 189, 0, 0.14);
+  color: #8a6800;
+}
+
+.contracts-empty,
+.contracts-empty-card {
+  padding: 26px;
+  text-align: center;
+  color: rgba(6, 38, 91, 0.7);
+  font-weight: 700;
+}
+
+.contracts-mobile-list {
+  display: none;
+}
+
+.contract-mobile-card {
+  padding: 18px;
+  border: 1px solid rgba(6, 38, 91, 0.08);
+  border-radius: 14px;
+  background: #fff;
+  box-shadow: 0 10px 22px rgba(2, 27, 70, 0.08);
+}
+
+.contract-mobile-card + .contract-mobile-card {
+  margin-top: 14px;
+}
+
+.contract-mobile-card__head {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+  margin-bottom: 4px;
+}
+
+.contract-mobile-card__head strong {
+  color: var(--cabw-ink);
+  font-size: 1.08rem;
+  font-weight: 800;
+}
+
+.contract-mobile-card__number {
+  margin: 0 0 12px;
+  color: rgba(6, 38, 91, 0.65);
+  font-weight: 700;
+}
+
+.contract-mobile-card h3 {
+  margin: 0 0 8px;
+  color: var(--cabw-ink);
+  font-size: 1rem;
+  font-weight: 800;
+}
+
+.contract-mobile-card p {
+  margin: 0 0 14px;
+  color: rgba(6, 38, 91, 0.78);
+  line-height: 1.45;
+}
+
+.contract-mobile-card dl {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 10px 14px;
+  margin: 0;
+}
+
+.contract-mobile-card dt {
+  color: rgba(6, 38, 91, 0.62);
+  font-size: 0.76rem;
+  font-weight: 800;
+  text-transform: uppercase;
+}
+
+.contract-mobile-card dd {
+  margin: 2px 0 0;
+  color: var(--cabw-ink);
+  font-weight: 700;
+}
+
+.contracts-source-note {
+  width: min(calc(100% - 64px), 1240px);
+  margin: 10px auto 46px;
+  color: rgba(6, 38, 91, 0.64);
+  font-size: 0.9rem;
+  text-align: right;
+}
+
+@media (max-width: 1200px) {
+  .contracts-kpi-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+  .contracts-filter-grid {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+  }
+}
+
+@media (max-width: 768px) {
+  .contracts-page .contracts-page-header--wide,
+  .contract-panel-hero,
+  .contracts-kpi-grid,
+  .contracts-workbench,
+  .contracts-table-card,
+  .contracts-source-note {
+    width: min(calc(100% - 28px), 100%);
+  }
+  .contracts-page .contracts-page-header--wide,
+  .contract-panel-hero,
+  .contracts-filter-header,
+  .contracts-table-toolbar {
+    flex-direction: column;
+    align-items: stretch;
+  }
+  .contracts-source-card {
+    text-align: left;
+  }
+  .contracts-kpi-grid,
+  .contracts-filter-grid {
+    grid-template-columns: 1fr;
+  }
+  .contracts-field--wide {
+    grid-column: auto;
+  }
+  .contracts-table-wrap {
+    display: none;
+  }
+  .contracts-mobile-list {
+    display: block;
+  }
+  .contract-mobile-card dl {
+    grid-template-columns: 1fr;
+  }
+}

@@ -1,0 +1,10 @@
+{
+  "total": 136,
+  "counts": {
+    "fms": 53,
+    "administrativos": 21,
+    "finalisticos": 62
+  },
+  "duplicates_check": "ok",
+  "source": "RelContrFin09 06 26 16 07 00.XLS"
+}
