@@ -54,9 +54,12 @@
     <div class="contracts-filter-header">
       <div>
         <h2>Filtros</h2>
-        <p>Refine a consulta por empresa, unidade, ação, moeda, vigência ou busca textual.</p>
+        <p>Refine a consulta por empresa, unidade, ação, moeda, vigência ou busca textual. O PDF será gerado com os filtros atualmente selecionados.</p>
       </div>
-      <button type="button" class="contracts-reset-button" id="resetContractFilters"><i class="bi bi-arrow-counterclockwise" aria-hidden="true"></i> Limpar filtros</button>
+      <div class="contracts-filter-actions">
+        <button type="button" class="contracts-pdf-button" id="generateContractsPdf"><i class="bi bi-file-earmark-pdf" aria-hidden="true"></i> Gerar PDF</button>
+        <button type="button" class="contracts-reset-button" id="resetContractFilters"><i class="bi bi-arrow-counterclockwise" aria-hidden="true"></i> Limpar filtros</button>
+      </div>
     </div>
     <div class="contracts-filter-grid">
       <label class="contracts-field" for="filterEmpresa"><span>Empresa</span><select id="filterEmpresa"><option value="">Todas as empresas</option></select></label>
@@ -99,6 +102,8 @@
   <p class="contracts-source-note" data-contract-source>Fonte: RelContrFin09 06 26 16 07 00.XLS · 09/06/2026 16:07</p>
 </main>
 
+<script src="https://cdn.jsdelivr.net/npm/jspdf@2.5.1/dist/jspdf.umd.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/jspdf-autotable@3.8.4/dist/jspdf.plugin.autotable.min.js"></script>
 <script src="assets/js/contracts-data.js"></script>
 <script src="assets/js/contracts-panel.js"></script>
 

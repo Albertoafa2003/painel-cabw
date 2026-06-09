@@ -1486,23 +1486,63 @@ table.dataTable thead th {
   color: rgba(6, 38, 91, 0.72);
 }
 
-.contracts-reset-button {
+.contracts-filter-actions {
   display: inline-flex;
   align-items: center;
+  justify-content: flex-end;
+  gap: 10px;
+  flex-wrap: wrap;
+}
+
+.contracts-reset-button,
+.contracts-pdf-button {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
   gap: 8px;
+  min-height: 44px;
   padding: 11px 16px;
   border: 0;
   border-radius: 10px;
-  background: var(--cabw-navy-900);
-  color: #fff;
-  font-weight: 700;
+  font-weight: 800;
   cursor: pointer;
   box-shadow: 0 10px 20px rgba(0, 27, 71, 0.16);
+  transition: transform 160ms ease, box-shadow 160ms ease, background-color 160ms ease, color 160ms ease;
+}
+
+.contracts-reset-button {
+  background: var(--cabw-navy-900);
+  color: #fff;
+}
+
+.contracts-pdf-button {
+  background: var(--cabw-gold);
+  color: var(--cabw-navy-950);
+}
+
+.contracts-reset-button:hover,
+.contracts-reset-button:focus,
+.contracts-pdf-button:hover,
+.contracts-pdf-button:focus {
+  transform: translateY(-1px);
+  box-shadow: 0 14px 24px rgba(0, 27, 71, 0.20);
 }
 
 .contracts-reset-button:hover,
 .contracts-reset-button:focus {
   background: var(--cabw-navy-950);
+}
+
+.contracts-pdf-button:hover,
+.contracts-pdf-button:focus {
+  background: var(--cabw-gold-700);
+}
+
+.contracts-pdf-button:disabled {
+  opacity: 0.52;
+  cursor: not-allowed;
+  transform: none;
+  box-shadow: none;
 }
 
 .contracts-filter-grid {
@@ -1745,6 +1785,13 @@ table.dataTable thead th {
   .contracts-table-toolbar {
     flex-direction: column;
     align-items: stretch;
+  }
+  .contracts-filter-actions {
+    width: 100%;
+    justify-content: stretch;
+  }
+  .contracts-filter-actions button {
+    flex: 1 1 180px;
   }
   .contracts-source-card {
     text-align: left;

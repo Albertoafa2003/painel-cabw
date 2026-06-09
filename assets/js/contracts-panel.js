@@ -1,4 +1,3 @@
-
 (function () {
   const data = window.CABW_CONTRACTS_DATA || [];
   const source = window.CABW_CONTRACTS_SOURCE || {};
@@ -10,6 +9,10 @@
 
   const fmtNumber = new Intl.NumberFormat('pt-BR', { minimumFractionDigits: 2, maximumFractionDigits: 2 });
   const fmtInt = new Intl.NumberFormat('pt-BR', { maximumFractionDigits: 0 });
+  const fmtDateTime = new Intl.DateTimeFormat('pt-BR', {
+    day: '2-digit', month: '2-digit', year: 'numeric',
+    hour: '2-digit', minute: '2-digit'
+  });
 
   function money(value, currency) {
     const prefix = currency || 'USD';
@@ -29,7 +32,7 @@
     return Object.entries(totals)
       .sort(([a], [b]) => a.localeCompare(b))
       .map(([moeda, total]) => money(total, moeda))
-      .join(' / ') || '—';
+      .join(' / ') || '-';
   }
 
   function sum(records, field) {
@@ -67,12 +70,38 @@
     return escapeHtml(value).replace(/`/g, '&#96;');
   }
 
+  function todayIso() {
+    const now = new Date();
+    const y = now.getFullYear();
+    const m = String(now.getMonth() + 1).padStart(2, '0');
+    const d = String(now.getDate()).padStart(2, '0');
+    return `${y}-${m}-${d}`;
+  }
+
   function computeStatus(item) {
-    const today = '2026-06-09';
+    const today = todayIso();
     if (item.dataFinal && item.dataFinal.iso) {
       return item.dataFinal.iso >= today ? 'Vigente' : 'Encerrado';
     }
     return 'Sem data final';
+  }
+
+  function textForPdf(value) {
+    return String(value ?? '')
+      .replace(/—/g, '-')
+      .replace(/\s+/g, ' ')
+      .trim() || '-';
+  }
+
+  function filenamePart(value) {
+    return normalize(value)
+      .replace(/[^a-z0-9]+/g, '-')
+      .replace(/^-+|-+$/g, '')
+      .slice(0, 48);
+  }
+
+  function filterLabel(value, fallback) {
+    return value && String(value).trim() ? String(value).trim() : fallback;
   }
 
   function renderOverview() {
@@ -124,21 +153,30 @@
     const status = document.querySelector('#filterStatus');
     const search = document.querySelector('#filterContratoSearch');
     const reset = document.querySelector('#resetContractFilters');
+    const pdfButton = document.querySelector('#generateContractsPdf');
+
+    let currentRecords = baseRecords.slice();
+    let currentTerms = {};
 
     fillSelect(empresa, unique(baseRecords, 'empresa'), 'Todas as empresas');
     fillSelect(unidade, unique(baseRecords, 'unidade'), 'Todas as unidades');
     fillSelect(acao, unique(baseRecords, 'acao'), 'Todas as ações');
     fillSelect(moeda, unique(baseRecords, 'moeda'), 'Todas as moedas');
 
-    function applyFilters() {
-      const terms = {
+    function readTerms() {
+      return {
         empresa: empresa ? empresa.value : '',
         unidade: unidade ? unidade.value : '',
         acao: acao ? acao.value : '',
         moeda: moeda ? moeda.value : '',
         status: status ? status.value : '',
+        searchText: search ? search.value : '',
         search: normalize(search ? search.value : '')
       };
+    }
+
+    function applyFilters() {
+      const terms = readTerms();
       const filtered = baseRecords.filter(item => {
         const itemStatus = computeStatus(item);
         const searchable = normalize([
@@ -152,8 +190,11 @@
           && (!terms.status || itemStatus === terms.status)
           && (!terms.search || searchable.includes(terms.search));
       });
+      currentTerms = terms;
+      currentRecords = filtered;
       renderSummary(filtered);
       renderRows(filtered);
+      if (pdfButton) pdfButton.disabled = !filtered.length;
     }
 
     function renderSummary(records) {
@@ -212,9 +253,171 @@
       }
     }
 
+    function buildFilterRows(terms) {
+      return [
+        ['Painel', categoryLabels[category] || 'Contratos'],
+        ['Empresa', filterLabel(terms.empresa, 'Todas')],
+        ['Unidade', filterLabel(terms.unidade, 'Todas')],
+        ['Ação', filterLabel(terms.acao, 'Todas')],
+        ['Moeda', filterLabel(terms.moeda, 'Todas')],
+        ['Vigência', filterLabel(terms.status, 'Todas')],
+        ['Busca geral', filterLabel(terms.searchText, 'Nenhuma')]
+      ];
+    }
+
+    function generatePdf(records, terms) {
+      if (!records.length) {
+        window.alert('Não há contratos para gerar relatório com os filtros selecionados.');
+        return;
+      }
+
+      const jsPdfConstructor = window.jspdf && window.jspdf.jsPDF;
+      if (!jsPdfConstructor) {
+        window.alert('A biblioteca de PDF ainda não foi carregada. Verifique a conexão com a internet e tente novamente.');
+        return;
+      }
+
+      const doc = new jsPdfConstructor({ orientation: 'landscape', unit: 'pt', format: 'a4' });
+      if (typeof doc.autoTable !== 'function') {
+        window.alert('A biblioteca de tabela para PDF ainda não foi carregada. Verifique a conexão com a internet e tente novamente.');
+        return;
+      }
+
+      const generatedAt = fmtDateTime.format(new Date());
+      const title = categoryLabels[category] || 'Contratos';
+      const sourceText = `Fonte: ${source.arquivo || 'Relatório de contratos'}${source.atualizadoEm ? ' - ' + source.atualizadoEm : ''}`;
+      const pageWidth = doc.internal.pageSize.getWidth();
+      const pageHeight = doc.internal.pageSize.getHeight();
+      const marginX = 34;
+
+      doc.setProperties({
+        title: `Painel CABW - ${title}`,
+        subject: 'Relatório de contratos filtrados',
+        author: 'Painel CABW',
+        creator: 'Painel CABW'
+      });
+
+      doc.setFont('helvetica', 'bold');
+      doc.setFontSize(17);
+      doc.setTextColor(0, 38, 95);
+      doc.text('Painel CABW - Relatório de Contratos', marginX, 34);
+
+      doc.setFontSize(12);
+      doc.text(textForPdf(title), marginX, 54);
+
+      doc.setFont('helvetica', 'normal');
+      doc.setFontSize(8.5);
+      doc.setTextColor(52, 59, 73);
+      doc.text(textForPdf(`Gerado em: ${generatedAt}`), marginX, 70);
+      doc.text(textForPdf(sourceText), marginX, 84);
+
+      doc.autoTable({
+        startY: 100,
+        theme: 'grid',
+        margin: { left: marginX, right: marginX },
+        head: [['Filtro', 'Valor aplicado']],
+        body: buildFilterRows(terms).map(row => row.map(textForPdf)),
+        styles: { font: 'helvetica', fontSize: 8, cellPadding: 4, textColor: [6, 38, 91] },
+        headStyles: { fillColor: [0, 43, 102], textColor: 255, fontStyle: 'bold' },
+        columnStyles: { 0: { cellWidth: 90, fontStyle: 'bold' }, 1: { cellWidth: pageWidth - (marginX * 2) - 90 } }
+      });
+
+      doc.autoTable({
+        startY: doc.lastAutoTable.finalY + 12,
+        theme: 'grid',
+        margin: { left: marginX, right: marginX },
+        head: [['Contratos', 'Valor contratado', 'Total empenhado USD', 'Total faturado USD']],
+        body: [[
+          fmtInt.format(records.length),
+          byCurrency(records, 'valorContrato'),
+          moneyUsd(sum(records, 'totalEmpenhadoUsd')),
+          moneyUsd(sum(records, 'totalFaturadoUsd'))
+        ].map(textForPdf)],
+        styles: { font: 'helvetica', fontSize: 8.2, cellPadding: 5, textColor: [6, 38, 91] },
+        headStyles: { fillColor: [0, 43, 102], textColor: 255, fontStyle: 'bold' },
+        bodyStyles: { fontStyle: 'bold' }
+      });
+
+      const tableRows = records.map(item => [
+        item.contrato,
+        item.numero,
+        item.unidade || '-',
+        item.empresa,
+        item.objetoResumo,
+        item.moeda,
+        money(item.valorContrato, item.moeda),
+        moneyUsd(item.totalEmpenhadoUsd),
+        moneyUsd(item.totalFaturadoUsd),
+        item.dataFinal && item.dataFinal.br ? item.dataFinal.br : '-',
+        computeStatus(item)
+      ].map(textForPdf));
+
+      doc.autoTable({
+        startY: doc.lastAutoTable.finalY + 14,
+        margin: { left: marginX, right: marginX, bottom: 30 },
+        theme: 'striped',
+        head: [[
+          'Contrato', 'Número', 'Unidade', 'Empresa', 'Objeto Resumido', 'Moeda',
+          'Valor Contrato', 'Empenhado USD', 'Faturado USD', 'Data Final', 'Vigência'
+        ]],
+        body: tableRows,
+        styles: {
+          font: 'helvetica',
+          fontSize: 6.2,
+          cellPadding: 3,
+          overflow: 'linebreak',
+          valign: 'top',
+          textColor: [6, 38, 91],
+          lineColor: [226, 232, 240],
+          lineWidth: 0.2
+        },
+        headStyles: { fillColor: [0, 43, 102], textColor: 255, fontStyle: 'bold', fontSize: 6.4 },
+        alternateRowStyles: { fillColor: [246, 248, 251] },
+        columnStyles: {
+          0: { cellWidth: 46 },
+          1: { cellWidth: 78 },
+          2: { cellWidth: 38 },
+          3: { cellWidth: 112 },
+          4: { cellWidth: 160 },
+          5: { cellWidth: 34, halign: 'center' },
+          6: { cellWidth: 74, halign: 'right' },
+          7: { cellWidth: 74, halign: 'right' },
+          8: { cellWidth: 74, halign: 'right' },
+          9: { cellWidth: 52, halign: 'center' },
+          10: { cellWidth: 52, halign: 'center' }
+        },
+        didDrawPage: function () {
+          const pageNo = doc.internal.getNumberOfPages();
+          doc.setFont('helvetica', 'normal');
+          doc.setFontSize(7);
+          doc.setTextColor(89, 98, 117);
+          doc.text(textForPdf(`Painel CABW - ${title}`), marginX, pageHeight - 15);
+          doc.text(`Página ${pageNo}`, pageWidth - marginX - 40, pageHeight - 15);
+        }
+      });
+
+      const filename = [
+        'relatorio-contratos',
+        filenamePart(categoryLabels[category] || category),
+        filenamePart(terms.empresa),
+        filenamePart(terms.status),
+        filenamePart(terms.unidade),
+        filenamePart(terms.acao)
+      ].filter(Boolean).join('-') || 'relatorio-contratos';
+
+      doc.save(`${filename}.pdf`);
+    }
+
     [empresa, unidade, acao, moeda, status, search].forEach(input => {
       if (input) input.addEventListener(input.tagName === 'INPUT' ? 'input' : 'change', applyFilters);
     });
+
+    if (pdfButton) {
+      pdfButton.addEventListener('click', function () {
+        generatePdf(currentRecords, currentTerms);
+      });
+    }
+
     if (reset) {
       reset.addEventListener('click', function () {
         [empresa, unidade, acao, moeda, status].forEach(input => { if (input) input.value = ''; });
