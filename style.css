@@ -566,3 +566,59 @@ table.dataTable thead th {
     width: calc(100% - 28px);
   }
 }
+
+/* ===== Crédito Disponível: summary table ===== */
+.credit-summary-title {
+  margin-top: 28px !important;
+}
+
+.credit-summary-responsive {
+  margin-top: 12px;
+  border-radius: 12px;
+  box-shadow: 0 10px 24px rgba(2, 27, 70, 0.08);
+}
+
+.credit-summary-table {
+  width: 100%;
+  min-width: 980px;
+  margin-bottom: 0;
+  table-layout: fixed;
+  border-radius: 12px;
+  box-shadow: none;
+}
+
+.credit-summary-table th,
+.credit-summary-table td {
+  vertical-align: middle !important;
+  padding: 0.82rem 1rem !important;
+  font-variant-numeric: tabular-nums;
+}
+
+.credit-summary-table thead th {
+  text-align: center !important;
+  white-space: nowrap;
+}
+
+.credit-summary-table tbody td:first-child {
+  width: 13%;
+  white-space: nowrap;
+}
+
+.credit-summary-table tbody td:nth-child(2),
+.credit-summary-table tbody td:nth-child(3),
+.credit-summary-table tbody td:nth-child(5) {
+  text-align: right !important;
+  white-space: nowrap;
+}
+
+.credit-summary-table tbody td:nth-child(4),
+.credit-summary-table tbody td:nth-child(6) {
+  text-align: center !important;
+  white-space: nowrap;
+}
+
+@media (max-width: 991.98px) {
+  .credit-summary-responsive {
+    overflow-x: auto;
+  }
+}
