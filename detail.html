@@ -1,66 +1,1126 @@
-
-    <!DOCTYPE html>
-    <html lang="pt-BR">
-    <head>
-      <meta charset="utf-8">
-      <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-      <title>Painel CABW - Detalhamento</title>
-      <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/css/bootstrap.min.css">
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <title>Painel CABW - Detalhamento</title>
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/css/bootstrap.min.css">
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
-      <link rel="stylesheet" type="text/css" href="css/style.css">
-      <script src="https://cdn.plot.ly/plotly-2.16.1.min.js"></script>
-    
-      <link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/1.13.4/css/jquery.dataTables.min.css"/>
-      <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
-      <script type="text/javascript" charset="utf8" src="https://cdn.datatables.net/1.13.4/js/jquery.dataTables.min.js"></script>
-    
-    </head>
-    <body>
-    
-    <nav class="navbar navbar-expand-lg navbar-dark bg-primary">
-      <a class="navbar-brand" href="index.html">Painel CABW</a>
-      <!-- Logo image pinned to the top right -->
-      <img src="cabw_logo.png" alt="CABW logo" class="header-logo">
-      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
-        <span class="navbar-toggler-icon"></span>
-      </button>
-      <div class="collapse navbar-collapse" id="navbarNav">
-        <ul class="navbar-nav mr-auto">
-          <!-- Primary navigation to the main dashboards -->
-          <li class="nav-item"><a class="nav-link" href="index.html">Início</a></li>
-          <li class="nav-item"><a class="nav-link" href="credito.html">Crédito Disponível</a></li>
-          <li class="nav-item"><a class="nav-link" href="contratos.html">Contratos</a></li>
-          <li class="nav-item"><a class="nav-link" href="processos.html">Processos de Contratação</a></li>
-          <!-- Secondary navigation for the crédito disponível drill‑down pages -->
-          <li class="nav-item"><a class="nav-link" href="ug.html">Análise por UG</a></li>
-          <li class="nav-item"><a class="nav-link" href="action.html">Análise por Ação</a></li>
-          <li class="nav-item active"><a class="nav-link" href="detail.html">Detalhamento</a></li>
-          <li class="nav-item"><a class="nav-link" href="evolution.html">Evolução</a></li>
-          <li class="nav-item"><a class="nav-link" href="consistency.html">Consistência</a></li>
-        </ul>
-      </div>
-    </nav>
-    
-    <div class="container-fluid mt-4">
-    <h1>Detalhamento Analítico</h1>
-<p>Esta tabela interativa lista todos os registros extraídos dos relatórios. Use a caixa de busca para filtrar e as setas das colunas para ordenar.</p>
-<table id='detailTable' class='display nowrap' style='width:100%'></table>
-<script>
-const detailData = [{"Date_str": "20/05/2026", "UG": "120026", "UG_Sigla": "PAMA-LS", "UG_Name": "PARQUE DE MATERIAL AERONÁUTICO DE LAGOA SANTA", "PTRES": "229177", "Action_Code": "2048", "Action_Desc": "MANUTENÇÃO E SUPRIMENTO DE MATERIAL AERONÁUTICO", "Launches": 9, "Crédito Disponível": "US$ 1.493.393,09", "% do Total": "41.22%"}, {"Date_str": "20/05/2026", "UG": "120026", "UG_Sigla": "PAMA-LS", "UG_Name": "PARQUE DE MATERIAL AERONÁUTICO DE LAGOA SANTA", "PTRES": "249587", "Action_Code": "20IH", "Action_Desc": "MODERNIZAÇÃO E REVITALIZAÇÃO DE AERONAVE - T2", "Launches": 1, "Crédito Disponível": "US$ 154.631,85", "% do Total": "4.27%"}, {"Date_str": "20/05/2026", "UG": "120026", "UG_Sigla": "PAMA-LS", "UG_Name": "PARQUE DE MATERIAL AERONÁUTICO DE LAGOA SANTA", "PTRES": "229166", "Action_Code": "20XV", "Action_Desc": "OPERAÇÃO E MANUTENÇÃO DE EQUIPAMENTOS DO SISCEAB", "Launches": 3, "Crédito Disponível": "US$ 136.175,07", "% do Total": "3.76%"}, {"Date_str": "20/05/2026", "UG": "120026", "UG_Sigla": "PAMA-LS", "UG_Name": "PARQUE DE MATERIAL AERONÁUTICO DE LAGOA SANTA", "PTRES": "249589", "Action_Code": "20IH", "Action_Desc": "MODERNIZAÇÃO E REVITALIZAÇÃO DE AERONAVE - C97", "Launches": 1, "Crédito Disponível": "US$ 54.937,20", "% do Total": "1.52%"}, {"Date_str": "20/05/2026", "UG": "120036", "UG_Sigla": "DECEA", "UG_Name": "DEPARTAMENTO DE CONTROLE DO ESPAÇO AÉREO", "PTRES": "229166", "Action_Code": "20XV", "Action_Desc": "OPERAÇÃO E MANUTENÇÃO DE EQUIPAMENTOS DO SISCEAB", "Launches": 5, "Crédito Disponível": "US$ 94.963,92", "% do Total": "2.62%"}, {"Date_str": "20/05/2026", "UG": "120038", "UG_Sigla": "DIRMAB", "UG_Name": "DIRETORIA DE MATERIAL AERONÁUTICO E BÉLICO", "PTRES": "228692", "Action_Code": "20X7", "Action_Desc": "EMPREGO CONJUNTO OU COMBINADO DAS FFAA", "Launches": 2, "Crédito Disponível": "US$ 70.828,34", "% do Total": "1.95%"}, {"Date_str": "20/05/2026", "UG": "120038", "UG_Sigla": "DIRMAB", "UG_Name": "DIRETORIA DE MATERIAL AERONÁUTICO E BÉLICO", "PTRES": "229177", "Action_Code": "2048", "Action_Desc": "MANUTENÇÃO E SUPRIMENTO DE MATERIAL AERONÁUTICO", "Launches": 1, "Crédito Disponível": "US$ 1.050,00", "% do Total": "0.03%"}, {"Date_str": "20/05/2026", "UG": "120047", "UG_Sigla": "PAMB-RJ", "UG_Name": "PARQUE DE MATERIAL BÉLICO DA AERONÁUTICA DO RIO DE JANEIRO", "PTRES": "229226", "Action_Code": "21A0", "Action_Desc": "APRESTAMENTO DAS FFAA", "Launches": 2, "Crédito Disponível": "US$ 31.264,34", "% do Total": "0.86%"}, {"Date_str": "20/05/2026", "UG": "120049", "UG_Sigla": "PAMA-GL", "UG_Name": "PARQUE DE MATERIAL AERONÁUTICO DO GALEÃO", "PTRES": "229166", "Action_Code": "20XV", "Action_Desc": "OPERAÇÃO E MANUTENÇÃO DE EQUIPAMENTOS DO SISCEAB", "Launches": 3, "Crédito Disponível": "US$ 558.529,44", "% do Total": "15.42%"}, {"Date_str": "20/05/2026", "UG": "120049", "UG_Sigla": "PAMA-GL", "UG_Name": "PARQUE DE MATERIAL AERONÁUTICO DO GALEÃO", "PTRES": "229177", "Action_Code": "2048", "Action_Desc": "MANUTENÇÃO E SUPRIMENTO DE MATERIAL AERONÁUTICO", "Launches": 2, "Crédito Disponível": "US$ 1.258,99", "% do Total": "0.03%"}, {"Date_str": "20/05/2026", "UG": "120068", "UG_Sigla": "PAMA-SP", "UG_Name": "PARQUE DE MATERIAL AERONÁUTICO DE SÃO PAULO", "PTRES": "229166", "Action_Code": "20XV", "Action_Desc": "OPERAÇÃO E MANUTENÇÃO DE EQUIPAMENTOS DO SISCEAB", "Launches": 5, "Crédito Disponível": "US$ 45.094,42", "% do Total": "1.24%"}, {"Date_str": "20/05/2026", "UG": "120068", "UG_Sigla": "PAMA-SP", "UG_Name": "PARQUE DE MATERIAL AERONÁUTICO DE SÃO PAULO", "PTRES": "229177", "Action_Code": "2048", "Action_Desc": "MANUTENÇÃO E SUPRIMENTO DE MATERIAL AERONÁUTICO", "Launches": 4, "Crédito Disponível": "US$ 10.561,93", "% do Total": "0.29%"}, {"Date_str": "20/05/2026", "UG": "120071", "UG_Sigla": "CELOG", "UG_Name": "CENTRO LOGÍTICO DA AERONÁUTICA", "PTRES": "229177", "Action_Code": "2048", "Action_Desc": "MANUTENÇÃO E SUPRIMENTO DE MATERIAL AERONÁUTICO", "Launches": 1, "Crédito Disponível": "US$ 0,01", "% do Total": "0.00%"}, {"Date_str": "20/05/2026", "UG": "120090", "UG_Sigla": "CABW", "UG_Name": "COMISSÃO AERONÁUTICA BRASILEIRA EM WASHINGTON", "PTRES": "229179", "Action_Code": "2868", "Action_Desc": "COMBUSTÍVEIS E LUBRIFICANTES DE AVIAÇÃO", "Launches": 1, "Crédito Disponível": "US$ 583.167,79", "% do Total": "16.10%"}, {"Date_str": "20/05/2026", "UG": "120090", "UG_Sigla": "CABW", "UG_Name": "COMISSÃO AERONÁUTICA BRASILEIRA EM WASHINGTON", "PTRES": "214550", "Action_Code": "2004", "Action_Desc": "ASSISTÊNCIA MÉDICA E ODONTOLÓGICA", "Launches": 1, "Crédito Disponível": "US$ 150.941,60", "% do Total": "4.17%"}, {"Date_str": "20/05/2026", "UG": "120090", "UG_Sigla": "CABW", "UG_Name": "COMISSÃO AERONÁUTICA BRASILEIRA EM WASHINGTON", "PTRES": "229166", "Action_Code": "20XV", "Action_Desc": "OPERAÇÃO E MANUTENÇÃO DE EQUIPAMENTOS DO SISCEAB", "Launches": 1, "Crédito Disponível": "US$ 35.075,10", "% do Total": "0.97%"}, {"Date_str": "20/05/2026", "UG": "120090", "UG_Sigla": "CABW", "UG_Name": "COMISSÃO AERONÁUTICA BRASILEIRA EM WASHINGTON", "PTRES": "168919", "Action_Code": "2000", "Action_Desc": "ADMINISTRAÇÃO DA UNIDADE", "Launches": 1, "Crédito Disponível": "US$ 1.556,96", "% do Total": "0.04%"}, {"Date_str": "20/05/2026", "UG": "120090", "UG_Sigla": "CABW", "UG_Name": "COMISSÃO AERONÁUTICA BRASILEIRA EM WASHINGTON", "PTRES": "214537", "Action_Code": "2004", "Action_Desc": "ASSISTÊNCIA MÉDICA E ODONTOLÓGICA", "Launches": 1, "Crédito Disponível": "US$ 1.152,44", "% do Total": "0.03%"}, {"Date_str": "20/05/2026", "UG": "120091", "UG_Sigla": "CABE", "UG_Name": "COMISSÃO AERONÁUTICA BRASILEIRA NA EUROPA", "PTRES": "168919", "Action_Code": "2000", "Action_Desc": "ADMINISTRAÇÃO DA UNIDADE", "Launches": 1, "Crédito Disponível": "US$ 8.390,54", "% do Total": "0.23%"}, {"Date_str": "20/05/2026", "UG": "120111", "UG_Sigla": "EMAER", "UG_Name": "ESTADO-MAIOR DA AERONÁUTICA", "PTRES": "168901", "Action_Code": "2000", "Action_Desc": "ADMINISTRAÇÃO DA UNIDADE", "Launches": 1, "Crédito Disponível": "US$ 50.000,00", "% do Total": "1.38%"}, {"Date_str": "20/05/2026", "UG": "120111", "UG_Sigla": "EMAER", "UG_Name": "ESTADO-MAIOR DA AERONÁUTICA", "PTRES": "168919", "Action_Code": "2000", "Action_Desc": "ADMINISTRAÇÃO DA UNIDADE", "Launches": 6, "Crédito Disponível": "US$ 40.760,16", "% do Total": "1.12%"}, {"Date_str": "20/05/2026", "UG": "120111", "UG_Sigla": "EMAER", "UG_Name": "ESTADO-MAIOR DA AERONÁUTICA", "PTRES": "228676", "Action_Code": "151S", "Action_Desc": "IMPLANTAÇÃO E DESENVOLVIMENTO", "Launches": 2, "Crédito Disponível": "US$ 2.030,10", "% do Total": "0.06%"}, {"Date_str": "20/05/2026", "UG": "120111", "UG_Sigla": "EMAER", "UG_Name": "ESTADO-MAIOR DA AERONÁUTICA", "PTRES": "228692", "Action_Code": "20X7", "Action_Desc": "EMPREGO CONJUNTO OU COMBINADO DAS FFAA", "Launches": 1, "Crédito Disponível": "US$ 870,50", "% do Total": "0.02%"}, {"Date_str": "20/05/2026", "UG": "120111", "UG_Sigla": "EMAER", "UG_Name": "ESTADO-MAIOR DA AERONÁUTICA", "PTRES": "228786", "Action_Code": "2D55", "Action_Desc": "ADIDÂNCIAS MILITARES NO EXTERIOR", "Launches": 1, "Crédito Disponível": "US$ 748,61", "% do Total": "0.02%"}, {"Date_str": "20/05/2026", "UG": "120111", "UG_Sigla": "EMAER", "UG_Name": "ESTADO-MAIOR DA AERONÁUTICA", "PTRES": "229209", "Action_Code": "00UU", "Action_Desc": "CONTRIBUIÇÕES A ORGANISMOS INTERNACIONAIS", "Launches": 1, "Crédito Disponível": "US$ 444,59", "% do Total": "0.01%"}, {"Date_str": "20/05/2026", "UG": "120141", "UG_Sigla": "IAE", "UG_Name": "INSTITUTO DE AERONÁUTICA E ESPAÇO", "PTRES": "229163", "Action_Code": "2913", "Action_Desc": "INVESTIGAÇÃO E PREVENÇÃO DE ACIDENTES AERONÁUTICOS", "Launches": 1, "Crédito Disponível": "US$ 95.359,00", "% do Total": "2.63%"}, {"Date_str": "27/05/2026", "UG": "120026", "UG_Sigla": "PAMA-LS", "UG_Name": "PARQUE DE MATERIAL AERONÁUTICO DE LAGOA SANTA", "PTRES": "229177", "Action_Code": "2048", "Action_Desc": "MANUTENÇÃO E SUPRIMENTO DE MATERIAL AERONÁUTICO", "Launches": 9, "Crédito Disponível": "US$ 1.505.786,74", "% do Total": "31.89%"}, {"Date_str": "27/05/2026", "UG": "120026", "UG_Sigla": "PAMA-LS", "UG_Name": "PARQUE DE MATERIAL AERONÁUTICO DE LAGOA SANTA", "PTRES": "249587", "Action_Code": "20IH", "Action_Desc": "MODERNIZAÇÃO E REVITALIZAÇÃO DE AERONAVE - T2", "Launches": 1, "Crédito Disponível": "US$ 154.631,85", "% do Total": "3.27%"}, {"Date_str": "27/05/2026", "UG": "120026", "UG_Sigla": "PAMA-LS", "UG_Name": "PARQUE DE MATERIAL AERONÁUTICO DE LAGOA SANTA", "PTRES": "229166", "Action_Code": "20XV", "Action_Desc": "OPERAÇÃO E MANUTENÇÃO DE EQUIPAMENTOS DO SISCEAB", "Launches": 3, "Crédito Disponível": "US$ 114.575,07", "% do Total": "2.43%"}, {"Date_str": "27/05/2026", "UG": "120026", "UG_Sigla": "PAMA-LS", "UG_Name": "PARQUE DE MATERIAL AERONÁUTICO DE LAGOA SANTA", "PTRES": "249589", "Action_Code": "20IH", "Action_Desc": "MODERNIZAÇÃO E REVITALIZAÇÃO DE AERONAVE - C97", "Launches": 1, "Crédito Disponível": "US$ 54.937,20", "% do Total": "1.16%"}, {"Date_str": "27/05/2026", "UG": "120036", "UG_Sigla": "DECEA", "UG_Name": "DEPARTAMENTO DE CONTROLE DO ESPAÇO AÉREO", "PTRES": "229166", "Action_Code": "20XV", "Action_Desc": "OPERAÇÃO E MANUTENÇÃO DE EQUIPAMENTOS DO SISCEAB", "Launches": 5, "Crédito Disponível": "US$ 94.963,92", "% do Total": "2.01%"}, {"Date_str": "27/05/2026", "UG": "120038", "UG_Sigla": "DIRMAB", "UG_Name": "DIRETORIA DE MATERIAL AERONÁUTICO E BÉLICO", "PTRES": "229177", "Action_Code": "2048", "Action_Desc": "MANUTENÇÃO E SUPRIMENTO DE MATERIAL AERONÁUTICO", "Launches": 2, "Crédito Disponível": "US$ 234.208,00", "% do Total": "4.96%"}, {"Date_str": "27/05/2026", "UG": "120038", "UG_Sigla": "DIRMAB", "UG_Name": "DIRETORIA DE MATERIAL AERONÁUTICO E BÉLICO", "PTRES": "228692", "Action_Code": "20X7", "Action_Desc": "EMPREGO CONJUNTO OU COMBINADO DAS FFAA", "Launches": 1, "Crédito Disponível": "US$ 58.061,95", "% do Total": "1.23%"}, {"Date_str": "27/05/2026", "UG": "120047", "UG_Sigla": "PAMB-RJ", "UG_Name": "PARQUE DE MATERIAL BÉLICO DA AERONÁUTICA DO RIO DE JANEIRO", "PTRES": "229226", "Action_Code": "21A0", "Action_Desc": "APRESTAMENTO DAS FFAA", "Launches": 2, "Crédito Disponível": "US$ 31.264,34", "% do Total": "0.66%"}, {"Date_str": "27/05/2026", "UG": "120049", "UG_Sigla": "PAMA-GL", "UG_Name": "PARQUE DE MATERIAL AERONÁUTICO DO GALEÃO", "PTRES": "229166", "Action_Code": "20XV", "Action_Desc": "OPERAÇÃO E MANUTENÇÃO DE EQUIPAMENTOS DO SISCEAB", "Launches": 3, "Crédito Disponível": "US$ 326.311,67", "% do Total": "6.91%"}, {"Date_str": "27/05/2026", "UG": "120049", "UG_Sigla": "PAMA-GL", "UG_Name": "PARQUE DE MATERIAL AERONÁUTICO DO GALEÃO", "PTRES": "229177", "Action_Code": "2048", "Action_Desc": "MANUTENÇÃO E SUPRIMENTO DE MATERIAL AERONÁUTICO", "Launches": 2, "Crédito Disponível": "US$ 1.258,99", "% do Total": "0.03%"}, {"Date_str": "27/05/2026", "UG": "120068", "UG_Sigla": "PAMA-SP", "UG_Name": "PARQUE DE MATERIAL AERONÁUTICO DE SÃO PAULO", "PTRES": "229166", "Action_Code": "20XV", "Action_Desc": "OPERAÇÃO E MANUTENÇÃO DE EQUIPAMENTOS DO SISCEAB", "Launches": 3, "Crédito Disponível": "US$ 45.094,42", "% do Total": "0.96%"}, {"Date_str": "27/05/2026", "UG": "120068", "UG_Sigla": "PAMA-SP", "UG_Name": "PARQUE DE MATERIAL AERONÁUTICO DE SÃO PAULO", "PTRES": "229177", "Action_Code": "2048", "Action_Desc": "MANUTENÇÃO E SUPRIMENTO DE MATERIAL AERONÁUTICO", "Launches": 4, "Crédito Disponível": "US$ 10.561,93", "% do Total": "0.22%"}, {"Date_str": "27/05/2026", "UG": "120071", "UG_Sigla": "CELOG", "UG_Name": "CENTRO LOGÍSTICO DA AERONÁUTICA", "PTRES": "204352", "Action_Code": "2000", "Action_Desc": "ADMINISTRAÇÃO DA UNIDADE", "Launches": 1, "Crédito Disponível": "US$ 12.444,79", "% do Total": "0.26%"}, {"Date_str": "27/05/2026", "UG": "120071", "UG_Sigla": "CELOG", "UG_Name": "CENTRO LOGÍSTICO DA AERONÁUTICA", "PTRES": "229177", "Action_Code": "2048", "Action_Desc": "MANUTENÇÃO E SUPRIMENTO DE MATERIAL AERONÁUTICO", "Launches": 1, "Crédito Disponível": "US$ 0,01", "% do Total": "0.00%"}, {"Date_str": "27/05/2026", "UG": "120090", "UG_Sigla": "CABW", "UG_Name": "COMISSÃO AERONÁUTICA BRASILEIRA EM WASHINGTON", "PTRES": "229179", "Action_Code": "2868", "Action_Desc": "COMBUSTÍVEIS E LUBRIFICANTES DE AVIAÇÃO", "Launches": 2, "Crédito Disponível": "US$ 589.032,00", "% do Total": "12.48%"}, {"Date_str": "27/05/2026", "UG": "120090", "UG_Sigla": "CABW", "UG_Name": "COMISSÃO AERONÁUTICA BRASILEIRA EM WASHINGTON", "PTRES": "229166", "Action_Code": "20XV", "Action_Desc": "OPERAÇÃO E MANUTENÇÃO DE EQUIPAMENTOS DO SISCEAB", "Launches": 1, "Crédito Disponível": "US$ 35.075,10", "% do Total": "0.74%"}, {"Date_str": "27/05/2026", "UG": "120090", "UG_Sigla": "CABW", "UG_Name": "COMISSÃO AERONÁUTICA BRASILEIRA EM WASHINGTON", "PTRES": "168919", "Action_Code": "2000", "Action_Desc": "ADMINISTRAÇÃO DA UNIDADE", "Launches": 2, "Crédito Disponível": "US$ 1.706,96", "% do Total": "0.04%"}, {"Date_str": "27/05/2026", "UG": "120090", "UG_Sigla": "CABW", "UG_Name": "COMISSÃO AERONÁUTICA BRASILEIRA EM WASHINGTON", "PTRES": "214537", "Action_Code": "2004", "Action_Desc": "ASSISTÊNCIA MÉDICA E ODONTOLÓGICA", "Launches": 1, "Crédito Disponível": "US$ 767,94", "% do Total": "0.02%"}, {"Date_str": "27/05/2026", "UG": "120091", "UG_Sigla": "CABE", "UG_Name": "COMISSÃO AERONÁUTICA BRASILEIRA NA EUROPA", "PTRES": "168919", "Action_Code": "2000", "Action_Desc": "ADMINISTRAÇÃO DA UNIDADE", "Launches": 1, "Crédito Disponível": "US$ 8.390,54", "% do Total": "0.18%"}, {"Date_str": "27/05/2026", "UG": "120111", "UG_Sigla": "EMAER", "UG_Name": "ESTADO-MAIOR DA AERONÁUTICA", "PTRES": "168919", "Action_Code": "2000", "Action_Desc": "ADMINISTRAÇÃO DA UNIDADE", "Launches": 6, "Crédito Disponível": "US$ 38.160,16", "% do Total": "0.81%"}, {"Date_str": "27/05/2026", "UG": "120111", "UG_Sigla": "EMAER", "UG_Name": "ESTADO-MAIOR DA AERONÁUTICA", "PTRES": "168901", "Action_Code": "2000", "Action_Desc": "ADMINISTRAÇÃO DA UNIDADE", "Launches": 1, "Crédito Disponível": "US$ 4.010,00", "% do Total": "0.08%"}, {"Date_str": "27/05/2026", "UG": "120111", "UG_Sigla": "EMAER", "UG_Name": "ESTADO-MAIOR DA AERONÁUTICA", "PTRES": "228676", "Action_Code": "151S", "Action_Desc": "IMPLANTAÇÃO E DESENVOLVIMENTO", "Launches": 2, "Crédito Disponível": "US$ 2.030,10", "% do Total": "0.04%"}, {"Date_str": "27/05/2026", "UG": "120111", "UG_Sigla": "EMAER", "UG_Name": "ESTADO-MAIOR DA AERONÁUTICA", "PTRES": "228692", "Action_Code": "20X7", "Action_Desc": "EMPREGO CONJUNTO OU COMBINADO DAS FFAA", "Launches": 1, "Crédito Disponível": "US$ 870,50", "% do Total": "0.02%"}, {"Date_str": "27/05/2026", "UG": "120111", "UG_Sigla": "EMAER", "UG_Name": "ESTADO-MAIOR DA AERONÁUTICA", "PTRES": "228786", "Action_Code": "2D55", "Action_Desc": "ADIDÂNCIAS MILITARES NO EXTERIOR", "Launches": 1, "Crédito Disponível": "US$ 748,61", "% do Total": "0.02%"}, {"Date_str": "27/05/2026", "UG": "120111", "UG_Sigla": "EMAER", "UG_Name": "ESTADO-MAIOR DA AERONÁUTICA", "PTRES": "229209", "Action_Code": "00UU", "Action_Desc": "CONTRIBUIÇÕES A ORGANISMOS INTERNACIONAIS", "Launches": 1, "Crédito Disponível": "US$ 444,59", "% do Total": "0.01%"}, {"Date_str": "27/05/2026", "UG": "120127", "UG_Sigla": "CISCEA", "UG_Name": "COMISSÃO DE IMPLANTAÇÃO DO SISTEMA DE CONTROLE DO ESPAÇO AÉREO", "PTRES": "229166", "Action_Code": "20XV", "Action_Desc": "OPERAÇÃO E MANUTENÇÃO DE EQUIPAMENTOS DO SISCEAB", "Launches": 2, "Crédito Disponível": "US$ 1.300.887,85", "% do Total": "27.55%"}, {"Date_str": "27/05/2026", "UG": "120141", "UG_Sigla": "IAE", "UG_Name": "INSTITUTO DE AERONÁUTICA E ESPAÇO", "PTRES": "229163", "Action_Code": "2913", "Action_Desc": "INVESTIGAÇÃO E PREVENÇÃO DE ACIDENTES AERONÁUTICOS", "Launches": 1, "Crédito Disponível": "US$ 95.359,00", "% do Total": "2.02%"}, {"Date_str": "08/06/2026", "UG": "120026", "UG_Sigla": "PAMA-LS", "UG_Name": "PARQUE DE MATERIAL AERONÁUTICO DE LAGOA SANTA", "PTRES": "229166", "Action_Code": "20XV", "Action_Desc": "OPERAÇÃO E MANUTENÇÃO DE EQUIPAMENTOS DO SISCEAB", "Launches": 3, "Crédito Disponível": "US$ 111.395,07", "% do Total": "2.64%"}, {"Date_str": "08/06/2026", "UG": "120026", "UG_Sigla": "PAMA-LS", "UG_Name": "PARQUE DE MATERIAL AERONÁUTICO DE LAGOA SANTA", "PTRES": "229177", "Action_Code": "2048", "Action_Desc": "MANUTENÇÃO E SUPRIMENTO DE MATERIAL AERONÁUTICO", "Launches": 9, "Crédito Disponível": "US$ 1.322.625,34", "% do Total": "31.34%"}, {"Date_str": "08/06/2026", "UG": "120026", "UG_Sigla": "PAMA-LS", "UG_Name": "PARQUE DE MATERIAL AERONÁUTICO DE LAGOA SANTA", "PTRES": "249587", "Action_Code": "20IH", "Action_Desc": "MODERNIZAÇÃO E REVITALIZAÇÃO DE AERONAVE - T2", "Launches": 1, "Crédito Disponível": "US$ 140.293,45", "% do Total": "3.32%"}, {"Date_str": "08/06/2026", "UG": "120026", "UG_Sigla": "PAMA-LS", "UG_Name": "PARQUE DE MATERIAL AERONÁUTICO DE LAGOA SANTA", "PTRES": "249589", "Action_Code": "20IH", "Action_Desc": "MODERNIZAÇÃO E REVITALIZAÇÃO DE AERONAVE - C97", "Launches": 1, "Crédito Disponível": "US$ 637,65", "% do Total": "0.02%"}, {"Date_str": "08/06/2026", "UG": "120036", "UG_Sigla": "DECEA", "UG_Name": "DEPARTAMENTO DE CONTROLE DO ESPAÇO AÉREO", "PTRES": "229166", "Action_Code": "20XV", "Action_Desc": "OPERAÇÃO E MANUTENÇÃO DE EQUIPAMENTOS DO SISCEAB", "Launches": 5, "Crédito Disponível": "US$ 35.663,92", "% do Total": "0.85%"}, {"Date_str": "08/06/2026", "UG": "120038", "UG_Sigla": "DIRMAB", "UG_Name": "DIRETORIA DE MATERIAL AERONÁUTICO E BÉLICO", "PTRES": "228692", "Action_Code": "20X7", "Action_Desc": "EMPREGO CONJUNTO OU COMBINADO DAS FFAA", "Launches": 1, "Crédito Disponível": "US$ 318.631,58", "% do Total": "7.55%"}, {"Date_str": "08/06/2026", "UG": "120038", "UG_Sigla": "DIRMAB", "UG_Name": "DIRETORIA DE MATERIAL AERONÁUTICO E BÉLICO", "PTRES": "228765", "Action_Code": "20X1", "Action_Desc": "PARTICIPAÇÃO BRASILEIRA EM OPERAÇÕES", "Launches": 1, "Crédito Disponível": "US$ 7.152,36", "% do Total": "0.17%"}, {"Date_str": "08/06/2026", "UG": "120038", "UG_Sigla": "DIRMAB", "UG_Name": "DIRETORIA DE MATERIAL AERONÁUTICO E BÉLICO", "PTRES": "229177", "Action_Code": "2048", "Action_Desc": "MANUTENÇÃO E SUPRIMENTO DE MATERIAL AERONÁUTICO", "Launches": 1, "Crédito Disponível": "US$ 1.050,00", "% do Total": "0.02%"}, {"Date_str": "08/06/2026", "UG": "120047", "UG_Sigla": "PAMB-RJ", "UG_Name": "PARQUE DE MATERIAL BÉLICO DA AERONÁUTICA DO RIO DE JANEIRO", "PTRES": "229226", "Action_Code": "21A0", "Action_Desc": "APRESTAMENTO DAS FFAA", "Launches": 2, "Crédito Disponível": "US$ 85.518,60", "% do Total": "2.03%"}, {"Date_str": "08/06/2026", "UG": "120048", "UG_Sigla": "PAME-RJ", "UG_Name": "PARQUE DE MAT. DE ELTRÔNICA DA AERONÁUTICA DO RIO DE JANEIRO", "PTRES": "229166", "Action_Code": "20XV", "Action_Desc": "OPERAÇÃO E MANUTENÇÃO DE EQUIPAMENTOS DO SISCEAB", "Launches": 1, "Crédito Disponível": "US$ 0,01", "% do Total": "0.00%"}, {"Date_str": "08/06/2026", "UG": "120049", "UG_Sigla": "PAMA-GL", "UG_Name": "PARQUE DE MATERIAL AERONÁUTICO DO GALEÃO", "PTRES": "229166", "Action_Code": "20XV", "Action_Desc": "OPERAÇÃO E MANUTENÇÃO DE EQUIPAMENTOS DO SISCEAB", "Launches": 4, "Crédito Disponível": "US$ 665.140,23", "% do Total": "15.76%"}, {"Date_str": "08/06/2026", "UG": "120049", "UG_Sigla": "PAMA-GL", "UG_Name": "PARQUE DE MATERIAL AERONÁUTICO DO GALEÃO", "PTRES": "229177", "Action_Code": "2048", "Action_Desc": "MANUTENÇÃO E SUPRIMENTO DE MATERIAL AERONÁUTICO", "Launches": 2, "Crédito Disponível": "US$ 1.258,99", "% do Total": "0.03%"}, {"Date_str": "08/06/2026", "UG": "120068", "UG_Sigla": "PAMA-SP", "UG_Name": "PARQUE DE MATERIAL AERONÁUTICO DE SÃO PAULO", "PTRES": "229166", "Action_Code": "20XV", "Action_Desc": "OPERAÇÃO E MANUTENÇÃO DE EQUIPAMENTOS DO SISCEAB", "Launches": 3, "Crédito Disponível": "US$ 20.592,02", "% do Total": "0.49%"}, {"Date_str": "08/06/2026", "UG": "120068", "UG_Sigla": "PAMA-SP", "UG_Name": "PARQUE DE MATERIAL AERONÁUTICO DE SÃO PAULO", "PTRES": "229177", "Action_Code": "2048", "Action_Desc": "MANUTENÇÃO E SUPRIMENTO DE MATERIAL AERONÁUTICO", "Launches": 4, "Crédito Disponível": "US$ 3.195,93", "% do Total": "0.08%"}, {"Date_str": "08/06/2026", "UG": "120071", "UG_Sigla": "CELOG", "UG_Name": "CENTRO LOGÍTICO DA AERONÁUTICA", "PTRES": "204352", "Action_Code": "2000", "Action_Desc": "ADMINISTRAÇÃO DA UNIDADE", "Launches": 1, "Crédito Disponível": "US$ 12.444,79", "% do Total": "0.29%"}, {"Date_str": "08/06/2026", "UG": "120071", "UG_Sigla": "CELOG", "UG_Name": "CENTRO LOGÍTICO DA AERONÁUTICA", "PTRES": "229177", "Action_Code": "2048", "Action_Desc": "MANUTENÇÃO E SUPRIMENTO DE MATERIAL AERONÁUTICO", "Launches": 1, "Crédito Disponível": "US$ 0,01", "% do Total": "0.00%"}, {"Date_str": "08/06/2026", "UG": "120090", "UG_Sigla": "CABW", "UG_Name": "COMISSÃO AERONÁUTICA BRASILEIRA EM WASHINGTON", "PTRES": "168919", "Action_Code": "2000", "Action_Desc": "ADMINISTRAÇÃO DA UNIDADE", "Launches": 1, "Crédito Disponível": "US$ 556,96", "% do Total": "0.01%"}, {"Date_str": "08/06/2026", "UG": "120090", "UG_Sigla": "CABW", "UG_Name": "COMISSÃO AERONÁUTICA BRASILEIRA EM WASHINGTON", "PTRES": "214537", "Action_Code": "2004", "Action_Desc": "ASSISTÊNCIA MÉDICA E ODONTOLÓGICA", "Launches": 1, "Crédito Disponível": "US$ 214,94", "% do Total": "0.01%"}, {"Date_str": "08/06/2026", "UG": "120090", "UG_Sigla": "CABW", "UG_Name": "COMISSÃO AERONÁUTICA BRASILEIRA EM WASHINGTON", "PTRES": "214550", "Action_Code": "2004", "Action_Desc": "ASSISTÊNCIA MÉDICA E ODONTOLÓGICA", "Launches": 1, "Crédito Disponível": "US$ 1.000,00", "% do Total": "0.02%"}, {"Date_str": "08/06/2026", "UG": "120090", "UG_Sigla": "CABW", "UG_Name": "COMISSÃO AERONÁUTICA BRASILEIRA EM WASHINGTON", "PTRES": "229166", "Action_Code": "20XV", "Action_Desc": "OPERAÇÃO E MANUTENÇÃO DE EQUIPAMENTOS DO SISCEAB", "Launches": 1, "Crédito Disponível": "US$ 35.075,10", "% do Total": "0.83%"}, {"Date_str": "08/06/2026", "UG": "120090", "UG_Sigla": "CABW", "UG_Name": "COMISSÃO AERONÁUTICA BRASILEIRA EM WASHINGTON", "PTRES": "229179", "Action_Code": "2868", "Action_Desc": "COMBUSTÍVEIS E LUBRIFICANTES DE AVIAÇÃO", "Launches": 1, "Crédito Disponível": "US$ 409.688,58", "% do Total": "9.71%"}, {"Date_str": "08/06/2026", "UG": "120091", "UG_Sigla": "CABE", "UG_Name": "COMISSÃO AERONÁUTICA BRASILEIRA NA EUROPA", "PTRES": "168919", "Action_Code": "2000", "Action_Desc": "ADMINISTRAÇÃO DA UNIDADE", "Launches": 1, "Crédito Disponível": "US$ 8.390,54", "% do Total": "0.20%"}, {"Date_str": "08/06/2026", "UG": "120111", "UG_Sigla": "EMAER", "UG_Name": "ESTADO-MAIOR DA AERONÁUTICA", "PTRES": "168901", "Action_Code": "2000", "Action_Desc": "ADMINISTRAÇÃO DA UNIDADE", "Launches": 1, "Crédito Disponível": "US$ 4.010,00", "% do Total": "0.10%"}, {"Date_str": "08/06/2026", "UG": "120111", "UG_Sigla": "EMAER", "UG_Name": "ESTADO-MAIOR DA AERONÁUTICA", "PTRES": "168919", "Action_Code": "2000", "Action_Desc": "ADMINISTRAÇÃO DA UNIDADE", "Launches": 5, "Crédito Disponível": "US$ 43.060,16", "% do Total": "1.02%"}, {"Date_str": "08/06/2026", "UG": "120111", "UG_Sigla": "EMAER", "UG_Name": "ESTADO-MAIOR DA AERONÁUTICA", "PTRES": "228676", "Action_Code": "151S", "Action_Desc": "IMPLANTAÇÃO E DESENVOLVIMENTO", "Launches": 2, "Crédito Disponível": "US$ 2.030,10", "% do Total": "0.05%"}, {"Date_str": "08/06/2026", "UG": "120111", "UG_Sigla": "EMAER", "UG_Name": "ESTADO-MAIOR DA AERONÁUTICA", "PTRES": "228786", "Action_Code": "2D55", "Action_Desc": "ADIDÂNCIAS MILITARES NO EXTERIOR", "Launches": 1, "Crédito Disponível": "US$ 748,61", "% do Total": "0.02%"}, {"Date_str": "08/06/2026", "UG": "120111", "UG_Sigla": "EMAER", "UG_Name": "ESTADO-MAIOR DA AERONÁUTICA", "PTRES": "229209", "Action_Code": "00UU", "Action_Desc": "CONTRIBUIÇÕES A ORGANISMOS INTERNACIONAIS", "Launches": 1, "Crédito Disponível": "US$ 444,59", "% do Total": "0.01%"}, {"Date_str": "08/06/2026", "UG": "120111", "UG_Sigla": "EMAER", "UG_Name": "ESTADO-MAIOR DA AERONÁUTICA", "PTRES": "259974", "Action_Code": "20X1", "Action_Desc": "PARTICIPAÇÃO BRASILEIRA EM OPERAÇÕES", "Launches": 1, "Crédito Disponível": "US$ 3.267,10", "% do Total": "0.08%"}, {"Date_str": "08/06/2026", "UG": "120115", "UG_Sigla": "COMAE", "UG_Name": "COMANDO DE OPERAÇÕES AEROESPACIAIS", "PTRES": "228676", "Action_Code": "151S", "Action_Desc": "IMPLANTAÇÃO E DESENVOLVIMENTO", "Launches": 1, "Crédito Disponível": "US$ 2.000,00", "% do Total": "0.05%"}, {"Date_str": "08/06/2026", "UG": "120127", "UG_Sigla": "CISCEA", "UG_Name": "COMISSÃO DE IMPLANTAÇÃO DO SISTEMA DE CONTROLE DO ESPAÇO AÉREO", "PTRES": "229166", "Action_Code": "20XV", "Action_Desc": "OPERAÇÃO E MANUTENÇÃO DE EQUIPAMENTOS DO SISCEAB", "Launches": 1, "Crédito Disponível": "US$ 949.003,80", "% do Total": "22.49%"}, {"Date_str": "08/06/2026", "UG": "120141", "UG_Sigla": "IAE", "UG_Name": "INSTITUTO DE AERONÁUTICA E ESPAÇO", "PTRES": "233453", "Action_Code": "21AI", "Action_Desc": "FUNCIONAMENTO E ATUALIZAÇÃO DE INFRAESTRUTURA", "Launches": 1, "Crédito Disponível": "US$ 34.985,84", "% do Total": "0.83%"}] ;
-const detailColumns = [{"title": "Data", "data": "Date_str"}, {"title": "UG", "data": "UG"}, {"title": "Sigla", "data": "UG_Sigla"}, {"title": "Unidade Gestora", "data": "UG_Name"}, {"title": "PTRES", "data": "PTRES"}, {"title": "Ação", "data": "Action_Code"}, {"title": "Descrição da Ação", "data": "Action_Desc"}, {"title": "Lançamentos", "data": "Launches"}, {"title": "Crédito Disponível", "data": "Crédito Disponível"}, {"title": "% do Total", "data": "% do Total"}] ;
-$(document).ready(function() {
-  $('#detailTable').DataTable({
-    data: detailData,
-    columns: detailColumns,
-    pageLength: 25,
-    lengthMenu: [ [25, 50, 100, -1], [25, 50, 100, 'Todos'] ],
-    scrollX: true
-  });
-});
-</script>
+  <link rel="stylesheet" href="https://cdn.datatables.net/1.13.4/css/jquery.dataTables.min.css">
+  <link rel="stylesheet" type="text/css" href="css/style.css">
+</head>
+<body>
 
+<nav class="navbar navbar-expand-lg navbar-dark bg-primary">
+  <a class="navbar-brand" href="index.html">Painel CABW</a>
+  <img src="cabw_logo.png" alt="CABW logo" class="header-logo">
+  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+    <span class="navbar-toggler-icon"></span>
+  </button>
+  <div class="collapse navbar-collapse" id="navbarNav">
+    <ul class="navbar-nav mr-auto">
+      <li class="nav-item"><a class="nav-link" href="index.html">Início</a></li>
+      <li class="nav-item"><a class="nav-link" href="credito.html">Crédito Disponível</a></li>
+      <li class="nav-item"><a class="nav-link" href="contratos.html">Contratos</a></li>
+      <li class="nav-item"><a class="nav-link" href="processos.html">Processos de Contratação</a></li>
+      <li class="nav-item"><a class="nav-link" href="ug.html">Análise por UG</a></li>
+      <li class="nav-item"><a class="nav-link" href="action.html">Análise por Ação</a></li>
+      <li class="nav-item active"><a class="nav-link" href="detail.html">Detalhamento</a></li>
+      <li class="nav-item"><a class="nav-link" href="evolution.html">Evolução</a></li>
+      <li class="nav-item"><a class="nav-link" href="consistency.html">Consistência</a></li>
+    </ul>
+  </div>
+</nav>
+
+<main class="container-fluid mt-4 detail-page">
+  <h1>Detalhamento Analítico</h1>
+  <p>Esta tabela interativa lista todos os registros extraídos dos relatórios. Use a caixa de busca para filtrar e as setas das colunas para ordenar.</p>
+
+  <section class="detail-table-card" aria-label="Tabela de detalhamento analítico">
+    <div class="detail-table-scroll">
+      <table id="detailTable" class="table table-striped table-sm detail-table" style="width:100%">
+        <thead>
+            <tr>
+              <th class="text-center nowrap">Data</th>
+              <th class="text-center nowrap">UG</th>
+              <th class="text-center nowrap">Sigla</th>
+              <th class="text-left">Unidade Gestora</th>
+              <th class="text-center nowrap">PTRES</th>
+              <th class="text-center nowrap">Ação</th>
+              <th class="text-left">Descrição da Ação</th>
+              <th class="text-center nowrap">Lançamentos</th>
+              <th class="text-right nowrap tabular-number">Crédito Disponível</th>
+              <th class="text-center nowrap tabular-number">% do Total</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+              <td class="text-center nowrap">20/05/2026</td>
+              <td class="text-center nowrap">120026</td>
+              <td class="text-center nowrap">PAMA-LS</td>
+              <td class="text-left">PARQUE DE MATERIAL AERONÁUTICO DE LAGOA SANTA</td>
+              <td class="text-center nowrap">229177</td>
+              <td class="text-center nowrap">2048</td>
+              <td class="text-left">MANUTENÇÃO E SUPRIMENTO DE MATERIAL AERONÁUTICO</td>
+              <td class="text-center nowrap">9</td>
+              <td class="text-right nowrap tabular-number">US$ 1.493.393,09</td>
+              <td class="text-center nowrap tabular-number">41.22%</td>
+            </tr>
+            <tr>
+              <td class="text-center nowrap">20/05/2026</td>
+              <td class="text-center nowrap">120026</td>
+              <td class="text-center nowrap">PAMA-LS</td>
+              <td class="text-left">PARQUE DE MATERIAL AERONÁUTICO DE LAGOA SANTA</td>
+              <td class="text-center nowrap">249587</td>
+              <td class="text-center nowrap">20IH</td>
+              <td class="text-left">MODERNIZAÇÃO E REVITALIZAÇÃO DE AERONAVE - T2</td>
+              <td class="text-center nowrap">1</td>
+              <td class="text-right nowrap tabular-number">US$ 154.631,85</td>
+              <td class="text-center nowrap tabular-number">4.27%</td>
+            </tr>
+            <tr>
+              <td class="text-center nowrap">20/05/2026</td>
+              <td class="text-center nowrap">120026</td>
+              <td class="text-center nowrap">PAMA-LS</td>
+              <td class="text-left">PARQUE DE MATERIAL AERONÁUTICO DE LAGOA SANTA</td>
+              <td class="text-center nowrap">229166</td>
+              <td class="text-center nowrap">20XV</td>
+              <td class="text-left">OPERAÇÃO E MANUTENÇÃO DE EQUIPAMENTOS DO SISCEAB</td>
+              <td class="text-center nowrap">3</td>
+              <td class="text-right nowrap tabular-number">US$ 136.175,07</td>
+              <td class="text-center nowrap tabular-number">3.76%</td>
+            </tr>
+            <tr>
+              <td class="text-center nowrap">20/05/2026</td>
+              <td class="text-center nowrap">120026</td>
+              <td class="text-center nowrap">PAMA-LS</td>
+              <td class="text-left">PARQUE DE MATERIAL AERONÁUTICO DE LAGOA SANTA</td>
+              <td class="text-center nowrap">249589</td>
+              <td class="text-center nowrap">20IH</td>
+              <td class="text-left">MODERNIZAÇÃO E REVITALIZAÇÃO DE AERONAVE - C97</td>
+              <td class="text-center nowrap">1</td>
+              <td class="text-right nowrap tabular-number">US$ 54.937,20</td>
+              <td class="text-center nowrap tabular-number">1.52%</td>
+            </tr>
+            <tr>
+              <td class="text-center nowrap">20/05/2026</td>
+              <td class="text-center nowrap">120036</td>
+              <td class="text-center nowrap">DECEA</td>
+              <td class="text-left">DEPARTAMENTO DE CONTROLE DO ESPAÇO AÉREO</td>
+              <td class="text-center nowrap">229166</td>
+              <td class="text-center nowrap">20XV</td>
+              <td class="text-left">OPERAÇÃO E MANUTENÇÃO DE EQUIPAMENTOS DO SISCEAB</td>
+              <td class="text-center nowrap">5</td>
+              <td class="text-right nowrap tabular-number">US$ 94.963,92</td>
+              <td class="text-center nowrap tabular-number">2.62%</td>
+            </tr>
+            <tr>
+              <td class="text-center nowrap">20/05/2026</td>
+              <td class="text-center nowrap">120038</td>
+              <td class="text-center nowrap">DIRMAB</td>
+              <td class="text-left">DIRETORIA DE MATERIAL AERONÁUTICO E BÉLICO</td>
+              <td class="text-center nowrap">228692</td>
+              <td class="text-center nowrap">20X7</td>
+              <td class="text-left">EMPREGO CONJUNTO OU COMBINADO DAS FFAA</td>
+              <td class="text-center nowrap">2</td>
+              <td class="text-right nowrap tabular-number">US$ 70.828,34</td>
+              <td class="text-center nowrap tabular-number">1.95%</td>
+            </tr>
+            <tr>
+              <td class="text-center nowrap">20/05/2026</td>
+              <td class="text-center nowrap">120038</td>
+              <td class="text-center nowrap">DIRMAB</td>
+              <td class="text-left">DIRETORIA DE MATERIAL AERONÁUTICO E BÉLICO</td>
+              <td class="text-center nowrap">229177</td>
+              <td class="text-center nowrap">2048</td>
+              <td class="text-left">MANUTENÇÃO E SUPRIMENTO DE MATERIAL AERONÁUTICO</td>
+              <td class="text-center nowrap">1</td>
+              <td class="text-right nowrap tabular-number">US$ 1.050,00</td>
+              <td class="text-center nowrap tabular-number">0.03%</td>
+            </tr>
+            <tr>
+              <td class="text-center nowrap">20/05/2026</td>
+              <td class="text-center nowrap">120047</td>
+              <td class="text-center nowrap">PAMB-RJ</td>
+              <td class="text-left">PARQUE DE MATERIAL BÉLICO DA AERONÁUTICA DO RIO DE JANEIRO</td>
+              <td class="text-center nowrap">229226</td>
+              <td class="text-center nowrap">21A0</td>
+              <td class="text-left">APRESTAMENTO DAS FFAA</td>
+              <td class="text-center nowrap">2</td>
+              <td class="text-right nowrap tabular-number">US$ 31.264,34</td>
+              <td class="text-center nowrap tabular-number">0.86%</td>
+            </tr>
+            <tr>
+              <td class="text-center nowrap">20/05/2026</td>
+              <td class="text-center nowrap">120049</td>
+              <td class="text-center nowrap">PAMA-GL</td>
+              <td class="text-left">PARQUE DE MATERIAL AERONÁUTICO DO GALEÃO</td>
+              <td class="text-center nowrap">229166</td>
+              <td class="text-center nowrap">20XV</td>
+              <td class="text-left">OPERAÇÃO E MANUTENÇÃO DE EQUIPAMENTOS DO SISCEAB</td>
+              <td class="text-center nowrap">3</td>
+              <td class="text-right nowrap tabular-number">US$ 558.529,44</td>
+              <td class="text-center nowrap tabular-number">15.42%</td>
+            </tr>
+            <tr>
+              <td class="text-center nowrap">20/05/2026</td>
+              <td class="text-center nowrap">120049</td>
+              <td class="text-center nowrap">PAMA-GL</td>
+              <td class="text-left">PARQUE DE MATERIAL AERONÁUTICO DO GALEÃO</td>
+              <td class="text-center nowrap">229177</td>
+              <td class="text-center nowrap">2048</td>
+              <td class="text-left">MANUTENÇÃO E SUPRIMENTO DE MATERIAL AERONÁUTICO</td>
+              <td class="text-center nowrap">2</td>
+              <td class="text-right nowrap tabular-number">US$ 1.258,99</td>
+              <td class="text-center nowrap tabular-number">0.03%</td>
+            </tr>
+            <tr>
+              <td class="text-center nowrap">20/05/2026</td>
+              <td class="text-center nowrap">120068</td>
+              <td class="text-center nowrap">PAMA-SP</td>
+              <td class="text-left">PARQUE DE MATERIAL AERONÁUTICO DE SÃO PAULO</td>
+              <td class="text-center nowrap">229166</td>
+              <td class="text-center nowrap">20XV</td>
+              <td class="text-left">OPERAÇÃO E MANUTENÇÃO DE EQUIPAMENTOS DO SISCEAB</td>
+              <td class="text-center nowrap">5</td>
+              <td class="text-right nowrap tabular-number">US$ 45.094,42</td>
+              <td class="text-center nowrap tabular-number">1.24%</td>
+            </tr>
+            <tr>
+              <td class="text-center nowrap">20/05/2026</td>
+              <td class="text-center nowrap">120068</td>
+              <td class="text-center nowrap">PAMA-SP</td>
+              <td class="text-left">PARQUE DE MATERIAL AERONÁUTICO DE SÃO PAULO</td>
+              <td class="text-center nowrap">229177</td>
+              <td class="text-center nowrap">2048</td>
+              <td class="text-left">MANUTENÇÃO E SUPRIMENTO DE MATERIAL AERONÁUTICO</td>
+              <td class="text-center nowrap">4</td>
+              <td class="text-right nowrap tabular-number">US$ 10.561,93</td>
+              <td class="text-center nowrap tabular-number">0.29%</td>
+            </tr>
+            <tr>
+              <td class="text-center nowrap">20/05/2026</td>
+              <td class="text-center nowrap">120071</td>
+              <td class="text-center nowrap">CELOG</td>
+              <td class="text-left">CENTRO LOGÍTICO DA AERONÁUTICA</td>
+              <td class="text-center nowrap">229177</td>
+              <td class="text-center nowrap">2048</td>
+              <td class="text-left">MANUTENÇÃO E SUPRIMENTO DE MATERIAL AERONÁUTICO</td>
+              <td class="text-center nowrap">1</td>
+              <td class="text-right nowrap tabular-number">US$ 0,01</td>
+              <td class="text-center nowrap tabular-number">0.00%</td>
+            </tr>
+            <tr>
+              <td class="text-center nowrap">20/05/2026</td>
+              <td class="text-center nowrap">120090</td>
+              <td class="text-center nowrap">CABW</td>
+              <td class="text-left">COMISSÃO AERONÁUTICA BRASILEIRA EM WASHINGTON</td>
+              <td class="text-center nowrap">229179</td>
+              <td class="text-center nowrap">2868</td>
+              <td class="text-left">COMBUSTÍVEIS E LUBRIFICANTES DE AVIAÇÃO</td>
+              <td class="text-center nowrap">1</td>
+              <td class="text-right nowrap tabular-number">US$ 583.167,79</td>
+              <td class="text-center nowrap tabular-number">16.10%</td>
+            </tr>
+            <tr>
+              <td class="text-center nowrap">20/05/2026</td>
+              <td class="text-center nowrap">120090</td>
+              <td class="text-center nowrap">CABW</td>
+              <td class="text-left">COMISSÃO AERONÁUTICA BRASILEIRA EM WASHINGTON</td>
+              <td class="text-center nowrap">214550</td>
+              <td class="text-center nowrap">2004</td>
+              <td class="text-left">ASSISTÊNCIA MÉDICA E ODONTOLÓGICA</td>
+              <td class="text-center nowrap">1</td>
+              <td class="text-right nowrap tabular-number">US$ 150.941,60</td>
+              <td class="text-center nowrap tabular-number">4.17%</td>
+            </tr>
+            <tr>
+              <td class="text-center nowrap">20/05/2026</td>
+              <td class="text-center nowrap">120090</td>
+              <td class="text-center nowrap">CABW</td>
+              <td class="text-left">COMISSÃO AERONÁUTICA BRASILEIRA EM WASHINGTON</td>
+              <td class="text-center nowrap">229166</td>
+              <td class="text-center nowrap">20XV</td>
+              <td class="text-left">OPERAÇÃO E MANUTENÇÃO DE EQUIPAMENTOS DO SISCEAB</td>
+              <td class="text-center nowrap">1</td>
+              <td class="text-right nowrap tabular-number">US$ 35.075,10</td>
+              <td class="text-center nowrap tabular-number">0.97%</td>
+            </tr>
+            <tr>
+              <td class="text-center nowrap">20/05/2026</td>
+              <td class="text-center nowrap">120090</td>
+              <td class="text-center nowrap">CABW</td>
+              <td class="text-left">COMISSÃO AERONÁUTICA BRASILEIRA EM WASHINGTON</td>
+              <td class="text-center nowrap">168919</td>
+              <td class="text-center nowrap">2000</td>
+              <td class="text-left">ADMINISTRAÇÃO DA UNIDADE</td>
+              <td class="text-center nowrap">1</td>
+              <td class="text-right nowrap tabular-number">US$ 1.556,96</td>
+              <td class="text-center nowrap tabular-number">0.04%</td>
+            </tr>
+            <tr>
+              <td class="text-center nowrap">20/05/2026</td>
+              <td class="text-center nowrap">120090</td>
+              <td class="text-center nowrap">CABW</td>
+              <td class="text-left">COMISSÃO AERONÁUTICA BRASILEIRA EM WASHINGTON</td>
+              <td class="text-center nowrap">214537</td>
+              <td class="text-center nowrap">2004</td>
+              <td class="text-left">ASSISTÊNCIA MÉDICA E ODONTOLÓGICA</td>
+              <td class="text-center nowrap">1</td>
+              <td class="text-right nowrap tabular-number">US$ 1.152,44</td>
+              <td class="text-center nowrap tabular-number">0.03%</td>
+            </tr>
+            <tr>
+              <td class="text-center nowrap">20/05/2026</td>
+              <td class="text-center nowrap">120091</td>
+              <td class="text-center nowrap">CABE</td>
+              <td class="text-left">COMISSÃO AERONÁUTICA BRASILEIRA NA EUROPA</td>
+              <td class="text-center nowrap">168919</td>
+              <td class="text-center nowrap">2000</td>
+              <td class="text-left">ADMINISTRAÇÃO DA UNIDADE</td>
+              <td class="text-center nowrap">1</td>
+              <td class="text-right nowrap tabular-number">US$ 8.390,54</td>
+              <td class="text-center nowrap tabular-number">0.23%</td>
+            </tr>
+            <tr>
+              <td class="text-center nowrap">20/05/2026</td>
+              <td class="text-center nowrap">120111</td>
+              <td class="text-center nowrap">EMAER</td>
+              <td class="text-left">ESTADO-MAIOR DA AERONÁUTICA</td>
+              <td class="text-center nowrap">168901</td>
+              <td class="text-center nowrap">2000</td>
+              <td class="text-left">ADMINISTRAÇÃO DA UNIDADE</td>
+              <td class="text-center nowrap">1</td>
+              <td class="text-right nowrap tabular-number">US$ 50.000,00</td>
+              <td class="text-center nowrap tabular-number">1.38%</td>
+            </tr>
+            <tr>
+              <td class="text-center nowrap">20/05/2026</td>
+              <td class="text-center nowrap">120111</td>
+              <td class="text-center nowrap">EMAER</td>
+              <td class="text-left">ESTADO-MAIOR DA AERONÁUTICA</td>
+              <td class="text-center nowrap">168919</td>
+              <td class="text-center nowrap">2000</td>
+              <td class="text-left">ADMINISTRAÇÃO DA UNIDADE</td>
+              <td class="text-center nowrap">6</td>
+              <td class="text-right nowrap tabular-number">US$ 40.760,16</td>
+              <td class="text-center nowrap tabular-number">1.12%</td>
+            </tr>
+            <tr>
+              <td class="text-center nowrap">20/05/2026</td>
+              <td class="text-center nowrap">120111</td>
+              <td class="text-center nowrap">EMAER</td>
+              <td class="text-left">ESTADO-MAIOR DA AERONÁUTICA</td>
+              <td class="text-center nowrap">228676</td>
+              <td class="text-center nowrap">151S</td>
+              <td class="text-left">IMPLANTAÇÃO E DESENVOLVIMENTO</td>
+              <td class="text-center nowrap">2</td>
+              <td class="text-right nowrap tabular-number">US$ 2.030,10</td>
+              <td class="text-center nowrap tabular-number">0.06%</td>
+            </tr>
+            <tr>
+              <td class="text-center nowrap">20/05/2026</td>
+              <td class="text-center nowrap">120111</td>
+              <td class="text-center nowrap">EMAER</td>
+              <td class="text-left">ESTADO-MAIOR DA AERONÁUTICA</td>
+              <td class="text-center nowrap">228692</td>
+              <td class="text-center nowrap">20X7</td>
+              <td class="text-left">EMPREGO CONJUNTO OU COMBINADO DAS FFAA</td>
+              <td class="text-center nowrap">1</td>
+              <td class="text-right nowrap tabular-number">US$ 870,50</td>
+              <td class="text-center nowrap tabular-number">0.02%</td>
+            </tr>
+            <tr>
+              <td class="text-center nowrap">20/05/2026</td>
+              <td class="text-center nowrap">120111</td>
+              <td class="text-center nowrap">EMAER</td>
+              <td class="text-left">ESTADO-MAIOR DA AERONÁUTICA</td>
+              <td class="text-center nowrap">228786</td>
+              <td class="text-center nowrap">2D55</td>
+              <td class="text-left">ADIDÂNCIAS MILITARES NO EXTERIOR</td>
+              <td class="text-center nowrap">1</td>
+              <td class="text-right nowrap tabular-number">US$ 748,61</td>
+              <td class="text-center nowrap tabular-number">0.02%</td>
+            </tr>
+            <tr>
+              <td class="text-center nowrap">20/05/2026</td>
+              <td class="text-center nowrap">120111</td>
+              <td class="text-center nowrap">EMAER</td>
+              <td class="text-left">ESTADO-MAIOR DA AERONÁUTICA</td>
+              <td class="text-center nowrap">229209</td>
+              <td class="text-center nowrap">00UU</td>
+              <td class="text-left">CONTRIBUIÇÕES A ORGANISMOS INTERNACIONAIS</td>
+              <td class="text-center nowrap">1</td>
+              <td class="text-right nowrap tabular-number">US$ 444,59</td>
+              <td class="text-center nowrap tabular-number">0.01%</td>
+            </tr>
+            <tr>
+              <td class="text-center nowrap">20/05/2026</td>
+              <td class="text-center nowrap">120141</td>
+              <td class="text-center nowrap">IAE</td>
+              <td class="text-left">INSTITUTO DE AERONÁUTICA E ESPAÇO</td>
+              <td class="text-center nowrap">229163</td>
+              <td class="text-center nowrap">2913</td>
+              <td class="text-left">INVESTIGAÇÃO E PREVENÇÃO DE ACIDENTES AERONÁUTICOS</td>
+              <td class="text-center nowrap">1</td>
+              <td class="text-right nowrap tabular-number">US$ 95.359,00</td>
+              <td class="text-center nowrap tabular-number">2.63%</td>
+            </tr>
+            <tr>
+              <td class="text-center nowrap">27/05/2026</td>
+              <td class="text-center nowrap">120026</td>
+              <td class="text-center nowrap">PAMA-LS</td>
+              <td class="text-left">PARQUE DE MATERIAL AERONÁUTICO DE LAGOA SANTA</td>
+              <td class="text-center nowrap">229177</td>
+              <td class="text-center nowrap">2048</td>
+              <td class="text-left">MANUTENÇÃO E SUPRIMENTO DE MATERIAL AERONÁUTICO</td>
+              <td class="text-center nowrap">9</td>
+              <td class="text-right nowrap tabular-number">US$ 1.505.786,74</td>
+              <td class="text-center nowrap tabular-number">31.89%</td>
+            </tr>
+            <tr>
+              <td class="text-center nowrap">27/05/2026</td>
+              <td class="text-center nowrap">120026</td>
+              <td class="text-center nowrap">PAMA-LS</td>
+              <td class="text-left">PARQUE DE MATERIAL AERONÁUTICO DE LAGOA SANTA</td>
+              <td class="text-center nowrap">249587</td>
+              <td class="text-center nowrap">20IH</td>
+              <td class="text-left">MODERNIZAÇÃO E REVITALIZAÇÃO DE AERONAVE - T2</td>
+              <td class="text-center nowrap">1</td>
+              <td class="text-right nowrap tabular-number">US$ 154.631,85</td>
+              <td class="text-center nowrap tabular-number">3.27%</td>
+            </tr>
+            <tr>
+              <td class="text-center nowrap">27/05/2026</td>
+              <td class="text-center nowrap">120026</td>
+              <td class="text-center nowrap">PAMA-LS</td>
+              <td class="text-left">PARQUE DE MATERIAL AERONÁUTICO DE LAGOA SANTA</td>
+              <td class="text-center nowrap">229166</td>
+              <td class="text-center nowrap">20XV</td>
+              <td class="text-left">OPERAÇÃO E MANUTENÇÃO DE EQUIPAMENTOS DO SISCEAB</td>
+              <td class="text-center nowrap">3</td>
+              <td class="text-right nowrap tabular-number">US$ 114.575,07</td>
+              <td class="text-center nowrap tabular-number">2.43%</td>
+            </tr>
+            <tr>
+              <td class="text-center nowrap">27/05/2026</td>
+              <td class="text-center nowrap">120026</td>
+              <td class="text-center nowrap">PAMA-LS</td>
+              <td class="text-left">PARQUE DE MATERIAL AERONÁUTICO DE LAGOA SANTA</td>
+              <td class="text-center nowrap">249589</td>
+              <td class="text-center nowrap">20IH</td>
+              <td class="text-left">MODERNIZAÇÃO E REVITALIZAÇÃO DE AERONAVE - C97</td>
+              <td class="text-center nowrap">1</td>
+              <td class="text-right nowrap tabular-number">US$ 54.937,20</td>
+              <td class="text-center nowrap tabular-number">1.16%</td>
+            </tr>
+            <tr>
+              <td class="text-center nowrap">27/05/2026</td>
+              <td class="text-center nowrap">120036</td>
+              <td class="text-center nowrap">DECEA</td>
+              <td class="text-left">DEPARTAMENTO DE CONTROLE DO ESPAÇO AÉREO</td>
+              <td class="text-center nowrap">229166</td>
+              <td class="text-center nowrap">20XV</td>
+              <td class="text-left">OPERAÇÃO E MANUTENÇÃO DE EQUIPAMENTOS DO SISCEAB</td>
+              <td class="text-center nowrap">5</td>
+              <td class="text-right nowrap tabular-number">US$ 94.963,92</td>
+              <td class="text-center nowrap tabular-number">2.01%</td>
+            </tr>
+            <tr>
+              <td class="text-center nowrap">27/05/2026</td>
+              <td class="text-center nowrap">120038</td>
+              <td class="text-center nowrap">DIRMAB</td>
+              <td class="text-left">DIRETORIA DE MATERIAL AERONÁUTICO E BÉLICO</td>
+              <td class="text-center nowrap">229177</td>
+              <td class="text-center nowrap">2048</td>
+              <td class="text-left">MANUTENÇÃO E SUPRIMENTO DE MATERIAL AERONÁUTICO</td>
+              <td class="text-center nowrap">2</td>
+              <td class="text-right nowrap tabular-number">US$ 234.208,00</td>
+              <td class="text-center nowrap tabular-number">4.96%</td>
+            </tr>
+            <tr>
+              <td class="text-center nowrap">27/05/2026</td>
+              <td class="text-center nowrap">120038</td>
+              <td class="text-center nowrap">DIRMAB</td>
+              <td class="text-left">DIRETORIA DE MATERIAL AERONÁUTICO E BÉLICO</td>
+              <td class="text-center nowrap">228692</td>
+              <td class="text-center nowrap">20X7</td>
+              <td class="text-left">EMPREGO CONJUNTO OU COMBINADO DAS FFAA</td>
+              <td class="text-center nowrap">1</td>
+              <td class="text-right nowrap tabular-number">US$ 58.061,95</td>
+              <td class="text-center nowrap tabular-number">1.23%</td>
+            </tr>
+            <tr>
+              <td class="text-center nowrap">27/05/2026</td>
+              <td class="text-center nowrap">120047</td>
+              <td class="text-center nowrap">PAMB-RJ</td>
+              <td class="text-left">PARQUE DE MATERIAL BÉLICO DA AERONÁUTICA DO RIO DE JANEIRO</td>
+              <td class="text-center nowrap">229226</td>
+              <td class="text-center nowrap">21A0</td>
+              <td class="text-left">APRESTAMENTO DAS FFAA</td>
+              <td class="text-center nowrap">2</td>
+              <td class="text-right nowrap tabular-number">US$ 31.264,34</td>
+              <td class="text-center nowrap tabular-number">0.66%</td>
+            </tr>
+            <tr>
+              <td class="text-center nowrap">27/05/2026</td>
+              <td class="text-center nowrap">120049</td>
+              <td class="text-center nowrap">PAMA-GL</td>
+              <td class="text-left">PARQUE DE MATERIAL AERONÁUTICO DO GALEÃO</td>
+              <td class="text-center nowrap">229166</td>
+              <td class="text-center nowrap">20XV</td>
+              <td class="text-left">OPERAÇÃO E MANUTENÇÃO DE EQUIPAMENTOS DO SISCEAB</td>
+              <td class="text-center nowrap">3</td>
+              <td class="text-right nowrap tabular-number">US$ 326.311,67</td>
+              <td class="text-center nowrap tabular-number">6.91%</td>
+            </tr>
+            <tr>
+              <td class="text-center nowrap">27/05/2026</td>
+              <td class="text-center nowrap">120049</td>
+              <td class="text-center nowrap">PAMA-GL</td>
+              <td class="text-left">PARQUE DE MATERIAL AERONÁUTICO DO GALEÃO</td>
+              <td class="text-center nowrap">229177</td>
+              <td class="text-center nowrap">2048</td>
+              <td class="text-left">MANUTENÇÃO E SUPRIMENTO DE MATERIAL AERONÁUTICO</td>
+              <td class="text-center nowrap">2</td>
+              <td class="text-right nowrap tabular-number">US$ 1.258,99</td>
+              <td class="text-center nowrap tabular-number">0.03%</td>
+            </tr>
+            <tr>
+              <td class="text-center nowrap">27/05/2026</td>
+              <td class="text-center nowrap">120068</td>
+              <td class="text-center nowrap">PAMA-SP</td>
+              <td class="text-left">PARQUE DE MATERIAL AERONÁUTICO DE SÃO PAULO</td>
+              <td class="text-center nowrap">229166</td>
+              <td class="text-center nowrap">20XV</td>
+              <td class="text-left">OPERAÇÃO E MANUTENÇÃO DE EQUIPAMENTOS DO SISCEAB</td>
+              <td class="text-center nowrap">3</td>
+              <td class="text-right nowrap tabular-number">US$ 45.094,42</td>
+              <td class="text-center nowrap tabular-number">0.96%</td>
+            </tr>
+            <tr>
+              <td class="text-center nowrap">27/05/2026</td>
+              <td class="text-center nowrap">120068</td>
+              <td class="text-center nowrap">PAMA-SP</td>
+              <td class="text-left">PARQUE DE MATERIAL AERONÁUTICO DE SÃO PAULO</td>
+              <td class="text-center nowrap">229177</td>
+              <td class="text-center nowrap">2048</td>
+              <td class="text-left">MANUTENÇÃO E SUPRIMENTO DE MATERIAL AERONÁUTICO</td>
+              <td class="text-center nowrap">4</td>
+              <td class="text-right nowrap tabular-number">US$ 10.561,93</td>
+              <td class="text-center nowrap tabular-number">0.22%</td>
+            </tr>
+            <tr>
+              <td class="text-center nowrap">27/05/2026</td>
+              <td class="text-center nowrap">120071</td>
+              <td class="text-center nowrap">CELOG</td>
+              <td class="text-left">CENTRO LOGÍSTICO DA AERONÁUTICA</td>
+              <td class="text-center nowrap">204352</td>
+              <td class="text-center nowrap">2000</td>
+              <td class="text-left">ADMINISTRAÇÃO DA UNIDADE</td>
+              <td class="text-center nowrap">1</td>
+              <td class="text-right nowrap tabular-number">US$ 12.444,79</td>
+              <td class="text-center nowrap tabular-number">0.26%</td>
+            </tr>
+            <tr>
+              <td class="text-center nowrap">27/05/2026</td>
+              <td class="text-center nowrap">120071</td>
+              <td class="text-center nowrap">CELOG</td>
+              <td class="text-left">CENTRO LOGÍSTICO DA AERONÁUTICA</td>
+              <td class="text-center nowrap">229177</td>
+              <td class="text-center nowrap">2048</td>
+              <td class="text-left">MANUTENÇÃO E SUPRIMENTO DE MATERIAL AERONÁUTICO</td>
+              <td class="text-center nowrap">1</td>
+              <td class="text-right nowrap tabular-number">US$ 0,01</td>
+              <td class="text-center nowrap tabular-number">0.00%</td>
+            </tr>
+            <tr>
+              <td class="text-center nowrap">27/05/2026</td>
+              <td class="text-center nowrap">120090</td>
+              <td class="text-center nowrap">CABW</td>
+              <td class="text-left">COMISSÃO AERONÁUTICA BRASILEIRA EM WASHINGTON</td>
+              <td class="text-center nowrap">229179</td>
+              <td class="text-center nowrap">2868</td>
+              <td class="text-left">COMBUSTÍVEIS E LUBRIFICANTES DE AVIAÇÃO</td>
+              <td class="text-center nowrap">2</td>
+              <td class="text-right nowrap tabular-number">US$ 589.032,00</td>
+              <td class="text-center nowrap tabular-number">12.48%</td>
+            </tr>
+            <tr>
+              <td class="text-center nowrap">27/05/2026</td>
+              <td class="text-center nowrap">120090</td>
+              <td class="text-center nowrap">CABW</td>
+              <td class="text-left">COMISSÃO AERONÁUTICA BRASILEIRA EM WASHINGTON</td>
+              <td class="text-center nowrap">229166</td>
+              <td class="text-center nowrap">20XV</td>
+              <td class="text-left">OPERAÇÃO E MANUTENÇÃO DE EQUIPAMENTOS DO SISCEAB</td>
+              <td class="text-center nowrap">1</td>
+              <td class="text-right nowrap tabular-number">US$ 35.075,10</td>
+              <td class="text-center nowrap tabular-number">0.74%</td>
+            </tr>
+            <tr>
+              <td class="text-center nowrap">27/05/2026</td>
+              <td class="text-center nowrap">120090</td>
+              <td class="text-center nowrap">CABW</td>
+              <td class="text-left">COMISSÃO AERONÁUTICA BRASILEIRA EM WASHINGTON</td>
+              <td class="text-center nowrap">168919</td>
+              <td class="text-center nowrap">2000</td>
+              <td class="text-left">ADMINISTRAÇÃO DA UNIDADE</td>
+              <td class="text-center nowrap">2</td>
+              <td class="text-right nowrap tabular-number">US$ 1.706,96</td>
+              <td class="text-center nowrap tabular-number">0.04%</td>
+            </tr>
+            <tr>
+              <td class="text-center nowrap">27/05/2026</td>
+              <td class="text-center nowrap">120090</td>
+              <td class="text-center nowrap">CABW</td>
+              <td class="text-left">COMISSÃO AERONÁUTICA BRASILEIRA EM WASHINGTON</td>
+              <td class="text-center nowrap">214537</td>
+              <td class="text-center nowrap">2004</td>
+              <td class="text-left">ASSISTÊNCIA MÉDICA E ODONTOLÓGICA</td>
+              <td class="text-center nowrap">1</td>
+              <td class="text-right nowrap tabular-number">US$ 767,94</td>
+              <td class="text-center nowrap tabular-number">0.02%</td>
+            </tr>
+            <tr>
+              <td class="text-center nowrap">27/05/2026</td>
+              <td class="text-center nowrap">120091</td>
+              <td class="text-center nowrap">CABE</td>
+              <td class="text-left">COMISSÃO AERONÁUTICA BRASILEIRA NA EUROPA</td>
+              <td class="text-center nowrap">168919</td>
+              <td class="text-center nowrap">2000</td>
+              <td class="text-left">ADMINISTRAÇÃO DA UNIDADE</td>
+              <td class="text-center nowrap">1</td>
+              <td class="text-right nowrap tabular-number">US$ 8.390,54</td>
+              <td class="text-center nowrap tabular-number">0.18%</td>
+            </tr>
+            <tr>
+              <td class="text-center nowrap">27/05/2026</td>
+              <td class="text-center nowrap">120111</td>
+              <td class="text-center nowrap">EMAER</td>
+              <td class="text-left">ESTADO-MAIOR DA AERONÁUTICA</td>
+              <td class="text-center nowrap">168919</td>
+              <td class="text-center nowrap">2000</td>
+              <td class="text-left">ADMINISTRAÇÃO DA UNIDADE</td>
+              <td class="text-center nowrap">6</td>
+              <td class="text-right nowrap tabular-number">US$ 38.160,16</td>
+              <td class="text-center nowrap tabular-number">0.81%</td>
+            </tr>
+            <tr>
+              <td class="text-center nowrap">27/05/2026</td>
+              <td class="text-center nowrap">120111</td>
+              <td class="text-center nowrap">EMAER</td>
+              <td class="text-left">ESTADO-MAIOR DA AERONÁUTICA</td>
+              <td class="text-center nowrap">168901</td>
+              <td class="text-center nowrap">2000</td>
+              <td class="text-left">ADMINISTRAÇÃO DA UNIDADE</td>
+              <td class="text-center nowrap">1</td>
+              <td class="text-right nowrap tabular-number">US$ 4.010,00</td>
+              <td class="text-center nowrap tabular-number">0.08%</td>
+            </tr>
+            <tr>
+              <td class="text-center nowrap">27/05/2026</td>
+              <td class="text-center nowrap">120111</td>
+              <td class="text-center nowrap">EMAER</td>
+              <td class="text-left">ESTADO-MAIOR DA AERONÁUTICA</td>
+              <td class="text-center nowrap">228676</td>
+              <td class="text-center nowrap">151S</td>
+              <td class="text-left">IMPLANTAÇÃO E DESENVOLVIMENTO</td>
+              <td class="text-center nowrap">2</td>
+              <td class="text-right nowrap tabular-number">US$ 2.030,10</td>
+              <td class="text-center nowrap tabular-number">0.04%</td>
+            </tr>
+            <tr>
+              <td class="text-center nowrap">27/05/2026</td>
+              <td class="text-center nowrap">120111</td>
+              <td class="text-center nowrap">EMAER</td>
+              <td class="text-left">ESTADO-MAIOR DA AERONÁUTICA</td>
+              <td class="text-center nowrap">228692</td>
+              <td class="text-center nowrap">20X7</td>
+              <td class="text-left">EMPREGO CONJUNTO OU COMBINADO DAS FFAA</td>
+              <td class="text-center nowrap">1</td>
+              <td class="text-right nowrap tabular-number">US$ 870,50</td>
+              <td class="text-center nowrap tabular-number">0.02%</td>
+            </tr>
+            <tr>
+              <td class="text-center nowrap">27/05/2026</td>
+              <td class="text-center nowrap">120111</td>
+              <td class="text-center nowrap">EMAER</td>
+              <td class="text-left">ESTADO-MAIOR DA AERONÁUTICA</td>
+              <td class="text-center nowrap">228786</td>
+              <td class="text-center nowrap">2D55</td>
+              <td class="text-left">ADIDÂNCIAS MILITARES NO EXTERIOR</td>
+              <td class="text-center nowrap">1</td>
+              <td class="text-right nowrap tabular-number">US$ 748,61</td>
+              <td class="text-center nowrap tabular-number">0.02%</td>
+            </tr>
+            <tr>
+              <td class="text-center nowrap">27/05/2026</td>
+              <td class="text-center nowrap">120111</td>
+              <td class="text-center nowrap">EMAER</td>
+              <td class="text-left">ESTADO-MAIOR DA AERONÁUTICA</td>
+              <td class="text-center nowrap">229209</td>
+              <td class="text-center nowrap">00UU</td>
+              <td class="text-left">CONTRIBUIÇÕES A ORGANISMOS INTERNACIONAIS</td>
+              <td class="text-center nowrap">1</td>
+              <td class="text-right nowrap tabular-number">US$ 444,59</td>
+              <td class="text-center nowrap tabular-number">0.01%</td>
+            </tr>
+            <tr>
+              <td class="text-center nowrap">27/05/2026</td>
+              <td class="text-center nowrap">120127</td>
+              <td class="text-center nowrap">CISCEA</td>
+              <td class="text-left">COMISSÃO DE IMPLANTAÇÃO DO SISTEMA DE CONTROLE DO ESPAÇO AÉREO</td>
+              <td class="text-center nowrap">229166</td>
+              <td class="text-center nowrap">20XV</td>
+              <td class="text-left">OPERAÇÃO E MANUTENÇÃO DE EQUIPAMENTOS DO SISCEAB</td>
+              <td class="text-center nowrap">2</td>
+              <td class="text-right nowrap tabular-number">US$ 1.300.887,85</td>
+              <td class="text-center nowrap tabular-number">27.55%</td>
+            </tr>
+            <tr>
+              <td class="text-center nowrap">27/05/2026</td>
+              <td class="text-center nowrap">120141</td>
+              <td class="text-center nowrap">IAE</td>
+              <td class="text-left">INSTITUTO DE AERONÁUTICA E ESPAÇO</td>
+              <td class="text-center nowrap">229163</td>
+              <td class="text-center nowrap">2913</td>
+              <td class="text-left">INVESTIGAÇÃO E PREVENÇÃO DE ACIDENTES AERONÁUTICOS</td>
+              <td class="text-center nowrap">1</td>
+              <td class="text-right nowrap tabular-number">US$ 95.359,00</td>
+              <td class="text-center nowrap tabular-number">2.02%</td>
+            </tr>
+            <tr>
+              <td class="text-center nowrap">08/06/2026</td>
+              <td class="text-center nowrap">120026</td>
+              <td class="text-center nowrap">PAMA-LS</td>
+              <td class="text-left">PARQUE DE MATERIAL AERONÁUTICO DE LAGOA SANTA</td>
+              <td class="text-center nowrap">229166</td>
+              <td class="text-center nowrap">20XV</td>
+              <td class="text-left">OPERAÇÃO E MANUTENÇÃO DE EQUIPAMENTOS DO SISCEAB</td>
+              <td class="text-center nowrap">3</td>
+              <td class="text-right nowrap tabular-number">US$ 111.395,07</td>
+              <td class="text-center nowrap tabular-number">2.64%</td>
+            </tr>
+            <tr>
+              <td class="text-center nowrap">08/06/2026</td>
+              <td class="text-center nowrap">120026</td>
+              <td class="text-center nowrap">PAMA-LS</td>
+              <td class="text-left">PARQUE DE MATERIAL AERONÁUTICO DE LAGOA SANTA</td>
+              <td class="text-center nowrap">229177</td>
+              <td class="text-center nowrap">2048</td>
+              <td class="text-left">MANUTENÇÃO E SUPRIMENTO DE MATERIAL AERONÁUTICO</td>
+              <td class="text-center nowrap">9</td>
+              <td class="text-right nowrap tabular-number">US$ 1.322.625,34</td>
+              <td class="text-center nowrap tabular-number">31.34%</td>
+            </tr>
+            <tr>
+              <td class="text-center nowrap">08/06/2026</td>
+              <td class="text-center nowrap">120026</td>
+              <td class="text-center nowrap">PAMA-LS</td>
+              <td class="text-left">PARQUE DE MATERIAL AERONÁUTICO DE LAGOA SANTA</td>
+              <td class="text-center nowrap">249587</td>
+              <td class="text-center nowrap">20IH</td>
+              <td class="text-left">MODERNIZAÇÃO E REVITALIZAÇÃO DE AERONAVE - T2</td>
+              <td class="text-center nowrap">1</td>
+              <td class="text-right nowrap tabular-number">US$ 140.293,45</td>
+              <td class="text-center nowrap tabular-number">3.32%</td>
+            </tr>
+            <tr>
+              <td class="text-center nowrap">08/06/2026</td>
+              <td class="text-center nowrap">120026</td>
+              <td class="text-center nowrap">PAMA-LS</td>
+              <td class="text-left">PARQUE DE MATERIAL AERONÁUTICO DE LAGOA SANTA</td>
+              <td class="text-center nowrap">249589</td>
+              <td class="text-center nowrap">20IH</td>
+              <td class="text-left">MODERNIZAÇÃO E REVITALIZAÇÃO DE AERONAVE - C97</td>
+              <td class="text-center nowrap">1</td>
+              <td class="text-right nowrap tabular-number">US$ 637,65</td>
+              <td class="text-center nowrap tabular-number">0.02%</td>
+            </tr>
+            <tr>
+              <td class="text-center nowrap">08/06/2026</td>
+              <td class="text-center nowrap">120036</td>
+              <td class="text-center nowrap">DECEA</td>
+              <td class="text-left">DEPARTAMENTO DE CONTROLE DO ESPAÇO AÉREO</td>
+              <td class="text-center nowrap">229166</td>
+              <td class="text-center nowrap">20XV</td>
+              <td class="text-left">OPERAÇÃO E MANUTENÇÃO DE EQUIPAMENTOS DO SISCEAB</td>
+              <td class="text-center nowrap">5</td>
+              <td class="text-right nowrap tabular-number">US$ 35.663,92</td>
+              <td class="text-center nowrap tabular-number">0.85%</td>
+            </tr>
+            <tr>
+              <td class="text-center nowrap">08/06/2026</td>
+              <td class="text-center nowrap">120038</td>
+              <td class="text-center nowrap">DIRMAB</td>
+              <td class="text-left">DIRETORIA DE MATERIAL AERONÁUTICO E BÉLICO</td>
+              <td class="text-center nowrap">228692</td>
+              <td class="text-center nowrap">20X7</td>
+              <td class="text-left">EMPREGO CONJUNTO OU COMBINADO DAS FFAA</td>
+              <td class="text-center nowrap">1</td>
+              <td class="text-right nowrap tabular-number">US$ 318.631,58</td>
+              <td class="text-center nowrap tabular-number">7.55%</td>
+            </tr>
+            <tr>
+              <td class="text-center nowrap">08/06/2026</td>
+              <td class="text-center nowrap">120038</td>
+              <td class="text-center nowrap">DIRMAB</td>
+              <td class="text-left">DIRETORIA DE MATERIAL AERONÁUTICO E BÉLICO</td>
+              <td class="text-center nowrap">228765</td>
+              <td class="text-center nowrap">20X1</td>
+              <td class="text-left">PARTICIPAÇÃO BRASILEIRA EM OPERAÇÕES</td>
+              <td class="text-center nowrap">1</td>
+              <td class="text-right nowrap tabular-number">US$ 7.152,36</td>
+              <td class="text-center nowrap tabular-number">0.17%</td>
+            </tr>
+            <tr>
+              <td class="text-center nowrap">08/06/2026</td>
+              <td class="text-center nowrap">120038</td>
+              <td class="text-center nowrap">DIRMAB</td>
+              <td class="text-left">DIRETORIA DE MATERIAL AERONÁUTICO E BÉLICO</td>
+              <td class="text-center nowrap">229177</td>
+              <td class="text-center nowrap">2048</td>
+              <td class="text-left">MANUTENÇÃO E SUPRIMENTO DE MATERIAL AERONÁUTICO</td>
+              <td class="text-center nowrap">1</td>
+              <td class="text-right nowrap tabular-number">US$ 1.050,00</td>
+              <td class="text-center nowrap tabular-number">0.02%</td>
+            </tr>
+            <tr>
+              <td class="text-center nowrap">08/06/2026</td>
+              <td class="text-center nowrap">120047</td>
+              <td class="text-center nowrap">PAMB-RJ</td>
+              <td class="text-left">PARQUE DE MATERIAL BÉLICO DA AERONÁUTICA DO RIO DE JANEIRO</td>
+              <td class="text-center nowrap">229226</td>
+              <td class="text-center nowrap">21A0</td>
+              <td class="text-left">APRESTAMENTO DAS FFAA</td>
+              <td class="text-center nowrap">2</td>
+              <td class="text-right nowrap tabular-number">US$ 85.518,60</td>
+              <td class="text-center nowrap tabular-number">2.03%</td>
+            </tr>
+            <tr>
+              <td class="text-center nowrap">08/06/2026</td>
+              <td class="text-center nowrap">120048</td>
+              <td class="text-center nowrap">PAME-RJ</td>
+              <td class="text-left">PARQUE DE MAT. DE ELTRÔNICA DA AERONÁUTICA DO RIO DE JANEIRO</td>
+              <td class="text-center nowrap">229166</td>
+              <td class="text-center nowrap">20XV</td>
+              <td class="text-left">OPERAÇÃO E MANUTENÇÃO DE EQUIPAMENTOS DO SISCEAB</td>
+              <td class="text-center nowrap">1</td>
+              <td class="text-right nowrap tabular-number">US$ 0,01</td>
+              <td class="text-center nowrap tabular-number">0.00%</td>
+            </tr>
+            <tr>
+              <td class="text-center nowrap">08/06/2026</td>
+              <td class="text-center nowrap">120049</td>
+              <td class="text-center nowrap">PAMA-GL</td>
+              <td class="text-left">PARQUE DE MATERIAL AERONÁUTICO DO GALEÃO</td>
+              <td class="text-center nowrap">229166</td>
+              <td class="text-center nowrap">20XV</td>
+              <td class="text-left">OPERAÇÃO E MANUTENÇÃO DE EQUIPAMENTOS DO SISCEAB</td>
+              <td class="text-center nowrap">4</td>
+              <td class="text-right nowrap tabular-number">US$ 665.140,23</td>
+              <td class="text-center nowrap tabular-number">15.76%</td>
+            </tr>
+            <tr>
+              <td class="text-center nowrap">08/06/2026</td>
+              <td class="text-center nowrap">120049</td>
+              <td class="text-center nowrap">PAMA-GL</td>
+              <td class="text-left">PARQUE DE MATERIAL AERONÁUTICO DO GALEÃO</td>
+              <td class="text-center nowrap">229177</td>
+              <td class="text-center nowrap">2048</td>
+              <td class="text-left">MANUTENÇÃO E SUPRIMENTO DE MATERIAL AERONÁUTICO</td>
+              <td class="text-center nowrap">2</td>
+              <td class="text-right nowrap tabular-number">US$ 1.258,99</td>
+              <td class="text-center nowrap tabular-number">0.03%</td>
+            </tr>
+            <tr>
+              <td class="text-center nowrap">08/06/2026</td>
+              <td class="text-center nowrap">120068</td>
+              <td class="text-center nowrap">PAMA-SP</td>
+              <td class="text-left">PARQUE DE MATERIAL AERONÁUTICO DE SÃO PAULO</td>
+              <td class="text-center nowrap">229166</td>
+              <td class="text-center nowrap">20XV</td>
+              <td class="text-left">OPERAÇÃO E MANUTENÇÃO DE EQUIPAMENTOS DO SISCEAB</td>
+              <td class="text-center nowrap">3</td>
+              <td class="text-right nowrap tabular-number">US$ 20.592,02</td>
+              <td class="text-center nowrap tabular-number">0.49%</td>
+            </tr>
+            <tr>
+              <td class="text-center nowrap">08/06/2026</td>
+              <td class="text-center nowrap">120068</td>
+              <td class="text-center nowrap">PAMA-SP</td>
+              <td class="text-left">PARQUE DE MATERIAL AERONÁUTICO DE SÃO PAULO</td>
+              <td class="text-center nowrap">229177</td>
+              <td class="text-center nowrap">2048</td>
+              <td class="text-left">MANUTENÇÃO E SUPRIMENTO DE MATERIAL AERONÁUTICO</td>
+              <td class="text-center nowrap">4</td>
+              <td class="text-right nowrap tabular-number">US$ 3.195,93</td>
+              <td class="text-center nowrap tabular-number">0.08%</td>
+            </tr>
+            <tr>
+              <td class="text-center nowrap">08/06/2026</td>
+              <td class="text-center nowrap">120071</td>
+              <td class="text-center nowrap">CELOG</td>
+              <td class="text-left">CENTRO LOGÍTICO DA AERONÁUTICA</td>
+              <td class="text-center nowrap">204352</td>
+              <td class="text-center nowrap">2000</td>
+              <td class="text-left">ADMINISTRAÇÃO DA UNIDADE</td>
+              <td class="text-center nowrap">1</td>
+              <td class="text-right nowrap tabular-number">US$ 12.444,79</td>
+              <td class="text-center nowrap tabular-number">0.29%</td>
+            </tr>
+            <tr>
+              <td class="text-center nowrap">08/06/2026</td>
+              <td class="text-center nowrap">120071</td>
+              <td class="text-center nowrap">CELOG</td>
+              <td class="text-left">CENTRO LOGÍTICO DA AERONÁUTICA</td>
+              <td class="text-center nowrap">229177</td>
+              <td class="text-center nowrap">2048</td>
+              <td class="text-left">MANUTENÇÃO E SUPRIMENTO DE MATERIAL AERONÁUTICO</td>
+              <td class="text-center nowrap">1</td>
+              <td class="text-right nowrap tabular-number">US$ 0,01</td>
+              <td class="text-center nowrap tabular-number">0.00%</td>
+            </tr>
+            <tr>
+              <td class="text-center nowrap">08/06/2026</td>
+              <td class="text-center nowrap">120090</td>
+              <td class="text-center nowrap">CABW</td>
+              <td class="text-left">COMISSÃO AERONÁUTICA BRASILEIRA EM WASHINGTON</td>
+              <td class="text-center nowrap">168919</td>
+              <td class="text-center nowrap">2000</td>
+              <td class="text-left">ADMINISTRAÇÃO DA UNIDADE</td>
+              <td class="text-center nowrap">1</td>
+              <td class="text-right nowrap tabular-number">US$ 556,96</td>
+              <td class="text-center nowrap tabular-number">0.01%</td>
+            </tr>
+            <tr>
+              <td class="text-center nowrap">08/06/2026</td>
+              <td class="text-center nowrap">120090</td>
+              <td class="text-center nowrap">CABW</td>
+              <td class="text-left">COMISSÃO AERONÁUTICA BRASILEIRA EM WASHINGTON</td>
+              <td class="text-center nowrap">214537</td>
+              <td class="text-center nowrap">2004</td>
+              <td class="text-left">ASSISTÊNCIA MÉDICA E ODONTOLÓGICA</td>
+              <td class="text-center nowrap">1</td>
+              <td class="text-right nowrap tabular-number">US$ 214,94</td>
+              <td class="text-center nowrap tabular-number">0.01%</td>
+            </tr>
+            <tr>
+              <td class="text-center nowrap">08/06/2026</td>
+              <td class="text-center nowrap">120090</td>
+              <td class="text-center nowrap">CABW</td>
+              <td class="text-left">COMISSÃO AERONÁUTICA BRASILEIRA EM WASHINGTON</td>
+              <td class="text-center nowrap">214550</td>
+              <td class="text-center nowrap">2004</td>
+              <td class="text-left">ASSISTÊNCIA MÉDICA E ODONTOLÓGICA</td>
+              <td class="text-center nowrap">1</td>
+              <td class="text-right nowrap tabular-number">US$ 1.000,00</td>
+              <td class="text-center nowrap tabular-number">0.02%</td>
+            </tr>
+            <tr>
+              <td class="text-center nowrap">08/06/2026</td>
+              <td class="text-center nowrap">120090</td>
+              <td class="text-center nowrap">CABW</td>
+              <td class="text-left">COMISSÃO AERONÁUTICA BRASILEIRA EM WASHINGTON</td>
+              <td class="text-center nowrap">229166</td>
+              <td class="text-center nowrap">20XV</td>
+              <td class="text-left">OPERAÇÃO E MANUTENÇÃO DE EQUIPAMENTOS DO SISCEAB</td>
+              <td class="text-center nowrap">1</td>
+              <td class="text-right nowrap tabular-number">US$ 35.075,10</td>
+              <td class="text-center nowrap tabular-number">0.83%</td>
+            </tr>
+            <tr>
+              <td class="text-center nowrap">08/06/2026</td>
+              <td class="text-center nowrap">120090</td>
+              <td class="text-center nowrap">CABW</td>
+              <td class="text-left">COMISSÃO AERONÁUTICA BRASILEIRA EM WASHINGTON</td>
+              <td class="text-center nowrap">229179</td>
+              <td class="text-center nowrap">2868</td>
+              <td class="text-left">COMBUSTÍVEIS E LUBRIFICANTES DE AVIAÇÃO</td>
+              <td class="text-center nowrap">1</td>
+              <td class="text-right nowrap tabular-number">US$ 409.688,58</td>
+              <td class="text-center nowrap tabular-number">9.71%</td>
+            </tr>
+            <tr>
+              <td class="text-center nowrap">08/06/2026</td>
+              <td class="text-center nowrap">120091</td>
+              <td class="text-center nowrap">CABE</td>
+              <td class="text-left">COMISSÃO AERONÁUTICA BRASILEIRA NA EUROPA</td>
+              <td class="text-center nowrap">168919</td>
+              <td class="text-center nowrap">2000</td>
+              <td class="text-left">ADMINISTRAÇÃO DA UNIDADE</td>
+              <td class="text-center nowrap">1</td>
+              <td class="text-right nowrap tabular-number">US$ 8.390,54</td>
+              <td class="text-center nowrap tabular-number">0.20%</td>
+            </tr>
+            <tr>
+              <td class="text-center nowrap">08/06/2026</td>
+              <td class="text-center nowrap">120111</td>
+              <td class="text-center nowrap">EMAER</td>
+              <td class="text-left">ESTADO-MAIOR DA AERONÁUTICA</td>
+              <td class="text-center nowrap">168901</td>
+              <td class="text-center nowrap">2000</td>
+              <td class="text-left">ADMINISTRAÇÃO DA UNIDADE</td>
+              <td class="text-center nowrap">1</td>
+              <td class="text-right nowrap tabular-number">US$ 4.010,00</td>
+              <td class="text-center nowrap tabular-number">0.10%</td>
+            </tr>
+            <tr>
+              <td class="text-center nowrap">08/06/2026</td>
+              <td class="text-center nowrap">120111</td>
+              <td class="text-center nowrap">EMAER</td>
+              <td class="text-left">ESTADO-MAIOR DA AERONÁUTICA</td>
+              <td class="text-center nowrap">168919</td>
+              <td class="text-center nowrap">2000</td>
+              <td class="text-left">ADMINISTRAÇÃO DA UNIDADE</td>
+              <td class="text-center nowrap">5</td>
+              <td class="text-right nowrap tabular-number">US$ 43.060,16</td>
+              <td class="text-center nowrap tabular-number">1.02%</td>
+            </tr>
+            <tr>
+              <td class="text-center nowrap">08/06/2026</td>
+              <td class="text-center nowrap">120111</td>
+              <td class="text-center nowrap">EMAER</td>
+              <td class="text-left">ESTADO-MAIOR DA AERONÁUTICA</td>
+              <td class="text-center nowrap">228676</td>
+              <td class="text-center nowrap">151S</td>
+              <td class="text-left">IMPLANTAÇÃO E DESENVOLVIMENTO</td>
+              <td class="text-center nowrap">2</td>
+              <td class="text-right nowrap tabular-number">US$ 2.030,10</td>
+              <td class="text-center nowrap tabular-number">0.05%</td>
+            </tr>
+            <tr>
+              <td class="text-center nowrap">08/06/2026</td>
+              <td class="text-center nowrap">120111</td>
+              <td class="text-center nowrap">EMAER</td>
+              <td class="text-left">ESTADO-MAIOR DA AERONÁUTICA</td>
+              <td class="text-center nowrap">228786</td>
+              <td class="text-center nowrap">2D55</td>
+              <td class="text-left">ADIDÂNCIAS MILITARES NO EXTERIOR</td>
+              <td class="text-center nowrap">1</td>
+              <td class="text-right nowrap tabular-number">US$ 748,61</td>
+              <td class="text-center nowrap tabular-number">0.02%</td>
+            </tr>
+            <tr>
+              <td class="text-center nowrap">08/06/2026</td>
+              <td class="text-center nowrap">120111</td>
+              <td class="text-center nowrap">EMAER</td>
+              <td class="text-left">ESTADO-MAIOR DA AERONÁUTICA</td>
+              <td class="text-center nowrap">229209</td>
+              <td class="text-center nowrap">00UU</td>
+              <td class="text-left">CONTRIBUIÇÕES A ORGANISMOS INTERNACIONAIS</td>
+              <td class="text-center nowrap">1</td>
+              <td class="text-right nowrap tabular-number">US$ 444,59</td>
+              <td class="text-center nowrap tabular-number">0.01%</td>
+            </tr>
+            <tr>
+              <td class="text-center nowrap">08/06/2026</td>
+              <td class="text-center nowrap">120111</td>
+              <td class="text-center nowrap">EMAER</td>
+              <td class="text-left">ESTADO-MAIOR DA AERONÁUTICA</td>
+              <td class="text-center nowrap">259974</td>
+              <td class="text-center nowrap">20X1</td>
+              <td class="text-left">PARTICIPAÇÃO BRASILEIRA EM OPERAÇÕES</td>
+              <td class="text-center nowrap">1</td>
+              <td class="text-right nowrap tabular-number">US$ 3.267,10</td>
+              <td class="text-center nowrap tabular-number">0.08%</td>
+            </tr>
+            <tr>
+              <td class="text-center nowrap">08/06/2026</td>
+              <td class="text-center nowrap">120115</td>
+              <td class="text-center nowrap">COMAE</td>
+              <td class="text-left">COMANDO DE OPERAÇÕES AEROESPACIAIS</td>
+              <td class="text-center nowrap">228676</td>
+              <td class="text-center nowrap">151S</td>
+              <td class="text-left">IMPLANTAÇÃO E DESENVOLVIMENTO</td>
+              <td class="text-center nowrap">1</td>
+              <td class="text-right nowrap tabular-number">US$ 2.000,00</td>
+              <td class="text-center nowrap tabular-number">0.05%</td>
+            </tr>
+            <tr>
+              <td class="text-center nowrap">08/06/2026</td>
+              <td class="text-center nowrap">120127</td>
+              <td class="text-center nowrap">CISCEA</td>
+              <td class="text-left">COMISSÃO DE IMPLANTAÇÃO DO SISTEMA DE CONTROLE DO ESPAÇO AÉREO</td>
+              <td class="text-center nowrap">229166</td>
+              <td class="text-center nowrap">20XV</td>
+              <td class="text-left">OPERAÇÃO E MANUTENÇÃO DE EQUIPAMENTOS DO SISCEAB</td>
+              <td class="text-center nowrap">1</td>
+              <td class="text-right nowrap tabular-number">US$ 949.003,80</td>
+              <td class="text-center nowrap tabular-number">22.49%</td>
+            </tr>
+            <tr>
+              <td class="text-center nowrap">08/06/2026</td>
+              <td class="text-center nowrap">120141</td>
+              <td class="text-center nowrap">IAE</td>
+              <td class="text-left">INSTITUTO DE AERONÁUTICA E ESPAÇO</td>
+              <td class="text-center nowrap">233453</td>
+              <td class="text-center nowrap">21AI</td>
+              <td class="text-left">FUNCIONAMENTO E ATUALIZAÇÃO DE INFRAESTRUTURA</td>
+              <td class="text-center nowrap">1</td>
+              <td class="text-right nowrap tabular-number">US$ 34.985,84</td>
+              <td class="text-center nowrap tabular-number">0.83%</td>
+            </tr>
+        </tbody>
+      </table>
     </div>
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/js/bootstrap.bundle.min.js"></script>
-    </body>
-    </html>
-    
+  </section>
+</main>
+
+<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+<script src="https://cdn.datatables.net/1.13.4/js/jquery.dataTables.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/js/bootstrap.bundle.min.js"></script>
+<script>
+  document.addEventListener('DOMContentLoaded', function () {
+    var table = document.getElementById('detailTable');
+
+    function keepStaticTable() {
+      if (table) {
+        table.classList.add('detail-table--static');
+      }
+    }
+
+    try {
+      if (window.jQuery && jQuery.fn && jQuery.fn.DataTable && table) {
+        jQuery(table).DataTable({
+          pageLength: 25,
+          lengthMenu: [[25, 50, 100, -1], [25, 50, 100, 'Todos']],
+          autoWidth: false,
+          scrollX: true,
+          order: [[0, 'asc']],
+          language: {
+            decimal: ',',
+            thousands: '.',
+            emptyTable: 'Nenhum registro disponível',
+            info: 'Mostrando _START_ a _END_ de _TOTAL_ registros',
+            infoEmpty: 'Mostrando 0 a 0 de 0 registros',
+            infoFiltered: '(filtrado de _MAX_ registros no total)',
+            lengthMenu: 'Mostrar _MENU_ registros',
+            loadingRecords: 'Carregando...',
+            processing: 'Processando...',
+            search: 'Buscar:',
+            zeroRecords: 'Nenhum registro encontrado',
+            paginate: {
+              first: 'Primeiro',
+              last: 'Último',
+              next: 'Próximo',
+              previous: 'Anterior'
+            },
+            aria: {
+              sortAscending: ': ativar para ordenar a coluna em ordem crescente',
+              sortDescending: ': ativar para ordenar a coluna em ordem decrescente'
+            }
+          }
+        });
+      } else {
+        keepStaticTable();
+      }
+    } catch (error) {
+      console.error('Falha ao inicializar DataTables no detalhamento:', error);
+      keepStaticTable();
+    }
+  });
+</script>
+</body>
+</html>
