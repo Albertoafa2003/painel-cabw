@@ -1813,3 +1813,21 @@ table.dataTable thead th {
     grid-template-columns: 1fr;
   }
 }
+
+
+/* Crédito disponível - atualizações de dados e gráficos */
+.credit-position-note {
+  color: #465168;
+  font-size: 1rem;
+  margin: -0.35rem 0 1.4rem;
+}
+.chart-card {
+  background: #ffffff;
+  border-radius: 14px;
+  box-shadow: 0 18px 34px rgba(2, 27, 70, 0.10);
+  padding: 20px;
+  margin-bottom: 2rem;
+  overflow: hidden;
+}
+.nowrap { white-space: nowrap; }
+.tabular-number { font-variant-numeric: tabular-nums; }

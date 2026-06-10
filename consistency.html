@@ -1,145 +1,49 @@
-
-    <!DOCTYPE html>
-    <html lang="pt-BR">
-    <head>
-      <meta charset="utf-8">
-      <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-      <title>Painel CABW - Consistência</title>
-      <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/css/bootstrap.min.css">
-  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
-      <link rel="stylesheet" type="text/css" href="css/style.css">
-      <script src="https://cdn.plot.ly/plotly-2.16.1.min.js"></script>
-    
-    </head>
-    <body>
-    
-    <nav class="navbar navbar-expand-lg navbar-dark bg-primary">
-  <a class="navbar-brand" href="index.html">Painel CABW</a>
-  <img src="cabw_logo.png" alt="Brasão da Comissão Aeronáutica Brasileira em Washington" class="header-logo">
-  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Alternar navegação">
-    <span class="navbar-toggler-icon"></span>
-  </button>
-  <div class="collapse navbar-collapse" id="navbarNav">
-    <ul class="navbar-nav mr-auto">
-      <li class="nav-item"><a class="nav-link" href="index.html">Início</a></li>
-      <li class="nav-item"><a class="nav-link" href="credito.html">Crédito Disponível</a></li>
-      <li class="nav-item"><a class="nav-link" href="contratos.html">Contratos</a></li>
-      <li class="nav-item"><a class="nav-link" href="processos.html">Processos de Contratação</a></li>
-      <li class="nav-item"><a class="nav-link" href="requisicoes.html">Requisições</a></li>
-      <li class="nav-item"><a class="nav-link" href="governanca.html">Governança</a></li>
-      <!-- Navegação secundária do painel de crédito disponível -->
-      <li class="nav-item"><a class="nav-link" href="ug.html">Análise por UG</a></li>
-      <li class="nav-item"><a class="nav-link" href="action.html">Análise por Ação</a></li>
-      <li class="nav-item"><a class="nav-link" href="detail.html">Detalhamento</a></li>
-<li class="nav-item active"><a class="nav-link" href="consistency.html" aria-current="page">Consistência</a></li>
-    </ul>
-  </div>
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1, shrink-to-fit=no" name="viewport"/>
+<title>Painel CABW - Consistência</title>
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/css/bootstrap.min.css" rel="stylesheet"/>
+<link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css" rel="stylesheet"/>
+<link href="css/style.css" rel="stylesheet" type="text/css"/>
+</head>
+<body>
+<nav class="navbar navbar-expand-lg navbar-dark bg-primary">
+<a class="navbar-brand" href="index.html">Painel CABW</a>
+<img alt="Brasão da Comissão Aeronáutica Brasileira em Washington" class="header-logo" src="cabw_logo.png"/>
+<button aria-controls="navbarNav" aria-expanded="false" aria-label="Alternar navegação" class="navbar-toggler" data-target="#navbarNav" data-toggle="collapse" type="button">
+<span class="navbar-toggler-icon"></span>
+</button>
+<div class="collapse navbar-collapse" id="navbarNav">
+<ul class="navbar-nav mr-auto">
+<li class="nav-item"><a class="nav-link" href="index.html">Início</a></li>
+<li class="nav-item"><a class="nav-link" href="credito.html">Crédito Disponível</a></li>
+<li class="nav-item"><a class="nav-link" href="contratos.html">Contratos</a></li>
+<li class="nav-item"><a class="nav-link" href="processos.html">Processos de Contratação</a></li>
+<li class="nav-item"><a class="nav-link" href="requisicoes.html">Requisições</a></li>
+<li class="nav-item"><a class="nav-link" href="governanca.html">Governança</a></li>
+<!-- Navegação secundária do painel de crédito disponível -->
+<li class="nav-item"><a class="nav-link" href="ug.html">Análise por UG</a></li>
+<li class="nav-item"><a class="nav-link" href="action.html">Análise por Ação</a></li>
+<li class="nav-item"><a class="nav-link" href="detail.html">Detalhamento</a></li>
+<li class="nav-item active"><a aria-current="page" class="nav-link" href="consistency.html">Consistência</a></li>
+</ul>
+</div>
 </nav>
-    
-    <div class="container-fluid mt-4">
-    <h1>Consistência dos Dados</h1>
+<main class="container-fluid mt-4">
+<h1>Consistência dos Dados</h1>
+<p class="credit-position-note">Validação atualizada com a posição de 10/06/2026.</p>
 <h2>Comparação de Totais (BI vs Relatórios)</h2>
-<table class="dataframe table table-striped table-sm">
-  <thead>
-    <tr style="text-align: right;">
-      <th>Data</th>
-      <th>Total calculado (US$)</th>
-      <th>Total do relatório (US$)</th>
-      <th>Diferença (US$)</th>
-      <th>Status</th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr>
-      <td>20/05/2026</td>
-      <td>US$ 3.623.185,99</td>
-      <td>US$ 3.623.185,99</td>
-      <td>US$ 0,00</td>
-      <td>Consistente</td>
-    </tr>
-    <tr>
-      <td>27/05/2026</td>
-      <td>US$ 4.721.584,23</td>
-      <td>US$ 4.721.584,23</td>
-      <td>US$ 0,00</td>
-      <td>Consistente</td>
-    </tr>
-    <tr>
-      <td>08/06/2026</td>
-      <td>US$ 4.220.076,27</td>
-      <td>US$ 4.220.076,27</td>
-      <td>US$ 0,00</td>
-      <td>Consistente</td>
-    </tr>
-  </tbody>
-</table><h2>Registros com Saldos Residuais (&lt; US$ 1,00)</h2>
-<table class="dataframe table table-striped table-sm">
-  <thead>
-    <tr style="text-align: right;">
-      <th>Date</th>
-      <th>UG</th>
-      <th>PTRES</th>
-      <th>Action_Code</th>
-      <th>Crédito Disponível</th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr>
-      <td>20/05/2026</td>
-      <td>120071</td>
-      <td>229177</td>
-      <td>2048</td>
-      <td>US$ 0,01</td>
-    </tr>
-    <tr>
-      <td>27/05/2026</td>
-      <td>120071</td>
-      <td>229177</td>
-      <td>2048</td>
-      <td>US$ 0,01</td>
-    </tr>
-    <tr>
-      <td>08/06/2026</td>
-      <td>120048</td>
-      <td>229166</td>
-      <td>20XV</td>
-      <td>US$ 0,01</td>
-    </tr>
-    <tr>
-      <td>08/06/2026</td>
-      <td>120071</td>
-      <td>229177</td>
-      <td>2048</td>
-      <td>US$ 0,01</td>
-    </tr>
-  </tbody>
-</table><h2>Referências não localizadas</h2>
-<p>Não foram encontradas UGs, PTRES ou Ações sem correspondência.</p><h2>Quantidade de Registros por Posição</h2>
-<table class="dataframe table table-striped table-sm">
-  <thead>
-    <tr style="text-align: right;">
-      <th>Data</th>
-      <th>Quantidade de registros</th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr>
-      <td>20/05/2026</td>
-      <td>26</td>
-    </tr>
-    <tr>
-      <td>27/05/2026</td>
-      <td>27</td>
-    </tr>
-    <tr>
-      <td>08/06/2026</td>
-      <td>31</td>
-    </tr>
-  </tbody>
-</table>
-    </div>
-    <script src="https://code.jquery.com/jquery-3.6.0.slim.min.js"></script>
+<div class="table-responsive"><table class="dataframe table table-striped table-sm"><thead><tr><th class="text-left">Data</th><th class="text-right tabular-number">Total calculado (US$)</th><th class="text-right tabular-number">Total do relatório (US$)</th><th class="text-right tabular-number">Diferença (US$)</th><th class="text-center">Status</th></tr></thead><tbody><tr><td class="text-left">20/05/2026</td><td class="text-right tabular-number">US$ 3.623.185,99</td><td class="text-right tabular-number">US$ 3.623.185,99</td><td class="text-right tabular-number">US$ 0,00</td><td class="text-center">Consistente</td></tr><tr><td class="text-left">27/05/2026</td><td class="text-right tabular-number">US$ 4.721.584,23</td><td class="text-right tabular-number">US$ 4.721.584,23</td><td class="text-right tabular-number">US$ 0,00</td><td class="text-center">Consistente</td></tr><tr><td class="text-left">08/06/2026</td><td class="text-right tabular-number">US$ 4.220.076,27</td><td class="text-right tabular-number">US$ 4.220.076,27</td><td class="text-right tabular-number">US$ 0,00</td><td class="text-center">Consistente</td></tr><tr><td class="text-left">10/06/2026</td><td class="text-right tabular-number">US$ 4.291.490,99</td><td class="text-right tabular-number">US$ 4.291.490,99</td><td class="text-right tabular-number">US$ 0,00</td><td class="text-center">Consistente</td></tr></tbody></table></div>
+<h2>Registros com Saldos Residuais (&lt; US$ 1,00)</h2>
+<div class="table-responsive"><table class="dataframe table table-striped table-sm"><thead><tr><th class="text-left">Data</th><th class="text-center">UG</th><th class="text-center">PTRES</th><th class="text-center">Ação</th><th class="text-right tabular-number">Crédito Disponível</th></tr></thead><tbody><tr><td class="text-left">20/05/2026</td><td class="text-center">120071</td><td class="text-center">229177</td><td class="text-center">2048</td><td class="text-right tabular-number">US$ 0,01</td></tr><tr><td class="text-left">27/05/2026</td><td class="text-center">120071</td><td class="text-center">229177</td><td class="text-center">2048</td><td class="text-right tabular-number">US$ 0,01</td></tr><tr><td class="text-left">08/06/2026</td><td class="text-center">120048</td><td class="text-center">229166</td><td class="text-center">20XV</td><td class="text-right tabular-number">US$ 0,01</td></tr><tr><td class="text-left">08/06/2026</td><td class="text-center">120071</td><td class="text-center">229177</td><td class="text-center">2048</td><td class="text-right tabular-number">US$ 0,01</td></tr><tr><td class="text-left">10/06/2026</td><td class="text-center">120048</td><td class="text-center">229166</td><td class="text-center">20XV</td><td class="text-right tabular-number">US$ 0,01</td></tr><tr><td class="text-left">10/06/2026</td><td class="text-center">120071</td><td class="text-center">229177</td><td class="text-center">2048</td><td class="text-right tabular-number">US$ 0,01</td></tr></tbody></table></div>
+<h2>Referências não localizadas na posição de 10/06/2026</h2>
+<div class="table-responsive"><table class="dataframe table table-striped table-sm"><thead><tr><th class="text-left">Data</th><th class="text-center">UG</th><th class="text-center">Sigla</th><th class="text-left">Unidade Gestora</th><th class="text-center">PTRES</th><th class="text-center">Ação</th><th class="text-left">Descrição</th><th class="text-right tabular-number">Crédito Disponível</th></tr></thead><tbody><tr><td class="text-left">10/06/2026</td><td class="text-center">120038</td><td class="text-center">DIRMAB</td><td class="text-left">DIRETORIA DE MATERIAL AERONÁUTICO E BÉLICO</td><td class="text-center">251050</td><td class="text-center">N/I-251050</td><td class="text-left">PTRES 251050 NÃO LOCALIZADO NA TABELA DE REFERÊNCIA</td><td class="text-right tabular-number">US$ 11.291,65</td></tr><tr><td class="text-left">10/06/2026</td><td class="text-center">120136</td><td class="text-center">N/I</td><td class="text-left">NÃO LOCALIZADA NA TABELA DE REFERÊNCIA</td><td class="text-center">229140</td><td class="text-center">N/I-229140</td><td class="text-left">PTRES 229140 NÃO LOCALIZADO NA TABELA DE REFERÊNCIA</td><td class="text-right tabular-number">US$ 32.799,62</td></tr><tr><td class="text-left">10/06/2026</td><td class="text-center">120700</td><td class="text-center">N/I</td><td class="text-left">NÃO LOCALIZADA NA TABELA DE REFERÊNCIA</td><td class="text-center">168901</td><td class="text-center">2000</td><td class="text-left">ADMINISTRAÇÃO DA UNIDADE</td><td class="text-right tabular-number">US$ 8.244,33</td></tr><tr><td class="text-left">10/06/2026</td><td class="text-center">120700</td><td class="text-center">N/I</td><td class="text-left">NÃO LOCALIZADA NA TABELA DE REFERÊNCIA</td><td class="text-center">168919</td><td class="text-center">2000</td><td class="text-left">ADMINISTRAÇÃO DA UNIDADE</td><td class="text-right tabular-number">US$ 4.570,61</td></tr></tbody></table></div>
+<h2>Quantidade de Registros por Posição</h2>
+<div class="table-responsive"><table class="dataframe table table-striped table-sm"><thead><tr><th class="text-left">Data</th><th class="text-center tabular-number">Quantidade de registros</th></tr></thead><tbody><tr><td class="text-left">20/05/2026</td><td class="text-center tabular-number">26</td></tr><tr><td class="text-left">27/05/2026</td><td class="text-center tabular-number">27</td></tr><tr><td class="text-left">08/06/2026</td><td class="text-center tabular-number">31</td></tr><tr><td class="text-left">10/06/2026</td><td class="text-center tabular-number">34</td></tr></tbody></table></div>
+</main>
+<script src="https://code.jquery.com/jquery-3.6.0.slim.min.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/js/bootstrap.bundle.min.js"></script>
-    </body>
-    </html>
-    
+</body>
+</html>
