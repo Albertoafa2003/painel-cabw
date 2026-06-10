@@ -109,8 +109,8 @@
     },
     {
       "Código UG": "120136",
-      "Sigla": "N/I",
-      "Unidade Gestora": "NÃO LOCALIZADA NA TABELA DE REFERÊNCIA",
+      "Sigla": "DIRAP",
+      "Unidade Gestora": "DIRETORIA DE ADMINISTRAÇÃO DO PESSOAL",
       "Lanç.": "1",
       "Crédito Disponível": "US$ 32.799,62",
       "% do Total": "0,76%"
@@ -125,8 +125,8 @@
     },
     {
       "Código UG": "120700",
-      "Sigla": "N/I",
-      "Unidade Gestora": "NÃO LOCALIZADA NA TABELA DE REFERÊNCIA",
+      "Sigla": "DIREF",
+      "Unidade Gestora": "DIRETORIA DE ECONOMIA E FINANÇAS DA AERONÁUTICA",
       "Lanç.": "2",
       "Crédito Disponível": "US$ 12.814,94",
       "% do Total": "0,30%"
@@ -199,7 +199,7 @@
     },
     {
       "Ação": "20IH",
-      "Descrição": "MODERNIZAÇÃO E REVITALIZAÇÃO DE AERONAVE - C97 / MODERNIZAÇÃO E REVITALIZAÇÃO DE AERONAVE - T2",
+      "Descrição": "MODERNIZAÇÃO E REVITALIZAÇÃO DE AERONAVE - T2 / MODERNIZAÇÃO E REVITALIZAÇÃO DE AERONAVE - C97",
       "PTRES Vinculados": "249587, 249589",
       "Lanç.": "2",
       "Crédito Disponível": "US$ 140.931,10",
@@ -230,16 +230,16 @@
       "% do Total": "0,82%"
     },
     {
-      "Ação": "N/I-229140",
-      "Descrição": "PTRES 229140 NÃO LOCALIZADO NA TABELA DE REFERÊNCIA",
+      "Ação": "2120",
+      "Descrição": "MOVIMENTAÇÃO DE MILITARES",
       "PTRES Vinculados": "229140",
       "Lanç.": "1",
       "Crédito Disponível": "US$ 32.799,62",
       "% do Total": "0,76%"
     },
     {
-      "Ação": "N/I-251050",
-      "Descrição": "PTRES 251050 NÃO LOCALIZADO NA TABELA DE REFERÊNCIA",
+      "Ação": "21EM",
+      "Descrição": "EMPREGO DAS FORÇAS ARMADAS",
       "PTRES Vinculados": "251050",
       "Lanç.": "1",
       "Crédito Disponível": "US$ 11.291,65",
@@ -295,7 +295,9 @@
       "Ação": "2048",
       "Descrição da Ação": "MANUTENÇÃO E SUPRIMENTO DE MATERIAL AERONÁUTICO",
       "Lanç.": "9",
-      "Crédito Disponível": "US$ 1.322.625,34"
+      "Crédito Disponível": "US$ 1.322.625,34",
+      "% do Total": "30,82%",
+      "Lançamentos": "9"
     },
     {
       "UG": "120026",
@@ -305,7 +307,9 @@
       "Ação": "20IH",
       "Descrição da Ação": "MODERNIZAÇÃO E REVITALIZAÇÃO DE AERONAVE - T2",
       "Lanç.": "1",
-      "Crédito Disponível": "US$ 140.293,45"
+      "Crédito Disponível": "US$ 140.293,45",
+      "% do Total": "3,27%",
+      "Lançamentos": "1"
     },
     {
       "UG": "120026",
@@ -315,7 +319,9 @@
       "Ação": "20XV",
       "Descrição da Ação": "OPERAÇÃO E MANUTENÇÃO DE EQUIPAMENTOS DO SISCEAB",
       "Lanç.": "3",
-      "Crédito Disponível": "US$ 111.395,07"
+      "Crédito Disponível": "US$ 111.395,07",
+      "% do Total": "2,60%",
+      "Lançamentos": "3"
     },
     {
       "UG": "120026",
@@ -325,7 +331,9 @@
       "Ação": "20IH",
       "Descrição da Ação": "MODERNIZAÇÃO E REVITALIZAÇÃO DE AERONAVE - C97",
       "Lanç.": "1",
-      "Crédito Disponível": "US$ 637,65"
+      "Crédito Disponível": "US$ 637,65",
+      "% do Total": "0,01%",
+      "Lançamentos": "1"
     },
     {
       "UG": "120036",
@@ -335,7 +343,9 @@
       "Ação": "20XV",
       "Descrição da Ação": "OPERAÇÃO E MANUTENÇÃO DE EQUIPAMENTOS DO SISCEAB",
       "Lanç.": "5",
-      "Crédito Disponível": "US$ 35.663,92"
+      "Crédito Disponível": "US$ 35.663,92",
+      "% do Total": "0,83%",
+      "Lançamentos": "5"
     },
     {
       "UG": "120038",
@@ -345,17 +355,21 @@
       "Ação": "20X7",
       "Descrição da Ação": "EMPREGO CONJUNTO OU COMBINADO DAS FFAA",
       "Lanç.": "1",
-      "Crédito Disponível": "US$ 341.592,45"
+      "Crédito Disponível": "US$ 341.592,45",
+      "% do Total": "7,96%",
+      "Lançamentos": "1"
     },
     {
       "UG": "120038",
       "Sigla": "DIRMAB",
       "Unidade Gestora": "DIRETORIA DE MATERIAL AERONÁUTICO E BÉLICO",
       "PTRES": "251050",
-      "Ação": "N/I-251050",
-      "Descrição da Ação": "PTRES 251050 NÃO LOCALIZADO NA TABELA DE REFERÊNCIA",
+      "Ação": "21EM",
+      "Descrição da Ação": "EMPREGO DAS FORÇAS ARMADAS",
       "Lanç.": "1",
-      "Crédito Disponível": "US$ 11.291,65"
+      "Crédito Disponível": "US$ 11.291,65",
+      "% do Total": "0,26%",
+      "Lançamentos": "1"
     },
     {
       "UG": "120038",
@@ -365,7 +379,9 @@
       "Ação": "2048",
       "Descrição da Ação": "MANUTENÇÃO E SUPRIMENTO DE MATERIAL AERONÁUTICO",
       "Lanç.": "1",
-      "Crédito Disponível": "US$ 1.050,00"
+      "Crédito Disponível": "US$ 1.050,00",
+      "% do Total": "0,02%",
+      "Lançamentos": "1"
     },
     {
       "UG": "120047",
@@ -375,7 +391,9 @@
       "Ação": "21A0",
       "Descrição da Ação": "APRESTAMENTO DAS FFAA",
       "Lanç.": "2",
-      "Crédito Disponível": "US$ 85.518,60"
+      "Crédito Disponível": "US$ 85.518,60",
+      "% do Total": "1,99%",
+      "Lançamentos": "2"
     },
     {
       "UG": "120048",
@@ -385,7 +403,9 @@
       "Ação": "20XV",
       "Descrição da Ação": "OPERAÇÃO E MANUTENÇÃO DE EQUIPAMENTOS DO SISCEAB",
       "Lanç.": "1",
-      "Crédito Disponível": "US$ 0,01"
+      "Crédito Disponível": "US$ 0,01",
+      "% do Total": "0,00%",
+      "Lançamentos": "1"
     },
     {
       "UG": "120049",
@@ -395,7 +415,9 @@
       "Ação": "20XV",
       "Descrição da Ação": "OPERAÇÃO E MANUTENÇÃO DE EQUIPAMENTOS DO SISCEAB",
       "Lanç.": "4",
-      "Crédito Disponível": "US$ 665.140,23"
+      "Crédito Disponível": "US$ 665.140,23",
+      "% do Total": "15,50%",
+      "Lançamentos": "4"
     },
     {
       "UG": "120049",
@@ -405,7 +427,9 @@
       "Ação": "2048",
       "Descrição da Ação": "MANUTENÇÃO E SUPRIMENTO DE MATERIAL AERONÁUTICO",
       "Lanç.": "2",
-      "Crédito Disponível": "US$ 1.258,99"
+      "Crédito Disponível": "US$ 1.258,99",
+      "% do Total": "0,03%",
+      "Lançamentos": "2"
     },
     {
       "UG": "120068",
@@ -415,7 +439,9 @@
       "Ação": "20XV",
       "Descrição da Ação": "OPERAÇÃO E MANUTENÇÃO DE EQUIPAMENTOS DO SISCEAB",
       "Lanç.": "3",
-      "Crédito Disponível": "US$ 20.592,02"
+      "Crédito Disponível": "US$ 20.592,02",
+      "% do Total": "0,48%",
+      "Lançamentos": "3"
     },
     {
       "UG": "120068",
@@ -425,7 +451,9 @@
       "Ação": "2048",
       "Descrição da Ação": "MANUTENÇÃO E SUPRIMENTO DE MATERIAL AERONÁUTICO",
       "Lanç.": "4",
-      "Crédito Disponível": "US$ 3.195,93"
+      "Crédito Disponível": "US$ 3.195,93",
+      "% do Total": "0,07%",
+      "Lançamentos": "4"
     },
     {
       "UG": "120071",
@@ -435,7 +463,9 @@
       "Ação": "2000",
       "Descrição da Ação": "ADMINISTRAÇÃO DA UNIDADE",
       "Lanç.": "1",
-      "Crédito Disponível": "US$ 12.444,79"
+      "Crédito Disponível": "US$ 12.444,79",
+      "% do Total": "0,29%",
+      "Lançamentos": "1"
     },
     {
       "UG": "120071",
@@ -445,7 +475,9 @@
       "Ação": "2048",
       "Descrição da Ação": "MANUTENÇÃO E SUPRIMENTO DE MATERIAL AERONÁUTICO",
       "Lanç.": "1",
-      "Crédito Disponível": "US$ 0,01"
+      "Crédito Disponível": "US$ 0,01",
+      "% do Total": "0,00%",
+      "Lançamentos": "1"
     },
     {
       "UG": "120090",
@@ -455,7 +487,9 @@
       "Ação": "2868",
       "Descrição da Ação": "COMBUSTÍVEIS E LUBRIFICANTES DE AVIAÇÃO",
       "Lanç.": "1",
-      "Crédito Disponível": "US$ 409.688,58"
+      "Crédito Disponível": "US$ 409.688,58",
+      "% do Total": "9,55%",
+      "Lançamentos": "1"
     },
     {
       "UG": "120090",
@@ -465,7 +499,9 @@
       "Ação": "20XV",
       "Descrição da Ação": "OPERAÇÃO E MANUTENÇÃO DE EQUIPAMENTOS DO SISCEAB",
       "Lanç.": "1",
-      "Crédito Disponível": "US$ 35.075,10"
+      "Crédito Disponível": "US$ 35.075,10",
+      "% do Total": "0,82%",
+      "Lançamentos": "1"
     },
     {
       "UG": "120090",
@@ -475,7 +511,9 @@
       "Ação": "2004",
       "Descrição da Ação": "ASSISTÊNCIA MÉDICA E ODONTOLÓGICA",
       "Lanç.": "1",
-      "Crédito Disponível": "US$ 1.000,00"
+      "Crédito Disponível": "US$ 1.000,00",
+      "% do Total": "0,02%",
+      "Lançamentos": "1"
     },
     {
       "UG": "120090",
@@ -485,7 +523,9 @@
       "Ação": "2000",
       "Descrição da Ação": "ADMINISTRAÇÃO DA UNIDADE",
       "Lanç.": "1",
-      "Crédito Disponível": "US$ 556,96"
+      "Crédito Disponível": "US$ 556,96",
+      "% do Total": "0,01%",
+      "Lançamentos": "1"
     },
     {
       "UG": "120090",
@@ -495,7 +535,9 @@
       "Ação": "2004",
       "Descrição da Ação": "ASSISTÊNCIA MÉDICA E ODONTOLÓGICA",
       "Lanç.": "1",
-      "Crédito Disponível": "US$ 214,94"
+      "Crédito Disponível": "US$ 214,94",
+      "% do Total": "0,01%",
+      "Lançamentos": "1"
     },
     {
       "UG": "120091",
@@ -505,7 +547,9 @@
       "Ação": "2000",
       "Descrição da Ação": "ADMINISTRAÇÃO DA UNIDADE",
       "Lanç.": "1",
-      "Crédito Disponível": "US$ 8.390,54"
+      "Crédito Disponível": "US$ 8.390,54",
+      "% do Total": "0,20%",
+      "Lançamentos": "1"
     },
     {
       "UG": "120111",
@@ -515,7 +559,9 @@
       "Ação": "2000",
       "Descrição da Ação": "ADMINISTRAÇÃO DA UNIDADE",
       "Lanç.": "5",
-      "Crédito Disponível": "US$ 41.760,16"
+      "Crédito Disponível": "US$ 41.760,16",
+      "% do Total": "0,97%",
+      "Lançamentos": "5"
     },
     {
       "UG": "120111",
@@ -525,7 +571,9 @@
       "Ação": "2000",
       "Descrição da Ação": "ADMINISTRAÇÃO DA UNIDADE",
       "Lanç.": "1",
-      "Crédito Disponível": "US$ 4.010,00"
+      "Crédito Disponível": "US$ 4.010,00",
+      "% do Total": "0,09%",
+      "Lançamentos": "1"
     },
     {
       "UG": "120111",
@@ -535,7 +583,9 @@
       "Ação": "20X1",
       "Descrição da Ação": "PARTICIPAÇÃO BRASILEIRA EM OPERAÇÕES",
       "Lanç.": "1",
-      "Crédito Disponível": "US$ 3.267,10"
+      "Crédito Disponível": "US$ 3.267,10",
+      "% do Total": "0,08%",
+      "Lançamentos": "1"
     },
     {
       "UG": "120111",
@@ -545,7 +595,9 @@
       "Ação": "151S",
       "Descrição da Ação": "IMPLANTAÇÃO E DESENVOLVIMENTO",
       "Lanç.": "2",
-      "Crédito Disponível": "US$ 2.030,10"
+      "Crédito Disponível": "US$ 2.030,10",
+      "% do Total": "0,05%",
+      "Lançamentos": "2"
     },
     {
       "UG": "120111",
@@ -555,7 +607,9 @@
       "Ação": "2D55",
       "Descrição da Ação": "ADIDÂNCIAS MILITARES NO EXTERIOR",
       "Lanç.": "1",
-      "Crédito Disponível": "US$ 748,61"
+      "Crédito Disponível": "US$ 748,61",
+      "% do Total": "0,02%",
+      "Lançamentos": "1"
     },
     {
       "UG": "120111",
@@ -565,7 +619,9 @@
       "Ação": "00UU",
       "Descrição da Ação": "CONTRIBUIÇÕES A ORGANISMOS INTERNACIONAIS",
       "Lanç.": "1",
-      "Crédito Disponível": "US$ 444,59"
+      "Crédito Disponível": "US$ 444,59",
+      "% do Total": "0,01%",
+      "Lançamentos": "1"
     },
     {
       "UG": "120115",
@@ -575,7 +631,9 @@
       "Ação": "151S",
       "Descrição da Ação": "IMPLANTAÇÃO E DESENVOLVIMENTO",
       "Lanç.": "1",
-      "Crédito Disponível": "US$ 2.000,00"
+      "Crédito Disponível": "US$ 2.000,00",
+      "% do Total": "0,05%",
+      "Lançamentos": "1"
     },
     {
       "UG": "120127",
@@ -585,17 +643,21 @@
       "Ação": "20XV",
       "Descrição da Ação": "OPERAÇÃO E MANUTENÇÃO DE EQUIPAMENTOS DO SISCEAB",
       "Lanç.": "1",
-      "Crédito Disponível": "US$ 949.003,80"
+      "Crédito Disponível": "US$ 949.003,80",
+      "% do Total": "22,11%",
+      "Lançamentos": "1"
     },
     {
       "UG": "120136",
-      "Sigla": "N/I",
-      "Unidade Gestora": "NÃO LOCALIZADA NA TABELA DE REFERÊNCIA",
+      "Sigla": "DIRAP",
+      "Unidade Gestora": "DIRETORIA DE ADMINISTRAÇÃO DO PESSOAL",
       "PTRES": "229140",
-      "Ação": "N/I-229140",
-      "Descrição da Ação": "PTRES 229140 NÃO LOCALIZADO NA TABELA DE REFERÊNCIA",
+      "Ação": "2120",
+      "Descrição da Ação": "MOVIMENTAÇÃO DE MILITARES",
       "Lanç.": "1",
-      "Crédito Disponível": "US$ 32.799,62"
+      "Crédito Disponível": "US$ 32.799,62",
+      "% do Total": "0,76%",
+      "Lançamentos": "1"
     },
     {
       "UG": "120141",
@@ -605,27 +667,33 @@
       "Ação": "21AI",
       "Descrição da Ação": "FUNCIONAMENTO E ATUALIZAÇÃO DE INFRAESTRUTURA",
       "Lanç.": "1",
-      "Crédito Disponível": "US$ 34.985,84"
+      "Crédito Disponível": "US$ 34.985,84",
+      "% do Total": "0,82%",
+      "Lançamentos": "1"
     },
     {
       "UG": "120700",
-      "Sigla": "N/I",
-      "Unidade Gestora": "NÃO LOCALIZADA NA TABELA DE REFERÊNCIA",
+      "Sigla": "DIREF",
+      "Unidade Gestora": "DIRETORIA DE ECONOMIA E FINANÇAS DA AERONÁUTICA",
       "PTRES": "168901",
       "Ação": "2000",
       "Descrição da Ação": "ADMINISTRAÇÃO DA UNIDADE",
       "Lanç.": "1",
-      "Crédito Disponível": "US$ 8.244,33"
+      "Crédito Disponível": "US$ 8.244,33",
+      "% do Total": "0,19%",
+      "Lançamentos": "1"
     },
     {
       "UG": "120700",
-      "Sigla": "N/I",
-      "Unidade Gestora": "NÃO LOCALIZADA NA TABELA DE REFERÊNCIA",
+      "Sigla": "DIREF",
+      "Unidade Gestora": "DIRETORIA DE ECONOMIA E FINANÇAS DA AERONÁUTICA",
       "PTRES": "168919",
       "Ação": "2000",
       "Descrição da Ação": "ADMINISTRAÇÃO DA UNIDADE",
       "Lanç.": "1",
-      "Crédito Disponível": "US$ 4.570,61"
+      "Crédito Disponível": "US$ 4.570,61",
+      "% do Total": "0,11%",
+      "Lançamentos": "1"
     }
   ]
 }
