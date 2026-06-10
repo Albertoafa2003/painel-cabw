@@ -1237,7 +1237,7 @@ table.dataTable thead th {
 
 .detail-kpi-grid {
   display: grid;
-  grid-template-columns: repeat(5, minmax(0, 1fr));
+  grid-template-columns: repeat(3, minmax(0, 1fr));
   gap: 16px;
   margin-top: 20px;
 }
@@ -1267,6 +1267,15 @@ table.dataTable thead th {
   font-weight: 800;
   line-height: 1.18;
   font-variant-numeric: tabular-nums;
+}
+
+.detail-kpi-card small {
+  display: block;
+  margin-top: 8px;
+  color: #667085;
+  font-size: 0.76rem;
+  font-weight: 700;
+  line-height: 1.3;
 }
 
 .detail-dt-top,

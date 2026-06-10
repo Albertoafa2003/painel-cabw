@@ -97,26 +97,21 @@
 <p aria-live="polite" class="detail-report-status" id="reportStatus"></p>
 </div>
 </section>
-<section aria-label="Indicadores dos registros filtrados" class="detail-kpi-grid">
-<article class="detail-kpi-card">
+<section aria-label="Indicadores dos registros filtrados" class="detail-kpi-grid detail-kpi-grid--compact">
+<article class="detail-kpi-card detail-kpi-card--primary">
 <span>Crédito disponível filtrado</span>
 <strong id="kpiCredit">US$ 0,00</strong>
-</article>
-<article class="detail-kpi-card">
-<span>Lançamentos</span>
-<strong id="kpiLaunches">0</strong>
-</article>
-<article class="detail-kpi-card">
-<span>Registros</span>
-<strong id="kpiRecords">0</strong>
+<small id="kpiCreditDate">Data-base: --</small>
 </article>
 <article class="detail-kpi-card">
 <span>Unidades Gestoras</span>
 <strong id="kpiUGs">0</strong>
+<small>Conforme filtros aplicados</small>
 </article>
 <article class="detail-kpi-card">
 <span>Ações</span>
 <strong id="kpiActions">0</strong>
+<small>Conforme filtros aplicados</small>
 </article>
 </section>
 <section aria-label="Tabela de detalhamento analítico" class="detail-table-card">
@@ -1172,8 +1167,7 @@
       generatePdf: document.getElementById('generatePdf'),
       reportStatus: document.getElementById('reportStatus'),
       kpiCredit: document.getElementById('kpiCredit'),
-      kpiLaunches: document.getElementById('kpiLaunches'),
-      kpiRecords: document.getElementById('kpiRecords'),
+      kpiCreditDate: document.getElementById('kpiCreditDate'),
       kpiUGs: document.getElementById('kpiUGs'),
       kpiActions: document.getElementById('kpiActions')
     };
@@ -1304,16 +1298,24 @@
       });
     }
 
+    function latestAvailableDate(records) {
+      var source = Array.isArray(records) && records.length ? records : detailRecords;
+      return uniqueBy(source, function (item) { return item.date; })
+        .sort(function (a, b) { return dateToSortValue(b.date).localeCompare(dateToSortValue(a.date)); })
+        .map(function (item) { return item.date; })[0] || '';
+    }
+
     function updateKpis() {
       var records = currentAppliedRecords();
-      var total = records.reduce(function (sum, item) { return sum + item.creditValue; }, 0);
-      var launches = records.reduce(function (sum, item) { return sum + item.launches; }, 0);
-      var ugs = new Set(records.map(function (item) { return item.ug; })).size;
-      var actions = new Set(records.map(function (item) { return item.action; })).size;
+      var selectedDate = els.filterDate ? els.filterDate.value : '';
+      var baseDate = selectedDate || latestAvailableDate(detailRecords);
+      var scopedRecords = records.filter(function (item) { return item.date === baseDate; });
+      var total = scopedRecords.reduce(function (sum, item) { return sum + item.creditValue; }, 0);
+      var ugs = new Set(scopedRecords.map(function (item) { return item.ug; })).size;
+      var actions = new Set(scopedRecords.map(function (item) { return item.action; })).size;
 
       if (els.kpiCredit) els.kpiCredit.textContent = formatCurrency(total);
-      if (els.kpiLaunches) els.kpiLaunches.textContent = launches.toLocaleString('pt-BR');
-      if (els.kpiRecords) els.kpiRecords.textContent = records.length.toLocaleString('pt-BR');
+      if (els.kpiCreditDate) els.kpiCreditDate.textContent = 'Data-base: ' + (baseDate || '--');
       if (els.kpiUGs) els.kpiUGs.textContent = ugs.toLocaleString('pt-BR');
       if (els.kpiActions) els.kpiActions.textContent = actions.toLocaleString('pt-BR');
     }
