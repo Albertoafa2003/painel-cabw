@@ -148,6 +148,7 @@
 
     const empresa = document.querySelector('#filterEmpresa');
     const unidade = document.querySelector('#filterUnidade');
+    const grandeComando = document.querySelector('#filterGrandeComando');
     const acao = document.querySelector('#filterAcao');
     const moeda = document.querySelector('#filterMoeda');
     const status = document.querySelector('#filterStatus');
@@ -160,6 +161,7 @@
 
     fillSelect(empresa, unique(baseRecords, 'empresa'), 'Todas as empresas');
     fillSelect(unidade, unique(baseRecords, 'unidade'), 'Todas as unidades');
+    fillSelect(grandeComando, unique(baseRecords, 'grandComando'), 'Todos os Grandes Comandos');
     fillSelect(acao, unique(baseRecords, 'acao'), 'Todas as ações');
     fillSelect(moeda, unique(baseRecords, 'moeda'), 'Todas as moedas');
 
@@ -167,6 +169,7 @@
       return {
         empresa: empresa ? empresa.value : '',
         unidade: unidade ? unidade.value : '',
+        grandeComando: grandeComando ? grandeComando.value : '',
         acao: acao ? acao.value : '',
         moeda: moeda ? moeda.value : '',
         status: status ? status.value : '',
@@ -180,11 +183,12 @@
       const filtered = baseRecords.filter(item => {
         const itemStatus = computeStatus(item);
         const searchable = normalize([
-          item.contrato, item.numero, item.unidade, item.empresa, item.objetoResumo,
-          item.acao, item.moeda, item.cage, item.grandComando
+          item.contrato, item.numero, item.unidade, item.grandComando, item.empresa, item.objetoResumo,
+          item.acao, item.moeda, item.cage
         ].join(' '));
         return (!terms.empresa || item.empresa === terms.empresa)
           && (!terms.unidade || item.unidade === terms.unidade)
+          && (!terms.grandeComando || item.grandComando === terms.grandeComando)
           && (!terms.acao || item.acao === terms.acao)
           && (!terms.moeda || item.moeda === terms.moeda)
           && (!terms.status || itemStatus === terms.status)
@@ -209,13 +213,14 @@
     function renderRows(records) {
       if (tableBody) {
         if (!records.length) {
-          tableBody.innerHTML = '<tr><td colspan="11" class="contracts-empty">Nenhum contrato encontrado para os filtros selecionados.</td></tr>';
+          tableBody.innerHTML = '<tr><td colspan="12" class="contracts-empty">Nenhum contrato encontrado para os filtros selecionados.</td></tr>';
         } else {
           tableBody.innerHTML = records.map(item => `
             <tr>
               <td>${escapeHtml(item.contrato)}</td>
               <td>${escapeHtml(item.numero)}</td>
               <td>${escapeHtml(item.unidade || '—')}</td>
+              <td>${escapeHtml(item.grandComando || '—')}</td>
               <td>${escapeHtml(item.empresa)}</td>
               <td class="contracts-object-cell">${escapeHtml(item.objetoResumo)}</td>
               <td>${escapeHtml(item.moeda)}</td>
@@ -243,6 +248,7 @@
               <p>${escapeHtml(item.objetoResumo)}</p>
               <dl>
                 <div><dt>Unidade</dt><dd>${escapeHtml(item.unidade || '—')}</dd></div>
+                <div><dt>Grande Comando</dt><dd>${escapeHtml(item.grandComando || '—')}</dd></div>
                 <div><dt>Ação</dt><dd>${escapeHtml(item.acao || '—')}</dd></div>
                 <div><dt>Valor</dt><dd>${money(item.valorContrato, item.moeda)}</dd></div>
                 <div><dt>Empenhado USD</dt><dd>${moneyUsd(item.totalEmpenhadoUsd)}</dd></div>
@@ -258,6 +264,7 @@
         ['Painel', categoryLabels[category] || 'Contratos'],
         ['Empresa', filterLabel(terms.empresa, 'Todas')],
         ['Unidade', filterLabel(terms.unidade, 'Todas')],
+        ['Grande Comando', filterLabel(terms.grandeComando, 'Todos')],
         ['Ação', filterLabel(terms.acao, 'Todas')],
         ['Moeda', filterLabel(terms.moeda, 'Todas')],
         ['Vigência', filterLabel(terms.status, 'Todas')],
@@ -288,7 +295,7 @@
       const sourceText = `Fonte: ${source.arquivo || 'Relatório de contratos'}${source.atualizadoEm ? ' - ' + source.atualizadoEm : ''}`;
       const pageWidth = doc.internal.pageSize.getWidth();
       const pageHeight = doc.internal.pageSize.getHeight();
-      const marginX = 34;
+      const marginX = 30;
 
       doc.setProperties({
         title: `Painel CABW - ${title}`,
@@ -319,7 +326,7 @@
         body: buildFilterRows(terms).map(row => row.map(textForPdf)),
         styles: { font: 'helvetica', fontSize: 8, cellPadding: 4, textColor: [6, 38, 91] },
         headStyles: { fillColor: [0, 43, 102], textColor: 255, fontStyle: 'bold' },
-        columnStyles: { 0: { cellWidth: 90, fontStyle: 'bold' }, 1: { cellWidth: pageWidth - (marginX * 2) - 90 } }
+        columnStyles: { 0: { cellWidth: 100, fontStyle: 'bold' }, 1: { cellWidth: pageWidth - (marginX * 2) - 100 } }
       });
 
       doc.autoTable({
@@ -342,6 +349,7 @@
         item.contrato,
         item.numero,
         item.unidade || '-',
+        item.grandComando || '-',
         item.empresa,
         item.objetoResumo,
         item.moeda,
@@ -357,34 +365,35 @@
         margin: { left: marginX, right: marginX, bottom: 30 },
         theme: 'striped',
         head: [[
-          'Contrato', 'Número', 'Unidade', 'Empresa', 'Objeto Resumido', 'Moeda',
+          'Contrato', 'Número', 'Unidade', 'Grande Comando', 'Empresa', 'Objeto Resumido', 'Moeda',
           'Valor Contrato', 'Empenhado USD', 'Faturado USD', 'Data Final', 'Vigência'
         ]],
         body: tableRows,
         styles: {
           font: 'helvetica',
-          fontSize: 6.2,
-          cellPadding: 3,
+          fontSize: 5.8,
+          cellPadding: 2.6,
           overflow: 'linebreak',
           valign: 'top',
           textColor: [6, 38, 91],
           lineColor: [226, 232, 240],
           lineWidth: 0.2
         },
-        headStyles: { fillColor: [0, 43, 102], textColor: 255, fontStyle: 'bold', fontSize: 6.4 },
+        headStyles: { fillColor: [0, 43, 102], textColor: 255, fontStyle: 'bold', fontSize: 5.7 },
         alternateRowStyles: { fillColor: [246, 248, 251] },
         columnStyles: {
-          0: { cellWidth: 46 },
-          1: { cellWidth: 78 },
-          2: { cellWidth: 38 },
-          3: { cellWidth: 112 },
-          4: { cellWidth: 160 },
-          5: { cellWidth: 34, halign: 'center' },
-          6: { cellWidth: 74, halign: 'right' },
-          7: { cellWidth: 74, halign: 'right' },
-          8: { cellWidth: 74, halign: 'right' },
-          9: { cellWidth: 52, halign: 'center' },
-          10: { cellWidth: 52, halign: 'center' }
+          0: { cellWidth: 42 },
+          1: { cellWidth: 68 },
+          2: { cellWidth: 36 },
+          3: { cellWidth: 52 },
+          4: { cellWidth: 100 },
+          5: { cellWidth: 138 },
+          6: { cellWidth: 30, halign: 'center' },
+          7: { cellWidth: 62, halign: 'right' },
+          8: { cellWidth: 62, halign: 'right' },
+          9: { cellWidth: 62, halign: 'right' },
+          10: { cellWidth: 48, halign: 'center' },
+          11: { cellWidth: 46, halign: 'center' }
         },
         didDrawPage: function () {
           const pageNo = doc.internal.getNumberOfPages();
@@ -402,13 +411,14 @@
         filenamePart(terms.empresa),
         filenamePart(terms.status),
         filenamePart(terms.unidade),
+        filenamePart(terms.grandeComando),
         filenamePart(terms.acao)
       ].filter(Boolean).join('-') || 'relatorio-contratos';
 
       doc.save(`${filename}.pdf`);
     }
 
-    [empresa, unidade, acao, moeda, status, search].forEach(input => {
+    [empresa, unidade, grandeComando, acao, moeda, status, search].forEach(input => {
       if (input) input.addEventListener(input.tagName === 'INPUT' ? 'input' : 'change', applyFilters);
     });
 
@@ -420,7 +430,7 @@
 
     if (reset) {
       reset.addEventListener('click', function () {
-        [empresa, unidade, acao, moeda, status].forEach(input => { if (input) input.value = ''; });
+        [empresa, unidade, grandeComando, acao, moeda, status].forEach(input => { if (input) input.value = ''; });
         if (search) search.value = '';
         applyFilters();
       });

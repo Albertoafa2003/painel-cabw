@@ -1547,7 +1547,7 @@ table.dataTable thead th {
 
 .contracts-filter-grid {
   display: grid;
-  grid-template-columns: repeat(5, minmax(0, 1fr));
+  grid-template-columns: repeat(6, minmax(0, 1fr));
   gap: 14px;
 }
 
@@ -1608,7 +1608,7 @@ table.dataTable thead th {
 
 .contracts-table {
   width: 100%;
-  min-width: 1180px;
+  min-width: 1360px;
   border-collapse: separate;
   border-spacing: 0;
   color: var(--cabw-ink);

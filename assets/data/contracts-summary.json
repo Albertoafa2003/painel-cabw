@@ -5,6 +5,15 @@
     "administrativos": 21,
     "finalisticos": 62
   },
+  "grandComandos": [
+    "CMTAER",
+    "COMGAP",
+    "DCTA",
+    "DECEA",
+    "GABAER",
+    "SEFA"
+  ],
   "duplicates_check": "ok",
-  "source": "RelContrFin09 06 26 16 07 00.XLS"
+  "source": "RelContrFin09 06 26 16 07 00 - 10062026(1).xls",
+  "updatedFrom": "RelContrFin09 06 26 16 07 00 - 10062026(1).xls"
 }
