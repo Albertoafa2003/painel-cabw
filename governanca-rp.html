@@ -6,9 +6,12 @@
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/css/bootstrap.min.css">
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
   <link rel="stylesheet" type="text/css" href="css/style.css">
+  <script src="https://cdn.plot.ly/plotly-2.16.1.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/jspdf@2.5.1/dist/jspdf.umd.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/jspdf-autotable@3.8.2/dist/jspdf.plugin.autotable.min.js"></script>
   <title>Painel CABW - RP</title>
 </head>
-<body class="module-page governance-page governance-detail-page">
+<body class="module-page governance-page governance-detail-page rp-page">
 
 <nav class="navbar navbar-expand-lg navbar-dark bg-primary">
   <a class="navbar-brand" href="index.html">Painel CABW</a>
@@ -28,36 +31,141 @@
   </div>
 </nav>
 
-<main class="container-fluid mt-4 governance-detail-container" aria-label="RP">
+<main class="container-fluid mt-4 governance-detail-container rp-dashboard" aria-label="RP - Controle de Restos a Pagar">
   <a href="governanca.html" class="governance-back-link"><i class="bi bi-arrow-left"></i> Voltar para Governança</a>
 
-  <section class="governance-detail-card">
+  <section class="governance-detail-card rp-hero-card">
     <span class="governance-detail-card__icon" aria-hidden="true"><i class="bi bi-cash-coin"></i></span>
     <div>
       <span class="governance-eyebrow">Painel de Governança</span>
-      <h1>RP</h1>
-      <p>Painel destinado ao controle gerencial de Restos a Pagar, com foco em saldo, execução e pendências.</p>
-      <p class="governance-detail-card__status">Estrutura do painel criada. A carga de dados poderá ser conectada assim que a base correspondente for fornecida.</p>
+      <h1>RP – Controle de Restos a Pagar</h1>
+      <p>Analise o saldo de Restos a Pagar por OM, por contrato/PAG, por ano do RP e por empenho.</p>
+      <p class="governance-detail-card__status" id="rpSourceInfo">Carregando base de RP...</p>
     </div>
   </section>
 
-  <section class="governance-workbench" aria-label="Escopo do painel">
-    <div class="governance-workbench__header">
-      <div>
-        <h2>Controle de Restos a Pagar</h2>
-        <p>Esta área está preparada para receber filtros, indicadores, tabelas e relatórios específicos do painel.</p>
+  <section class="rp-control-grid" aria-label="Filtros e relatório">
+    <article class="rp-card rp-filter-card">
+      <div class="rp-card-heading">
+        <span class="rp-card-icon"><i class="bi bi-funnel"></i></span>
+        <div>
+          <h2>Filtros do painel</h2>
+          <p>Refine os saldos por ano, OM, contrato/PAG, empenho ou texto livre.</p>
+        </div>
       </div>
-      <span class="governance-badge">Em implantação</span>
+      <div class="rp-filter-grid">
+        <label>
+          <span>Ano do RP</span>
+          <select id="rpYearFilter" class="form-control"></select>
+        </label>
+        <label>
+          <span>OM responsável</span>
+          <select id="rpOmFilter" class="form-control"></select>
+        </label>
+        <label>
+          <span>Contrato ou PAG</span>
+          <select id="rpContractFilter" class="form-control"></select>
+        </label>
+        <label>
+          <span>Empenho</span>
+          <input id="rpEmpenhoFilter" class="form-control" type="search" placeholder="Ex.: 2025NE000123">
+        </label>
+        <label class="rp-filter-wide">
+          <span>Busca geral</span>
+          <input id="rpSearchFilter" class="form-control" type="search" placeholder="Credor, objeto, ação, programa, natureza...">
+        </label>
+      </div>
+      <div class="rp-actions">
+        <button id="rpClearFilters" class="btn btn-light rp-soft-button" type="button"><i class="bi bi-arrow-counterclockwise"></i> Limpar filtros</button>
+      </div>
+    </article>
+
+    <article class="rp-card rp-report-card">
+      <div class="rp-card-heading">
+        <span class="rp-card-icon"><i class="bi bi-file-earmark-pdf"></i></span>
+        <div>
+          <h2>Relatório em PDF</h2>
+          <p>Gere um relatório gerencial conforme os filtros selecionados, incluindo saldos por OM, contrato/PAG, ano e detalhamento dos empenhos.</p>
+        </div>
+      </div>
+      <button id="rpGeneratePdf" class="btn rp-primary-button" type="button"><i class="bi bi-filetype-pdf"></i> Gerar relatório PDF</button>
+    </article>
+  </section>
+
+  <section class="rp-kpi-grid" aria-label="Indicadores de Restos a Pagar">
+    <article class="rp-kpi"><span>Saldo de RP filtrado</span><strong id="rpKpiSaldo">US$ 0,00</strong></article>
+    <article class="rp-kpi"><span>OMs</span><strong id="rpKpiOms">0</strong></article>
+    <article class="rp-kpi"><span>Contratos/PAG</span><strong id="rpKpiContratos">0</strong></article>
+    <article class="rp-kpi"><span>Anos do RP</span><strong id="rpKpiAnos">0</strong></article>
+    <article class="rp-kpi"><span>Empenhos</span><strong id="rpKpiEmpenhos">0</strong></article>
+  </section>
+
+  <section class="rp-chart-grid" aria-label="Gráficos gerenciais de Restos a Pagar">
+    <article class="rp-card rp-chart-card"><div id="rpOmChart" class="rp-plot"></div></article>
+    <article class="rp-card rp-chart-card"><div id="rpContractChart" class="rp-plot"></div></article>
+    <article class="rp-card rp-chart-card rp-chart-card--year"><div id="rpYearChart" class="rp-plot"></div></article>
+  </section>
+
+  <section class="rp-summary-grid" aria-label="Tabelas de saldos consolidados">
+    <article class="rp-card rp-table-card">
+      <h2>Saldo de RP por OM</h2>
+      <div class="table-responsive">
+        <table class="table table-striped table-sm rp-table">
+          <thead><tr><th>OM</th><th class="text-right">Saldo RP</th><th class="text-center">Contratos/PAG</th><th class="text-center">Empenhos</th></tr></thead>
+          <tbody id="rpOmSummaryBody"></tbody>
+        </table>
+      </div>
+    </article>
+    <article class="rp-card rp-table-card">
+      <h2>Saldo de RP por Contrato/PAG</h2>
+      <div class="table-responsive">
+        <table class="table table-striped table-sm rp-table">
+          <thead><tr><th>Contrato/PAG</th><th class="text-right">Saldo RP</th><th class="text-center">OMs</th><th class="text-center">Empenhos</th></tr></thead>
+          <tbody id="rpContractSummaryBody"></tbody>
+        </table>
+      </div>
+    </article>
+    <article class="rp-card rp-table-card rp-table-card--year">
+      <h2>Saldo de RP por Ano</h2>
+      <div class="table-responsive">
+        <table class="table table-striped table-sm rp-table">
+          <thead><tr><th>Ano do RP</th><th class="text-right">Saldo RP</th><th class="text-center">OMs</th><th class="text-center">Contratos/PAG</th><th class="text-center">Empenhos</th></tr></thead>
+          <tbody id="rpYearSummaryBody"></tbody>
+        </table>
+      </div>
+    </article>
+  </section>
+
+  <section class="rp-card rp-detail-card" aria-label="Detalhamento dos empenhos de Restos a Pagar">
+    <div class="rp-detail-header">
+      <div>
+        <h2>Detalhamento dos empenhos</h2>
+        <p id="rpRowsInfo">Carregando registros...</p>
+      </div>
+      <span class="rp-detail-badge">prévia limitada a 300 linhas</span>
     </div>
-    <ul class="governance-feature-list">
-          <li><i class="bi bi-check2-circle" aria-hidden="true"></i><span>Consulta por credor, empenho, unidade, natureza de despesa e situação.</span></li>
-          <li><i class="bi bi-check2-circle" aria-hidden="true"></i><span>Acompanhamento de valores inscritos, liquidados, pagos e a liquidar.</span></li>
-          <li><i class="bi bi-check2-circle" aria-hidden="true"></i><span>Base preparada para relatórios de pendências e execução por período.</span></li>
-    </ul>
+    <div class="table-responsive">
+      <table class="table table-striped table-sm rp-table rp-detail-table">
+        <thead>
+          <tr>
+            <th>Ano</th>
+            <th>OM</th>
+            <th>Contrato/PAG</th>
+            <th>Empenho</th>
+            <th>Credor</th>
+            <th>Objeto / Descrição</th>
+            <th class="text-right">Saldo RP</th>
+          </tr>
+        </thead>
+        <tbody id="rpDetailBody"></tbody>
+      </table>
+    </div>
   </section>
 </main>
 
 <script src="https://code.jquery.com/jquery-3.6.0.slim.min.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/js/bootstrap.bundle.min.js"></script>
+<script src="assets/js/rp-data.js"></script>
+<script src="assets/js/rp-panel.js"></script>
 </body>
 </html>

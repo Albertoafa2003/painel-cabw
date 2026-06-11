@@ -1,0 +1,111 @@
+{
+  "sourceFile": "PAINEL CABW - RP(1).xlsx",
+  "totalRegistros": 4359,
+  "totalSaldoUsd": 463370552.07,
+  "totalOms": 31,
+  "totalContratosPag": 324,
+  "totalAnosRp": 4,
+  "totalEmpenhos": 925,
+  "porAno": [
+    {
+      "label": "2022",
+      "saldoUsd": 7255843.92
+    },
+    {
+      "label": "2023",
+      "saldoUsd": 3471883.42
+    },
+    {
+      "label": "2024",
+      "saldoUsd": 16207273.44
+    },
+    {
+      "label": "2025",
+      "saldoUsd": 436435551.29
+    }
+  ],
+  "topOms": [
+    {
+      "label": "PARQUE MATERIAL AER. DO GALEAO",
+      "saldoUsd": 134448575.23
+    },
+    {
+      "label": "PARQUE DE MATERIAL AER. DE SAO PAULO",
+      "saldoUsd": 120897723.5
+    },
+    {
+      "label": "PARQUE DE MATERIAL AER. LAGOA SANTA",
+      "saldoUsd": 96238936.47
+    },
+    {
+      "label": "COMISSAO IMPTC. SISTEMA CTR. ESPC.AEREO BRASILEIRO",
+      "saldoUsd": 33282996.19
+    },
+    {
+      "label": "PARQUE MATERIAL BELICO AER. RJ",
+      "saldoUsd": 30265762.52
+    },
+    {
+      "label": "DIRETORIA DE MATERIAL AERONAUTICA E BELICO",
+      "saldoUsd": 24708841.54
+    },
+    {
+      "label": "COMISSAO AERO. BRASILEIRA EM WASHINGTON",
+      "saldoUsd": 11281308.03
+    },
+    {
+      "label": "PARQUE MATERIAL ELET. AERONAUTICA RJ",
+      "saldoUsd": 6296618.32
+    },
+    {
+      "label": "GABINETE DO COMANDANTE DA AERONAUTICA",
+      "saldoUsd": 1675641.88
+    },
+    {
+      "label": "DIRETORIA DE SAUDE DA AERONAUTICA",
+      "saldoUsd": 864840.1
+    }
+  ],
+  "topContratos": [
+    {
+      "label": "028/CABW-PAMAGL/2025",
+      "saldoUsd": 93600000.0
+    },
+    {
+      "label": "BR-D-KCQ-USAF",
+      "saldoUsd": 58416252.84
+    },
+    {
+      "label": "021/CABW-PAMASP/2025",
+      "saldoUsd": 33461834.19
+    },
+    {
+      "label": "240609",
+      "saldoUsd": 29676874.92
+    },
+    {
+      "label": "051/CELOG-PAMASP/2024",
+      "saldoUsd": 27281785.28
+    },
+    {
+      "label": "BR-D-QAQ-USAF",
+      "saldoUsd": 25695218.97
+    },
+    {
+      "label": "005/CAE-CABW-CISCEA/2024",
+      "saldoUsd": 24496037.54
+    },
+    {
+      "label": "240299",
+      "saldoUsd": 14497760.01
+    },
+    {
+      "label": "240104",
+      "saldoUsd": 11904573.01
+    },
+    {
+      "label": "190860",
+      "saldoUsd": 9880409.52
+    }
+  ]
+}
