@@ -2774,3 +2774,23 @@ table.dataTable thead th {
     font-size: 1.28rem;
   }
 }
+
+
+/* ===== Processos de Contratação ===== */
+.processes-page .governance-menu-grid,
+.processes-menu-grid {
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  max-width: 980px;
+}
+
+.processes-menu-card .governance-menu-card__icon {
+  background: linear-gradient(180deg, rgba(0, 54, 118, 0.12), rgba(255, 210, 0, 0.14));
+}
+
+@media (max-width: 767.98px) {
+  .processes-page .governance-menu-grid,
+  .processes-menu-grid {
+    grid-template-columns: 1fr;
+    max-width: none;
+  }
+}
