@@ -8,7 +8,7 @@
   <link rel="stylesheet" type="text/css" href="css/style.css">
   <title>Painel CABW - CABW em Números</title>
 </head>
-<body class="module-page governance-page governance-detail-page">
+<body class="module-page governance-page governance-detail-page cabw-numbers-page">
 
 <nav class="navbar navbar-expand-lg navbar-dark bg-primary">
   <a class="navbar-brand" href="index.html">Painel CABW</a>
@@ -28,36 +28,196 @@
   </div>
 </nav>
 
-<main class="container-fluid mt-4 governance-detail-container" aria-label="CABW em Números">
+<main class="container-fluid mt-4 governance-detail-container numbers-dashboard" aria-label="CABW em Números">
   <a href="governanca.html" class="governance-back-link"><i class="bi bi-arrow-left"></i> Voltar para Governança</a>
 
-  <section class="governance-detail-card">
-    <span class="governance-detail-card__icon" aria-hidden="true"><i class="bi bi-bar-chart-line"></i></span>
-    <div>
-      <span class="governance-eyebrow">Painel de Governança</span>
+  <section class="numbers-hero">
+    <div class="numbers-hero__content">
+      <span class="numbers-hero__eyebrow">Painel de Governança</span>
       <h1>CABW em Números</h1>
-      <p>Painel destinado à visão executiva dos principais números da CABW para suporte à governança e à tomada de decisão.</p>
-      <p class="governance-detail-card__status">Estrutura do painel criada. A carga de dados poderá ser conectada assim que a base correspondente for fornecida.</p>
+      <p>Visão executiva consolidada dos principais números da CABW, integrando contratos, crédito disponível e restos a pagar em uma leitura simples, visual e orientada à tomada de decisão.</p>
+      <div class="numbers-hero__meta" data-source-summary>Carregando bases de dados...</div>
+    </div>
+    <div class="numbers-hero__glance">
+      <div class="numbers-glance-card">
+        <span class="numbers-glance-card__label">Posição do Crédito</span>
+        <strong data-cabw-number="credit-position">--/--/----</strong>
+      </div>
+      <div class="numbers-glance-card">
+        <span class="numbers-glance-card__label">Base de Contratos</span>
+        <strong data-cabw-number="contracts-total">0</strong>
+      </div>
+      <div class="numbers-glance-card">
+        <span class="numbers-glance-card__label">Base de RP</span>
+        <strong data-cabw-number="rp-registros">0</strong>
+      </div>
     </div>
   </section>
 
-  <section class="governance-workbench" aria-label="Escopo do painel">
-    <div class="governance-workbench__header">
-      <div>
-        <h2>Indicadores consolidados da CABW</h2>
-        <p>Esta área está preparada para receber filtros, indicadores, tabelas e relatórios específicos do painel.</p>
+  <section class="numbers-kpis" aria-label="Indicadores consolidados">
+    <article class="numbers-kpi-card">
+      <div class="numbers-kpi-card__icon"><i class="bi bi-file-earmark-check"></i></div>
+      <div class="numbers-kpi-card__body">
+        <span class="numbers-kpi-card__label">Número de Contratos Vigentes</span>
+        <strong class="numbers-kpi-card__value" data-cabw-number="contratos-vigentes">0</strong>
+        <small class="numbers-kpi-card__note">Contratos com vigência ativa na base atual.</small>
       </div>
-      <span class="governance-badge">Em implantação</span>
+    </article>
+
+    <article class="numbers-kpi-card numbers-kpi-card--wide">
+      <div class="numbers-kpi-card__icon"><i class="bi bi-cash-stack"></i></div>
+      <div class="numbers-kpi-card__body">
+        <span class="numbers-kpi-card__label">Valor Total Contratado</span>
+        <strong class="numbers-kpi-card__value numbers-kpi-card__value--multiline" data-cabw-number="valor-total-contratado">-</strong>
+        <small class="numbers-kpi-card__note">Consolidado da base contratual, respeitando as moedas originais.</small>
+      </div>
+    </article>
+
+    <article class="numbers-kpi-card">
+      <div class="numbers-kpi-card__icon"><i class="bi bi-wallet2"></i></div>
+      <div class="numbers-kpi-card__body">
+        <span class="numbers-kpi-card__label">Crédito Disponível Total</span>
+        <strong class="numbers-kpi-card__value" data-cabw-number="credito-disponivel">-</strong>
+        <small class="numbers-kpi-card__note">Valor total disponível na posição mais atual.</small>
+      </div>
+    </article>
+
+    <article class="numbers-kpi-card">
+      <div class="numbers-kpi-card__icon"><i class="bi bi-bank"></i></div>
+      <div class="numbers-kpi-card__body">
+        <span class="numbers-kpi-card__label">Crédito Total Recebido</span>
+        <strong class="numbers-kpi-card__value" data-cabw-number="credito-recebido">-</strong>
+        <small class="numbers-kpi-card__note">Valor total recebido na posição mais atual.</small>
+      </div>
+    </article>
+
+    <article class="numbers-kpi-card">
+      <div class="numbers-kpi-card__icon"><i class="bi bi-journal-check"></i></div>
+      <div class="numbers-kpi-card__body">
+        <span class="numbers-kpi-card__label">Valor Total Empenhado</span>
+        <strong class="numbers-kpi-card__value" data-cabw-number="valor-total-empenhado">-</strong>
+        <small class="numbers-kpi-card__note">Soma do total empenhado em USD na base de contratos.</small>
+      </div>
+    </article>
+
+    <article class="numbers-kpi-card">
+      <div class="numbers-kpi-card__icon"><i class="bi bi-clipboard-data"></i></div>
+      <div class="numbers-kpi-card__body">
+        <span class="numbers-kpi-card__label">Saldo Total de Restos a Pagar</span>
+        <strong class="numbers-kpi-card__value" data-cabw-number="saldo-rp">-</strong>
+        <small class="numbers-kpi-card__note">Saldo total de RP consolidado no painel de governança.</small>
+      </div>
+    </article>
+  </section>
+
+  <section class="numbers-insights" aria-label="Leitura executiva por tema">
+    <article class="numbers-panel-card">
+      <div class="numbers-panel-card__header">
+        <span class="numbers-panel-card__icon"><i class="bi bi-folder2-open"></i></span>
+        <div>
+          <span class="numbers-panel-card__eyebrow">Menu Contratos</span>
+          <h2>Contratações em foco</h2>
+        </div>
+      </div>
+      <div class="numbers-panel-card__grid">
+        <div>
+          <span class="numbers-panel-card__metric-label">Contratos na base</span>
+          <strong data-cabw-number="contracts-total-panel">0</strong>
+        </div>
+        <div>
+          <span class="numbers-panel-card__metric-label">FMS</span>
+          <strong data-cabw-number="contracts-fms">0</strong>
+        </div>
+        <div>
+          <span class="numbers-panel-card__metric-label">Finalísticos</span>
+          <strong data-cabw-number="contracts-finalisticos">0</strong>
+        </div>
+        <div>
+          <span class="numbers-panel-card__metric-label">Administrativos</span>
+          <strong data-cabw-number="contracts-administrativos">0</strong>
+        </div>
+      </div>
+      <p class="numbers-panel-card__footer">Base de contratos atualizada com filtros por empresa, unidade, ação, grande comando, ordenador de despesas e geração de relatórios em PDF.</p>
+    </article>
+
+    <article class="numbers-panel-card">
+      <div class="numbers-panel-card__header">
+        <span class="numbers-panel-card__icon"><i class="bi bi-bar-chart-steps"></i></span>
+        <div>
+          <span class="numbers-panel-card__eyebrow">Menu Crédito Disponível</span>
+          <h2>Capacidade orçamentária</h2>
+        </div>
+      </div>
+      <div class="numbers-panel-card__grid">
+        <div>
+          <span class="numbers-panel-card__metric-label">% disponível</span>
+          <strong data-cabw-number="credito-percentual">-</strong>
+        </div>
+        <div>
+          <span class="numbers-panel-card__metric-label">Crédito comprometido</span>
+          <strong data-cabw-number="credito-comprometido">-</strong>
+        </div>
+        <div>
+          <span class="numbers-panel-card__metric-label">Lançamentos</span>
+          <strong data-cabw-number="credito-lancamentos">0</strong>
+        </div>
+        <div>
+          <span class="numbers-panel-card__metric-label">Última posição</span>
+          <strong data-cabw-number="credito-posicao-panel">-</strong>
+        </div>
+      </div>
+      <p class="numbers-panel-card__footer">Indicadores consolidados a partir da posição mais atual do crédito disponível, sem duplicação das datas já lançadas.</p>
+    </article>
+
+    <article class="numbers-panel-card">
+      <div class="numbers-panel-card__header">
+        <span class="numbers-panel-card__icon"><i class="bi bi-diagram-3"></i></span>
+        <div>
+          <span class="numbers-panel-card__eyebrow">Governança & RP</span>
+          <h2>Restos a Pagar</h2>
+        </div>
+      </div>
+      <div class="numbers-panel-card__grid">
+        <div>
+          <span class="numbers-panel-card__metric-label">OMs com saldo</span>
+          <strong data-cabw-number="rp-oms">0</strong>
+        </div>
+        <div>
+          <span class="numbers-panel-card__metric-label">Contratos/PAG</span>
+          <strong data-cabw-number="rp-contratos">0</strong>
+        </div>
+        <div>
+          <span class="numbers-panel-card__metric-label">Anos em RP</span>
+          <strong data-cabw-number="rp-anos">0</strong>
+        </div>
+        <div>
+          <span class="numbers-panel-card__metric-label">Empenhos</span>
+          <strong data-cabw-number="rp-empenhos">0</strong>
+        </div>
+      </div>
+      <p class="numbers-panel-card__footer">O painel RP permite análise do saldo por OM, contrato/PAG e ano, além da emissão de relatórios em PDF conforme os filtros selecionados.</p>
+    </article>
+  </section>
+
+  <section class="numbers-reference-band" aria-label="Referências das bases">
+    <div class="numbers-reference-band__item">
+      <span>Fonte Contratos</span>
+      <strong data-cabw-number="fonte-contratos">-</strong>
     </div>
-    <ul class="governance-feature-list">
-          <li><i class="bi bi-check2-circle" aria-hidden="true"></i><span>Indicadores consolidados de crédito, contratos, processos, requisições e execução.</span></li>
-          <li><i class="bi bi-check2-circle" aria-hidden="true"></i><span>Cards executivos e painéis comparativos por período.</span></li>
-          <li><i class="bi bi-check2-circle" aria-hidden="true"></i><span>Base preparada para relatórios sintéticos de governança.</span></li>
-    </ul>
+    <div class="numbers-reference-band__item">
+      <span>Fonte Crédito</span>
+      <strong data-cabw-number="fonte-credito">-</strong>
+    </div>
+    <div class="numbers-reference-band__item">
+      <span>Fonte RP</span>
+      <strong data-cabw-number="fonte-rp">-</strong>
+    </div>
   </section>
 </main>
 
 <script src="https://code.jquery.com/jquery-3.6.0.slim.min.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/js/bootstrap.bundle.min.js"></script>
+<script src="assets/js/contracts-data.js"></script>
+<script src="assets/js/cabw-numeros.js"></script>
 </body>
 </html>
