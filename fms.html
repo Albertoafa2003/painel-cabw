@@ -54,7 +54,7 @@
     <div class="contracts-filter-header">
       <div>
         <h2>Filtros</h2>
-        <p>Refine a consulta por empresa, unidade, Grande Comando, ação, moeda, vigência ou busca textual. O PDF será gerado com os filtros atualmente selecionados.</p>
+        <p>Refine a consulta por empresa, unidade, Ordenador de Despesas, Grande Comando, ação, moeda, vigência ou busca textual. O PDF será gerado com os filtros atualmente selecionados.</p>
       </div>
       <div class="contracts-filter-actions">
         <button type="button" class="contracts-pdf-button" id="generateContractsPdf"><i class="bi bi-file-earmark-pdf" aria-hidden="true"></i> Gerar PDF</button>
@@ -65,10 +65,11 @@
       <label class="contracts-field" for="filterEmpresa"><span>Empresa</span><select id="filterEmpresa"><option value="">Todas as empresas</option></select></label>
       <label class="contracts-field" for="filterUnidade"><span>Unidade</span><select id="filterUnidade"><option value="">Todas as unidades</option></select></label>
       <label class="contracts-field" for="filterGrandeComando"><span>Grande Comando</span><select id="filterGrandeComando"><option value="">Todos os Grandes Comandos</option></select></label>
+      <label class="contracts-field" for="filterOrdenador"><span>Ordenador de Despesas</span><select id="filterOrdenador"><option value="">Todos os Ordenadores de Despesas</option></select></label>
       <label class="contracts-field" for="filterAcao"><span>Ação</span><select id="filterAcao"><option value="">Todas as ações</option></select></label>
       <label class="contracts-field" for="filterMoeda"><span>Moeda</span><select id="filterMoeda"><option value="">Todas as moedas</option></select></label>
       <label class="contracts-field" for="filterStatus"><span>Vigência</span><select id="filterStatus"><option value="">Todas</option><option value="Vigente">Vigente</option><option value="Encerrado">Encerrado</option><option value="Sem data final">Sem data final</option></select></label>
-      <label class="contracts-field contracts-field--wide" for="filterContratoSearch"><span>Busca geral</span><input id="filterContratoSearch" type="search" placeholder="Contrato, número, empresa, objeto, grande comando, ação..."></label>
+      <label class="contracts-field contracts-field--wide" for="filterContratoSearch"><span>Busca geral</span><input id="filterContratoSearch" type="search" placeholder="Contrato, número, empresa, objeto, ordenador, grande comando, ação..."></label>
     </div>
   </section>
 
@@ -84,6 +85,7 @@
             <th>Contrato</th>
             <th>Número</th>
             <th>Unidade</th>
+            <th>Ordenador de Despesas</th>
             <th>Grande Comando</th>
             <th>Empresa</th>
             <th>Objeto Resumido</th>
@@ -101,7 +103,7 @@
     <div class="contracts-mobile-list" id="contractsMobileList" aria-label="Contratos em cartões"></div>
   </section>
 
-  <p class="contracts-source-note" data-contract-source>Fonte: RelContrFin09 06 26 16 07 00 - 10062026(1).xls · Revisão 10/06/2026</p>
+  <p class="contracts-source-note" data-contract-source>Fonte: FISCAIS DE CONTRATO - OD CABW.xls · Revisão 11/06/2026</p>
 </main>
 
 <script src="https://cdn.jsdelivr.net/npm/jspdf@2.5.1/dist/jspdf.umd.min.js"></script>

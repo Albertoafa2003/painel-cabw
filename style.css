@@ -1617,7 +1617,7 @@ table.dataTable thead th {
 
 .contracts-table {
   width: 100%;
-  min-width: 1360px;
+  min-width: 1540px;
   border-collapse: separate;
   border-spacing: 0;
   color: var(--cabw-ink);
