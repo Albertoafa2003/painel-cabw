@@ -13,7 +13,20 @@
     "GABAER",
     "SEFA"
   ],
+  "ordenadoresDespesas": [
+    "CABW",
+    "CENIPA",
+    "CISCEA",
+    "DCTA",
+    "DECEA",
+    "DIRMAB",
+    "PAMAGL",
+    "PAMALS",
+    "PAMASP",
+    "PAME-RJ"
+  ],
   "duplicates_check": "ok",
-  "source": "RelContrFin09 06 26 16 07 00 - 10062026(1).xls",
-  "updatedFrom": "RelContrFin09 06 26 16 07 00 - 10062026(1).xls"
+  "source": "FISCAIS DE CONTRATO - OD CABW.xls",
+  "updatedFrom": "FISCAIS DE CONTRATO - OD CABW.xls",
+  "notMatchedToPreviousCategory": []
 }
