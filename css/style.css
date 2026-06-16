@@ -3365,3 +3365,22 @@ body.cabw-numbers-page .numbers-panel-card__footer {
     max-width: none;
   }
 }
+
+/* ===== Ajuste final: Seguro Saúde somente dentro de Processos Administrativos ===== */
+body.processes-page:not(.processes-admin-menu-page) .processes-menu-grid {
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  max-width: 980px;
+}
+
+body.processes-admin-menu-page .processes-submenu-grid {
+  grid-template-columns: minmax(280px, 430px);
+  max-width: 1220px;
+}
+
+@media (max-width: 767.98px) {
+  body.processes-page:not(.processes-admin-menu-page) .processes-menu-grid,
+  body.processes-admin-menu-page .processes-submenu-grid {
+    grid-template-columns: 1fr;
+    max-width: none;
+  }
+}
