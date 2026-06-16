@@ -8,7 +8,7 @@
   <link rel="stylesheet" type="text/css" href="css/style.css">
   <title>Painel CABW - Processos Administrativos</title>
 </head>
-<body class="module-page governance-page governance-detail-page processes-detail-page">
+<body class="module-page governance-page processes-page processes-admin-menu-page">
 
 <nav class="navbar navbar-expand-lg navbar-dark bg-primary">
   <a class="navbar-brand" href="index.html">Painel CABW</a>
@@ -28,32 +28,30 @@
   </div>
 </nav>
 
-<main class="container-fluid mt-4 governance-detail-container" aria-label="Processos Administrativos">
+<main class="container-fluid mt-4 governance-menu-page processes-menu-page" aria-label="Processos Administrativos">
   <a href="processos.html" class="governance-back-link"><i class="bi bi-arrow-left"></i> Voltar para Processos de Contratação</a>
 
-  <section class="governance-detail-card">
-    <span class="governance-detail-card__icon" aria-hidden="true"><i class="bi bi-building-gear"></i></span>
+  <header class="governance-page-header governance-page-header--wide">
     <div>
       <span class="governance-eyebrow">Processos de Contratação</span>
       <h1>Processos Administrativos</h1>
-      <p>Painel destinado ao acompanhamento dos processos de contratação de natureza administrativa, com foco em suporte institucional, serviços internos e funcionamento da CABW.</p>
-      <p class="governance-detail-card__status">Painel criado seguindo a identidade visual do site. A carga operacional poderá ser conectada quando a base de processos administrativos for disponibilizada.</p>
+      <p>Selecione um processo administrativo para acompanhar a etapa atual, eventuais atrasos, impacto na contratação e providências gerenciais.</p>
     </div>
-  </section>
+    <div class="governance-source-card" aria-label="Quantidade de processos administrativos cadastrados">
+      <span>Processos</span>
+      <strong>1</strong>
+      <small>Seguro Saúde</small>
+    </div>
+  </header>
 
-  <section class="governance-workbench" aria-label="Escopo do painel">
-    <div class="governance-workbench__header">
-      <div>
-        <h2>Estrutura do painel</h2>
-        <p>Esta área está preparada para receber base de dados, filtros, indicadores, prazos, responsáveis, status e relatórios gerenciais dos processos.</p>
-      </div>
-      <span class="governance-badge">Em implantação</span>
-    </div>
-    <ul class="governance-feature-list">
-          <li><i class="bi bi-check2-circle" aria-hidden="true"></i><span>Controle de processos administrativos por fase, responsável, prioridade e status.</span></li>
-          <li><i class="bi bi-check2-circle" aria-hidden="true"></i><span>Indicadores de prazos, instrução processual, pendências e conclusão.</span></li>
-          <li><i class="bi bi-check2-circle" aria-hidden="true"></i><span>Base preparada para filtros e relatórios gerenciais quando a planilha de processos for fornecida.</span></li>
-    </ul>
+  <section class="governance-menu-grid processes-submenu-grid" aria-label="Painéis de Processos Administrativos">
+    <a href="processos-seguro-saude.html" class="home-card governance-menu-card processes-menu-card process-health-card" aria-label="Acessar processo Seguro Saúde">
+      <span class="governance-menu-card__icon" aria-hidden="true"><i class="bi bi-heart-pulse"></i></span>
+      <h2>Seguro Saúde</h2>
+      <span class="home-card__rule" aria-hidden="true"></span>
+      <p>Contratação de seguro saúde para militares do Comando da Aeronáutica em missão nos EUA e seus dependentes.</p>
+      <span class="home-card__button">Acessar Painel</span>
+    </a>
   </section>
 </main>
 
