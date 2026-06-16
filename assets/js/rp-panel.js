@@ -264,12 +264,15 @@
   function activeFilterLabels() {
     const filters = getFilters();
     const labels = [];
+    if (METADATA.latestReferenceLabel) {
+      labels.push(['Referência SISCAB', METADATA.latestReferenceLabel]);
+    }
     if (filters.ano) labels.push(['Ano do RP', filters.ano]);
     if (filters.om) labels.push(['OM', filters.om]);
     if (filters.contrato) labels.push(['Contrato/PAG', filters.contrato]);
     if (filters.empenho) labels.push(['Empenho contém', els.rpEmpenhoFilter.value]);
     if (filters.search) labels.push(['Busca geral', els.rpSearchFilter.value]);
-    return labels.length ? labels : [['Filtros', 'Todos os registros']];
+    return labels.length ? labels : [['Filtros', 'Todos os registros da referência mais atual']];
   }
 
   function autoTable(doc, options) {
@@ -307,7 +310,8 @@
     doc.setFontSize(9);
     doc.setTextColor(55, 62, 82);
     doc.text(`Gerado em ${now.toLocaleString('pt-BR')}`, 40, 60);
-    doc.text(`Fonte: ${METADATA.sourceFile || 'PAINEL CABW - RP.xlsx'}`, pageWidth - 40, 60, { align: 'right' });
+    const referenceText = METADATA.latestReferenceLabel ? ` · Referência: ${METADATA.latestReferenceLabel}` : '';
+    doc.text(`Fonte: ${METADATA.sourceFile || 'PAINEL CABW - RP.xlsx'}${referenceText}`, pageWidth - 40, 60, { align: 'right' });
 
     autoTable(doc, {
       startY: 78,
@@ -420,7 +424,8 @@
     if (els.rpClearFilters) els.rpClearFilters.addEventListener('click', clearFilters);
     if (els.rpGeneratePdf) els.rpGeneratePdf.addEventListener('click', generatePdf);
 
-    setText(els.rpSourceInfo, `Fonte: ${METADATA.sourceFile || 'PAINEL CABW - RP.xlsx'} · ${formatNumber(DATA.length)} registros · saldo total ${formatMoney(METADATA.totalSaldoUsd || 0)}`);
+    const referenceInfo = METADATA.latestReferenceLabel ? ` · Referência SISCAB: ${METADATA.latestReferenceLabel}` : '';
+    setText(els.rpSourceInfo, `Fonte: ${METADATA.sourceFile || 'PAINEL CABW - RP.xlsx'}${referenceInfo} · ${formatNumber(DATA.length)} registros atuais · saldo total ${formatMoney(METADATA.totalSaldoUsd || 0)}`);
     applyFilters();
   }
 
