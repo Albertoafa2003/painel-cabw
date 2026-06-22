@@ -1,23 +1,17 @@
 <!DOCTYPE html>
-<html lang="pt-BR">
-<head>
-<meta charset="utf-8"/>
-<meta content="width=device-width, initial-scale=1, shrink-to-fit=no" name="viewport"/>
+<html lang="pt-BR"><head>
+<meta charset="utf-8"/><meta content="width=device-width, initial-scale=1, shrink-to-fit=no" name="viewport"/>
 <title>Painel CABW - Análise por UG</title>
 <link href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/css/bootstrap.min.css" rel="stylesheet"/>
 <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css" rel="stylesheet"/>
 <link href="css/style.css" rel="stylesheet" type="text/css"/>
 <script src="https://cdn.plot.ly/plotly-2.16.1.min.js"></script>
-</head>
-<body>
+</head><body>
 <nav class="navbar navbar-expand-lg navbar-dark bg-primary">
 <a class="navbar-brand" href="index.html">Painel CABW</a>
 <img alt="Brasão da Comissão Aeronáutica Brasileira em Washington" class="header-logo" src="cabw_logo.png"/>
-<button aria-controls="navbarNav" aria-expanded="false" aria-label="Alternar navegação" class="navbar-toggler" data-target="#navbarNav" data-toggle="collapse" type="button">
-<span class="navbar-toggler-icon"></span>
-</button>
-<div class="collapse navbar-collapse" id="navbarNav">
-<ul class="navbar-nav mr-auto">
+<button aria-controls="navbarNav" aria-expanded="false" aria-label="Alternar navegação" class="navbar-toggler" data-target="#navbarNav" data-toggle="collapse" type="button"><span class="navbar-toggler-icon"></span></button>
+<div class="collapse navbar-collapse" id="navbarNav"><ul class="navbar-nav mr-auto">
 <li class="nav-item"><a class="nav-link" href="index.html">Início</a></li>
 <li class="nav-item"><a class="nav-link" href="credito.html">Crédito Disponível</a></li>
 <li class="nav-item"><a class="nav-link" href="contratos.html">Contratos</a></li>
@@ -29,34 +23,20 @@
 <li class="nav-item"><a class="nav-link" href="action.html">Análise por Ação</a></li>
 <li class="nav-item"><a class="nav-link" href="detail.html">Detalhamento</a></li>
 <li class="nav-item"><a class="nav-link" href="consistency.html">Consistência</a></li>
-</ul>
-</div>
-</nav>
+</ul></div></nav>
 <main class="container-fluid mt-4">
 <h1>Análise por Unidade Gestora</h1>
-<p class="credit-position-note">Ranking atualizado para a posição de 17/06/2026.</p>
+<p class="credit-position-note">Ranking atualizado para a posição de 22/06/2026.</p>
 <h2>Ranking de UGs</h2>
-<div class="table-responsive"><table class="dataframe table table-striped table-sm"><thead><tr><th class="text-center nowrap">Código UG</th><th class="text-center nowrap">Sigla</th><th class="text-left">Unidade Gestora</th><th class="text-center tabular-number nowrap">Lanç.</th><th class="text-right tabular-number">Crédito Disponível</th><th class="text-center tabular-number nowrap">% do Total</th></tr></thead><tbody><tr><td class="text-center nowrap">120026</td><td class="text-center nowrap">PAMA-LS</td><td class="text-left">PARQUE DE MATERIAL AERONÁUTICO DE LAGOA SANTA</td><td class="text-center tabular-number nowrap">15</td><td class="text-right tabular-number">US$ 1.451.871,99</td><td class="text-center tabular-number nowrap">41,99%</td></tr><tr><td class="text-center nowrap">120049</td><td class="text-center nowrap">PAMA-GL</td><td class="text-left">PARQUE DE MATERIAL AERONÁUTICO DO GALEÃO</td><td class="text-center tabular-number nowrap">6</td><td class="text-right tabular-number">US$ 1.040.592,62</td><td class="text-center tabular-number nowrap">30,09%</td></tr><tr><td class="text-center nowrap">120090</td><td class="text-center nowrap">CABW</td><td class="text-left">COMISSÃO AERONÁUTICA BRASILEIRA EM WASHINGTON</td><td class="text-center tabular-number nowrap">6</td><td class="text-right tabular-number">US$ 407.424,24</td><td class="text-center tabular-number nowrap">11,78%</td></tr><tr><td class="text-center nowrap">120036</td><td class="text-center nowrap">DECEA</td><td class="text-left">DEPARTAMENTO DE CONTROLE DO ESPAÇO AÉREO</td><td class="text-center tabular-number nowrap">8</td><td class="text-right tabular-number">US$ 192.089,01</td><td class="text-center tabular-number nowrap">5,56%</td></tr><tr><td class="text-center nowrap">120068</td><td class="text-center nowrap">PAMA-SP</td><td class="text-left">PARQUE DE MATERIAL AERONÁUTICO DE SÃO PAULO</td><td class="text-center tabular-number nowrap">7</td><td class="text-right tabular-number">US$ 120.265,81</td><td class="text-center tabular-number nowrap">3,48%</td></tr><tr><td class="text-center nowrap">120047</td><td class="text-center nowrap">PAMB-RJ</td><td class="text-left">PARQUE DE MATERIAL BÉLICO DA AERONÁUTICA DO RIO DE JANEIRO</td><td class="text-center tabular-number nowrap">3</td><td class="text-right tabular-number">US$ 85.518,60</td><td class="text-center tabular-number nowrap">2,47%</td></tr><tr><td class="text-center nowrap">120038</td><td class="text-center nowrap">DIRMAB</td><td class="text-left">DIRETORIA DE MATERIAL AERONÁUTICO E BÉLICO</td><td class="text-center tabular-number nowrap">3</td><td class="text-right tabular-number">US$ 71.363,49</td><td class="text-center tabular-number nowrap">2,06%</td></tr><tr><td class="text-center nowrap">120111</td><td class="text-center nowrap">EMAER</td><td class="text-left">ESTADO-MAIOR DA AERONÁUTICA</td><td class="text-center tabular-number nowrap">8</td><td class="text-right tabular-number">US$ 38.230,47</td><td class="text-center tabular-number nowrap">1,11%</td></tr><tr><td class="text-center nowrap">120071</td><td class="text-center nowrap">CELOG</td><td class="text-left">CENTRO LOGÍSTICO DA AERONÁUTICA</td><td class="text-center tabular-number nowrap">2</td><td class="text-right tabular-number">US$ 23.000,01</td><td class="text-center tabular-number nowrap">0,67%</td></tr><tr><td class="text-center nowrap">120700</td><td class="text-center nowrap">DIREF</td><td class="text-left">DIRETORIA DE ECONOMIA E FINANÇAS DA AERONÁUTICA</td><td class="text-center tabular-number nowrap">2</td><td class="text-right tabular-number">US$ 12.814,94</td><td class="text-center tabular-number nowrap">0,37%</td></tr><tr><td class="text-center nowrap">120091</td><td class="text-center nowrap">CABE</td><td class="text-left">COMISSÃO AERONÁUTICA BRASILEIRA NA EUROPA</td><td class="text-center tabular-number nowrap">1</td><td class="text-right tabular-number">US$ 8.390,54</td><td class="text-center tabular-number nowrap">0,24%</td></tr><tr><td class="text-center nowrap">120197</td><td class="text-center nowrap">IAOP</td><td class="text-left">INSTITUTO DE APLICAÇÕES OPERACIONAIS</td><td class="text-center tabular-number nowrap">1</td><td class="text-right tabular-number">US$ 4.170,00</td><td class="text-center tabular-number nowrap">0,12%</td></tr><tr><td class="text-center nowrap">120115</td><td class="text-center nowrap">COMAE</td><td class="text-left">COMANDO DE OPERAÇÕES AEROESPACIAIS</td><td class="text-center tabular-number nowrap">1</td><td class="text-right tabular-number">US$ 2.000,00</td><td class="text-center tabular-number nowrap">0,06%</td></tr><tr><td class="text-center nowrap">120048</td><td class="text-center nowrap">PAME-RJ</td><td class="text-left">PARQUE DE MATERIAL DE ELETRÔNICA DA AERONÁUTICA DO RIO DE JANEIRO</td><td class="text-center tabular-number nowrap">1</td><td class="text-right tabular-number">US$ 0,01</td><td class="text-center tabular-number nowrap">0,00%</td></tr></tbody></table></div>
+<div class="table-responsive"><table class="dataframe table table-striped table-sm"><thead><tr><th class="text-center nowrap">Código UG</th><th class="text-center nowrap">Sigla</th><th class="text-left">Unidade Gestora</th><th class="text-center tabular-number nowrap">Lanç.</th><th class="text-right tabular-number">Crédito Disponível</th><th class="text-center tabular-number nowrap">% do Total</th></tr></thead><tbody><tr><td class="text-center nowrap">120026</td><td class="text-center nowrap">PAMA-LS</td><td class="text-left">PARQUE DE MATERIAL AERONÁUTICO DE LAGOA SANTA</td><td class="text-center tabular-number nowrap">16</td><td class="text-right tabular-number">US$ 1.609.708,26</td><td class="text-center tabular-number nowrap">42,70%</td></tr><tr><td class="text-center nowrap">120049</td><td class="text-center nowrap">PAMA-GL</td><td class="text-left">PARQUE DE MATERIAL AERONÁUTICO DO GALEÃO</td><td class="text-center tabular-number nowrap">6</td><td class="text-right tabular-number">US$ 1.040.592,62</td><td class="text-center tabular-number nowrap">27,61%</td></tr><tr><td class="text-center nowrap">120090</td><td class="text-center nowrap">CABW</td><td class="text-left">COMISSÃO AERONÁUTICA BRASILEIRA EM WASHINGTON</td><td class="text-center tabular-number nowrap">5</td><td class="text-right tabular-number">US$ 759.316,18</td><td class="text-center tabular-number nowrap">20,14%</td></tr><tr><td class="text-center nowrap">120036</td><td class="text-center nowrap">DECEA</td><td class="text-left">DEPARTAMENTO DE CONTROLE DO ESPAÇO AÉREO</td><td class="text-center tabular-number nowrap">8</td><td class="text-right tabular-number">US$ 192.089,01</td><td class="text-center tabular-number nowrap">5,10%</td></tr><tr><td class="text-center nowrap">120038</td><td class="text-center nowrap">DIRMAB</td><td class="text-left">DIRETORIA DE MATERIAL AERONÁUTICO E BÉLICO</td><td class="text-center tabular-number nowrap">3</td><td class="text-right tabular-number">US$ 71.363,49</td><td class="text-center tabular-number nowrap">1,89%</td></tr><tr><td class="text-center nowrap">120111</td><td class="text-center nowrap">EMAER</td><td class="text-left">ESTADO-MAIOR DA AERONÁUTICA</td><td class="text-center tabular-number nowrap">6</td><td class="text-right tabular-number">US$ 33.213,37</td><td class="text-center tabular-number nowrap">0,88%</td></tr><tr><td class="text-center nowrap">120068</td><td class="text-center nowrap">PAMA-SP</td><td class="text-left">PARQUE DE MATERIAL AERONÁUTICO DE SÃO PAULO</td><td class="text-center tabular-number nowrap">7</td><td class="text-right tabular-number">US$ 23.787,95</td><td class="text-center tabular-number nowrap">0,63%</td></tr><tr><td class="text-center nowrap">120071</td><td class="text-center nowrap">CELOG</td><td class="text-left">CENTRO LOGÍSTICO DA AERONÁUTICA</td><td class="text-center tabular-number nowrap">2</td><td class="text-right tabular-number">US$ 23.000,01</td><td class="text-center tabular-number nowrap">0,61%</td></tr><tr><td class="text-center nowrap">120091</td><td class="text-center nowrap">CABE</td><td class="text-left">COMISSÃO AERONÁUTICA BRASILEIRA NA EUROPA</td><td class="text-center tabular-number nowrap">1</td><td class="text-right tabular-number">US$ 8.390,54</td><td class="text-center tabular-number nowrap">0,22%</td></tr><tr><td class="text-center nowrap">120047</td><td class="text-center nowrap">PAMB-RJ</td><td class="text-left">PARQUE DE MATERIAL BÉLICO DA AERONÁUTICA DO RIO DE JANEIRO</td><td class="text-center tabular-number nowrap">3</td><td class="text-right tabular-number">US$ 6.058,71</td><td class="text-center tabular-number nowrap">0,16%</td></tr><tr><td class="text-center nowrap">120115</td><td class="text-center nowrap">COMAE</td><td class="text-left">COMANDO DE OPERAÇÕES AEROESPACIAIS</td><td class="text-center tabular-number nowrap">1</td><td class="text-right tabular-number">US$ 2.000,00</td><td class="text-center tabular-number nowrap">0,05%</td></tr><tr><td class="text-center nowrap">120048</td><td class="text-center nowrap">PAME-RJ</td><td class="text-left">PARQUE DE MATERIAL DE ELETRÔNICA DA AERONÁUTICA DO RIO DE JANEIRO</td><td class="text-center tabular-number nowrap">1</td><td class="text-right tabular-number">US$ 0,01</td><td class="text-center tabular-number nowrap">0,00%</td></tr></tbody></table></div>
 <h2>Distribuição do Crédito por UG</h2>
 <div class="chart-card"><div class="plotly-graph-div" id="ugDistributionChart" style="height:520px; width:100%;"></div></div>
 </main>
+<script>
+const ugLabels = ["120048", "120115", "120047", "120091", "120071", "120068", "120111", "120038", "120036", "120090", "120049", "120026"];
+const ugValues = [0.01, 2000.0, 6058.71, 8390.54, 23000.01, 23787.95, 33213.37, 71363.49, 192089.01, 759316.18, 1040592.62, 1609708.26];
+Plotly.newPlot('ugDistributionChart', [{type:'bar', orientation:'h', x:ugValues, y:ugLabels, marker:{color:'#6257ff'}, hovertemplate:'UG=%{y}<br>Crédito Disponível=US$ %{x:,.2f}<extra></extra>'}], {title:'Crédito Disponível por UG - posição de 22/06/2026', paper_bgcolor:'rgba(0,0,0,0)', plot_bgcolor:'#e8eef8', font:{color:'#06265b', family:'Montserrat, Arial, sans-serif'}, margin:{l:120,r:40,t:60,b:60}, xaxis:{title:'Crédito Disponível (US$)', gridcolor:'#ffffff'}, yaxis:{title:'UG', gridcolor:'#ffffff'}}, {responsive:true});
+</script>
 <script src="https://code.jquery.com/jquery-3.6.0.slim.min.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/js/bootstrap.bundle.min.js"></script>
-<script>
-const ugLabels = ["120048", "120115", "120197", "120091", "120700", "120071", "120111", "120038", "120047", "120068", "120036", "120090", "120049", "120026"];
-const ugValues = [0.01, 2000.0, 4170.0, 8390.54, 12814.94, 23000.01, 38230.47, 71363.49, 85518.6, 120265.81, 192089.01, 407424.24, 1040592.62, 1451871.99];
-Plotly.newPlot('ugDistributionChart', [{
-  type: 'bar', orientation: 'h', x: ugValues, y: ugLabels,
-  marker: { color: '#6257ff' },
-  hovertemplate: 'UG=%{y}<br>Crédito Disponível=US$ %{x:,.2f}<extra></extra>'
-}], {
-  title: 'Crédito Disponível por UG - posição de 17/06/2026',
-  paper_bgcolor: 'rgba(0,0,0,0)', plot_bgcolor: '#e8eef8',
-  font: { color: '#06265b', family: 'Montserrat, Arial, sans-serif' },
-  margin: { l: 120, r: 40, t: 60, b: 60 },
-  xaxis: { title: 'Crédito Disponível (US$)', gridcolor: '#ffffff' },
-  yaxis: { title: 'UG', gridcolor: '#ffffff' }
-}, { responsive: true });
-</script>
-</body>
-</html>
+</body></html>
