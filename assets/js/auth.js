@@ -6,6 +6,7 @@ import {
   signOut,
   onAuthStateChanged,
   updateProfile,
+  sendEmailVerification,
   browserLocalPersistence,
   setPersistence
 } from "https://www.gstatic.com/firebasejs/12.15.0/firebase-auth.js";
@@ -67,6 +68,18 @@ function saveUsers(users) {
   writeJson(USERS_KEY, users);
 }
 
+function verificationContinueUrl() {
+  return new URL("index.html?verified=1", window.location.href).href;
+}
+
+async function sendVerification(user) {
+  if (!user || !user.email) return;
+  await sendEmailVerification(user, {
+    url: verificationContinueUrl(),
+    handleCodeInApp: false
+  });
+}
+
 function upsertLocalUser(user, extra = {}) {
   if (!user || !user.email) return;
   const email = normalizeEmail(user.email);
@@ -77,6 +90,7 @@ function upsertLocalUser(user, extra = {}) {
     uid: user.uid || current?.uid || "",
     name: extra.name || user.displayName || current?.name || email,
     email,
+    emailVerified: !!user.emailVerified,
     createdAt: current?.createdAt || extra.createdAt || new Date().toISOString(),
     provider: "Firebase Authentication + Firestore",
     lastLoginAt: extra.lastLoginAt || current?.lastLoginAt || ""
@@ -102,6 +116,7 @@ async function upsertFirestoreUser(user, options = {}) {
   const payload = {
     uid: user.uid,
     email,
+    emailVerified: !!user.emailVerified,
     name: options.name || user.displayName || email,
     provider: "Firebase Authentication",
     updatedAt: serverTimestamp()
@@ -123,6 +138,7 @@ function setSession(user, options = {}) {
   const session = {
     uid: user.uid || "",
     email: normalizeEmail(user.email),
+    emailVerified: !!user.emailVerified,
     name: user.displayName || normalizeEmail(user.email),
     authenticatedAt: new Date().toISOString(),
     provider: "Firebase Authentication",
@@ -212,41 +228,10 @@ function translateAuthError(error) {
     "auth/network-request-failed": "Falha de conexão. Verifique a internet e tente novamente.",
     "auth/too-many-requests": "Muitas tentativas. Aguarde alguns minutos e tente novamente.",
     "auth/operation-not-allowed": "O método Email/Password ainda não está habilitado no Firebase.",
+    "auth/missing-continue-uri": "Configure o domínio autorizado e tente enviar novamente a verificação de e-mail.",
     "permission-denied": "Sem permissão para gravar no Firestore. Verifique as regras do banco."
   };
   return messages[code] || "Não foi possível concluir a operação. Tente novamente.";
-}
-
-
-function currentFileName() {
-  return location.pathname.split("/").pop() || "painel.html";
-}
-
-function isAdminPage() {
-  return ["administracao.html", "admin-usuarios.html", "admin-historico.html"].includes(currentFileName());
-}
-
-async function userIsAdmin(user) {
-  if (!user || !user.uid) return false;
-  try {
-    const snapshot = await getDoc(doc(db, "admins", user.uid));
-    return snapshot.exists();
-  } catch (error) {
-    return false;
-  }
-}
-
-function applyAdminVisibility(isAdmin) {
-  document.body.classList.toggle("auth-is-admin", !!isAdmin);
-  document.querySelectorAll("[data-admin-only], .admin-only").forEach(element => {
-    if (isAdmin) {
-      element.hidden = false;
-      element.removeAttribute("aria-hidden");
-    } else {
-      element.hidden = true;
-      element.setAttribute("aria-hidden", "true");
-    }
-  });
 }
 
 function setupPasswordToggles() {
@@ -261,6 +246,25 @@ function setupPasswordToggles() {
       }
     });
   });
+}
+
+function showInitialAuthMessage() {
+  const params = new URLSearchParams(window.location.search);
+
+  if (params.get("verified") === "1") {
+    showMessage("E-mail verificado. Faça login para acessar o Painel CABW.", "info");
+    history.replaceState({}, document.title, "index.html");
+  }
+
+  if (params.get("verifyEmail") === "1") {
+    showMessage("Cadastro realizado. Enviamos um link de verificação para o e-mail informado. Confirme o e-mail antes de fazer login.", "info");
+    history.replaceState({}, document.title, "index.html");
+  }
+
+  if (params.get("emailNotVerified") === "1") {
+    showMessage("E-mail ainda não verificado. Verifique sua caixa de entrada e clique no link enviado pelo Firebase.", "error");
+    history.replaceState({}, document.title, "index.html");
+  }
 }
 
 function setupLogin() {
@@ -285,10 +289,22 @@ function setupLogin() {
 
     try {
       const credential = await signInWithEmailAndPassword(auth, email, password);
-      await upsertFirestoreUser(credential.user, { lastLoginAt: true });
-      const admin = await userIsAdmin(credential.user);
-      setSession(credential.user, { isAdmin: admin });
-      await logAccess("Login", "Acesso ao Painel CABW", "Login realizado via Firebase Authentication e registrado no Firestore.", getSession());
+      await credential.user.reload();
+      const user = auth.currentUser || credential.user;
+
+      if (!user.emailVerified) {
+        await sendVerification(user).catch(() => {});
+        await upsertFirestoreUser(user, { lastLoginAt: true }).catch(() => {});
+        await signOut(auth);
+        clearSession();
+        showMessage("E-mail ainda não verificado. Enviamos um novo link de verificação para seu e-mail institucional.", "error");
+        return;
+      }
+
+      await upsertFirestoreUser(user, { lastLoginAt: true });
+      const admin = await userIsAdmin(user);
+      setSession(user, { isAdmin: admin });
+      await logAccess("Login", "Acesso ao Painel CABW", "Login realizado com e-mail verificado.", getSession());
       window.location.href = "painel.html";
     } catch (error) {
       showMessage(translateAuthError(error));
@@ -334,13 +350,47 @@ function setupRegister() {
       await credential.user.reload();
 
       const updatedUser = auth.currentUser || credential.user;
-      await upsertFirestoreUser(updatedUser, { name, createdAt: true, lastLoginAt: true });
-      const admin = await userIsAdmin(updatedUser);
-      setSession(updatedUser, { isAdmin: admin });
-      await logAccess("Criação de conta", "Acesso ao Painel CABW", "Conta criada via Firebase Authentication e registrada no Firestore.", getSession());
-      window.location.href = "painel.html";
+      await upsertFirestoreUser(updatedUser, { name, createdAt: true });
+      setSession(updatedUser, { isAdmin: false });
+      await logAccess("Criação de conta", "Acesso ao Painel CABW", "Conta criada. Aguardando verificação de e-mail.", getSession());
+      await sendVerification(updatedUser);
+
+      clearSession();
+      await signOut(auth);
+      window.location.href = "index.html?verifyEmail=1";
     } catch (error) {
       showMessage(translateAuthError(error));
+    }
+  });
+}
+
+function currentFileName() {
+  return location.pathname.split("/").pop() || "painel.html";
+}
+
+function isAdminPage() {
+  return ["administracao.html", "admin-usuarios.html", "admin-historico.html"].includes(currentFileName());
+}
+
+async function userIsAdmin(user) {
+  if (!user || !user.uid) return false;
+  try {
+    const snapshot = await getDoc(doc(db, "admins", user.uid));
+    return snapshot.exists();
+  } catch (error) {
+    return false;
+  }
+}
+
+function applyAdminVisibility(isAdmin) {
+  document.body.classList.toggle("auth-is-admin", !!isAdmin);
+  document.querySelectorAll("[data-admin-only], .admin-only").forEach(element => {
+    if (isAdmin) {
+      element.hidden = false;
+      element.removeAttribute("aria-hidden");
+    } else {
+      element.hidden = true;
+      element.setAttribute("aria-hidden", "true");
     }
   });
 }
@@ -370,6 +420,7 @@ function setupLogoutButton() {
 
 document.addEventListener("DOMContentLoaded", () => {
   setupPasswordToggles();
+  showInitialAuthMessage();
   setupLogin();
   setupRegister();
 
@@ -378,9 +429,16 @@ document.addEventListener("DOMContentLoaded", () => {
 
   onAuthStateChanged(auth, async user => {
     if (isAuthPage && user) {
-      await upsertFirestoreUser(user, { lastLoginAt: true }).catch(() => {});
-      const admin = await userIsAdmin(user);
-      setSession(user, { isAdmin: admin });
+      await user.reload();
+      const currentUser = auth.currentUser || user;
+
+      if (!currentUser.emailVerified) {
+        return;
+      }
+
+      await upsertFirestoreUser(currentUser, { lastLoginAt: true }).catch(() => {});
+      const admin = await userIsAdmin(currentUser);
+      setSession(currentUser, { isAdmin: admin });
       window.location.href = "painel.html";
       return;
     }
@@ -392,9 +450,20 @@ document.addEventListener("DOMContentLoaded", () => {
     }
 
     if (!isAuthPage && user) {
-      await upsertFirestoreUser(user, { lastLoginAt: true }).catch(() => {});
-      const admin = await userIsAdmin(user);
-      setSession(user, { isAdmin: admin });
+      await user.reload();
+      const currentUser = auth.currentUser || user;
+
+      if (!currentUser.emailVerified) {
+        await logAccess("Acesso negado", currentPanelName(), "Tentativa de acesso com e-mail ainda não verificado.", getSession());
+        clearSession();
+        await signOut(auth);
+        window.location.href = "index.html?emailNotVerified=1";
+        return;
+      }
+
+      await upsertFirestoreUser(currentUser, { lastLoginAt: true }).catch(() => {});
+      const admin = await userIsAdmin(currentUser);
+      setSession(currentUser, { isAdmin: admin });
       applyAdminVisibility(admin);
 
       if (isAdminPage() && !admin) {
@@ -404,7 +473,7 @@ document.addEventListener("DOMContentLoaded", () => {
       }
 
       setupLogoutButton();
-      logAccess("Acesso a painel", currentPanelName(), "Página interna acessada via sessão Firebase.", getSession());
+      logAccess("Acesso a painel", currentPanelName(), "Página interna acessada via sessão Firebase com e-mail verificado.", getSession());
     }
   });
 });

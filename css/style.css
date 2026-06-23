@@ -4013,3 +4013,11 @@ body:not(.auth-is-admin) [data-admin-only] {
 body.auth-is-admin .navbar-nav .admin-only {
   display: flex !important;
 }
+
+
+/* ===== Verificação de e-mail Firebase ===== */
+.auth-alert--info {
+  color: #173a70;
+  background: #eef5ff;
+  border: 1px solid rgba(23, 58, 112, 0.16);
+}
