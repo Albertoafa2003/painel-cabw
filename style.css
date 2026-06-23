@@ -4051,3 +4051,17 @@ body.auth-is-admin .navbar-nav .admin-only {
   cursor: wait;
   opacity: 0.72;
 }
+
+/* ===== Ajuste visual dos ícones da página principal ===== */
+.home-card__symbol {
+  background:
+    radial-gradient(circle at 36% 30%, rgba(255, 255, 255, 0.98) 0%, rgba(246, 250, 255, 0.92) 38%, rgba(230, 239, 249, 0.96) 70%, rgba(255, 245, 186, 0.26) 100%);
+}
+
+.home-card:hover .home-card__symbol,
+.home-card:focus-visible .home-card__symbol {
+  box-shadow:
+    inset 0 1px 0 rgba(255, 255, 255, 0.98),
+    0 16px 28px rgba(2, 27, 70, 0.14),
+    0 0 0 6px rgba(255, 210, 0, 0.08);
+}
