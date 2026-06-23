@@ -1,38 +1,93 @@
 <!DOCTYPE html>
-<html lang="pt-BR"><head>
-<meta charset="utf-8"/><meta content="width=device-width, initial-scale=1, shrink-to-fit=no" name="viewport"/>
-<title>Painel CABW - Visão Executiva</title>
-<link href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/css/bootstrap.min.css" rel="stylesheet"/>
-<link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css" rel="stylesheet"/>
-<link href="css/style.css" rel="stylesheet" type="text/css"/>
+<html lang="pt-BR">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/css/bootstrap.min.css">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+  <link rel="stylesheet" type="text/css" href="css/style.css">
+  <title>Painel CABW - Crédito Disponível</title>
+</head>
+<body class="module-page governance-page credit-menu-page">
 
-</head><body>
 <nav class="navbar navbar-expand-lg navbar-dark bg-primary">
-<a class="navbar-brand" href="painel.html">Painel CABW</a>
-<img alt="Brasão da Comissão Aeronáutica Brasileira em Washington" class="header-logo" src="cabw_logo.png"/>
-<button aria-controls="navbarNav" aria-expanded="false" aria-label="Alternar navegação" class="navbar-toggler" data-target="#navbarNav" data-toggle="collapse" type="button"><span class="navbar-toggler-icon"></span></button>
-<div class="collapse navbar-collapse" id="navbarNav"><ul class="navbar-nav mr-auto">
-<li class="nav-item"><a class="nav-link" href="painel.html">Início</a></li>
-<li class="nav-item active"><a aria-current="page" class="nav-link" href="credito.html">Crédito Disponível</a></li>
-<li class="nav-item"><a class="nav-link" href="contratos.html">Contratos</a></li>
-<li class="nav-item"><a class="nav-link" href="processos.html">Processos de Contratação</a></li>
-<li class="nav-item"><a class="nav-link" href="requisicoes.html">Requisições</a></li>
-<li class="nav-item"><a class="nav-link" href="governanca.html">Governança</a></li>
+  <a class="navbar-brand" href="painel.html">Painel CABW</a>
+  <img src="cabw_logo.png" alt="Brasão da Comissão Aeronáutica Brasileira em Washington" class="header-logo">
+  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Alternar navegação">
+    <span class="navbar-toggler-icon"></span>
+  </button>
+  <div class="collapse navbar-collapse" id="navbarNav">
+    <ul class="navbar-nav mr-auto">
+      <li class="nav-item"><a class="nav-link" href="painel.html">Início</a></li>
+      <li class="nav-item active"><a class="nav-link" href="credito.html" aria-current="page">Crédito Disponível</a></li>
+      <li class="nav-item"><a class="nav-link" href="contratos.html">Contratos</a></li>
+      <li class="nav-item"><a class="nav-link" href="processos.html">Processos de Contratação</a></li>
+      <li class="nav-item"><a class="nav-link" href="requisicoes.html">Requisições</a></li>
+      <li class="nav-item"><a class="nav-link" href="governanca.html">Governança</a></li>
       <li class="nav-item admin-only" data-admin-only hidden><a class="nav-link" href="administracao.html">Administração do Sistema</a></li>
-<!-- Navegação secundária do painel de crédito disponível -->
-<li class="nav-item"><a class="nav-link" href="ug.html">Análise por UG</a></li>
-<li class="nav-item"><a class="nav-link" href="action.html">Análise por Ação</a></li>
-<li class="nav-item"><a class="nav-link" href="detail.html">Detalhamento</a></li>
-<li class="nav-item"><a class="nav-link" href="consistency.html">Consistência</a></li>
-</ul></div></nav>
-<main class="container-fluid mt-4">
-<h1>Visão Executiva</h1>
-<p class="credit-position-note">Crédito disponível atualizado com base no relatório técnico da posição de 22/06/2026.</p>
-<div class="row"><div class="col-lg-3 col-md-4 col-sm-6 mb-3"><div class="card text-white bg-secondary h-100"><div class="card-body"><h6 class="card-title">Crédito Disponível Total</h6><p class="card-text font-weight-bold">US$ 3.769.520,15</p></div></div></div><div class="col-lg-3 col-md-4 col-sm-6 mb-3"><div class="card text-white bg-secondary h-100"><div class="card-body"><h6 class="card-title">Crédito Total Recebido</h6><p class="card-text font-weight-bold">US$ 96.855.409,70</p></div></div></div><div class="col-lg-3 col-md-4 col-sm-6 mb-3"><div class="card text-white bg-secondary h-100"><div class="card-body"><h6 class="card-title">% Disponível sobre Recebido</h6><p class="card-text font-weight-bold">3,89%</p></div></div></div><div class="col-lg-3 col-md-4 col-sm-6 mb-3"><div class="card text-white bg-secondary h-100"><div class="card-body"><h6 class="card-title">Crédito Movimentado (Diferença)</h6><p class="card-text font-weight-bold">US$ 93.085.889,55</p></div></div></div><div class="col-lg-3 col-md-4 col-sm-6 mb-3"><div class="card text-white bg-secondary h-100"><div class="card-body"><h6 class="card-title">Quantidade de Lançamentos</h6><p class="card-text font-weight-bold">59</p></div></div></div><div class="col-lg-3 col-md-4 col-sm-6 mb-3"><div class="card text-white bg-secondary h-100"><div class="card-body"><h6 class="card-title">Maior Concentração por UG</h6><p class="card-text font-weight-bold">120026 - PAMA-LS: US$ 1.609.708,26 / 42,70%</p></div></div></div><div class="col-lg-3 col-md-4 col-sm-6 mb-3"><div class="card text-white bg-secondary h-100"><div class="card-body"><h6 class="card-title">Maior Concentração por Ação</h6><p class="card-text font-weight-bold">20XV - OPERAÇÃO E MANUTENÇÃO DE EQUIPAMENTOS DO SISCEAB: US$ 1.398.484,84 / 37,10%</p></div></div></div></div>
-<h2 class="credit-summary-title">Sumário por Data</h2>
-<div class="table-responsive"><table class="dataframe table table-striped table-sm credit-summary-table"><thead><tr><th class="text-left">Data</th><th class="text-right tabular-number">Crédito Disponível</th><th class="text-right tabular-number">Crédito Recebido</th><th class="text-center tabular-number nowrap">% Disponível</th><th class="text-right tabular-number">Crédito por Diferença</th><th class="text-center tabular-number nowrap">Lançamentos</th></tr></thead><tbody><tr><td class="text-left">20/05/2026</td><td class="text-right tabular-number">US$ 3.623.185,99</td><td class="text-right tabular-number">US$ 65.571.398,47</td><td class="text-center tabular-number nowrap">5,53%</td><td class="text-right tabular-number">US$ 61.948.212,48</td><td class="text-center tabular-number nowrap">58</td></tr><tr><td class="text-left">27/05/2026</td><td class="text-right tabular-number">US$ 4.721.584,23</td><td class="text-right tabular-number">US$ 67.154.474,76</td><td class="text-center tabular-number nowrap">7,03%</td><td class="text-right tabular-number">US$ 62.432.890,53</td><td class="text-center tabular-number nowrap">60</td></tr><tr><td class="text-left">08/06/2026</td><td class="text-right tabular-number">US$ 4.220.076,27</td><td class="text-right tabular-number">US$ 70.193.484,43</td><td class="text-center tabular-number nowrap">6,01%</td><td class="text-right tabular-number">US$ 65.973.408,16</td><td class="text-center tabular-number nowrap">60</td></tr><tr><td class="text-left">10/06/2026</td><td class="text-right tabular-number">US$ 4.291.490,99</td><td class="text-right tabular-number">US$ 70.273.351,51</td><td class="text-center tabular-number nowrap">6,11%</td><td class="text-right tabular-number">US$ 65.981.860,52</td><td class="text-center tabular-number nowrap">63</td></tr><tr><td class="text-left">11/06/2026</td><td class="text-right tabular-number">US$ 30.231.064,82</td><td class="text-right tabular-number">US$ 73.202.275,69</td><td class="text-center tabular-number nowrap">41,30%</td><td class="text-right tabular-number">US$ 42.971.210,87</td><td class="text-center tabular-number nowrap">68</td></tr><tr><td class="text-left">16/06/2026</td><td class="text-right tabular-number">US$ 28.961.801,44</td><td class="text-right tabular-number">US$ 96.409.475,82</td><td class="text-center tabular-number nowrap">30,04%</td><td class="text-right tabular-number">US$ 67.447.674,38</td><td class="text-center tabular-number nowrap">65</td></tr><tr><td class="text-left">17/06/2026</td><td class="text-right tabular-number">US$ 3.457.731,73</td><td class="text-right tabular-number">US$ 96.409.475,82</td><td class="text-center tabular-number nowrap">3,59%</td><td class="text-right tabular-number">US$ 92.951.744,09</td><td class="text-center tabular-number nowrap">64</td></tr><tr><td class="text-left">22/06/2026</td><td class="text-right tabular-number">US$ 3.769.520,15</td><td class="text-right tabular-number">US$ 96.855.409,70</td><td class="text-center tabular-number nowrap">3,89%</td><td class="text-right tabular-number">US$ 93.085.889,55</td><td class="text-center tabular-number nowrap">59</td></tr></tbody></table></div>
+    </ul>
+  </div>
+</nav>
+
+<main class="container-fluid mt-4 governance-menu-page credit-menu-page" aria-label="Crédito Disponível">
+  <header class="governance-page-header governance-page-header--wide">
+    <div>
+      <span class="governance-eyebrow">Crédito disponível e execução orçamentária</span>
+      <h1>Crédito Disponível</h1>
+      <p>Selecione um painel para acompanhar a posição executiva, a distribuição por Unidade Gestora, a análise por Ação Orçamentária, o detalhamento analítico e a consistência dos dados.</p>
+    </div>
+    <div class="governance-source-card" aria-label="Quantidade de painéis de crédito disponível">
+      <span>Painéis</span>
+      <strong>5</strong>
+      <small>Visão · UG · Ação · Detalhamento · Consistência</small>
+    </div>
+  </header>
+
+  <section class="governance-menu-grid credit-menu-grid" aria-label="Painéis de Crédito Disponível">
+    <a href="credito-visao-executiva.html" class="home-card governance-menu-card credit-menu-card" aria-label="Acessar Visão Executiva">
+      <span class="governance-menu-card__icon" aria-hidden="true"><i class="bi bi-speedometer2"></i></span>
+      <h2>Visão Executiva</h2>
+      <span class="home-card__rule" aria-hidden="true"></span>
+      <p>Acompanhe os principais indicadores consolidados: crédito disponível, crédito recebido, percentual disponível e crédito movimentado.</p>
+      <span class="home-card__button">Acessar Painel</span>
+    </a>
+
+    <a href="ug.html" class="home-card governance-menu-card credit-menu-card" aria-label="Acessar Análise por Unidade Gestora">
+      <span class="governance-menu-card__icon" aria-hidden="true"><i class="bi bi-building"></i></span>
+      <h2>Análise por UG</h2>
+      <span class="home-card__rule" aria-hidden="true"></span>
+      <p>Visualize a distribuição do crédito disponível por Unidade Gestora, rankings e participação relativa no total.</p>
+      <span class="home-card__button">Acessar Painel</span>
+    </a>
+
+    <a href="action.html" class="home-card governance-menu-card credit-menu-card" aria-label="Acessar Análise por Ação">
+      <span class="governance-menu-card__icon" aria-hidden="true"><i class="bi bi-diagram-3"></i></span>
+      <h2>Análise por Ação</h2>
+      <span class="home-card__rule" aria-hidden="true"></span>
+      <p>Consulte a concentração de crédito por Ação Orçamentária e compare crédito recebido e saldo disponível.</p>
+      <span class="home-card__button">Acessar Painel</span>
+    </a>
+
+    <a href="detail.html" class="home-card governance-menu-card credit-menu-card" aria-label="Acessar Detalhamento">
+      <span class="governance-menu-card__icon" aria-hidden="true"><i class="bi bi-table"></i></span>
+      <h2>Detalhamento</h2>
+      <span class="home-card__rule" aria-hidden="true"></span>
+      <p>Explore os registros analíticos com filtros por data, Unidade Gestora, Ação, busca textual e geração de relatório em PDF.</p>
+      <span class="home-card__button">Acessar Painel</span>
+    </a>
+
+    <a href="consistency.html" class="home-card governance-menu-card credit-menu-card" aria-label="Acessar Consistência">
+      <span class="governance-menu-card__icon" aria-hidden="true"><i class="bi bi-shield-check"></i></span>
+      <h2>Consistência</h2>
+      <span class="home-card__rule" aria-hidden="true"></span>
+      <p>Acompanhe verificações de consistência, validação de totais, lançamentos e alinhamento entre relatório e painel.</p>
+      <span class="home-card__button">Acessar Painel</span>
+    </a>
+  </section>
 </main>
+
 <script src="https://code.jquery.com/jquery-3.6.0.slim.min.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/js/bootstrap.bundle.min.js"></script>
 <script type="module" src="assets/js/auth.js"></script>
-</body></html>
+</body>
+</html>
