@@ -4000,3 +4000,16 @@ body.processes-admin-menu-page .processes-submenu-grid {
     padding: 18px;
   }
 }
+
+
+/* ===== Administração restrita por perfil ===== */
+.admin-only[hidden],
+[data-admin-only][hidden],
+body:not(.auth-is-admin) .admin-only,
+body:not(.auth-is-admin) [data-admin-only] {
+  display: none !important;
+}
+
+body.auth-is-admin .navbar-nav .admin-only {
+  display: flex !important;
+}

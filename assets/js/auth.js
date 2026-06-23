@@ -118,14 +118,15 @@ async function upsertFirestoreUser(user, options = {}) {
   await setDoc(ref, payload, { merge: true });
 }
 
-function setSession(user) {
+function setSession(user, options = {}) {
   if (!user) return;
   const session = {
     uid: user.uid || "",
     email: normalizeEmail(user.email),
     name: user.displayName || normalizeEmail(user.email),
     authenticatedAt: new Date().toISOString(),
-    provider: "Firebase Authentication"
+    provider: "Firebase Authentication",
+    isAdmin: !!options.isAdmin
   };
   writeJson(SESSION_KEY, session);
   upsertLocalUser(user, { lastLoginAt: session.authenticatedAt });
@@ -216,6 +217,38 @@ function translateAuthError(error) {
   return messages[code] || "Não foi possível concluir a operação. Tente novamente.";
 }
 
+
+function currentFileName() {
+  return location.pathname.split("/").pop() || "painel.html";
+}
+
+function isAdminPage() {
+  return ["administracao.html", "admin-usuarios.html", "admin-historico.html"].includes(currentFileName());
+}
+
+async function userIsAdmin(user) {
+  if (!user || !user.uid) return false;
+  try {
+    const snapshot = await getDoc(doc(db, "admins", user.uid));
+    return snapshot.exists();
+  } catch (error) {
+    return false;
+  }
+}
+
+function applyAdminVisibility(isAdmin) {
+  document.body.classList.toggle("auth-is-admin", !!isAdmin);
+  document.querySelectorAll("[data-admin-only], .admin-only").forEach(element => {
+    if (isAdmin) {
+      element.hidden = false;
+      element.removeAttribute("aria-hidden");
+    } else {
+      element.hidden = true;
+      element.setAttribute("aria-hidden", "true");
+    }
+  });
+}
+
 function setupPasswordToggles() {
   document.querySelectorAll("[data-toggle-password]").forEach(button => {
     button.addEventListener("click", () => {
@@ -253,7 +286,8 @@ function setupLogin() {
     try {
       const credential = await signInWithEmailAndPassword(auth, email, password);
       await upsertFirestoreUser(credential.user, { lastLoginAt: true });
-      setSession(credential.user);
+      const admin = await userIsAdmin(credential.user);
+      setSession(credential.user, { isAdmin: admin });
       await logAccess("Login", "Acesso ao Painel CABW", "Login realizado via Firebase Authentication e registrado no Firestore.", getSession());
       window.location.href = "painel.html";
     } catch (error) {
@@ -301,7 +335,8 @@ function setupRegister() {
 
       const updatedUser = auth.currentUser || credential.user;
       await upsertFirestoreUser(updatedUser, { name, createdAt: true, lastLoginAt: true });
-      setSession(updatedUser);
+      const admin = await userIsAdmin(updatedUser);
+      setSession(updatedUser, { isAdmin: admin });
       await logAccess("Criação de conta", "Acesso ao Painel CABW", "Conta criada via Firebase Authentication e registrada no Firestore.", getSession());
       window.location.href = "painel.html";
     } catch (error) {
@@ -344,7 +379,8 @@ document.addEventListener("DOMContentLoaded", () => {
   onAuthStateChanged(auth, async user => {
     if (isAuthPage && user) {
       await upsertFirestoreUser(user, { lastLoginAt: true }).catch(() => {});
-      setSession(user);
+      const admin = await userIsAdmin(user);
+      setSession(user, { isAdmin: admin });
       window.location.href = "painel.html";
       return;
     }
@@ -357,7 +393,16 @@ document.addEventListener("DOMContentLoaded", () => {
 
     if (!isAuthPage && user) {
       await upsertFirestoreUser(user, { lastLoginAt: true }).catch(() => {});
-      setSession(user);
+      const admin = await userIsAdmin(user);
+      setSession(user, { isAdmin: admin });
+      applyAdminVisibility(admin);
+
+      if (isAdminPage() && !admin) {
+        await logAccess("Acesso negado", currentPanelName(), "Tentativa de acesso a área administrativa sem perfil de administrador.", getSession());
+        window.location.href = "painel.html";
+        return;
+      }
+
       setupLogoutButton();
       logAccess("Acesso a painel", currentPanelName(), "Página interna acessada via sessão Firebase.", getSession());
     }
