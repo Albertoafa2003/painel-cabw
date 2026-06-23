@@ -7,7 +7,7 @@
   }
 
   function isFabEmail(email) {
-    return /^[^\s@]+@fab\.mil$/i.test(String(email || '').trim());
+    return /^[^\s@]+@fab\.mil\.br$/i.test(String(email || '').trim());
   }
 
   function loadUsers() {
@@ -80,7 +80,7 @@
       const password = document.querySelector('#loginPassword')?.value || '';
 
       if (!isFabEmail(email)) {
-        showMessage('Use um e-mail institucional válido terminado em @fab.mil.', 'error');
+        showMessage('Use um e-mail institucional válido terminado em @fab.mil.br.', 'error');
         return;
       }
 
@@ -113,7 +113,7 @@
       }
 
       if (!isFabEmail(email)) {
-        showMessage('O cadastro aceita somente e-mail institucional terminado em @fab.mil.', 'error');
+        showMessage('O cadastro aceita somente e-mail institucional terminado em @fab.mil.br.', 'error');
         return;
       }
 
