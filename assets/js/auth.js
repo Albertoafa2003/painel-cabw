@@ -1,4 +1,4 @@
-import { initializeApp } from "https://www.gstatic.com/firebasejs/12.15.0/firebase-app.js";
+import { initializeApp, getApp, getApps } from "https://www.gstatic.com/firebasejs/12.15.0/firebase-app.js";
 import {
   getAuth,
   createUserWithEmailAndPassword,
@@ -9,6 +9,15 @@ import {
   browserLocalPersistence,
   setPersistence
 } from "https://www.gstatic.com/firebasejs/12.15.0/firebase-auth.js";
+import {
+  getFirestore,
+  doc,
+  getDoc,
+  setDoc,
+  addDoc,
+  collection,
+  serverTimestamp
+} from "https://www.gstatic.com/firebasejs/12.15.0/firebase-firestore.js";
 
 const firebaseConfig = {
   apiKey: "AIzaSyDZehcWZwnwlGG5LR6y7_hKAVErHiHDhXM",
@@ -20,8 +29,9 @@ const firebaseConfig = {
   measurementId: "G-D2C4E646PM"
 };
 
-const app = initializeApp(firebaseConfig);
+const app = getApps().length ? getApp() : initializeApp(firebaseConfig);
 const auth = getAuth(app);
+const db = getFirestore(app);
 
 const USERS_KEY = "cabwUsers";
 const SESSION_KEY = "cabwSession";
@@ -68,7 +78,7 @@ function upsertLocalUser(user, extra = {}) {
     name: extra.name || user.displayName || current?.name || email,
     email,
     createdAt: current?.createdAt || extra.createdAt || new Date().toISOString(),
-    provider: "Firebase Authentication",
+    provider: "Firebase Authentication + Firestore",
     lastLoginAt: extra.lastLoginAt || current?.lastLoginAt || ""
   };
 
@@ -79,6 +89,33 @@ function upsertLocalUser(user, extra = {}) {
   }
 
   saveUsers(users);
+}
+
+async function upsertFirestoreUser(user, options = {}) {
+  if (!user || !user.uid || !user.email) return;
+
+  const email = normalizeEmail(user.email);
+  const ref = doc(db, "users", user.uid);
+  const snapshot = await getDoc(ref).catch(() => null);
+  const alreadyExists = snapshot && snapshot.exists();
+
+  const payload = {
+    uid: user.uid,
+    email,
+    name: options.name || user.displayName || email,
+    provider: "Firebase Authentication",
+    updatedAt: serverTimestamp()
+  };
+
+  if (!alreadyExists || options.createdAt) {
+    payload.createdAt = serverTimestamp();
+  }
+
+  if (options.lastLoginAt) {
+    payload.lastLoginAt = serverTimestamp();
+  }
+
+  await setDoc(ref, payload, { merge: true });
 }
 
 function setSession(user) {
@@ -116,20 +153,43 @@ function currentPanelName() {
   return String(document.title || "Painel CABW").replace(/^Painel CABW\s*-\s*/i, "").trim() || "Painel CABW";
 }
 
-function logAccess(action, panel, details, forcedUser) {
+async function logAccess(action, panel, details, forcedUser) {
   const session = forcedUser || getSession();
-  const entries = loadAccessLog();
-  entries.push({
+  const localEntry = {
     id: `log-${Date.now()}-${Math.random().toString(16).slice(2)}`,
     timestamp: new Date().toISOString(),
     action: action || "Acesso",
     panel: panel || currentPanelName(),
     name: session && session.name ? session.name : "",
     email: session && session.email ? session.email : "",
+    uid: session && session.uid ? session.uid : "",
     path: location.pathname.split("/").pop() || "index.html",
     details: details || ""
-  });
+  };
+
+  const entries = loadAccessLog();
+  entries.push(localEntry);
   saveAccessLog(entries);
+
+  const currentUser = auth.currentUser;
+  if (!currentUser || !currentUser.uid) return;
+
+  try {
+    await addDoc(collection(db, "accessLogs"), {
+      uid: currentUser.uid,
+      name: currentUser.displayName || localEntry.name || currentUser.email || "",
+      email: normalizeEmail(currentUser.email || localEntry.email),
+      action: localEntry.action,
+      panel: localEntry.panel,
+      path: localEntry.path,
+      details: localEntry.details,
+      timestamp: serverTimestamp(),
+      timestampClient: localEntry.timestamp,
+      userAgent: navigator.userAgent || ""
+    });
+  } catch (error) {
+    console.warn("Não foi possível gravar o log no Firestore.", error);
+  }
 }
 
 function showMessage(message, type = "error") {
@@ -150,7 +210,8 @@ function translateAuthError(error) {
     "auth/weak-password": "A senha deve ter pelo menos 6 caracteres.",
     "auth/network-request-failed": "Falha de conexão. Verifique a internet e tente novamente.",
     "auth/too-many-requests": "Muitas tentativas. Aguarde alguns minutos e tente novamente.",
-    "auth/operation-not-allowed": "O método Email/Password ainda não está habilitado no Firebase."
+    "auth/operation-not-allowed": "O método Email/Password ainda não está habilitado no Firebase.",
+    "permission-denied": "Sem permissão para gravar no Firestore. Verifique as regras do banco."
   };
   return messages[code] || "Não foi possível concluir a operação. Tente novamente.";
 }
@@ -191,8 +252,9 @@ function setupLogin() {
 
     try {
       const credential = await signInWithEmailAndPassword(auth, email, password);
+      await upsertFirestoreUser(credential.user, { lastLoginAt: true });
       setSession(credential.user);
-      logAccess("Login", "Acesso ao Painel CABW", "Login realizado via Firebase Authentication", getSession());
+      await logAccess("Login", "Acesso ao Painel CABW", "Login realizado via Firebase Authentication e registrado no Firestore.", getSession());
       window.location.href = "painel.html";
     } catch (error) {
       showMessage(translateAuthError(error));
@@ -238,9 +300,9 @@ function setupRegister() {
       await credential.user.reload();
 
       const updatedUser = auth.currentUser || credential.user;
-      upsertLocalUser(updatedUser, { name, createdAt: new Date().toISOString(), lastLoginAt: new Date().toISOString() });
+      await upsertFirestoreUser(updatedUser, { name, createdAt: true, lastLoginAt: true });
       setSession(updatedUser);
-      logAccess("Criação de conta", "Acesso ao Painel CABW", "Conta criada via Firebase Authentication", getSession());
+      await logAccess("Criação de conta", "Acesso ao Painel CABW", "Conta criada via Firebase Authentication e registrada no Firestore.", getSession());
       window.location.href = "painel.html";
     } catch (error) {
       showMessage(translateAuthError(error));
@@ -264,7 +326,7 @@ function setupLogoutButton() {
   nav.appendChild(item);
 
   item.querySelector("[data-auth-logout]").addEventListener("click", async () => {
-    logAccess("Logout", "Acesso ao Painel CABW", "Logout realizado via Firebase Authentication", getSession());
+    await logAccess("Logout", "Acesso ao Painel CABW", "Logout registrado no Firestore.", getSession());
     clearSession();
     await signOut(auth);
     window.location.href = "index.html";
@@ -279,8 +341,9 @@ document.addEventListener("DOMContentLoaded", () => {
   const pageType = document.body.dataset.authPage;
   const isAuthPage = pageType === "login" || pageType === "register";
 
-  onAuthStateChanged(auth, user => {
+  onAuthStateChanged(auth, async user => {
     if (isAuthPage && user) {
+      await upsertFirestoreUser(user, { lastLoginAt: true }).catch(() => {});
       setSession(user);
       window.location.href = "painel.html";
       return;
@@ -293,9 +356,10 @@ document.addEventListener("DOMContentLoaded", () => {
     }
 
     if (!isAuthPage && user) {
+      await upsertFirestoreUser(user, { lastLoginAt: true }).catch(() => {});
       setSession(user);
       setupLogoutButton();
-      logAccess("Acesso a painel", currentPanelName(), "Página interna acessada via sessão Firebase", getSession());
+      logAccess("Acesso a painel", currentPanelName(), "Página interna acessada via sessão Firebase.", getSession());
     }
   });
 });
