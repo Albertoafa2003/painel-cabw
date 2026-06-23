@@ -1,11 +1,12 @@
 <!DOCTYPE html>
+
 <html lang="pt-BR"><head>
 <meta charset="utf-8"/><meta content="width=device-width, initial-scale=1, shrink-to-fit=no" name="viewport"/>
 <title>Painel CABW - Análise por Ação</title>
 <link href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/css/bootstrap.min.css" rel="stylesheet"/>
 <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css" rel="stylesheet"/>
 <link href="css/style.css" rel="stylesheet" type="text/css"/>
-<script src="https://cdn.plot.ly/plotly-2.16.1.min.js"></script>
+
 </head><body>
 <nav class="navbar navbar-expand-lg navbar-dark bg-primary">
 <a class="navbar-brand" href="painel.html">Painel CABW</a>
@@ -19,29 +20,196 @@
 <li class="nav-item"><a class="nav-link" href="requisicoes.html">Requisições</a></li>
 <li class="nav-item"><a class="nav-link" href="governanca.html">Governança</a></li>
 <li class="nav-item admin-only" data-admin-only="" hidden=""><a class="nav-link" href="administracao.html">Administração do Sistema</a></li>
-
-
-
-
-
 </ul></div></nav>
 <main class="container-fluid mt-4">
-<a href="credito.html" class="governance-back-link"><i class="bi bi-arrow-left"></i> Voltar para Crédito Disponível</a>
+<a class="governance-back-link" href="credito.html"><i class="bi bi-arrow-left"></i> Voltar para Crédito Disponível</a>
 <h1>Análise por Ação Orçamentária</h1>
 <p class="credit-position-note">Ranking atualizado para a posição de 22/06/2026.</p>
 <h2>Ranking de Ações</h2>
-<div class="table-responsive"><table class="dataframe table table-striped table-sm"><thead><tr><th class="text-center nowrap">Ação</th><th class="text-left">Descrição</th><th class="text-center nowrap">PTRES Vinculados</th><th class="text-center tabular-number nowrap">Lanç.</th><th class="text-right tabular-number">Crédito Disponível</th><th class="text-center tabular-number nowrap">% do Total</th></tr></thead><tbody><tr><td class="text-center nowrap">20XV</td><td class="text-left">OPERAÇÃO E MANUTENÇÃO DE EQUIPAMENTOS DO SISCEAB</td><td class="text-center nowrap">229166</td><td class="text-center tabular-number nowrap">20</td><td class="text-right tabular-number">US$ 1.398.484,84</td><td class="text-center tabular-number nowrap">37,10%</td></tr><tr><td class="text-center nowrap">2048</td><td class="text-left">MANUTENÇÃO E SUPRIMENTO DE MATERIAL AERONÁUTICO</td><td class="text-center nowrap">229177</td><td class="text-center tabular-number nowrap">19</td><td class="text-right tabular-number">US$ 1.363.230,75</td><td class="text-center tabular-number nowrap">36,16%</td></tr><tr><td class="text-center nowrap">2868</td><td class="text-left">COMBUSTÍVEIS E LUBRIFICANTES DE AVIAÇÃO</td><td class="text-center nowrap">229179</td><td class="text-center tabular-number nowrap">1</td><td class="text-right tabular-number">US$ 434.370,57</td><td class="text-center tabular-number nowrap">11,52%</td></tr><tr><td class="text-center nowrap">2004</td><td class="text-left">ASSISTÊNCIA MÉDICA E ODONTOLÓGICA</td><td class="text-center nowrap">214537, 214550</td><td class="text-center tabular-number nowrap">2</td><td class="text-right tabular-number">US$ 289.313,55</td><td class="text-center tabular-number nowrap">7,68%</td></tr><tr><td class="text-center nowrap">20IH</td><td class="text-left">MODERNIZAÇÃO E REVITALIZAÇÃO DE AERONAVE - T2 / MODERNIZAÇÃO E REVITALIZAÇÃO DE AERONAVE - C97</td><td class="text-center nowrap">249587, 249589</td><td class="text-center tabular-number nowrap">3</td><td class="text-right tabular-number">US$ 163.587,37</td><td class="text-center tabular-number nowrap">4,34%</td></tr><tr><td class="text-center nowrap">20X7</td><td class="text-left">EMPREGO CONJUNTO OU COMBINADO DAS FFAA</td><td class="text-center nowrap">228692</td><td class="text-center tabular-number nowrap">2</td><td class="text-right tabular-number">US$ 70.313,49</td><td class="text-center tabular-number nowrap">1,87%</td></tr><tr><td class="text-center nowrap">2000</td><td class="text-left">ADMINISTRAÇÃO DA UNIDADE</td><td class="text-center nowrap">168901, 168919</td><td class="text-center tabular-number nowrap">6</td><td class="text-right tabular-number">US$ 40.967,66</td><td class="text-center tabular-number nowrap">1,09%</td></tr><tr><td class="text-center nowrap">21A0</td><td class="text-left">APRESTAMENTO DAS FFAA</td><td class="text-center nowrap">229226</td><td class="text-center tabular-number nowrap">3</td><td class="text-right tabular-number">US$ 6.058,71</td><td class="text-center tabular-number nowrap">0,16%</td></tr><tr><td class="text-center nowrap">151S</td><td class="text-left">IMPLANTAÇÃO E DESENVOLVIMENTO</td><td class="text-center nowrap">228676</td><td class="text-center tabular-number nowrap">1</td><td class="text-right tabular-number">US$ 2.000,00</td><td class="text-center tabular-number nowrap">0,05%</td></tr><tr><td class="text-center nowrap">2D55</td><td class="text-left">ADIDÂNCIAS MILITARES NO EXTERIOR</td><td class="text-center nowrap">228786</td><td class="text-center tabular-number nowrap">1</td><td class="text-right tabular-number">US$ 748,61</td><td class="text-center tabular-number nowrap">0,02%</td></tr><tr><td class="text-center nowrap">00UU</td><td class="text-left">CONTRIBUIÇÕES A ORGANISMOS INTERNACIONAIS</td><td class="text-center nowrap">229209</td><td class="text-center tabular-number nowrap">1</td><td class="text-right tabular-number">US$ 444,60</td><td class="text-center tabular-number nowrap">0,01%</td></tr></tbody></table></div>
-<h2>Distribuição do Crédito por Ação</h2>
-<div class="chart-card"><div class="plotly-graph-div" id="actionDistributionChart" style="height:520px; width:100%;"></div></div>
-<h2>Crédito Recebido por Ação Orçamentária</h2>
-<div class="table-responsive"><table class="dataframe table table-striped table-sm"><thead><tr><th class="text-center nowrap">Ação</th><th class="text-left">Descrição</th><th class="text-right tabular-number">Crédito Recebido em 2026</th><th class="text-center tabular-number nowrap">% do Recebido</th><th class="text-right tabular-number">Crédito Disponível</th><th class="text-center tabular-number nowrap">% Disponível s/ Recebido</th><th class="text-right tabular-number">Diferença</th></tr></thead><tbody><tr><td class="text-center nowrap">20XV</td><td class="text-left">OPERAÇÃO E MANUTENÇÃO DE EQUIPAMENTOS DO SISCEAB</td><td class="text-right tabular-number">US$ 78.727.625,83</td><td class="text-center tabular-number nowrap">81,28%</td><td class="text-right tabular-number">US$ 1.398.484,84</td><td class="text-center tabular-number nowrap">1,78%</td><td class="text-right tabular-number">US$ 77.329.140,99</td></tr><tr><td class="text-center nowrap">2048</td><td class="text-left">MANUTENÇÃO E SUPRIMENTO DE MATERIAL AERONÁUTICO</td><td class="text-right tabular-number">US$ 11.219.185,78</td><td class="text-center tabular-number nowrap">11,58%</td><td class="text-right tabular-number">US$ 1.363.230,75</td><td class="text-center tabular-number nowrap">12,15%</td><td class="text-right tabular-number">US$ 9.855.955,03</td></tr><tr><td class="text-center nowrap">2000</td><td class="text-left">ADMINISTRAÇÃO DA UNIDADE</td><td class="text-right tabular-number">US$ 1.418.854,67</td><td class="text-center tabular-number nowrap">1,46%</td><td class="text-right tabular-number">US$ 40.967,66</td><td class="text-center tabular-number nowrap">2,89%</td><td class="text-right tabular-number">US$ 1.377.887,01</td></tr><tr><td class="text-center nowrap">21EM</td><td class="text-left">EMPREGO DAS FORÇAS ARMADAS</td><td class="text-right tabular-number">US$ 1.024.028,05</td><td class="text-center tabular-number nowrap">1,06%</td><td class="text-right tabular-number">US$ 0,00</td><td class="text-center tabular-number nowrap">0,00%</td><td class="text-right tabular-number">US$ 1.024.028,05</td></tr><tr><td class="text-center nowrap">20IH</td><td class="text-left">MODERNIZAÇÃO E REVITALIZAÇÃO DE AERONAVE - T2 / MODERNIZAÇÃO E REVITALIZAÇÃO DE AERONAVE - C97</td><td class="text-right tabular-number">US$ 991.512,66</td><td class="text-center tabular-number nowrap">1,02%</td><td class="text-right tabular-number">US$ 163.587,37</td><td class="text-center tabular-number nowrap">16,50%</td><td class="text-right tabular-number">US$ 827.925,29</td></tr><tr><td class="text-center nowrap">2868</td><td class="text-left">COMBUSTÍVEIS E LUBRIFICANTES DE AVIAÇÃO</td><td class="text-right tabular-number">US$ 991.492,00</td><td class="text-center tabular-number nowrap">1,02%</td><td class="text-right tabular-number">US$ 434.370,57</td><td class="text-center tabular-number nowrap">43,81%</td><td class="text-right tabular-number">US$ 557.121,43</td></tr><tr><td class="text-center nowrap">2004</td><td class="text-left">ASSISTÊNCIA MÉDICA E ODONTOLÓGICA</td><td class="text-right tabular-number">US$ 946.997,82</td><td class="text-center tabular-number nowrap">0,98%</td><td class="text-right tabular-number">US$ 289.313,55</td><td class="text-center tabular-number nowrap">30,55%</td><td class="text-right tabular-number">US$ 657.684,27</td></tr><tr><td class="text-center nowrap">20X7</td><td class="text-left">EMPREGO CONJUNTO OU COMBINADO DAS FFAA</td><td class="text-right tabular-number">US$ 842.628,07</td><td class="text-center tabular-number nowrap">0,87%</td><td class="text-right tabular-number">US$ 70.313,49</td><td class="text-center tabular-number nowrap">8,34%</td><td class="text-right tabular-number">US$ 772.314,58</td></tr><tr><td class="text-center nowrap">21A0</td><td class="text-left">APRESTAMENTO DAS FFAA</td><td class="text-right tabular-number">US$ 332.834,51</td><td class="text-center tabular-number nowrap">0,34%</td><td class="text-right tabular-number">US$ 6.058,71</td><td class="text-center tabular-number nowrap">1,82%</td><td class="text-right tabular-number">US$ 326.775,80</td></tr><tr><td class="text-center nowrap">00UU</td><td class="text-left">CONTRIBUIÇÕES A ORGANISMOS INTERNACIONAIS</td><td class="text-right tabular-number">US$ 115.829,43</td><td class="text-center tabular-number nowrap">0,12%</td><td class="text-right tabular-number">US$ 444,60</td><td class="text-center tabular-number nowrap">0,38%</td><td class="text-right tabular-number">US$ 115.384,83</td></tr><tr><td class="text-center nowrap">2913</td><td class="text-left">INVESTIGAÇÃO E PREVENÇÃO DE ACIDENTES AERONÁUTICOS</td><td class="text-right tabular-number">US$ 95.359,00</td><td class="text-center tabular-number nowrap">0,10%</td><td class="text-right tabular-number">US$ 0,00</td><td class="text-center tabular-number nowrap">0,00%</td><td class="text-right tabular-number">US$ 95.359,00</td></tr><tr><td class="text-center nowrap">2120</td><td class="text-left">MOVIMENTAÇÃO DE MILITARES</td><td class="text-right tabular-number">US$ 70.106,17</td><td class="text-center tabular-number nowrap">0,07%</td><td class="text-right tabular-number">US$ 0,00</td><td class="text-center tabular-number nowrap">0,00%</td><td class="text-right tabular-number">US$ 70.106,17</td></tr><tr><td class="text-center nowrap">21AI</td><td class="text-left">FUNCIONAMENTO E ATUALIZAÇÃO DE INFRAESTRUTURA</td><td class="text-right tabular-number">US$ 34.985,84</td><td class="text-center tabular-number nowrap">0,04%</td><td class="text-right tabular-number">US$ 0,00</td><td class="text-center tabular-number nowrap">0,00%</td><td class="text-right tabular-number">US$ 34.985,84</td></tr><tr><td class="text-center nowrap">20X1</td><td class="text-left">PARTICIPAÇÃO BRASILEIRA EM OPERAÇÕES</td><td class="text-right tabular-number">US$ 34.023,57</td><td class="text-center tabular-number nowrap">0,04%</td><td class="text-right tabular-number">US$ 0,00</td><td class="text-center tabular-number nowrap">0,00%</td><td class="text-right tabular-number">US$ 34.023,57</td></tr><tr><td class="text-center nowrap">21GO</td><td class="text-left">FUNCIONAMENTO DAS INSTITUIÇÕES CIENTÍFICAS</td><td class="text-right tabular-number">US$ 4.314,00</td><td class="text-center tabular-number nowrap">0,00%</td><td class="text-right tabular-number">US$ 0,00</td><td class="text-center tabular-number nowrap">0,00%</td><td class="text-right tabular-number">US$ 4.314,00</td></tr><tr><td class="text-center nowrap">151S</td><td class="text-left">IMPLANTAÇÃO E DESENVOLVIMENTO</td><td class="text-right tabular-number">US$ 4.030,10</td><td class="text-center tabular-number nowrap">0,00%</td><td class="text-right tabular-number">US$ 2.000,00</td><td class="text-center tabular-number nowrap">49,63%</td><td class="text-right tabular-number">US$ 2.030,10</td></tr><tr><td class="text-center nowrap">2D55</td><td class="text-left">ADIDÂNCIAS MILITARES NO EXTERIOR</td><td class="text-right tabular-number">US$ 1.602,20</td><td class="text-center tabular-number nowrap">0,00%</td><td class="text-right tabular-number">US$ 748,61</td><td class="text-center tabular-number nowrap">46,72%</td><td class="text-right tabular-number">US$ 853,59</td></tr><tr><td class="text-center nowrap">TOTAL GERAL</td><td class="text-left"></td><td class="text-right tabular-number">US$ 96.855.409,70</td><td class="text-center tabular-number nowrap">100,00%</td><td class="text-right tabular-number">US$ 3.769.520,15</td><td class="text-center tabular-number nowrap">3,89%</td><td class="text-right tabular-number">US$ 93.085.889,55</td></tr></tbody></table></div>
+<div class="table-responsive"><table class="dataframe table table-striped table-sm"><thead><tr><th class="text-center nowrap">Ação</th><th class="text-left">Descrição</th><th class="text-center nowrap">PTRES</th><th class="text-right tabular-number">Crédito Disponível</th><th class="text-center tabular-number nowrap">% do Total</th></tr></thead><tbody><tr><td class="text-center nowrap">20XV</td><td class="text-left">OPERAÇÃO E MANUTENÇÃO DE EQUIPAMENTOS DO SISCEAB</td><td class="text-center nowrap">229166</td><td class="text-right tabular-number">US$ 1.398.484,84</td><td class="text-center tabular-number nowrap">37,10%</td></tr><tr><td class="text-center nowrap">2048</td><td class="text-left">MANUTENÇÃO E SUPRIMENTO DE MATERIAL AERONÁUTICO</td><td class="text-center nowrap">229177</td><td class="text-right tabular-number">US$ 1.363.230,75</td><td class="text-center tabular-number nowrap">36,16%</td></tr><tr><td class="text-center nowrap">2868</td><td class="text-left">COMBUSTÍVEIS E LUBRIFICANTES DE AVIAÇÃO</td><td class="text-center nowrap">229179</td><td class="text-right tabular-number">US$ 434.370,57</td><td class="text-center tabular-number nowrap">11,52%</td></tr><tr><td class="text-center nowrap">2004</td><td class="text-left">ASSISTÊNCIA MÉDICA E ODONTOLÓGICA</td><td class="text-center nowrap">214537, 214550</td><td class="text-right tabular-number">US$ 289.313,55</td><td class="text-center tabular-number nowrap">7,68%</td></tr><tr><td class="text-center nowrap">20IH</td><td class="text-left">MODERNIZAÇÃO E REVITALIZAÇÃO DE AERONAVE - T2 / MODERNIZAÇÃO E REVITALIZAÇÃO DE AERONAVE - C97</td><td class="text-center nowrap">249587, 249589</td><td class="text-right tabular-number">US$ 163.587,37</td><td class="text-center tabular-number nowrap">4,34%</td></tr><tr><td class="text-center nowrap">20X7</td><td class="text-left">EMPREGO CONJUNTO OU COMBINADO DAS FFAA</td><td class="text-center nowrap">228692</td><td class="text-right tabular-number">US$ 70.313,49</td><td class="text-center tabular-number nowrap">1,87%</td></tr><tr><td class="text-center nowrap">2000</td><td class="text-left">ADMINISTRAÇÃO DA UNIDADE</td><td class="text-center nowrap">168901, 168919</td><td class="text-right tabular-number">US$ 40.967,66</td><td class="text-center tabular-number nowrap">1,09%</td></tr><tr><td class="text-center nowrap">21A0</td><td class="text-left">APRESTAMENTO DAS FFAA</td><td class="text-center nowrap">229226</td><td class="text-right tabular-number">US$ 6.058,71</td><td class="text-center tabular-number nowrap">0,16%</td></tr><tr><td class="text-center nowrap">151S</td><td class="text-left">IMPLANTAÇÃO E DESENVOLVIMENTO</td><td class="text-center nowrap">228676</td><td class="text-right tabular-number">US$ 2.000,00</td><td class="text-center tabular-number nowrap">0,05%</td></tr><tr><td class="text-center nowrap">2D55</td><td class="text-left">ADIDÂNCIAS MILITARES NO EXTERIOR</td><td class="text-center nowrap">228786</td><td class="text-right tabular-number">US$ 748,61</td><td class="text-center tabular-number nowrap">0,02%</td></tr><tr><td class="text-center nowrap">00UU</td><td class="text-left">CONTRIBUIÇÕES A ORGANISMOS INTERNACIONAIS</td><td class="text-center nowrap">229209</td><td class="text-right tabular-number">US$ 444,60</td><td class="text-center tabular-number nowrap">0,01%</td></tr></tbody></table></div>
+
+<h2>Crédito Recebido por Ação Orçamentária</h2><section aria-label="Filtro de crédito recebido por ação orçamentária" class="credit-received-filter-card">
+<div class="credit-received-filter-card__content">
+<div>
+<h3>Filtro para relatório de crédito recebido</h3>
+<p>Selecione uma Ação Orçamentária para filtrar a tabela de crédito recebido e gerar relatório em PDF.</p>
+</div>
+<div class="credit-received-filter-card__controls">
+<label for="receivedActionFilter">Ação Orçamentária</label>
+<select id="receivedActionFilter">
+<option value="">Todas as ações</option>
+<option value="20XV">20XV - OPERAÇÃO E MANUTENÇÃO DE EQUIPAMENTOS DO SISCEAB</option><option value="2048">2048 - MANUTENÇÃO E SUPRIMENTO DE MATERIAL AERONÁUTICO</option><option value="2000">2000 - ADMINISTRAÇÃO DA UNIDADE</option><option value="21EM">21EM - EMPREGO DAS FORÇAS ARMADAS</option><option value="20IH">20IH - MODERNIZAÇÃO E REVITALIZAÇÃO DE AERONAVE - T2 / MODERNIZAÇÃO E REVITALIZAÇÃO DE AERONAVE - C97</option><option value="2868">2868 - COMBUSTÍVEIS E LUBRIFICANTES DE AVIAÇÃO</option><option value="2004">2004 - ASSISTÊNCIA MÉDICA E ODONTOLÓGICA</option><option value="20X7">20X7 - EMPREGO CONJUNTO OU COMBINADO DAS FFAA</option><option value="21A0">21A0 - APRESTAMENTO DAS FFAA</option><option value="00UU">00UU - CONTRIBUIÇÕES A ORGANISMOS INTERNACIONAIS</option><option value="2913">2913 - INVESTIGAÇÃO E PREVENÇÃO DE ACIDENTES AERONÁUTICOS</option><option value="2120">2120 - MOVIMENTAÇÃO DE MILITARES</option><option value="21AI">21AI - FUNCIONAMENTO E ATUALIZAÇÃO DE INFRAESTRUTURA</option><option value="20X1">20X1 - PARTICIPAÇÃO BRASILEIRA EM OPERAÇÕES</option><option value="21GO">21GO - FUNCIONAMENTO DAS INSTITUIÇÕES CIENTÍFICAS</option><option value="151S">151S - IMPLANTAÇÃO E DESENVOLVIMENTO</option><option value="2D55">2D55 - ADIDÂNCIAS MILITARES NO EXTERIOR</option>
+</select>
+<button class="detail-button detail-button--primary" id="generateReceivedActionPdf" type="button">
+<i aria-hidden="true" class="bi bi-filetype-pdf"></i> Gerar relatório PDF
+      </button>
+</div>
+</div>
+<p aria-live="polite" class="detail-report-status" id="receivedActionStatus"></p>
+</section>
+<div class="table-responsive"><table class="dataframe table table-striped table-sm credit-received-table" id="receivedCreditTable"><thead><tr><th class="text-center nowrap">Ação</th><th class="text-left">Descrição</th><th class="text-right tabular-number">Crédito Recebido em 2026</th><th class="text-center tabular-number nowrap">% do Recebido</th><th class="text-right tabular-number">Crédito Disponível</th><th class="text-center tabular-number nowrap">% Disponível s/ Recebido</th><th class="text-right tabular-number">Diferença</th></tr></thead><tbody><tr><td class="text-center nowrap">20XV</td><td class="text-left">OPERAÇÃO E MANUTENÇÃO DE EQUIPAMENTOS DO SISCEAB</td><td class="text-right tabular-number">US$ 78.727.625,83</td><td class="text-center tabular-number nowrap">81,28%</td><td class="text-right tabular-number">US$ 1.398.484,84</td><td class="text-center tabular-number nowrap">1,78%</td><td class="text-right tabular-number">US$ 77.329.140,99</td></tr><tr><td class="text-center nowrap">2048</td><td class="text-left">MANUTENÇÃO E SUPRIMENTO DE MATERIAL AERONÁUTICO</td><td class="text-right tabular-number">US$ 11.219.185,78</td><td class="text-center tabular-number nowrap">11,58%</td><td class="text-right tabular-number">US$ 1.363.230,75</td><td class="text-center tabular-number nowrap">12,15%</td><td class="text-right tabular-number">US$ 9.855.955,03</td></tr><tr><td class="text-center nowrap">2000</td><td class="text-left">ADMINISTRAÇÃO DA UNIDADE</td><td class="text-right tabular-number">US$ 1.418.854,67</td><td class="text-center tabular-number nowrap">1,46%</td><td class="text-right tabular-number">US$ 40.967,66</td><td class="text-center tabular-number nowrap">2,89%</td><td class="text-right tabular-number">US$ 1.377.887,01</td></tr><tr><td class="text-center nowrap">21EM</td><td class="text-left">EMPREGO DAS FORÇAS ARMADAS</td><td class="text-right tabular-number">US$ 1.024.028,05</td><td class="text-center tabular-number nowrap">1,06%</td><td class="text-right tabular-number">US$ 0,00</td><td class="text-center tabular-number nowrap">0,00%</td><td class="text-right tabular-number">US$ 1.024.028,05</td></tr><tr><td class="text-center nowrap">20IH</td><td class="text-left">MODERNIZAÇÃO E REVITALIZAÇÃO DE AERONAVE - T2 / MODERNIZAÇÃO E REVITALIZAÇÃO DE AERONAVE - C97</td><td class="text-right tabular-number">US$ 991.512,66</td><td class="text-center tabular-number nowrap">1,02%</td><td class="text-right tabular-number">US$ 163.587,37</td><td class="text-center tabular-number nowrap">16,50%</td><td class="text-right tabular-number">US$ 827.925,29</td></tr><tr><td class="text-center nowrap">2868</td><td class="text-left">COMBUSTÍVEIS E LUBRIFICANTES DE AVIAÇÃO</td><td class="text-right tabular-number">US$ 991.492,00</td><td class="text-center tabular-number nowrap">1,02%</td><td class="text-right tabular-number">US$ 434.370,57</td><td class="text-center tabular-number nowrap">43,81%</td><td class="text-right tabular-number">US$ 557.121,43</td></tr><tr><td class="text-center nowrap">2004</td><td class="text-left">ASSISTÊNCIA MÉDICA E ODONTOLÓGICA</td><td class="text-right tabular-number">US$ 946.997,82</td><td class="text-center tabular-number nowrap">0,98%</td><td class="text-right tabular-number">US$ 289.313,55</td><td class="text-center tabular-number nowrap">30,55%</td><td class="text-right tabular-number">US$ 657.684,27</td></tr><tr><td class="text-center nowrap">20X7</td><td class="text-left">EMPREGO CONJUNTO OU COMBINADO DAS FFAA</td><td class="text-right tabular-number">US$ 842.628,07</td><td class="text-center tabular-number nowrap">0,87%</td><td class="text-right tabular-number">US$ 70.313,49</td><td class="text-center tabular-number nowrap">8,34%</td><td class="text-right tabular-number">US$ 772.314,58</td></tr><tr><td class="text-center nowrap">21A0</td><td class="text-left">APRESTAMENTO DAS FFAA</td><td class="text-right tabular-number">US$ 332.834,51</td><td class="text-center tabular-number nowrap">0,34%</td><td class="text-right tabular-number">US$ 6.058,71</td><td class="text-center tabular-number nowrap">1,82%</td><td class="text-right tabular-number">US$ 326.775,80</td></tr><tr><td class="text-center nowrap">00UU</td><td class="text-left">CONTRIBUIÇÕES A ORGANISMOS INTERNACIONAIS</td><td class="text-right tabular-number">US$ 115.829,43</td><td class="text-center tabular-number nowrap">0,12%</td><td class="text-right tabular-number">US$ 444,60</td><td class="text-center tabular-number nowrap">0,38%</td><td class="text-right tabular-number">US$ 115.384,83</td></tr><tr><td class="text-center nowrap">2913</td><td class="text-left">INVESTIGAÇÃO E PREVENÇÃO DE ACIDENTES AERONÁUTICOS</td><td class="text-right tabular-number">US$ 95.359,00</td><td class="text-center tabular-number nowrap">0,10%</td><td class="text-right tabular-number">US$ 0,00</td><td class="text-center tabular-number nowrap">0,00%</td><td class="text-right tabular-number">US$ 95.359,00</td></tr><tr><td class="text-center nowrap">2120</td><td class="text-left">MOVIMENTAÇÃO DE MILITARES</td><td class="text-right tabular-number">US$ 70.106,17</td><td class="text-center tabular-number nowrap">0,07%</td><td class="text-right tabular-number">US$ 0,00</td><td class="text-center tabular-number nowrap">0,00%</td><td class="text-right tabular-number">US$ 70.106,17</td></tr><tr><td class="text-center nowrap">21AI</td><td class="text-left">FUNCIONAMENTO E ATUALIZAÇÃO DE INFRAESTRUTURA</td><td class="text-right tabular-number">US$ 34.985,84</td><td class="text-center tabular-number nowrap">0,04%</td><td class="text-right tabular-number">US$ 0,00</td><td class="text-center tabular-number nowrap">0,00%</td><td class="text-right tabular-number">US$ 34.985,84</td></tr><tr><td class="text-center nowrap">20X1</td><td class="text-left">PARTICIPAÇÃO BRASILEIRA EM OPERAÇÕES</td><td class="text-right tabular-number">US$ 34.023,57</td><td class="text-center tabular-number nowrap">0,04%</td><td class="text-right tabular-number">US$ 0,00</td><td class="text-center tabular-number nowrap">0,00%</td><td class="text-right tabular-number">US$ 34.023,57</td></tr><tr><td class="text-center nowrap">21GO</td><td class="text-left">FUNCIONAMENTO DAS INSTITUIÇÕES CIENTÍFICAS</td><td class="text-right tabular-number">US$ 4.314,00</td><td class="text-center tabular-number nowrap">0,00%</td><td class="text-right tabular-number">US$ 0,00</td><td class="text-center tabular-number nowrap">0,00%</td><td class="text-right tabular-number">US$ 4.314,00</td></tr><tr><td class="text-center nowrap">151S</td><td class="text-left">IMPLANTAÇÃO E DESENVOLVIMENTO</td><td class="text-right tabular-number">US$ 4.030,10</td><td class="text-center tabular-number nowrap">0,00%</td><td class="text-right tabular-number">US$ 2.000,00</td><td class="text-center tabular-number nowrap">49,63%</td><td class="text-right tabular-number">US$ 2.030,10</td></tr><tr><td class="text-center nowrap">2D55</td><td class="text-left">ADIDÂNCIAS MILITARES NO EXTERIOR</td><td class="text-right tabular-number">US$ 1.602,20</td><td class="text-center tabular-number nowrap">0,00%</td><td class="text-right tabular-number">US$ 748,61</td><td class="text-center tabular-number nowrap">46,72%</td><td class="text-right tabular-number">US$ 853,59</td></tr><tr><td class="text-center nowrap">TOTAL GERAL</td><td class="text-left"></td><td class="text-right tabular-number">US$ 96.855.409,70</td><td class="text-center tabular-number nowrap">100,00%</td><td class="text-right tabular-number">US$ 3.769.520,15</td><td class="text-center tabular-number nowrap">3,89%</td><td class="text-right tabular-number">US$ 93.085.889,55</td></tr></tbody></table></div>
 </main>
-<script>
-const actionLabels = ["00UU", "2D55", "151S", "21A0", "2000", "20X7", "20IH", "2004", "2868", "2048", "20XV"];
-const actionValues = [444.6, 748.61, 2000.0, 6058.71, 40967.66, 70313.49, 163587.37, 289313.55, 434370.57, 1363230.75, 1398484.84];
-Plotly.newPlot('actionDistributionChart', [{type:'bar', orientation:'h', x:actionValues, y:actionLabels, marker:{color:'#6257ff'}, hovertemplate:'Ação=%{y}<br>Crédito Disponível=US$ %{x:,.2f}<extra></extra>'}], {title:'Crédito Disponível por Ação - posição de 22/06/2026', paper_bgcolor:'rgba(0,0,0,0)', plot_bgcolor:'#e8eef8', font:{color:'#06265b', family:'Montserrat, Arial, sans-serif'}, margin:{l:120,r:40,t:60,b:60}, xaxis:{title:'Crédito Disponível (US$)', gridcolor:'#ffffff'}, yaxis:{title:'Ação', gridcolor:'#ffffff'}}, {responsive:true});
-</script>
+
 <script src="https://code.jquery.com/jquery-3.6.0.slim.min.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/js/bootstrap.bundle.min.js"></script>
-<script type="module" src="assets/js/auth.js"></script>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf-autotable/3.8.3/jspdf.plugin.autotable.min.js"></script>
+<script id="receivedActionPdfScriptMarker">
+document.addEventListener('DOMContentLoaded', function () {
+  var receivedData = [{"Ação": "20XV", "Descrição": "OPERAÇÃO E MANUTENÇÃO DE EQUIPAMENTOS DO SISCEAB", "Crédito Recebido em 2026": "US$ 78.727.625,83", "Crédito Disponível": "US$ 1.398.484,84", "Crédito Disponível Número": 1398484.84, "Crédito Recebido Número": 78727625.83, "% do Recebido": "81,28%", "% Disponível s/ Recebido": "1,78%", "Diferença": "US$ 77.329.140,99"}, {"Ação": "2048", "Descrição": "MANUTENÇÃO E SUPRIMENTO DE MATERIAL AERONÁUTICO", "Crédito Recebido em 2026": "US$ 11.219.185,78", "Crédito Disponível": "US$ 1.363.230,75", "Crédito Disponível Número": 1363230.75, "Crédito Recebido Número": 11219185.78, "% do Recebido": "11,58%", "% Disponível s/ Recebido": "12,15%", "Diferença": "US$ 9.855.955,03"}, {"Ação": "2000", "Descrição": "ADMINISTRAÇÃO DA UNIDADE", "Crédito Recebido em 2026": "US$ 1.418.854,67", "Crédito Disponível": "US$ 40.967,66", "Crédito Disponível Número": 40967.66, "Crédito Recebido Número": 1418854.67, "% do Recebido": "1,46%", "% Disponível s/ Recebido": "2,89%", "Diferença": "US$ 1.377.887,01"}, {"Ação": "21EM", "Descrição": "EMPREGO DAS FORÇAS ARMADAS", "Crédito Recebido em 2026": "US$ 1.024.028,05", "Crédito Disponível": "US$ 0,00", "Crédito Disponível Número": 0.0, "Crédito Recebido Número": 1024028.05, "% do Recebido": "1,06%", "% Disponível s/ Recebido": "0,00%", "Diferença": "US$ 1.024.028,05"}, {"Ação": "20IH", "Descrição": "MODERNIZAÇÃO E REVITALIZAÇÃO DE AERONAVE - T2 / MODERNIZAÇÃO E REVITALIZAÇÃO DE AERONAVE - C97", "Crédito Recebido em 2026": "US$ 991.512,66", "Crédito Disponível": "US$ 163.587,37", "Crédito Disponível Número": 163587.37, "Crédito Recebido Número": 991512.66, "% do Recebido": "1,02%", "% Disponível s/ Recebido": "16,50%", "Diferença": "US$ 827.925,29"}, {"Ação": "2868", "Descrição": "COMBUSTÍVEIS E LUBRIFICANTES DE AVIAÇÃO", "Crédito Recebido em 2026": "US$ 991.492,00", "Crédito Disponível": "US$ 434.370,57", "Crédito Disponível Número": 434370.57, "Crédito Recebido Número": 991492.0, "% do Recebido": "1,02%", "% Disponível s/ Recebido": "43,81%", "Diferença": "US$ 557.121,43"}, {"Ação": "2004", "Descrição": "ASSISTÊNCIA MÉDICA E ODONTOLÓGICA", "Crédito Recebido em 2026": "US$ 946.997,82", "Crédito Disponível": "US$ 289.313,55", "Crédito Disponível Número": 289313.55, "Crédito Recebido Número": 946997.82, "% do Recebido": "0,98%", "% Disponível s/ Recebido": "30,55%", "Diferença": "US$ 657.684,27"}, {"Ação": "20X7", "Descrição": "EMPREGO CONJUNTO OU COMBINADO DAS FFAA", "Crédito Recebido em 2026": "US$ 842.628,07", "Crédito Disponível": "US$ 70.313,49", "Crédito Disponível Número": 70313.49, "Crédito Recebido Número": 842628.07, "% do Recebido": "0,87%", "% Disponível s/ Recebido": "8,34%", "Diferença": "US$ 772.314,58"}, {"Ação": "21A0", "Descrição": "APRESTAMENTO DAS FFAA", "Crédito Recebido em 2026": "US$ 332.834,51", "Crédito Disponível": "US$ 6.058,71", "Crédito Disponível Número": 6058.71, "Crédito Recebido Número": 332834.51, "% do Recebido": "0,34%", "% Disponível s/ Recebido": "1,82%", "Diferença": "US$ 326.775,80"}, {"Ação": "00UU", "Descrição": "CONTRIBUIÇÕES A ORGANISMOS INTERNACIONAIS", "Crédito Recebido em 2026": "US$ 115.829,43", "Crédito Disponível": "US$ 444,60", "Crédito Disponível Número": 444.6, "Crédito Recebido Número": 115829.43, "% do Recebido": "0,12%", "% Disponível s/ Recebido": "0,38%", "Diferença": "US$ 115.384,83"}, {"Ação": "2913", "Descrição": "INVESTIGAÇÃO E PREVENÇÃO DE ACIDENTES AERONÁUTICOS", "Crédito Recebido em 2026": "US$ 95.359,00", "Crédito Disponível": "US$ 0,00", "Crédito Disponível Número": 0.0, "Crédito Recebido Número": 95359.0, "% do Recebido": "0,10%", "% Disponível s/ Recebido": "0,00%", "Diferença": "US$ 95.359,00"}, {"Ação": "2120", "Descrição": "MOVIMENTAÇÃO DE MILITARES", "Crédito Recebido em 2026": "US$ 70.106,17", "Crédito Disponível": "US$ 0,00", "Crédito Disponível Número": 0.0, "Crédito Recebido Número": 70106.17, "% do Recebido": "0,07%", "% Disponível s/ Recebido": "0,00%", "Diferença": "US$ 70.106,17"}, {"Ação": "21AI", "Descrição": "FUNCIONAMENTO E ATUALIZAÇÃO DE INFRAESTRUTURA", "Crédito Recebido em 2026": "US$ 34.985,84", "Crédito Disponível": "US$ 0,00", "Crédito Disponível Número": 0.0, "Crédito Recebido Número": 34985.84, "% do Recebido": "0,04%", "% Disponível s/ Recebido": "0,00%", "Diferença": "US$ 34.985,84"}, {"Ação": "20X1", "Descrição": "PARTICIPAÇÃO BRASILEIRA EM OPERAÇÕES", "Crédito Recebido em 2026": "US$ 34.023,57", "Crédito Disponível": "US$ 0,00", "Crédito Disponível Número": 0.0, "Crédito Recebido Número": 34023.57, "% do Recebido": "0,04%", "% Disponível s/ Recebido": "0,00%", "Diferença": "US$ 34.023,57"}, {"Ação": "21GO", "Descrição": "FUNCIONAMENTO DAS INSTITUIÇÕES CIENTÍFICAS", "Crédito Recebido em 2026": "US$ 4.314,00", "Crédito Disponível": "US$ 0,00", "Crédito Disponível Número": 0.0, "Crédito Recebido Número": 4314.0, "% do Recebido": "0,00%", "% Disponível s/ Recebido": "0,00%", "Diferença": "US$ 4.314,00"}, {"Ação": "151S", "Descrição": "IMPLANTAÇÃO E DESENVOLVIMENTO", "Crédito Recebido em 2026": "US$ 4.030,10", "Crédito Disponível": "US$ 2.000,00", "Crédito Disponível Número": 2000.0, "Crédito Recebido Número": 4030.1, "% do Recebido": "0,00%", "% Disponível s/ Recebido": "49,63%", "Diferença": "US$ 2.030,10"}, {"Ação": "2D55", "Descrição": "ADIDÂNCIAS MILITARES NO EXTERIOR", "Crédito Recebido em 2026": "US$ 1.602,20", "Crédito Disponível": "US$ 748,61", "Crédito Disponível Número": 748.61, "Crédito Recebido Número": 1602.2, "% do Recebido": "0,00%", "% Disponível s/ Recebido": "46,72%", "Diferença": "US$ 853,59"}];
+  var positionDate = "22/06/2026";
+  var sourceFile = "RELATÓRIO_CRÉDITO_DISPONÍVEL_CABW_22062026(2).docx";
+  var filter = document.getElementById('receivedActionFilter');
+  var table = document.getElementById('receivedCreditTable');
+  var pdfButton = document.getElementById('generateReceivedActionPdf');
+  var status = document.getElementById('receivedActionStatus');
+
+  function normalize(value) {
+    return String(value || '').trim();
+  }
+
+  function setStatus(message, type) {
+    if (!status) return;
+    status.textContent = message || '';
+    status.className = 'detail-report-status' + (type ? ' detail-report-status--' + type : '');
+  }
+
+  function visibleRows() {
+    var selected = filter ? filter.value : '';
+    return receivedData.filter(function (row) {
+      return row['Ação'] !== 'TOTAL GERAL' && (!selected || row['Ação'] === selected);
+    });
+  }
+
+  function applyFilter() {
+    if (!table || !filter) return;
+    var selected = filter.value;
+    var bodyRows = table.querySelectorAll('tbody tr');
+    bodyRows.forEach(function (tr) {
+      var actionCell = tr.querySelector('td');
+      var action = actionCell ? normalize(actionCell.textContent) : '';
+      var isTotal = action === 'TOTAL GERAL';
+      var shouldShow = selected ? action === selected : true;
+      tr.style.display = shouldShow ? '' : 'none';
+    });
+    var count = visibleRows().length;
+    setStatus(count + ' ação(ões) exibida(s).', 'info');
+  }
+
+  function filePart(value) {
+    return String(value || 'todas-acoes')
+      .normalize('NFD').replace(/[\u0300-\u036f]/g, '')
+      .replace(/[^a-zA-Z0-9]+/g, '-')
+      .replace(/^-+|-+$/g, '')
+      .toLowerCase()
+      .slice(0, 48) || 'relatorio';
+  }
+
+  function createPdf() {
+    var rows = visibleRows();
+    if (!rows.length) {
+      setStatus('Não há dados para gerar relatório com o filtro selecionado.', 'warning');
+      return;
+    }
+    if (!window.jspdf || !window.jspdf.jsPDF) {
+      setStatus('Biblioteca de PDF não carregada. Verifique sua conexão e tente novamente.', 'error');
+      return;
+    }
+    var doc = new window.jspdf.jsPDF({ orientation: 'landscape', unit: 'pt', format: 'a4' });
+    if (typeof doc.autoTable !== 'function') {
+      setStatus('Biblioteca de tabela PDF não carregada. Verifique sua conexão e tente novamente.', 'error');
+      return;
+    }
+
+    var selected = filter ? filter.value : '';
+    var selectedLabel = selected ? rows[0]['Ação'] + ' - ' + rows[0]['Descrição'] : 'Todas as ações orçamentárias';
+    var generatedAt = new Date().toLocaleString('pt-BR');
+    var totalReceived = rows.reduce(function (sum, item) { return sum + Number(item['Crédito Recebido Número'] || 0); }, 0);
+    var totalAvailable = rows.reduce(function (sum, item) { return sum + Number(item['Crédito Disponível Número'] || 0); }, 0);
+    var totalDifference = rows.reduce(function (sum, item) {
+      var text = String(item['Diferença'] || '0').replace(/[^0-9,.-]/g, '').replace(/\./g, '').replace(',', '.');
+      return sum + Number(text || 0);
+    }, 0);
+    var fmt = new Intl.NumberFormat('pt-BR', { style: 'currency', currency: 'USD' });
+
+    doc.setFillColor(0, 52, 118);
+    doc.rect(0, 0, 842, 74, 'F');
+    doc.setTextColor(255, 255, 255);
+    doc.setFont('helvetica', 'bold');
+    doc.setFontSize(16);
+    doc.text('Painel CABW - Relatório de Crédito Recebido por Ação', 40, 34);
+    doc.setFont('helvetica', 'normal');
+    doc.setFontSize(10);
+    doc.text('Gerado em: ' + generatedAt + ' | Posição: ' + positionDate, 40, 54);
+
+    doc.setTextColor(6, 38, 91);
+    doc.setFont('helvetica', 'bold');
+    doc.setFontSize(13);
+    doc.text('Filtro aplicado', 40, 104);
+    doc.setFont('helvetica', 'normal');
+    doc.setFontSize(10);
+    doc.text('Ação Orçamentária: ' + selectedLabel, 40, 122);
+    doc.text('Fonte: ' + sourceFile, 40, 138);
+
+    doc.autoTable({
+      startY: 158,
+      margin: { left: 40, right: 40 },
+      head: [['Ações', 'Crédito recebido', 'Crédito disponível', 'Diferença']],
+      body: [[
+        String(rows.length),
+        fmt.format(totalReceived).replace('US$', 'US$'),
+        fmt.format(totalAvailable).replace('US$', 'US$'),
+        fmt.format(totalDifference).replace('US$', 'US$')
+      ]],
+      theme: 'grid',
+      headStyles: { fillColor: [0, 52, 118], textColor: 255, fontStyle: 'bold' },
+      styles: { font: 'helvetica', fontSize: 9, textColor: [6, 38, 91] }
+    });
+
+    var tableBody = rows.map(function (item) {
+      return [
+        item['Ação'] || '',
+        item['Descrição'] || '',
+        item['Crédito Recebido em 2026'] || '',
+        item['% do Recebido'] || '',
+        item['Crédito Disponível'] || '',
+        item['% Disponível s/ Recebido'] || '',
+        item['Diferença'] || ''
+      ];
+    });
+
+    doc.autoTable({
+      startY: doc.lastAutoTable.finalY + 22,
+      margin: { left: 40, right: 40 },
+      head: [['Ação', 'Descrição', 'Crédito Recebido em 2026', '% do Recebido', 'Crédito Disponível', '% Disp. s/ Recebido', 'Diferença']],
+      body: tableBody,
+      theme: 'striped',
+      headStyles: { fillColor: [0, 52, 118], textColor: 255, fontStyle: 'bold' },
+      styles: { font: 'helvetica', fontSize: 8, cellPadding: 5, overflow: 'linebreak', textColor: [6, 38, 91] },
+      columnStyles: {
+        0: { cellWidth: 48 },
+        1: { cellWidth: 230 },
+        2: { halign: 'right' },
+        3: { halign: 'center' },
+        4: { halign: 'right' },
+        5: { halign: 'center' },
+        6: { halign: 'right' }
+      }
+    });
+
+    doc.save('relatorio-credito-recebido-' + filePart(selected || 'todas-acoes') + '.pdf');
+    setStatus('Relatório PDF gerado com sucesso.', 'success');
+  }
+
+  if (filter) {
+    filter.addEventListener('change', applyFilter);
+  }
+  if (pdfButton) {
+    pdfButton.addEventListener('click', createPdf);
+  }
+  applyFilter();
+});
+</script>
+<script src="assets/js/auth.js" type="module"></script>
 </body></html>

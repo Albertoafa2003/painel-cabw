@@ -4100,3 +4100,84 @@ body.auth-is-admin .navbar-nav .admin-only {
     max-width: none;
   }
 }
+
+
+/* ===== Filtro e relatório de crédito recebido por ação ===== */
+.credit-received-filter-card {
+  margin: 14px 0 22px;
+  padding: 20px 22px;
+  background: #ffffff;
+  border: 1px solid rgba(5, 32, 82, 0.08);
+  border-radius: 16px;
+  box-shadow: 0 14px 28px rgba(2, 27, 70, 0.08);
+}
+
+.credit-received-filter-card__content {
+  display: grid;
+  grid-template-columns: minmax(0, 1.2fr) minmax(320px, 0.9fr);
+  gap: 20px;
+  align-items: end;
+}
+
+.credit-received-filter-card h3 {
+  margin: 0 0 8px;
+  color: var(--cabw-navy-900);
+  font-size: 1.15rem;
+  font-weight: 800;
+}
+
+.credit-received-filter-card p {
+  margin: 0;
+  color: var(--cabw-muted);
+  line-height: 1.55;
+}
+
+.credit-received-filter-card__controls {
+  display: grid;
+  grid-template-columns: 1fr auto;
+  gap: 10px 12px;
+  align-items: end;
+}
+
+.credit-received-filter-card__controls label {
+  grid-column: 1 / -1;
+  margin: 0;
+  color: var(--cabw-navy-900);
+  font-weight: 800;
+  font-size: 0.9rem;
+}
+
+.credit-received-filter-card__controls select {
+  min-height: 46px;
+  padding: 0 12px;
+  color: var(--cabw-ink);
+  background: #f9fbff;
+  border: 1px solid rgba(5, 32, 82, 0.16);
+  border-radius: 8px;
+  font-weight: 600;
+}
+
+.detail-report-status--info {
+  color: #17406f;
+}
+
+.detail-report-status--success {
+  color: #12633f;
+}
+
+.detail-report-status--warning,
+.detail-report-status--error {
+  color: #8a1d2d;
+}
+
+@media (max-width: 991.98px) {
+  .credit-received-filter-card__content,
+  .credit-received-filter-card__controls {
+    grid-template-columns: 1fr;
+  }
+
+  .credit-received-filter-card__controls .detail-button {
+    width: 100%;
+    justify-content: center;
+  }
+}
