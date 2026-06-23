@@ -19,6 +19,7 @@ import {
   collection,
   serverTimestamp
 } from "https://www.gstatic.com/firebasejs/12.15.0/firebase-firestore.js";
+import { AUTHORIZED_EMAILS, AUTHORIZED_EMAILS_UPDATED_AT, AUTHORIZED_EMAILS_SOURCE } from "./authorized-emails.js";
 
 const firebaseConfig = {
   apiKey: "AIzaSyDZehcWZwnwlGG5LR6y7_hKAVErHiHDhXM",
@@ -46,6 +47,26 @@ function normalizeEmail(email) {
 
 function isFabEmail(email) {
   return /^[^\s@]+@fab\.mil\.br$/i.test(String(email || "").trim());
+}
+
+function isAuthorizedEmail(email) {
+  return AUTHORIZED_EMAILS.has(normalizeEmail(email));
+}
+
+function authorizationErrorMessage() {
+  return "Este e-mail não está autorizado a acessar o Painel CABW. Solicite a inclusão do e-mail à administração do sistema.";
+}
+
+function validateAccessEmail(email) {
+  if (!isFabEmail(email)) {
+    return "Use um e-mail institucional válido terminado em @fab.mil.br.";
+  }
+
+  if (!isAuthorizedEmail(email)) {
+    return authorizationErrorMessage();
+  }
+
+  return "";
 }
 
 function readJson(key, fallback) {
@@ -84,6 +105,8 @@ function upsertLocalUser(user, extra = {}) {
     name: extra.name || user.displayName || current?.name || email,
     email,
     emailVerified: !!user.emailVerified,
+    authorized: isAuthorizedEmail(email),
+    authorizationListUpdatedAt: AUTHORIZED_EMAILS_UPDATED_AT,
     createdAt: current?.createdAt || extra.createdAt || new Date().toISOString(),
     provider: "Firebase Authentication + Firestore",
     lastLoginAt: extra.lastLoginAt || current?.lastLoginAt || ""
@@ -110,6 +133,9 @@ async function upsertFirestoreUser(user, options = {}) {
     uid: user.uid,
     email,
     emailVerified: !!user.emailVerified,
+    authorized: isAuthorizedEmail(email),
+    authorizationListUpdatedAt: AUTHORIZED_EMAILS_UPDATED_AT,
+    authorizationSource: AUTHORIZED_EMAILS_SOURCE,
     name: options.name || user.displayName || email,
     provider: "Firebase Authentication",
     updatedAt: serverTimestamp()
@@ -132,6 +158,7 @@ function setSession(user, options = {}) {
     uid: user.uid || "",
     email: normalizeEmail(user.email),
     emailVerified: !!user.emailVerified,
+    authorized: isAuthorizedEmail(user.email),
     name: user.displayName || normalizeEmail(user.email),
     authenticatedAt: new Date().toISOString(),
     provider: "Firebase Authentication",
@@ -261,6 +288,11 @@ function showInitialAuthMessage() {
     showMessage("E-mail ainda não verificado. Verifique sua caixa de entrada e clique no link enviado pelo Firebase. Se necessário, informe e-mail/senha e use o botão Reenviar link de verificação.", "error");
     history.replaceState({}, document.title, "index.html");
   }
+
+  if (params.get("unauthorized") === "1") {
+    showMessage(authorizationErrorMessage(), "error");
+    history.replaceState({}, document.title, "index.html");
+  }
 }
 
 function setupLogin() {
@@ -273,8 +305,9 @@ function setupLogin() {
     const email = normalizeEmail(document.querySelector("#loginEmail")?.value);
     const password = document.querySelector("#loginPassword")?.value || "";
 
-    if (!isFabEmail(email)) {
-      showMessage("Use um e-mail institucional válido terminado em @fab.mil.br.");
+    const accessError = validateAccessEmail(email);
+    if (accessError) {
+      showMessage(accessError);
       return;
     }
 
@@ -323,8 +356,9 @@ function setupResendVerification() {
     const email = normalizeEmail(document.querySelector("#loginEmail")?.value);
     const password = document.querySelector("#loginPassword")?.value || "";
 
-    if (!isFabEmail(email)) {
-      showMessage("Informe seu e-mail institucional @fab.mil.br para reenviar o link.");
+    const accessError = validateAccessEmail(email);
+    if (accessError) {
+      showMessage(accessError);
       return;
     }
 
@@ -378,8 +412,9 @@ function setupRegister() {
       return;
     }
 
-    if (!isFabEmail(email)) {
-      showMessage("O cadastro aceita somente e-mail institucional terminado em @fab.mil.br.");
+    const accessError = validateAccessEmail(email);
+    if (accessError) {
+      showMessage(accessError);
       return;
     }
 
@@ -482,6 +517,13 @@ document.addEventListener("DOMContentLoaded", () => {
       await user.reload();
       const currentUser = auth.currentUser || user;
 
+      if (!isAuthorizedEmail(currentUser.email)) {
+        clearSession();
+        await signOut(auth).catch(() => {});
+        showMessage(authorizationErrorMessage(), "error");
+        return;
+      }
+
       if (!currentUser.emailVerified) {
         clearSession();
         await signOut(auth).catch(() => {});
@@ -505,6 +547,18 @@ document.addEventListener("DOMContentLoaded", () => {
     if (!isAuthPage && user) {
       await user.reload();
       const currentUser = auth.currentUser || user;
+
+      if (!isAuthorizedEmail(currentUser.email)) {
+        await logAccess("Acesso negado", currentPanelName(), "Tentativa de acesso com e-mail fora da lista autorizada.", {
+          uid: currentUser.uid || "",
+          email: normalizeEmail(currentUser.email),
+          name: currentUser.displayName || normalizeEmail(currentUser.email)
+        });
+        clearSession();
+        await signOut(auth).catch(() => {});
+        window.location.href = "index.html?unauthorized=1";
+        return;
+      }
 
       if (!currentUser.emailVerified) {
         await logAccess("Acesso negado", currentPanelName(), "Tentativa de acesso com e-mail ainda não verificado.", getSession());
