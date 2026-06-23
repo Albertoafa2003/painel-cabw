@@ -1,6 +1,7 @@
 (function () {
   const USERS_KEY = 'cabwUsers';
   const SESSION_KEY = 'cabwSession';
+  const ACCESS_LOG_KEY = 'cabwAccessLog';
 
   function normalizeEmail(email) {
     return String(email || '').trim().toLowerCase();
@@ -10,12 +11,16 @@
     return /^[^\s@]+@fab\.mil\.br$/i.test(String(email || '').trim());
   }
 
-  function loadUsers() {
+  function readJson(key, fallback) {
     try {
-      return JSON.parse(localStorage.getItem(USERS_KEY) || '[]');
+      return JSON.parse(localStorage.getItem(key) || JSON.stringify(fallback));
     } catch (error) {
-      return [];
+      return fallback;
     }
+  }
+
+  function loadUsers() {
+    return readJson(USERS_KEY, []);
   }
 
   function saveUsers(users) {
@@ -23,11 +28,7 @@
   }
 
   function getSession() {
-    try {
-      return JSON.parse(localStorage.getItem(SESSION_KEY) || 'null');
-    } catch (error) {
-      return null;
-    }
+    return readJson(SESSION_KEY, null);
   }
 
   function setSession(user) {
@@ -36,6 +37,36 @@
       name: user.name || user.email,
       authenticatedAt: new Date().toISOString()
     }));
+  }
+
+  function loadAccessLog() {
+    return readJson(ACCESS_LOG_KEY, []);
+  }
+
+  function saveAccessLog(entries) {
+    localStorage.setItem(ACCESS_LOG_KEY, JSON.stringify(entries.slice(-1000)));
+  }
+
+  function currentPanelName() {
+    const h1 = document.querySelector('main h1, header h1, h1');
+    if (h1 && h1.textContent.trim()) return h1.textContent.trim();
+    return String(document.title || 'Painel CABW').replace(/^Painel CABW\s*-\s*/i, '').trim() || 'Painel CABW';
+  }
+
+  function logAccess(action, panel, details, forcedUser) {
+    const session = forcedUser || getSession();
+    const entries = loadAccessLog();
+    entries.push({
+      id: `log-${Date.now()}-${Math.random().toString(16).slice(2)}`,
+      timestamp: new Date().toISOString(),
+      action: action || 'Acesso',
+      panel: panel || currentPanelName(),
+      name: session && session.name ? session.name : '',
+      email: session && session.email ? session.email : '',
+      path: location.pathname.split('/').pop() || 'index.html',
+      details: details || ''
+    });
+    saveAccessLog(entries);
   }
 
   function showMessage(message, type) {
@@ -91,6 +122,7 @@
       }
 
       setSession(user);
+      logAccess('Login', 'Acesso ao sistema', 'Login realizado com sucesso.', user);
       window.location.href = 'painel.html';
     });
   }
@@ -142,6 +174,7 @@
       users.push(user);
       saveUsers(users);
       setSession(user);
+      logAccess('Criação de conta', 'Administração do Sistema', 'Usuário cadastrado e autenticado.', user);
 
       window.location.href = 'painel.html';
     });
@@ -160,9 +193,17 @@
     nav.appendChild(item);
 
     item.querySelector('[data-auth-logout]').addEventListener('click', () => {
+      logAccess('Logout', 'Acesso ao sistema', 'Usuário encerrou a sessão.', session);
       localStorage.removeItem(SESSION_KEY);
       window.location.href = 'index.html';
     });
+  }
+
+  function logProtectedPageAccess() {
+    const key = `cabwLastLogged:${location.pathname}:${Date.now()}`;
+    if (sessionStorage.getItem(key)) return;
+    sessionStorage.setItem(key, '1');
+    logAccess('Acesso a painel', currentPanelName(), 'Página interna acessada.');
   }
 
   document.addEventListener('DOMContentLoaded', () => {
@@ -184,5 +225,6 @@
     }
 
     setupLogoutButton();
+    logProtectedPageAccess();
   });
 })();
