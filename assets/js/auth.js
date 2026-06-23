@@ -68,16 +68,9 @@ function saveUsers(users) {
   writeJson(USERS_KEY, users);
 }
 
-function verificationContinueUrl() {
-  return new URL("index.html?verified=1", window.location.href).href;
-}
-
 async function sendVerification(user) {
   if (!user || !user.email) return;
-  await sendEmailVerification(user, {
-    url: verificationContinueUrl(),
-    handleCodeInApp: false
-  });
+  await sendEmailVerification(user);
 }
 
 function upsertLocalUser(user, extra = {}) {
@@ -229,6 +222,9 @@ function translateAuthError(error) {
     "auth/too-many-requests": "Muitas tentativas. Aguarde alguns minutos e tente novamente.",
     "auth/operation-not-allowed": "O método Email/Password ainda não está habilitado no Firebase.",
     "auth/missing-continue-uri": "Configure o domínio autorizado e tente enviar novamente a verificação de e-mail.",
+    "auth/unauthorized-continue-uri": "O domínio do GitHub Pages não está autorizado no Firebase Authentication.",
+    "auth/invalid-continue-uri": "O link de retorno da verificação de e-mail não é válido.",
+    "auth/user-token-expired": "A sessão expirou. Faça login novamente.",
     "permission-denied": "Sem permissão para gravar no Firestore. Verifique as regras do banco."
   };
   return messages[code] || "Não foi possível concluir a operação. Tente novamente.";
@@ -257,12 +253,12 @@ function showInitialAuthMessage() {
   }
 
   if (params.get("verifyEmail") === "1") {
-    showMessage("Cadastro realizado. Enviamos um link de verificação para o e-mail informado. Confirme o e-mail antes de fazer login.", "info");
+    showMessage("Cadastro realizado. Enviamos um link de verificação para o e-mail informado. Confirme o e-mail antes de fazer login. Verifique também spam/quarentena.", "info");
     history.replaceState({}, document.title, "index.html");
   }
 
   if (params.get("emailNotVerified") === "1") {
-    showMessage("E-mail ainda não verificado. Verifique sua caixa de entrada e clique no link enviado pelo Firebase.", "error");
+    showMessage("E-mail ainda não verificado. Verifique sua caixa de entrada e clique no link enviado pelo Firebase. Se necessário, informe e-mail/senha e use o botão Reenviar link de verificação.", "error");
     history.replaceState({}, document.title, "index.html");
   }
 }
@@ -293,11 +289,17 @@ function setupLogin() {
       const user = auth.currentUser || credential.user;
 
       if (!user.emailVerified) {
-        await sendVerification(user).catch(() => {});
-        await upsertFirestoreUser(user, { lastLoginAt: true }).catch(() => {});
-        await signOut(auth);
-        clearSession();
-        showMessage("E-mail ainda não verificado. Enviamos um novo link de verificação para seu e-mail institucional.", "error");
+        try {
+          await sendVerification(user);
+          await upsertFirestoreUser(user, { lastLoginAt: true }).catch(() => {});
+          await signOut(auth);
+          clearSession();
+          showMessage("E-mail ainda não verificado. Reenviamos o link de verificação. Verifique caixa de entrada, spam ou quarentena.", "error");
+        } catch (verificationError) {
+          await signOut(auth).catch(() => {});
+          clearSession();
+          showMessage(`Não foi possível enviar o link de verificação: ${translateAuthError(verificationError)}`, "error");
+        }
         return;
       }
 
@@ -308,6 +310,53 @@ function setupLogin() {
       window.location.href = "painel.html";
     } catch (error) {
       showMessage(translateAuthError(error));
+    }
+  });
+}
+
+
+function setupResendVerification() {
+  const button = document.querySelector("#resendVerificationButton");
+  if (!button) return;
+
+  button.addEventListener("click", async () => {
+    const email = normalizeEmail(document.querySelector("#loginEmail")?.value);
+    const password = document.querySelector("#loginPassword")?.value || "";
+
+    if (!isFabEmail(email)) {
+      showMessage("Informe seu e-mail institucional @fab.mil.br para reenviar o link.");
+      return;
+    }
+
+    if (!password) {
+      showMessage("Informe a senha para reenviar o link de verificação.");
+      return;
+    }
+
+    button.disabled = true;
+    const originalText = button.textContent;
+    button.textContent = "Enviando...";
+
+    try {
+      const credential = await signInWithEmailAndPassword(auth, email, password);
+      await credential.user.reload();
+      const user = auth.currentUser || credential.user;
+
+      if (user.emailVerified) {
+        setSession(user, { isAdmin: await userIsAdmin(user) });
+        showMessage("Este e-mail já está verificado. Você já pode fazer login.", "info");
+      } else {
+        await sendVerification(user);
+        showMessage("Link de verificação reenviado. Verifique caixa de entrada, spam ou quarentena.", "info");
+      }
+
+      await signOut(auth).catch(() => {});
+      clearSession();
+    } catch (error) {
+      showMessage(translateAuthError(error));
+    } finally {
+      button.disabled = false;
+      button.textContent = originalText;
     }
   });
 }
@@ -422,6 +471,7 @@ document.addEventListener("DOMContentLoaded", () => {
   setupPasswordToggles();
   showInitialAuthMessage();
   setupLogin();
+  setupResendVerification();
   setupRegister();
 
   const pageType = document.body.dataset.authPage;
@@ -433,6 +483,9 @@ document.addEventListener("DOMContentLoaded", () => {
       const currentUser = auth.currentUser || user;
 
       if (!currentUser.emailVerified) {
+        clearSession();
+        await signOut(auth).catch(() => {});
+        showMessage("Conta criada, mas o e-mail ainda não foi verificado. Verifique sua caixa de entrada ou use Reenviar link de verificação.", "info");
         return;
       }
 

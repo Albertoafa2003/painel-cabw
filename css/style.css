@@ -4021,3 +4021,33 @@ body.auth-is-admin .navbar-nav .admin-only {
   background: #eef5ff;
   border: 1px solid rgba(23, 58, 112, 0.16);
 }
+
+
+/* ===== Botão de reenvio de verificação de e-mail ===== */
+.auth-secondary-button {
+  display: flex;
+  width: 100%;
+  min-height: 44px;
+  margin-top: 12px;
+  align-items: center;
+  justify-content: center;
+  color: #17245c;
+  background: #f3f6fb;
+  border: 1px solid rgba(23, 36, 92, 0.14);
+  border-radius: 7px;
+  font-size: 0.95rem;
+  font-weight: 800;
+  cursor: pointer;
+  transition: background-color 160ms ease, border-color 160ms ease, transform 160ms ease;
+}
+
+.auth-secondary-button:hover,
+.auth-secondary-button:focus-visible {
+  background: #e9eef8;
+  border-color: rgba(23, 36, 92, 0.28);
+}
+
+.auth-secondary-button:disabled {
+  cursor: wait;
+  opacity: 0.72;
+}
