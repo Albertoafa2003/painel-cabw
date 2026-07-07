@@ -4181,3 +4181,57 @@ body.auth-is-admin .navbar-nav .admin-only {
     justify-content: center;
   }
 }
+
+
+/* ===== Atualização do processo Seguro Saúde ===== */
+.process-update-banner {
+  display: flex;
+  gap: 14px;
+  align-items: flex-start;
+  width: min(100%, 1220px);
+  margin: 20px auto 26px;
+  padding: 16px 18px;
+  color: var(--cabw-navy-900);
+  background: linear-gradient(90deg, rgba(255, 210, 0, 0.14), rgba(0, 54, 118, 0.05));
+  border: 1px solid rgba(255, 210, 0, 0.28);
+  border-radius: 16px;
+  box-shadow: 0 14px 28px rgba(2, 27, 70, 0.06);
+  line-height: 1.55;
+}
+
+.process-update-banner__icon {
+  display: inline-flex;
+  flex: 0 0 38px;
+  width: 38px;
+  height: 38px;
+  align-items: center;
+  justify-content: center;
+  color: #003a82;
+  background: #ffffff;
+  border-radius: 999px;
+  box-shadow: 0 8px 16px rgba(2, 27, 70, 0.10);
+}
+
+.process-update-banner span {
+  display: block;
+  margin-bottom: 4px;
+  color: var(--cabw-gold-700);
+  font-size: 0.82rem;
+  font-weight: 800;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+}
+
+.process-update-banner strong {
+  color: var(--cabw-navy-900);
+}
+
+.process-stage--current .process-stage__marker .bi-megaphone {
+  font-size: 1rem;
+}
+
+@media (max-width: 575.98px) {
+  .process-update-banner {
+    padding: 14px;
+  }
+}
