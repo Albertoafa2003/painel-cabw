@@ -34,12 +34,12 @@
     <div>
       <span class="governance-eyebrow">Planejamento, instrução e acompanhamento</span>
       <h1>Processos de Contratação</h1>
-      <p>Selecione um painel para acompanhar processos administrativos e finalísticos, com foco em governança, rastreabilidade e controle gerencial das contratações da CABW.</p>
+      <p>Selecione um painel para acompanhar processos administrativos e finalísticos, com foco em governança, rastreabilidade, prazos e controle gerencial.</p>
     </div>
-    <div class="governance-source-card" aria-label="Quantidade de painéis de processos de contratação">
-      <span>Painéis</span>
+    <div class="governance-source-card" aria-label="Resumo dos processos de contratação">
+      <span>Processos monitorados</span>
       <strong>2</strong>
-      <small>Administrativos · Finalísticos</small>
+      <small>2 administrativos · 0 finalísticos</small>
     </div>
   </header>
 
@@ -60,10 +60,64 @@
       <span class="home-card__button">Acessar Painel</span>
     </a>
   </section>
+
+  <section class="process-summary-board" aria-label="Resumo de todos os processos de contratação">
+    <div class="process-summary-board__header">
+      <div>
+        <span class="governance-eyebrow">Visão consolidada</span>
+        <h2>Status de todos os processos</h2>
+        <p>Resumo gerencial dos processos atualmente monitorados, com etapa, prazo, próximo marco e impacto potencial.</p>
+      </div>
+      <button type="button" class="process-report-button process-report-button--summary" data-process-summary-pdf>
+        <i class="bi bi-file-earmark-pdf"></i>
+        Gerar PDF resumido
+      </button>
+    </div>
+
+    <div class="process-summary-list">
+      <article class="process-summary-item">
+        <div class="process-summary-item__icon"><i class="bi bi-heart-pulse"></i></div>
+        <div class="process-summary-item__content">
+          <span class="process-summary-item__category">Processo Administrativo</span>
+          <h3>Seguro Saúde</h3>
+          <p>Publicado em 07/07/2026; abertura do Pregão Eletrônico agendada para 21/07/2026.</p>
+        </div>
+        <div class="process-summary-item__status">
+          <strong>Pregão agendado</strong>
+          <span data-process-countdown="seguro-saude">Calculando prazo...</span>
+        </div>
+        <div class="process-summary-item__actions">
+          <a href="processos-seguro-saude.html">Abrir</a>
+          <button type="button" data-process-pdf="seguro-saude"><i class="bi bi-file-earmark-pdf"></i> PDF</button>
+        </div>
+      </article>
+
+      <article class="process-summary-item">
+        <div class="process-summary-item__icon"><i class="bi bi-pc-display"></i></div>
+        <div class="process-summary-item__content">
+          <span class="process-summary-item__category">Processo Administrativo</span>
+          <h3>Equipamentos de TI</h3>
+          <p>Enviado à análise jurídica em 07/07/2026; conclusão prevista para 21/07/2026.</p>
+        </div>
+        <div class="process-summary-item__status">
+          <strong>Análise jurídica</strong>
+          <span data-process-countdown="equipamentos-ti">Calculando prazo...</span>
+        </div>
+        <div class="process-summary-item__actions">
+          <a href="processos-equipamentos-ti.html">Abrir</a>
+          <button type="button" data-process-pdf="equipamentos-ti"><i class="bi bi-file-earmark-pdf"></i> PDF</button>
+        </div>
+      </article>
+    </div>
+  </section>
 </main>
 
 <script src="https://code.jquery.com/jquery-3.6.0.slim.min.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/js/bootstrap.bundle.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/jspdf@2.5.1/dist/jspdf.umd.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/jspdf-autotable@3.8.4/dist/jspdf.plugin.autotable.min.js"></script>
+<script src="assets/js/processes-data.js"></script>
+<script src="assets/js/processes-reports.js"></script>
 <script type="module" src="assets/js/auth.js"></script>
 </body>
 </html>

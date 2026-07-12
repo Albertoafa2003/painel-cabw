@@ -36,28 +36,72 @@
     <div>
       <span class="governance-eyebrow">Processos de Contratação</span>
       <h1>Processos Administrativos</h1>
-      <p>Selecione um processo administrativo para acompanhar a etapa atual, eventuais atrasos, impacto na contratação e providências gerenciais.</p>
+      <p>Selecione um processo para acompanhar sua etapa atual, cumprimento de prazos, riscos, impactos e histórico completo da contratação.</p>
     </div>
     <div class="governance-source-card" aria-label="Quantidade de processos administrativos cadastrados">
       <span>Processos</span>
-      <strong>1</strong>
-      <small>Seguro Saúde</small>
+      <strong>2</strong>
+      <small>Seguro Saúde · Equipamentos de TI</small>
     </div>
   </header>
 
-  <section class="governance-menu-grid processes-submenu-grid" aria-label="Painéis de Processos Administrativos">
-    <a href="processos-seguro-saude.html" class="home-card governance-menu-card processes-menu-card process-health-card" aria-label="Acessar processo Seguro Saúde">
+  <section class="process-report-toolbar" aria-label="Relatório resumido dos processos">
+    <div>
+      <span class="governance-eyebrow">Relatório consolidado</span>
+      <h2>Status dos Processos Administrativos</h2>
+      <p>Gere um PDF resumido com a etapa atual, os principais prazos e o impacto potencial de todos os processos monitorados.</p>
+    </div>
+    <button type="button" class="process-report-button process-report-button--summary" data-process-summary-pdf>
+      <i class="bi bi-file-earmark-pdf" aria-hidden="true"></i>
+      Gerar PDF resumido
+    </button>
+  </section>
+
+  <section class="governance-menu-grid processes-submenu-grid process-records-grid" aria-label="Painéis de Processos Administrativos">
+    <article class="home-card governance-menu-card processes-menu-card process-record-card process-health-card">
       <span class="governance-menu-card__icon" aria-hidden="true"><i class="bi bi-heart-pulse"></i></span>
+      <span class="process-card-status process-card-status--published">Publicado</span>
       <h2>Seguro Saúde</h2>
       <span class="home-card__rule" aria-hidden="true"></span>
-      <p>Contratação de seguro saúde para militares do Comando da Aeronáutica em missão nos EUA e seus dependentes. Publicado em 07/07/2026, com abertura do Pregão Eletrônico agendada para 21/07/2026.</p>
-      <span class="home-card__button">Acessar Painel</span>
-    </a>
+      <p>Seguro saúde para militares em missão nos EUA e seus dependentes. Pregão Eletrônico publicado e com abertura agendada para 21/07/2026.</p>
+      <div class="process-card-meta">
+        <span><i class="bi bi-signpost-split"></i> Etapa: Pregão Eletrônico agendado</span>
+        <span data-process-countdown="seguro-saude"><i class="bi bi-clock-history"></i> Calculando prazo...</span>
+      </div>
+      <div class="process-card-actions">
+        <a href="processos-seguro-saude.html" class="home-card__button process-card-access">Acessar Painel <i class="bi bi-arrow-right"></i></a>
+        <button type="button" class="process-card-pdf-button" data-process-pdf="seguro-saude">
+          <i class="bi bi-file-earmark-pdf"></i> Histórico PDF
+        </button>
+      </div>
+    </article>
+
+    <article class="home-card governance-menu-card processes-menu-card process-record-card process-ti-card">
+      <span class="governance-menu-card__icon" aria-hidden="true"><i class="bi bi-pc-display"></i></span>
+      <span class="process-card-status process-card-status--analysis">Em análise jurídica</span>
+      <h2>Equipamentos de TI</h2>
+      <span class="home-card__rule" aria-hidden="true"></span>
+      <p>Aquisição de equipamentos de Tecnologia da Informação. Processo enviado à análise jurídica em 07/07/2026, dentro do cronograma.</p>
+      <div class="process-card-meta">
+        <span><i class="bi bi-signpost-split"></i> Etapa: Análise jurídica</span>
+        <span data-process-countdown="equipamentos-ti"><i class="bi bi-clock-history"></i> Calculando prazo...</span>
+      </div>
+      <div class="process-card-actions">
+        <a href="processos-equipamentos-ti.html" class="home-card__button process-card-access">Acessar Painel <i class="bi bi-arrow-right"></i></a>
+        <button type="button" class="process-card-pdf-button" data-process-pdf="equipamentos-ti">
+          <i class="bi bi-file-earmark-pdf"></i> Histórico PDF
+        </button>
+      </div>
+    </article>
   </section>
 </main>
 
 <script src="https://code.jquery.com/jquery-3.6.0.slim.min.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/js/bootstrap.bundle.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/jspdf@2.5.1/dist/jspdf.umd.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/jspdf-autotable@3.8.4/dist/jspdf.plugin.autotable.min.js"></script>
+<script src="assets/js/processes-data.js"></script>
+<script src="assets/js/processes-reports.js"></script>
 <script type="module" src="assets/js/auth.js"></script>
 </body>
 </html>
