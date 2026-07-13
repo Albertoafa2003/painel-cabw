@@ -1,0 +1,251 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/css/bootstrap.min.css">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+  <link rel="stylesheet" type="text/css" href="css/style.css">
+  <script src="https://cdn.jsdelivr.net/npm/jspdf@2.5.1/dist/jspdf.umd.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/jspdf-autotable@3.8.2/dist/jspdf.plugin.autotable.min.js"></script>
+  <title>Painel CABW - Monitoramento de Contratos</title>
+</head>
+<body class="module-page governance-page governance-detail-page cm-page">
+
+<nav class="navbar navbar-expand-lg navbar-dark bg-primary">
+  <a class="navbar-brand" href="painel.html">Painel CABW</a>
+  <img src="cabw_logo.png" alt="Brasão da Comissão Aeronáutica Brasileira em Washington" class="header-logo">
+  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Alternar navegação">
+    <span class="navbar-toggler-icon"></span>
+  </button>
+  <div class="collapse navbar-collapse" id="navbarNav">
+    <ul class="navbar-nav mr-auto">
+      <li class="nav-item"><a class="nav-link" href="painel.html">Início</a></li>
+      <li class="nav-item"><a class="nav-link" href="credito.html">Crédito Disponível</a></li>
+      <li class="nav-item"><a class="nav-link" href="contratos.html">Contratos</a></li>
+      <li class="nav-item"><a class="nav-link" href="processos.html">Processos de Contratação</a></li>
+      <li class="nav-item"><a class="nav-link" href="requisicoes.html">Requisições</a></li>
+      <li class="nav-item active"><a class="nav-link" href="governanca.html" aria-current="page">Governança</a></li>
+      <li class="nav-item admin-only" data-admin-only hidden><a class="nav-link" href="administracao.html">Administração do Sistema</a></li>
+    </ul>
+  </div>
+</nav>
+
+<main class="container-fluid mt-4 governance-detail-container cm-dashboard" aria-label="Monitoramento de Contratos">
+  <a href="governanca.html" class="governance-back-link"><i class="bi bi-arrow-left"></i> Voltar para Governança</a>
+
+  <section class="governance-detail-card cm-hero-card">
+    <span class="governance-detail-card__icon" aria-hidden="true"><i class="bi bi-clipboard2-pulse"></i></span>
+    <div>
+      <span class="governance-eyebrow">Painel de Governança</span>
+      <h1>Monitoramento de Contratos</h1>
+      <p>Acompanhe vencimentos, alertas, providências registradas, execução financeira e exposição contratual, com consultas responsivas e relatórios gerenciais em PDF.</p>
+      <p class="governance-detail-card__status" id="cmSourceInfo">Carregando base de monitoramento...</p>
+    </div>
+  </section>
+
+  <section class="cm-control-grid" aria-label="Filtros e relatórios do monitoramento de contratos">
+    <article class="cm-card cm-filter-card">
+      <div class="cm-card-heading">
+        <span class="cm-card-icon"><i class="bi bi-funnel"></i></span>
+        <div>
+          <h2>Consulta e filtros</h2>
+          <p>Refine a análise por situação de prazo, tipo, unidade, Grande Comando, empresa, moeda ou texto livre.</p>
+        </div>
+      </div>
+
+      <div class="cm-filter-grid">
+        <label>
+          <span>Situação gerencial</span>
+          <select id="cmStatusFilter" class="form-control"></select>
+        </label>
+        <label>
+          <span>Tipo de contrato</span>
+          <select id="cmTypeFilter" class="form-control"></select>
+        </label>
+        <label>
+          <span>Unidade</span>
+          <select id="cmUnitFilter" class="form-control"></select>
+        </label>
+        <label>
+          <span>Grande Comando</span>
+          <select id="cmCommandFilter" class="form-control"></select>
+        </label>
+        <label>
+          <span>Empresa</span>
+          <select id="cmCompanyFilter" class="form-control"></select>
+        </label>
+        <label>
+          <span>Moeda</span>
+          <select id="cmCurrencyFilter" class="form-control"></select>
+        </label>
+        <label>
+          <span>Providências / observações</span>
+          <select id="cmObservationFilter" class="form-control">
+            <option value="">Todos os registros</option>
+            <option value="with">Somente com observação</option>
+            <option value="without">Somente sem observação</option>
+          </select>
+        </label>
+        <label>
+          <span>Ordenação</span>
+          <select id="cmSortFilter" class="form-control">
+            <option value="deadline">Prazo mais crítico</option>
+            <option value="date">Data final mais próxima</option>
+            <option value="value-desc">Maior valor do contrato</option>
+            <option value="commit-desc">Maior valor a empenhar</option>
+            <option value="company">Empresa</option>
+            <option value="contract">Número do contrato</option>
+          </select>
+        </label>
+        <label class="cm-filter-wide">
+          <span>Busca geral</span>
+          <input id="cmSearchFilter" class="form-control" type="search" placeholder="Contrato, empresa, objeto, unidade, observação...">
+        </label>
+      </div>
+
+      <div class="cm-filter-footer">
+        <label class="cm-check-label">
+          <input id="cmIncludeIgnored" type="checkbox">
+          <span>Incluir registro marcado como “Desconsiderar”</span>
+        </label>
+        <button id="cmClearFilters" class="btn btn-light cm-soft-button" type="button"><i class="bi bi-arrow-counterclockwise"></i> Limpar filtros</button>
+      </div>
+    </article>
+
+    <article class="cm-card cm-report-card">
+      <div class="cm-card-heading">
+        <span class="cm-card-icon"><i class="bi bi-file-earmark-pdf"></i></span>
+        <div>
+          <h2>Relatórios de acompanhamento</h2>
+          <p>Gere relatórios conforme os filtros aplicados. O resumo prioriza alertas e próximos vencimentos; o detalhado relaciona todos os contratos consultados.</p>
+        </div>
+      </div>
+      <div class="cm-report-actions">
+        <button id="cmGenerateManagementPdf" class="btn cm-primary-button" type="button"><i class="bi bi-file-earmark-bar-graph"></i> PDF gerencial</button>
+        <button id="cmGenerateDetailedPdf" class="btn cm-outline-button" type="button"><i class="bi bi-file-earmark-spreadsheet"></i> PDF detalhado</button>
+      </div>
+      <div class="cm-report-note">
+        <i class="bi bi-info-circle"></i>
+        <span>Um registro marcado como “Desconsiderar” não integra os indicadores por padrão, mas pode ser incluído na consulta.</span>
+      </div>
+    </article>
+  </section>
+
+  <section class="cm-kpi-grid" aria-label="Indicadores do monitoramento de contratos">
+    <article class="cm-kpi cm-kpi--primary"><span>Contratos na consulta</span><strong id="cmKpiContracts">0</strong><small id="cmKpiContractsNote">0 monitorados</small></article>
+    <article class="cm-kpi cm-kpi--warning"><span>Em alerta até 150 dias</span><strong id="cmKpiAlerts">0</strong><small>inclui vencidos</small></article>
+    <article class="cm-kpi cm-kpi--danger"><span>Vencidos ou até 30 dias</span><strong id="cmKpiUrgent">0</strong><small>prioridade imediata</small></article>
+    <article class="cm-kpi"><span>Com observação</span><strong id="cmKpiObservations">0</strong><small>providência registrada</small></article>
+    <article class="cm-kpi cm-kpi--money"><span>Total empenhado</span><strong id="cmKpiCommitted">US$ 0,00</strong><small>equivalente em USD</small></article>
+    <article class="cm-kpi cm-kpi--money"><span>Total faturado</span><strong id="cmKpiBilled">US$ 0,00</strong><small id="cmKpiBilledRate">0% do empenhado</small></article>
+  </section>
+
+  <section class="cm-card cm-status-section" aria-label="Radar de vencimentos">
+    <div class="cm-section-heading">
+      <div>
+        <span class="governance-eyebrow">Radar de vencimentos</span>
+        <h2>Distribuição dos contratos por faixa de prazo</h2>
+        <p>Clique em uma faixa para aplicar ou remover rapidamente o filtro correspondente.</p>
+      </div>
+      <span class="cm-results-badge" id="cmResultsInfo">0 contratos exibidos</span>
+    </div>
+    <div class="cm-status-grid" id="cmStatusGrid"></div>
+  </section>
+
+  <section class="cm-summary-grid" aria-label="Resumo de prazos e Grandes Comandos">
+    <article class="cm-card cm-table-card">
+      <div class="cm-table-heading">
+        <div>
+          <h2>Próximos vencimentos e pendências</h2>
+          <p>Prioridade ordenada pelo prazo remanescente.</p>
+        </div>
+        <span class="cm-mini-badge">até 12 registros</span>
+      </div>
+      <div class="table-responsive">
+        <table class="table table-striped table-sm cm-table">
+          <thead><tr><th>Situação</th><th>Dias</th><th>Contrato</th><th>Unidade</th><th>Empresa</th><th>Data final</th><th>Providência / observação</th></tr></thead>
+          <tbody id="cmDeadlineBody"></tbody>
+        </table>
+      </div>
+    </article>
+
+    <article class="cm-card cm-table-card">
+      <div class="cm-table-heading">
+        <div>
+          <h2>Acompanhamento por Grande Comando</h2>
+          <p>Quantidade de contratos, alertas e execução financeira em USD.</p>
+        </div>
+      </div>
+      <div class="table-responsive">
+        <table class="table table-striped table-sm cm-table">
+          <thead><tr><th>Grande Comando</th><th class="text-center">Contratos</th><th class="text-center">Alertas</th><th class="text-right">Empenhado USD</th><th class="text-right">Faturado USD</th></tr></thead>
+          <tbody id="cmCommandBody"></tbody>
+        </table>
+      </div>
+    </article>
+  </section>
+
+  <section class="cm-card cm-financial-card" aria-label="Síntese financeira por moeda">
+    <div class="cm-section-heading">
+      <div>
+        <span class="governance-eyebrow">Execução financeira</span>
+        <h2>Consolidação por moeda original</h2>
+        <p>Valores contratuais são mantidos na moeda registrada na planilha. Empenhado e faturado também são apresentados no equivalente consolidado em USD nos indicadores.</p>
+      </div>
+      <strong class="cm-financial-balance" id="cmFinancialBalance">US$ 0,00 a faturar</strong>
+    </div>
+    <div class="table-responsive">
+      <table class="table table-striped table-sm cm-table">
+        <thead><tr><th>Moeda</th><th class="text-right">Valor contratado</th><th class="text-right">Total empenhado</th><th class="text-right">Total faturado</th><th class="text-right">Saldo SILOMS-EXT</th><th class="text-right">Valor a empenhar</th></tr></thead>
+        <tbody id="cmCurrencyBody"></tbody>
+      </table>
+    </div>
+  </section>
+
+  <section class="cm-card cm-detail-card" aria-label="Detalhamento dos contratos monitorados">
+    <div class="cm-detail-header">
+      <div>
+        <span class="governance-eyebrow">Base detalhada</span>
+        <h2>Contratos monitorados</h2>
+        <p id="cmRowsInfo">Carregando registros...</p>
+      </div>
+      <span class="cm-detail-badge">consulta completa</span>
+    </div>
+
+    <div class="table-responsive cm-detail-scroll">
+      <table class="table table-striped table-sm cm-table cm-detail-table">
+        <thead>
+          <tr>
+            <th>Situação</th>
+            <th>Dias</th>
+            <th>Número</th>
+            <th>Unidade</th>
+            <th>Grande Comando</th>
+            <th>Empresa</th>
+            <th>Objeto resumido</th>
+            <th>Tipo</th>
+            <th>Moeda</th>
+            <th class="text-right">Valor do contrato</th>
+            <th class="text-right">Empenhado</th>
+            <th class="text-right">Faturado</th>
+            <th class="text-right">Saldo SILOMS</th>
+            <th class="text-right">A empenhar</th>
+            <th>Data final</th>
+            <th>Providência / observação</th>
+          </tr>
+        </thead>
+        <tbody id="cmDetailBody"></tbody>
+      </table>
+    </div>
+    <div class="cm-mobile-list" id="cmMobileList"></div>
+  </section>
+</main>
+
+<script src="https://code.jquery.com/jquery-3.6.0.slim.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/js/bootstrap.bundle.min.js"></script>
+<script src="assets/js/contract-monitoring-data.js"></script>
+<script src="assets/js/contract-monitoring-panel.js"></script>
+<script type="module" src="assets/js/auth.js"></script>
+</body>
+</html>

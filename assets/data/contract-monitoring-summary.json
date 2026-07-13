@@ -1,0 +1,71 @@
+{
+  "sourceFile": "RelContrFin MONITORAMENTO CTT EM ANDAMENTO - ALERTA(2).xls",
+  "sheetName": "Sheet0",
+  "referenceDate": {
+    "iso": "2026-07-13",
+    "br": "13/07/2026"
+  },
+  "totalSourceRecords": 83,
+  "totalMonitored": 82,
+  "excludedRecords": 1,
+  "withObservation": 27,
+  "statusSummary": [
+    {
+      "code": "vencido",
+      "label": "Vencido",
+      "count": 1
+    },
+    {
+      "code": "ate-30",
+      "label": "Até 30 dias",
+      "count": 6
+    },
+    {
+      "code": "31-90",
+      "label": "31 a 90 dias",
+      "count": 8
+    },
+    {
+      "code": "91-150",
+      "label": "91 a 150 dias",
+      "count": 13
+    },
+    {
+      "code": "regular",
+      "label": "Acima de 150 dias",
+      "count": 53
+    },
+    {
+      "code": "sem-data",
+      "label": "Sem data de vigência",
+      "count": 1
+    },
+    {
+      "code": "desconsiderar",
+      "label": "Desconsiderar",
+      "count": 1
+    }
+  ],
+  "alertCount": 28,
+  "urgentCount": 7,
+  "totalEmpenhadoUsd": 247131123.41,
+  "totalFaturadoUsd": 145565366.84,
+  "saldoAFaturarUsd": 101565756.57,
+  "percentualFaturadoSobreEmpenhado": 58.9,
+  "currencyTotals": {
+    "USD": {
+      "valorContrato": 758042776.13,
+      "totalEmpenhado": 233057451.88,
+      "totalFaturado": 135076076.95,
+      "saldoSilomsExt": 97981374.93,
+      "valorAEmpenhar": 524985324.25
+    },
+    "EUR": {
+      "valorContrato": 18231842.11,
+      "totalEmpenhado": 12335063.75,
+      "totalFaturado": 9310495.46,
+      "saldoSilomsExt": 3024568.29,
+      "valorAEmpenhar": 5896778.36
+    }
+  }
+}
