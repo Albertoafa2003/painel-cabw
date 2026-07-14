@@ -11,11 +11,13 @@
     "DCTA",
     "DECEA",
     "GABAER",
+    "Ministério da Defesa — MD",
     "SEFA"
   ],
   "ordenadoresDespesas": [
     "CABW",
     "CENIPA",
+    "CENSIPAM",
     "CISCEA",
     "DCTA",
     "DECEA",
@@ -26,7 +28,14 @@
     "PAME-RJ"
   ],
   "duplicates_check": "ok",
-  "source": "FISCAIS DE CONTRATO - OD CABW.xls",
-  "updatedFrom": "FISCAIS DE CONTRATO - OD CABW.xls",
+  "source": "RELATÓRIO DE CONTRATO - 14072026(1).xls",
+  "updatedFrom": "Posição de 14/07/2026",
+  "preservedFieldsFrom": "FISCAIS DE CONTRATO - OD CABW.xls",
+  "removedContracts": [
+    "027/CABW/2021"
+  ],
+  "addedContracts": [
+    "34/2017-CENSIPAM"
+  ],
   "notMatchedToPreviousCategory": []
 }
