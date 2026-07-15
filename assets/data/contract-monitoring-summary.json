@@ -1,12 +1,13 @@
 {
-  "sourceFile": "RELATÓRIO DE CONTRATO - 14072026(1).xls",
-  "monitoringSource": "RelContrFin MONITORAMENTO CTT EM ANDAMENTO - ALERTA(2).xls",
+  "sourceFile": "RelContrFin MONITORAMENTO CTT EM ANDAMENTO - ALERTA(3).xls",
+  "monitoringSource": "RelContrFin MONITORAMENTO CTT EM ANDAMENTO - ALERTA(3).xls",
   "sheetName": "Sheet0",
   "referenceDate": {
-    "iso": "2026-07-14",
-    "br": "14/07/2026"
+    "iso": "2026-07-15",
+    "br": "15/07/2026"
   },
   "totalSourceRecords": 83,
+  "totalPanelRecords": 83,
   "totalMonitored": 82,
   "excludedRecords": 1,
   "withObservation": 26,
@@ -29,12 +30,12 @@
     {
       "code": "91-150",
       "label": "91 a 150 dias",
-      "count": 13
+      "count": 17
     },
     {
       "code": "regular",
       "label": "Acima de 150 dias",
-      "count": 54
+      "count": 50
     },
     {
       "code": "sem-data",
@@ -47,29 +48,35 @@
       "count": 1
     }
   ],
-  "alertCount": 27,
+  "alertCount": 31,
   "urgentCount": 6,
-  "totalEmpenhadoUsd": 256754281.99,
-  "totalFaturadoUsd": 154325607.6,
-  "saldoAFaturarUsd": 102428674.39,
-  "percentualFaturadoSobreEmpenhado": 60.11,
+  "totalEmpenhadoUsd": 250091829.23,
+  "totalFaturadoUsd": 148516758.62,
+  "saldoAFaturarUsd": 101575070.61,
+  "percentualFaturadoSobreEmpenhado": 59.38,
   "currencyTotals": {
+    "USD": {
+      "valorContrato": 761394907.1299999,
+      "totalEmpenhado": 236018157.7,
+      "totalFaturado": 138027468.73000005,
+      "saldoSilomsExt": 97990688.97000001,
+      "valorAEmpenhar": 525376749.4299999
+    },
     "EUR": {
       "valorContrato": 18231842.11,
       "totalEmpenhado": 12335063.75,
-      "totalFaturado": 9480221.56,
-      "saldoSilomsExt": 2854842.19,
-      "valorAEmpenhar": 5896778.36
-    },
-    "USD": {
-      "valorContrato": 767575058.21,
-      "totalEmpenhado": 242680610.46,
-      "totalFaturado": 143638111.57,
-      "saldoSilomsExt": 99042498.89,
-      "valorAEmpenhar": 524894447.75
+      "totalFaturado": 9310495.46,
+      "saldoSilomsExt": 3024568.2899999996,
+      "valorAEmpenhar": 5896778.359999999
     }
   },
-  "updateNotes": "Dados financeiros e vigências atualizados por número do contrato; Grande Comando, tipo e providências preservados da base de monitoramento anterior.",
+  "updateNotes": "Painel atualizado por correspondência do número do contrato com a planilha ALERTA(3). Unidade, Grande Comando e Tipo de Contrato foram preservados da base anterior. Mantidas a exclusão de 027/CABW/2021 e a inclusão de 34/2017-CENSIPAM conforme orientação anterior.",
+  "sourceOnlyNotImported": [
+    "027/CABW/2021"
+  ],
+  "preservedOutsideSource": [
+    "34/2017-CENSIPAM"
+  ],
   "removedContracts": [
     "027/CABW/2021"
   ],

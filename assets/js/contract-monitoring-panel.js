@@ -235,7 +235,7 @@
   function renderSource() {
     if (!els.source) return;
     const reference = META.referenceDate && META.referenceDate.br ? META.referenceDate.br : '—';
-    els.source.textContent = 'Fonte financeira e de vigência: ' + (META.sourceFile || 'Relatório de contratos') + (META.monitoringSource ? ' · tipo e providências preservados de ' + META.monitoringSource : '') + ' · posição de ' + reference + ' · ' + formatNumber(META.totalMonitored || 0) + ' contratos monitorados';
+    els.source.textContent = 'Fonte: ' + (META.sourceFile || 'Relatório de monitoramento') + ' · correspondência por número do contrato · posição de ' + reference + ' · ' + formatNumber(META.totalMonitored || 0) + ' contratos monitorados';
   }
 
   function renderKpis() {
