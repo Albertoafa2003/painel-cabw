@@ -1,0 +1,17 @@
+ADICIONE ESTE BLOCO DENTRO DE:
+service cloud.firestore {
+  match /databases/{database}/documents {
+    ...
+  }
+}
+
+    match /repairProcesses/{processId} {
+      // Todos os e-mails autorizados podem consultar o painel.
+      allow read: if isAuthorizedEmail();
+
+      // Apenas usuários cadastrados na coleção admins podem incluir,
+      // editar ou excluir registros.
+      allow create, update, delete: if isAdmin();
+    }
+
+Depois clique em PUBLICAR no Firebase Console.

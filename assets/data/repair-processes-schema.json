@@ -1,0 +1,35 @@
+{
+  "collection": "repairProcesses",
+  "description": "Controle centralizado de processos de manutenção de materiais reparáveis",
+  "requiredFields": [
+    "processNumber",
+    "commitmentPo",
+    "description",
+    "repairStatus",
+    "location"
+  ],
+  "fields": {
+    "processNumber": "Número do processo",
+    "commitmentPo": "Número do empenho ou PO",
+    "description": "Descrição do item",
+    "partNumber": "Part Number",
+    "serialNumber": "Serial Number",
+    "originOm": "Parque ou OM de origem",
+    "repairShop": "Oficina reparadora",
+    "currency": "Moeda",
+    "itemValue": "Valor estimado do item",
+    "repairValue": "Valor do reparo contratado",
+    "repairStatus": "Status do reparo",
+    "location": "Localização atual do item",
+    "shipmentDateBrazil": "Data de envio do Brasil",
+    "receivedCabwDate": "Data de recebimento na CABW",
+    "sentToShopDate": "Data de envio à oficina",
+    "expectedReturnDate": "Data prevista de retorno",
+    "actualReturnDate": "Data efetiva de retorno",
+    "notes": "Observações",
+    "createdAt": "Timestamp de criação",
+    "updatedAt": "Timestamp de atualização",
+    "createdBy": "Usuário criador",
+    "updatedBy": "Usuário da última atualização"
+  }
+}
