@@ -1,35 +1,56 @@
 {
-  "collection": "repairProcesses",
-  "description": "Controle centralizado de processos de manutenção de materiais reparáveis",
-  "requiredFields": [
-    "processNumber",
-    "commitmentPo",
-    "description",
-    "repairStatus",
-    "location"
+  "collections": {
+    "repairProcesses": "Itens reparáveis importados ou cadastrados manualmente",
+    "repairProcessImports": "Histórico resumido e auditável de cada lote mensal",
+    "repairProcessesConfig/current": "Configuração do lote ativo exibido no painel"
+  },
+  "stableKey": "SHA-256 de PO + REQUISIÇÃO + PN + SN após normalização",
+  "sourceSheet": "BD Monitoramento",
+  "sourceFields": {
+    "PO": "po",
+    "TTE": "evaluationFee",
+    "DATA EMISSÃO PO": "poIssueDate",
+    "STATUS REAL DO MATERIAL": "realStatus",
+    "REQUISIÇÃO": "requisition",
+    "OM": "originOm",
+    "PN": "partNumber",
+    "SN": "serialNumber",
+    "COND": "condition",
+    "MAT EXP ou REC REPARADOR": "receivedAtRepairerDate",
+    "TRACKING ENVIO REPARADOR": "trackingToRepairer",
+    "TDR ENV PARQUE": "tdrSentDate",
+    "SERVIÇO APROVADO?": "serviceDecision",
+    "SVC AUTORIZADO / SOL RETORNO AS IS": "serviceAuthorizationOrAsIsDate",
+    "PRAZO ENTREGA (DIAS)": "repairDeliveryDays",
+    "DPE FINAL": "dpeFinalDate ou dpeFinalIndicator",
+    "TRACKING/VOLUME RETORNO REPARADOR -> DEPÓSITO": "returnTrackingVolume",
+    "RETORNO MAT": "returnMaterialDate",
+    "CAGE CODE REPARADOR": "repairerCage",
+    "NOME REPARADOR": "repairerName"
+  },
+  "ignoredColumns": [
+    "ALERTA PRÓXIMA ETAPA",
+    "SUBPROC #",
+    "FICHA RECEBIDA",
+    "OBS"
   ],
-  "fields": {
-    "processNumber": "Número do processo",
-    "commitmentPo": "Número do empenho ou PO",
-    "description": "Descrição do item",
-    "partNumber": "Part Number",
-    "serialNumber": "Serial Number",
-    "originOm": "Parque ou OM de origem",
-    "repairShop": "Oficina reparadora",
-    "currency": "Moeda",
-    "itemValue": "Valor estimado do item",
-    "repairValue": "Valor do reparo contratado",
-    "repairStatus": "Status do reparo",
-    "location": "Localização atual do item",
-    "shipmentDateBrazil": "Data de envio do Brasil",
-    "receivedCabwDate": "Data de recebimento na CABW",
-    "sentToShopDate": "Data de envio à oficina",
-    "expectedReturnDate": "Data prevista de retorno",
-    "actualReturnDate": "Data efetiva de retorno",
-    "notes": "Observações",
-    "createdAt": "Timestamp de criação",
-    "updatedAt": "Timestamp de atualização",
-    "createdBy": "Usuário criador",
-    "updatedBy": "Usuário da última atualização"
-  }
+  "manualFieldsPreservedOnImport": [
+    "processNumber",
+    "description",
+    "itemValue",
+    "repairValue",
+    "currency",
+    "manualNotes"
+  ],
+  "auditFields": [
+    "sourceFileName",
+    "sourceSheet",
+    "sourceRow",
+    "importBatchId",
+    "lastSeenBatchId",
+    "importedAt",
+    "importedBy",
+    "createdAt",
+    "updatedAt"
+  ]
 }

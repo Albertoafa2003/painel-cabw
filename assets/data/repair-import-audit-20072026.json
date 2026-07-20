@@ -1,0 +1,49 @@
+{
+  "sourceFileName": "CONTROLE REPARO - SGT ROZENDO - 20072026(1).xlsx",
+  "sourceSheet": "BD Monitoramento",
+  "referenceDate": "2026-07-20",
+  "validRows": 274,
+  "sourceRows": "2-275",
+  "uniqueStableKeys": 274,
+  "duplicateStableKeys": 0,
+  "rejectedRows": 0,
+  "ignoredRowsWithOnlyFormulasOrSpaces": 1725,
+  "evaluationFee": {
+    "informed": 101,
+    "discardedFormulaYear": 65,
+    "missingOrInvalid": 108,
+    "currency": "Não informada"
+  },
+  "originOmDerived": 4,
+  "statusMapping": {
+    "mapped": 274,
+    "unmapped": 0
+  },
+  "tdrAtReferenceDate": {
+    "sentOnTime": 33,
+    "sentLate": 69,
+    "overdueNotSent": 147,
+    "dueSoonNotSent": 0,
+    "notCalculable": 25
+  },
+  "returnDeadlineAtReferenceDate": {
+    "overdue": 7,
+    "dueWithin30Days": 4,
+    "onTime": 3,
+    "noDate": 31,
+    "dpeDeliveredText": 229
+  },
+  "manualFieldsWithoutSource": [
+    "processNumber",
+    "description",
+    "itemValue",
+    "repairValue",
+    "currency"
+  ],
+  "tests": {
+    "nodeTests": 8,
+    "passed": 8,
+    "failed": 0,
+    "syntaxCheck": "passed"
+  }
+}

@@ -1,0 +1,121 @@
+{
+  "sourceFileName": "CONTROLE REPARO - SGT ROZENDO - 20072026(1).xlsx",
+  "sourceSheet": "BD Monitoramento",
+  "referenceDate": "2026-07-20",
+  "validRows": 274,
+  "validSourceRows": "2 a 275",
+  "uniqueKeys": 274,
+  "ignoredEmptyFormulaRows": 1725,
+  "rejectedRows": 0,
+  "quality": {
+    "tteDiscardedFormula": 65,
+    "tdrSentLate": 69,
+    "deliveredStatusMismatch": 227,
+    "tdrOverdue": 147,
+    "tdrSentOnTime": 33,
+    "tteInformed": 101,
+    "returnOverdue": 7,
+    "tteMissing": 108,
+    "omDerived": 4,
+    "returnNoDate": 31,
+    "returnDue30": 4,
+    "returnOnTime": 3,
+    "tdrNoBase": 25
+  },
+  "statusCounts": {
+    "8-Rep Embarcado": 47,
+    "7-Rep Recebido": 181,
+    "6-Rep Exp ao Reparador": 19,
+    "10-Encerrado": 2,
+    "3-Rep chegou CTLA": 14,
+    "1-Empenho Aprovado": 11
+  },
+  "stageCounts": {
+    "Fluxo de retorno": 47,
+    "Oficina reparadora": 181,
+    "Trânsito à oficina": 19,
+    "Entregue à OM": 2,
+    "CABW / Washington": 14,
+    "Brasil / OM": 11
+  },
+  "conditionCounts": {
+    "REPAIR": 221,
+    "OVERHAUL": 51,
+    "EXCHANGE": 2
+  },
+  "tdrCounts": {
+    "sent-late": 69,
+    "overdue": 147,
+    "sent-on-time": 33,
+    "not-calculable": 25
+  },
+  "topRepairers": [
+    [
+      "WESCO MANUFACTURING INC.DBA WM",
+      38
+    ],
+    [
+      "STRATOSPHERE INTERNATIONAL CORP.",
+      30
+    ],
+    [
+      "INDRA SISTEMAS",
+      26
+    ],
+    [
+      "AVENTURE INTERNATIONAL AVIATION SERVICES LLC",
+      25
+    ],
+    [
+      "APEX AEROSPACE FZE",
+      20
+    ],
+    [
+      "LIFT MRO INC.",
+      18
+    ],
+    [
+      "AVIATION INTERNATIONAL SOLUTIONS LLC",
+      15
+    ],
+    [
+      "EUROPAVIA ESPANA SA",
+      13
+    ],
+    [
+      "ENSIL TECHNICAL SERVICES,  INC",
+      12
+    ],
+    [
+      "ATC SOLUTIONS TECH, LLC",
+      9
+    ],
+    [
+      "RAM AIR TURBINES SPECIALIST CORP",
+      9
+    ],
+    [
+      "TSI AVIATION, INC",
+      7
+    ],
+    [
+      "DEFENSE TECHNOLOGY EQUIPMENT (DTE)",
+      7
+    ],
+    [
+      "ENSIL TECHNICAL SERVICES INC.",
+      7
+    ],
+    [
+      "GYRO HOUSE, THE",
+      5
+    ]
+  ],
+  "manualDataCoverage": {
+    "processNumber": 0,
+    "description": 0,
+    "itemValue": 0,
+    "repairValue": 0,
+    "currency": 0
+  }
+}

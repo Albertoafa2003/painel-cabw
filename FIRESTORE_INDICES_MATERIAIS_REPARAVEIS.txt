@@ -1,0 +1,8 @@
+NÃO É NECESSÁRIO CRIAR ÍNDICE COMPOSTO PARA ESTA VERSÃO.
+
+Motivo:
+- repairProcesses é lida como coleção e os filtros são aplicados no navegador.
+- repairProcessesConfig/current é lido por ID de documento.
+- repairProcessImports usa apenas orderBy(importedAt), coberto por índice automático de campo único.
+
+Caso o Firebase apresente futuramente um link para criação de índice, siga o link gerado pelo próprio erro e registre o índice neste arquivo.
