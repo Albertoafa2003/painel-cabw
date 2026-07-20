@@ -110,9 +110,12 @@
       const sourceSummary = document.querySelector('[data-source-summary]');
       if (sourceSummary) {
         const creditRef = safeText(creditJson.position, '-');
+        const conorRef = creditJson.references && creditJson.references.conorDataReference
+          ? ` · CONOR: ${creditJson.references.conorDataReference}`
+          : '';
         const contractRef = safeText(contractsSource.atualizadoEm, 'Base atual');
         const rpRef = safeText(rpSummary.sourceFile, 'Base atual');
-        sourceSummary.textContent = `Posição do crédito: ${creditRef} · Contratos: ${contractRef} · RP: ${rpRef}`;
+        sourceSummary.textContent = `Posição do crédito: ${creditRef}${conorRef} · Contratos: ${contractRef} · RP: ${rpRef}`;
       }
     } catch (error) {
       console.error(error);

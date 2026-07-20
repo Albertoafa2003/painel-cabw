@@ -1,0 +1,28 @@
+{
+  "position": "20/07/2026",
+  "sourceFile": "RELATÓRIO_CRÉDITO_DISPONÍVEL_CABW_20072026(1).docx",
+  "processedAt": "2026-07-20T17:35:21Z",
+  "executive": {
+    "launches": 73,
+    "totalAvailableUsd": 3542069.06,
+    "totalReceivedUsd": 112721724.86,
+    "availablePercent": "3,14%"
+  },
+  "recordCounts": {
+    "summaryDates": 11,
+    "ugRanking": 15,
+    "detailByUGPTRES": 31,
+    "actionRanking": 15,
+    "actionByUG": 31,
+    "creditReceivedByAction": 20
+  },
+  "validation": {
+    "ugRankingTotal": 3542069.06,
+    "detailTotal": 3542069.06,
+    "actionRankingTotal": 3542069.06,
+    "actionByUgTotal": 3542069.06,
+    "receivedByActionTotal": 112721724.86,
+    "duplicateSummaryDates": [],
+    "status": "approved"
+  }
+}
