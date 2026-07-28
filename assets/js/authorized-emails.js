@@ -1,9 +1,10 @@
 // Lista de e-mails autorizados a acessar o Painel CABW.
 // Fonte: E-mails autorizados.xlsx
-export const AUTHORIZED_EMAILS_UPDATED_AT = "2026-06-23";
+export const AUTHORIZED_EMAILS_UPDATED_AT = "2026-07-28";
 export const AUTHORIZED_EMAILS_SOURCE = "E-mails autorizados.xlsx";
 export const AUTHORIZED_EMAILS = new Set([
   "albertoaag@fab.mil.br",
+  "aux.dl.cabw@fab.mil.br",
   "chf.aci.cabw@fab.mil.br",
   "chf.arc.cabw@fab.mil.br",
   "chf.ati.cabw@fab.mil.br",

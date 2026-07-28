@@ -1,0 +1,14 @@
+ATUALIZAÇÃO DA LISTA DE E-MAILS AUTORIZADOS
+
+E-mail incluído:
+aux.dl.cabw@fab.mil.br
+
+Arquivos atualizados no GitHub Pages:
+- assets/js/authorized-emails.js
+- assets/data/authorized-emails.json
+
+Data da atualização: 28/07/2026
+Quantidade total de e-mails autorizados: 15
+
+ATENÇÃO: se as regras do Cloud Firestore utilizarem uma lista literal de e-mails, inclua também
+'aux.dl.cabw@fab.mil.br' na função isAuthorizedEmail() e publique novamente as regras no Firebase Console.
