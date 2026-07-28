@@ -1,0 +1,38 @@
+{
+  "updatedAt": "2026-07-28",
+  "panel": "Governança > Controle de Materiais Reparáveis",
+  "activeStatusMapping": {
+    "1-Empenho Aprovado": "Brasil / OM requisitante",
+    "3-Rep chegou CTLA": "Brasil / CTLA",
+    "6-Rep Exp ao Reparador": "Trânsito à oficina",
+    "7-Rep Recebido": "CABW / CABE (retorno)"
+  },
+  "deprecatedRealStatuses": [
+    "10-Encerrado",
+    "8-Rep Embarcado"
+  ],
+  "removedVisualStages": [
+    "Oficina reparadora",
+    "Fluxo de retorno",
+    "Entregue à OM"
+  ],
+  "removedCondition": "EXCHANGE",
+  "recordTreatment": {
+    "recordsKept": 274,
+    "deprecatedStatusRecordsPreservedForAudit": 49,
+    "exchangeRecordsPreservedForAudit": 2,
+    "recordsDeleted": 0
+  },
+  "activeStageCounts": {
+    "Etapa não mapeada": 49,
+    "CABW / CABE (retorno)": 181,
+    "Trânsito à oficina": 19,
+    "Brasil / CTLA": 14,
+    "Brasil / OM requisitante": 11
+  },
+  "activeConditionCounts": {
+    "REPAIR": 221,
+    "OVERHAUL": 51,
+    "Não informado": 2
+  }
+}

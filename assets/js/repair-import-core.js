@@ -1,13 +1,18 @@
 export const NULL_TOKENS = new Set(["", "none", "null", "n/a", "-", "nan", "undefined"]);
 
 export const STATUS_STAGE_MAP = Object.freeze({
-  "1-Empenho Aprovado": "Brasil / OM",
-  "3-Rep chegou CTLA": "CABW / Washington",
+  "1-Empenho Aprovado": "Brasil / OM requisitante",
+  "3-Rep chegou CTLA": "Brasil / CTLA",
   "6-Rep Exp ao Reparador": "Trânsito à oficina",
-  "7-Rep Recebido": "Oficina reparadora",
-  "8-Rep Embarcado": "Fluxo de retorno",
-  "10-Encerrado": "Entregue à OM"
+  "7-Rep Recebido": "CABW / CABE (retorno)"
 });
+
+export const DEPRECATED_REAL_STATUSES = new Set([
+  "8-Rep Embarcado",
+  "10-Encerrado"
+]);
+
+export const DEPRECATED_CONDITIONS = new Set(["EXCHANGE"]);
 
 export const REQUIRED_HEADERS = Object.freeze([
   "PO",
@@ -34,8 +39,8 @@ export const REQUIRED_HEADERS = Object.freeze([
 
 export const IMPORTED_FIELDS = Object.freeze([
   "po", "evaluationFee", "evaluationFeeCurrency", "evaluationFeeRaw", "evaluationFeeDiscardReason",
-  "poIssueDate", "realStatus", "visualStage", "requisition", "originOm", "originDerived",
-  "partNumber", "serialNumber", "condition", "receivedAtRepairerDate", "trackingToRepairer",
+  "poIssueDate", "realStatus", "realStatusSource", "realStatusDiscardReason", "visualStage", "requisition", "originOm", "originDerived",
+  "partNumber", "serialNumber", "condition", "conditionSource", "conditionDiscardReason", "receivedAtRepairerDate", "trackingToRepairer",
   "tdrDueDate", "tdrSentDate", "serviceDecision", "serviceAuthorizationOrAsIsDate", "serviceDateLabel",
   "repairDeliveryDays", "dpeFinalDate", "dpeFinalIndicator", "returnTrackingVolume", "returnMaterialDate",
   "repairerCage", "repairerName", "importKey"
@@ -54,6 +59,28 @@ export function normalizeNullable(value) {
 
 export function normalizeIdentifier(value) {
   return normalizeNullable(value);
+}
+
+function normalizeStatusToken(value) {
+  return String(value || "").trim().toLowerCase().replace(/\./g, "").replace(/\s+/g, " ");
+}
+
+export function normalizeRealStatus(value) {
+  const raw = normalizeNullable(value);
+  const deprecated = raw && Array.from(DEPRECATED_REAL_STATUSES).some(status => normalizeStatusToken(status) === normalizeStatusToken(raw));
+  if (deprecated) {
+    return { value: null, raw, discardedReason: "status-not-used" };
+  }
+  const canonical = raw && Object.keys(STATUS_STAGE_MAP).find(status => normalizeStatusToken(status) === normalizeStatusToken(raw));
+  return { value: canonical || raw, raw, discardedReason: null };
+}
+
+export function normalizeRepairCondition(value) {
+  const raw = normalizeNullable(value);
+  if (raw && DEPRECATED_CONDITIONS.has(raw.toUpperCase())) {
+    return { value: null, raw, discardedReason: "condition-not-used" };
+  }
+  return { value: raw, raw, discardedReason: null };
 }
 
 export function normalizeHeader(value) {
@@ -151,7 +178,9 @@ export function daysBetweenIso(fromIso, toIso) {
 }
 
 export function mapVisualStage(status) {
-  return STATUS_STAGE_MAP[normalizeNullable(status)] || "Etapa não mapeada";
+  const normalized = normalizeRealStatus(status).value;
+  if (!normalized) return "Etapa não mapeada";
+  return STATUS_STAGE_MAP[normalized] || "Etapa não mapeada";
 }
 
 export function deriveOriginOm(rawOm, requisition) {
@@ -199,9 +228,7 @@ export function calculateTdrStatus(receivedAtRepairerDate, tdrSentDate, referenc
 }
 
 export function calculateReturnDeadline(record, referenceDateIso) {
-  const status = normalizeNullable(record.realStatus);
   const deliveredText = String(record.dpeFinalIndicator || "").toUpperCase() === "ENTREGUE";
-  if (status === "10-Encerrado") return { code: "completed", label: "Concluído / entregue", days: null };
   if (!record.dpeFinalDate) {
     if (deliveredText) return { code: "delivered-indicator", label: "DPE indica ENTREGUE; validar status", days: null };
     return { code: "no-date", label: "Sem DPE informado", days: null };

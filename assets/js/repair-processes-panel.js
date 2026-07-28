@@ -7,7 +7,7 @@ import {
 import {
   REQUIRED_HEADERS, IMPORTED_FIELDS, normalizeNullable, normalizeIdentifier, normalizeHeader,
   normalizeSearch, parseFlexibleNumber, parseDateToIso, mapVisualStage, deriveOriginOm,
-  normalizeEvaluationFee, calculateTdrStatus, calculateReturnDeadline, stableKeySource,
+  normalizeRealStatus, normalizeRepairCondition, normalizeEvaluationFee, calculateTdrStatus, calculateReturnDeadline, stableKeySource,
   sha256Hex, importedDataEqual, contextualServiceDateLabel, moneyDisplay, textDisplay
 } from "./repair-import-core.js";
 import { BUNDLED_REPAIR_DATA } from "./repair-processes-current-data.js";
@@ -36,13 +36,10 @@ const fmtInteger = new Intl.NumberFormat("pt-BR");
 const fmtDateTime = new Intl.DateTimeFormat("pt-BR", { dateStyle: "short", timeStyle: "short" });
 
 const FLOW_STEPS = [
-  { code: "brazil", label: "Brasil / OM", icon: "bi-building", stages: ["Brasil / OM"] },
-  { code: "to-cabw", label: "Trânsito ao exterior", icon: "bi-airplane", stages: ["Trânsito ao exterior"] },
-  { code: "cabw", label: "CABW / Washington", icon: "bi-geo-alt", stages: ["CABW / Washington"] },
+  { code: "brazil-origin", label: "Brasil / OM requisitante", icon: "bi-building", stages: ["Brasil / OM requisitante"] },
+  { code: "brazil-ctla", label: "Brasil / CTLA", icon: "bi-box-arrow-in-down", stages: ["Brasil / CTLA"] },
   { code: "to-shop", label: "Trânsito à oficina", icon: "bi-truck", stages: ["Trânsito à oficina"] },
-  { code: "shop", label: "Oficina reparadora", icon: "bi-tools", stages: ["Oficina reparadora"] },
-  { code: "return", label: "Fluxo de retorno", icon: "bi-arrow-return-left", stages: ["Fluxo de retorno"] },
-  { code: "delivered", label: "Entregue à OM", icon: "bi-check2-circle", stages: ["Entregue à OM"] },
+  { code: "cabw-cabe-return", label: "CABW / CABE (retorno)", icon: "bi-geo-alt", stages: ["CABW / CABE (retorno)"] },
   { code: "unmapped", label: "Etapa não mapeada", icon: "bi-question-circle", stages: ["Etapa não mapeada"] }
 ];
 
@@ -100,8 +97,24 @@ function referenceDate() {
   return state.config?.referenceDate || BUNDLED_REPAIR_DATA.metadata.referenceDate || TODAY_ISO;
 }
 
+function sourceRealStatus(record) {
+  return normalizeNullable(record.realStatusSource) || normalizeNullable(record.realStatus);
+}
+
+function activeRealStatus(record) {
+  return normalizeRealStatus(sourceRealStatus(record)).value;
+}
+
+function sourceCondition(record) {
+  return normalizeNullable(record.conditionSource) || normalizeNullable(record.condition);
+}
+
+function activeCondition(record) {
+  return normalizeRepairCondition(sourceCondition(record)).value;
+}
+
 function derived(record) {
-  const visualStage = mapVisualStage(record.realStatus);
+  const visualStage = mapVisualStage(activeRealStatus(record));
   const tdr = calculateTdrStatus(record.receivedAtRepairerDate, record.tdrSentDate, TODAY_ISO);
   const deadline = calculateReturnDeadline(record, TODAY_ISO);
   return { visualStage, tdr, deadline };
@@ -162,11 +175,13 @@ function fillSelect(select, values, placeholder) {
 }
 
 function populateFilters() {
-  fillSelect(els.statusFilter, uniqueValues("realStatus"), "Todos os status");
+  const statuses = Array.from(new Set(state.records.map(activeRealStatus).filter(Boolean))).sort((a, b) => String(a).localeCompare(String(b), "pt-BR", { numeric: true }));
+  const conditions = Array.from(new Set(state.records.map(activeCondition).filter(Boolean))).sort((a, b) => String(a).localeCompare(String(b), "pt-BR", { numeric: true }));
+  fillSelect(els.statusFilter, statuses, "Todos os status");
   fillSelect(els.stageFilter, uniqueValues("visualStage", true), "Todas as etapas");
   fillSelect(els.originFilter, uniqueValues("originOm"), "Todas as OMs");
   fillSelect(els.repairerFilter, uniqueValues("repairerName"), "Todos os reparadores");
-  fillSelect(els.conditionFilter, uniqueValues("condition"), "Todas as condições");
+  fillSelect(els.conditionFilter, conditions, "Todas as condições");
   fillSelect(els.cageFilter, uniqueValues("repairerCage"), "Todos os CAGE Codes");
 }
 
@@ -193,7 +208,7 @@ function searchableText(record) {
   return normalizeSearch([
     record.po, record.requisition, record.partNumber, record.serialNumber, record.originOm,
     record.trackingToRepairer, record.returnTrackingVolume, record.repairerCage, record.repairerName,
-    record.realStatus, record.condition, record.processNumber, record.description, record.manualNotes
+    sourceRealStatus(record), sourceCondition(record), record.processNumber, record.description, record.manualNotes
   ].join(" "));
 }
 
@@ -204,11 +219,11 @@ function applyFilters() {
     const info = derived(record);
     if (filters.po && !normalizeSearch(record.po).includes(filters.po)) return false;
     if (filters.requisition && !normalizeSearch(record.requisition).includes(filters.requisition)) return false;
-    if (filters.status && record.realStatus !== filters.status) return false;
+    if (filters.status && activeRealStatus(record) !== filters.status) return false;
     if (filters.stage && info.visualStage !== filters.stage) return false;
     if (filters.origin && record.originOm !== filters.origin) return false;
     if (filters.repairer && record.repairerName !== filters.repairer) return false;
-    if (filters.condition && record.condition !== filters.condition) return false;
+    if (filters.condition && activeCondition(record) !== filters.condition) return false;
     if (filters.cage && record.repairerCage !== filters.cage) return false;
     if (filters.evaluationFee === "informed" && record.evaluationFee == null) return false;
     if (filters.evaluationFee === "missing" && record.evaluationFee != null) return false;
@@ -267,10 +282,10 @@ function renderKpis() {
   const itemValue = aggregateMoney(records, "itemValue");
   const repairValue = aggregateMoney(records, "repairValue");
   els.kpiTotal.textContent = fmtInteger.format(records.length);
-  els.kpiRepair.textContent = fmtInteger.format(enriched.filter(item => item.visualStage === "Oficina reparadora").length);
-  els.kpiTransit.textContent = fmtInteger.format(enriched.filter(item => ["Trânsito ao exterior", "Trânsito à oficina", "Fluxo de retorno"].includes(item.visualStage)).length);
+  els.kpiRepair.textContent = fmtInteger.format(enriched.filter(item => item.visualStage === "CABW / CABE (retorno)").length);
+  els.kpiTransit.textContent = fmtInteger.format(enriched.filter(item => item.visualStage === "Trânsito à oficina").length);
   els.kpiOverdue.textContent = fmtInteger.format(enriched.filter(item => item.deadline.code === "overdue").length);
-  els.kpiCompleted.textContent = fmtInteger.format(enriched.filter(item => item.visualStage === "Entregue à OM").length);
+  els.kpiCompleted.textContent = fmtInteger.format(enriched.filter(item => item.visualStage === "Brasil / CTLA").length);
   els.kpiTdr.textContent = fmtInteger.format(enriched.filter(item => ["overdue", "due-soon"].includes(item.tdr.code)).length);
   els.kpiItemValue.textContent = itemValue.value;
   els.kpiItemValueNote.textContent = itemValue.note;
@@ -304,8 +319,8 @@ function renderFlow() {
 
 function statusBadge(record) {
   const stage = derived(record).visualStage;
-  const type = stage === "Entregue à OM" ? "completed" : stage === "Oficina reparadora" ? "repair" : ["Trânsito ao exterior", "Trânsito à oficina", "Fluxo de retorno"].includes(stage) ? "transit" : stage === "Etapa não mapeada" ? "alert" : "open";
-  return `<span class="rep-badge rep-badge--${type}">${escapeHtml(textDisplay(record.realStatus))}</span>`;
+  const type = stage === "CABW / CABE (retorno)" ? "completed" : stage === "Trânsito à oficina" ? "transit" : stage === "Etapa não mapeada" ? "alert" : "open";
+  return `<span class="rep-badge rep-badge--${type}">${escapeHtml(textDisplay(activeRealStatus(record)))}</span>`;
 }
 
 function tdrBadge(record) {
@@ -320,7 +335,7 @@ function deadlineBadge(record) {
 
 function renderStatusSummary() {
   const map = new Map();
-  state.filtered.forEach(record => map.set(record.realStatus || "Não informado", (map.get(record.realStatus || "Não informado") || 0) + 1));
+  state.filtered.forEach(record => { const status = activeRealStatus(record) || "Não informado"; map.set(status, (map.get(status) || 0) + 1); });
   const rows = Array.from(map.entries()).sort((a, b) => b[1] - a[1] || a[0].localeCompare(b[0], "pt-BR"));
   const max = Math.max(...rows.map(row => row[1]), 1);
   els.statusSummary.innerHTML = rows.length ? rows.map(([status, count]) => `<div class="rep-summary-row">
@@ -354,7 +369,7 @@ function renderAttentionList() {
 
 function buildQualityCounts(records) {
   const counts = {
-    tteDiscarded: 0, omDerived: 0, unmapped: 0, tdrNoBase: 0, deliveredMismatch: 0,
+    tteDiscarded: 0, omDerived: 0, unmapped: 0, tdrNoBase: 0, deprecatedStatus: 0, deprecatedCondition: 0,
     manualProcessMissing: 0, manualDescriptionMissing: 0, itemValueMissing: 0, repairValueMissing: 0,
     absent: state.absentRecords.length
   };
@@ -363,7 +378,8 @@ function buildQualityCounts(records) {
     if (record.originDerived) counts.omDerived += 1;
     if (derived(record).visualStage === "Etapa não mapeada") counts.unmapped += 1;
     if (!record.receivedAtRepairerDate) counts.tdrNoBase += 1;
-    if (record.dpeFinalIndicator === "ENTREGUE" && record.realStatus !== "10-Encerrado") counts.deliveredMismatch += 1;
+    if (normalizeRealStatus(sourceRealStatus(record)).discardedReason) counts.deprecatedStatus += 1;
+    if (normalizeRepairCondition(sourceCondition(record)).discardedReason) counts.deprecatedCondition += 1;
     if (!normalizeNullable(record.processNumber)) counts.manualProcessMissing += 1;
     if (!normalizeNullable(record.description)) counts.manualDescriptionMissing += 1;
     if (record.itemValue == null) counts.itemValueMissing += 1;
@@ -379,7 +395,8 @@ function renderQuality() {
     ["OM derivada da requisição", counts.omDerived, "bi-building-check"],
     ["Status sem etapa visual mapeada", counts.unmapped, "bi-question-diamond"],
     ["Prazo do TDR não calculável", counts.tdrNoBase, "bi-calendar-x"],
-    ["DPE indica ENTREGUE com status não encerrado", counts.deliveredMismatch, "bi-exclamation-octagon"],
+    ["Status 8/10 desconsiderado por não utilização", counts.deprecatedStatus, "bi-slash-circle"],
+    ["Condição EXCHANGE desconsiderada", counts.deprecatedCondition, "bi-slash-square"],
     ["Número do processo não informado", counts.manualProcessMissing, "bi-folder-x"],
     ["Descrição do item não informada", counts.manualDescriptionMissing, "bi-card-text"],
     ["Valor do item não informado", counts.itemValueMissing, "bi-currency-dollar"],
@@ -400,7 +417,7 @@ function renderTable() {
       <td>${escapeHtml(record.requisition)}</td>
       <td><strong>PN ${escapeHtml(record.partNumber)}</strong><small>SN ${escapeHtml(record.serialNumber)}</small></td>
       <td>${escapeHtml(textDisplay(record.originOm))}${record.originDerived ? '<small class="rep-derived-note">derivada</small>' : ""}</td>
-      <td>${escapeHtml(textDisplay(record.condition))}</td>
+      <td>${escapeHtml(textDisplay(activeCondition(record)))}</td>
       <td>${statusBadge(record)}<small>${escapeHtml(info.visualStage)}</small></td>
       <td>${escapeHtml(textDisplay(record.repairerName))}<small>CAGE ${escapeHtml(textDisplay(record.repairerCage))}</small></td>
       <td>${tdrBadge(record)}<small>Limite: ${escapeHtml(formatDate(info.tdr.dueDate))}</small></td>
@@ -414,7 +431,7 @@ function renderTable() {
     return `<article class="rep-mobile-card">
       <div class="rep-mobile-card__header"><div><span>${escapeHtml(record.po)}</span><strong>${escapeHtml(record.requisition)}</strong></div>${deadlineBadge(record)}</div>
       <dl><div><dt>PN / SN</dt><dd>${escapeHtml(record.partNumber)} / ${escapeHtml(record.serialNumber)}</dd></div>
-      <div><dt>Status</dt><dd>${escapeHtml(textDisplay(record.realStatus))}</dd></div><div><dt>Etapa</dt><dd>${escapeHtml(info.visualStage)}</dd></div>
+      <div><dt>Status</dt><dd>${escapeHtml(textDisplay(activeRealStatus(record)))}</dd></div><div><dt>Etapa</dt><dd>${escapeHtml(info.visualStage)}</dd></div>
       <div><dt>Reparador</dt><dd>${escapeHtml(textDisplay(record.repairerName))}</dd></div><div><dt>TDR</dt><dd>${escapeHtml(info.tdr.label)}</dd></div></dl>
       <div class="rep-mobile-card__actions"><button type="button" class="rep-btn rep-btn--light" data-view-id="${record.id}"><i class="bi bi-eye"></i> Detalhes</button>${state.isAdmin ? `<button type="button" class="rep-btn rep-btn--outline" data-edit-id="${record.id}"><i class="bi bi-pencil"></i> Complementar</button>` : ""}</div>
     </article>`;
@@ -451,13 +468,16 @@ function openDetail(id) {
   const warnings = [...(record.qualityWarnings || [])];
   if (record.evaluationFeeDiscardReason) warnings.push("Taxa de avaliação desconsiderada pela regra de qualidade.");
   if (record.originDerived) warnings.push("OM derivada dos dois primeiros caracteres da requisição.");
-  if (info.visualStage === "Etapa não mapeada") warnings.push("Status real sem mapeamento visual.");
-  if (record.dpeFinalIndicator === "ENTREGUE" && record.realStatus !== "10-Encerrado") warnings.push("DPE FINAL indica ENTREGUE, mas o status real não está encerrado.");
+  const statusNormalization = normalizeRealStatus(sourceRealStatus(record));
+  const conditionNormalization = normalizeRepairCondition(sourceCondition(record));
+  if (info.visualStage === "Etapa não mapeada") warnings.push("Status real sem mapeamento visual ativo.");
+  if (statusNormalization.discardedReason) warnings.push(`Status real não utilizado e desconsiderado: ${statusNormalization.raw}.`);
+  if (conditionNormalization.discardedReason) warnings.push(`Condição não utilizada e desconsiderada: ${conditionNormalization.raw}.`);
   els.detailTitle.textContent = `${record.po} · ${record.requisition}`;
   els.detailContent.innerHTML = `
-    <section class="rep-detail-group"><h3>Identificação</h3><dl>${detailRow("Número do processo", record.processNumber)}${detailRow("Descrição do item", record.description)}${detailRow("Chave estável", record.importKey)}${detailRow("Situação no lote", record.lastSeenBatchId === state.config?.activeBatchId || state.sourceMode === "bundle" ? "Presente no lote atual" : "Ausente do lote atual — registro preservado")}</dl></section>
+    <section class="rep-detail-group"><h3>Identificação</h3><dl>${detailRow("Número do processo", record.processNumber)}${detailRow("Descrição do item", record.description)}${detailRow("Chave estável", record.importKey)}${detailRow("Status real", activeRealStatus(record))}${detailRow("Etapa visual", info.visualStage)}${detailRow("Situação no lote", record.lastSeenBatchId === state.config?.activeBatchId || state.sourceMode === "bundle" ? "Presente no lote atual" : "Ausente do lote atual — registro preservado")}</dl></section>
     <section class="rep-detail-group"><h3>Empenho e requisição</h3><dl>${detailRow("Empenho / PO", record.po)}${detailRow("Data de emissão", formatDate(record.poIssueDate))}${detailRow("Requisição", record.requisition)}${detailRow("Parque / OM", record.originOm, record.originDerived ? ' <span class="rep-inline-alert">derivada da requisição</span>' : "")}</dl></section>
-    <section class="rep-detail-group"><h3>Item</h3><dl>${detailRow("Part Number", record.partNumber)}${detailRow("Serial Number", record.serialNumber)}${detailRow("Condição", record.condition)}${detailRow("Valor do item", moneyDisplay(record.itemValue, record.currency))}</dl></section>
+    <section class="rep-detail-group"><h3>Item</h3><dl>${detailRow("Part Number", record.partNumber)}${detailRow("Serial Number", record.serialNumber)}${detailRow("Condição", activeCondition(record))}${detailRow("Valor do item", moneyDisplay(record.itemValue, record.currency))}</dl></section>
     <section class="rep-detail-group"><h3>Reparador</h3><dl>${detailRow("CAGE Code", record.repairerCage)}${detailRow("Nome do reparador", record.repairerName)}${detailRow("Valor do reparo contratado", moneyDisplay(record.repairValue, record.currency))}${detailRow("Taxa de avaliação — TTE", record.evaluationFee == null ? "Não informado" : `${new Intl.NumberFormat("pt-BR", { minimumFractionDigits: 2, maximumFractionDigits: 2 }).format(record.evaluationFee)} — Moeda não informada`)}</dl></section>
     <section class="rep-detail-group"><h3>Envio ao reparador</h3><dl>${detailRow("Data de recebimento no reparador", formatDate(record.receivedAtRepairerDate))}${detailRow("Tracking do envio", record.trackingToRepairer)}</dl></section>
     <section class="rep-detail-group"><h3>TDR e decisão</h3><dl>${detailRow("Prazo-limite do TDR", formatDate(info.tdr.dueDate))}${detailRow("Data de envio do TDR", formatDate(record.tdrSentDate))}${detailRow("Situação do TDR", info.tdr.label)}${detailRow("Decisão sobre o serviço", record.serviceDecision)}${detailRow(record.serviceDateLabel || contextualServiceDateLabel(record.serviceDecision), formatDate(record.serviceAuthorizationOrAsIsDate))}</dl></section>
@@ -483,7 +503,7 @@ function openEdit(id = "") {
   els.editPo.value = record?.po || ""; els.editRequisition.value = record?.requisition || ""; els.editPn.value = record?.partNumber || ""; els.editSn.value = record?.serialNumber || "";
   els.editProcess.value = record?.processNumber || ""; els.editDescription.value = record?.description || "";
   els.editItemValue.value = record?.itemValue ?? ""; els.editRepairValue.value = record?.repairValue ?? ""; els.editCurrency.value = record?.currency || "";
-  els.editNotes.value = record?.manualNotes || ""; els.editOrigin.value = record?.originOm || ""; els.editStatus.value = record?.realStatus || "";
+  els.editNotes.value = record?.manualNotes || ""; els.editOrigin.value = record?.originOm || ""; els.editStatus.value = record ? (activeRealStatus(record) || "") : "";
   els.editRepairer.value = record?.repairerName || ""; els.editCage.value = record?.repairerCage || "";
   els.editDialog.showModal();
 }
@@ -506,8 +526,10 @@ async function saveManual(event) {
   if (!existingId) {
     Object.assign(payload, {
       po, requisition, partNumber: pn, serialNumber: sn, importKey: stableKeySource(po, requisition, pn, sn),
-      originOm: normalizeNullable(els.editOrigin.value), originDerived: false, realStatus: normalizeNullable(els.editStatus.value),
-      visualStage: mapVisualStage(els.editStatus.value), repairerName: normalizeNullable(els.editRepairer.value), repairerCage: normalizeNullable(els.editCage.value),
+      originOm: normalizeNullable(els.editOrigin.value), originDerived: false,
+      realStatus: normalizeRealStatus(els.editStatus.value).value, realStatusSource: normalizeRealStatus(els.editStatus.value).raw,
+      realStatusDiscardReason: normalizeRealStatus(els.editStatus.value).discardedReason, visualStage: mapVisualStage(normalizeRealStatus(els.editStatus.value).value),
+      repairerName: normalizeNullable(els.editRepairer.value), repairerCage: normalizeNullable(els.editCage.value),
       manualOnly: true, createdAt: serverTimestamp(), createdBy: state.user.uid, createdByName: state.user.displayName || state.user.email || ""
     });
   }
@@ -591,7 +613,7 @@ async function parseWorkbookFile(file, referenceDateIso) {
   const col = header => findHeaderColumn(map, header);
   const parsed = [], rejected = [], warnings = [], seen = new Set();
   let ignored = 0;
-  const quality = { tteDiscarded: 0, omDerived: 0, unmapped: 0, tdrNoBase: 0, duplicateKeys: 0 };
+  const quality = { tteDiscarded: 0, omDerived: 0, unmapped: 0, tdrNoBase: 0, duplicateKeys: 0, deprecatedStatus: 0, deprecatedCondition: 0 };
 
   for (let row = 1; row <= range.e.r; row += 1) {
     const value = header => cellAt(sheet, row, col(header))?.v;
@@ -608,9 +630,13 @@ async function parseWorkbookFile(file, referenceDateIso) {
     if (origin.derived) quality.omDerived += 1;
     const fee = normalizeEvaluationFee({ po, rawValue: value("TTE"), formula: formula("TTE") });
     if (fee.discardedReason) quality.tteDiscarded += 1;
-    const realStatus = normalizeNullable(value("STATUS REAL DO MATERIAL"));
+    const statusNormalization = normalizeRealStatus(value("STATUS REAL DO MATERIAL"));
+    const realStatus = statusNormalization.value;
     const visualStage = mapVisualStage(realStatus);
+    if (statusNormalization.discardedReason) quality.deprecatedStatus += 1;
     if (visualStage === "Etapa não mapeada") quality.unmapped += 1;
+    const conditionNormalization = normalizeRepairCondition(value("COND"));
+    if (conditionNormalization.discardedReason) quality.deprecatedCondition += 1;
     const receivedAtRepairerDate = parseDateToIso(value("MAT EXP ou REC REPARADOR"));
     const tdrSentDate = parseDateToIso(value("TDR ENV PARQUE"));
     if (!receivedAtRepairerDate) quality.tdrNoBase += 1;
@@ -620,14 +646,17 @@ async function parseWorkbookFile(file, referenceDateIso) {
     const recordWarnings = [];
     if (origin.derived) recordWarnings.push("OM derivada dos dois primeiros caracteres da requisição");
     if (fee.discardedReason) recordWarnings.push("TTE descartada pela regra de qualidade");
-    if (visualStage === "Etapa não mapeada") recordWarnings.push(`Status sem mapeamento visual: ${realStatus || "Não informado"}`);
+    if (visualStage === "Etapa não mapeada") recordWarnings.push(`Status sem mapeamento visual ativo: ${statusNormalization.raw || "Não informado"}`);
+    if (statusNormalization.discardedReason) recordWarnings.push(`Status não utilizado e desconsiderado: ${statusNormalization.raw}`);
+    if (conditionNormalization.discardedReason) recordWarnings.push(`Condição não utilizada e desconsiderada: ${conditionNormalization.raw}`);
     if (!receivedAtRepairerDate) recordWarnings.push("Prazo do TDR não calculável: recebimento no reparador não informado");
-    if (dpeFinalIndicator === "ENTREGUE" && realStatus !== "10-Encerrado") recordWarnings.push("DPE FINAL indica ENTREGUE, mas o status real não está encerrado");
     const tdr = calculateTdrStatus(receivedAtRepairerDate, tdrSentDate, referenceDateIso);
     parsed.push({
       id, importKey: key, po, evaluationFee: fee.value, evaluationFeeCurrency: null, evaluationFeeRaw: fee.raw, evaluationFeeDiscardReason: fee.discardedReason,
-      poIssueDate: parseDateToIso(value("DATA EMISSÃO PO")), realStatus, visualStage, requisition, originOm: origin.value, originDerived: origin.derived,
-      partNumber: pn, serialNumber: sn, condition: normalizeNullable(value("COND")), receivedAtRepairerDate,
+      poIssueDate: parseDateToIso(value("DATA EMISSÃO PO")), realStatus, realStatusSource: statusNormalization.raw, realStatusDiscardReason: statusNormalization.discardedReason,
+      visualStage, requisition, originOm: origin.value, originDerived: origin.derived,
+      partNumber: pn, serialNumber: sn, condition: conditionNormalization.value, conditionSource: conditionNormalization.raw,
+      conditionDiscardReason: conditionNormalization.discardedReason, receivedAtRepairerDate,
       trackingToRepairer: normalizeNullable(value("TRACKING ENVIO REPARADOR")), tdrDueDate: tdr.dueDate, tdrSentDate,
       serviceDecision, serviceAuthorizationOrAsIsDate: parseDateToIso(value("SVC AUTORIZADO / SOL RETORNO AS IS")), serviceDateLabel: contextualServiceDateLabel(serviceDecision),
       repairDeliveryDays: parseFlexibleNumber(value("PRAZO ENTREGA (DIAS)")) == null ? null : Math.trunc(parseFlexibleNumber(value("PRAZO ENTREGA (DIAS)"))),
@@ -694,7 +723,9 @@ function renderImportPreview() {
   const warnings = [];
   if (preview.quality.tteDiscarded) warnings.push(`${preview.quality.tteDiscarded} TTE(s) desconsiderada(s) por fórmula/ano da PO.`);
   if (preview.quality.omDerived) warnings.push(`${preview.quality.omDerived} OM(s) derivada(s) da requisição.`);
-  if (preview.quality.unmapped) warnings.push(`${preview.quality.unmapped} status sem mapeamento visual.`);
+  if (preview.quality.unmapped) warnings.push(`${preview.quality.unmapped} status sem mapeamento visual ativo.`);
+  if (preview.quality.deprecatedStatus) warnings.push(`${preview.quality.deprecatedStatus} status 8/10 desconsiderado(s) por não utilização.`);
+  if (preview.quality.deprecatedCondition) warnings.push(`${preview.quality.deprecatedCondition} condição(ões) EXCHANGE desconsiderada(s).`);
   if (preview.quality.tdrNoBase) warnings.push(`${preview.quality.tdrNoBase} item(ns) sem data-base para calcular o TDR.`);
   if (preview.missingIds.length) warnings.push(`${preview.missingIds.length} registro(s) não aparecem no novo arquivo; serão preservados e sinalizados como ausentes do lote atual.`);
   if (preview.rejected.length) warnings.push(`${preview.rejected.length} linha(s) rejeitada(s).`);
@@ -801,14 +832,16 @@ function generateSummaryPdf() {
   const records = state.filtered; const enriched = records.map(record => ({ record, ...derived(record) }));
   const itemValue = aggregateMoney(records, "itemValue"), repairValue = aggregateMoney(records, "repairValue");
   pdf.autoTable({ startY, head: [["Indicador", "Resultado"]], body: [
-    ["Itens controlados", String(records.length)], ["Em oficina/reparo", String(enriched.filter(item => item.visualStage === "Oficina reparadora").length)],
-    ["Em trânsito", String(enriched.filter(item => ["Trânsito ao exterior", "Trânsito à oficina", "Fluxo de retorno"].includes(item.visualStage)).length)],
+    ["Itens controlados", String(records.length)], ["Brasil / OM requisitante", String(enriched.filter(item => item.visualStage === "Brasil / OM requisitante").length)],
+    ["Brasil / CTLA", String(enriched.filter(item => item.visualStage === "Brasil / CTLA").length)],
+    ["Trânsito à oficina", String(enriched.filter(item => item.visualStage === "Trânsito à oficina").length)],
+    ["CABW / CABE (retorno)", String(enriched.filter(item => item.visualStage === "CABW / CABE (retorno)").length)],
     ["TDR atrasado/próximo", String(enriched.filter(item => ["overdue", "due-soon"].includes(item.tdr.code)).length)],
-    ["Retornos atrasados", String(enriched.filter(item => item.deadline.code === "overdue").length)], ["Concluídos", String(enriched.filter(item => item.visualStage === "Entregue à OM").length)],
+    ["Retornos atrasados", String(enriched.filter(item => item.deadline.code === "overdue").length)],
     ["Valor dos itens", `${itemValue.value} (${itemValue.note})`], ["Reparos contratados", `${repairValue.value} (${repairValue.note})`]
   ], headStyles: { fillColor: [1, 58, 126] }, styles: { fontSize: 8 } });
   let y = pdf.lastAutoTable.finalY + 6;
-  const status = new Map(); records.forEach(record => status.set(record.realStatus || "Não informado", (status.get(record.realStatus || "Não informado") || 0) + 1));
+  const status = new Map(); records.forEach(record => { const value = activeRealStatus(record) || "Não informado"; status.set(value, (status.get(value) || 0) + 1); });
   pdf.autoTable({ startY: y, head: [["Status real", "Itens"]], body: Array.from(status.entries()).sort((a, b) => b[1] - a[1]), headStyles: { fillColor: [1, 58, 126] }, styles: { fontSize: 7 } });
   y = pdf.lastAutoTable.finalY + 6;
   const repairers = new Map(); records.forEach(record => repairers.set(record.repairerName || "Não informado", (repairers.get(record.repairerName || "Não informado") || 0) + 1));
@@ -817,7 +850,7 @@ function generateSummaryPdf() {
   const attention = enriched.filter(item => item.tdr.code === "overdue" || item.tdr.code === "due-soon" || item.deadline.code === "overdue").slice(0, 30);
   if (attention.length) pdf.autoTable({ startY: y, head: [["PO", "Requisição", "PN/SN", "TDR", "Retorno"]], body: attention.map(item => [item.record.po, item.record.requisition, `${item.record.partNumber} / ${item.record.serialNumber}`, item.tdr.label, item.deadline.label]), headStyles: { fillColor: [179, 37, 53] }, styles: { fontSize: 6.5 } });
   const quality = buildQualityCounts(records); y = pdf.lastAutoTable?.finalY ? pdf.lastAutoTable.finalY + 6 : y;
-  pdf.autoTable({ startY: y, head: [["Avisos de dados incompletos", "Quantidade"]], body: [["TTE descartada", quality.tteDiscarded], ["OM derivada", quality.omDerived], ["Prazo TDR não calculável", quality.tdrNoBase], ["Processo não informado", quality.manualProcessMissing], ["Descrição não informada", quality.manualDescriptionMissing], ["Valor do item não informado", quality.itemValueMissing], ["Valor do reparo não informado", quality.repairValueMissing]], headStyles: { fillColor: [230, 160, 0] }, styles: { fontSize: 7 } });
+  pdf.autoTable({ startY: y, head: [["Avisos de dados incompletos", "Quantidade"]], body: [["TTE descartada", quality.tteDiscarded], ["OM derivada", quality.omDerived], ["Prazo TDR não calculável", quality.tdrNoBase], ["Status 8/10 desconsiderado", quality.deprecatedStatus], ["Condição EXCHANGE desconsiderada", quality.deprecatedCondition], ["Processo não informado", quality.manualProcessMissing], ["Descrição não informada", quality.manualDescriptionMissing], ["Valor do item não informado", quality.itemValueMissing], ["Valor do reparo não informado", quality.repairValueMissing]], headStyles: { fillColor: [230, 160, 0] }, styles: { fontSize: 7 } });
   pdf.save(`materiais-reparaveis-gerencial-${TODAY_ISO}.pdf`);
 }
 
@@ -826,7 +859,7 @@ function generateDetailedPdf() {
   const { pdf, startY } = setupPdf("Relatório Detalhado — Materiais Reparáveis", "landscape");
   pdf.autoTable({
     startY, head: [["PO", "Requisição", "PN", "SN", "OM", "Condição", "Status", "Etapa", "Reparador", "TDR", "DPE/Retorno", "Processo", "Descrição"]],
-    body: state.filtered.map(record => { const info = derived(record); return [record.po, record.requisition, record.partNumber, record.serialNumber, textDisplay(record.originOm), textDisplay(record.condition), textDisplay(record.realStatus), info.visualStage, textDisplay(record.repairerName), info.tdr.label, info.deadline.label, textDisplay(record.processNumber), textDisplay(record.description)]; }),
+    body: state.filtered.map(record => { const info = derived(record); return [record.po, record.requisition, record.partNumber, record.serialNumber, textDisplay(record.originOm), textDisplay(activeCondition(record)), textDisplay(activeRealStatus(record)), info.visualStage, textDisplay(record.repairerName), info.tdr.label, info.deadline.label, textDisplay(record.processNumber), textDisplay(record.description)]; }),
     headStyles: { fillColor: [1, 58, 126], fontSize: 6 }, styles: { fontSize: 5.4, cellPadding: 1.1, overflow: "linebreak" },
     didDrawPage: data => { pdf.setFontSize(7); pdf.setTextColor(90, 100, 120); pdf.text(`Página ${pdf.internal.getNumberOfPages()}`, pdf.internal.pageSize.getWidth() - 22, pdf.internal.pageSize.getHeight() - 6); }
   });

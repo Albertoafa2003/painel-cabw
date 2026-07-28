@@ -84,7 +84,7 @@
         <label><span>Taxa de avaliação</span><select id="repEvaluationFeeFilter" class="form-control"><option value="">Informada ou não informada</option><option value="informed">Informada</option><option value="missing">Não informada</option></select></label>
         <label><span>Situação do TDR</span><select id="repTdrFilter" class="form-control"><option value="">Todas as situações</option><option value="overdue">TDR atrasado</option><option value="due-soon">Próximo do vencimento</option><option value="on-time">No prazo</option><option value="sent-on-time">Enviado no prazo</option><option value="sent-late">Enviado com atraso</option><option value="not-calculable">Prazo não calculável</option></select></label>
         <label><span>CAGE Code</span><select id="repCageFilter" class="form-control"></select></label>
-        <label><span>Situação do retorno</span><select id="repDeadlineFilter" class="form-control"><option value="">Todos os prazos</option><option value="overdue">Retorno atrasado</option><option value="due-30">Retorno em até 30 dias</option><option value="on-time">No prazo</option><option value="no-date">Sem DPE</option><option value="delivered-indicator">DPE indica entregue</option><option value="completed">Concluído / entregue</option></select></label>
+        <label><span>Situação do retorno</span><select id="repDeadlineFilter" class="form-control"><option value="">Todos os prazos</option><option value="overdue">Retorno atrasado</option><option value="due-30">Retorno em até 30 dias</option><option value="on-time">No prazo</option><option value="no-date">Sem DPE</option><option value="delivered-indicator">DPE indica entregue</option></select></label>
         <label><span>Ordenar por</span><select id="repSort" class="form-control"><option value="updated">Atualização mais recente</option><option value="dpe">DPE / retorno previsto</option><option value="tdr">Prazo do TDR</option><option value="po">Empenho / PO</option><option value="requisition">Requisição</option><option value="repairer">Reparador</option></select></label>
         <label class="rep-filter-wide"><span>Busca geral</span><input type="search" id="repSearch" class="form-control" placeholder="PO, requisição, PN, SN, OM, tracking, CAGE, reparador, status ou dado complementar"></label>
         <label class="rep-checkbox-label"><input type="checkbox" id="repIncludeAbsent"><span>Incluir registros ausentes do lote atual</span></label>
@@ -101,17 +101,17 @@
 
   <section class="rep-kpi-grid rep-kpi-grid--eight" aria-label="Indicadores dos materiais reparáveis">
     <article class="rep-kpi-card"><span class="rep-kpi-icon"><i class="bi bi-box-seam"></i></span><div><span>Itens controlados</span><strong id="repKpiTotal">0</strong><small>resultado dos filtros</small></div></article>
-    <article class="rep-kpi-card"><span class="rep-kpi-icon"><i class="bi bi-tools"></i></span><div><span>Em oficina / reparo</span><strong id="repKpiRepair">0</strong><small>oficina reparadora</small></div></article>
-    <article class="rep-kpi-card"><span class="rep-kpi-icon"><i class="bi bi-truck"></i></span><div><span>Em trânsito</span><strong id="repKpiTransit">0</strong><small>ida à oficina ou retorno</small></div></article>
+    <article class="rep-kpi-card"><span class="rep-kpi-icon"><i class="bi bi-geo-alt"></i></span><div><span>CABW / CABE</span><strong id="repKpiRepair">0</strong><small>item recebido no retorno</small></div></article>
+    <article class="rep-kpi-card"><span class="rep-kpi-icon"><i class="bi bi-truck"></i></span><div><span>Em trânsito</span><strong id="repKpiTransit">0</strong><small>trânsito à oficina</small></div></article>
     <article class="rep-kpi-card rep-kpi-card--alert"><span class="rep-kpi-icon"><i class="bi bi-exclamation-triangle"></i></span><div><span>Retornos atrasados</span><strong id="repKpiOverdue">0</strong><small>DPE anterior à data atual</small></div></article>
-    <article class="rep-kpi-card"><span class="rep-kpi-icon"><i class="bi bi-check2-circle"></i></span><div><span>Concluídos / entregues</span><strong id="repKpiCompleted">0</strong><small>status 10-Encerrado</small></div></article>
+    <article class="rep-kpi-card"><span class="rep-kpi-icon"><i class="bi bi-box-arrow-in-down"></i></span><div><span>Brasil / CTLA</span><strong id="repKpiCompleted">0</strong><small>item recebido no CTLA</small></div></article>
     <article class="rep-kpi-card rep-kpi-card--alert"><span class="rep-kpi-icon"><i class="bi bi-calendar2-x"></i></span><div><span>TDR em alerta</span><strong id="repKpiTdr">0</strong><small>atrasado ou até 7 dias</small></div></article>
     <article class="rep-kpi-card rep-kpi-card--money"><span class="rep-kpi-icon"><i class="bi bi-currency-dollar"></i></span><div><span>Valor dos itens</span><strong id="repKpiItemValue">Não informado</strong><small id="repKpiItemValueNote">sem valores válidos</small></div></article>
     <article class="rep-kpi-card rep-kpi-card--money"><span class="rep-kpi-icon"><i class="bi bi-receipt"></i></span><div><span>Reparos contratados</span><strong id="repKpiRepairValue">Não informado</strong><small id="repKpiRepairValueNote">sem valores válidos</small></div></article>
   </section>
 
   <section class="rep-card rep-flow-card" aria-label="Fluxo logístico dos materiais reparáveis">
-    <div class="rep-section-heading"><div><span class="governance-eyebrow">Status real convertido em etapa visual</span><h2>Fluxo logístico dos itens</h2><p>Clique em uma etapa para filtrar os itens. Valores novos ou não mapeados são sinalizados, sem suposição.</p></div><button type="button" class="rep-link-button" id="repClearFlow" hidden>Remover filtro do fluxo</button></div>
+    <div class="rep-section-heading"><div><span class="governance-eyebrow">Status real convertido em etapa visual</span><h2>Fluxo logístico dos itens</h2><p>Clique em uma etapa para filtrar os itens. A etapa visual é derivada exclusivamente do Status real. Status não utilizados ou não mapeados são sinalizados, sem suposição.</p></div><button type="button" class="rep-link-button" id="repClearFlow" hidden>Remover filtro do fluxo</button></div>
     <div class="rep-flow-grid" id="repFlowGrid"></div>
   </section>
 
@@ -153,7 +153,7 @@
       <label><span>Número do processo</span><input id="repEditProcess" class="form-control" maxlength="120" placeholder="Não informado"></label>
       <label><span>Parque / OM</span><input id="repEditOrigin" class="form-control" maxlength="120"></label>
       <label class="rep-form-wide"><span>Descrição do item</span><textarea id="repEditDescription" class="form-control" rows="2" maxlength="800" placeholder="Não informado"></textarea></label>
-      <label><span>Status real</span><input id="repEditStatus" class="form-control" maxlength="160"></label>
+      <label><span>Status real</span><select id="repEditStatus" class="form-control"><option value="">Não informado</option><option value="1-Empenho Aprovado">1-Empenho Aprovado</option><option value="3-Rep chegou CTLA">3-Rep chegou CTLA</option><option value="6-Rep Exp ao Reparador">6-Rep Exp ao Reparador</option><option value="7-Rep Recebido">7-Rep Recebido</option></select></label>
       <label><span>Reparador</span><input id="repEditRepairer" class="form-control" maxlength="250"></label>
       <label><span>CAGE Code</span><input id="repEditCage" class="form-control" maxlength="80"></label>
       <label><span>Moeda</span><select id="repEditCurrency" class="form-control"><option value="">Não informada</option><option value="USD">USD</option><option value="EUR">EUR</option><option value="BRL">BRL</option><option value="GBP">GBP</option></select></label>

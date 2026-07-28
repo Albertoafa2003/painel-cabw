@@ -52,5 +52,28 @@
     "importedBy",
     "createdAt",
     "updatedAt"
+  ],
+  "visualStageMapping": {
+    "1-Empenho Aprovado": "Brasil / OM requisitante",
+    "3-Rep chegou CTLA": "Brasil / CTLA",
+    "6-Rep Exp ao Reparador": "Trânsito à oficina",
+    "7-Rep Recebido": "CABW / CABE (retorno)"
+  },
+  "deprecatedRealStatuses": [
+    "10-Encerrado",
+    "8-Rep Embarcado"
+  ],
+  "deprecatedConditions": [
+    "EXCHANGE"
+  ],
+  "visualStagesRemoved": [
+    "Oficina reparadora",
+    "Fluxo de retorno",
+    "Entregue à OM"
+  ],
+  "notes": [
+    "A Etapa visual é sempre derivada do Status real ativo.",
+    "Status 8-Rep Embarcado e 10-Encerrado são preservados apenas em realStatusSource para auditoria e não são opções ativas.",
+    "A condição EXCHANGE é preservada apenas em conditionSource para auditoria e não é opção ativa."
   ]
 }

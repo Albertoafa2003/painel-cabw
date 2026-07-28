@@ -5,7 +5,7 @@ import path from 'node:path';
 import { fileURLToPath } from 'node:url';
 import {
   normalizeNullable, normalizeIdentifier, normalizeEvaluationFee, calculateTdrStatus,
-  mapVisualStage, stableKeySource, sha256Hex, importedDataEqual, addDaysIso
+  mapVisualStage, normalizeRealStatus, normalizeRepairCondition, stableKeySource, sha256Hex, importedDataEqual, addDaysIso
 } from '../assets/js/repair-import-core.js';
 
 const __dirname = path.dirname(fileURLToPath(import.meta.url));
@@ -37,9 +37,23 @@ test('prazo do TDR usa 45 dias corridos', () => {
   assert.equal(result.days, 145);
 });
 
-test('status real é mapeado sem alterar o valor de origem', () => {
-  assert.equal(mapVisualStage('7-Rep Recebido'), 'Oficina reparadora');
+test('status real é correlacionado somente às etapas visuais ativas', () => {
+  assert.equal(mapVisualStage('1-Empenho Aprovado'), 'Brasil / OM requisitante');
+  assert.equal(mapVisualStage('3-Rep chegou CTLA'), 'Brasil / CTLA');
+  assert.equal(mapVisualStage('3-Rep Chegou CTLA'), 'Brasil / CTLA');
+  assert.equal(mapVisualStage('6-Rep Exp ao Reparador'), 'Trânsito à oficina');
+  assert.equal(mapVisualStage('7-Rep Recebido'), 'CABW / CABE (retorno)');
+  assert.equal(mapVisualStage('8-Rep Embarcado'), 'Etapa não mapeada');
+  assert.equal(mapVisualStage('10-Encerrado'), 'Etapa não mapeada');
   assert.equal(mapVisualStage('STATUS NOVO'), 'Etapa não mapeada');
+});
+
+test('status 8/10 e condição EXCHANGE são desconsiderados sem perder o valor de auditoria', () => {
+  assert.deepEqual(normalizeRealStatus('8-Rep. Embarcado'), { value: null, raw: '8-Rep. Embarcado', discardedReason: 'status-not-used' });
+  assert.deepEqual(normalizeRealStatus('8-Rep Embarcado'), { value: null, raw: '8-Rep Embarcado', discardedReason: 'status-not-used' });
+  assert.deepEqual(normalizeRealStatus('10-Encerrado'), { value: null, raw: '10-Encerrado', discardedReason: 'status-not-used' });
+  assert.deepEqual(normalizeRepairCondition('EXCHANGE'), { value: null, raw: 'EXCHANGE', discardedReason: 'condition-not-used' });
+  assert.deepEqual(normalizeRepairCondition('REPAIR'), { value: 'REPAIR', raw: 'REPAIR', discardedReason: null });
 });
 
 test('chave estável produz o mesmo identificador para reimportação', async () => {
