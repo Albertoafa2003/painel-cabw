@@ -1,0 +1,31 @@
+{
+  "position": "30/07/2026",
+  "sourceFile": "RELATÓRIO_CRÉDITO_DISPONÍVEL_CABW_30072026(1).docx",
+  "summaryRows": 12,
+  "ugRankingRows": 16,
+  "detailRowsNewPosition": 33,
+  "actionRankingRows": 15,
+  "creditReceivedActionRows": 20,
+  "validations": {
+    "ugTotal": 5449089.14,
+    "actionTotal": 5449089.14,
+    "detailTotal": 5449089.14,
+    "receivedTotal": 118642863.68,
+    "expectedAvailable": 5449089.14,
+    "expectedReceived": 118642863.68,
+    "duplicateSummaryDate": false
+  },
+  "parliamentaryAmendment": {
+    "PTRES": "260949",
+    "UG beneficiária": "120106 - CENIPA - CENTRO DE INVESTIGAÇÃO E PREVENÇÃO DE ACIDENTES AERONÁUTICOS",
+    "Unidade Orçamentária": "52111 - COMANDO DA AERONÁUTICA",
+    "Ação Orçamentária": "2000 - ADMINISTRAÇÃO DA UNIDADE",
+    "Crédito disponível": "US$ 42.213,00",
+    "Programa de Trabalho": "05122003220000053 - ADMINISTRAÇÃO DA UNIDADE - NO DISTRITO FEDERAL",
+    "Resultado Lei": "6 - DESPESA DISCRICIONÁRIA DECORRENTE DE EMENDA INDIVIDUAL",
+    "Tipo de crédito": "A - INICIAL (LOA)",
+    "Plano Orçamentário": "0000 - ADMINISTRAÇÃO DA UNIDADE - DESPESAS DIVERSAS",
+    "Autor/Emenda": "202641360023 - IZALCI LUCAS / EMENDA 23",
+    "IDUSO": "0 - RECURSOS NÃO DESTINADOS À CONTRAPARTIDA"
+  }
+}

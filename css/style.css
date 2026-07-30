@@ -6286,3 +6286,30 @@ body.auth-is-admin .navbar-nav .admin-only {
   .rep-detail-group dl { grid-template-columns: 1fr; }
   .rep-checkbox-label { padding-top: 4px; }
 }
+
+
+/* ===== Nota especial de crédito / emenda parlamentar ===== */
+.credit-special-note {
+  display: flex;
+  gap: 14px;
+  align-items: flex-start;
+  margin: 18px 0 28px;
+  padding: 16px 18px;
+  color: #06265b;
+  background: linear-gradient(90deg, rgba(255,210,0,.14), rgba(0,54,118,.05));
+  border: 1px solid rgba(255,210,0,.30);
+  border-radius: 14px;
+  line-height: 1.55;
+}
+.credit-special-note__icon {
+  display: inline-flex;
+  flex: 0 0 38px;
+  width: 38px;
+  height: 38px;
+  align-items: center;
+  justify-content: center;
+  color: #003a82;
+  background: #fff;
+  border-radius: 999px;
+  box-shadow: 0 8px 16px rgba(2,27,70,.10);
+}
