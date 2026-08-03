@@ -1,0 +1,12 @@
+PAINEL CABW - ATUALIZAÇÃO DE CRÉDITO
+
+Versão: 20260803-credit-r1
+Fonte: RELATÓRIO_CRÉDITO_DISPONÍVEL_CABW_03082026(1).docx
+Posição do crédito disponível: 03/08/2026
+Referência do CONOR: 01/08/2026 00:01
+Crédito disponível: US$ 5.511.774,14
+Crédito recebido: US$ 118.642.863,68
+Lançamentos: 84
+
+Este pacote foi construído sobre a versão verificada do Painel de Materiais Reparáveis de 03/08/2026.
+Confirme que este arquivo e BUILD_VERIFICACAO_CREDITO_03082026.json aparecem na raiz após o upload no GitHub.
