@@ -1,0 +1,48 @@
+{
+  "version": "20260803-r4",
+  "builtAt": "2026-08-03T16:35:14.767863+00:00",
+  "sourceFile": "CONTROLE REPARO - SGT ROZENDO - 03082026.xlsx",
+  "records": 113,
+  "po24": 0,
+  "tdrCounts": {
+    "delivered": 80,
+    "overdue": 6,
+    "not-calculable": 27
+  },
+  "documentaryCounts": {
+    "not-required": 31,
+    "registered": 45,
+    "ficha-recorded-no-subprocess": 4,
+    "tdr-not-received": 33
+  },
+  "criticalFiles": {
+    "governanca-reparaveis.html": {
+      "sha256": "879a6bc3900e4da8e929f73d625e0fd33410ed6be4f23e515fd1d1be542c039a",
+      "bytes": 18900
+    },
+    "assets/js/repair-import-core.js": {
+      "sha256": "00d954db5a82cb9f7b2ae6cfc638b60973cbbc5c368b8838214a780cb913ba43",
+      "bytes": 12494
+    },
+    "assets/js/repair-processes-panel.js": {
+      "sha256": "beda6b00bb3a71689e8f988d87ad502cc26ec3394e63fe226da1d191f012543d",
+      "bytes": 67123
+    },
+    "assets/js/repair-processes-current-data.js": {
+      "sha256": "8252d09051b06eb549879b5bb36be29f2e453abf2b76a994773031bd00e45ff2",
+      "bytes": 239585
+    },
+    "assets/data/repair-processes-current.json": {
+      "sha256": "3693fdddc61ef05600b3d90a62823a5f5b10f7a0ae54160fab7c25d690660eda",
+      "bytes": 302640
+    },
+    "tests/repair-import.test.mjs": {
+      "sha256": "37a3cf95c928de0c4d32033536aade933468a264b84dabb2d09938581aada565",
+      "bytes": 3500
+    },
+    "INSTRUCOES_IMPORTACAO_MENSAL_REPARAVEIS.md": {
+      "sha256": "4b828bcf61c167d74b5241c46f2db321b4558c5cb6313b828566fc808bfdcd8f",
+      "bytes": 1233
+    }
+  }
+}

@@ -12,13 +12,15 @@
     "DATA EMISSÃO PO": "poIssueDate",
     "STATUS REAL DO MATERIAL": "realStatus",
     "REQUISIÇÃO": "requisition",
-    "OM": "originOm",
     "PN": "partNumber",
     "SN": "serialNumber",
     "COND": "condition",
     "MAT EXP ou REC REPARADOR": "receivedAtRepairerDate",
     "TRACKING ENVIO REPARADOR": "trackingToRepairer",
-    "TDR ENV PARQUE": "tdrSentDate",
+    "PRAZO p/ ENVIO TDR p/ REPARADOR": "tdrDueDate",
+    "TDR ENV PARQUE": "tdrDeliveryRaw / tdrSentDate / tdrDelivered",
+    "SUBPROC #": "subprocessRaw",
+    "FICHA RECEBIDA": "fichaRaw / fichaDate",
     "SERVIÇO APROVADO?": "serviceDecision",
     "SVC AUTORIZADO / SOL RETORNO AS IS": "serviceAuthorizationOrAsIsDate",
     "PRAZO ENTREGA (DIAS)": "repairDeliveryDays",
@@ -28,10 +30,12 @@
     "CAGE CODE REPARADOR": "repairerCage",
     "NOME REPARADOR": "repairerName"
   },
+  "excludedPoRule": "POs iniciadas em 24T são excluídas do painel e arquivadas no Firestore durante a importação.",
+  "tdrRule": "Coluna N com none ou data = entregue; N vazia e data atual posterior à coluna M = atrasado.",
+  "documentaryRule": "O=none: subprocesso não necessário; P=none: ficha não necessária; O e P vazias: TDR ainda não recebido.",
   "ignoredColumns": [
     "ALERTA PRÓXIMA ETAPA",
-    "SUBPROC #",
-    "FICHA RECEBIDA",
+    "VALOR ITEM",
     "OBS"
   ],
   "manualFieldsPreservedOnImport": [
@@ -42,38 +46,5 @@
     "currency",
     "manualNotes"
   ],
-  "auditFields": [
-    "sourceFileName",
-    "sourceSheet",
-    "sourceRow",
-    "importBatchId",
-    "lastSeenBatchId",
-    "importedAt",
-    "importedBy",
-    "createdAt",
-    "updatedAt"
-  ],
-  "visualStageMapping": {
-    "1-Empenho Aprovado": "Brasil / OM requisitante",
-    "3-Rep chegou CTLA": "Brasil / CTLA",
-    "6-Rep Exp ao Reparador": "Trânsito à oficina",
-    "7-Rep Recebido": "CABW / CABE (retorno)"
-  },
-  "deprecatedRealStatuses": [
-    "10-Encerrado",
-    "8-Rep Embarcado"
-  ],
-  "deprecatedConditions": [
-    "EXCHANGE"
-  ],
-  "visualStagesRemoved": [
-    "Oficina reparadora",
-    "Fluxo de retorno",
-    "Entregue à OM"
-  ],
-  "notes": [
-    "A Etapa visual é sempre derivada do Status real ativo.",
-    "Status 8-Rep Embarcado e 10-Encerrado são preservados apenas em realStatusSource para auditoria e não são opções ativas.",
-    "A condição EXCHANGE é preservada apenas em conditionSource para auditoria e não é opção ativa."
-  ]
+  "buildVersion": "20260803-r4"
 }

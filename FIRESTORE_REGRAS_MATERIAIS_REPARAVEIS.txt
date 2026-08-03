@@ -1,81 +1,25 @@
-ADICIONE OS BLOCOS ABAIXO DENTRO DE:
+ADICIONE OU SUBSTITUA OS BLOCOS DE MATERIAIS REPARÁVEIS DENTRO DE:
 
 service cloud.firestore {
   match /databases/{database}/documents {
-    // Mantenha as funções isAuthorizedEmail() e isAdmin() já publicadas no projeto.
+    // Preserve as funções isAuthorizedEmail() e isAdmin() já existentes.
 
     function validRepairTypes(data) {
       return (!('sourceRow' in data) || data.sourceRow is int)
         && (!('repairDeliveryDays' in data) || data.repairDeliveryDays == null || data.repairDeliveryDays is int)
         && (!('evaluationFee' in data) || data.evaluationFee == null || data.evaluationFee is number)
         && (!('itemValue' in data) || data.itemValue == null || data.itemValue is number)
-        && (!('repairValue' in data) || data.repairValue == null || data.repairValue is number)
-        && (!('po' in data) || data.po == null || (data.po is string && data.po.size() <= 100))
-        && (!('requisition' in data) || data.requisition == null || (data.requisition is string && data.requisition.size() <= 100))
-        && (!('partNumber' in data) || data.partNumber == null || (data.partNumber is string && data.partNumber.size() <= 160))
-        && (!('serialNumber' in data) || data.serialNumber == null || (data.serialNumber is string && data.serialNumber.size() <= 160));
-    }
-
-    function hasRepairStableKey(data) {
-      return data.po is string && data.po.size() > 0
-        && data.requisition is string && data.requisition.size() > 0
-        && data.partNumber is string && data.partNumber.size() > 0
-        && data.serialNumber is string && data.serialNumber.size() > 0;
-    }
-
-    function allowedRepairCreateKeys(data) {
-      return data.keys().hasOnly([
-        'po','evaluationFee','evaluationFeeCurrency','evaluationFeeRaw','evaluationFeeDiscardReason',
-        'poIssueDate','realStatus','visualStage','requisition','originOm','originDerived',
-        'partNumber','serialNumber','condition','receivedAtRepairerDate','trackingToRepairer',
-        'tdrDueDate','tdrSentDate','serviceDecision','serviceAuthorizationOrAsIsDate','serviceDateLabel',
-        'repairDeliveryDays','dpeFinalDate','dpeFinalIndicator','returnTrackingVolume','returnMaterialDate',
-        'repairerCage','repairerName','qualityWarnings','importKey','processNumber','description',
-        'itemValue','repairValue','currency','manualNotes','manualOnly','sourceFileName','sourceSheet',
-        'sourceRow','importBatchId','lastSeenBatchId','importedAt','importedBy','importedByName',
-        'createdAt','createdBy','createdByName','updatedAt','updatedBy','updatedByName',
-        // Campos legados do painel anterior, mantidos apenas para compatibilidade:
-        'commitmentPo','repairStatus','location','repairShop','shipmentDateBrazil','receivedCabwDate',
-        'sentToShopDate','expectedReturnDate','actualReturnDate','notes'
-      ]);
+        && (!('repairValue' in data) || data.repairValue == null || data.repairValue is number);
     }
 
     match /repairProcesses/{processId} {
       allow read: if isAuthorizedEmail();
-
-      allow create: if isAdmin()
-        && allowedRepairCreateKeys(request.resource.data)
-        && validRepairTypes(request.resource.data)
-        && hasRepairStableKey(request.resource.data);
-
-      allow update: if isAdmin()
-        && validRepairTypes(request.resource.data)
-        && request.resource.data.diff(resource.data).affectedKeys().hasOnly([
-          'po','evaluationFee','evaluationFeeCurrency','evaluationFeeRaw','evaluationFeeDiscardReason',
-          'poIssueDate','realStatus','visualStage','requisition','originOm','originDerived',
-          'partNumber','serialNumber','condition','receivedAtRepairerDate','trackingToRepairer',
-          'tdrDueDate','tdrSentDate','serviceDecision','serviceAuthorizationOrAsIsDate','serviceDateLabel',
-          'repairDeliveryDays','dpeFinalDate','dpeFinalIndicator','returnTrackingVolume','returnMaterialDate',
-          'repairerCage','repairerName','qualityWarnings','importKey','processNumber','description',
-          'itemValue','repairValue','currency','manualNotes','manualOnly','sourceFileName','sourceSheet',
-          'sourceRow','importBatchId','lastSeenBatchId','importedAt','importedBy','importedByName',
-          'updatedAt','updatedBy','updatedByName',
-          'commitmentPo','repairStatus','location','repairShop','shipmentDateBrazil','receivedCabwDate',
-          'sentToShopDate','expectedReturnDate','actualReturnDate','notes'
-        ]);
-
-      allow delete: if isAdmin();
+      allow create, update, delete: if isAdmin() && validRepairTypes(request.resource.data);
     }
 
     match /repairProcessImports/{batchId} {
       allow read: if isAuthorizedEmail();
-      allow create: if isAdmin()
-        && request.resource.data.batchId == batchId
-        && request.resource.data.validRows is int
-        && request.resource.data.validRows > 0
-        && request.resource.data.validRows <= 450
-        && request.resource.data.sourceFileName is string
-        && request.resource.data.sourceSheet == 'BD Monitoramento';
+      allow create: if isAdmin() && request.resource.data.validRows is int && request.resource.data.validRows > 0 && request.resource.data.validRows <= 450;
       allow update, delete: if false;
     }
 
@@ -87,10 +31,5 @@ service cloud.firestore {
   }
 }
 
-PUBLICAÇÃO:
-1. Firebase Console > Firestore Database > Regras.
-2. Preserve as regras atuais de users, accessLogs e admins.
-3. Adicione os blocos acima dentro de match /databases/{database}/documents.
-4. Clique em Publicar.
-
-As regras não tornam o banco público: usuários autorizados leem e somente administradores gravam, importam ou excluem.
+CAMPOS NOVOS DESTA VERSÃO:
+tdrDeliveryRaw, tdrDeliveryIndicator, tdrDelivered, subprocessRaw, fichaRaw, fichaDate, documentaryStatusCode, documentaryStatusLabel, archivedOutOfScope, outOfScopeReason, archivedAt e archivedBy.

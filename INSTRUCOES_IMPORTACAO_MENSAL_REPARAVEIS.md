@@ -1,36 +1,26 @@
 # Importação mensal — Materiais Reparáveis
 
-## Pré-requisitos
+Versão do painel: **20260803-r4**
 
-1. Publicar as regras contidas em `FIRESTORE_REGRAS_MATERIAIS_REPARAVEIS.txt`.
-2. Entrar no Painel CABW com usuário presente na coleção `admins`.
-3. Usar planilha `.xlsx` com a aba `BD Monitoramento` e os mesmos cabeçalhos da fonte atual.
-
-## Procedimento
-
-1. Acesse **Governança > Materiais Reparáveis**.
-2. Clique em **Importar planilha mensal**.
-3. Selecione o arquivo `.xlsx`.
-4. Confirme ou ajuste a data de competência.
-5. Clique em **Pré-visualizar**.
-6. Confira arquivo, competência, linhas válidas, novas, alteradas, sem alteração, rejeitadas e ausentes.
-7. Leia os avisos de qualidade.
-8. Clique em **Confirmar importação**.
-
-## Regras de processamento
-
-- A chave é `PO + REQUISIÇÃO + PN + SN`, normalizada e transformada em SHA-256.
-- Reimportar o mesmo arquivo não duplica itens.
-- Campos manuais não existentes na planilha são preservados.
-- Registros ausentes do novo arquivo não são excluídos. Eles ficam preservados e podem ser consultados com o filtro **Incluir registros ausentes do lote atual**.
-- O lote atual usa uma única gravação atômica para até 450 registros. Acima disso, a importação é interrompida antes de qualquer gravação.
-- O prazo do TDR é recalculado em 45 dias corridos a partir do recebimento no reparador.
-- `SUBPROC #`, `FICHA RECEBIDA`, `OBS` e `ALERTA PRÓXIMA ETAPA` não são importados.
-
-## Base inicial do pacote
-
-- Arquivo: `CONTROLE REPARO - SGT ROZENDO - 20072026(1).xlsx`
+## Base incluída no pacote
+- Arquivo: `CONTROLE REPARO - SGT ROZENDO - 03082026.xlsx`
 - Aba: `BD Monitoramento`
-- Linhas válidas: 274, correspondentes às linhas 2 a 275.
-- Registros únicos: 274.
-- Linhas posteriores apenas com fórmulas/espaços são ignoradas.
+- Competência: 03/08/2026
+- Registros ativos: **113**
+- POs iniciadas em 24T: **0**
+
+## Regras aplicadas
+1. POs iniciadas em `24T` são excluídas do painel. Na importação Firestore, registros antigos 24T são arquivados.
+2. A data de vencimento do TDR é a data existente na coluna M.
+3. Coluna N com `none` ou data significa TDR entregue.
+4. Coluna N vazia e data atual posterior à coluna M significa TDR atrasado.
+5. Coluna O com `none` significa subprocesso não necessário.
+6. Coluna P com `none` significa ficha não necessária.
+7. Colunas O e P vazias significam TDR ainda não recebido.
+8. A TTE é exibida no detalhamento quando válida, sem atribuição automática de moeda.
+
+## Publicação
+1. Extraia todo o ZIP na raiz do repositório.
+2. Confirme que `governanca-reparaveis.html` e os arquivos `assets/js/repair-*` aparecem como modificados no commit.
+3. Publique as regras do arquivo `FIRESTORE_REGRAS_MATERIAIS_REPARAVEIS.txt`.
+4. Após o deploy, use `Ctrl + F5`. O script possui cache-busting `?v=20260803-r4`.

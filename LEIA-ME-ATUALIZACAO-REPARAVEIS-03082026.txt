@@ -1,0 +1,9 @@
+VERSÃO 20260803-r4
+FONTE: CONTROLE REPARO - SGT ROZENDO - 03082026.xlsx
+REGISTROS ATIVOS: 113
+POs 24T NO PACOTE: 0
+TDR ENTREGUES: 80
+TDR ATRASADOS: 6
+TDR SEM PRAZO: 27
+
+Se este arquivo não aparecer no GitHub após o upload, o pacote correto não foi enviado.

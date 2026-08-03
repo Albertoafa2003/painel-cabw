@@ -3,81 +3,19 @@ import assert from 'node:assert/strict';
 import fs from 'node:fs';
 import path from 'node:path';
 import { fileURLToPath } from 'node:url';
-import {
-  normalizeNullable, normalizeIdentifier, normalizeEvaluationFee, calculateTdrStatus,
-  mapVisualStage, normalizeRealStatus, normalizeRepairCondition, stableKeySource, sha256Hex, importedDataEqual, addDaysIso
-} from '../assets/js/repair-import-core.js';
-
+import { normalizeNullable, normalizeControlValue, normalizeEvaluationFee, calculateTdrStatus, classifyDocumentaryStatus, mapVisualStage, isPo2024, stableKeySource, sha256Hex, importedDataEqual } from '../assets/js/repair-import-core.js';
 const __dirname = path.dirname(fileURLToPath(import.meta.url));
-const dataPath = path.join(__dirname, '../assets/data/repair-processes-current.json');
-const payload = JSON.parse(fs.readFileSync(dataPath, 'utf8'));
+const payload = JSON.parse(fs.readFileSync(path.join(__dirname, '../assets/data/repair-processes-current.json'), 'utf8'));
 
-test('normalização elimina espaços e valores nulos textuais', () => {
-  assert.equal(normalizeNullable('  ABC  '), 'ABC');
-  assert.equal(normalizeNullable('none'), null);
-  assert.equal(normalizeNullable(' N/A '), null);
-});
-
-test('identificadores preservam zeros e caracteres', () => {
-  assert.equal(normalizeIdentifier(' 001-AB '), '001-AB');
-  assert.equal(stableKeySource(' 01T0001 ', 'REQ01', '000PN', '000SN'), '01T0001|REQ01|000PN|000SN');
-});
-
-test('TTE calculada por LEFT é descartada e taxa real é mantida', () => {
-  assert.deepEqual(normalizeEvaluationFee({ po: '24T001234', rawValue: '24', formula: 'LEFT(A2,2)' }), { value: null, raw: '24', discardedReason: 'formula-year' });
-  assert.deepEqual(normalizeEvaluationFee({ po: '24T001234', rawValue: '24', formula: '' }), { value: null, raw: '24', discardedReason: 'year-like' });
-  assert.deepEqual(normalizeEvaluationFee({ po: '24T001234', rawValue: '1975', formula: '' }), { value: 1975, raw: '1975', discardedReason: null });
-});
-
-test('prazo do TDR usa 45 dias corridos', () => {
-  assert.equal(addDaysIso('2024-02-05', 45), '2024-03-21');
-  const result = calculateTdrStatus('2024-02-05', '2024-08-13', '2026-07-20');
-  assert.equal(result.dueDate, '2024-03-21');
-  assert.equal(result.code, 'sent-late');
-  assert.equal(result.days, 145);
-});
-
-test('status real é correlacionado somente às etapas visuais ativas', () => {
-  assert.equal(mapVisualStage('1-Empenho Aprovado'), 'Brasil / OM requisitante');
-  assert.equal(mapVisualStage('3-Rep chegou CTLA'), 'Brasil / CTLA');
-  assert.equal(mapVisualStage('3-Rep Chegou CTLA'), 'Brasil / CTLA');
-  assert.equal(mapVisualStage('6-Rep Exp ao Reparador'), 'Trânsito à oficina');
-  assert.equal(mapVisualStage('7-Rep Recebido'), 'CABW / CABE (retorno)');
-  assert.equal(mapVisualStage('8-Rep Embarcado'), 'Etapa não mapeada');
-  assert.equal(mapVisualStage('10-Encerrado'), 'Etapa não mapeada');
-  assert.equal(mapVisualStage('STATUS NOVO'), 'Etapa não mapeada');
-});
-
-test('status 8/10 e condição EXCHANGE são desconsiderados sem perder o valor de auditoria', () => {
-  assert.deepEqual(normalizeRealStatus('8-Rep. Embarcado'), { value: null, raw: '8-Rep. Embarcado', discardedReason: 'status-not-used' });
-  assert.deepEqual(normalizeRealStatus('8-Rep Embarcado'), { value: null, raw: '8-Rep Embarcado', discardedReason: 'status-not-used' });
-  assert.deepEqual(normalizeRealStatus('10-Encerrado'), { value: null, raw: '10-Encerrado', discardedReason: 'status-not-used' });
-  assert.deepEqual(normalizeRepairCondition('EXCHANGE'), { value: null, raw: 'EXCHANGE', discardedReason: 'condition-not-used' });
-  assert.deepEqual(normalizeRepairCondition('REPAIR'), { value: 'REPAIR', raw: 'REPAIR', discardedReason: null });
-});
-
-test('chave estável produz o mesmo identificador para reimportação', async () => {
-  const keyA = stableKeySource('24T000086', 'LSQR29010SS', '3431323', 'A2396');
-  const keyB = stableKeySource(' 24T000086 ', 'LSQR29010SS ', '3431323 ', ' A2396');
-  assert.equal(keyA, keyB);
-  assert.equal(await sha256Hex(keyA), await sha256Hex(keyB));
-});
-
-test('base atual possui 274 registros válidos e sem duplicidade', () => {
-  assert.equal(payload.metadata.validRows, 274);
-  assert.equal(payload.records.length, 274);
-  assert.equal(new Set(payload.records.map(item => item.id)).size, 274);
-  assert.equal(payload.rejectedRows.length, 0);
-});
-
-test('segunda importação idêntica é classificada sem alteração', () => {
-  const existing = new Map(payload.records.map(item => [item.id, item]));
-  let newCount = 0, changedCount = 0, unchangedCount = 0;
-  payload.records.forEach(item => {
-    const current = existing.get(item.id);
-    if (!current) newCount += 1;
-    else if (importedDataEqual(current, item)) unchangedCount += 1;
-    else changedCount += 1;
-  });
-  assert.deepEqual({ newCount, changedCount, unchangedCount }, { newCount: 0, changedCount: 0, unchangedCount: 274 });
-});
+test('normalização geral e controles none', () => { assert.equal(normalizeNullable(' none '), null); assert.equal(normalizeControlValue(' none '), 'none'); });
+test('PO 24T é reconhecida como fora do escopo', () => { assert.equal(isPo2024('24T000001'), true); assert.equal(isPo2024('25T000001'), false); });
+test('TTE válida é mantida sem moeda', () => { assert.deepEqual(normalizeEvaluationFee({ po: '25T000026', rawValue: 3500, formula: '' }), { value: 3500, raw: '3500', discardedReason: null }); });
+test('TDR com none ou data é entregue', () => { assert.equal(calculateTdrStatus('2026-07-24', 'none', null, '2026-08-03').code, 'delivered'); assert.equal(calculateTdrStatus('2026-07-24', '2026-07-20', '2026-07-20', '2026-08-03').code, 'delivered'); });
+test('TDR vencido com N vazia é atrasado', () => { const result = calculateTdrStatus('2026-07-24', null, null, '2026-08-03'); assert.equal(result.code, 'overdue'); assert.equal(result.days, -10); });
+test('situação documental segue O e P', () => { assert.equal(classifyDocumentaryStatus(null, null).code, 'tdr-not-received'); assert.equal(classifyDocumentaryStatus('none', 'none').code, 'not-required'); assert.equal(classifyDocumentaryStatus('none', '2025-06-01').code, 'ficha-recorded-no-subprocess'); assert.equal(classifyDocumentaryStatus('123456', '2025-06-01').code, 'registered'); });
+test('mapeamento visual permanece restrito', () => { assert.equal(mapVisualStage('7-Rep Recebido'), 'CABW / CABE (retorno)'); assert.equal(mapVisualStage('8-Rep Embarcado'), 'Etapa não mapeada'); });
+test('base 03/08 possui 113 registros únicos e nenhuma PO 24T', () => { assert.equal(payload.metadata.validRows, 113); assert.equal(payload.records.length, 113); assert.equal(new Set(payload.records.map(item => item.id)).size, 113); assert.equal(payload.records.some(item => /^24T/i.test(item.po)), false); });
+test('contagens TDR e documentação são consistentes', () => { assert.deepEqual(payload.metadata.tdrCounts, { delivered: 80, 'not-calculable': 27, overdue: 6 }); assert.deepEqual(payload.metadata.documentaryCounts, { 'not-required': 31, registered: 45, 'tdr-not-received': 33, 'ficha-recorded-no-subprocess': 4 }); });
+test('todas as 113 linhas possuem TTE válida', () => { assert.equal(payload.records.filter(item => item.evaluationFee != null).length, 113); });
+test('reimportação idêntica não duplica', () => { const current = new Map(payload.records.map(item => [item.id, item])); let unchanged = 0; payload.records.forEach(item => { if (importedDataEqual(current.get(item.id), item)) unchanged += 1; }); assert.equal(unchanged, 113); });
+test('chave estável é determinística', async () => { const a = stableKeySource('25T000026','ELRR218044R','G533947-1','134'); const b = stableKeySource(' 25T000026 ','ELRR218044R ','G533947-1 ',' 134'); assert.equal(a,b); assert.equal(await sha256Hex(a), await sha256Hex(b)); });

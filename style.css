@@ -6313,3 +6313,9 @@ body.auth-is-admin .navbar-nav .admin-only {
   border-radius: 999px;
   box-shadow: 0 8px 16px rgba(2,27,70,.10);
 }
+
+/* ===== Materiais reparáveis — TDR/documentação 03/08/2026 ===== */
+.rep-deadline--delivered { color: #17633a; background: #e8f6ed; border-color: #b9dfc6; }
+.rep-deadline--pending { color: #174d83; background: #edf5ff; border-color: #c5d9f1; }
+.rep-deadline--overdue { color: #9f1f2e; background: #fff0f2; border-color: #efb8c0; font-weight: 800; }
+.rep-deadline--due-soon { color: #7a5600; background: #fff8d8; border-color: #ead273; font-weight: 800; }

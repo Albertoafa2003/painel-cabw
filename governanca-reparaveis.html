@@ -38,7 +38,7 @@
     <div>
       <span class="governance-eyebrow">Painel de Governança Logística</span>
       <h1>Controle de Materiais Reparáveis</h1>
-      <p>Acompanhe o fluxo logístico, o TDR, a decisão sobre o serviço, o prazo de reparo e o retorno dos materiais enviados às oficinas reparadoras.</p>
+      <p>Acompanhe o fluxo logístico, a entrega do TDR, subprocessos e fichas, o prazo de reparo e o retorno dos materiais enviados às oficinas reparadoras. POs iniciadas em 24T estão fora do escopo atual.</p>
       <p class="governance-detail-card__status" id="repSourceInfo">Carregando a base de dados...</p>
     </div>
     <div class="rep-hero-actions">
@@ -72,7 +72,7 @@
 
   <section class="rep-control-grid" aria-label="Filtros e relatórios de materiais reparáveis">
     <article class="rep-card rep-filter-card">
-      <div class="rep-card-heading"><span class="rep-card-icon"><i class="bi bi-funnel"></i></span><div><h2>Consulta e filtros</h2><p>Combine filtros de identificação, situação técnica, TDR, reparador e prazo.</p></div></div>
+      <div class="rep-card-heading"><span class="rep-card-icon"><i class="bi bi-funnel"></i></span><div><h2>Consulta e filtros</h2><p>Combine filtros de identificação, situação técnica, TDR, subprocesso/ficha, reparador e prazo.</p></div></div>
       <div class="rep-filter-grid rep-filter-grid--expanded">
         <label><span>Empenho / PO</span><input type="search" id="repPoFilter" class="form-control" placeholder="Ex.: 25T001234"></label>
         <label><span>Requisição</span><input type="search" id="repRequisitionFilter" class="form-control" placeholder="Ex.: LSQR..."></label>
@@ -82,7 +82,8 @@
         <label><span>Reparador</span><select id="repRepairerFilter" class="form-control"></select></label>
         <label><span>Condição</span><select id="repConditionFilter" class="form-control"></select></label>
         <label><span>Taxa de avaliação</span><select id="repEvaluationFeeFilter" class="form-control"><option value="">Informada ou não informada</option><option value="informed">Informada</option><option value="missing">Não informada</option></select></label>
-        <label><span>Situação do TDR</span><select id="repTdrFilter" class="form-control"><option value="">Todas as situações</option><option value="overdue">TDR atrasado</option><option value="due-soon">Próximo do vencimento</option><option value="on-time">No prazo</option><option value="sent-on-time">Enviado no prazo</option><option value="sent-late">Enviado com atraso</option><option value="not-calculable">Prazo não calculável</option></select></label>
+        <label><span>Situação do TDR</span><select id="repTdrFilter" class="form-control"><option value="">Todas as situações</option><option value="delivered">TDR entregue</option><option value="overdue">TDR atrasado</option><option value="due-soon">Próximo do vencimento</option><option value="pending">Pendente no prazo</option><option value="not-calculable">Prazo não informado</option></select></label>
+        <label><span>Situação documental</span><select id="repDocumentFilter" class="form-control"></select></label>
         <label><span>CAGE Code</span><select id="repCageFilter" class="form-control"></select></label>
         <label><span>Situação do retorno</span><select id="repDeadlineFilter" class="form-control"><option value="">Todos os prazos</option><option value="overdue">Retorno atrasado</option><option value="due-30">Retorno em até 30 dias</option><option value="on-time">No prazo</option><option value="no-date">Sem DPE</option><option value="delivered-indicator">DPE indica entregue</option></select></label>
         <label><span>Ordenar por</span><select id="repSort" class="form-control"><option value="updated">Atualização mais recente</option><option value="dpe">DPE / retorno previsto</option><option value="tdr">Prazo do TDR</option><option value="po">Empenho / PO</option><option value="requisition">Requisição</option><option value="repairer">Reparador</option></select></label>
@@ -169,6 +170,6 @@
 <script src="https://code.jquery.com/jquery-3.6.0.slim.min.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/js/bootstrap.bundle.min.js"></script>
 <script type="module" src="assets/js/auth.js"></script>
-<script type="module" src="assets/js/repair-processes-panel.js"></script>
+<script type="module" src="assets/js/repair-processes-panel.js?v=20260803-r4"></script>
 </body>
 </html>
