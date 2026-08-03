@@ -1,0 +1,20 @@
+{
+  "build": "20260803-seguro-aceitacao-v1",
+  "updatedAt": "03/08/2026",
+  "process": "Seguro Saúde",
+  "openingDate": "21/07/2026",
+  "currentStage": "Aceitação da proposta",
+  "homologationForecast": "14/08/2026",
+  "filesChanged": [
+    "processos-seguro-saude.html",
+    "processos-administrativos.html",
+    "processos.html",
+    "assets/js/processes-data.js"
+  ],
+  "sha256": {
+    "processos-seguro-saude.html": "e154164c3533b6a934531ca27e37dfcd5176920c0ad7954a990633974bfe417d",
+    "processos-administrativos.html": "a01c1810d215c0e2692bef9d0b1b1be1ef9bdee89b6e542f06e1ea1652c92e19",
+    "processos.html": "4c7b2436d2ad70079bd182df393a29a66addcab77e97968b88fbc7d51a2f438c",
+    "assets/js/processes-data.js": "90e56d78f5659545b4038ffdc103acb031ca68b94bac88871da68c07f0b205b6"
+  }
+}
