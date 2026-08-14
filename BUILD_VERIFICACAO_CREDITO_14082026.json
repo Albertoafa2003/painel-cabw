@@ -1,0 +1,61 @@
+{
+  "position": "14/08/2026",
+  "sourceFile": "RELATÓRIO_CRÉDITO_DISPONÍVEL_CABW_14082026(2)(1).docx",
+  "summaryRows": 14,
+  "summaryDateOccurrences": 1,
+  "ugRankingRows": 16,
+  "detailRowsNewPosition": 37,
+  "actionRankingRows": 18,
+  "actionByUGRows": 37,
+  "creditReceivedActionRows": 20,
+  "totals": {
+    "availableExpected": 2122838.1,
+    "availableByUG": 2122838.1,
+    "availableByAction": 2122838.1,
+    "availableByDetail": 2122838.1,
+    "receivedExpected": 119029873.38,
+    "receivedByAction": 119029873.38
+  },
+  "preservation": {
+    "contractsBuildMarkerPresent": true,
+    "repairPanelPresent": true,
+    "insurancePanelPresent": true,
+    "authorizedEmailsPresent": true
+  },
+  "checks": {
+    "summary_no_duplicate": true,
+    "ug_total_matches": true,
+    "action_total_matches": true,
+    "detail_total_matches": true,
+    "received_total_matches": true,
+    "credit_json_position": true,
+    "executive_html_updated": true,
+    "ug_html_updated": true,
+    "action_html_updated": true,
+    "detail_html_updated": true,
+    "consistency_html_updated": true,
+    "old_amendment_note_removed_exec": true,
+    "old_amendment_note_removed_action": true
+  },
+  "javascriptChecks": {
+    "assets/js/cabw-numeros.js": {
+      "returncode": 0,
+      "stderr": ""
+    },
+    "action-inline": {
+      "returncode": 0,
+      "stderr": ""
+    }
+  },
+  "fileHashes": {
+    "credito-visao-executiva.html": "1e7dd34ef92ec563b168663cd0a4936a89addecbb87901c552f561fc13c9fca2",
+    "ug.html": "7fb6a7bedb97407be661425ed61bda462d5b27f9a499b02217a6a1067cc91321",
+    "action.html": "07953a3d11de0135fa98d721b7e0e4fda42f671d9184edb490be92b9f469f790",
+    "detail.html": "acc2ad9824f2414f50738b86764f574936d81b7c96fead029c353848aff330e1",
+    "consistency.html": "123e4fbf49af80d7e5c0139d7358a36c00b40482b3fb909ea61ca020a26ab4f1",
+    "governanca-cabw-numeros.html": "132c30697667c0704562d88cab7b5fb4ca3fb5e1a0bfd093bf0580ea89e70957",
+    "assets/data/credit-current.json": "a31abae06c39d7a99ac40a022e87894918c4892597a90014f55cc645b4a6b457",
+    "assets/data/credit-14082026.json": "a31abae06c39d7a99ac40a022e87894918c4892597a90014f55cc645b4a6b457",
+    "assets/js/cabw-numeros.js": "768490de8920ffae14c56ffb079136a1b1f5ad759ecc6d11886ef5ee1154c34e"
+  }
+}
