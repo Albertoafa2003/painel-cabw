@@ -1,0 +1,33 @@
+PAINEL CABW — ATUALIZAÇÃO DO CONTROLE DE RESTOS A PAGAR
+
+Fonte: PAINEL CABW - RP - AGOSTO 2026.xlsx
+Aba: BD SISCAB MENSAL
+Referência considerada: Julho/2026
+
+O painel foi substituído integralmente pelos registros da referência
+Julho/2026 presentes na planilha atual. Os saldos de posições anteriores
+que não aparecem na nova planilha foram retirados do painel.
+
+RESULTADO:
+- Registros atuais: 274
+- Saldo total de RP: US$ 46,970,038.92
+- OMs responsáveis: 19
+- Contratos/PAG: 111
+- Anos de RP: 4
+- Empenhos: 253
+
+ARQUIVOS ATUALIZADOS:
+- governanca-rp.html
+- governanca-cabw-numeros.html
+- assets/js/rp-data.js
+- assets/js/cabw-numeros.js
+- assets/data/rp-summary.json
+
+COMO PUBLICAR:
+1. Extraia o ZIP.
+2. Envie todo o conteúdo extraído à raiz do repositório.
+3. Confirme a presença deste arquivo e de
+   BUILD_VERIFICACAO_RP_JULHO_2026.json.
+4. Faça o commit.
+5. Aguarde o deploy do GitHub Pages.
+6. Pressione Ctrl + F5 no site.
