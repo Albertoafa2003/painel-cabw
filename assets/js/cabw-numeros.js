@@ -71,7 +71,7 @@
     try {
       const [creditJson, rpSummary, contractsSummary] = await Promise.all([
         loadJson('assets/data/credit-current.json?v=20260814-credit-r1'),
-        loadJson('assets/data/rp-summary.json'),
+        loadJson('assets/data/rp-summary.json?v=20260814-rp-julho-r1'),
         loadJson('assets/data/contracts-summary.json')
       ]);
 

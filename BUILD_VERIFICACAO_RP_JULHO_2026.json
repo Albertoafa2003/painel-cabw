@@ -1,0 +1,69 @@
+{
+  "build": "rp-julho-2026-r1",
+  "sourceFile": "PAINEL CABW - RP - AGOSTO 2026.xlsx",
+  "sourceSheet": "BD SISCAB MENSAL",
+  "latestReferenceIso": "2026-07-01",
+  "latestReferenceLabel": "Julho/2026",
+  "recordCount": 274,
+  "totalSaldoUsd": 46970038.92,
+  "totalOms": 19,
+  "totalContratosPag": 111,
+  "totalAnosRp": 4,
+  "totalEmpenhos": 253,
+  "porAno": [
+    {
+      "label": "2022",
+      "saldoUsd": 1180840.73
+    },
+    {
+      "label": "2023",
+      "saldoUsd": 366337.61
+    },
+    {
+      "label": "2024",
+      "saldoUsd": 1795639.14
+    },
+    {
+      "label": "2025",
+      "saldoUsd": 43627221.44
+    }
+  ],
+  "checks": {
+    "onlyJuly2026Reference": true,
+    "recordCountIs274": true,
+    "exactDuplicateRowsIsZero": true,
+    "allCommitmentsPresent": true,
+    "allResponsibleOmsPresent": true,
+    "allContractsPagPresent": true,
+    "allBalancesPositive": true,
+    "totalMatchesRecords": true,
+    "oldMayReferenceRemoved": true,
+    "oldMaySourceRemoved": true,
+    "contractsUpdatePreserved": true,
+    "creditUpdatePreserved": true,
+    "repairPanelPreserved": true,
+    "insurancePanelPreserved": true
+  },
+  "javascriptChecks": {
+    "assets/js/rp-data.js": {
+      "returncode": 0,
+      "stderr": ""
+    },
+    "assets/js/rp-panel.js": {
+      "returncode": 0,
+      "stderr": ""
+    },
+    "assets/js/cabw-numeros.js": {
+      "returncode": 0,
+      "stderr": ""
+    }
+  },
+  "fileHashes": {
+    "governanca-rp.html": "5456026f935d7ebbe588820d8e0febb1c648d6f8e9ccc4d53d167eabcc4dedc4",
+    "governanca-cabw-numeros.html": "438241a3df43f98f492f9d03ed3a98dbfce9ef24fb7e1611bddebf7dc0fbd4f0",
+    "assets/js/rp-data.js": "3bee3596d5629b537bb77f7a0fe9430547344d87c724d9ae04178dd5200d57dd",
+    "assets/js/rp-panel.js": "dfa421e322a78bb4a02eeeeb3aaefb4c517be65d63a9211bf6b344cd3951fdca",
+    "assets/js/cabw-numeros.js": "19cb6dccf98e4ff9f18ed74eca92029ad6a515f560b8a4ed925e404efc3b2e46",
+    "assets/data/rp-summary.json": "b9831586fa8d3bcd80370d2e07381735d4d839f53af8bcd0b202b2822c6ed9b2"
+  }
+}

@@ -1,14 +1,15 @@
 {
-  "sourceFile": "PAINEL CABW - RP - MAIO 2026.xlsx",
+  "sourceFile": "PAINEL CABW - RP - AGOSTO 2026.xlsx",
+  "sourceSheet": "BD SISCAB MENSAL",
   "latestReferenceColumn": "MES_ANO REF CONS SISCAB",
-  "latestReferenceIso": "2026-05-01",
-  "latestReferenceLabel": "Maio/2026",
-  "totalRegistros": 435,
-  "totalSaldoUsd": 59290713.4,
-  "totalOms": 22,
-  "totalContratosPag": 147,
+  "latestReferenceIso": "2026-07-01",
+  "latestReferenceLabel": "Julho/2026",
+  "totalRegistros": 274,
+  "totalSaldoUsd": 46970038.92,
+  "totalOms": 19,
+  "totalContratosPag": 111,
   "totalAnosRp": 4,
-  "totalEmpenhos": 398,
+  "totalEmpenhos": 253,
   "porAno": [
     {
       "label": "2022",
@@ -20,41 +21,41 @@
     },
     {
       "label": "2024",
-      "saldoUsd": 1898757.62
+      "saldoUsd": 1795639.14
     },
     {
       "label": "2025",
-      "saldoUsd": 55844777.44
+      "saldoUsd": 43627221.44
     }
   ],
   "topOms": [
     {
       "label": "PARQUE MATERIAL AER. DO GALEAO",
-      "saldoUsd": 21063167.38
+      "saldoUsd": 19865486.87
     },
     {
       "label": "PARQUE DE MATERIAL AER. DE SAO PAULO",
-      "saldoUsd": 15216587.73
-    },
-    {
-      "label": "PARQUE DE MATERIAL AER. LAGOA SANTA",
-      "saldoUsd": 12282923.6
+      "saldoUsd": 13898886.79
     },
     {
       "label": "PARQUE MATERIAL BELICO AER. RJ",
       "saldoUsd": 5041915.88
     },
     {
-      "label": "COMISSAO IMPTC. SISTEMA CTR. ESPC.AEREO BRASILEIRO",
-      "saldoUsd": 1998992.58
+      "label": "PARQUE DE MATERIAL AER. LAGOA SANTA",
+      "saldoUsd": 4116500.52
     },
     {
       "label": "DIRETORIA DE MATERIAL AERONAUTICA E BELICO",
-      "saldoUsd": 1789632.18
+      "saldoUsd": 1514446.68
+    },
+    {
+      "label": "COMISSAO IMPTC. SISTEMA CTR. ESPC.AEREO BRASILEIRO",
+      "saldoUsd": 1289420.23
     },
     {
       "label": "COMISSAO AERO. BRASILEIRA EM WASHINGTON",
-      "saldoUsd": 1125805.56
+      "saldoUsd": 648599.82
     },
     {
       "label": "PARQUE MATERIAL ELET. AERONAUTICA RJ",
@@ -62,11 +63,11 @@
     },
     {
       "label": "GABINETE DO COMANDANTE DA AERONAUTICA",
-      "saldoUsd": 229218.98
+      "saldoUsd": 188026.98
     },
     {
-      "label": "DIRETORIA DE SAUDE DA AERONAUTICA",
-      "saldoUsd": 125473.35
+      "label": "INSTITUTO DE AERONAUTICA E ESPACO",
+      "saldoUsd": 54217.19
     }
   ],
   "topContratos": [
@@ -76,7 +77,7 @@
     },
     {
       "label": "BR-D-KCQ-USAF",
-      "saldoUsd": 9736042.14
+      "saldoUsd": 6366022.47
     },
     {
       "label": "240609",
@@ -84,11 +85,7 @@
     },
     {
       "label": "BR-D-QAQ-USAF",
-      "saldoUsd": 4246484.0
-    },
-    {
-      "label": "051/CELOG-PAMASP/2024",
-      "saldoUsd": 3817235.9
+      "saldoUsd": 3032738.89
     },
     {
       "label": "240299",
@@ -103,13 +100,22 @@
       "saldoUsd": 1646734.92
     },
     {
-      "label": "033/CELOG-PAMAGL/2025",
-      "saldoUsd": 1495443.27
-    },
-    {
       "label": "027/CABW-PAMAGL/2025",
       "saldoUsd": 1260000.0
+    },
+    {
+      "label": "028/CABW-PAMAGL/2024",
+      "saldoUsd": 1189261.7
+    },
+    {
+      "label": "027/CELOG-PAMAGL/2023",
+      "saldoUsd": 688014.72
     }
   ],
-  "deduplicationPolicy": "O painel utiliza somente os registros da maior referência disponível na coluna MES_ANO REF CONS SISCAB, excluindo saldos históricos não presentes na planilha atual."
+  "deduplicationPolicy": "O painel utiliza exclusivamente os registros da referência Julho/2026 constantes da planilha atual, excluindo saldos históricos que não aparecem na posição mais recente.",
+  "sourceRows": {
+    "first": 2,
+    "last": 275
+  },
+  "exactDuplicateRows": 0
 }
