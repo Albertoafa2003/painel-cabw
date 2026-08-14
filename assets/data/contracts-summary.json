@@ -1,7 +1,7 @@
 {
-  "total": 136,
+  "total": 135,
   "counts": {
-    "fms": 53,
+    "fms": 52,
     "administrativos": 21,
     "finalisticos": 62
   },
@@ -28,14 +28,19 @@
     "PAME-RJ"
   ],
   "duplicates_check": "ok",
-  "source": "RELATÓRIO DE CONTRATO - 14072026(1).xls",
-  "updatedFrom": "Posição de 14/07/2026",
-  "preservedFieldsFrom": "FISCAIS DE CONTRATO - OD CABW.xls",
+  "source": "RELATÓRIO DE CONTRATO - 13082026.xls",
+  "updatedFrom": "Posição de 13/08/2026",
+  "preservedFieldsFrom": "Base contratual institucional já existente no Painel CABW",
   "removedContracts": [
-    "027/CABW/2021"
+    "015/CABW/2024",
+    "020/CABW-PAMASP/2025",
+    "050/CABW-PAMASP/2024",
+    "BR-D-QAP-USAF"
   ],
   "addedContracts": [
-    "34/2017-CENSIPAM"
+    "010/CABW-PAMERJ/2026",
+    "CNT 009/CABW-PAME-RJ/2026",
+    "CNT 099/CAE-CABW-DECEA/2026"
   ],
   "notMatchedToPreviousCategory": []
 }

@@ -1,0 +1,57 @@
+{
+  "referenceDate": "13/08/2026",
+  "sourceFile": "RELATÓRIO DE CONTRATO - 13082026.xls",
+  "monitoringClassificationSource": "RelContrFin MONITORAMENTO CTT EM ANDAMENTO - ALERTA(3).xls",
+  "removedContracts": [
+    "015/CABW/2024",
+    "020/CABW-PAMASP/2025",
+    "050/CABW-PAMASP/2024"
+  ],
+  "addedContracts": [
+    "010/CABW-PAMERJ/2026",
+    "CNT 009/CABW-PAME-RJ/2026",
+    "CNT 099/CAE-CABW-DECEA/2026"
+  ],
+  "statusSummary": [
+    {
+      "code": "vencido",
+      "label": "Vencido",
+      "count": 2
+    },
+    {
+      "code": "ate-30",
+      "label": "Até 30 dias",
+      "count": 2
+    },
+    {
+      "code": "31-90",
+      "label": "31 a 90 dias",
+      "count": 13
+    },
+    {
+      "code": "91-150",
+      "label": "91 a 150 dias",
+      "count": 14
+    },
+    {
+      "code": "regular",
+      "label": "Acima de 150 dias",
+      "count": 49
+    },
+    {
+      "code": "sem-data",
+      "label": "Sem data de vigência",
+      "count": 2
+    },
+    {
+      "code": "desconsiderar",
+      "label": "Desconsiderar",
+      "count": 1
+    }
+  ],
+  "validations": {
+    "recordCount": 83,
+    "uniqueCount": 83,
+    "duplicates": 0
+  }
+}
