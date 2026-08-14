@@ -1,0 +1,40 @@
+{
+  "buildId": "CABW-CONTRATOS-20260813-R1",
+  "generatedAtUtc": "2026-08-14T03:40:42.874163+00:00",
+  "sourceFile": "RELATÓRIO DE CONTRATO - 13082026.xls",
+  "contracts": 135,
+  "uniqueContracts": 135,
+  "categoryCounts": {
+    "fms": 52,
+    "finalisticos": 62,
+    "administrativos": 21
+  },
+  "removedContracts": [
+    "015/CABW/2024",
+    "020/CABW-PAMASP/2025",
+    "050/CABW-PAMASP/2024",
+    "BR-D-QAP-USAF"
+  ],
+  "addedContracts": [
+    "010/CABW-PAMERJ/2026",
+    "CNT 009/CABW-PAME-RJ/2026",
+    "CNT 099/CAE-CABW-DECEA/2026"
+  ],
+  "monitoringRecords": 83,
+  "monitoringUniqueContracts": 83,
+  "hashes": {
+    "assets/js/contracts-data.js": "98c3a5ded1fd7977352a03016c0cbb33596b841ac4e13032ec1440533c5b9d1b",
+    "assets/data/contracts-summary.json": "8eeb2106ca4653d95fa67d66f06b78f624f1580b3669a4001a9d17e9c8b121e7",
+    "assets/js/contract-monitoring-data.js": "e8a39c8415bd17a3288c7bdd09563f2eca392fbea97b57ed5718635b329bcb8c",
+    "assets/data/contract-monitoring-summary.json": "480f0ca4c7abb6be8d9cafa27cd69fd759ade317a8f03b01b635617d6ea56259",
+    "assets/data/contracts-update-audit-13082026.json": "f982529c17d57aa78de7b9d3d4c113f725f7c7280dc98c75b1b0aa19c00a92e7",
+    "assets/data/contract-monitoring-update-audit-13082026.json": "c990e94f89f01e863785fb1ca556ec78b30dc6f9511a046da7099526a4217520",
+    "contratos.html": "9f524a1e6f82e5e296850179bc0b8fcbbc0ca42d4df6b0abf0cb6b32cb1adf9c",
+    "contratos-administrativos.html": "c12816b4f355539209f431ed1e7feb506ed972dac3d08051b9b4d32f793ff3bd",
+    "contratos-finalisticos.html": "942d682b2b8c9cda6dcff9ab10eadf4159c662484bff73ee3f99345c0bac9ea5",
+    "fms.html": "50c41414edc95cd0fea447168f63fb6544d085dca655aa1abb98a59036de62c6",
+    "governanca-monitoramento-contratos.html": "484fe667324862039dda3b73baf0fff88081a4421aea9c6a675c2a73f8f0e517",
+    "governanca-cabw-numeros.html": "9523715ecd0058a3c542b3df6061454006f4e8b8007c32bed33efe94cdc189db"
+  },
+  "validation": "approved"
+}

@@ -1,0 +1,27 @@
+ATUALIZAÇÃO CONTRATUAL DO PAINEL CABW — 13/08/2026
+
+Fonte: RELATÓRIO DE CONTRATO - 13082026.xls
+Chave de correspondência: número do contrato
+
+RESULTADO
+- Registros da planilha: 135
+- Números únicos: 135
+- Contratos no site após atualização: 135
+- Duplicidades: 0
+- FMS: 52
+- Administrativos: 21
+- Finalísticos: 62
+
+EXCLUÍDOS
+- 015/CABW/2024
+- 020/CABW-PAMASP/2025
+- 050/CABW-PAMASP/2024
+- BR-D-QAP-USAF
+
+INCLUÍDOS
+- 010/CABW-PAMERJ/2026
+- CNT 009/CABW-PAME-RJ/2026
+- CNT 099/CAE-CABW-DECEA/2026
+
+Os campos não presentes na planilha foram preservados pela correspondência do número do contrato.
+Os três contratos novos foram incluídos no Monitoramento de Contratos como Demanda Pontual.
