@@ -1,0 +1,38 @@
+PAINEL CABW — ATUALIZAÇÃO DOS PROCESSOS DE CONTRATAÇÃO
+Posição: 17/08/2026
+
+SEGURO SAÚDE
+- Proposta da AETNA aceita.
+- Pregão homologado em 14/08/2026, conforme planejado.
+- Etapa atual: formalização e assinatura contratual.
+- Início da nova cobertura: ao término do contrato anterior.
+
+EQUIPAMENTOS DE TI
+- Parecer Jurídico favorável recebido em 17/08/2026.
+- Recomendações jurídicas tratadas.
+- Versão final dos documentos consolidada.
+- Etapa atual: preparação para publicação.
+- Publicação, abertura e homologação devem ser reprogramadas.
+
+ARQUIVOS PRINCIPAIS ATUALIZADOS
+- processos-seguro-saude.html
+- processos-equipamentos-ti.html
+- processos-administrativos.html
+- processos.html
+- assets/js/processes-data.js
+- assets/js/processes-reports.js
+
+O PACOTE PRESERVA AS ATUALIZAÇÕES DE:
+- Crédito Disponível de 14/08/2026
+- Contratos de 13/08/2026
+- Restos a Pagar — posição Julho/2026
+- Controle de Materiais Reparáveis
+- Firebase Authentication e Firestore
+
+PUBLICAÇÃO
+1. Extraia o ZIP.
+2. Envie todo o conteúdo extraído à raiz do repositório.
+3. Confirme a presença deste arquivo e de BUILD_VERIFICACAO_PROCESSOS_17082026.json.
+4. Faça o commit.
+5. Aguarde o deploy do GitHub Pages.
+6. Pressione Ctrl + F5 no site.
