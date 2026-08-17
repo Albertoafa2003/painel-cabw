@@ -22,7 +22,8 @@
   function deadlineState(process) {
     const deadline = parseBrDate(process && process.currentDeadline);
     if (!deadline) {
-      return { state: "neutral", label: "Prazo não informado", days: null };
+      const label = cleanText(process && process.currentDeadline) || "Prazo não informado";
+      return { state: "neutral", label, days: null };
     }
 
     const millisecondsPerDay = 24 * 60 * 60 * 1000;

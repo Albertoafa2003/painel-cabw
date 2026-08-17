@@ -1,0 +1,74 @@
+{
+  "build": "processos-17082026-r2",
+  "updatedAt": "17/08/2026",
+  "updates": {
+    "seguroSaude": {
+      "proposalAccepted": true,
+      "company": "AETNA",
+      "homologationDate": "14/08/2026",
+      "currentStage": "Formalização e assinatura contratual",
+      "startRule": "Ao término do contrato anterior"
+    },
+    "equipamentosTi": {
+      "legalOpinionReturned": "17/08/2026",
+      "legalOpinionResult": "Favorável ao prosseguimento",
+      "recommendationsTreated": true,
+      "finalDocumentsConsolidated": true,
+      "currentStage": "Preparação para publicação",
+      "scheduleRequiresReprogramming": true
+    }
+  },
+  "checks": {
+    "processos-seguro-saude.html:AETNA": true,
+    "processos-seguro-saude.html:Homologado em:": true,
+    "processos-seguro-saude.html:14/08/2026": true,
+    "processos-seguro-saude.html:Formalização contratual": true,
+    "processos-seguro-saude.html:término do contrato anterior": true,
+    "processos-equipamentos-ti.html:17/08/2026": true,
+    "processos-equipamentos-ti.html:Parecer Jurídico favorável": true,
+    "processos-equipamentos-ti.html:Preparação para publicação": true,
+    "processos-equipamentos-ti.html:reprogramação": true,
+    "processos-administrativos.html:Homologado": true,
+    "processos-administrativos.html:Parecer favorável": true,
+    "processos-administrativos.html:AETNA": true,
+    "processos-administrativos.html:Preparação para publicação": true,
+    "processos.html:Formalização contratual": true,
+    "processos.html:Preparação para publicação": true,
+    "processos.html:AETNA": true,
+    "processos.html:17/08/2026": true,
+    "assets/js/processes-data.js:\"updatedAt\": \"17/08/2026\"": true,
+    "assets/js/processes-data.js:Proposta da AETNA aceita": true,
+    "assets/js/processes-data.js:Parecer jurídico favorável": true,
+    "assets/js/processes-data.js:Preparação para publicação": true,
+    "seguro_no_old_current_acceptance": true,
+    "ti_no_current_legal_analysis": true,
+    "updated_at": true,
+    "preserve_rp_build": true,
+    "preserve_credit_build": true,
+    "preserve_contract_build": true,
+    "preserve_repair_panel": true
+  },
+  "javascriptChecks": {
+    "assets/js/processes-data.js": {
+      "returncode": 0,
+      "stderr": ""
+    },
+    "assets/js/processes-reports.js": {
+      "returncode": 0,
+      "stderr": ""
+    }
+  },
+  "preservedBuilds": {
+    "rpJulho2026": true,
+    "credito14082026": true,
+    "contratos13082026": true
+  },
+  "fileHashes": {
+    "processos-seguro-saude.html": "f52eadc4bae14941bfe6e79d73231dbfc46164ee97c90ce3416b18714127c121",
+    "processos-equipamentos-ti.html": "285e84d869a5361d7ef2ee0a59ef1623a6c632fe587b6164a00f555776b58b30",
+    "processos-administrativos.html": "d29f478113f68073c1d37ccd415242bef23d1b7d2ef06d03e569e17a72e4c8a0",
+    "processos.html": "32f3200855cdee2dfac012f1cd5f23a64a7fa19dcaec8c710cd73c1238f5173d",
+    "assets/js/processes-data.js": "ec8c81fd44f71b768984e9e0f665041c1b19409b3c0cc5596a42e897d2d841ec",
+    "assets/js/processes-reports.js": "533dc76dd3c747ccf78be75f3cf5dc34d1c98f59120db57b899c4d1cef082f28"
+  }
+}
