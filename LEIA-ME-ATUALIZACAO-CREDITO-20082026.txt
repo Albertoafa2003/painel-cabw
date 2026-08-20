@@ -1,0 +1,47 @@
+PAINEL CABW — ATUALIZAÇÃO DO CRÉDITO DISPONÍVEL
+
+Fonte:
+RELATÓRIO_CRÉDITO_DISPONÍVEL_CABW_20082026(1).docx
+
+Posição:
+20/08/2026
+
+INDICADORES:
+- Crédito disponível: US$ 1.818.307,10
+- Crédito total recebido: US$ 119.089.337,39
+- Percentual disponível: 1,53%
+- Crédito movimentado/comprometido: US$ 117.271.030,29
+- Lançamentos: 91
+
+ARQUIVOS PRINCIPAIS ATUALIZADOS:
+- credito-visao-executiva.html
+- ug.html
+- action.html
+- detail.html
+- consistency.html
+- governanca-cabw-numeros.html
+- assets/data/credit-current.json
+- assets/data/credit-20082026.json
+- assets/js/cabw-numeros.js
+
+O PACOTE PRESERVA:
+- Crédito Disponível de 19/08/2026 no histórico
+- Contratos atualizados em 13/08/2026
+- Painel RP com posição Julho/2026
+- Processos de Contratação atualizados em 17/08/2026
+- Monitoramento de Contratos
+- Controle de Materiais Reparáveis
+- Firebase Authentication e Firestore
+
+OBSERVAÇÃO DA FONTE:
+O relatório usa o código 2120 no crédito disponível e 212O no crédito
+recebido. Os rótulos foram preservados conforme o documento.
+
+PUBLICAÇÃO:
+1. Extraia o ZIP.
+2. Envie todo o conteúdo extraído à raiz do repositório.
+3. Confirme a presença deste arquivo e de
+   BUILD_VERIFICACAO_CREDITO_20082026.json.
+4. Faça o commit.
+5. Aguarde o deploy do GitHub Pages.
+6. Pressione Ctrl + F5 no site.
