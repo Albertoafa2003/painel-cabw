@@ -46,5 +46,34 @@
     "currency",
     "manualNotes"
   ],
-  "buildVersion": "20260803-r4"
+  "buildVersion": "20260819-status-r1",
+  "statusUpdate": {
+    "sourceFile": "19AGO V3 - CONTROLE REPARO - SGT ROZENDO.xlsx",
+    "sourceSheet": "BD Monitoramento",
+    "referenceDate": "2026-08-19",
+    "matchKey": "PO",
+    "mappingFile": "Correlação.xlsx",
+    "mappingSheet": "Planilha1",
+    "canonicalStatuses": [
+      "1-Empenho Aprovado",
+      "2-Item Chegou CTLA",
+      "3-Item Exp CTLA",
+      "4-Item chegou CABW/CABE",
+      "5-Item Exp Reparador",
+      "6-Item no Reparador",
+      "7-Item Recebido",
+      "8-Embarcado",
+      "9-Recebido Parque",
+      "10-Encerrado"
+    ],
+    "visualStages": [
+      "Brasil/ OM Requisitante",
+      "Brasil / CTLA",
+      "Trânsito ao Reparador",
+      "Reparador",
+      "CABW/CABE (retorno)",
+      "ETAPA NÃO MAPEADA"
+    ],
+    "rule": "A Etapa Visual é derivada do Status Real conforme a planilha de correlação. Uma mesma etapa pode abranger mais de um status por representar a localização do material."
+  }
 }

@@ -1,0 +1,83 @@
+{
+  "build": "20260819-status-r1",
+  "referenceDate": "2026-08-19",
+  "sourceFiles": [
+    "19AGO V3 - CONTROLE REPARO - SGT ROZENDO.xlsx",
+    "Correlação.xlsx"
+  ],
+  "records": 113,
+  "uniquePos": 60,
+  "statusCounts": {
+    "7-Item Recebido": 70,
+    "6-Item no Reparador": 16,
+    "4-Item chegou CABW/CABE": 4,
+    "2-Item Chegou CTLA": 19,
+    "1-Empenho Aprovado": 3,
+    "5-Item Exp Reparador": 1
+  },
+  "visualStageCounts": {
+    "CABW/CABE (retorno)": 70,
+    "Reparador": 16,
+    "Trânsito ao Reparador": 5,
+    "Brasil / CTLA": 19,
+    "Brasil/ OM Requisitante": 3
+  },
+  "officialStatusOptions": [
+    "1-Empenho Aprovado",
+    "2-Item Chegou CTLA",
+    "3-Item Exp CTLA",
+    "4-Item chegou CABW/CABE",
+    "5-Item Exp Reparador",
+    "6-Item no Reparador",
+    "7-Item Recebido",
+    "8-Embarcado",
+    "9-Recebido Parque",
+    "10-Encerrado"
+  ],
+  "officialVisualStageOptions": [
+    "Brasil/ OM Requisitante",
+    "Brasil / CTLA",
+    "Trânsito ao Reparador",
+    "Reparador",
+    "CABW/CABE (retorno)",
+    "ETAPA NÃO MAPEADA"
+  ],
+  "tests": {
+    "npmCheck": "passed",
+    "npmTest": "16 passed, 0 failed",
+    "javascriptSyntax": "passed"
+  },
+  "checks": {
+    "noConflictingStatusByPo": true,
+    "samePoSetAsCurrentBundle": true,
+    "sameItemCountByPo": true,
+    "uniqueRecordIds": true,
+    "noPo2024": true,
+    "noUnapprovedFieldChanges": true,
+    "allRealStatusesCanonical": true,
+    "allVisualStagesCanonical": true,
+    "filterContainsTenStatuses": true,
+    "filterContainsSixStages": true,
+    "allPreservationMarkersPresent": true,
+    "statusSourceMetadataInAllRecords": true
+  },
+  "preservedBuildMarkers": [
+    "BUILD_VERIFICACAO_CREDITO_20082026.json",
+    "BUILD_VERIFICACAO_CREDITO_19082026.json",
+    "BUILD_VERIFICACAO_PROCESSOS_17082026.json",
+    "BUILD_VERIFICACAO_RP_JULHO_2026.json",
+    "BUILD_VERIFICACAO_CONTRATOS_13082026.json",
+    "BUILD_VERIFICACAO_REPARAVEIS_03082026.json"
+  ],
+  "fileHashes": {
+    "governanca-reparaveis.html": "8953f16e562252aa8d2186940bc5b11d2d94957c0f671d6da6bc67867879991b",
+    "assets/js/repair-import-core.js": "c6d30b84afe3eb8e0d0bb43f35613adddec60991040a75224782bfa3cffb941d",
+    "assets/js/repair-processes-panel.js": "ccfbc36874eeb1d05114b5d5d23fadf30dbbe770cf8babd941dbe26d7323974b",
+    "assets/js/repair-processes-current-data.js": "27ca214ccf9801c49c8e986cd965193e6d4f7035639693de2732c6be00965ba4",
+    "assets/data/repair-processes-current.json": "977293cc1cabed343820b6e9bd2a5b5218feeeb56e91623f0e9afa4c8728c300",
+    "assets/data/repair-processes-schema.json": "5ba4472431ce78ea6bcfb791e8eeff364558704bc14063e482a7c70a3e538d75",
+    "assets/data/repair-status-update-audit-19082026.json": "a7dbee6d430772b4347ead189e887c69ac4f26812965c5ef9e59572600ff01ff",
+    "tests/repair-import.test.mjs": "d1f37c858f99325cbb7a6b6854579521f8c703b08989e5e018e40160b52c05cc",
+    "INSTRUCOES_IMPORTACAO_MENSAL_REPARAVEIS.md": "197e03fd76132207bcd0fd8851af8ecd52e78a70f00886a485c047c9d8f6c077"
+  }
+}

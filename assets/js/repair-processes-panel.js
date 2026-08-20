@@ -5,12 +5,14 @@ import {
   writeBatch, setDoc, deleteDoc, addDoc, serverTimestamp
 } from "https://www.gstatic.com/firebasejs/12.15.0/firebase-firestore.js";
 import {
-  REQUIRED_HEADERS, IMPORTED_FIELDS, normalizeNullable, normalizeIdentifier, normalizeHeader,
-  normalizeSearch, parseFlexibleNumber, parseDateToIso, mapVisualStage, deriveOriginOm, normalizeControlValue, isPo2024,
-  normalizeRealStatus, normalizeRepairCondition, normalizeEvaluationFee, calculateTdrStatus, classifyDocumentaryStatus, calculateReturnDeadline, stableKeySource,
-  sha256Hex, importedDataEqual, contextualServiceDateLabel, moneyDisplay, textDisplay
-} from "./repair-import-core.js?v=20260803-r4";
-import { BUNDLED_REPAIR_DATA } from "./repair-processes-current-data.js?v=20260803-r4";
+  REQUIRED_HEADERS, IMPORTED_FIELDS, MANUAL_FIELDS, REAL_STATUS_OPTIONS, VISUAL_STAGE_OPTIONS,
+  normalizeNullable, normalizeIdentifier, normalizeHeader, normalizeSearch, parseFlexibleNumber,
+  parseDateToIso, mapVisualStage, deriveOriginOm, normalizeControlValue, isPo2024,
+  normalizeRealStatus, normalizeRepairCondition, normalizeEvaluationFee, calculateTdrStatus,
+  classifyDocumentaryStatus, calculateReturnDeadline, stableKeySource, sha256Hex,
+  importedDataEqual, contextualServiceDateLabel, moneyDisplay, textDisplay
+} from "./repair-import-core.js?v=20260819-status-r1";
+import { BUNDLED_REPAIR_DATA } from "./repair-processes-current-data.js?v=20260819-status-r1";
 
 const firebaseConfig = {
   apiKey: "AIzaSyDZehcWZwnwlGG5LR6y7_hKAVErHiHDhXM",
@@ -36,11 +38,12 @@ const fmtInteger = new Intl.NumberFormat("pt-BR");
 const fmtDateTime = new Intl.DateTimeFormat("pt-BR", { dateStyle: "short", timeStyle: "short" });
 
 const FLOW_STEPS = [
-  { code: "brazil-origin", label: "Brasil / OM requisitante", icon: "bi-building", stages: ["Brasil / OM requisitante"] },
+  { code: "brazil-origin", label: "Brasil/ OM Requisitante", icon: "bi-building", stages: ["Brasil/ OM Requisitante"] },
   { code: "brazil-ctla", label: "Brasil / CTLA", icon: "bi-box-arrow-in-down", stages: ["Brasil / CTLA"] },
-  { code: "to-shop", label: "Trânsito à oficina", icon: "bi-truck", stages: ["Trânsito à oficina"] },
-  { code: "cabw-cabe-return", label: "CABW / CABE (retorno)", icon: "bi-geo-alt", stages: ["CABW / CABE (retorno)"] },
-  { code: "unmapped", label: "Etapa não mapeada", icon: "bi-question-circle", stages: ["Etapa não mapeada"] }
+  { code: "to-repairer", label: "Trânsito ao Reparador", icon: "bi-truck", stages: ["Trânsito ao Reparador"] },
+  { code: "repairer", label: "Reparador", icon: "bi-tools", stages: ["Reparador"] },
+  { code: "cabw-cabe-return", label: "CABW/CABE (retorno)", icon: "bi-geo-alt", stages: ["CABW/CABE (retorno)"] },
+  { code: "unmapped", label: "ETAPA NÃO MAPEADA", icon: "bi-question-circle", stages: ["ETAPA NÃO MAPEADA"] }
 ];
 
 const state = {
@@ -143,7 +146,23 @@ function currentFirestoreRecords() {
 function bundledDataIsNewer() {
   const bundled = BUNDLED_REPAIR_DATA.metadata.referenceDate || "";
   const firestore = state.config?.referenceDate || "";
-  return !firestore || bundled > firestore;
+  return !firestore || bundled >= firestore;
+}
+
+function mergeBundledAndManualFields(bundleRecord, firestoreRecord) {
+  if (!firestoreRecord) return { ...bundleRecord };
+  const merged = { ...bundleRecord };
+  MANUAL_FIELDS.forEach(field => {
+    if (firestoreRecord[field] !== undefined && firestoreRecord[field] !== null) {
+      merged[field] = firestoreRecord[field];
+    }
+  });
+  ["createdAt", "createdBy", "createdByName", "updatedAt", "updatedBy", "updatedByName"].forEach(field => {
+    if (firestoreRecord[field] !== undefined && firestoreRecord[field] !== null) {
+      merged[field] = firestoreRecord[field];
+    }
+  });
+  return merged;
 }
 
 function rebuildRecordSet() {
@@ -156,11 +175,42 @@ function rebuildRecordSet() {
     state.absentRecords = eligibleFirestore.filter(record => !currentIds.has(record.id));
   } else {
     state.sourceMode = current.length ? "bundle-newer" : "bundle";
-    state.records = BUNDLED_REPAIR_DATA.records.filter(recordInCurrentScope).map(record => ({ ...record }));
-    const bundledIds = new Set(state.records.map(record => record.id));
-    state.absentRecords = eligibleFirestore.filter(record => !bundledIds.has(record.id));
+    const firestoreById = new Map(eligibleFirestore.map(record => [record.id, record]));
+    const bundledRecords = BUNDLED_REPAIR_DATA.records
+      .filter(recordInCurrentScope)
+      .map(record => mergeBundledAndManualFields(record, firestoreById.get(record.id)));
+    const bundledIds = new Set(bundledRecords.map(record => record.id));
+    const manualOnly = current
+      .filter(record => record.manualOnly === true && !bundledIds.has(record.id))
+      .map(record => ({ ...record }));
+    state.records = [...bundledRecords, ...manualOnly];
+    state.absentRecords = eligibleFirestore.filter(
+      record => !bundledIds.has(record.id) && record.manualOnly !== true
+    );
   }
-  populateFilters(); applyFilters(); renderSource();
+  populateFilters();
+  applyFilters();
+  renderSource();
+}
+
+function bundleSourceLabel() {
+  const metadata = BUNDLED_REPAIR_DATA.metadata;
+  const baseReference = metadata.dataReferenceDate || metadata.referenceDate;
+  const base = `base cadastral ${metadata.sourceFileName} (${formatDate(baseReference)})`;
+  const status = metadata.statusSourceFileName
+    ? `status/localização ${metadata.statusSourceFileName} (${formatDate(metadata.statusReferenceDate || metadata.referenceDate)})`
+    : null;
+  const mapping = metadata.statusMappingFileName
+    ? `correlação ${metadata.statusMappingFileName}`
+    : null;
+  return [base, status, mapping].filter(Boolean).join(" · ");
+}
+
+function reportSourceLabel() {
+  if (state.sourceMode === "firestore") {
+    return `Firestore · ${state.config?.sourceFileName || "fonte não informada"} · ${state.config?.activeBatchId || "sem lote ativo"}`;
+  }
+  return `${bundleSourceLabel()} · versão ${BUNDLED_REPAIR_DATA.metadata.buildVersion}`;
 }
 
 function renderSource() {
@@ -173,8 +223,10 @@ function renderSource() {
     els.source.classList.remove("rep-source-error");
   } else {
     const prefix = state.sourceMode === "bundle-newer" ? "Fonte local mais recente" : "Fonte local inicial";
-    const suffix = state.sourceMode === "bundle-newer" ? " O lote existente no Firestore é anterior e foi desconsiderado nesta visualização." : " Administradores podem importar a planilha para centralizar a base no Firestore.";
-    els.source.textContent = `${prefix}: ${BUNDLED_REPAIR_DATA.metadata.sourceFileName} · competência ${formatDate(BUNDLED_REPAIR_DATA.metadata.referenceDate)} · ${fmtInteger.format(BUNDLED_REPAIR_DATA.metadata.validRows)} registros válidos · versão ${BUNDLED_REPAIR_DATA.metadata.buildVersion}.${suffix}`;
+    const suffix = state.sourceMode === "bundle-newer"
+      ? " O lote existente no Firestore é anterior ou da mesma data e foi desconsiderado nesta visualização; campos manuais cadastrados foram preservados."
+      : " Administradores podem importar a planilha completa para centralizar a base no Firestore.";
+    els.source.textContent = `${prefix}: ${bundleSourceLabel()} · ${fmtInteger.format(BUNDLED_REPAIR_DATA.metadata.validRows)} registros válidos · versão ${BUNDLED_REPAIR_DATA.metadata.buildVersion}.${suffix}`;
     els.source.classList.toggle("rep-source-error", Boolean(state.firestoreError));
   }
 }
@@ -192,11 +244,18 @@ function fillSelect(select, values, placeholder) {
 }
 
 function populateFilters() {
-  const statuses = Array.from(new Set(state.records.map(activeRealStatus).filter(Boolean))).sort((a, b) => String(a).localeCompare(String(b), "pt-BR", { numeric: true }));
-  const conditions = Array.from(new Set(state.records.map(activeCondition).filter(Boolean))).sort((a, b) => String(a).localeCompare(String(b), "pt-BR", { numeric: true }));
-  const documents = Array.from(new Set(state.records.map(record => derived(record).documentary.label).filter(Boolean))).sort((a, b) => a.localeCompare(b, "pt-BR"));
+  const activeStatuses = Array.from(new Set(state.records.map(activeRealStatus).filter(Boolean)));
+  const extraStatuses = activeStatuses
+    .filter(status => !REAL_STATUS_OPTIONS.includes(status))
+    .sort((a, b) => String(a).localeCompare(String(b), "pt-BR", { numeric: true }));
+  const statuses = [...REAL_STATUS_OPTIONS, ...extraStatuses];
+  const conditions = Array.from(new Set(state.records.map(activeCondition).filter(Boolean)))
+    .sort((a, b) => String(a).localeCompare(String(b), "pt-BR", { numeric: true }));
+  const documents = Array.from(new Set(
+    state.records.map(record => derived(record).documentary.label).filter(Boolean)
+  )).sort((a, b) => a.localeCompare(b, "pt-BR"));
   fillSelect(els.statusFilter, statuses, "Todos os status");
-  fillSelect(els.stageFilter, uniqueValues("visualStage", true), "Todas as etapas");
+  fillSelect(els.stageFilter, VISUAL_STAGE_OPTIONS, "Todas as etapas");
   fillSelect(els.originFilter, uniqueValues("originOm"), "Todas as OMs");
   fillSelect(els.repairerFilter, uniqueValues("repairerName"), "Todos os reparadores");
   fillSelect(els.conditionFilter, conditions, "Todas as condições");
@@ -285,8 +344,8 @@ function renderKpis() {
   const itemValue = aggregateMoney(records, "itemValue");
   const repairValue = aggregateMoney(records, "repairValue");
   els.kpiTotal.textContent = fmtInteger.format(records.length);
-  els.kpiRepair.textContent = fmtInteger.format(enriched.filter(item => item.visualStage === "CABW / CABE (retorno)").length);
-  els.kpiTransit.textContent = fmtInteger.format(enriched.filter(item => item.visualStage === "Trânsito à oficina").length);
+  els.kpiRepair.textContent = fmtInteger.format(enriched.filter(item => item.visualStage === "CABW/CABE (retorno)").length);
+  els.kpiTransit.textContent = fmtInteger.format(enriched.filter(item => item.visualStage === "Trânsito ao Reparador").length);
   els.kpiOverdue.textContent = fmtInteger.format(enriched.filter(item => item.deadline.code === "overdue").length);
   els.kpiCompleted.textContent = fmtInteger.format(enriched.filter(item => item.visualStage === "Brasil / CTLA").length);
   els.kpiTdr.textContent = fmtInteger.format(enriched.filter(item => ["overdue", "due-soon"].includes(item.tdr.code)).length);
@@ -322,7 +381,15 @@ function renderFlow() {
 
 function statusBadge(record) {
   const stage = derived(record).visualStage;
-  const type = stage === "CABW / CABE (retorno)" ? "completed" : stage === "Trânsito à oficina" ? "transit" : stage === "Etapa não mapeada" ? "alert" : "open";
+  const type = stage === "CABW/CABE (retorno)"
+    ? "completed"
+    : stage === "Trânsito ao Reparador"
+      ? "transit"
+      : stage === "Reparador"
+        ? "repair"
+        : stage === "ETAPA NÃO MAPEADA"
+          ? "alert"
+          : "open";
   return `<span class="rep-badge rep-badge--${type}">${escapeHtml(textDisplay(activeRealStatus(record)))}</span>`;
 }
 
@@ -352,7 +419,7 @@ function attentionScore(record) {
   if (info.deadline.code === "overdue") return 1000 + Math.abs(info.deadline.days || 0);
   if (info.tdr.code === "overdue") return 800 + Math.abs(info.tdr.days || 0);
   if (info.tdr.code === "due-soon") return 700 - (info.tdr.days || 0);
-  if (info.visualStage === "Etapa não mapeada") return 650;
+  if (info.visualStage === "ETAPA NÃO MAPEADA") return 650;
   if ((record.qualityWarnings || []).length) return 300 + record.qualityWarnings.length;
   return 0;
 }
@@ -361,7 +428,7 @@ function renderAttentionList() {
   const attention = state.filtered.map(record => ({ record, score: attentionScore(record) })).filter(item => item.score > 0).sort((a, b) => b.score - a.score).slice(0, 8);
   els.attentionList.innerHTML = attention.length ? attention.map(({ record }) => {
     const info = derived(record);
-    const reason = info.deadline.code === "overdue" ? info.deadline.label : info.tdr.code === "overdue" || info.tdr.code === "due-soon" ? info.tdr.label : info.visualStage === "Etapa não mapeada" ? "Status sem mapeamento visual" : (record.qualityWarnings || ["Dados incompletos"])[0];
+    const reason = info.deadline.code === "overdue" ? info.deadline.label : info.tdr.code === "overdue" || info.tdr.code === "due-soon" ? info.tdr.label : info.visualStage === "ETAPA NÃO MAPEADA" ? "Status sem mapeamento visual" : (record.qualityWarnings || ["Dados incompletos"])[0];
     return `<button type="button" class="rep-attention-item" data-view-id="${record.id}">
       <div><strong>${escapeHtml(record.po)}</strong><span>${escapeHtml(record.requisition)} · PN ${escapeHtml(record.partNumber)} · SN ${escapeHtml(record.serialNumber)}</span></div>
       <small>${escapeHtml(reason)}</small>
@@ -380,7 +447,7 @@ function buildQualityCounts(records) {
     const info = derived(record);
     record.evaluationFee == null ? counts.tteMissing += 1 : counts.tteInformed += 1;
     if (record.originDerived) counts.omDerived += 1;
-    if (info.visualStage === "Etapa não mapeada") counts.unmapped += 1;
+    if (info.visualStage === "ETAPA NÃO MAPEADA") counts.unmapped += 1;
     if (!record.tdrDueDate && info.tdr.code !== "delivered") counts.tdrNoDueDate += 1;
     if (info.tdr.code === "overdue") counts.tdrOverdue += 1;
     if (info.tdr.code === "delivered") counts.tdrDelivered += 1;
@@ -475,7 +542,7 @@ function openDetail(id) {
   const info = derived(record); const warnings = [...(record.qualityWarnings || [])];
   if (record.evaluationFeeDiscardReason) warnings.push("Taxa de avaliação desconsiderada pela regra de qualidade.");
   if (record.originDerived) warnings.push("OM derivada dos dois primeiros caracteres da requisição.");
-  if (info.visualStage === "Etapa não mapeada") warnings.push("Status real sem mapeamento visual ativo.");
+  if (info.visualStage === "ETAPA NÃO MAPEADA") warnings.push("Status real sem mapeamento visual ativo.");
   if ((record.tdrDeliveryIndicator === "none" || record.tdrSentDate) && info.documentary.code === "tdr-not-received") warnings.push("Divergência: a coluna N indica TDR entregue, mas O e P estão em branco.");
   els.detailTitle.textContent = `${record.po} · ${record.requisition}`;
   const tte = record.evaluationFee == null ? "Não informado" : `${new Intl.NumberFormat("pt-BR", { minimumFractionDigits: 2, maximumFractionDigits: 2 }).format(record.evaluationFee)} — Moeda não informada`;
@@ -489,7 +556,7 @@ function openDetail(id) {
     <section class="rep-detail-group"><h3>Execução e prazo</h3><dl>${detailRow("Prazo de entrega do reparo", record.repairDeliveryDays == null ? null : `${record.repairDeliveryDays} dia(s)`)}${detailRow("DPE FINAL", record.dpeFinalIndicator || formatDate(record.dpeFinalDate))}${detailRow("Situação do retorno", info.deadline.label)}</dl></section>
     <section class="rep-detail-group"><h3>Retorno</h3><dl>${detailRow("Tracking / volume de retorno", record.returnTrackingVolume)}${detailRow("Recebimento no depósito CABW", formatDate(record.returnMaterialDate))}</dl></section>
     <section class="rep-detail-group"><h3>Dados complementares</h3><dl>${detailRow("Moeda", record.currency)}${detailRow("Observações manuais", record.manualNotes)}</dl></section>
-    <section class="rep-detail-group"><h3>Metadados da importação</h3><dl>${detailRow("Arquivo", record.sourceFileName)}${detailRow("Aba", record.sourceSheet)}${detailRow("Linha de origem", record.sourceRow)}${detailRow("Lote", record.importBatchId)}${detailRow("Importado em", formatDateTime(record.importedAt))}${detailRow("Importado por", record.importedByName || record.importedBy || "Não informado")}${detailRow("Atualizado em", formatDateTime(record.updatedAt))}</dl></section>
+    <section class="rep-detail-group"><h3>Metadados da importação</h3><dl>${detailRow("Arquivo-base", record.sourceFileName)}${detailRow("Aba-base", record.sourceSheet)}${detailRow("Linha de origem", record.sourceRow)}${detailRow("Lote", record.importBatchId)}${detailRow("Importado em", formatDateTime(record.importedAt))}${detailRow("Importado por", record.importedByName || record.importedBy || "Não informado")}${detailRow("Arquivo de status", record.statusSourceFileName)}${detailRow("Aba de status", record.statusSourceSheet)}${detailRow("Linha do status", record.statusSourceRow)}${detailRow("Referência do status", formatDate(record.statusReferenceDate))}${detailRow("Planilha de correlação", record.statusMappingFileName)}${detailRow("Linha da correlação", record.statusMappingSourceRow)}${detailRow("Atualizado em", formatDateTime(record.updatedAt || record.statusUpdatedAt))}</dl></section>
     <section class="rep-detail-group rep-detail-group--warnings"><h3>Avisos de qualidade</h3>${warnings.length ? `<ul>${Array.from(new Set(warnings)).map(warning => `<li>${escapeHtml(warning)}</li>`).join("")}</ul>` : '<p>Nenhuma divergência identificada neste registro.</p>'}</section>`;
   els.detailEdit.hidden = !state.isAdmin; els.detailEdit.dataset.editId = record.id; els.detailDialog.showModal();
 }
@@ -627,7 +694,7 @@ async function parseWorkbookFile(file, referenceDateIso) {
     seen.add(id);
     const origin = deriveOriginOm(null, requisition); if (origin.derived) quality.omDerived += 1;
     const fee = normalizeEvaluationFee({ po, rawValue: value("TTE"), formula: formula("TTE") }); fee.value == null ? quality.tteDiscarded += Number(Boolean(fee.discardedReason)) : quality.tteInformed += 1;
-    const statusNormalization = normalizeRealStatus(value("STATUS REAL DO MATERIAL")); const realStatus = statusNormalization.value; const visualStage = mapVisualStage(realStatus); if (visualStage === "Etapa não mapeada") quality.unmapped += 1;
+    const statusNormalization = normalizeRealStatus(value("STATUS REAL DO MATERIAL")); const realStatus = statusNormalization.value; const visualStage = mapVisualStage(realStatus); if (visualStage === "ETAPA NÃO MAPEADA") quality.unmapped += 1;
     const conditionNormalization = normalizeRepairCondition(value("COND"));
     const receivedAtRepairerDate = parseDateToIso(value("MAT EXP ou REC REPARADOR"));
     const tdrDueDate = parseDateToIso(value("PRAZO p/ ENVIO TDR p/ REPARADOR"));
@@ -643,7 +710,7 @@ async function parseWorkbookFile(file, referenceDateIso) {
     const serviceDecision = normalizeNullable(value("SERVIÇO APROVADO?")); const recordWarnings = [];
     if (origin.derived) recordWarnings.push("OM derivada dos dois primeiros caracteres da requisição");
     if (fee.discardedReason) recordWarnings.push("TTE descartada pela regra de qualidade");
-    if (visualStage === "Etapa não mapeada") recordWarnings.push(`Status sem mapeamento visual ativo: ${statusNormalization.raw || "Não informado"}`);
+    if (visualStage === "ETAPA NÃO MAPEADA") recordWarnings.push(`Status sem mapeamento visual ativo: ${statusNormalization.raw || "Não informado"}`);
     if (!tdrDueDate && tdr.code !== "delivered") recordWarnings.push("Prazo do TDR não informado na coluna M");
     if (documentary.code === "tdr-not-received") recordWarnings.push("TDR ainda não recebido: colunas O e P em branco");
     parsed.push({
@@ -742,7 +809,7 @@ async function commitImport() {
       batch.set(doc(db, COLLECTION_NAME, recordId), payload, { merge: true });
     });
     po2024Records.forEach(record => batch.set(doc(db, COLLECTION_NAME, record.id), { archivedOutOfScope: true, outOfScopeReason: "PO-2024", archivedAt: serverTimestamp(), archivedBy: state.user.uid, updatedAt: serverTimestamp() }, { merge: true }));
-    const metadata = { activeBatchId: batchId, sourceFileName: preview.fileName, sourceSheet: SOURCE_SHEET, referenceDate: preview.referenceDate, buildVersion: "20260803-r4", validRows: preview.records.length, excludedPo2024: (preview.excludedPo2024 || 0) + po2024Records.length, newCount: preview.newCount, updatedCount: preview.updatedCount, unchangedCount: preview.unchangedCount, rejectedCount: preview.rejected.length, ignoredRows: preview.ignored, missingRecordIds: preview.missingIds, quality: preview.quality, importedAt: serverTimestamp(), importedBy: state.user.uid, importedByName: state.user.displayName || state.user.email || "" };
+    const metadata = { activeBatchId: batchId, sourceFileName: preview.fileName, sourceSheet: SOURCE_SHEET, referenceDate: preview.referenceDate, buildVersion: "20260819-status-r1", validRows: preview.records.length, excludedPo2024: (preview.excludedPo2024 || 0) + po2024Records.length, newCount: preview.newCount, updatedCount: preview.updatedCount, unchangedCount: preview.unchangedCount, rejectedCount: preview.rejected.length, ignoredRows: preview.ignored, missingRecordIds: preview.missingIds, quality: preview.quality, importedAt: serverTimestamp(), importedBy: state.user.uid, importedByName: state.user.displayName || state.user.email || "" };
     batch.set(doc(db, "repairProcessesConfig", "current"), metadata, { merge: true }); batch.set(doc(db, IMPORT_COLLECTION, batchId), { ...metadata, batchId, rejectedRows: preview.rejected.slice(0, 100) });
     await batch.commit(); await logAction("Importação mensal de materiais reparáveis", { batchId, fileName: preview.fileName, validRows: preview.records.length, archivedPo2024: po2024Records.length, newCount: preview.newCount, updatedCount: preview.updatedCount, unchangedCount: preview.unchangedCount, missingCount: preview.missingIds.length });
     setImportMessage(`Importação concluída: ${preview.records.length} registros ativos e ${po2024Records.length} PO(s) 24T arquivada(s).`, "success"); state.importPreview = null; els.importFile.value = ""; renderImportPreview(); await loadImportHistory();
@@ -780,15 +847,34 @@ function filterSummaryText() {
 function setupPdf(title, orientation = "portrait") {
   const { jsPDF } = window.jspdf;
   const pdf = new jsPDF({ orientation, unit: "mm", format: "a4" });
-  pdf.setFillColor(1, 45, 107); pdf.rect(0, 0, pdf.internal.pageSize.getWidth(), 24, "F");
-  pdf.setTextColor(255, 255, 255); pdf.setFont("helvetica", "bold"); pdf.setFontSize(14); pdf.text("PAINEL CABW", 14, 10);
-  pdf.setFontSize(11); pdf.text(title, 14, 18);
-  pdf.setTextColor(20, 35, 70); pdf.setFont("helvetica", "normal"); pdf.setFontSize(8);
+  pdf.setFillColor(1, 45, 107);
+  pdf.rect(0, 0, pdf.internal.pageSize.getWidth(), 24, "F");
+  pdf.setTextColor(255, 255, 255);
+  pdf.setFont("helvetica", "bold");
+  pdf.setFontSize(14);
+  pdf.text("PAINEL CABW", 14, 10);
+  pdf.setFontSize(11);
+  pdf.text(title, 14, 18);
+  pdf.setTextColor(20, 35, 70);
+  pdf.setFont("helvetica", "normal");
+  pdf.setFontSize(8);
   pdf.text(`Gerado em ${fmtDateTime.format(new Date())}`, 14, 30);
-  pdf.text(`Fonte/lote: ${state.config?.sourceFileName || BUNDLED_REPAIR_DATA.metadata.sourceFileName} · ${state.config?.activeBatchId || "pacote inicial"}`, 14, 35);
-  const filters = pdf.splitTextToSize(`Filtros: ${filterSummaryText()}`, pdf.internal.pageSize.getWidth() - 28);
-  pdf.text(filters, 14, 40);
-  return { pdf, startY: 44 + filters.length * 4 };
+
+  const pageWidth = pdf.internal.pageSize.getWidth();
+  const sourceLines = pdf.splitTextToSize(
+    `Fonte/lote: ${reportSourceLabel()}`,
+    pageWidth - 28
+  );
+  pdf.text(sourceLines, 14, 35);
+  const sourceBottom = 35 + Math.max(0, sourceLines.length - 1) * 4;
+
+  const filters = pdf.splitTextToSize(
+    `Filtros: ${filterSummaryText()}`,
+    pageWidth - 28
+  );
+  const filtersY = sourceBottom + 5;
+  pdf.text(filters, 14, filtersY);
+  return { pdf, startY: filtersY + 4 + filters.length * 4 };
 }
 
 function ensurePdf() {

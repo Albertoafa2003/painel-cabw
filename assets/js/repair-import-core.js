@@ -1,13 +1,49 @@
 export const NULL_TOKENS = new Set(["", "none", "null", "n/a", "-", "nan", "undefined"]);
 
 export const STATUS_STAGE_MAP = Object.freeze({
-  "1-Empenho Aprovado": "Brasil / OM requisitante",
-  "3-Rep chegou CTLA": "Brasil / CTLA",
-  "6-Rep Exp ao Reparador": "Trânsito à oficina",
-  "7-Rep Recebido": "CABW / CABE (retorno)"
+  "1-Empenho Aprovado": "Brasil/ OM Requisitante",
+  "2-Item Chegou CTLA": "Brasil / CTLA",
+  "3-Item Exp CTLA": "Trânsito ao Reparador",
+  "4-Item chegou CABW/CABE": "Trânsito ao Reparador",
+  "5-Item Exp Reparador": "Trânsito ao Reparador",
+  "6-Item no Reparador": "Reparador",
+  "7-Item Recebido": "CABW/CABE (retorno)",
+  "8-Embarcado": "ETAPA NÃO MAPEADA",
+  "9-Recebido Parque": "ETAPA NÃO MAPEADA",
+  "10-Encerrado": "ETAPA NÃO MAPEADA"
 });
 
-export const DEPRECATED_REAL_STATUSES = new Set(["8-Rep Embarcado", "10-Encerrado"]);
+export const REAL_STATUS_OPTIONS = Object.freeze(Object.keys(STATUS_STAGE_MAP));
+
+export const VISUAL_STAGE_OPTIONS = Object.freeze([
+  "Brasil/ OM Requisitante",
+  "Brasil / CTLA",
+  "Trânsito ao Reparador",
+  "Reparador",
+  "CABW/CABE (retorno)",
+  "ETAPA NÃO MAPEADA"
+]);
+
+const STATUS_ALIAS_MAP = Object.freeze({
+  "1-empenho aprovado": "1-Empenho Aprovado",
+  "2-item chegou ctla": "2-Item Chegou CTLA",
+  "3-item exp ctla": "3-Item Exp CTLA",
+  "3-rep chegou ctla": "2-Item Chegou CTLA",
+  "4-item chegou cabw/cabe": "4-Item chegou CABW/CABE",
+  "4-item chegou cabw/e": "4-Item chegou CABW/CABE",
+  "5-item exp reparador": "5-Item Exp Reparador",
+  "5-item exp ao reparador": "5-Item Exp Reparador",
+  "6-item no reparador": "6-Item no Reparador",
+  "6-rep exp ao reparador": "5-Item Exp Reparador",
+  "7-item recebido": "7-Item Recebido",
+  "7-rep recebido": "7-Item Recebido",
+  "8-embarcado": "8-Embarcado",
+  "8-rep embarcado": "8-Embarcado",
+  "9-recebido parque": "9-Recebido Parque",
+  "10-encerrado": "10-Encerrado"
+});
+
+export const DEPRECATED_REAL_STATUSES = new Set([]);
 export const DEPRECATED_CONDITIONS = new Set(["EXCHANGE"]);
 
 export const REQUIRED_HEADERS = Object.freeze([
@@ -46,14 +82,23 @@ export function normalizeControlValue(value) {
 export function normalizeIdentifier(value) { return normalizeNullable(value); }
 export function isPo2024(value) { return /^24T/i.test(String(value || "").trim()); }
 
-function normalizeStatusToken(value) { return String(value || "").trim().toLowerCase().replace(/\./g, "").replace(/\s+/g, " "); }
+function normalizeStatusToken(value) {
+  return String(value || "")
+    .trim()
+    .toLowerCase()
+    .replace(/\./g, "")
+    .replace(/\s*\/\s*/g, "/")
+    .replace(/\s+/g, " ");
+}
 
 export function normalizeRealStatus(value) {
   const raw = normalizeNullable(value);
-  const deprecated = raw && Array.from(DEPRECATED_REAL_STATUSES).some(status => normalizeStatusToken(status) === normalizeStatusToken(raw));
-  if (deprecated) return { value: null, raw, discardedReason: "status-not-used" };
-  const canonical = raw && Object.keys(STATUS_STAGE_MAP).find(status => normalizeStatusToken(status) === normalizeStatusToken(raw));
-  return { value: canonical || raw, raw, discardedReason: null };
+  if (!raw) return { value: null, raw, discardedReason: null };
+  const normalizedToken = normalizeStatusToken(raw);
+  const canonical = STATUS_ALIAS_MAP[normalizedToken]
+    || REAL_STATUS_OPTIONS.find(status => normalizeStatusToken(status) === normalizedToken)
+    || raw;
+  return { value: canonical, raw, discardedReason: null };
 }
 
 export function normalizeRepairCondition(value) {
@@ -119,7 +164,9 @@ export function daysBetweenIso(fromIso, toIso) {
 
 export function mapVisualStage(status) {
   const normalized = normalizeRealStatus(status).value;
-  return normalized ? (STATUS_STAGE_MAP[normalized] || "Etapa não mapeada") : "Etapa não mapeada";
+  return normalized
+    ? (STATUS_STAGE_MAP[normalized] || "ETAPA NÃO MAPEADA")
+    : "ETAPA NÃO MAPEADA";
 }
 
 export function deriveOriginOm(rawOm, requisition) {
