@@ -140,7 +140,7 @@
 <label><span>Part Number *</span><input class="form-control" id="repEditPn" maxlength="150" required=""/></label>
 <label><span>Serial Number *</span><input class="form-control" id="repEditSn" maxlength="150" required=""/></label>
 <label><span>Número do processo</span><input class="form-control" id="repEditProcess" maxlength="120" placeholder="Não informado"/></label>
-<label><span>Parque / OM</span><input class="form-control" id="repEditOrigin" maxlength="120"/></label>
+<label><span>Parque / OM</span><input class="form-control" id="repEditOrigin" list="repOriginOptions" maxlength="120"/><datalist id="repOriginOptions"><option value="PAME-RJ"></option><option value="PAMA-GL"></option><option value="PAMB-RJ"></option><option value="PAMA-SP"></option></datalist></label>
 <label class="rep-form-wide"><span>Descrição do item</span><textarea class="form-control" id="repEditDescription" maxlength="800" placeholder="Não informado" rows="2"></textarea></label>
 <label><span>Status real</span><select class="form-control" id="repEditStatus"><option value="">Não informado</option><option value="1-Empenho Aprovado">1-Empenho Aprovado</option><option value="2-Item Chegou CTLA">2-Item Chegou CTLA</option><option value="3-Item Exp CTLA">3-Item Exp CTLA</option><option value="4-Item chegou CABW/CABE">4-Item chegou CABW/CABE</option><option value="5-Item Exp Reparador">5-Item Exp Reparador</option><option value="6-Item no Reparador">6-Item no Reparador</option><option value="7-Item Recebido">7-Item Recebido</option><option value="8-Embarcado">8-Embarcado</option><option value="9-Recebido Parque">9-Recebido Parque</option><option value="10-Encerrado">10-Encerrado</option></select></label>
 <label><span>Reparador</span><input class="form-control" id="repEditRepairer" maxlength="250"/></label>
@@ -157,6 +157,6 @@
 <script src="https://code.jquery.com/jquery-3.6.0.slim.min.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/js/bootstrap.bundle.min.js"></script>
 <script src="assets/js/auth.js" type="module"></script>
-<script src="assets/js/repair-processes-panel.js?v=20260820-return-r1" type="module"></script>
+<script src="assets/js/repair-processes-panel.js?v=20260820-origin-om-r1" type="module"></script>
 </body>
 </html>

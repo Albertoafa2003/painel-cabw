@@ -1,6 +1,6 @@
 # Importação mensal — Materiais Reparáveis
 
-Versão do painel: **20260819-status-r1**
+Versão do painel: **20260820-origin-om-r1**
 
 ## Base cadastral incluída no pacote
 - Arquivo-base: `CONTROLE REPARO - SGT ROZENDO - 03082026.xlsx`
@@ -32,7 +32,7 @@ A Etapa Visual é derivada exclusivamente do Status Real e representa a localiza
 | 7-Item Recebido | CABW/CABE (retorno) |
 | 8-Embarcado | ETAPA NÃO MAPEADA |
 | 9-Recebido Parque | ETAPA NÃO MAPEADA |
-| 10-Encerrado | ETAPA NÃO MAPEADA |
+| 10-Encerrado | Brasil/ OM Requisitante |
 
 Variações de escrita presentes nas planilhas são canonicalizadas, mantendo o valor original em `realStatusSource` para auditoria.
 
@@ -52,7 +52,7 @@ Variações de escrita presentes nas planilhas são canonicalizadas, mantendo o 
 1. Extraia todo o ZIP na raiz do repositório.
 2. Confirme que `governanca-reparaveis.html`, `assets/js/repair-import-core.js`, `assets/js/repair-processes-panel.js`, `assets/js/repair-processes-current-data.js` e `assets/data/repair-processes-current.json` aparecem como modificados no commit.
 3. Publique as regras do arquivo `FIRESTORE_REGRAS_MATERIAIS_REPARAVEIS.txt`, caso ainda não estejam vigentes.
-4. Após o deploy, use `Ctrl + F5`. O script possui cache-busting `?v=20260819-status-r1`.
+4. Após o deploy, use `Ctrl + F5`. O script possui cache-busting `?v=20260820-origin-om-r1`.
 
 
 ## Regra de prazo e atraso do retorno — atualização de 20/08/2026
@@ -67,3 +67,16 @@ Variações de escrita presentes nas planilhas são canonicalizadas, mantendo o 
 - Se a data de retorno for igual ou anterior à DPE, classificar como **item retornou no prazo**.
 - Correções confirmadas: PO `25T000160` com autorização em `13/07/2025`; PO `26T000800` com `#REF!` tratado como campo vazio.
 - A etapa visual `10-Encerrado` corresponde a **Brasil/ OM Requisitante**.
+
+## Normalização de Parque / OM — atualização de 20/08/2026
+
+Os códigos derivados dos dois primeiros caracteres da requisição devem ser exibidos com a nomenclatura institucional abaixo:
+
+| Código de origem | Nomenclatura exibida |
+|---|---|
+| EL | PAME-RJ |
+| GL | PAMA-GL |
+| PB | PAMB-RJ |
+| SP | PAMA-SP |
+
+A normalização é aplicada à base local, aos registros lidos do Firestore, às novas importações, aos filtros, à busca, ao detalhamento e aos relatórios PDF. O código original é preservado apenas nos metadados de auditoria.

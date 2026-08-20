@@ -1,0 +1,38 @@
+PAINEL CABW — NORMALIZAÇÃO DE PARQUE / OM
+
+Atualização: 20/08/2026
+Versão: 20260820-origin-om-r1
+
+SUBSTITUIÇÕES APLICADAS:
+- EL -> PAME-RJ
+- GL -> PAMA-GL
+- PB -> PAMB-RJ
+- SP -> PAMA-SP
+
+RESULTADO:
+- Registros atualizados: 113
+- PAME-RJ: 4 itens
+- PAMA-GL: 31 itens
+- PAMB-RJ: 2 itens
+- PAMA-SP: 76 itens
+- Duplicidades criadas: 0
+- Campos não relacionados alterados: 0
+
+A NORMALIZAÇÃO FOI APLICADA A:
+- base local de itens
+- registros lidos do Firestore
+- novas importações mensais
+- filtro Parque / OM
+- busca geral
+- tabela e visualização móvel
+- detalhamento dos itens
+- cadastro/edição administrativa
+- relatórios PDF
+
+PUBLICAÇÃO:
+1. Extraia o ZIP.
+2. Envie todo o conteúdo extraído à raiz do repositório.
+3. Confirme a presença deste arquivo e de BUILD_VERIFICACAO_REPARAVEIS_OM_20082026.json.
+4. Faça o commit.
+5. Aguarde o deploy do GitHub Pages.
+6. Pressione Ctrl + F5 no site.
