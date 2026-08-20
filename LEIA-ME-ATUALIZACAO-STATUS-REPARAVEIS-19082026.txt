@@ -1,0 +1,55 @@
+PAINEL CABW — ATUALIZAÇÃO DE STATUS DOS MATERIAIS REPARÁVEIS
+
+        FONTES:
+        - 19AGO V3 - CONTROLE REPARO - SGT ROZENDO.xlsx
+        - Correlação.xlsx
+
+        REFERÊNCIA DO STATUS:
+        19/08/2026
+
+        RESULTADO:
+        - 113 itens atualizados
+        - 60 POs únicas
+        - 0 divergências entre PO, Status Real e Etapa Visual
+        - 0 POs ausentes ou adicionais em relação à base atual
+        - 110 alterações de Status Real
+        - 103 alterações de Etapa Visual
+
+        STATUS REAL OFICIAIS:
+        - 1-Empenho Aprovado -> Brasil/ OM Requisitante
+- 2-Item Chegou CTLA -> Brasil / CTLA
+- 3-Item Exp CTLA -> Trânsito ao Reparador
+- 4-Item chegou CABW/CABE -> Trânsito ao Reparador
+- 5-Item Exp Reparador -> Trânsito ao Reparador
+- 6-Item no Reparador -> Reparador
+- 7-Item Recebido -> CABW/CABE (retorno)
+- 8-Embarcado -> ETAPA NÃO MAPEADA
+- 9-Recebido Parque -> ETAPA NÃO MAPEADA
+- 10-Encerrado -> ETAPA NÃO MAPEADA
+
+        ARQUIVOS PRINCIPAIS ATUALIZADOS:
+        - governanca-reparaveis.html
+        - assets/js/repair-import-core.js
+        - assets/js/repair-processes-panel.js
+        - assets/js/repair-processes-current-data.js
+        - assets/data/repair-processes-current.json
+        - assets/data/repair-processes-schema.json
+        - assets/data/repair-status-update-audit-19082026.json
+        - tests/repair-import.test.mjs
+
+        O PACOTE PRESERVA:
+        - Crédito Disponível de 20/08/2026
+        - Contratos de 13/08/2026
+        - RP de Julho/2026
+        - Processos de Contratação de 17/08/2026
+        - Monitoramento de Contratos
+        - Firebase Authentication e Firestore
+
+        PUBLICAÇÃO:
+        1. Extraia o ZIP.
+        2. Envie todo o conteúdo extraído à raiz do repositório.
+        3. Confirme que este arquivo e
+           BUILD_VERIFICACAO_REPARAVEIS_STATUS_19082026.json aparecem no GitHub.
+        4. Faça o commit.
+        5. Aguarde o deploy do GitHub Pages.
+        6. Pressione Ctrl + F5 no site.
