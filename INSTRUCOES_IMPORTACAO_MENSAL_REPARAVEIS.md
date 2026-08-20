@@ -30,8 +30,8 @@ A Etapa Visual é derivada exclusivamente do Status Real e representa a localiza
 | 5-Item Exp Reparador | Trânsito ao Reparador |
 | 6-Item no Reparador | Reparador |
 | 7-Item Recebido | CABW/CABE (retorno) |
-| 8-Embarcado | ETAPA NÃO MAPEADA |
-| 9-Recebido Parque | ETAPA NÃO MAPEADA |
+| 8-Embarcado | CABW/CABE (retorno) |
+| 9-Recebido Parque | Brasil/ OM Requisitante |
 | 10-Encerrado | Brasil/ OM Requisitante |
 
 Variações de escrita presentes nas planilhas são canonicalizadas, mantendo o valor original em `realStatusSource` para auditoria.
@@ -80,3 +80,13 @@ Os códigos derivados dos dois primeiros caracteres da requisição devem ser ex
 | SP | PAMA-SP |
 
 A normalização é aplicada à base local, aos registros lidos do Firestore, às novas importações, aos filtros, à busca, ao detalhamento e aos relatórios PDF. O código original é preservado apenas nos metadados de auditoria.
+
+
+### Indicadores de retorno
+
+O painel apresenta dois indicadores distintos:
+
+- **Retornaram com atraso:** a data efetiva de retorno é posterior à DPE.
+- **Atrasados — sem retorno:** a DPE venceu e não existe data de retorno registrada.
+
+A Etapa Visual **ETAPA NÃO MAPEADA** permanece disponível apenas para eventual status futuro sem correlação oficial.

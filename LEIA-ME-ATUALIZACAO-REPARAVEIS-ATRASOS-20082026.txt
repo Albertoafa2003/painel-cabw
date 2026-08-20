@@ -1,0 +1,21 @@
+PAINEL CABW — CONTROLE DE MATERIAIS REPARÁVEIS
+ATUALIZAÇÃO DOS INDICADORES DE RETORNO E DO FLUXO LOGÍSTICO
+
+Build: 20260820-overdue-split-r1
+Data: 20/08/2026
+
+ALTERAÇÕES:
+- O antigo indicador único “Retornos atrasados” foi dividido em:
+  1. Retornaram com atraso: 50 itens na base integral.
+  2. Atrasados — sem retorno: 7 itens na base integral.
+- Status 8-Embarcado passou para CABW/CABE (retorno).
+- Status 9-Recebido Parque passou para Brasil/ OM Requisitante.
+- Status 10-Encerrado permanece em Brasil/ OM Requisitante.
+- ETAPA NÃO MAPEADA fica reservada para eventual status futuro sem correlação.
+
+PUBLICAÇÃO:
+1. Extraia o ZIP.
+2. Envie todo o conteúdo extraído à raiz do repositório.
+3. Confirme a presença de BUILD_VERIFICACAO_REPARAVEIS_ATRASOS_20082026.json.
+4. Faça o commit e aguarde o GitHub Pages.
+5. Pressione Ctrl + F5 no navegador.

@@ -94,18 +94,32 @@
 <div class="rep-report-note"><i class="bi bi-info-circle"></i><span>Informações ausentes são exibidas como “Não informado”, nunca como zero.</span></div>
 </article>
 </section>
-<section aria-label="Indicadores dos materiais reparáveis" class="rep-kpi-grid rep-kpi-grid--eight">
+<section aria-label="Indicadores dos materiais reparáveis" class="rep-kpi-grid rep-kpi-grid--nine">
 <article class="rep-kpi-card"><span class="rep-kpi-icon"><i class="bi bi-box-seam"></i></span><div><span>Itens controlados</span><strong id="repKpiTotal">0</strong><small>resultado dos filtros</small></div></article>
 <article class="rep-kpi-card"><span class="rep-kpi-icon"><i class="bi bi-geo-alt"></i></span><div><span>CABW/CABE</span><strong id="repKpiRepair">0</strong><small>item recebido no retorno</small></div></article>
 <article class="rep-kpi-card"><span class="rep-kpi-icon"><i class="bi bi-truck"></i></span><div><span>Em trânsito</span><strong id="repKpiTransit">0</strong><small>trânsito ao reparador</small></div></article>
-<article class="rep-kpi-card rep-kpi-card--alert"><span class="rep-kpi-icon"><i class="bi bi-exclamation-triangle"></i></span><div><span>Retornos atrasados</span><strong id="repKpiOverdue">0</strong><small>atuais ou retornados após o prazo</small></div></article>
+<article class="rep-kpi-card rep-kpi-card--warning">
+<span class="rep-kpi-icon"><i class="bi bi-clock-history"></i></span>
+<div>
+<span>Retornaram com atraso</span>
+<strong id="repKpiReturnedLate">0</strong>
+<small>retorno efetivo posterior à DPE</small>
+</div>
+</article><article class="rep-kpi-card rep-kpi-card--alert">
+<span class="rep-kpi-icon"><i class="bi bi-exclamation-octagon"></i></span>
+<div>
+<span>Atrasados — sem retorno</span>
+<strong id="repKpiOverdue">0</strong>
+<small>DPE vencida e retorno não registrado</small>
+</div>
+</article>
 <article class="rep-kpi-card"><span class="rep-kpi-icon"><i class="bi bi-box-arrow-in-down"></i></span><div><span>Brasil / CTLA</span><strong id="repKpiCompleted">0</strong><small>item recebido no CTLA</small></div></article>
 <article class="rep-kpi-card rep-kpi-card--alert"><span class="rep-kpi-icon"><i class="bi bi-calendar2-x"></i></span><div><span>TDR em alerta</span><strong id="repKpiTdr">0</strong><small>atrasado ou até 7 dias</small></div></article>
 <article class="rep-kpi-card rep-kpi-card--money"><span class="rep-kpi-icon"><i class="bi bi-currency-dollar"></i></span><div><span>Valor dos itens</span><strong id="repKpiItemValue">Não informado</strong><small id="repKpiItemValueNote">sem valores válidos</small></div></article>
 <article class="rep-kpi-card rep-kpi-card--money"><span class="rep-kpi-icon"><i class="bi bi-receipt"></i></span><div><span>Reparos contratados</span><strong id="repKpiRepairValue">Não informado</strong><small id="repKpiRepairValueNote">sem valores válidos</small></div></article>
 </section>
 <section aria-label="Fluxo logístico dos materiais reparáveis" class="rep-card rep-flow-card">
-<div class="rep-section-heading"><div><span class="governance-eyebrow">Status real convertido em etapa visual</span><h2>Fluxo logístico dos itens</h2><p>Clique em uma etapa para filtrar os itens. A etapa visual representa a localização do material e pode abranger mais de um Status Real. O Status 10-Encerrado representa o retorno à OM Requisitante no Brasil; somente os Status 8 e 9 permanecem em “ETAPA NÃO MAPEADA”.</p></div><button class="rep-link-button" hidden="" id="repClearFlow" type="button">Remover filtro do fluxo</button></div>
+<div class="rep-section-heading"><div><span class="governance-eyebrow">Status real convertido em etapa visual</span><h2>Fluxo logístico dos itens</h2><p>Clique em uma etapa para filtrar os itens. A Etapa Visual representa a localização do material e pode abranger mais de um Status Real. Os Status 7 e 8 são associados a CABW/CABE (retorno); os Status 9 e 10 representam Brasil/ OM Requisitante. “ETAPA NÃO MAPEADA” fica reservada somente para eventual status futuro sem correlação.</p></div><button class="rep-link-button" hidden="" id="repClearFlow" type="button">Remover filtro do fluxo</button></div>
 <div class="rep-flow-grid" id="repFlowGrid"></div>
 </section>
 <section aria-label="Resumo gerencial dos materiais reparáveis" class="rep-insight-grid">
@@ -157,6 +171,6 @@
 <script src="https://code.jquery.com/jquery-3.6.0.slim.min.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/js/bootstrap.bundle.min.js"></script>
 <script src="assets/js/auth.js" type="module"></script>
-<script src="assets/js/repair-processes-panel.js?v=20260820-origin-om-r1" type="module"></script>
+<script src="assets/js/repair-processes-panel.js?v=20260820-overdue-split-r1" type="module"></script>
 </body>
 </html>
