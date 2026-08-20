@@ -46,7 +46,7 @@
     "currency",
     "manualNotes"
   ],
-  "buildVersion": "20260820-origin-om-r1",
+  "buildVersion": "20260820-overdue-split-r1",
   "statusUpdate": {
     "sourceFile": "19AGO V3 - CONTROLE REPARO - SGT ROZENDO.xlsx",
     "sourceSheet": "BD Monitoramento",
@@ -75,8 +75,10 @@
       "ETAPA NÃO MAPEADA"
     ],
     "rule": "A Etapa Visual é derivada do Status Real conforme a planilha de correlação. Uma mesma etapa pode abranger mais de um status por representar a localização do material.",
-    "mappingVersion": 4,
+    "mappingVersion": 5,
     "mappingCorrection": {
+      "8-Embarcado": "CABW/CABE (retorno)",
+      "9-Recebido Parque": "Brasil/ OM Requisitante",
       "10-Encerrado": "Brasil/ OM Requisitante"
     }
   },
@@ -116,5 +118,11 @@
       "PAMB-RJ",
       "PAMA-SP"
     ]
+  },
+  "returnKpiPresentation": {
+    "updatedAt": "2026-08-20",
+    "returnedLate": "Itens com data efetiva de retorno posterior à DPE.",
+    "overdueNotReturned": "Itens sem retorno registrado e com DPE anterior à data atual.",
+    "separateCards": true
   }
 }

@@ -3,7 +3,7 @@
     "sourceFileName": "CONTROLE REPARO - SGT ROZENDO - 03082026.xlsx",
     "sourceSheet": "BD Monitoramento",
     "referenceDate": "2026-08-20",
-    "buildVersion": "20260820-origin-om-r1",
+    "buildVersion": "20260820-overdue-split-r1",
     "validRows": 113,
     "validSourceRows": "2 a 114",
     "uniqueKeys": 113,
@@ -115,7 +115,7 @@
       "currency": 0
     },
     "statusMappingUpdatedAt": "2026-08-20",
-    "statusMappingVersion": 4,
+    "statusMappingVersion": 5,
     "tdrRuleUpdatedAt": "2026-08-03",
     "tdrRuleVersion": 3,
     "dataReferenceDate": "2026-08-03",
@@ -173,7 +173,7 @@
       }
     ],
     "returnDueDateMismatchCount": 1,
-    "statusMappingCorrection": "10-Encerrado -> Brasil/ OM Requisitante",
+    "statusMappingCorrection": "8-Embarcado -> CABW/CABE (retorno); 9-Recebido Parque -> Brasil/ OM Requisitante; 10-Encerrado -> Brasil/ OM Requisitante",
     "returnDeadlineCounts": {
       "returned-on-time": 20,
       "returned-late": 50,
@@ -207,7 +207,27 @@
       "PAMB-RJ",
       "PAMA-SP"
     ],
-    "originOmRule": "Os códigos derivados das requisições são apresentados com a nomenclatura institucional: EL=PAME-RJ, GL=PAMA-GL, PB=PAMB-RJ e SP=PAMA-SP."
+    "originOmRule": "Os códigos derivados das requisições são apresentados com a nomenclatura institucional: EL=PAME-RJ, GL=PAMA-GL, PB=PAMB-RJ e SP=PAMA-SP.",
+    "statusStageMap": {
+      "1-Empenho Aprovado": "Brasil/ OM Requisitante",
+      "2-Item Chegou CTLA": "Brasil / CTLA",
+      "3-Item Exp CTLA": "Trânsito ao Reparador",
+      "4-Item chegou CABW/CABE": "Trânsito ao Reparador",
+      "5-Item Exp Reparador": "Trânsito ao Reparador",
+      "6-Item no Reparador": "Reparador",
+      "7-Item Recebido": "CABW/CABE (retorno)",
+      "8-Embarcado": "CABW/CABE (retorno)",
+      "9-Recebido Parque": "Brasil/ OM Requisitante",
+      "10-Encerrado": "Brasil/ OM Requisitante"
+    },
+    "officialUnmappedStatuses": [],
+    "returnKpiSplitUpdatedAt": "2026-08-20",
+    "returnKpiSplitVersion": 2,
+    "returnKpiCounts": {
+      "returnedLate": 50,
+      "overdueNotReturned": 7
+    },
+    "returnKpiRule": "Os indicadores distinguem itens que já retornaram após a DPE dos itens cuja DPE venceu e cujo retorno ainda não foi registrado."
   },
   "records": [
     {

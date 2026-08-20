@@ -26,8 +26,8 @@ export const STATUS_STAGE_MAP = Object.freeze({
   "5-Item Exp Reparador": "Trânsito ao Reparador",
   "6-Item no Reparador": "Reparador",
   "7-Item Recebido": "CABW/CABE (retorno)",
-  "8-Embarcado": "ETAPA NÃO MAPEADA",
-  "9-Recebido Parque": "ETAPA NÃO MAPEADA",
+  "8-Embarcado": "CABW/CABE (retorno)",
+  "9-Recebido Parque": "Brasil/ OM Requisitante",
   "10-Encerrado": "Brasil/ OM Requisitante"
 });
 

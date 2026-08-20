@@ -11,8 +11,8 @@ import {
   normalizeRealStatus, normalizeRepairCondition, normalizeEvaluationFee, calculateTdrStatus,
   classifyDocumentaryStatus, calculateReturnDeadline, stableKeySource, sha256Hex,
   importedDataEqual, contextualServiceDateLabel, moneyDisplay, textDisplay
-} from "./repair-import-core.js?v=20260820-origin-om-r1";
-import { BUNDLED_REPAIR_DATA } from "./repair-processes-current-data.js?v=20260820-origin-om-r1";
+} from "./repair-import-core.js?v=20260820-overdue-split-r1";
+import { BUNDLED_REPAIR_DATA } from "./repair-processes-current-data.js?v=20260820-overdue-split-r1";
 
 const firebaseConfig = {
   apiKey: "AIzaSyDZehcWZwnwlGG5LR6y7_hKAVErHiHDhXM",
@@ -364,7 +364,8 @@ function renderKpis() {
   els.kpiTotal.textContent = fmtInteger.format(records.length);
   els.kpiRepair.textContent = fmtInteger.format(enriched.filter(item => item.visualStage === "CABW/CABE (retorno)").length);
   els.kpiTransit.textContent = fmtInteger.format(enriched.filter(item => item.visualStage === "Trânsito ao Reparador").length);
-  els.kpiOverdue.textContent = fmtInteger.format(enriched.filter(item => ["overdue", "returned-late"].includes(item.deadline.code)).length);
+  els.kpiReturnedLate.textContent = fmtInteger.format(enriched.filter(item => item.deadline.code === "returned-late").length);
+  els.kpiOverdue.textContent = fmtInteger.format(enriched.filter(item => item.deadline.code === "overdue").length);
   els.kpiCompleted.textContent = fmtInteger.format(enriched.filter(item => item.visualStage === "Brasil / CTLA").length);
   els.kpiTdr.textContent = fmtInteger.format(enriched.filter(item => ["overdue", "due-soon"].includes(item.tdr.code)).length);
   els.kpiItemValue.textContent = itemValue.value;
@@ -855,7 +856,7 @@ async function commitImport() {
       batch.set(doc(db, COLLECTION_NAME, recordId), payload, { merge: true });
     });
     po2024Records.forEach(record => batch.set(doc(db, COLLECTION_NAME, record.id), { archivedOutOfScope: true, outOfScopeReason: "PO-2024", archivedAt: serverTimestamp(), archivedBy: state.user.uid, updatedAt: serverTimestamp() }, { merge: true }));
-    const metadata = { activeBatchId: batchId, sourceFileName: preview.fileName, sourceSheet: SOURCE_SHEET, referenceDate: preview.referenceDate, buildVersion: "20260820-return-r1", validRows: preview.records.length, excludedPo2024: (preview.excludedPo2024 || 0) + po2024Records.length, newCount: preview.newCount, updatedCount: preview.updatedCount, unchangedCount: preview.unchangedCount, rejectedCount: preview.rejected.length, ignoredRows: preview.ignored, missingRecordIds: preview.missingIds, quality: preview.quality, importedAt: serverTimestamp(), importedBy: state.user.uid, importedByName: state.user.displayName || state.user.email || "" };
+    const metadata = { activeBatchId: batchId, sourceFileName: preview.fileName, sourceSheet: SOURCE_SHEET, referenceDate: preview.referenceDate, buildVersion: "20260820-overdue-split-r1", validRows: preview.records.length, excludedPo2024: (preview.excludedPo2024 || 0) + po2024Records.length, newCount: preview.newCount, updatedCount: preview.updatedCount, unchangedCount: preview.unchangedCount, rejectedCount: preview.rejected.length, ignoredRows: preview.ignored, missingRecordIds: preview.missingIds, quality: preview.quality, importedAt: serverTimestamp(), importedBy: state.user.uid, importedByName: state.user.displayName || state.user.email || "" };
     batch.set(doc(db, "repairProcessesConfig", "current"), metadata, { merge: true }); batch.set(doc(db, IMPORT_COLLECTION, batchId), { ...metadata, batchId, rejectedRows: preview.rejected.slice(0, 100) });
     await batch.commit(); await logAction("Importação mensal de materiais reparáveis", { batchId, fileName: preview.fileName, validRows: preview.records.length, archivedPo2024: po2024Records.length, newCount: preview.newCount, updatedCount: preview.updatedCount, unchangedCount: preview.unchangedCount, missingCount: preview.missingIds.length });
     setImportMessage(`Importação concluída: ${preview.records.length} registros ativos e ${po2024Records.length} PO(s) 24T arquivada(s).`, "success"); state.importPreview = null; els.importFile.value = ""; renderImportPreview(); await loadImportHistory();
@@ -981,7 +982,7 @@ function cacheElements() {
   Object.assign(els, {
     source: $("repSourceInfo"), importToggle: $("repImportToggle"), manualNew: $("repManualNew"), importPanel: $("repImportPanel"), importFile: $("repImportFile"), importDate: $("repImportDate"), importPreviewButton: $("repImportPreviewButton"), importCommitButton: $("repImportCommitButton"), importCancelButton: $("repImportCancelButton"), importPreviewPanel: $("repImportPreviewPanel"), importPreviewGrid: $("repImportPreviewGrid"), importWarnings: $("repImportWarnings"), importMessage: $("repImportMessage"), importHistory: $("repImportHistory"),
     poFilter: $("repPoFilter"), requisitionFilter: $("repRequisitionFilter"), statusFilter: $("repStatusFilter"), stageFilter: $("repStageFilter"), originFilter: $("repOriginFilter"), repairerFilter: $("repRepairerFilter"), conditionFilter: $("repConditionFilter"), evaluationFeeFilter: $("repEvaluationFeeFilter"), tdrFilter: $("repTdrFilter"), documentFilter: $("repDocumentFilter"), cageFilter: $("repCageFilter"), deadlineFilter: $("repDeadlineFilter"), search: $("repSearch"), sort: $("repSort"), includeAbsent: $("repIncludeAbsent"), clearFilters: $("repClearFilters"), results: $("repResults"),
-    pdfSummary: $("repPdfSummary"), pdfDetailed: $("repPdfDetailed"), kpiTotal: $("repKpiTotal"), kpiRepair: $("repKpiRepair"), kpiTransit: $("repKpiTransit"), kpiOverdue: $("repKpiOverdue"), kpiCompleted: $("repKpiCompleted"), kpiTdr: $("repKpiTdr"), kpiItemValue: $("repKpiItemValue"), kpiItemValueNote: $("repKpiItemValueNote"), kpiRepairValue: $("repKpiRepairValue"), kpiRepairValueNote: $("repKpiRepairValueNote"),
+    pdfSummary: $("repPdfSummary"), pdfDetailed: $("repPdfDetailed"), kpiTotal: $("repKpiTotal"), kpiRepair: $("repKpiRepair"), kpiTransit: $("repKpiTransit"), kpiReturnedLate: $("repKpiReturnedLate"), kpiOverdue: $("repKpiOverdue"), kpiCompleted: $("repKpiCompleted"), kpiTdr: $("repKpiTdr"), kpiItemValue: $("repKpiItemValue"), kpiItemValueNote: $("repKpiItemValueNote"), kpiRepairValue: $("repKpiRepairValue"), kpiRepairValueNote: $("repKpiRepairValueNote"),
     flowGrid: $("repFlowGrid"), clearFlow: $("repClearFlow"), statusSummary: $("repStatusSummary"), attentionList: $("repAttentionList"), qualityGrid: $("repQualityGrid"), table: $("repTable"), tableCount: $("repTableCount"), mobileList: $("repMobileList"), emptyState: $("repEmptyState"),
     detailDialog: $("repDetailDialog"), detailTitle: $("repDetailTitle"), detailContent: $("repDetailContent"), detailClose: $("repDetailClose"), detailEdit: $("repDetailEdit"),
     editDialog: $("repEditDialog"), editForm: $("repEditForm"), editTitle: $("repEditTitle"), editClose: $("repEditClose"), editCancel: $("repEditCancel"), editMessage: $("repEditMessage"), editRecordId: $("repEditRecordId"), editPo: $("repEditPo"), editRequisition: $("repEditRequisition"), editPn: $("repEditPn"), editSn: $("repEditSn"), editProcess: $("repEditProcess"), editDescription: $("repEditDescription"), editItemValue: $("repEditItemValue"), editRepairValue: $("repEditRepairValue"), editCurrency: $("repEditCurrency"), editNotes: $("repEditNotes"), editOrigin: $("repEditOrigin"), editStatus: $("repEditStatus"), editRepairer: $("repEditRepairer"), editCage: $("repEditCage")

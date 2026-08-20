@@ -1,0 +1,50 @@
+{
+  "build": "20260820-overdue-split-r1",
+  "updatedAt": "2026-08-20",
+  "summary": {
+    "records": 113,
+    "returnedLate": 50,
+    "overdueNotReturned": 7,
+    "status8VisualStage": "CABW/CABE (retorno)",
+    "status9VisualStage": "Brasil/ OM Requisitante",
+    "status10VisualStage": "Brasil/ OM Requisitante"
+  },
+  "checks": {
+    "basePackageExists": true,
+    "recordCountPreserved": true,
+    "returnedLateCount": true,
+    "overdueNotReturnedCount": true,
+    "status8Mapped": true,
+    "status9Mapped": true,
+    "twoKpiCards": true,
+    "creditBuildPreserved": true,
+    "contractsBuildPreserved": true,
+    "rpBuildPreserved": true,
+    "processesBuildPreserved": true,
+    "returnBuildPreserved": true,
+    "originOmBuildPreserved": true
+  },
+  "commandResults": {
+    "npm_check": {
+      "returncode": 0,
+      "stdout": "> check\n> node --check assets/js/repair-import-core.js && node --check assets/js/repair-processes-panel.js",
+      "stderr": ""
+    },
+    "npm_test": {
+      "returncode": 0,
+      "stdout": "> test\n> node --test tests/repair-import.test.mjs\n\nTAP version 13\n# Subtest: normalização geral e controles none\nok 1 - normalização geral e controles none\n  ---\n  duration_ms: 1.104859\n  type: 'test'\n  ...\n# Subtest: PO 24T é reconhecida como fora do escopo\nok 2 - PO 24T é reconhecida como fora do escopo\n  ---\n  duration_ms: 0.2863\n  type: 'test'\n  ...\n# Subtest: TTE válida é mantida sem moeda\nok 3 - TTE válida é mantida sem moeda\n  ---\n  duration_ms: 0.846094\n  type: 'test'\n  ...\n# Subtest: TDR com none ou data é entregue\nok 4 - TDR com none ou data é entregue\n  ---\n  duration_ms: 0.279623\n  type: 'test'\n  ...\n# Subtest: TDR vencido com N vazia é atrasado\nok 5 - TDR vencido com N vazia é atrasado\n  ---\n  duration_ms: 0.226274\n  type: 'test'\n  ...\n# Subtest: situação documental segue O e P\nok 6 - situação documental segue O e P\n  ---\n  duration_ms: 0.229315\n  type: 'test'\n  ...\n# Subtest: dez Status Reais oficiais estão disponíveis no filtro\nok 7 - dez Status Reais oficiais estão disponíveis no filtro\n  ---\n  duration_ms: 0.107565\n  type: 'test'\n  ...\n# Subtest: seis Etapas Visuais oficiais estão disponíveis no filtro\nok 8 - seis Etapas Visuais oficiais estão disponíveis no filtro\n  ---\n  duration_ms: 0.152537\n  type: 'test'\n  ...\n# Subtest: correlação visual agrupa múltiplos status na mesma localização\nok 9 - correlação visual agrupa múltiplos status na mesma localização\n  ---\n  duration_ms: 0.677381\n  type: 'test'\n  ...\n# Subtest: variações da planilha e nomenclaturas antigas são canonicalizadas\nok 10 - variações da planilha e nomenclaturas antigas são canonicalizadas\n  ---\n  duration_ms: 0.631787\n  type: 'test'\n  ...\n# Subtest: base de status 19/08 possui 113 registros únicos e nenhuma PO 24T\nok 11 - base de status 19/08 possui 113 registros únicos e nenhuma PO 24T\n  ---\n  duration_ms: 0.404371\n  type: 'test'\n  ...\n# Subtest: todos os registros possuem status e etapa conforme as opções oficiais\nok 12 - todos os registros possuem status e etapa conforme as opções oficiais\n  ---\n  duration_ms: 0.232909\n  type: 'test'\n  ...\n# Subtest: contagens de status e etapas correspondem à planilha de atualização\nok 13 - contagens de status e etapas correspondem à planilha de atualização\n  ---\n  duration_ms: 0.182557\n  type: 'test'\n  ...\n# Subtest: todas as 113 linhas mantêm TTE válida e dados anteriores\nok 14 - todas as 113 linhas mantêm TTE válida e dados anteriores\n  ---\n  duration_ms: 0.138098\n  type: 'test'\n  ...\n# Subtest: reimportação idêntica não duplica\nok 15 - reimportação idêntica não duplica\n  ---\n  duration_ms: 10.000409\n  type: 'test'\n  ...\n# Subtest: chave estável é determinística\nok 16 - chave estável é determinística\n  ---\n  duration_ms: 16.063923\n  type: 'test'\n  ...\n# Subtest: retorno sem autorização ou sem prazo não é atrasado\nok 17 - retorno sem autorização ou sem prazo não é atrasado\n  ---\n  duration_ms: 0.449859\n  type: 'test'\n  ...\n# Subtest: retorno efetivo posterior à DPE é classificado como retornado com atraso\nok 18 - retorno efetivo posterior à DPE é classificado como retornado com atraso\n  ---\n  duration_ms: 0.209763\n  type: 'test'\n  ...\n# Subtest: item sem retorno após a DPE está atrasado\nok 19 - item sem retorno após a DPE está atrasado\n  ---\n  duration_ms: 0.257782\n  type: 'test'\n  ...\n# Subtest: retorno igual ou anterior à DPE é classificado no prazo\nok 20 - retorno igual ou anterior à DPE é classificado no prazo\n  ---\n  duration_ms: 0.494569\n  type: 'test'\n  ...\n# Subtest: base de retorno 20/08 aplica correções confirmadas\nok 21 - base de retorno 20/08 aplica correções confirmadas\n  ---\n  duration_ms: 0.264975\n  type: 'test'\n  ...\n# Subtest: contagens de retorno correspondem à planilha atualizada\nok 22 - contagens de retorno correspondem à planilha atualizada\n  ---\n  duration_ms: 0.174269\n  type: 'test'\n  ...\n# Subtest: Parques e OMs são normalizados para as nomenclaturas institucionais\nok 23 - Parques e OMs são normalizados para as nomenclaturas institucionais\n  ---\n  duration_ms: 0.632181\n  type: 'test'\n  ...\n# Subtest: base ativa não contém abreviações antigas no campo Parque / OM\nok 24 - base ativa não contém abreviações antigas no campo Parque / OM\n  ---\n  duration_ms: 0.281102\n  type: 'test'\n  ...\n# Subtest: todos os dez Status Reais oficiais possuem Etapa Visual mapeada\nok 25 - todos os dez Status Reais oficiais possuem Etapa Visual mapeada\n  ---\n  duration_ms: 0.219034\n  type: 'test'\n  ...\n# Subtest: painel separa retornos tardios de itens atrasados ainda sem retorno\nok 26 - painel separa retornos tardios de itens atrasados ainda sem retorno\n  ---\n  duration_ms: 2.270096\n  type: 'test'\n  ...\n# Subtest: metadados registram os dois grupos de atraso separadamente\nok 27 - metadados registram os dois grupos de atraso separadamente\n  ---\n  duration_ms: 0.227317\n  type: 'test'\n  ...\n1..27\n# tests 27\n# suites 0\n# pass 27\n# fail 0\n# cancelled 0\n# skipped 0\n# todo 0\n# duration_ms 187.141167",
+      "stderr": ""
+    }
+  },
+  "fileHashes": {
+    "governanca-reparaveis.html": "18221d3018fbbe8ee39b69a0e35eaef88e6f83f2b215ed2f089212a79e3adc56",
+    "assets/js/repair-import-core.js": "9642a5f03fb5244754a125769f59f58ca91796d99e45214c10987a39688c92c4",
+    "assets/js/repair-processes-panel.js": "6b8189a111f4e4c8ed74e1c9113c28af2b60ffc3d910c8eb22bef7fea9cd3822",
+    "assets/js/repair-processes-current-data.js": "f0abcab237f39b6439ccda717e7ebdd7454f906aff691001e6f58c558a209dd2",
+    "assets/data/repair-processes-current.json": "34a279bc118ae03be8a269614f282cab2b8e27662129b5e31693dd8038fcbe01",
+    "assets/data/repair-processes-schema.json": "dc13c4b5e61b51527c39e686d3df4f52602aafbbcee06181545e3931c4a739d2",
+    "assets/data/repair-overdue-panels-audit-20082026.json": "438ef479e795eca39cbe946f91d56c2f530b96f1c854ef27eff0e88c1006cab4",
+    "tests/repair-import.test.mjs": "3183b775483d92383841c887e1ac11814db86847ee88ce38c64336617d146539",
+    "css/style.css": "15a675af8b91e9f8bf2c111743cadcdb4fc83ae23f4a51d17d6df2a2079e5342"
+  }
+}

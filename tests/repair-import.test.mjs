@@ -125,8 +125,8 @@ test("correlação visual agrupa múltiplos status na mesma localização", () =
   assert.equal(mapVisualStage("5-Item Exp Reparador"), "Trânsito ao Reparador");
   assert.equal(mapVisualStage("6-Item no Reparador"), "Reparador");
   assert.equal(mapVisualStage("7-Item Recebido"), "CABW/CABE (retorno)");
-  assert.equal(mapVisualStage("8-Embarcado"), "ETAPA NÃO MAPEADA");
-  assert.equal(mapVisualStage("9-Recebido Parque"), "ETAPA NÃO MAPEADA");
+  assert.equal(mapVisualStage("8-Embarcado"), "CABW/CABE (retorno)");
+  assert.equal(mapVisualStage("9-Recebido Parque"), "Brasil/ OM Requisitante");
   assert.equal(mapVisualStage("10-Encerrado"), "Brasil/ OM Requisitante");
 });
 
@@ -332,4 +332,37 @@ test("base ativa não contém abreviações antigas no campo Parque / OM", () =>
     "PAMB-RJ": 2
   });
   assert.equal(payload.metadata.originOmChangesApplied, 113);
+});
+
+
+test("todos os dez Status Reais oficiais possuem Etapa Visual mapeada", () => {
+  assert.equal(
+    REAL_STATUS_OPTIONS.every(status => mapVisualStage(status) !== "ETAPA NÃO MAPEADA"),
+    true
+  );
+});
+
+test("painel separa retornos tardios de itens atrasados ainda sem retorno", () => {
+  const html = fs.readFileSync(
+    path.join(__dirname, "../governanca-reparaveis.html"),
+    "utf8"
+  );
+  const panel = fs.readFileSync(
+    path.join(__dirname, "../assets/js/repair-processes-panel.js"),
+    "utf8"
+  );
+  assert.match(html, /id="repKpiReturnedLate"/);
+  assert.match(html, /id="repKpiOverdue"/);
+  assert.match(html, /Retornaram com atraso/);
+  assert.match(html, /Atrasados — sem retorno/);
+  assert.match(panel, /item\.deadline\.code === "returned-late"/);
+  assert.match(panel, /item\.deadline\.code === "overdue"/);
+});
+
+test("metadados registram os dois grupos de atraso separadamente", () => {
+  assert.deepEqual(payload.metadata.returnKpiCounts, {
+    returnedLate: 50,
+    overdueNotReturned: 7
+  });
+  assert.equal(payload.metadata.returnKpiSplitVersion, 2);
 });

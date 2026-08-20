@@ -1,0 +1,26 @@
+{
+  "build": "20260820-overdue-split-r1",
+  "updatedAt": "2026-08-20",
+  "changes": {
+    "splitReturnKpi": true,
+    "returnedLateCardId": "repKpiReturnedLate",
+    "overdueNotReturnedCardId": "repKpiOverdue",
+    "status8VisualStage": "CABW/CABE (retorno)",
+    "status9VisualStage": "Brasil/ OM Requisitante",
+    "status10VisualStage": "Brasil/ OM Requisitante"
+  },
+  "counts": {
+    "records": 113,
+    "returnedLate": 50,
+    "overdueNotReturned": 7,
+    "returnedOnTime": 20,
+    "notAuthorized": 33,
+    "pendingWithinDeadline": 3
+  },
+  "validation": {
+    "officialStatus8Mapped": true,
+    "officialStatus9Mapped": true,
+    "officialStatus10Mapped": true,
+    "twoCardsInHtml": true
+  }
+}
