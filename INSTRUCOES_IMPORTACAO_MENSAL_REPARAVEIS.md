@@ -53,3 +53,17 @@ Variações de escrita presentes nas planilhas são canonicalizadas, mantendo o 
 2. Confirme que `governanca-reparaveis.html`, `assets/js/repair-import-core.js`, `assets/js/repair-processes-panel.js`, `assets/js/repair-processes-current-data.js` e `assets/data/repair-processes-current.json` aparecem como modificados no commit.
 3. Publique as regras do arquivo `FIRESTORE_REGRAS_MATERIAIS_REPARAVEIS.txt`, caso ainda não estejam vigentes.
 4. Após o deploy, use `Ctrl + F5`. O script possui cache-busting `?v=20260819-status-r1`.
+
+
+## Regra de prazo e atraso do retorno — atualização de 20/08/2026
+
+- **SVC AUTORIZADO / SOL RETORNO AS IS**: data da autorização do serviço ou do retorno AS IS.
+- **PRAZO ENTREGA (DIAS)**: quantidade de dias concedida para o retorno.
+- **DPE FINAL**: data final para a entrega do item.
+- **RETORNO MAT**: data em que o material efetivamente retornou.
+- Se qualquer um dos três elementos necessários para o prazo — autorização, quantidade de dias ou DPE — não estiver informado, o item deve ser classificado como **serviço ainda não autorizado / sem prazo de retorno**, sem atraso.
+- Se a data de retorno for posterior à DPE, classificar como **item retornou com atraso**.
+- Se não houver data de retorno e a data atual for posterior à DPE, classificar como **retorno atrasado — item ainda não retornou**.
+- Se a data de retorno for igual ou anterior à DPE, classificar como **item retornou no prazo**.
+- Correções confirmadas: PO `25T000160` com autorização em `13/07/2025`; PO `26T000800` com `#REF!` tratado como campo vazio.
+- A etapa visual `10-Encerrado` corresponde a **Brasil/ OM Requisitante**.

@@ -1,0 +1,29 @@
+PAINEL CABW — ATUALIZAÇÃO DOS PRAZOS E ATRASOS DE RETORNO
+
+Fonte: 19AGO - CONTROLE REPARO - SGT ROZENDO.xlsx
+Aba: BD Monitoramento
+Referência de cálculo: 20/08/2026
+
+RESULTADO:
+- Itens atualizados: 113
+- POs únicas: 60
+- Atrasados e ainda não retornados: 7
+- Retornaram com atraso: 50
+- Retornaram no prazo: 20
+- Serviço não autorizado / sem prazo: 33
+- Pendentes dentro do prazo: 3
+
+CORREÇÕES CONFIRMADAS:
+- PO 25T000160: data de autorização considerada em 13/07/2025.
+- PO 26T000800: #REF! tratado como campo vazio; sem prazo e sem atraso.
+
+ETAPA VISUAL:
+- 10-Encerrado -> Brasil/ OM Requisitante.
+
+PUBLICAÇÃO:
+1. Extraia o ZIP.
+2. Envie todo o conteúdo extraído à raiz do repositório.
+3. Confirme a presença deste arquivo e de BUILD_VERIFICACAO_REPARAVEIS_RETORNOS_20082026.json.
+4. Faça o commit.
+5. Aguarde o deploy do GitHub Pages.
+6. Pressione Ctrl + F5 no site.

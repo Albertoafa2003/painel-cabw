@@ -1,175 +1,162 @@
 <!DOCTYPE html>
+
 <html lang="pt-BR">
 <head>
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/css/bootstrap.min.css">
-  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
-  <link rel="stylesheet" type="text/css" href="css/style.css">
-  <script src="https://cdn.jsdelivr.net/npm/jspdf@2.5.1/dist/jspdf.umd.min.js"></script>
-  <script src="https://cdn.jsdelivr.net/npm/jspdf-autotable@3.8.2/dist/jspdf.plugin.autotable.min.js"></script>
-  <script src="https://cdn.sheetjs.com/xlsx-0.20.3/package/dist/xlsx.full.min.js"></script>
-  <title>Painel CABW - Materiais Reparáveis</title>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1, shrink-to-fit=no" name="viewport"/>
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/css/bootstrap.min.css" rel="stylesheet"/>
+<link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css" rel="stylesheet"/>
+<link href="css/style.css" rel="stylesheet" type="text/css"/>
+<script src="https://cdn.jsdelivr.net/npm/jspdf@2.5.1/dist/jspdf.umd.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/jspdf-autotable@3.8.2/dist/jspdf.plugin.autotable.min.js"></script>
+<script src="https://cdn.sheetjs.com/xlsx-0.20.3/package/dist/xlsx.full.min.js"></script>
+<title>Painel CABW - Materiais Reparáveis</title>
 </head>
 <body class="module-page governance-page governance-detail-page rep-page">
-
 <nav class="navbar navbar-expand-lg navbar-dark bg-primary">
-  <a class="navbar-brand" href="painel.html">Painel CABW</a>
-  <img src="cabw_logo.png" alt="Brasão da Comissão Aeronáutica Brasileira em Washington" class="header-logo">
-  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Alternar navegação"><span class="navbar-toggler-icon"></span></button>
-  <div class="collapse navbar-collapse" id="navbarNav">
-    <ul class="navbar-nav mr-auto">
-      <li class="nav-item"><a class="nav-link" href="painel.html">Início</a></li>
-      <li class="nav-item"><a class="nav-link" href="credito.html">Crédito Disponível</a></li>
-      <li class="nav-item"><a class="nav-link" href="contratos.html">Contratos</a></li>
-      <li class="nav-item"><a class="nav-link" href="processos.html">Processos de Contratação</a></li>
-      <li class="nav-item"><a class="nav-link" href="requisicoes.html">Requisições</a></li>
-      <li class="nav-item active"><a class="nav-link" href="governanca.html" aria-current="page">Governança</a></li>
-      <li class="nav-item admin-only" data-admin-only hidden><a class="nav-link" href="administracao.html">Administração do Sistema</a></li>
-    </ul>
-  </div>
+<a class="navbar-brand" href="painel.html">Painel CABW</a>
+<img alt="Brasão da Comissão Aeronáutica Brasileira em Washington" class="header-logo" src="cabw_logo.png"/>
+<button aria-controls="navbarNav" aria-expanded="false" aria-label="Alternar navegação" class="navbar-toggler" data-target="#navbarNav" data-toggle="collapse" type="button"><span class="navbar-toggler-icon"></span></button>
+<div class="collapse navbar-collapse" id="navbarNav">
+<ul class="navbar-nav mr-auto">
+<li class="nav-item"><a class="nav-link" href="painel.html">Início</a></li>
+<li class="nav-item"><a class="nav-link" href="credito.html">Crédito Disponível</a></li>
+<li class="nav-item"><a class="nav-link" href="contratos.html">Contratos</a></li>
+<li class="nav-item"><a class="nav-link" href="processos.html">Processos de Contratação</a></li>
+<li class="nav-item"><a class="nav-link" href="requisicoes.html">Requisições</a></li>
+<li class="nav-item active"><a aria-current="page" class="nav-link" href="governanca.html">Governança</a></li>
+<li class="nav-item admin-only" data-admin-only="" hidden=""><a class="nav-link" href="administracao.html">Administração do Sistema</a></li>
+</ul>
+</div>
 </nav>
-
-<main class="container-fluid mt-4 governance-detail-container rep-dashboard" aria-label="Controle de Materiais Reparáveis">
-  <a href="governanca.html" class="governance-back-link"><i class="bi bi-arrow-left"></i> Voltar para Governança</a>
-
-  <section class="governance-detail-card rep-hero-card">
-    <span class="governance-detail-card__icon" aria-hidden="true"><i class="bi bi-gear-wide-connected"></i></span>
-    <div>
-      <span class="governance-eyebrow">Painel de Governança Logística</span>
-      <h1>Controle de Materiais Reparáveis</h1>
-      <p>Acompanhe o fluxo logístico, a entrega do TDR, subprocessos e fichas, o prazo de reparo e o retorno dos materiais enviados às oficinas reparadoras. POs iniciadas em 24T estão fora do escopo atual.</p>
-      <p class="governance-detail-card__status" id="repSourceInfo">Carregando a base de dados...</p>
-    </div>
-    <div class="rep-hero-actions">
-      <button type="button" class="rep-btn rep-btn--primary" id="repImportToggle" data-repair-admin hidden><i class="bi bi-file-earmark-arrow-up"></i> Importar planilha mensal</button>
-      <button type="button" class="rep-btn rep-btn--outline" id="repManualNew" data-repair-admin hidden><i class="bi bi-plus-lg"></i> Cadastrar item manual</button>
-    </div>
-  </section>
-
-  <section class="rep-card rep-import-card" id="repImportPanel" hidden aria-label="Importação mensal da planilha de materiais reparáveis">
-    <div class="rep-card-heading">
-      <span class="rep-card-icon"><i class="bi bi-cloud-arrow-up"></i></span>
-      <div><h2>Importação mensal</h2><p>Selecione a planilha .xlsx. A importação usa somente a aba “BD Monitoramento”, faz upsert pela chave PO + REQUISIÇÃO + PN + SN e não exclui automaticamente itens ausentes.</p></div>
-    </div>
-    <div class="rep-import-fields">
-      <label><span>Arquivo .xlsx</span><input type="file" id="repImportFile" class="form-control-file" accept=".xlsx,application/vnd.openxmlformats-officedocument.spreadsheetml.sheet"></label>
-      <label><span>Competência / data de referência</span><input type="date" id="repImportDate" class="form-control"></label>
-      <div class="rep-import-actions">
-        <button type="button" class="rep-btn rep-btn--outline" id="repImportPreviewButton"><i class="bi bi-search"></i> Pré-visualizar</button>
-        <button type="button" class="rep-btn rep-btn--primary" id="repImportCommitButton" disabled><i class="bi bi-cloud-check"></i> Confirmar importação</button>
-        <button type="button" class="rep-btn rep-btn--light" id="repImportCancelButton">Fechar</button>
-      </div>
-    </div>
-    <div class="rep-form-message" id="repImportMessage" aria-live="polite"></div>
-    <div class="rep-import-preview" id="repImportPreviewPanel" hidden>
-      <h3>Pré-visualização do lote</h3>
-      <div class="rep-import-preview-grid" id="repImportPreviewGrid"></div>
-      <div class="rep-import-warnings" id="repImportWarnings"></div>
-    </div>
-    <div class="rep-import-history"><h3>Últimas importações</h3><div id="repImportHistory"></div></div>
-  </section>
-
-  <section class="rep-control-grid" aria-label="Filtros e relatórios de materiais reparáveis">
-    <article class="rep-card rep-filter-card">
-      <div class="rep-card-heading"><span class="rep-card-icon"><i class="bi bi-funnel"></i></span><div><h2>Consulta e filtros</h2><p>Combine filtros de identificação, situação técnica, TDR, subprocesso/ficha, reparador e prazo.</p></div></div>
-      <div class="rep-filter-grid rep-filter-grid--expanded">
-        <label><span>Empenho / PO</span><input type="search" id="repPoFilter" class="form-control" placeholder="Ex.: 25T001234"></label>
-        <label><span>Requisição</span><input type="search" id="repRequisitionFilter" class="form-control" placeholder="Ex.: LSQR..."></label>
-        <label><span>Status real</span><select id="repStatusFilter" class="form-control"></select></label>
-        <label><span>Etapa visual</span><select id="repStageFilter" class="form-control"></select></label>
-        <label><span>Parque / OM</span><select id="repOriginFilter" class="form-control"></select></label>
-        <label><span>Reparador</span><select id="repRepairerFilter" class="form-control"></select></label>
-        <label><span>Condição</span><select id="repConditionFilter" class="form-control"></select></label>
-        <label><span>Taxa de avaliação</span><select id="repEvaluationFeeFilter" class="form-control"><option value="">Informada ou não informada</option><option value="informed">Informada</option><option value="missing">Não informada</option></select></label>
-        <label><span>Situação do TDR</span><select id="repTdrFilter" class="form-control"><option value="">Todas as situações</option><option value="delivered">TDR entregue</option><option value="overdue">TDR atrasado</option><option value="due-soon">Próximo do vencimento</option><option value="pending">Pendente no prazo</option><option value="not-calculable">Prazo não informado</option></select></label>
-        <label><span>Situação documental</span><select id="repDocumentFilter" class="form-control"></select></label>
-        <label><span>CAGE Code</span><select id="repCageFilter" class="form-control"></select></label>
-        <label><span>Situação do retorno</span><select id="repDeadlineFilter" class="form-control"><option value="">Todos os prazos</option><option value="overdue">Retorno atrasado</option><option value="due-30">Retorno em até 30 dias</option><option value="on-time">No prazo</option><option value="no-date">Sem DPE</option><option value="delivered-indicator">DPE indica entregue</option></select></label>
-        <label><span>Ordenar por</span><select id="repSort" class="form-control"><option value="updated">Atualização mais recente</option><option value="dpe">DPE / retorno previsto</option><option value="tdr">Prazo do TDR</option><option value="po">Empenho / PO</option><option value="requisition">Requisição</option><option value="repairer">Reparador</option></select></label>
-        <label class="rep-filter-wide"><span>Busca geral</span><input type="search" id="repSearch" class="form-control" placeholder="PO, requisição, PN, SN, OM, tracking, CAGE, reparador, status ou dado complementar"></label>
-        <label class="rep-checkbox-label"><input type="checkbox" id="repIncludeAbsent"><span>Incluir registros ausentes do lote atual</span></label>
-      </div>
-      <div class="rep-filter-actions"><button type="button" class="rep-btn rep-btn--light" id="repClearFilters"><i class="bi bi-arrow-counterclockwise"></i> Limpar filtros</button><span id="repResults">0 item(ns) exibido(s)</span></div>
-    </article>
-
-    <article class="rep-card rep-report-card">
-      <div class="rep-card-heading"><span class="rep-card-icon"><i class="bi bi-file-earmark-pdf"></i></span><div><h2>Relatórios em PDF</h2><p>Os relatórios respeitam todos os filtros ativos e identificam o arquivo e o lote de origem.</p></div></div>
-      <div class="rep-report-buttons"><button type="button" class="rep-btn rep-btn--primary" id="repPdfSummary"><i class="bi bi-bar-chart"></i> PDF gerencial</button><button type="button" class="rep-btn rep-btn--outline" id="repPdfDetailed"><i class="bi bi-table"></i> PDF detalhado</button></div>
-      <div class="rep-report-note"><i class="bi bi-info-circle"></i><span>Informações ausentes são exibidas como “Não informado”, nunca como zero.</span></div>
-    </article>
-  </section>
-
-  <section class="rep-kpi-grid rep-kpi-grid--eight" aria-label="Indicadores dos materiais reparáveis">
-    <article class="rep-kpi-card"><span class="rep-kpi-icon"><i class="bi bi-box-seam"></i></span><div><span>Itens controlados</span><strong id="repKpiTotal">0</strong><small>resultado dos filtros</small></div></article>
-    <article class="rep-kpi-card"><span class="rep-kpi-icon"><i class="bi bi-geo-alt"></i></span><div><span>CABW/CABE</span><strong id="repKpiRepair">0</strong><small>item recebido no retorno</small></div></article>
-    <article class="rep-kpi-card"><span class="rep-kpi-icon"><i class="bi bi-truck"></i></span><div><span>Em trânsito</span><strong id="repKpiTransit">0</strong><small>trânsito ao reparador</small></div></article>
-    <article class="rep-kpi-card rep-kpi-card--alert"><span class="rep-kpi-icon"><i class="bi bi-exclamation-triangle"></i></span><div><span>Retornos atrasados</span><strong id="repKpiOverdue">0</strong><small>DPE anterior à data atual</small></div></article>
-    <article class="rep-kpi-card"><span class="rep-kpi-icon"><i class="bi bi-box-arrow-in-down"></i></span><div><span>Brasil / CTLA</span><strong id="repKpiCompleted">0</strong><small>item recebido no CTLA</small></div></article>
-    <article class="rep-kpi-card rep-kpi-card--alert"><span class="rep-kpi-icon"><i class="bi bi-calendar2-x"></i></span><div><span>TDR em alerta</span><strong id="repKpiTdr">0</strong><small>atrasado ou até 7 dias</small></div></article>
-    <article class="rep-kpi-card rep-kpi-card--money"><span class="rep-kpi-icon"><i class="bi bi-currency-dollar"></i></span><div><span>Valor dos itens</span><strong id="repKpiItemValue">Não informado</strong><small id="repKpiItemValueNote">sem valores válidos</small></div></article>
-    <article class="rep-kpi-card rep-kpi-card--money"><span class="rep-kpi-icon"><i class="bi bi-receipt"></i></span><div><span>Reparos contratados</span><strong id="repKpiRepairValue">Não informado</strong><small id="repKpiRepairValueNote">sem valores válidos</small></div></article>
-  </section>
-
-  <section class="rep-card rep-flow-card" aria-label="Fluxo logístico dos materiais reparáveis">
-    <div class="rep-section-heading"><div><span class="governance-eyebrow">Status real convertido em etapa visual</span><h2>Fluxo logístico dos itens</h2><p>Clique em uma etapa para filtrar os itens. A etapa visual representa a localização do material e pode abranger mais de um Status Real. Os status 8, 9 e 10 permanecem em “ETAPA NÃO MAPEADA”, conforme a correlação fornecida.</p></div><button type="button" class="rep-link-button" id="repClearFlow" hidden>Remover filtro do fluxo</button></div>
-    <div class="rep-flow-grid" id="repFlowGrid"></div>
-  </section>
-
-  <section class="rep-insight-grid" aria-label="Resumo gerencial dos materiais reparáveis">
-    <article class="rep-card"><div class="rep-section-heading"><div><span class="governance-eyebrow">Execução</span><h2>Resumo por status real</h2></div></div><div id="repStatusSummary" class="rep-summary-list"></div></article>
-    <article class="rep-card"><div class="rep-section-heading"><div><span class="governance-eyebrow">Prazos e divergências</span><h2>Itens com maior atenção</h2></div></div><div id="repAttentionList" class="rep-attention-list"></div></article>
-  </section>
-
-  <section class="rep-card rep-quality-card" aria-label="Qualidade dos dados">
-    <div class="rep-section-heading"><div><span class="governance-eyebrow">Qualidade e completude</span><h2>Avisos da base</h2><p>Divergências são sinalizadas sem substituir silenciosamente as informações da planilha.</p></div></div>
-    <div class="rep-quality-grid" id="repQualityGrid"></div>
-  </section>
-
-  <section class="rep-card rep-table-card" aria-label="Detalhamento dos processos de manutenção">
-    <div class="rep-section-heading rep-section-heading--table"><div><span class="governance-eyebrow">Detalhamento</span><h2>Processos e itens reparáveis</h2><p>Clique em “ver detalhes” para consultar todos os grupos de informação e os metadados da importação.</p></div><span id="repTableCount">0 registro(s)</span></div>
-    <div class="table-responsive rep-table-wrap"><table class="table rep-table rep-table--monitoring" id="repTable"><thead><tr><th>Empenho / PO</th><th>Requisição</th><th>PN / SN</th><th>OM</th><th>Condição</th><th>Status / etapa</th><th>Reparador</th><th>TDR</th><th>DPE / retorno</th><th>Ações</th></tr></thead><tbody></tbody></table></div>
-    <div class="rep-mobile-list" id="repMobileList"></div>
-    <div class="rep-empty-state" id="repEmptyState" hidden><i class="bi bi-inboxes"></i><h3>Nenhum item encontrado</h3><p>Ajuste os filtros ou importe uma planilha mensal válida.</p></div>
-  </section>
+<main aria-label="Controle de Materiais Reparáveis" class="container-fluid mt-4 governance-detail-container rep-dashboard">
+<a class="governance-back-link" href="governanca.html"><i class="bi bi-arrow-left"></i> Voltar para Governança</a>
+<section class="governance-detail-card rep-hero-card">
+<span aria-hidden="true" class="governance-detail-card__icon"><i class="bi bi-gear-wide-connected"></i></span>
+<div>
+<span class="governance-eyebrow">Painel de Governança Logística</span>
+<h1>Controle de Materiais Reparáveis</h1>
+<p>Acompanhe o fluxo logístico, a entrega do TDR, subprocessos e fichas, o prazo de reparo e o retorno dos materiais enviados às oficinas reparadoras. POs iniciadas em 24T estão fora do escopo atual.</p>
+<p class="governance-detail-card__status" id="repSourceInfo">Carregando a base de dados...</p>
+</div>
+<div class="rep-hero-actions">
+<button class="rep-btn rep-btn--primary" data-repair-admin="" hidden="" id="repImportToggle" type="button"><i class="bi bi-file-earmark-arrow-up"></i> Importar planilha mensal</button>
+<button class="rep-btn rep-btn--outline" data-repair-admin="" hidden="" id="repManualNew" type="button"><i class="bi bi-plus-lg"></i> Cadastrar item manual</button>
+</div>
+</section>
+<section aria-label="Importação mensal da planilha de materiais reparáveis" class="rep-card rep-import-card" hidden="" id="repImportPanel">
+<div class="rep-card-heading">
+<span class="rep-card-icon"><i class="bi bi-cloud-arrow-up"></i></span>
+<div><h2>Importação mensal</h2><p>Selecione a planilha .xlsx. A importação usa somente a aba “BD Monitoramento”, faz upsert pela chave PO + REQUISIÇÃO + PN + SN e não exclui automaticamente itens ausentes.</p></div>
+</div>
+<div class="rep-import-fields">
+<label><span>Arquivo .xlsx</span><input accept=".xlsx,application/vnd.openxmlformats-officedocument.spreadsheetml.sheet" class="form-control-file" id="repImportFile" type="file"/></label>
+<label><span>Competência / data de referência</span><input class="form-control" id="repImportDate" type="date"/></label>
+<div class="rep-import-actions">
+<button class="rep-btn rep-btn--outline" id="repImportPreviewButton" type="button"><i class="bi bi-search"></i> Pré-visualizar</button>
+<button class="rep-btn rep-btn--primary" disabled="" id="repImportCommitButton" type="button"><i class="bi bi-cloud-check"></i> Confirmar importação</button>
+<button class="rep-btn rep-btn--light" id="repImportCancelButton" type="button">Fechar</button>
+</div>
+</div>
+<div aria-live="polite" class="rep-form-message" id="repImportMessage"></div>
+<div class="rep-import-preview" hidden="" id="repImportPreviewPanel">
+<h3>Pré-visualização do lote</h3>
+<div class="rep-import-preview-grid" id="repImportPreviewGrid"></div>
+<div class="rep-import-warnings" id="repImportWarnings"></div>
+</div>
+<div class="rep-import-history"><h3>Últimas importações</h3><div id="repImportHistory"></div></div>
+</section>
+<section aria-label="Filtros e relatórios de materiais reparáveis" class="rep-control-grid">
+<article class="rep-card rep-filter-card">
+<div class="rep-card-heading"><span class="rep-card-icon"><i class="bi bi-funnel"></i></span><div><h2>Consulta e filtros</h2><p>Combine filtros de identificação, situação técnica, TDR, subprocesso/ficha, reparador e prazo.</p></div></div>
+<div class="rep-filter-grid rep-filter-grid--expanded">
+<label><span>Empenho / PO</span><input class="form-control" id="repPoFilter" placeholder="Ex.: 25T001234" type="search"/></label>
+<label><span>Requisição</span><input class="form-control" id="repRequisitionFilter" placeholder="Ex.: LSQR..." type="search"/></label>
+<label><span>Status real</span><select class="form-control" id="repStatusFilter"></select></label>
+<label><span>Etapa visual</span><select class="form-control" id="repStageFilter"></select></label>
+<label><span>Parque / OM</span><select class="form-control" id="repOriginFilter"></select></label>
+<label><span>Reparador</span><select class="form-control" id="repRepairerFilter"></select></label>
+<label><span>Condição</span><select class="form-control" id="repConditionFilter"></select></label>
+<label><span>Taxa de avaliação</span><select class="form-control" id="repEvaluationFeeFilter"><option value="">Informada ou não informada</option><option value="informed">Informada</option><option value="missing">Não informada</option></select></label>
+<label><span>Situação do TDR</span><select class="form-control" id="repTdrFilter"><option value="">Todas as situações</option><option value="delivered">TDR entregue</option><option value="overdue">TDR atrasado</option><option value="due-soon">Próximo do vencimento</option><option value="pending">Pendente no prazo</option><option value="not-calculable">Prazo não informado</option></select></label>
+<label><span>Situação documental</span><select class="form-control" id="repDocumentFilter"></select></label>
+<label><span>CAGE Code</span><select class="form-control" id="repCageFilter"></select></label>
+<label><span>Situação do retorno</span><select class="form-control" id="repDeadlineFilter"><option value="">Todas as situações de retorno</option><option value="any-late">Todos os atrasos</option><option value="overdue">Atrasado — ainda não retornou</option><option value="returned-late">Retornou com atraso</option><option value="returned-on-time">Retornou no prazo</option><option value="due-today">Retorno previsto para hoje</option><option value="due-30">Retorno em até 30 dias</option><option value="on-time">Prazo superior a 30 dias</option><option value="not-authorized">Serviço não autorizado / sem prazo</option></select></label>
+<label><span>Ordenar por</span><select class="form-control" id="repSort"><option value="updated">Atualização mais recente</option><option value="dpe">DPE / retorno previsto</option><option value="tdr">Prazo do TDR</option><option value="po">Empenho / PO</option><option value="requisition">Requisição</option><option value="repairer">Reparador</option></select></label>
+<label class="rep-filter-wide"><span>Busca geral</span><input class="form-control" id="repSearch" placeholder="PO, requisição, PN, SN, OM, tracking, CAGE, reparador, status ou dado complementar" type="search"/></label>
+<label class="rep-checkbox-label"><input id="repIncludeAbsent" type="checkbox"/><span>Incluir registros ausentes do lote atual</span></label>
+</div>
+<div class="rep-filter-actions"><button class="rep-btn rep-btn--light" id="repClearFilters" type="button"><i class="bi bi-arrow-counterclockwise"></i> Limpar filtros</button><span id="repResults">0 item(ns) exibido(s)</span></div>
+</article>
+<article class="rep-card rep-report-card">
+<div class="rep-card-heading"><span class="rep-card-icon"><i class="bi bi-file-earmark-pdf"></i></span><div><h2>Relatórios em PDF</h2><p>Os relatórios respeitam todos os filtros ativos e identificam o arquivo e o lote de origem.</p></div></div>
+<div class="rep-report-buttons"><button class="rep-btn rep-btn--primary" id="repPdfSummary" type="button"><i class="bi bi-bar-chart"></i> PDF gerencial</button><button class="rep-btn rep-btn--outline" id="repPdfDetailed" type="button"><i class="bi bi-table"></i> PDF detalhado</button></div>
+<div class="rep-report-note"><i class="bi bi-info-circle"></i><span>Informações ausentes são exibidas como “Não informado”, nunca como zero.</span></div>
+</article>
+</section>
+<section aria-label="Indicadores dos materiais reparáveis" class="rep-kpi-grid rep-kpi-grid--eight">
+<article class="rep-kpi-card"><span class="rep-kpi-icon"><i class="bi bi-box-seam"></i></span><div><span>Itens controlados</span><strong id="repKpiTotal">0</strong><small>resultado dos filtros</small></div></article>
+<article class="rep-kpi-card"><span class="rep-kpi-icon"><i class="bi bi-geo-alt"></i></span><div><span>CABW/CABE</span><strong id="repKpiRepair">0</strong><small>item recebido no retorno</small></div></article>
+<article class="rep-kpi-card"><span class="rep-kpi-icon"><i class="bi bi-truck"></i></span><div><span>Em trânsito</span><strong id="repKpiTransit">0</strong><small>trânsito ao reparador</small></div></article>
+<article class="rep-kpi-card rep-kpi-card--alert"><span class="rep-kpi-icon"><i class="bi bi-exclamation-triangle"></i></span><div><span>Retornos atrasados</span><strong id="repKpiOverdue">0</strong><small>atuais ou retornados após o prazo</small></div></article>
+<article class="rep-kpi-card"><span class="rep-kpi-icon"><i class="bi bi-box-arrow-in-down"></i></span><div><span>Brasil / CTLA</span><strong id="repKpiCompleted">0</strong><small>item recebido no CTLA</small></div></article>
+<article class="rep-kpi-card rep-kpi-card--alert"><span class="rep-kpi-icon"><i class="bi bi-calendar2-x"></i></span><div><span>TDR em alerta</span><strong id="repKpiTdr">0</strong><small>atrasado ou até 7 dias</small></div></article>
+<article class="rep-kpi-card rep-kpi-card--money"><span class="rep-kpi-icon"><i class="bi bi-currency-dollar"></i></span><div><span>Valor dos itens</span><strong id="repKpiItemValue">Não informado</strong><small id="repKpiItemValueNote">sem valores válidos</small></div></article>
+<article class="rep-kpi-card rep-kpi-card--money"><span class="rep-kpi-icon"><i class="bi bi-receipt"></i></span><div><span>Reparos contratados</span><strong id="repKpiRepairValue">Não informado</strong><small id="repKpiRepairValueNote">sem valores válidos</small></div></article>
+</section>
+<section aria-label="Fluxo logístico dos materiais reparáveis" class="rep-card rep-flow-card">
+<div class="rep-section-heading"><div><span class="governance-eyebrow">Status real convertido em etapa visual</span><h2>Fluxo logístico dos itens</h2><p>Clique em uma etapa para filtrar os itens. A etapa visual representa a localização do material e pode abranger mais de um Status Real. O Status 10-Encerrado representa o retorno à OM Requisitante no Brasil; somente os Status 8 e 9 permanecem em “ETAPA NÃO MAPEADA”.</p></div><button class="rep-link-button" hidden="" id="repClearFlow" type="button">Remover filtro do fluxo</button></div>
+<div class="rep-flow-grid" id="repFlowGrid"></div>
+</section>
+<section aria-label="Resumo gerencial dos materiais reparáveis" class="rep-insight-grid">
+<article class="rep-card"><div class="rep-section-heading"><div><span class="governance-eyebrow">Execução</span><h2>Resumo por status real</h2></div></div><div class="rep-summary-list" id="repStatusSummary"></div></article>
+<article class="rep-card"><div class="rep-section-heading"><div><span class="governance-eyebrow">Prazos e divergências</span><h2>Itens com maior atenção</h2></div></div><div class="rep-attention-list" id="repAttentionList"></div></article>
+</section>
+<section aria-label="Qualidade dos dados" class="rep-card rep-quality-card">
+<div class="rep-section-heading"><div><span class="governance-eyebrow">Qualidade e completude</span><h2>Avisos da base</h2><p>Divergências são sinalizadas sem substituir silenciosamente as informações da planilha.</p></div></div>
+<div class="rep-quality-grid" id="repQualityGrid"></div>
+</section>
+<section aria-label="Detalhamento dos processos de manutenção" class="rep-card rep-table-card">
+<div class="rep-section-heading rep-section-heading--table"><div><span class="governance-eyebrow">Detalhamento</span><h2>Processos e itens reparáveis</h2><p>Clique em “ver detalhes” para consultar todos os grupos de informação e os metadados da importação.</p></div><span id="repTableCount">0 registro(s)</span></div>
+<div class="table-responsive rep-table-wrap"><table class="table rep-table rep-table--monitoring" id="repTable"><thead><tr><th>Empenho / PO</th><th>Requisição</th><th>PN / SN</th><th>OM</th><th>Condição</th><th>Status / etapa</th><th>Reparador</th><th>TDR</th><th>DPE / retorno</th><th>Ações</th></tr></thead><tbody></tbody></table></div>
+<div class="rep-mobile-list" id="repMobileList"></div>
+<div class="rep-empty-state" hidden="" id="repEmptyState"><i class="bi bi-inboxes"></i><h3>Nenhum item encontrado</h3><p>Ajuste os filtros ou importe uma planilha mensal válida.</p></div>
+</section>
 </main>
-
 <dialog class="rep-dialog rep-detail-dialog" id="repDetailDialog">
-  <div class="rep-dialog-shell rep-dialog-shell--wide">
-    <header class="rep-dialog-header"><div><span class="governance-eyebrow">Detalhamento do item</span><h2 id="repDetailTitle">Material reparável</h2><p>Dados agrupados por identificação, logística, TDR, execução, retorno e auditoria.</p></div><button type="button" class="rep-dialog-close" id="repDetailClose" aria-label="Fechar"><i class="bi bi-x-lg"></i></button></header>
-    <div class="rep-detail-grid" id="repDetailContent"></div>
-    <footer class="rep-dialog-footer"><button type="button" class="rep-btn rep-btn--outline" id="repDetailEdit" hidden><i class="bi bi-pencil"></i> Complementar dados</button><button type="button" class="rep-btn rep-btn--light" onclick="document.getElementById('repDetailDialog').close()">Fechar</button></footer>
-  </div>
+<div class="rep-dialog-shell rep-dialog-shell--wide">
+<header class="rep-dialog-header"><div><span class="governance-eyebrow">Detalhamento do item</span><h2 id="repDetailTitle">Material reparável</h2><p>Dados agrupados por identificação, logística, TDR, execução, retorno e auditoria.</p></div><button aria-label="Fechar" class="rep-dialog-close" id="repDetailClose" type="button"><i class="bi bi-x-lg"></i></button></header>
+<div class="rep-detail-grid" id="repDetailContent"></div>
+<footer class="rep-dialog-footer"><button class="rep-btn rep-btn--outline" hidden="" id="repDetailEdit" type="button"><i class="bi bi-pencil"></i> Complementar dados</button><button class="rep-btn rep-btn--light" onclick="document.getElementById('repDetailDialog').close()" type="button">Fechar</button></footer>
+</div>
 </dialog>
-
 <dialog class="rep-dialog" id="repEditDialog">
-  <form method="dialog" class="rep-dialog-shell" id="repEditForm">
-    <input type="hidden" id="repEditRecordId">
-    <header class="rep-dialog-header"><div><span class="governance-eyebrow">Dados complementares</span><h2 id="repEditTitle">Complementar item</h2><p>Campos importados da planilha são preservados. Complete apenas informações manuais ou de outras fontes.</p></div><button type="button" class="rep-dialog-close" id="repEditClose" aria-label="Fechar"><i class="bi bi-x-lg"></i></button></header>
-    <div class="rep-form-grid">
-      <label><span>Empenho / PO *</span><input id="repEditPo" class="form-control" required maxlength="100"></label>
-      <label><span>Requisição *</span><input id="repEditRequisition" class="form-control" required maxlength="100"></label>
-      <label><span>Part Number *</span><input id="repEditPn" class="form-control" required maxlength="150"></label>
-      <label><span>Serial Number *</span><input id="repEditSn" class="form-control" required maxlength="150"></label>
-      <label><span>Número do processo</span><input id="repEditProcess" class="form-control" maxlength="120" placeholder="Não informado"></label>
-      <label><span>Parque / OM</span><input id="repEditOrigin" class="form-control" maxlength="120"></label>
-      <label class="rep-form-wide"><span>Descrição do item</span><textarea id="repEditDescription" class="form-control" rows="2" maxlength="800" placeholder="Não informado"></textarea></label>
-      <label><span>Status real</span><select id="repEditStatus" class="form-control"><option value="">Não informado</option><option value="1-Empenho Aprovado">1-Empenho Aprovado</option><option value="2-Item Chegou CTLA">2-Item Chegou CTLA</option><option value="3-Item Exp CTLA">3-Item Exp CTLA</option><option value="4-Item chegou CABW/CABE">4-Item chegou CABW/CABE</option><option value="5-Item Exp Reparador">5-Item Exp Reparador</option><option value="6-Item no Reparador">6-Item no Reparador</option><option value="7-Item Recebido">7-Item Recebido</option><option value="8-Embarcado">8-Embarcado</option><option value="9-Recebido Parque">9-Recebido Parque</option><option value="10-Encerrado">10-Encerrado</option></select></label>
-      <label><span>Reparador</span><input id="repEditRepairer" class="form-control" maxlength="250"></label>
-      <label><span>CAGE Code</span><input id="repEditCage" class="form-control" maxlength="80"></label>
-      <label><span>Moeda</span><select id="repEditCurrency" class="form-control"><option value="">Não informada</option><option value="USD">USD</option><option value="EUR">EUR</option><option value="BRL">BRL</option><option value="GBP">GBP</option></select></label>
-      <label><span>Valor estimado do item</span><input id="repEditItemValue" type="number" class="form-control" min="0" step="0.01" placeholder="Não informado"></label>
-      <label><span>Valor do reparo contratado</span><input id="repEditRepairValue" type="number" class="form-control" min="0" step="0.01" placeholder="Não informado"></label>
-      <label class="rep-form-wide"><span>Observações manuais</span><textarea id="repEditNotes" class="form-control" rows="3" maxlength="1500"></textarea></label>
-    </div>
-    <div class="rep-form-message" id="repEditMessage" aria-live="polite"></div>
-    <footer class="rep-dialog-footer"><button type="button" class="rep-btn rep-btn--light" id="repEditCancel">Cancelar</button><button type="submit" class="rep-btn rep-btn--primary"><i class="bi bi-cloud-check"></i> Salvar no Firestore</button></footer>
-  </form>
+<form class="rep-dialog-shell" id="repEditForm" method="dialog">
+<input id="repEditRecordId" type="hidden"/>
+<header class="rep-dialog-header"><div><span class="governance-eyebrow">Dados complementares</span><h2 id="repEditTitle">Complementar item</h2><p>Campos importados da planilha são preservados. Complete apenas informações manuais ou de outras fontes.</p></div><button aria-label="Fechar" class="rep-dialog-close" id="repEditClose" type="button"><i class="bi bi-x-lg"></i></button></header>
+<div class="rep-form-grid">
+<label><span>Empenho / PO *</span><input class="form-control" id="repEditPo" maxlength="100" required=""/></label>
+<label><span>Requisição *</span><input class="form-control" id="repEditRequisition" maxlength="100" required=""/></label>
+<label><span>Part Number *</span><input class="form-control" id="repEditPn" maxlength="150" required=""/></label>
+<label><span>Serial Number *</span><input class="form-control" id="repEditSn" maxlength="150" required=""/></label>
+<label><span>Número do processo</span><input class="form-control" id="repEditProcess" maxlength="120" placeholder="Não informado"/></label>
+<label><span>Parque / OM</span><input class="form-control" id="repEditOrigin" maxlength="120"/></label>
+<label class="rep-form-wide"><span>Descrição do item</span><textarea class="form-control" id="repEditDescription" maxlength="800" placeholder="Não informado" rows="2"></textarea></label>
+<label><span>Status real</span><select class="form-control" id="repEditStatus"><option value="">Não informado</option><option value="1-Empenho Aprovado">1-Empenho Aprovado</option><option value="2-Item Chegou CTLA">2-Item Chegou CTLA</option><option value="3-Item Exp CTLA">3-Item Exp CTLA</option><option value="4-Item chegou CABW/CABE">4-Item chegou CABW/CABE</option><option value="5-Item Exp Reparador">5-Item Exp Reparador</option><option value="6-Item no Reparador">6-Item no Reparador</option><option value="7-Item Recebido">7-Item Recebido</option><option value="8-Embarcado">8-Embarcado</option><option value="9-Recebido Parque">9-Recebido Parque</option><option value="10-Encerrado">10-Encerrado</option></select></label>
+<label><span>Reparador</span><input class="form-control" id="repEditRepairer" maxlength="250"/></label>
+<label><span>CAGE Code</span><input class="form-control" id="repEditCage" maxlength="80"/></label>
+<label><span>Moeda</span><select class="form-control" id="repEditCurrency"><option value="">Não informada</option><option value="USD">USD</option><option value="EUR">EUR</option><option value="BRL">BRL</option><option value="GBP">GBP</option></select></label>
+<label><span>Valor estimado do item</span><input class="form-control" id="repEditItemValue" min="0" placeholder="Não informado" step="0.01" type="number"/></label>
+<label><span>Valor do reparo contratado</span><input class="form-control" id="repEditRepairValue" min="0" placeholder="Não informado" step="0.01" type="number"/></label>
+<label class="rep-form-wide"><span>Observações manuais</span><textarea class="form-control" id="repEditNotes" maxlength="1500" rows="3"></textarea></label>
+</div>
+<div aria-live="polite" class="rep-form-message" id="repEditMessage"></div>
+<footer class="rep-dialog-footer"><button class="rep-btn rep-btn--light" id="repEditCancel" type="button">Cancelar</button><button class="rep-btn rep-btn--primary" type="submit"><i class="bi bi-cloud-check"></i> Salvar no Firestore</button></footer>
+</form>
 </dialog>
-
 <script src="https://code.jquery.com/jquery-3.6.0.slim.min.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/js/bootstrap.bundle.min.js"></script>
-<script type="module" src="assets/js/auth.js"></script>
-<script type="module" src="assets/js/repair-processes-panel.js?v=20260819-status-r1"></script>
+<script src="assets/js/auth.js" type="module"></script>
+<script src="assets/js/repair-processes-panel.js?v=20260820-return-r1" type="module"></script>
 </body>
 </html>
