@@ -7,12 +7,12 @@ import {
 import {
   REQUIRED_HEADERS, IMPORTED_FIELDS, MANUAL_FIELDS, REAL_STATUS_OPTIONS, VISUAL_STAGE_OPTIONS,
   normalizeNullable, normalizeIdentifier, normalizeHeader, normalizeSearch, parseFlexibleNumber,
-  parseDateToIso, mapVisualStage, deriveOriginOm, normalizeControlValue, isPo2024,
+  parseDateToIso, mapVisualStage, deriveOriginOm, normalizeOriginOm, normalizeControlValue, isPo2024,
   normalizeRealStatus, normalizeRepairCondition, normalizeEvaluationFee, calculateTdrStatus,
   classifyDocumentaryStatus, calculateReturnDeadline, stableKeySource, sha256Hex,
   importedDataEqual, contextualServiceDateLabel, moneyDisplay, textDisplay
-} from "./repair-import-core.js?v=20260820-return-r1";
-import { BUNDLED_REPAIR_DATA } from "./repair-processes-current-data.js?v=20260820-return-r1";
+} from "./repair-import-core.js?v=20260820-origin-om-r1";
+import { BUNDLED_REPAIR_DATA } from "./repair-processes-current-data.js?v=20260820-origin-om-r1";
 
 const firebaseConfig = {
   apiKey: "AIzaSyDZehcWZwnwlGG5LR6y7_hKAVErHiHDhXM",
@@ -117,6 +117,10 @@ function activeCondition(record) {
   return normalizeRepairCondition(sourceCondition(record)).value;
 }
 
+function activeOriginOm(record) {
+  return normalizeOriginOm(record?.originOm).value || normalizeNullable(record?.originOm);
+}
+
 function derived(record) {
   const visualStage = mapVisualStage(activeRealStatus(record));
   const tdr = calculateTdrStatus(record.tdrDueDate, record.tdrDeliveryRaw, record.tdrSentDate, TODAY_ISO);
@@ -126,7 +130,14 @@ function derived(record) {
 }
 
 function recordFromSnapshot(snapshot) {
-  return { id: snapshot.id, ...(snapshot.data() || {}) };
+  const record = { id: snapshot.id, ...(snapshot.data() || {}) };
+  const origin = normalizeOriginOm(record.originOm);
+  return {
+    ...record,
+    originOm: origin.value || record.originOm || null,
+    originOmSource: record.originOmSource || origin.raw || record.originOm || null,
+    originOmShortCode: record.originOmShortCode || origin.shortCode || null
+  };
 }
 
 function recordInCurrentScope(record) {
@@ -206,7 +217,10 @@ function bundleSourceLabel() {
   const returns = metadata.returnStatusSourceFileName
     ? `prazos/retornos ${metadata.returnStatusSourceFileName} (${formatDate(metadata.returnStatusReferenceDate || metadata.referenceDate)})`
     : null;
-  return [base, status, mapping, returns].filter(Boolean).join(" · ");
+  const origins = metadata.originOmMappingUpdatedAt
+    ? `Parques/OM normalizados (${formatDate(metadata.originOmMappingUpdatedAt)})`
+    : null;
+  return [base, status, mapping, returns, origins].filter(Boolean).join(" · ");
 }
 
 function reportSourceLabel() {
@@ -259,7 +273,7 @@ function populateFilters() {
   )).sort((a, b) => a.localeCompare(b, "pt-BR"));
   fillSelect(els.statusFilter, statuses, "Todos os status");
   fillSelect(els.stageFilter, VISUAL_STAGE_OPTIONS, "Todas as etapas");
-  fillSelect(els.originFilter, uniqueValues("originOm"), "Todas as OMs");
+  fillSelect(els.originFilter, Array.from(new Set(state.records.map(activeOriginOm).filter(Boolean))).sort((a, b) => String(a).localeCompare(String(b), "pt-BR", { numeric: true })), "Todas as OMs");
   fillSelect(els.repairerFilter, uniqueValues("repairerName"), "Todos os reparadores");
   fillSelect(els.conditionFilter, conditions, "Todas as condições");
   fillSelect(els.documentFilter, documents, "Todas as situações documentais");
@@ -279,7 +293,7 @@ function readFilters() {
 
 function searchableText(record) {
   return normalizeSearch([
-    record.po, record.requisition, record.partNumber, record.serialNumber, record.originOm,
+    record.po, record.requisition, record.partNumber, record.serialNumber, activeOriginOm(record),
     record.trackingToRepairer, record.returnTrackingVolume, record.repairerCage, record.repairerName,
     sourceRealStatus(record), sourceCondition(record), record.processNumber, record.description, record.manualNotes,
     record.evaluationFee, record.tdrDeliveryRaw, record.subprocessRaw, record.fichaRaw, record.documentaryStatusLabel
@@ -295,7 +309,7 @@ function applyFilters() {
     if (filters.requisition && !normalizeSearch(record.requisition).includes(filters.requisition)) return false;
     if (filters.status && activeRealStatus(record) !== filters.status) return false;
     if (filters.stage && info.visualStage !== filters.stage) return false;
-    if (filters.origin && record.originOm !== filters.origin) return false;
+    if (filters.origin && activeOriginOm(record) !== filters.origin) return false;
     if (filters.repairer && record.repairerName !== filters.repairer) return false;
     if (filters.condition && activeCondition(record) !== filters.condition) return false;
     if (filters.cage && record.repairerCage !== filters.cage) return false;
@@ -499,7 +513,7 @@ function renderTable() {
       <td><strong>${escapeHtml(record.po)}</strong><small>${escapeHtml(formatDate(record.poIssueDate))}</small></td>
       <td>${escapeHtml(record.requisition)}</td>
       <td><strong>PN ${escapeHtml(record.partNumber)}</strong><small>SN ${escapeHtml(record.serialNumber)}</small></td>
-      <td>${escapeHtml(textDisplay(record.originOm))}${record.originDerived ? '<small class="rep-derived-note">derivada</small>' : ""}</td>
+      <td>${escapeHtml(textDisplay(activeOriginOm(record)))}${record.originDerived ? '<small class="rep-derived-note">derivada</small>' : ""}</td>
       <td>${escapeHtml(textDisplay(activeCondition(record)))}</td>
       <td>${statusBadge(record)}<small>${escapeHtml(info.visualStage)}</small></td>
       <td>${escapeHtml(textDisplay(record.repairerName))}<small>CAGE ${escapeHtml(textDisplay(record.repairerCage))}</small></td>
@@ -556,14 +570,14 @@ function openDetail(id) {
   const record = findRecord(id); if (!record) return;
   const info = derived(record); const warnings = [...(record.qualityWarnings || [])];
   if (record.evaluationFeeDiscardReason) warnings.push("Taxa de avaliação desconsiderada pela regra de qualidade.");
-  if (record.originDerived) warnings.push("OM derivada dos dois primeiros caracteres da requisição.");
+  if (record.originDerived) warnings.push(`Parque / OM derivado da requisição e normalizado como ${activeOriginOm(record) || "Não informado"}.`);
   if (info.visualStage === "ETAPA NÃO MAPEADA") warnings.push("Status real sem mapeamento visual ativo.");
   if ((record.tdrDeliveryIndicator === "none" || record.tdrSentDate) && info.documentary.code === "tdr-not-received") warnings.push("Divergência: a coluna N indica TDR entregue, mas O e P estão em branco.");
   els.detailTitle.textContent = `${record.po} · ${record.requisition}`;
   const tte = record.evaluationFee == null ? "Não informado" : `${new Intl.NumberFormat("pt-BR", { minimumFractionDigits: 2, maximumFractionDigits: 2 }).format(record.evaluationFee)} — Moeda não informada`;
   els.detailContent.innerHTML = `
     <section class="rep-detail-group"><h3>Identificação</h3><dl>${detailRow("Número do processo", record.processNumber)}${detailRow("Descrição do item", record.description)}${detailRow("Chave estável", record.importKey)}${detailRow("Status real", activeRealStatus(record))}${detailRow("Etapa visual", info.visualStage)}${detailRow("Situação no lote", state.sourceMode.startsWith("bundle") || record.lastSeenBatchId === state.config?.activeBatchId ? "Presente no lote atual" : "Ausente do lote atual — registro preservado")}</dl></section>
-    <section class="rep-detail-group"><h3>Empenho e requisição</h3><dl>${detailRow("Empenho / PO", record.po)}${detailRow("Data de emissão", formatDate(record.poIssueDate))}${detailRow("Requisição", record.requisition)}${detailRow("Parque / OM", record.originOm, record.originDerived ? ' <span class="rep-inline-alert">derivada da requisição</span>' : "")}</dl></section>
+    <section class="rep-detail-group"><h3>Empenho e requisição</h3><dl>${detailRow("Empenho / PO", record.po)}${detailRow("Data de emissão", formatDate(record.poIssueDate))}${detailRow("Requisição", record.requisition)}${detailRow("Parque / OM", activeOriginOm(record), record.originDerived ? ' <span class="rep-inline-alert">derivada da requisição e normalizada</span>' : "")}</dl></section>
     <section class="rep-detail-group"><h3>Item</h3><dl>${detailRow("Part Number", record.partNumber)}${detailRow("Serial Number", record.serialNumber)}${detailRow("Condição", activeCondition(record))}${detailRow("Valor do item", moneyDisplay(record.itemValue, record.currency))}</dl></section>
     <section class="rep-detail-group"><h3>Reparador</h3><dl>${detailRow("CAGE Code", record.repairerCage)}${detailRow("Nome do reparador", record.repairerName)}${detailRow("Valor do reparo contratado", moneyDisplay(record.repairValue, record.currency))}${detailRow("Taxa de Avaliação — TTE", tte)}</dl></section>
     <section class="rep-detail-group"><h3>Envio ao reparador</h3><dl>${detailRow("Data de recebimento no reparador", formatDate(record.receivedAtRepairerDate))}${detailRow("Tracking do envio", record.trackingToRepairer)}</dl></section>
@@ -588,7 +602,7 @@ function openEdit(id = "") {
   els.editPo.value = record?.po || ""; els.editRequisition.value = record?.requisition || ""; els.editPn.value = record?.partNumber || ""; els.editSn.value = record?.serialNumber || "";
   els.editProcess.value = record?.processNumber || ""; els.editDescription.value = record?.description || "";
   els.editItemValue.value = record?.itemValue ?? ""; els.editRepairValue.value = record?.repairValue ?? ""; els.editCurrency.value = record?.currency || "";
-  els.editNotes.value = record?.manualNotes || ""; els.editOrigin.value = record?.originOm || ""; els.editStatus.value = record ? (activeRealStatus(record) || "") : "";
+  els.editNotes.value = record?.manualNotes || ""; els.editOrigin.value = record ? (activeOriginOm(record) || "") : ""; els.editStatus.value = record ? (activeRealStatus(record) || "") : "";
   els.editRepairer.value = record?.repairerName || ""; els.editCage.value = record?.repairerCage || "";
   els.editDialog.showModal();
 }
@@ -611,7 +625,7 @@ async function saveManual(event) {
   if (!existingId) {
     Object.assign(payload, {
       po, requisition, partNumber: pn, serialNumber: sn, importKey: stableKeySource(po, requisition, pn, sn),
-      originOm: normalizeNullable(els.editOrigin.value), originDerived: false,
+      originOm: normalizeOriginOm(els.editOrigin.value).value, originOmSource: normalizeOriginOm(els.editOrigin.value).raw, originOmShortCode: normalizeOriginOm(els.editOrigin.value).shortCode, originOmNormalizationVersion: 2, originDerived: false,
       realStatus: normalizeRealStatus(els.editStatus.value).value, realStatusSource: normalizeRealStatus(els.editStatus.value).raw,
       realStatusDiscardReason: normalizeRealStatus(els.editStatus.value).discardedReason, visualStage: mapVisualStage(normalizeRealStatus(els.editStatus.value).value),
       repairerName: normalizeNullable(els.editRepairer.value), repairerCage: normalizeNullable(els.editCage.value),
@@ -735,7 +749,7 @@ async function parseWorkbookFile(file, referenceDateIso) {
     if (deadline.code === "not-authorized") quality.returnNotAuthorized += 1;
     if (["due-today", "due-30", "on-time"].includes(deadline.code)) quality.returnPending += 1;
     const recordWarnings = [];
-    if (origin.derived) recordWarnings.push("OM derivada dos dois primeiros caracteres da requisição");
+    if (origin.derived) recordWarnings.push(`Parque / OM derivado da requisição e normalizado como ${origin.value}`);
     if (fee.discardedReason) recordWarnings.push("TTE descartada pela regra de qualidade");
     if (visualStage === "ETAPA NÃO MAPEADA") recordWarnings.push(`Status sem mapeamento visual ativo: ${statusNormalization.raw || "Não informado"}`);
     if (!tdrDueDate && tdr.code !== "delivered") recordWarnings.push("Prazo do TDR não informado na coluna M");
@@ -744,7 +758,7 @@ async function parseWorkbookFile(file, referenceDateIso) {
     parsed.push({
       id, importKey: key, po, evaluationFee: fee.value, evaluationFeeCurrency: null, evaluationFeeRaw: fee.raw, evaluationFeeDiscardReason: fee.discardedReason,
       poIssueDate: parseDateToIso(value("DATA EMISSÃO PO")), realStatus, realStatusSource: statusNormalization.raw, realStatusDiscardReason: statusNormalization.discardedReason,
-      visualStage, requisition, originOm: origin.value, originDerived: origin.derived, partNumber: pn, serialNumber: sn,
+      visualStage, requisition, originOm: origin.value, originOmSource: origin.source, originOmShortCode: origin.shortCode, originOmNormalizationVersion: 2, originDerived: origin.derived, partNumber: pn, serialNumber: sn,
       condition: conditionNormalization.value, conditionSource: conditionNormalization.raw, conditionDiscardReason: conditionNormalization.discardedReason,
       receivedAtRepairerDate, trackingToRepairer: normalizeNullable(value("TRACKING ENVIO REPARADOR")), tdrDueDate,
       tdrDeliveryRaw, tdrDeliveryIndicator, tdrSentDate, tdrDelivered: tdr.code === "delivered",
@@ -941,7 +955,7 @@ function generateDetailedPdf() {
   if (!ensurePdf()) return; const { pdf, startY } = setupPdf("Relatório Detalhado — Materiais Reparáveis", "landscape");
   pdf.autoTable({
     startY, head: [["PO", "Requisição", "PN", "SN", "OM", "Status", "Etapa", "Reparador", "TTE", "TDR", "Subprocesso/Ficha", "DPE/Retorno"]],
-    body: state.filtered.map(record => { const info = derived(record); const tte = record.evaluationFee == null ? "Não informado" : `${new Intl.NumberFormat("pt-BR", { minimumFractionDigits: 2, maximumFractionDigits: 2 }).format(record.evaluationFee)} — moeda não informada`; return [record.po, record.requisition, record.partNumber, record.serialNumber, textDisplay(record.originOm), textDisplay(activeRealStatus(record)), info.visualStage, textDisplay(record.repairerName), tte, info.tdr.label, info.documentary.label, info.deadline.label]; }),
+    body: state.filtered.map(record => { const info = derived(record); const tte = record.evaluationFee == null ? "Não informado" : `${new Intl.NumberFormat("pt-BR", { minimumFractionDigits: 2, maximumFractionDigits: 2 }).format(record.evaluationFee)} — moeda não informada`; return [record.po, record.requisition, record.partNumber, record.serialNumber, textDisplay(activeOriginOm(record)), textDisplay(activeRealStatus(record)), info.visualStage, textDisplay(record.repairerName), tte, info.tdr.label, info.documentary.label, info.deadline.label]; }),
     headStyles: { fillColor: [1, 58, 126], fontSize: 6 }, styles: { fontSize: 5.2, cellPadding: 1.0, overflow: "linebreak" },
     didDrawPage: () => { pdf.setFontSize(7); pdf.setTextColor(90, 100, 120); pdf.text(`Página ${pdf.internal.getNumberOfPages()}`, pdf.internal.pageSize.getWidth() - 22, pdf.internal.pageSize.getHeight() - 6); }
   }); pdf.save(`materiais-reparaveis-detalhado-${TODAY_ISO}.pdf`);

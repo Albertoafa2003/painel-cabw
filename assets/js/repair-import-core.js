@@ -1,5 +1,23 @@
 export const NULL_TOKENS = new Set(["", "none", "null", "n/a", "-", "nan", "undefined"]);
 
+export const ORIGIN_OM_MAP = Object.freeze({
+  "EL": "PAME-RJ",
+  "GL": "PAMA-GL",
+  "PB": "PAMB-RJ",
+  "SP": "PAMA-SP"
+});
+
+const ORIGIN_OM_ALIASES = Object.freeze({
+  "EL": "PAME-RJ", "PAME-RJ": "PAME-RJ",
+  "GL": "PAMA-GL", "PAMA-GL": "PAMA-GL",
+  "PB": "PAMB-RJ", "PAMB-RJ": "PAMB-RJ",
+  "SP": "PAMA-SP", "PAMA-SP": "PAMA-SP"
+});
+
+const ORIGIN_OM_SHORT_BY_CANONICAL = Object.freeze(
+  Object.fromEntries(Object.entries(ORIGIN_OM_MAP).map(([shortCode, canonical]) => [canonical, shortCode]))
+);
+
 export const STATUS_STAGE_MAP = Object.freeze({
   "1-Empenho Aprovado": "Brasil/ OM Requisitante",
   "2-Item Chegou CTLA": "Brasil / CTLA",
@@ -56,7 +74,7 @@ export const REQUIRED_HEADERS = Object.freeze([
 
 export const IMPORTED_FIELDS = Object.freeze([
   "po", "evaluationFee", "evaluationFeeCurrency", "evaluationFeeRaw", "evaluationFeeDiscardReason",
-  "poIssueDate", "realStatus", "realStatusSource", "realStatusDiscardReason", "visualStage", "requisition", "originOm", "originDerived",
+  "poIssueDate", "realStatus", "realStatusSource", "realStatusDiscardReason", "visualStage", "requisition", "originOm", "originOmSource", "originOmShortCode", "originOmNormalizationVersion", "originDerived",
   "partNumber", "serialNumber", "condition", "conditionSource", "conditionDiscardReason", "receivedAtRepairerDate", "trackingToRepairer",
   "tdrDueDate", "tdrDeliveryRaw", "tdrDeliveryIndicator", "tdrSentDate", "tdrDelivered",
   "subprocessRaw", "fichaRaw", "fichaDate", "documentaryStatusCode", "documentaryStatusLabel",
@@ -171,10 +189,35 @@ export function mapVisualStage(status) {
     : "ETAPA NÃO MAPEADA";
 }
 
+function normalizeOriginOmToken(value) {
+  return String(value || "")
+    .trim()
+    .toUpperCase()
+    .replace(/[_.\s/]+/g, "-")
+    .replace(/-+/g, "-");
+}
+
+export function normalizeOriginOm(value) {
+  const raw = normalizeNullable(value);
+  if (!raw) return { value: null, raw: null, shortCode: null };
+  const token = normalizeOriginOmToken(raw);
+  const canonical = ORIGIN_OM_ALIASES[token] || raw;
+  const shortCode = ORIGIN_OM_MAP[token] ? token : (ORIGIN_OM_SHORT_BY_CANONICAL[canonical] || null);
+  return { value: canonical, raw, shortCode };
+}
+
 export function deriveOriginOm(rawOm, requisition) {
-  const om = normalizeNullable(rawOm); if (om) return { value: om, derived: false };
-  const req = normalizeIdentifier(requisition); const derived = req && req.length >= 2 ? req.slice(0, 2) : null;
-  return { value: derived, derived: Boolean(derived) };
+  const explicit = normalizeOriginOm(rawOm);
+  if (explicit.value) return { value: explicit.value, source: explicit.raw, shortCode: explicit.shortCode, derived: false };
+  const req = normalizeIdentifier(requisition);
+  const derivedCode = req && req.length >= 2 ? req.slice(0, 2).toUpperCase() : null;
+  const normalized = normalizeOriginOm(derivedCode);
+  return {
+    value: normalized.value || derivedCode,
+    source: derivedCode,
+    shortCode: normalized.shortCode || derivedCode,
+    derived: Boolean(derivedCode)
+  };
 }
 
 export function normalizeEvaluationFee({ po, rawValue, formula }) {

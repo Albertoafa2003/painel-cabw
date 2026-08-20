@@ -46,7 +46,7 @@
     "currency",
     "manualNotes"
   ],
-  "buildVersion": "20260820-return-r1",
+  "buildVersion": "20260820-origin-om-r1",
   "statusUpdate": {
     "sourceFile": "19AGO V3 - CONTROLE REPARO - SGT ROZENDO.xlsx",
     "sourceSheet": "BD Monitoramento",
@@ -99,6 +99,22 @@
     "confirmedCorrections": [
       "PO 25T000160: autorização considerada em 13/07/2025.",
       "PO 26T000800: #REF! tratado como campo vazio; sem prazo e sem atraso."
+    ]
+  },
+  "originOmNormalization": {
+    "updatedAt": "2026-08-20",
+    "mapping": {
+      "EL": "PAME-RJ",
+      "GL": "PAMA-GL",
+      "PB": "PAMB-RJ",
+      "SP": "PAMA-SP"
+    },
+    "rule": "Os dois primeiros caracteres da requisição continuam sendo usados para identificar a origem, mas o painel, os filtros, as consultas e os PDFs exibem a nomenclatura institucional completa.",
+    "canonicalOptions": [
+      "PAME-RJ",
+      "PAMA-GL",
+      "PAMB-RJ",
+      "PAMA-SP"
     ]
   }
 }

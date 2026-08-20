@@ -6,9 +6,12 @@ import { fileURLToPath } from "node:url";
 import {
   REAL_STATUS_OPTIONS,
   VISUAL_STAGE_OPTIONS,
+  ORIGIN_OM_MAP,
   normalizeNullable,
   normalizeControlValue,
   normalizeRealStatus,
+  normalizeOriginOm,
+  deriveOriginOm,
   normalizeEvaluationFee,
   calculateTdrStatus,
   classifyDocumentaryStatus,
@@ -298,4 +301,35 @@ test("contagens de retorno correspondem à planilha atualizada", () => {
     "overdue": 7,
     "on-time": 3
   });
+});
+
+
+test("Parques e OMs são normalizados para as nomenclaturas institucionais", () => {
+  assert.deepEqual(ORIGIN_OM_MAP, {
+    EL: "PAME-RJ",
+    GL: "PAMA-GL",
+    PB: "PAMB-RJ",
+    SP: "PAMA-SP"
+  });
+  assert.equal(normalizeOriginOm("EL").value, "PAME-RJ");
+  assert.equal(normalizeOriginOm("GL").value, "PAMA-GL");
+  assert.equal(normalizeOriginOm("PB").value, "PAMB-RJ");
+  assert.equal(normalizeOriginOm("SP").value, "PAMA-SP");
+  assert.equal(normalizeOriginOm("PAME RJ").value, "PAME-RJ");
+  assert.equal(deriveOriginOm(null, "ELRR218044R").value, "PAME-RJ");
+  assert.equal(deriveOriginOm(null, "GLRR000001").value, "PAMA-GL");
+  assert.equal(deriveOriginOm(null, "PBRR000001").value, "PAMB-RJ");
+  assert.equal(deriveOriginOm(null, "SPRR000001").value, "PAMA-SP");
+});
+
+test("base ativa não contém abreviações antigas no campo Parque / OM", () => {
+  const allowed = new Set(["PAME-RJ", "PAMA-GL", "PAMB-RJ", "PAMA-SP"]);
+  assert.equal(payload.records.every(item => allowed.has(item.originOm)), true);
+  assert.deepEqual(payload.metadata.originOmCounts, {
+    "PAME-RJ": 4,
+    "PAMA-SP": 76,
+    "PAMA-GL": 31,
+    "PAMB-RJ": 2
+  });
+  assert.equal(payload.metadata.originOmChangesApplied, 113);
 });

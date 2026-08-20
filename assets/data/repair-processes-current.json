@@ -3,7 +3,7 @@
     "sourceFileName": "CONTROLE REPARO - SGT ROZENDO - 03082026.xlsx",
     "sourceSheet": "BD Monitoramento",
     "referenceDate": "2026-08-20",
-    "buildVersion": "20260820-return-r1",
+    "buildVersion": "20260820-origin-om-r1",
     "validRows": 113,
     "validSourceRows": "2 a 114",
     "uniqueKeys": 113,
@@ -185,7 +185,29 @@
     "returnCorrectionNotes": [
       "PO 25T000160: autorização considerada em 13/07/2025.",
       "PO 26T000800: #REF! em DPE tratado como campo vazio; item sem prazo e não atrasado."
-    ]
+    ],
+    "originOmMappingUpdatedAt": "2026-08-20",
+    "originOmMappingVersion": 2,
+    "originOmMapping": {
+      "EL": "PAME-RJ",
+      "GL": "PAMA-GL",
+      "PB": "PAMB-RJ",
+      "SP": "PAMA-SP"
+    },
+    "originOmChangesApplied": 113,
+    "originOmCounts": {
+      "PAME-RJ": 4,
+      "PAMA-SP": 76,
+      "PAMA-GL": 31,
+      "PAMB-RJ": 2
+    },
+    "originOmOptions": [
+      "PAME-RJ",
+      "PAMA-GL",
+      "PAMB-RJ",
+      "PAMA-SP"
+    ],
+    "originOmRule": "Os códigos derivados das requisições são apresentados com a nomenclatura institucional: EL=PAME-RJ, GL=PAMA-GL, PB=PAMB-RJ e SP=PAMA-SP."
   },
   "records": [
     {
@@ -202,7 +224,7 @@
       "realStatusDiscardReason": null,
       "visualStage": "CABW/CABE (retorno)",
       "requisition": "ELRR218044R",
-      "originOm": "EL",
+      "originOm": "PAME-RJ",
       "originDerived": true,
       "partNumber": "G533947-1",
       "serialNumber": "134",
@@ -237,7 +259,7 @@
       "archivedOutOfScope": false,
       "outOfScopeReason": null,
       "qualityWarnings": [
-        "OM derivada dos dois primeiros caracteres da requisição"
+        "Parque / OM derivado da requisição e normalizado como PAME-RJ"
       ],
       "sourceFileName": "CONTROLE REPARO - SGT ROZENDO - 03082026.xlsx",
       "sourceSheet": "BD Monitoramento",
@@ -272,7 +294,11 @@
       "returnStatusSourceRow": 2,
       "returnStatusReferenceDate": "2026-08-20",
       "returnStatusUpdatedAt": "2026-08-20T00:00:00Z",
-      "returnCorrectionNote": null
+      "returnCorrectionNote": null,
+      "originOmSource": "EL",
+      "originOmShortCode": "EL",
+      "originOmNormalizationVersion": 2,
+      "originOmNormalizedAt": "2026-08-20"
     },
     {
       "id": "1caf91943f06284022fbd2359dafe95f8ba7cbc946f42c739c990e7956552e70",
@@ -288,7 +314,7 @@
       "realStatusDiscardReason": null,
       "visualStage": "CABW/CABE (retorno)",
       "requisition": "SPRR27701F5",
-      "originOm": "SP",
+      "originOm": "PAMA-SP",
       "originDerived": true,
       "partNumber": "AL1020M4",
       "serialNumber": "T1110",
@@ -323,7 +349,7 @@
       "archivedOutOfScope": false,
       "outOfScopeReason": null,
       "qualityWarnings": [
-        "OM derivada dos dois primeiros caracteres da requisição"
+        "Parque / OM derivado da requisição e normalizado como PAMA-SP"
       ],
       "sourceFileName": "CONTROLE REPARO - SGT ROZENDO - 03082026.xlsx",
       "sourceSheet": "BD Monitoramento",
@@ -358,7 +384,11 @@
       "returnStatusSourceRow": 3,
       "returnStatusReferenceDate": "2026-08-20",
       "returnStatusUpdatedAt": "2026-08-20T00:00:00Z",
-      "returnCorrectionNote": null
+      "returnCorrectionNote": null,
+      "originOmSource": "SP",
+      "originOmShortCode": "SP",
+      "originOmNormalizationVersion": 2,
+      "originOmNormalizedAt": "2026-08-20"
     },
     {
       "id": "d947a215cfd15d696ef2c0354051c921099799baf7056b96deafd67ecb9ebbcd",
@@ -374,7 +404,7 @@
       "realStatusDiscardReason": null,
       "visualStage": "CABW/CABE (retorno)",
       "requisition": "SPRR29701F5",
-      "originOm": "SP",
+      "originOm": "PAMA-SP",
       "originDerived": true,
       "partNumber": "22253350",
       "serialNumber": "347",
@@ -409,7 +439,7 @@
       "archivedOutOfScope": false,
       "outOfScopeReason": null,
       "qualityWarnings": [
-        "OM derivada dos dois primeiros caracteres da requisição"
+        "Parque / OM derivado da requisição e normalizado como PAMA-SP"
       ],
       "sourceFileName": "CONTROLE REPARO - SGT ROZENDO - 03082026.xlsx",
       "sourceSheet": "BD Monitoramento",
@@ -444,7 +474,11 @@
       "returnStatusSourceRow": 4,
       "returnStatusReferenceDate": "2026-08-20",
       "returnStatusUpdatedAt": "2026-08-20T00:00:00Z",
-      "returnCorrectionNote": null
+      "returnCorrectionNote": null,
+      "originOmSource": "SP",
+      "originOmShortCode": "SP",
+      "originOmNormalizationVersion": 2,
+      "originOmNormalizedAt": "2026-08-20"
     },
     {
       "id": "e8d2d58d9d32efbed96c41b535b6e705c60b2d8f0cd272d7b3c0cca91d82b22f",
@@ -460,7 +494,7 @@
       "realStatusDiscardReason": null,
       "visualStage": "CABW/CABE (retorno)",
       "requisition": "SPRR14203F5",
-      "originOm": "SP",
+      "originOm": "PAMA-SP",
       "originDerived": true,
       "partNumber": "8TJ120GAA1",
       "serialNumber": "W09487",
@@ -495,7 +529,7 @@
       "archivedOutOfScope": false,
       "outOfScopeReason": null,
       "qualityWarnings": [
-        "OM derivada dos dois primeiros caracteres da requisição"
+        "Parque / OM derivado da requisição e normalizado como PAMA-SP"
       ],
       "sourceFileName": "CONTROLE REPARO - SGT ROZENDO - 03082026.xlsx",
       "sourceSheet": "BD Monitoramento",
@@ -530,7 +564,11 @@
       "returnStatusSourceRow": 5,
       "returnStatusReferenceDate": "2026-08-20",
       "returnStatusUpdatedAt": "2026-08-20T00:00:00Z",
-      "returnCorrectionNote": null
+      "returnCorrectionNote": null,
+      "originOmSource": "SP",
+      "originOmShortCode": "SP",
+      "originOmNormalizationVersion": 2,
+      "originOmNormalizedAt": "2026-08-20"
     },
     {
       "id": "4c78230246a6c37afdd9412efa1a92435dca1608afcb862ff40ba21f86f4b57d",
@@ -546,7 +584,7 @@
       "realStatusDiscardReason": null,
       "visualStage": "CABW/CABE (retorno)",
       "requisition": "SPRR15801F5",
-      "originOm": "SP",
+      "originOm": "PAMA-SP",
       "originDerived": true,
       "partNumber": "8TJ120GAA1",
       "serialNumber": "W09506",
@@ -581,7 +619,7 @@
       "archivedOutOfScope": false,
       "outOfScopeReason": null,
       "qualityWarnings": [
-        "OM derivada dos dois primeiros caracteres da requisição"
+        "Parque / OM derivado da requisição e normalizado como PAMA-SP"
       ],
       "sourceFileName": "CONTROLE REPARO - SGT ROZENDO - 03082026.xlsx",
       "sourceSheet": "BD Monitoramento",
@@ -616,7 +654,11 @@
       "returnStatusSourceRow": 6,
       "returnStatusReferenceDate": "2026-08-20",
       "returnStatusUpdatedAt": "2026-08-20T00:00:00Z",
-      "returnCorrectionNote": null
+      "returnCorrectionNote": null,
+      "originOmSource": "SP",
+      "originOmShortCode": "SP",
+      "originOmNormalizationVersion": 2,
+      "originOmNormalizedAt": "2026-08-20"
     },
     {
       "id": "7a142c2bf4f0ab189a7b74a0e7a73fef3ced5077f4c5145a1319da94250284e3",
@@ -632,7 +674,7 @@
       "realStatusDiscardReason": null,
       "visualStage": "CABW/CABE (retorno)",
       "requisition": "SPRR17701F5",
-      "originOm": "SP",
+      "originOm": "PAMA-SP",
       "originDerived": true,
       "partNumber": "2760003-102",
       "serialNumber": "1174",
@@ -667,7 +709,7 @@
       "archivedOutOfScope": false,
       "outOfScopeReason": null,
       "qualityWarnings": [
-        "OM derivada dos dois primeiros caracteres da requisição"
+        "Parque / OM derivado da requisição e normalizado como PAMA-SP"
       ],
       "sourceFileName": "CONTROLE REPARO - SGT ROZENDO - 03082026.xlsx",
       "sourceSheet": "BD Monitoramento",
@@ -702,7 +744,11 @@
       "returnStatusSourceRow": 7,
       "returnStatusReferenceDate": "2026-08-20",
       "returnStatusUpdatedAt": "2026-08-20T00:00:00Z",
-      "returnCorrectionNote": null
+      "returnCorrectionNote": null,
+      "originOmSource": "SP",
+      "originOmShortCode": "SP",
+      "originOmNormalizationVersion": 2,
+      "originOmNormalizedAt": "2026-08-20"
     },
     {
       "id": "44325dc10cc7134029d18cad76c88a1248c225ef395c387b26075da4a8947cfa",
@@ -718,7 +764,7 @@
       "realStatusDiscardReason": null,
       "visualStage": "CABW/CABE (retorno)",
       "requisition": "SPRR17702F5",
-      "originOm": "SP",
+      "originOm": "PAMA-SP",
       "originDerived": true,
       "partNumber": "2760003-102",
       "serialNumber": "1150",
@@ -753,7 +799,7 @@
       "archivedOutOfScope": false,
       "outOfScopeReason": null,
       "qualityWarnings": [
-        "OM derivada dos dois primeiros caracteres da requisição"
+        "Parque / OM derivado da requisição e normalizado como PAMA-SP"
       ],
       "sourceFileName": "CONTROLE REPARO - SGT ROZENDO - 03082026.xlsx",
       "sourceSheet": "BD Monitoramento",
@@ -788,7 +834,11 @@
       "returnStatusSourceRow": 8,
       "returnStatusReferenceDate": "2026-08-20",
       "returnStatusUpdatedAt": "2026-08-20T00:00:00Z",
-      "returnCorrectionNote": null
+      "returnCorrectionNote": null,
+      "originOmSource": "SP",
+      "originOmShortCode": "SP",
+      "originOmNormalizationVersion": 2,
+      "originOmNormalizedAt": "2026-08-20"
     },
     {
       "id": "2b9ed105d6d5ee6a4e98b1a4bf1772d0a1ab6c02740d860e06e592f197ef5e53",
@@ -804,7 +854,7 @@
       "realStatusDiscardReason": null,
       "visualStage": "CABW/CABE (retorno)",
       "requisition": "SPRR20601F5",
-      "originOm": "SP",
+      "originOm": "PAMA-SP",
       "originDerived": true,
       "partNumber": "2760003-102",
       "serialNumber": "473",
@@ -839,7 +889,7 @@
       "archivedOutOfScope": false,
       "outOfScopeReason": null,
       "qualityWarnings": [
-        "OM derivada dos dois primeiros caracteres da requisição"
+        "Parque / OM derivado da requisição e normalizado como PAMA-SP"
       ],
       "sourceFileName": "CONTROLE REPARO - SGT ROZENDO - 03082026.xlsx",
       "sourceSheet": "BD Monitoramento",
@@ -874,7 +924,11 @@
       "returnStatusSourceRow": 9,
       "returnStatusReferenceDate": "2026-08-20",
       "returnStatusUpdatedAt": "2026-08-20T00:00:00Z",
-      "returnCorrectionNote": null
+      "returnCorrectionNote": null,
+      "originOmSource": "SP",
+      "originOmShortCode": "SP",
+      "originOmNormalizationVersion": 2,
+      "originOmNormalizedAt": "2026-08-20"
     },
     {
       "id": "6ecea4ecd0718734e8275f7f5dc0329bedf245896be9e7b3762fbf06f3abbd4f",
@@ -890,7 +944,7 @@
       "realStatusDiscardReason": null,
       "visualStage": "CABW/CABE (retorno)",
       "requisition": "SPRR19701F5",
-      "originOm": "SP",
+      "originOm": "PAMA-SP",
       "originDerived": true,
       "partNumber": "5035L000-1",
       "serialNumber": "L3141",
@@ -925,7 +979,7 @@
       "archivedOutOfScope": false,
       "outOfScopeReason": null,
       "qualityWarnings": [
-        "OM derivada dos dois primeiros caracteres da requisição"
+        "Parque / OM derivado da requisição e normalizado como PAMA-SP"
       ],
       "sourceFileName": "CONTROLE REPARO - SGT ROZENDO - 03082026.xlsx",
       "sourceSheet": "BD Monitoramento",
@@ -960,7 +1014,11 @@
       "returnStatusSourceRow": 10,
       "returnStatusReferenceDate": "2026-08-20",
       "returnStatusUpdatedAt": "2026-08-20T00:00:00Z",
-      "returnCorrectionNote": null
+      "returnCorrectionNote": null,
+      "originOmSource": "SP",
+      "originOmShortCode": "SP",
+      "originOmNormalizationVersion": 2,
+      "originOmNormalizedAt": "2026-08-20"
     },
     {
       "id": "6077ef51c6c92bab151c8aa8bfd7cade498eaef49b4d2287fb1a5b0be90c4b63",
@@ -976,7 +1034,7 @@
       "realStatusDiscardReason": null,
       "visualStage": "CABW/CABE (retorno)",
       "requisition": "SPRR17302F5",
-      "originOm": "SP",
+      "originOm": "PAMA-SP",
       "originDerived": true,
       "partNumber": "181RA38R176",
       "serialNumber": "1816",
@@ -1011,7 +1069,7 @@
       "archivedOutOfScope": false,
       "outOfScopeReason": null,
       "qualityWarnings": [
-        "OM derivada dos dois primeiros caracteres da requisição",
+        "Parque / OM derivado da requisição e normalizado como PAMA-SP",
         "Data de autorização corrigida para 13/07/2025 conforme orientação do usuário.",
         "DPE final não coincide com a data de autorização acrescida do prazo informado; a classificação utiliza a data da coluna D, conforme a regra gerencial."
       ],
@@ -1048,7 +1106,11 @@
       "returnStatusSourceRow": 11,
       "returnStatusReferenceDate": "2026-08-20",
       "returnStatusUpdatedAt": "2026-08-20T00:00:00Z",
-      "returnCorrectionNote": "Data de autorização corrigida para 13/07/2025 conforme orientação do usuário."
+      "returnCorrectionNote": "Data de autorização corrigida para 13/07/2025 conforme orientação do usuário.",
+      "originOmSource": "SP",
+      "originOmShortCode": "SP",
+      "originOmNormalizationVersion": 2,
+      "originOmNormalizedAt": "2026-08-20"
     },
     {
       "id": "2421515b682c38d8086b8b860cbfec381cda79e477630284a3a30d4ceb27f697",
@@ -1064,7 +1126,7 @@
       "realStatusDiscardReason": null,
       "visualStage": "CABW/CABE (retorno)",
       "requisition": "SPRR28801F5",
-      "originOm": "SP",
+      "originOm": "PAMA-SP",
       "originDerived": true,
       "partNumber": "20110",
       "serialNumber": "5046-12",
@@ -1099,7 +1161,7 @@
       "archivedOutOfScope": false,
       "outOfScopeReason": null,
       "qualityWarnings": [
-        "OM derivada dos dois primeiros caracteres da requisição"
+        "Parque / OM derivado da requisição e normalizado como PAMA-SP"
       ],
       "sourceFileName": "CONTROLE REPARO - SGT ROZENDO - 03082026.xlsx",
       "sourceSheet": "BD Monitoramento",
@@ -1134,7 +1196,11 @@
       "returnStatusSourceRow": 12,
       "returnStatusReferenceDate": "2026-08-20",
       "returnStatusUpdatedAt": "2026-08-20T00:00:00Z",
-      "returnCorrectionNote": null
+      "returnCorrectionNote": null,
+      "originOmSource": "SP",
+      "originOmShortCode": "SP",
+      "originOmNormalizationVersion": 2,
+      "originOmNormalizedAt": "2026-08-20"
     },
     {
       "id": "5884fc752ac5b3630d814d2027fe81943a6f094c651182280b259416daa9d8df",
@@ -1150,7 +1216,7 @@
       "realStatusDiscardReason": null,
       "visualStage": "CABW/CABE (retorno)",
       "requisition": "SPRR28802F5",
-      "originOm": "SP",
+      "originOm": "PAMA-SP",
       "originDerived": true,
       "partNumber": "20110",
       "serialNumber": "5046-6",
@@ -1185,7 +1251,7 @@
       "archivedOutOfScope": false,
       "outOfScopeReason": null,
       "qualityWarnings": [
-        "OM derivada dos dois primeiros caracteres da requisição"
+        "Parque / OM derivado da requisição e normalizado como PAMA-SP"
       ],
       "sourceFileName": "CONTROLE REPARO - SGT ROZENDO - 03082026.xlsx",
       "sourceSheet": "BD Monitoramento",
@@ -1220,7 +1286,11 @@
       "returnStatusSourceRow": 13,
       "returnStatusReferenceDate": "2026-08-20",
       "returnStatusUpdatedAt": "2026-08-20T00:00:00Z",
-      "returnCorrectionNote": null
+      "returnCorrectionNote": null,
+      "originOmSource": "SP",
+      "originOmShortCode": "SP",
+      "originOmNormalizationVersion": 2,
+      "originOmNormalizedAt": "2026-08-20"
     },
     {
       "id": "edb994e103c849f567f81de74417ce9ca6d776f019aad97319ca1ef4d3efa87a",
@@ -1236,7 +1306,7 @@
       "realStatusDiscardReason": null,
       "visualStage": "CABW/CABE (retorno)",
       "requisition": "SPRR28901F5",
-      "originOm": "SP",
+      "originOm": "PAMA-SP",
       "originDerived": true,
       "partNumber": "20110",
       "serialNumber": "5046-17",
@@ -1271,7 +1341,7 @@
       "archivedOutOfScope": false,
       "outOfScopeReason": null,
       "qualityWarnings": [
-        "OM derivada dos dois primeiros caracteres da requisição"
+        "Parque / OM derivado da requisição e normalizado como PAMA-SP"
       ],
       "sourceFileName": "CONTROLE REPARO - SGT ROZENDO - 03082026.xlsx",
       "sourceSheet": "BD Monitoramento",
@@ -1306,7 +1376,11 @@
       "returnStatusSourceRow": 14,
       "returnStatusReferenceDate": "2026-08-20",
       "returnStatusUpdatedAt": "2026-08-20T00:00:00Z",
-      "returnCorrectionNote": null
+      "returnCorrectionNote": null,
+      "originOmSource": "SP",
+      "originOmShortCode": "SP",
+      "originOmNormalizationVersion": 2,
+      "originOmNormalizedAt": "2026-08-20"
     },
     {
       "id": "ed07289957e841f264668a8de5c0d1633f1754c8ceecee71cef07e82b88c65ef",
@@ -1322,7 +1396,7 @@
       "realStatusDiscardReason": null,
       "visualStage": "CABW/CABE (retorno)",
       "requisition": "SPRR29601F5",
-      "originOm": "SP",
+      "originOm": "PAMA-SP",
       "originDerived": true,
       "partNumber": "20110",
       "serialNumber": "5048-5",
@@ -1357,7 +1431,7 @@
       "archivedOutOfScope": false,
       "outOfScopeReason": null,
       "qualityWarnings": [
-        "OM derivada dos dois primeiros caracteres da requisição"
+        "Parque / OM derivado da requisição e normalizado como PAMA-SP"
       ],
       "sourceFileName": "CONTROLE REPARO - SGT ROZENDO - 03082026.xlsx",
       "sourceSheet": "BD Monitoramento",
@@ -1392,7 +1466,11 @@
       "returnStatusSourceRow": 15,
       "returnStatusReferenceDate": "2026-08-20",
       "returnStatusUpdatedAt": "2026-08-20T00:00:00Z",
-      "returnCorrectionNote": null
+      "returnCorrectionNote": null,
+      "originOmSource": "SP",
+      "originOmShortCode": "SP",
+      "originOmNormalizationVersion": 2,
+      "originOmNormalizedAt": "2026-08-20"
     },
     {
       "id": "e76f38ffcb688bbb3b347648768014426a9b9b9eb1032af82b06178c685ca491",
@@ -1408,7 +1486,7 @@
       "realStatusDiscardReason": null,
       "visualStage": "CABW/CABE (retorno)",
       "requisition": "SPRR29602F5",
-      "originOm": "SP",
+      "originOm": "PAMA-SP",
       "originDerived": true,
       "partNumber": "20110",
       "serialNumber": "5046-13",
@@ -1443,7 +1521,7 @@
       "archivedOutOfScope": false,
       "outOfScopeReason": null,
       "qualityWarnings": [
-        "OM derivada dos dois primeiros caracteres da requisição"
+        "Parque / OM derivado da requisição e normalizado como PAMA-SP"
       ],
       "sourceFileName": "CONTROLE REPARO - SGT ROZENDO - 03082026.xlsx",
       "sourceSheet": "BD Monitoramento",
@@ -1478,7 +1556,11 @@
       "returnStatusSourceRow": 16,
       "returnStatusReferenceDate": "2026-08-20",
       "returnStatusUpdatedAt": "2026-08-20T00:00:00Z",
-      "returnCorrectionNote": null
+      "returnCorrectionNote": null,
+      "originOmSource": "SP",
+      "originOmShortCode": "SP",
+      "originOmNormalizationVersion": 2,
+      "originOmNormalizedAt": "2026-08-20"
     },
     {
       "id": "f025620441a2b46299e29765be879a491b7dfe71184ebb4ff6e89727a4b69f15",
@@ -1494,7 +1576,7 @@
       "realStatusDiscardReason": null,
       "visualStage": "CABW/CABE (retorno)",
       "requisition": "SPSR03701F5",
-      "originOm": "SP",
+      "originOm": "PAMA-SP",
       "originDerived": true,
       "partNumber": "AL1020M4-1",
       "serialNumber": "J0630",
@@ -1529,7 +1611,7 @@
       "archivedOutOfScope": false,
       "outOfScopeReason": null,
       "qualityWarnings": [
-        "OM derivada dos dois primeiros caracteres da requisição"
+        "Parque / OM derivado da requisição e normalizado como PAMA-SP"
       ],
       "sourceFileName": "CONTROLE REPARO - SGT ROZENDO - 03082026.xlsx",
       "sourceSheet": "BD Monitoramento",
@@ -1564,7 +1646,11 @@
       "returnStatusSourceRow": 17,
       "returnStatusReferenceDate": "2026-08-20",
       "returnStatusUpdatedAt": "2026-08-20T00:00:00Z",
-      "returnCorrectionNote": null
+      "returnCorrectionNote": null,
+      "originOmSource": "SP",
+      "originOmShortCode": "SP",
+      "originOmNormalizationVersion": 2,
+      "originOmNormalizedAt": "2026-08-20"
     },
     {
       "id": "7f4a31628cdbc3e597f7e3d050af35eb8cfa123fd609e7f664d0865488986828",
@@ -1580,7 +1666,7 @@
       "realStatusDiscardReason": null,
       "visualStage": "CABW/CABE (retorno)",
       "requisition": "SPSR03101F5",
-      "originOm": "SP",
+      "originOm": "PAMA-SP",
       "originDerived": true,
       "partNumber": "3261163-0101",
       "serialNumber": "000006975",
@@ -1615,7 +1701,7 @@
       "archivedOutOfScope": false,
       "outOfScopeReason": null,
       "qualityWarnings": [
-        "OM derivada dos dois primeiros caracteres da requisição"
+        "Parque / OM derivado da requisição e normalizado como PAMA-SP"
       ],
       "sourceFileName": "CONTROLE REPARO - SGT ROZENDO - 03082026.xlsx",
       "sourceSheet": "BD Monitoramento",
@@ -1650,7 +1736,11 @@
       "returnStatusSourceRow": 18,
       "returnStatusReferenceDate": "2026-08-20",
       "returnStatusUpdatedAt": "2026-08-20T00:00:00Z",
-      "returnCorrectionNote": null
+      "returnCorrectionNote": null,
+      "originOmSource": "SP",
+      "originOmShortCode": "SP",
+      "originOmNormalizationVersion": 2,
+      "originOmNormalizedAt": "2026-08-20"
     },
     {
       "id": "8954aba81286ed9a339af67b9546b55cb2dc33079169bdd88f5f6451d2317039",
@@ -1666,7 +1756,7 @@
       "realStatusDiscardReason": null,
       "visualStage": "CABW/CABE (retorno)",
       "requisition": "SPSR03102F5",
-      "originOm": "SP",
+      "originOm": "PAMA-SP",
       "originDerived": true,
       "partNumber": "3261163-0101",
       "serialNumber": "000054145",
@@ -1701,7 +1791,7 @@
       "archivedOutOfScope": false,
       "outOfScopeReason": null,
       "qualityWarnings": [
-        "OM derivada dos dois primeiros caracteres da requisição"
+        "Parque / OM derivado da requisição e normalizado como PAMA-SP"
       ],
       "sourceFileName": "CONTROLE REPARO - SGT ROZENDO - 03082026.xlsx",
       "sourceSheet": "BD Monitoramento",
@@ -1736,7 +1826,11 @@
       "returnStatusSourceRow": 19,
       "returnStatusReferenceDate": "2026-08-20",
       "returnStatusUpdatedAt": "2026-08-20T00:00:00Z",
-      "returnCorrectionNote": null
+      "returnCorrectionNote": null,
+      "originOmSource": "SP",
+      "originOmShortCode": "SP",
+      "originOmNormalizationVersion": 2,
+      "originOmNormalizedAt": "2026-08-20"
     },
     {
       "id": "5fe1b7e81b6c115686a2d202a2eb664a52799d5a43a1c866f81bd384f4ec56f5",
@@ -1752,7 +1846,7 @@
       "realStatusDiscardReason": null,
       "visualStage": "CABW/CABE (retorno)",
       "requisition": "SPSR03103F5",
-      "originOm": "SP",
+      "originOm": "PAMA-SP",
       "originDerived": true,
       "partNumber": "3261163-0101",
       "serialNumber": "000140548",
@@ -1787,7 +1881,7 @@
       "archivedOutOfScope": false,
       "outOfScopeReason": null,
       "qualityWarnings": [
-        "OM derivada dos dois primeiros caracteres da requisição"
+        "Parque / OM derivado da requisição e normalizado como PAMA-SP"
       ],
       "sourceFileName": "CONTROLE REPARO - SGT ROZENDO - 03082026.xlsx",
       "sourceSheet": "BD Monitoramento",
@@ -1822,7 +1916,11 @@
       "returnStatusSourceRow": 20,
       "returnStatusReferenceDate": "2026-08-20",
       "returnStatusUpdatedAt": "2026-08-20T00:00:00Z",
-      "returnCorrectionNote": null
+      "returnCorrectionNote": null,
+      "originOmSource": "SP",
+      "originOmShortCode": "SP",
+      "originOmNormalizationVersion": 2,
+      "originOmNormalizedAt": "2026-08-20"
     },
     {
       "id": "d440e5d63692cd64e0895b4bcf71e404009af1eb7bcf88ce9226f43a5d327011",
@@ -1838,7 +1936,7 @@
       "realStatusDiscardReason": null,
       "visualStage": "CABW/CABE (retorno)",
       "requisition": "SPSR03104F5",
-      "originOm": "SP",
+      "originOm": "PAMA-SP",
       "originDerived": true,
       "partNumber": "3261163-0101",
       "serialNumber": "000146845",
@@ -1873,7 +1971,7 @@
       "archivedOutOfScope": false,
       "outOfScopeReason": null,
       "qualityWarnings": [
-        "OM derivada dos dois primeiros caracteres da requisição"
+        "Parque / OM derivado da requisição e normalizado como PAMA-SP"
       ],
       "sourceFileName": "CONTROLE REPARO - SGT ROZENDO - 03082026.xlsx",
       "sourceSheet": "BD Monitoramento",
@@ -1908,7 +2006,11 @@
       "returnStatusSourceRow": 21,
       "returnStatusReferenceDate": "2026-08-20",
       "returnStatusUpdatedAt": "2026-08-20T00:00:00Z",
-      "returnCorrectionNote": null
+      "returnCorrectionNote": null,
+      "originOmSource": "SP",
+      "originOmShortCode": "SP",
+      "originOmNormalizationVersion": 2,
+      "originOmNormalizedAt": "2026-08-20"
     },
     {
       "id": "7d2acde28f3ff7710e9cf98ed4f63f8d83f198fa505aa5a8cfd0127e336136db",
@@ -1924,7 +2026,7 @@
       "realStatusDiscardReason": null,
       "visualStage": "CABW/CABE (retorno)",
       "requisition": "SPSR03401F5",
-      "originOm": "SP",
+      "originOm": "PAMA-SP",
       "originDerived": true,
       "partNumber": "3261163-0101",
       "serialNumber": "000010386",
@@ -1959,7 +2061,7 @@
       "archivedOutOfScope": false,
       "outOfScopeReason": null,
       "qualityWarnings": [
-        "OM derivada dos dois primeiros caracteres da requisição"
+        "Parque / OM derivado da requisição e normalizado como PAMA-SP"
       ],
       "sourceFileName": "CONTROLE REPARO - SGT ROZENDO - 03082026.xlsx",
       "sourceSheet": "BD Monitoramento",
@@ -1994,7 +2096,11 @@
       "returnStatusSourceRow": 22,
       "returnStatusReferenceDate": "2026-08-20",
       "returnStatusUpdatedAt": "2026-08-20T00:00:00Z",
-      "returnCorrectionNote": null
+      "returnCorrectionNote": null,
+      "originOmSource": "SP",
+      "originOmShortCode": "SP",
+      "originOmNormalizationVersion": 2,
+      "originOmNormalizedAt": "2026-08-20"
     },
     {
       "id": "673a3e32b1e8ac36b057fa2d7114bcc1d3252713039f05af5d098f3995a307bd",
@@ -2010,7 +2116,7 @@
       "realStatusDiscardReason": null,
       "visualStage": "CABW/CABE (retorno)",
       "requisition": "SPSR04301F5",
-      "originOm": "SP",
+      "originOm": "PAMA-SP",
       "originDerived": true,
       "partNumber": "5035L000-1",
       "serialNumber": "L2705",
@@ -2045,7 +2151,7 @@
       "archivedOutOfScope": false,
       "outOfScopeReason": null,
       "qualityWarnings": [
-        "OM derivada dos dois primeiros caracteres da requisição"
+        "Parque / OM derivado da requisição e normalizado como PAMA-SP"
       ],
       "sourceFileName": "CONTROLE REPARO - SGT ROZENDO - 03082026.xlsx",
       "sourceSheet": "BD Monitoramento",
@@ -2080,7 +2186,11 @@
       "returnStatusSourceRow": 23,
       "returnStatusReferenceDate": "2026-08-20",
       "returnStatusUpdatedAt": "2026-08-20T00:00:00Z",
-      "returnCorrectionNote": null
+      "returnCorrectionNote": null,
+      "originOmSource": "SP",
+      "originOmShortCode": "SP",
+      "originOmNormalizationVersion": 2,
+      "originOmNormalizedAt": "2026-08-20"
     },
     {
       "id": "8ca193c40180204d2cda2532ddf457f372a6d2f84a375268869d1ea4ae29273a",
@@ -2096,7 +2206,7 @@
       "realStatusDiscardReason": null,
       "visualStage": "CABW/CABE (retorno)",
       "requisition": "SPSR04302F5",
-      "originOm": "SP",
+      "originOm": "PAMA-SP",
       "originDerived": true,
       "partNumber": "5035L000-1",
       "serialNumber": "L2381",
@@ -2131,7 +2241,7 @@
       "archivedOutOfScope": false,
       "outOfScopeReason": null,
       "qualityWarnings": [
-        "OM derivada dos dois primeiros caracteres da requisição"
+        "Parque / OM derivado da requisição e normalizado como PAMA-SP"
       ],
       "sourceFileName": "CONTROLE REPARO - SGT ROZENDO - 03082026.xlsx",
       "sourceSheet": "BD Monitoramento",
@@ -2166,7 +2276,11 @@
       "returnStatusSourceRow": 24,
       "returnStatusReferenceDate": "2026-08-20",
       "returnStatusUpdatedAt": "2026-08-20T00:00:00Z",
-      "returnCorrectionNote": null
+      "returnCorrectionNote": null,
+      "originOmSource": "SP",
+      "originOmShortCode": "SP",
+      "originOmNormalizationVersion": 2,
+      "originOmNormalizedAt": "2026-08-20"
     },
     {
       "id": "fcd906a3ac660fcd21e289394fa3aba1dda4b12b0f5f1621d2135310c58f5281",
@@ -2182,7 +2296,7 @@
       "realStatusDiscardReason": null,
       "visualStage": "CABW/CABE (retorno)",
       "requisition": "SPSR07101F5",
-      "originOm": "SP",
+      "originOm": "PAMA-SP",
       "originDerived": true,
       "partNumber": "20110",
       "serialNumber": "5048-8",
@@ -2217,7 +2331,7 @@
       "archivedOutOfScope": false,
       "outOfScopeReason": null,
       "qualityWarnings": [
-        "OM derivada dos dois primeiros caracteres da requisição"
+        "Parque / OM derivado da requisição e normalizado como PAMA-SP"
       ],
       "sourceFileName": "CONTROLE REPARO - SGT ROZENDO - 03082026.xlsx",
       "sourceSheet": "BD Monitoramento",
@@ -2252,7 +2366,11 @@
       "returnStatusSourceRow": 25,
       "returnStatusReferenceDate": "2026-08-20",
       "returnStatusUpdatedAt": "2026-08-20T00:00:00Z",
-      "returnCorrectionNote": null
+      "returnCorrectionNote": null,
+      "originOmSource": "SP",
+      "originOmShortCode": "SP",
+      "originOmNormalizationVersion": 2,
+      "originOmNormalizedAt": "2026-08-20"
     },
     {
       "id": "b51a15eb420694a3c04f6d5501a866e6d357cc74c266b49183dc46538e9ec787",
@@ -2268,7 +2386,7 @@
       "realStatusDiscardReason": null,
       "visualStage": "CABW/CABE (retorno)",
       "requisition": "SPSR07102F5",
-      "originOm": "SP",
+      "originOm": "PAMA-SP",
       "originDerived": true,
       "partNumber": "20110",
       "serialNumber": "5355-1",
@@ -2303,7 +2421,7 @@
       "archivedOutOfScope": false,
       "outOfScopeReason": null,
       "qualityWarnings": [
-        "OM derivada dos dois primeiros caracteres da requisição"
+        "Parque / OM derivado da requisição e normalizado como PAMA-SP"
       ],
       "sourceFileName": "CONTROLE REPARO - SGT ROZENDO - 03082026.xlsx",
       "sourceSheet": "BD Monitoramento",
@@ -2338,7 +2456,11 @@
       "returnStatusSourceRow": 26,
       "returnStatusReferenceDate": "2026-08-20",
       "returnStatusUpdatedAt": "2026-08-20T00:00:00Z",
-      "returnCorrectionNote": null
+      "returnCorrectionNote": null,
+      "originOmSource": "SP",
+      "originOmShortCode": "SP",
+      "originOmNormalizationVersion": 2,
+      "originOmNormalizedAt": "2026-08-20"
     },
     {
       "id": "9c8cad49e085991ab1728b6d3384c026eb2192595d8ecaf1774a59ba7c9a9ad5",
@@ -2354,7 +2476,7 @@
       "realStatusDiscardReason": null,
       "visualStage": "CABW/CABE (retorno)",
       "requisition": "SPSR04303F5",
-      "originOm": "SP",
+      "originOm": "PAMA-SP",
       "originDerived": true,
       "partNumber": "5035L000-1",
       "serialNumber": "L2666",
@@ -2389,7 +2511,7 @@
       "archivedOutOfScope": false,
       "outOfScopeReason": null,
       "qualityWarnings": [
-        "OM derivada dos dois primeiros caracteres da requisição"
+        "Parque / OM derivado da requisição e normalizado como PAMA-SP"
       ],
       "sourceFileName": "CONTROLE REPARO - SGT ROZENDO - 03082026.xlsx",
       "sourceSheet": "BD Monitoramento",
@@ -2424,7 +2546,11 @@
       "returnStatusSourceRow": 27,
       "returnStatusReferenceDate": "2026-08-20",
       "returnStatusUpdatedAt": "2026-08-20T00:00:00Z",
-      "returnCorrectionNote": null
+      "returnCorrectionNote": null,
+      "originOmSource": "SP",
+      "originOmShortCode": "SP",
+      "originOmNormalizationVersion": 2,
+      "originOmNormalizedAt": "2026-08-20"
     },
     {
       "id": "7c15408390b0b480b7609382ff7cef769dd92924770551e5f21e9030526d0e5e",
@@ -2440,7 +2566,7 @@
       "realStatusDiscardReason": null,
       "visualStage": "CABW/CABE (retorno)",
       "requisition": "SPSR04304F5",
-      "originOm": "SP",
+      "originOm": "PAMA-SP",
       "originDerived": true,
       "partNumber": "5035L000-1",
       "serialNumber": "L2898",
@@ -2475,7 +2601,7 @@
       "archivedOutOfScope": false,
       "outOfScopeReason": null,
       "qualityWarnings": [
-        "OM derivada dos dois primeiros caracteres da requisição"
+        "Parque / OM derivado da requisição e normalizado como PAMA-SP"
       ],
       "sourceFileName": "CONTROLE REPARO - SGT ROZENDO - 03082026.xlsx",
       "sourceSheet": "BD Monitoramento",
@@ -2510,7 +2636,11 @@
       "returnStatusSourceRow": 28,
       "returnStatusReferenceDate": "2026-08-20",
       "returnStatusUpdatedAt": "2026-08-20T00:00:00Z",
-      "returnCorrectionNote": null
+      "returnCorrectionNote": null,
+      "originOmSource": "SP",
+      "originOmShortCode": "SP",
+      "originOmNormalizationVersion": 2,
+      "originOmNormalizedAt": "2026-08-20"
     },
     {
       "id": "c5d74fb2ebd81debd2ca24bbd591c6740b307420860816edb42b84070cfff679",
@@ -2526,7 +2656,7 @@
       "realStatusDiscardReason": null,
       "visualStage": "CABW/CABE (retorno)",
       "requisition": "SPSR04501F5",
-      "originOm": "SP",
+      "originOm": "PAMA-SP",
       "originDerived": true,
       "partNumber": "AL1020M4",
       "serialNumber": "E1144",
@@ -2561,7 +2691,7 @@
       "archivedOutOfScope": false,
       "outOfScopeReason": null,
       "qualityWarnings": [
-        "OM derivada dos dois primeiros caracteres da requisição"
+        "Parque / OM derivado da requisição e normalizado como PAMA-SP"
       ],
       "sourceFileName": "CONTROLE REPARO - SGT ROZENDO - 03082026.xlsx",
       "sourceSheet": "BD Monitoramento",
@@ -2596,7 +2726,11 @@
       "returnStatusSourceRow": 29,
       "returnStatusReferenceDate": "2026-08-20",
       "returnStatusUpdatedAt": "2026-08-20T00:00:00Z",
-      "returnCorrectionNote": null
+      "returnCorrectionNote": null,
+      "originOmSource": "SP",
+      "originOmShortCode": "SP",
+      "originOmNormalizationVersion": 2,
+      "originOmNormalizedAt": "2026-08-20"
     },
     {
       "id": "f566aa6a1a161e3fcc72b5efc87fd274df7942eca5261fdc8c751acad8750fad",
@@ -2612,7 +2746,7 @@
       "realStatusDiscardReason": null,
       "visualStage": "CABW/CABE (retorno)",
       "requisition": "SPSR04502F5",
-      "originOm": "SP",
+      "originOm": "PAMA-SP",
       "originDerived": true,
       "partNumber": "AL1020M4",
       "serialNumber": "E0932",
@@ -2647,7 +2781,7 @@
       "archivedOutOfScope": false,
       "outOfScopeReason": null,
       "qualityWarnings": [
-        "OM derivada dos dois primeiros caracteres da requisição"
+        "Parque / OM derivado da requisição e normalizado como PAMA-SP"
       ],
       "sourceFileName": "CONTROLE REPARO - SGT ROZENDO - 03082026.xlsx",
       "sourceSheet": "BD Monitoramento",
@@ -2682,7 +2816,11 @@
       "returnStatusSourceRow": 30,
       "returnStatusReferenceDate": "2026-08-20",
       "returnStatusUpdatedAt": "2026-08-20T00:00:00Z",
-      "returnCorrectionNote": null
+      "returnCorrectionNote": null,
+      "originOmSource": "SP",
+      "originOmShortCode": "SP",
+      "originOmNormalizationVersion": 2,
+      "originOmNormalizedAt": "2026-08-20"
     },
     {
       "id": "72e866fec5dec07c30bac5d98f79a8f23fb2a7a248a73ee8de5cceddef50a4eb",
@@ -2698,7 +2836,7 @@
       "realStatusDiscardReason": null,
       "visualStage": "CABW/CABE (retorno)",
       "requisition": "SPSR07002F5",
-      "originOm": "SP",
+      "originOm": "PAMA-SP",
       "originDerived": true,
       "partNumber": "2562A13M",
       "serialNumber": "377-362",
@@ -2733,7 +2871,7 @@
       "archivedOutOfScope": false,
       "outOfScopeReason": null,
       "qualityWarnings": [
-        "OM derivada dos dois primeiros caracteres da requisição"
+        "Parque / OM derivado da requisição e normalizado como PAMA-SP"
       ],
       "sourceFileName": "CONTROLE REPARO - SGT ROZENDO - 03082026.xlsx",
       "sourceSheet": "BD Monitoramento",
@@ -2768,7 +2906,11 @@
       "returnStatusSourceRow": 31,
       "returnStatusReferenceDate": "2026-08-20",
       "returnStatusUpdatedAt": "2026-08-20T00:00:00Z",
-      "returnCorrectionNote": null
+      "returnCorrectionNote": null,
+      "originOmSource": "SP",
+      "originOmShortCode": "SP",
+      "originOmNormalizationVersion": 2,
+      "originOmNormalizedAt": "2026-08-20"
     },
     {
       "id": "1ae694747a0a092509a2d7dab37a4917bb9642272e718d929d8e60e8b6e6f653",
@@ -2784,7 +2926,7 @@
       "realStatusDiscardReason": null,
       "visualStage": "CABW/CABE (retorno)",
       "requisition": "SPSR07003F5",
-      "originOm": "SP",
+      "originOm": "PAMA-SP",
       "originDerived": true,
       "partNumber": "2562A13M",
       "serialNumber": "496-012",
@@ -2819,7 +2961,7 @@
       "archivedOutOfScope": false,
       "outOfScopeReason": null,
       "qualityWarnings": [
-        "OM derivada dos dois primeiros caracteres da requisição"
+        "Parque / OM derivado da requisição e normalizado como PAMA-SP"
       ],
       "sourceFileName": "CONTROLE REPARO - SGT ROZENDO - 03082026.xlsx",
       "sourceSheet": "BD Monitoramento",
@@ -2854,7 +2996,11 @@
       "returnStatusSourceRow": 32,
       "returnStatusReferenceDate": "2026-08-20",
       "returnStatusUpdatedAt": "2026-08-20T00:00:00Z",
-      "returnCorrectionNote": null
+      "returnCorrectionNote": null,
+      "originOmSource": "SP",
+      "originOmShortCode": "SP",
+      "originOmNormalizationVersion": 2,
+      "originOmNormalizedAt": "2026-08-20"
     },
     {
       "id": "93de5870e03523f98540568c992ec5a7df15293c8abe12057c03c82d4640a093",
@@ -2870,7 +3016,7 @@
       "realStatusDiscardReason": null,
       "visualStage": "CABW/CABE (retorno)",
       "requisition": "SPSR07110F5",
-      "originOm": "SP",
+      "originOm": "PAMA-SP",
       "originDerived": true,
       "partNumber": "2562A13M",
       "serialNumber": "377-170",
@@ -2905,7 +3051,7 @@
       "archivedOutOfScope": false,
       "outOfScopeReason": null,
       "qualityWarnings": [
-        "OM derivada dos dois primeiros caracteres da requisição"
+        "Parque / OM derivado da requisição e normalizado como PAMA-SP"
       ],
       "sourceFileName": "CONTROLE REPARO - SGT ROZENDO - 03082026.xlsx",
       "sourceSheet": "BD Monitoramento",
@@ -2940,7 +3086,11 @@
       "returnStatusSourceRow": 33,
       "returnStatusReferenceDate": "2026-08-20",
       "returnStatusUpdatedAt": "2026-08-20T00:00:00Z",
-      "returnCorrectionNote": null
+      "returnCorrectionNote": null,
+      "originOmSource": "SP",
+      "originOmShortCode": "SP",
+      "originOmNormalizationVersion": 2,
+      "originOmNormalizedAt": "2026-08-20"
     },
     {
       "id": "200142d8ec96cd0e577037d851b2449f23a8d586c84c8b38eeafe23567510d54",
@@ -2956,7 +3106,7 @@
       "realStatusDiscardReason": null,
       "visualStage": "CABW/CABE (retorno)",
       "requisition": "SPSR08501F5",
-      "originOm": "SP",
+      "originOm": "PAMA-SP",
       "originDerived": true,
       "partNumber": "2562A13M",
       "serialNumber": "400-01",
@@ -2991,7 +3141,7 @@
       "archivedOutOfScope": false,
       "outOfScopeReason": null,
       "qualityWarnings": [
-        "OM derivada dos dois primeiros caracteres da requisição"
+        "Parque / OM derivado da requisição e normalizado como PAMA-SP"
       ],
       "sourceFileName": "CONTROLE REPARO - SGT ROZENDO - 03082026.xlsx",
       "sourceSheet": "BD Monitoramento",
@@ -3026,7 +3176,11 @@
       "returnStatusSourceRow": 34,
       "returnStatusReferenceDate": "2026-08-20",
       "returnStatusUpdatedAt": "2026-08-20T00:00:00Z",
-      "returnCorrectionNote": null
+      "returnCorrectionNote": null,
+      "originOmSource": "SP",
+      "originOmShortCode": "SP",
+      "originOmNormalizationVersion": 2,
+      "originOmNormalizedAt": "2026-08-20"
     },
     {
       "id": "770a09a9370ce25a9948595ab121f718db3a3c207b6819e0666da2be113ab2ca",
@@ -3042,7 +3196,7 @@
       "realStatusDiscardReason": null,
       "visualStage": "CABW/CABE (retorno)",
       "requisition": "SPSR07103F5",
-      "originOm": "SP",
+      "originOm": "PAMA-SP",
       "originDerived": true,
       "partNumber": "20110",
       "serialNumber": "5136-11",
@@ -3077,7 +3231,7 @@
       "archivedOutOfScope": false,
       "outOfScopeReason": null,
       "qualityWarnings": [
-        "OM derivada dos dois primeiros caracteres da requisição"
+        "Parque / OM derivado da requisição e normalizado como PAMA-SP"
       ],
       "sourceFileName": "CONTROLE REPARO - SGT ROZENDO - 03082026.xlsx",
       "sourceSheet": "BD Monitoramento",
@@ -3112,7 +3266,11 @@
       "returnStatusSourceRow": 37,
       "returnStatusReferenceDate": "2026-08-20",
       "returnStatusUpdatedAt": "2026-08-20T00:00:00Z",
-      "returnCorrectionNote": null
+      "returnCorrectionNote": null,
+      "originOmSource": "SP",
+      "originOmShortCode": "SP",
+      "originOmNormalizationVersion": 2,
+      "originOmNormalizedAt": "2026-08-20"
     },
     {
       "id": "7905389798678aa032ff26831e66abd9f441b82bc3dd63352e80d65caa9386d3",
@@ -3128,7 +3286,7 @@
       "realStatusDiscardReason": null,
       "visualStage": "CABW/CABE (retorno)",
       "requisition": "SPSR07104F5",
-      "originOm": "SP",
+      "originOm": "PAMA-SP",
       "originDerived": true,
       "partNumber": "20110",
       "serialNumber": "4139-10",
@@ -3163,7 +3321,7 @@
       "archivedOutOfScope": false,
       "outOfScopeReason": null,
       "qualityWarnings": [
-        "OM derivada dos dois primeiros caracteres da requisição"
+        "Parque / OM derivado da requisição e normalizado como PAMA-SP"
       ],
       "sourceFileName": "CONTROLE REPARO - SGT ROZENDO - 03082026.xlsx",
       "sourceSheet": "BD Monitoramento",
@@ -3198,7 +3356,11 @@
       "returnStatusSourceRow": 35,
       "returnStatusReferenceDate": "2026-08-20",
       "returnStatusUpdatedAt": "2026-08-20T00:00:00Z",
-      "returnCorrectionNote": null
+      "returnCorrectionNote": null,
+      "originOmSource": "SP",
+      "originOmShortCode": "SP",
+      "originOmNormalizationVersion": 2,
+      "originOmNormalizedAt": "2026-08-20"
     },
     {
       "id": "b6204ece4bee4aa0488ba1bf71cd367409e90c6e3887386c4c4c19c7f76bc0ea",
@@ -3214,7 +3376,7 @@
       "realStatusDiscardReason": null,
       "visualStage": "CABW/CABE (retorno)",
       "requisition": "SPSR07105F5",
-      "originOm": "SP",
+      "originOm": "PAMA-SP",
       "originDerived": true,
       "partNumber": "20110",
       "serialNumber": "5046-2",
@@ -3249,7 +3411,7 @@
       "archivedOutOfScope": false,
       "outOfScopeReason": null,
       "qualityWarnings": [
-        "OM derivada dos dois primeiros caracteres da requisição"
+        "Parque / OM derivado da requisição e normalizado como PAMA-SP"
       ],
       "sourceFileName": "CONTROLE REPARO - SGT ROZENDO - 03082026.xlsx",
       "sourceSheet": "BD Monitoramento",
@@ -3284,7 +3446,11 @@
       "returnStatusSourceRow": 36,
       "returnStatusReferenceDate": "2026-08-20",
       "returnStatusUpdatedAt": "2026-08-20T00:00:00Z",
-      "returnCorrectionNote": null
+      "returnCorrectionNote": null,
+      "originOmSource": "SP",
+      "originOmShortCode": "SP",
+      "originOmNormalizationVersion": 2,
+      "originOmNormalizedAt": "2026-08-20"
     },
     {
       "id": "5dc5d1daebadfbea313ef0f6be4f2f398a2ed872753ddc610441bc6595f78b75",
@@ -3300,7 +3466,7 @@
       "realStatusDiscardReason": null,
       "visualStage": "Reparador",
       "requisition": "GLSR04901P3",
-      "originOm": "GL",
+      "originOm": "PAMA-GL",
       "originDerived": true,
       "partNumber": "BR61-101",
       "serialNumber": "1978-03",
@@ -3335,7 +3501,7 @@
       "archivedOutOfScope": false,
       "outOfScopeReason": null,
       "qualityWarnings": [
-        "OM derivada dos dois primeiros caracteres da requisição",
+        "Parque / OM derivado da requisição e normalizado como PAMA-GL",
         "TDR ainda não recebido: colunas O e P em branco"
       ],
       "sourceFileName": "CONTROLE REPARO - SGT ROZENDO - 03082026.xlsx",
@@ -3371,7 +3537,11 @@
       "returnStatusSourceRow": 38,
       "returnStatusReferenceDate": "2026-08-20",
       "returnStatusUpdatedAt": "2026-08-20T00:00:00Z",
-      "returnCorrectionNote": null
+      "returnCorrectionNote": null,
+      "originOmSource": "GL",
+      "originOmShortCode": "GL",
+      "originOmNormalizationVersion": 2,
+      "originOmNormalizedAt": "2026-08-20"
     },
     {
       "id": "660f31fa2fc7a3dc0b5e3b85eae6d475c84bd05b6cc85bd682d6e4cb2a5069bd",
@@ -3387,7 +3557,7 @@
       "realStatusDiscardReason": null,
       "visualStage": "Reparador",
       "requisition": "GLSR04904P3",
-      "originOm": "GL",
+      "originOm": "PAMA-GL",
       "originDerived": true,
       "partNumber": "6798233L",
       "serialNumber": "10019",
@@ -3422,7 +3592,7 @@
       "archivedOutOfScope": false,
       "outOfScopeReason": null,
       "qualityWarnings": [
-        "OM derivada dos dois primeiros caracteres da requisição",
+        "Parque / OM derivado da requisição e normalizado como PAMA-GL",
         "TDR ainda não recebido: colunas O e P em branco"
       ],
       "sourceFileName": "CONTROLE REPARO - SGT ROZENDO - 03082026.xlsx",
@@ -3458,7 +3628,11 @@
       "returnStatusSourceRow": 39,
       "returnStatusReferenceDate": "2026-08-20",
       "returnStatusUpdatedAt": "2026-08-20T00:00:00Z",
-      "returnCorrectionNote": null
+      "returnCorrectionNote": null,
+      "originOmSource": "GL",
+      "originOmShortCode": "GL",
+      "originOmNormalizationVersion": 2,
+      "originOmNormalizedAt": "2026-08-20"
     },
     {
       "id": "c0cd7c5fc7322ea985871f434389360e4fbba58369c640834600b799b2ee1df1",
@@ -3474,7 +3648,7 @@
       "realStatusDiscardReason": null,
       "visualStage": "CABW/CABE (retorno)",
       "requisition": "GLSR04905P3",
-      "originOm": "GL",
+      "originOm": "PAMA-GL",
       "originDerived": true,
       "partNumber": "6798233L",
       "serialNumber": "18017",
@@ -3509,7 +3683,7 @@
       "archivedOutOfScope": false,
       "outOfScopeReason": null,
       "qualityWarnings": [
-        "OM derivada dos dois primeiros caracteres da requisição"
+        "Parque / OM derivado da requisição e normalizado como PAMA-GL"
       ],
       "sourceFileName": "CONTROLE REPARO - SGT ROZENDO - 03082026.xlsx",
       "sourceSheet": "BD Monitoramento",
@@ -3544,7 +3718,11 @@
       "returnStatusSourceRow": 40,
       "returnStatusReferenceDate": "2026-08-20",
       "returnStatusUpdatedAt": "2026-08-20T00:00:00Z",
-      "returnCorrectionNote": null
+      "returnCorrectionNote": null,
+      "originOmSource": "GL",
+      "originOmShortCode": "GL",
+      "originOmNormalizationVersion": 2,
+      "originOmNormalizedAt": "2026-08-20"
     },
     {
       "id": "9b8cb86dbc8b0bfd702a82f6d4ea806509f488db1ad6692751414056a997c024",
@@ -3560,7 +3738,7 @@
       "realStatusDiscardReason": null,
       "visualStage": "CABW/CABE (retorno)",
       "requisition": "GLSR07102P3",
-      "originOm": "GL",
+      "originOm": "PAMA-GL",
       "originDerived": true,
       "partNumber": "ADTS405-5643",
       "serialNumber": "40504372",
@@ -3595,7 +3773,7 @@
       "archivedOutOfScope": false,
       "outOfScopeReason": null,
       "qualityWarnings": [
-        "OM derivada dos dois primeiros caracteres da requisição"
+        "Parque / OM derivado da requisição e normalizado como PAMA-GL"
       ],
       "sourceFileName": "CONTROLE REPARO - SGT ROZENDO - 03082026.xlsx",
       "sourceSheet": "BD Monitoramento",
@@ -3630,7 +3808,11 @@
       "returnStatusSourceRow": 41,
       "returnStatusReferenceDate": "2026-08-20",
       "returnStatusUpdatedAt": "2026-08-20T00:00:00Z",
-      "returnCorrectionNote": null
+      "returnCorrectionNote": null,
+      "originOmSource": "GL",
+      "originOmShortCode": "GL",
+      "originOmNormalizationVersion": 2,
+      "originOmNormalizedAt": "2026-08-20"
     },
     {
       "id": "3b1e76f6743417b2db587ad6be83944fbe29f3a0155b87752adbd97a08e7c847",
@@ -3646,7 +3828,7 @@
       "realStatusDiscardReason": null,
       "visualStage": "Reparador",
       "requisition": "GLSR00801P3",
-      "originOm": "GL",
+      "originOm": "PAMA-GL",
       "originDerived": true,
       "partNumber": "146223000500",
       "serialNumber": "2002",
@@ -3681,7 +3863,7 @@
       "archivedOutOfScope": false,
       "outOfScopeReason": null,
       "qualityWarnings": [
-        "OM derivada dos dois primeiros caracteres da requisição"
+        "Parque / OM derivado da requisição e normalizado como PAMA-GL"
       ],
       "sourceFileName": "CONTROLE REPARO - SGT ROZENDO - 03082026.xlsx",
       "sourceSheet": "BD Monitoramento",
@@ -3716,7 +3898,11 @@
       "returnStatusSourceRow": 42,
       "returnStatusReferenceDate": "2026-08-20",
       "returnStatusUpdatedAt": "2026-08-20T00:00:00Z",
-      "returnCorrectionNote": null
+      "returnCorrectionNote": null,
+      "originOmSource": "GL",
+      "originOmShortCode": "GL",
+      "originOmNormalizationVersion": 2,
+      "originOmNormalizedAt": "2026-08-20"
     },
     {
       "id": "5633795b141f24ef68bd779a6806d154a9af9b2ed278d8a82ced3d8a3f7cad29",
@@ -3732,7 +3918,7 @@
       "realStatusDiscardReason": null,
       "visualStage": "Reparador",
       "requisition": "GLSR00802P3",
-      "originOm": "GL",
+      "originOm": "PAMA-GL",
       "originDerived": true,
       "partNumber": "146223000500",
       "serialNumber": "2005",
@@ -3767,7 +3953,7 @@
       "archivedOutOfScope": false,
       "outOfScopeReason": null,
       "qualityWarnings": [
-        "OM derivada dos dois primeiros caracteres da requisição"
+        "Parque / OM derivado da requisição e normalizado como PAMA-GL"
       ],
       "sourceFileName": "CONTROLE REPARO - SGT ROZENDO - 03082026.xlsx",
       "sourceSheet": "BD Monitoramento",
@@ -3802,7 +3988,11 @@
       "returnStatusSourceRow": 43,
       "returnStatusReferenceDate": "2026-08-20",
       "returnStatusUpdatedAt": "2026-08-20T00:00:00Z",
-      "returnCorrectionNote": null
+      "returnCorrectionNote": null,
+      "originOmSource": "GL",
+      "originOmShortCode": "GL",
+      "originOmNormalizationVersion": 2,
+      "originOmNormalizedAt": "2026-08-20"
     },
     {
       "id": "42c6cb5fa73c0d8357bf2a637d2c4fe8867151beb55e39c91a7acbbc4269136f",
@@ -3818,7 +4008,7 @@
       "realStatusDiscardReason": null,
       "visualStage": "Reparador",
       "requisition": "PBSR16701PY",
-      "originOm": "PB",
+      "originOm": "PAMB-RJ",
       "originDerived": true,
       "partNumber": "R10P1000B",
       "serialNumber": "MIT 1037-01",
@@ -3853,7 +4043,7 @@
       "archivedOutOfScope": false,
       "outOfScopeReason": null,
       "qualityWarnings": [
-        "OM derivada dos dois primeiros caracteres da requisição"
+        "Parque / OM derivado da requisição e normalizado como PAMB-RJ"
       ],
       "sourceFileName": "CONTROLE REPARO - SGT ROZENDO - 03082026.xlsx",
       "sourceSheet": "BD Monitoramento",
@@ -3888,7 +4078,11 @@
       "returnStatusSourceRow": 44,
       "returnStatusReferenceDate": "2026-08-20",
       "returnStatusUpdatedAt": "2026-08-20T00:00:00Z",
-      "returnCorrectionNote": null
+      "returnCorrectionNote": null,
+      "originOmSource": "PB",
+      "originOmShortCode": "PB",
+      "originOmNormalizationVersion": 2,
+      "originOmNormalizedAt": "2026-08-20"
     },
     {
       "id": "b82e8dc7f4dcc5cda4d8f219a4909bef40ec509c2dd31a9ab88c8a085b0f22b6",
@@ -3904,7 +4098,7 @@
       "realStatusDiscardReason": null,
       "visualStage": "Reparador",
       "requisition": "PBSR16402PY",
-      "originOm": "PB",
+      "originOm": "PAMB-RJ",
       "originDerived": true,
       "partNumber": "R10A0040A",
       "serialNumber": "Y2126",
@@ -3939,7 +4133,7 @@
       "archivedOutOfScope": false,
       "outOfScopeReason": null,
       "qualityWarnings": [
-        "OM derivada dos dois primeiros caracteres da requisição"
+        "Parque / OM derivado da requisição e normalizado como PAMB-RJ"
       ],
       "sourceFileName": "CONTROLE REPARO - SGT ROZENDO - 03082026.xlsx",
       "sourceSheet": "BD Monitoramento",
@@ -3974,7 +4168,11 @@
       "returnStatusSourceRow": 45,
       "returnStatusReferenceDate": "2026-08-20",
       "returnStatusUpdatedAt": "2026-08-20T00:00:00Z",
-      "returnCorrectionNote": null
+      "returnCorrectionNote": null,
+      "originOmSource": "PB",
+      "originOmShortCode": "PB",
+      "originOmNormalizationVersion": 2,
+      "originOmNormalizedAt": "2026-08-20"
     },
     {
       "id": "7c85c9c67ac35445ed74d53bb3ef7219b708449e3dd0e0ace0f73d2ab60e0509",
@@ -3990,7 +4188,7 @@
       "realStatusDiscardReason": null,
       "visualStage": "Reparador",
       "requisition": "GLSR04902P3",
-      "originOm": "GL",
+      "originOm": "PAMA-GL",
       "originDerived": true,
       "partNumber": "BR61-103",
       "serialNumber": "2138-01",
@@ -4025,7 +4223,7 @@
       "archivedOutOfScope": false,
       "outOfScopeReason": null,
       "qualityWarnings": [
-        "OM derivada dos dois primeiros caracteres da requisição",
+        "Parque / OM derivado da requisição e normalizado como PAMA-GL",
         "TDR ainda não recebido: colunas O e P em branco"
       ],
       "sourceFileName": "CONTROLE REPARO - SGT ROZENDO - 03082026.xlsx",
@@ -4061,7 +4259,11 @@
       "returnStatusSourceRow": 46,
       "returnStatusReferenceDate": "2026-08-20",
       "returnStatusUpdatedAt": "2026-08-20T00:00:00Z",
-      "returnCorrectionNote": null
+      "returnCorrectionNote": null,
+      "originOmSource": "GL",
+      "originOmShortCode": "GL",
+      "originOmNormalizationVersion": 2,
+      "originOmNormalizedAt": "2026-08-20"
     },
     {
       "id": "9a62bf4bb1d86d3fbe822e3348a0de4a5108f8b786d7613a3b745d6e1a118bcf",
@@ -4077,7 +4279,7 @@
       "realStatusDiscardReason": null,
       "visualStage": "Reparador",
       "requisition": "GLSR04906P3",
-      "originOm": "GL",
+      "originOm": "PAMA-GL",
       "originDerived": true,
       "partNumber": "H153C",
       "serialNumber": "0183",
@@ -4112,7 +4314,7 @@
       "archivedOutOfScope": false,
       "outOfScopeReason": null,
       "qualityWarnings": [
-        "OM derivada dos dois primeiros caracteres da requisição",
+        "Parque / OM derivado da requisição e normalizado como PAMA-GL",
         "TDR ainda não recebido: colunas O e P em branco"
       ],
       "sourceFileName": "CONTROLE REPARO - SGT ROZENDO - 03082026.xlsx",
@@ -4148,7 +4350,11 @@
       "returnStatusSourceRow": 47,
       "returnStatusReferenceDate": "2026-08-20",
       "returnStatusUpdatedAt": "2026-08-20T00:00:00Z",
-      "returnCorrectionNote": null
+      "returnCorrectionNote": null,
+      "originOmSource": "GL",
+      "originOmShortCode": "GL",
+      "originOmNormalizationVersion": 2,
+      "originOmNormalizedAt": "2026-08-20"
     },
     {
       "id": "9625b638d6039e97a45a8346598c8405a3395fcd28585711c79ff4e0502c68e6",
@@ -4164,7 +4370,7 @@
       "realStatusDiscardReason": null,
       "visualStage": "CABW/CABE (retorno)",
       "requisition": "GLSR07602P3",
-      "originOm": "GL",
+      "originOm": "PAMA-GL",
       "originDerived": true,
       "partNumber": "GX-2012",
       "serialNumber": "489020181RN",
@@ -4199,7 +4405,7 @@
       "archivedOutOfScope": false,
       "outOfScopeReason": null,
       "qualityWarnings": [
-        "OM derivada dos dois primeiros caracteres da requisição"
+        "Parque / OM derivado da requisição e normalizado como PAMA-GL"
       ],
       "sourceFileName": "CONTROLE REPARO - SGT ROZENDO - 03082026.xlsx",
       "sourceSheet": "BD Monitoramento",
@@ -4234,7 +4440,11 @@
       "returnStatusSourceRow": 48,
       "returnStatusReferenceDate": "2026-08-20",
       "returnStatusUpdatedAt": "2026-08-20T00:00:00Z",
-      "returnCorrectionNote": null
+      "returnCorrectionNote": null,
+      "originOmSource": "GL",
+      "originOmShortCode": "GL",
+      "originOmNormalizationVersion": 2,
+      "originOmNormalizedAt": "2026-08-20"
     },
     {
       "id": "13b17796a7dc2e822578cfb17e264a4ddbe3ff7a978401fe3a3ca530f4d1652a",
@@ -4250,7 +4460,7 @@
       "realStatusDiscardReason": null,
       "visualStage": "CABW/CABE (retorno)",
       "requisition": "GLSR07603P3",
-      "originOm": "GL",
+      "originOm": "PAMA-GL",
       "originDerived": true,
       "partNumber": "GX-2012",
       "serialNumber": "489020171RN",
@@ -4285,7 +4495,7 @@
       "archivedOutOfScope": false,
       "outOfScopeReason": null,
       "qualityWarnings": [
-        "OM derivada dos dois primeiros caracteres da requisição"
+        "Parque / OM derivado da requisição e normalizado como PAMA-GL"
       ],
       "sourceFileName": "CONTROLE REPARO - SGT ROZENDO - 03082026.xlsx",
       "sourceSheet": "BD Monitoramento",
@@ -4320,7 +4530,11 @@
       "returnStatusSourceRow": 49,
       "returnStatusReferenceDate": "2026-08-20",
       "returnStatusUpdatedAt": "2026-08-20T00:00:00Z",
-      "returnCorrectionNote": null
+      "returnCorrectionNote": null,
+      "originOmSource": "GL",
+      "originOmShortCode": "GL",
+      "originOmNormalizationVersion": 2,
+      "originOmNormalizedAt": "2026-08-20"
     },
     {
       "id": "58e6578cfe44e3cbf142a9927e3d818d34b501c4cb473b36c1c512426f284c47",
@@ -4336,7 +4550,7 @@
       "realStatusDiscardReason": null,
       "visualStage": "CABW/CABE (retorno)",
       "requisition": "GLSR07604P3",
-      "originOm": "GL",
+      "originOm": "PAMA-GL",
       "originDerived": true,
       "partNumber": "6798233L",
       "serialNumber": "10011",
@@ -4371,7 +4585,7 @@
       "archivedOutOfScope": false,
       "outOfScopeReason": null,
       "qualityWarnings": [
-        "OM derivada dos dois primeiros caracteres da requisição"
+        "Parque / OM derivado da requisição e normalizado como PAMA-GL"
       ],
       "sourceFileName": "CONTROLE REPARO - SGT ROZENDO - 03082026.xlsx",
       "sourceSheet": "BD Monitoramento",
@@ -4406,7 +4620,11 @@
       "returnStatusSourceRow": 50,
       "returnStatusReferenceDate": "2026-08-20",
       "returnStatusUpdatedAt": "2026-08-20T00:00:00Z",
-      "returnCorrectionNote": null
+      "returnCorrectionNote": null,
+      "originOmSource": "GL",
+      "originOmShortCode": "GL",
+      "originOmNormalizationVersion": 2,
+      "originOmNormalizedAt": "2026-08-20"
     },
     {
       "id": "5c30bb2ac6cbefee991b142b3b79b08cc157b8df13b9d0d8eb3a912299241732",
@@ -4422,7 +4640,7 @@
       "realStatusDiscardReason": null,
       "visualStage": "CABW/CABE (retorno)",
       "requisition": "GLSR07605P3",
-      "originOm": "GL",
+      "originOm": "PAMA-GL",
       "originDerived": true,
       "partNumber": "6798233L",
       "serialNumber": "10012",
@@ -4457,7 +4675,7 @@
       "archivedOutOfScope": false,
       "outOfScopeReason": null,
       "qualityWarnings": [
-        "OM derivada dos dois primeiros caracteres da requisição"
+        "Parque / OM derivado da requisição e normalizado como PAMA-GL"
       ],
       "sourceFileName": "CONTROLE REPARO - SGT ROZENDO - 03082026.xlsx",
       "sourceSheet": "BD Monitoramento",
@@ -4492,7 +4710,11 @@
       "returnStatusSourceRow": 51,
       "returnStatusReferenceDate": "2026-08-20",
       "returnStatusUpdatedAt": "2026-08-20T00:00:00Z",
-      "returnCorrectionNote": null
+      "returnCorrectionNote": null,
+      "originOmSource": "GL",
+      "originOmShortCode": "GL",
+      "originOmNormalizationVersion": 2,
+      "originOmNormalizedAt": "2026-08-20"
     },
     {
       "id": "6e4faaacdd13b050e9eb809cd4493de42a795c1e3c21572ca8715012fbc9d777",
@@ -4508,7 +4730,7 @@
       "realStatusDiscardReason": null,
       "visualStage": "CABW/CABE (retorno)",
       "requisition": "SPSR04904T1",
-      "originOm": "SP",
+      "originOm": "PAMA-SP",
       "originDerived": true,
       "partNumber": "3244809-4",
       "serialNumber": "A87288",
@@ -4543,7 +4765,7 @@
       "archivedOutOfScope": false,
       "outOfScopeReason": null,
       "qualityWarnings": [
-        "OM derivada dos dois primeiros caracteres da requisição"
+        "Parque / OM derivado da requisição e normalizado como PAMA-SP"
       ],
       "sourceFileName": "CONTROLE REPARO - SGT ROZENDO - 03082026.xlsx",
       "sourceSheet": "BD Monitoramento",
@@ -4578,7 +4800,11 @@
       "returnStatusSourceRow": 52,
       "returnStatusReferenceDate": "2026-08-20",
       "returnStatusUpdatedAt": "2026-08-20T00:00:00Z",
-      "returnCorrectionNote": null
+      "returnCorrectionNote": null,
+      "originOmSource": "SP",
+      "originOmShortCode": "SP",
+      "originOmNormalizationVersion": 2,
+      "originOmNormalizedAt": "2026-08-20"
     },
     {
       "id": "da042c02dd36158aba848f3681b47d6d154490ad4cdb337107b5098b07954c02",
@@ -4594,7 +4820,7 @@
       "realStatusDiscardReason": null,
       "visualStage": "CABW/CABE (retorno)",
       "requisition": "SPSR04905T1",
-      "originOm": "SP",
+      "originOm": "PAMA-SP",
       "originDerived": true,
       "partNumber": "3244809-8",
       "serialNumber": "C26003",
@@ -4629,7 +4855,7 @@
       "archivedOutOfScope": false,
       "outOfScopeReason": null,
       "qualityWarnings": [
-        "OM derivada dos dois primeiros caracteres da requisição"
+        "Parque / OM derivado da requisição e normalizado como PAMA-SP"
       ],
       "sourceFileName": "CONTROLE REPARO - SGT ROZENDO - 03082026.xlsx",
       "sourceSheet": "BD Monitoramento",
@@ -4664,7 +4890,11 @@
       "returnStatusSourceRow": 53,
       "returnStatusReferenceDate": "2026-08-20",
       "returnStatusUpdatedAt": "2026-08-20T00:00:00Z",
-      "returnCorrectionNote": null
+      "returnCorrectionNote": null,
+      "originOmSource": "SP",
+      "originOmShortCode": "SP",
+      "originOmNormalizationVersion": 2,
+      "originOmNormalizedAt": "2026-08-20"
     },
     {
       "id": "479fbaec292e005ac944eea6b593ca830619c332c43297ecb2282e490d5e8fca",
@@ -4680,7 +4910,7 @@
       "realStatusDiscardReason": null,
       "visualStage": "CABW/CABE (retorno)",
       "requisition": "SPSR07301F5",
-      "originOm": "SP",
+      "originOm": "PAMA-SP",
       "originDerived": true,
       "partNumber": "2760003-102",
       "serialNumber": "1187",
@@ -4715,7 +4945,7 @@
       "archivedOutOfScope": false,
       "outOfScopeReason": null,
       "qualityWarnings": [
-        "OM derivada dos dois primeiros caracteres da requisição"
+        "Parque / OM derivado da requisição e normalizado como PAMA-SP"
       ],
       "sourceFileName": "CONTROLE REPARO - SGT ROZENDO - 03082026.xlsx",
       "sourceSheet": "BD Monitoramento",
@@ -4750,7 +4980,11 @@
       "returnStatusSourceRow": 54,
       "returnStatusReferenceDate": "2026-08-20",
       "returnStatusUpdatedAt": "2026-08-20T00:00:00Z",
-      "returnCorrectionNote": null
+      "returnCorrectionNote": null,
+      "originOmSource": "SP",
+      "originOmShortCode": "SP",
+      "originOmNormalizationVersion": 2,
+      "originOmNormalizedAt": "2026-08-20"
     },
     {
       "id": "f30e13e3b6136c65e37984a487bef75dd5c8584a97029e98a0940b34065d8c64",
@@ -4766,7 +5000,7 @@
       "realStatusDiscardReason": null,
       "visualStage": "Reparador",
       "requisition": "GLSR00803P3",
-      "originOm": "GL",
+      "originOm": "PAMA-GL",
       "originDerived": true,
       "partNumber": "146223000500",
       "serialNumber": "2007",
@@ -4801,7 +5035,7 @@
       "archivedOutOfScope": false,
       "outOfScopeReason": null,
       "qualityWarnings": [
-        "OM derivada dos dois primeiros caracteres da requisição"
+        "Parque / OM derivado da requisição e normalizado como PAMA-GL"
       ],
       "sourceFileName": "CONTROLE REPARO - SGT ROZENDO - 03082026.xlsx",
       "sourceSheet": "BD Monitoramento",
@@ -4836,7 +5070,11 @@
       "returnStatusSourceRow": 55,
       "returnStatusReferenceDate": "2026-08-20",
       "returnStatusUpdatedAt": "2026-08-20T00:00:00Z",
-      "returnCorrectionNote": null
+      "returnCorrectionNote": null,
+      "originOmSource": "GL",
+      "originOmShortCode": "GL",
+      "originOmNormalizationVersion": 2,
+      "originOmNormalizedAt": "2026-08-20"
     },
     {
       "id": "561d86aec1878e70a6f18f17629022cac6fde4867b4932c54fa816d3eb88fb47",
@@ -4852,7 +5090,7 @@
       "realStatusDiscardReason": null,
       "visualStage": "CABW/CABE (retorno)",
       "requisition": "GLSR07830P3",
-      "originOm": "GL",
+      "originOm": "PAMA-GL",
       "originDerived": true,
       "partNumber": "0864111210000",
       "serialNumber": "14080011",
@@ -4887,7 +5125,7 @@
       "archivedOutOfScope": false,
       "outOfScopeReason": null,
       "qualityWarnings": [
-        "OM derivada dos dois primeiros caracteres da requisição"
+        "Parque / OM derivado da requisição e normalizado como PAMA-GL"
       ],
       "sourceFileName": "CONTROLE REPARO - SGT ROZENDO - 03082026.xlsx",
       "sourceSheet": "BD Monitoramento",
@@ -4922,7 +5160,11 @@
       "returnStatusSourceRow": 56,
       "returnStatusReferenceDate": "2026-08-20",
       "returnStatusUpdatedAt": "2026-08-20T00:00:00Z",
-      "returnCorrectionNote": null
+      "returnCorrectionNote": null,
+      "originOmSource": "GL",
+      "originOmShortCode": "GL",
+      "originOmNormalizationVersion": 2,
+      "originOmNormalizedAt": "2026-08-20"
     },
     {
       "id": "071d4615dfe5ed03467f96bcf6b997eca76dc8fb720fb448b56c3086d60ca43d",
@@ -4938,7 +5180,7 @@
       "realStatusDiscardReason": null,
       "visualStage": "CABW/CABE (retorno)",
       "requisition": "GLSR07840P3",
-      "originOm": "GL",
+      "originOm": "PAMA-GL",
       "originDerived": true,
       "partNumber": "0864613000800",
       "serialNumber": "2004",
@@ -4973,7 +5215,7 @@
       "archivedOutOfScope": false,
       "outOfScopeReason": null,
       "qualityWarnings": [
-        "OM derivada dos dois primeiros caracteres da requisição"
+        "Parque / OM derivado da requisição e normalizado como PAMA-GL"
       ],
       "sourceFileName": "CONTROLE REPARO - SGT ROZENDO - 03082026.xlsx",
       "sourceSheet": "BD Monitoramento",
@@ -5008,7 +5250,11 @@
       "returnStatusSourceRow": 57,
       "returnStatusReferenceDate": "2026-08-20",
       "returnStatusUpdatedAt": "2026-08-20T00:00:00Z",
-      "returnCorrectionNote": null
+      "returnCorrectionNote": null,
+      "originOmSource": "GL",
+      "originOmShortCode": "GL",
+      "originOmNormalizationVersion": 2,
+      "originOmNormalizedAt": "2026-08-20"
     },
     {
       "id": "5773ad5a5495a79b3cf532ead95fbf84cf80e450ae7e0a56370a2ecd0ff80241",
@@ -5024,7 +5270,7 @@
       "realStatusDiscardReason": null,
       "visualStage": "CABW/CABE (retorno)",
       "requisition": "GLSR07828P3",
-      "originOm": "GL",
+      "originOm": "PAMA-GL",
       "originDerived": true,
       "partNumber": "0864111210000",
       "serialNumber": "12320003",
@@ -5059,7 +5305,7 @@
       "archivedOutOfScope": false,
       "outOfScopeReason": null,
       "qualityWarnings": [
-        "OM derivada dos dois primeiros caracteres da requisição"
+        "Parque / OM derivado da requisição e normalizado como PAMA-GL"
       ],
       "sourceFileName": "CONTROLE REPARO - SGT ROZENDO - 03082026.xlsx",
       "sourceSheet": "BD Monitoramento",
@@ -5094,7 +5340,11 @@
       "returnStatusSourceRow": 58,
       "returnStatusReferenceDate": "2026-08-20",
       "returnStatusUpdatedAt": "2026-08-20T00:00:00Z",
-      "returnCorrectionNote": null
+      "returnCorrectionNote": null,
+      "originOmSource": "GL",
+      "originOmShortCode": "GL",
+      "originOmNormalizationVersion": 2,
+      "originOmNormalizedAt": "2026-08-20"
     },
     {
       "id": "29e4eca805daf9c5f35ef22a643118479715e07ff2aecf70198659a9b607a76d",
@@ -5110,7 +5360,7 @@
       "realStatusDiscardReason": null,
       "visualStage": "CABW/CABE (retorno)",
       "requisition": "GLSR07829P3",
-      "originOm": "GL",
+      "originOm": "PAMA-GL",
       "originDerived": true,
       "partNumber": "0864111210000",
       "serialNumber": "14080010",
@@ -5145,7 +5395,7 @@
       "archivedOutOfScope": false,
       "outOfScopeReason": null,
       "qualityWarnings": [
-        "OM derivada dos dois primeiros caracteres da requisição"
+        "Parque / OM derivado da requisição e normalizado como PAMA-GL"
       ],
       "sourceFileName": "CONTROLE REPARO - SGT ROZENDO - 03082026.xlsx",
       "sourceSheet": "BD Monitoramento",
@@ -5180,7 +5430,11 @@
       "returnStatusSourceRow": 59,
       "returnStatusReferenceDate": "2026-08-20",
       "returnStatusUpdatedAt": "2026-08-20T00:00:00Z",
-      "returnCorrectionNote": null
+      "returnCorrectionNote": null,
+      "originOmSource": "GL",
+      "originOmShortCode": "GL",
+      "originOmNormalizationVersion": 2,
+      "originOmNormalizedAt": "2026-08-20"
     },
     {
       "id": "1033e9f4c7d812a20c73e7ec5e41565dcb16487c63a67c48cd5d160350368ddc",
@@ -5196,7 +5450,7 @@
       "realStatusDiscardReason": null,
       "visualStage": "CABW/CABE (retorno)",
       "requisition": "SPSR05001T1",
-      "originOm": "SP",
+      "originOm": "PAMA-SP",
       "originDerived": true,
       "partNumber": "3244809-4",
       "serialNumber": "A87278",
@@ -5231,7 +5485,7 @@
       "archivedOutOfScope": false,
       "outOfScopeReason": null,
       "qualityWarnings": [
-        "OM derivada dos dois primeiros caracteres da requisição"
+        "Parque / OM derivado da requisição e normalizado como PAMA-SP"
       ],
       "sourceFileName": "CONTROLE REPARO - SGT ROZENDO - 03082026.xlsx",
       "sourceSheet": "BD Monitoramento",
@@ -5266,7 +5520,11 @@
       "returnStatusSourceRow": 60,
       "returnStatusReferenceDate": "2026-08-20",
       "returnStatusUpdatedAt": "2026-08-20T00:00:00Z",
-      "returnCorrectionNote": null
+      "returnCorrectionNote": null,
+      "originOmSource": "SP",
+      "originOmShortCode": "SP",
+      "originOmNormalizationVersion": 2,
+      "originOmNormalizedAt": "2026-08-20"
     },
     {
       "id": "6915b882bccdd9bbc01e9ece3bda9b4fb2723978a33bdc4856d4beffb7f65d21",
@@ -5282,7 +5540,7 @@
       "realStatusDiscardReason": null,
       "visualStage": "CABW/CABE (retorno)",
       "requisition": "SPSR05002T1",
-      "originOm": "SP",
+      "originOm": "PAMA-SP",
       "originDerived": true,
       "partNumber": "3244809-8",
       "serialNumber": "C26001",
@@ -5317,7 +5575,7 @@
       "archivedOutOfScope": false,
       "outOfScopeReason": null,
       "qualityWarnings": [
-        "OM derivada dos dois primeiros caracteres da requisição"
+        "Parque / OM derivado da requisição e normalizado como PAMA-SP"
       ],
       "sourceFileName": "CONTROLE REPARO - SGT ROZENDO - 03082026.xlsx",
       "sourceSheet": "BD Monitoramento",
@@ -5352,7 +5610,11 @@
       "returnStatusSourceRow": 61,
       "returnStatusReferenceDate": "2026-08-20",
       "returnStatusUpdatedAt": "2026-08-20T00:00:00Z",
-      "returnCorrectionNote": null
+      "returnCorrectionNote": null,
+      "originOmSource": "SP",
+      "originOmShortCode": "SP",
+      "originOmNormalizationVersion": 2,
+      "originOmNormalizedAt": "2026-08-20"
     },
     {
       "id": "e24bbea464d7b1fc0f8ae929856ab7d6a6a7d1fed4ed81ece4d53717cdac65f9",
@@ -5368,7 +5630,7 @@
       "realStatusDiscardReason": null,
       "visualStage": "CABW/CABE (retorno)",
       "requisition": "SPSR06509T1",
-      "originOm": "SP",
+      "originOm": "PAMA-SP",
       "originDerived": true,
       "partNumber": "3244809-8",
       "serialNumber": "C26063",
@@ -5403,7 +5665,7 @@
       "archivedOutOfScope": false,
       "outOfScopeReason": null,
       "qualityWarnings": [
-        "OM derivada dos dois primeiros caracteres da requisição"
+        "Parque / OM derivado da requisição e normalizado como PAMA-SP"
       ],
       "sourceFileName": "CONTROLE REPARO - SGT ROZENDO - 03082026.xlsx",
       "sourceSheet": "BD Monitoramento",
@@ -5438,7 +5700,11 @@
       "returnStatusSourceRow": 62,
       "returnStatusReferenceDate": "2026-08-20",
       "returnStatusUpdatedAt": "2026-08-20T00:00:00Z",
-      "returnCorrectionNote": null
+      "returnCorrectionNote": null,
+      "originOmSource": "SP",
+      "originOmShortCode": "SP",
+      "originOmNormalizationVersion": 2,
+      "originOmNormalizedAt": "2026-08-20"
     },
     {
       "id": "13ffec832aabee49ab10f3f82dfd9bb2cbf4635588f19e6c2628080f24d90dd3",
@@ -5454,7 +5720,7 @@
       "realStatusDiscardReason": null,
       "visualStage": "CABW/CABE (retorno)",
       "requisition": "SPSR11801A7",
-      "originOm": "SP",
+      "originOm": "PAMA-SP",
       "originDerived": true,
       "partNumber": "3049640-02",
       "serialNumber": "C62227",
@@ -5489,7 +5755,7 @@
       "archivedOutOfScope": false,
       "outOfScopeReason": null,
       "qualityWarnings": [
-        "OM derivada dos dois primeiros caracteres da requisição"
+        "Parque / OM derivado da requisição e normalizado como PAMA-SP"
       ],
       "sourceFileName": "CONTROLE REPARO - SGT ROZENDO - 03082026.xlsx",
       "sourceSheet": "BD Monitoramento",
@@ -5524,7 +5790,11 @@
       "returnStatusSourceRow": 63,
       "returnStatusReferenceDate": "2026-08-20",
       "returnStatusUpdatedAt": "2026-08-20T00:00:00Z",
-      "returnCorrectionNote": null
+      "returnCorrectionNote": null,
+      "originOmSource": "SP",
+      "originOmShortCode": "SP",
+      "originOmNormalizationVersion": 2,
+      "originOmNormalizedAt": "2026-08-20"
     },
     {
       "id": "1e30bbcf6e063485bdbdc9c36cae6ddb58953ae96c00da9d926b72ad5cb9b8b3",
@@ -5540,7 +5810,7 @@
       "realStatusDiscardReason": null,
       "visualStage": "CABW/CABE (retorno)",
       "requisition": "SPSR11901A7",
-      "originOm": "SP",
+      "originOm": "PAMA-SP",
       "originDerived": true,
       "partNumber": "3244834-6",
       "serialNumber": "C62176",
@@ -5575,7 +5845,7 @@
       "archivedOutOfScope": false,
       "outOfScopeReason": null,
       "qualityWarnings": [
-        "OM derivada dos dois primeiros caracteres da requisição"
+        "Parque / OM derivado da requisição e normalizado como PAMA-SP"
       ],
       "sourceFileName": "CONTROLE REPARO - SGT ROZENDO - 03082026.xlsx",
       "sourceSheet": "BD Monitoramento",
@@ -5610,7 +5880,11 @@
       "returnStatusSourceRow": 64,
       "returnStatusReferenceDate": "2026-08-20",
       "returnStatusUpdatedAt": "2026-08-20T00:00:00Z",
-      "returnCorrectionNote": null
+      "returnCorrectionNote": null,
+      "originOmSource": "SP",
+      "originOmShortCode": "SP",
+      "originOmNormalizationVersion": 2,
+      "originOmNormalizedAt": "2026-08-20"
     },
     {
       "id": "f0b751eb44e81f2ded02340c292733551ead132762538a903849e7ef0d4a7267",
@@ -5626,7 +5900,7 @@
       "realStatusDiscardReason": null,
       "visualStage": "CABW/CABE (retorno)",
       "requisition": "SPSR07106F5",
-      "originOm": "SP",
+      "originOm": "PAMA-SP",
       "originDerived": true,
       "partNumber": "20110",
       "serialNumber": "SP0791",
@@ -5661,7 +5935,7 @@
       "archivedOutOfScope": false,
       "outOfScopeReason": null,
       "qualityWarnings": [
-        "OM derivada dos dois primeiros caracteres da requisição"
+        "Parque / OM derivado da requisição e normalizado como PAMA-SP"
       ],
       "sourceFileName": "CONTROLE REPARO - SGT ROZENDO - 03082026.xlsx",
       "sourceSheet": "BD Monitoramento",
@@ -5696,7 +5970,11 @@
       "returnStatusSourceRow": 65,
       "returnStatusReferenceDate": "2026-08-20",
       "returnStatusUpdatedAt": "2026-08-20T00:00:00Z",
-      "returnCorrectionNote": null
+      "returnCorrectionNote": null,
+      "originOmSource": "SP",
+      "originOmShortCode": "SP",
+      "originOmNormalizationVersion": 2,
+      "originOmNormalizedAt": "2026-08-20"
     },
     {
       "id": "9990a99529df6e8d1988108d1c484c8e59d835f8218739bf1e2b33e9ea4c026f",
@@ -5712,7 +5990,7 @@
       "realStatusDiscardReason": null,
       "visualStage": "CABW/CABE (retorno)",
       "requisition": "SPSR07107F5",
-      "originOm": "SP",
+      "originOm": "PAMA-SP",
       "originDerived": true,
       "partNumber": "20110",
       "serialNumber": "5048-4",
@@ -5747,7 +6025,7 @@
       "archivedOutOfScope": false,
       "outOfScopeReason": null,
       "qualityWarnings": [
-        "OM derivada dos dois primeiros caracteres da requisição"
+        "Parque / OM derivado da requisição e normalizado como PAMA-SP"
       ],
       "sourceFileName": "CONTROLE REPARO - SGT ROZENDO - 03082026.xlsx",
       "sourceSheet": "BD Monitoramento",
@@ -5782,7 +6060,11 @@
       "returnStatusSourceRow": 66,
       "returnStatusReferenceDate": "2026-08-20",
       "returnStatusUpdatedAt": "2026-08-20T00:00:00Z",
-      "returnCorrectionNote": null
+      "returnCorrectionNote": null,
+      "originOmSource": "SP",
+      "originOmShortCode": "SP",
+      "originOmNormalizationVersion": 2,
+      "originOmNormalizedAt": "2026-08-20"
     },
     {
       "id": "fa2eed7999a2e7c5721e477420cc29f7370a9067723a3dd271674e23ef9b2ab9",
@@ -5798,7 +6080,7 @@
       "realStatusDiscardReason": null,
       "visualStage": "CABW/CABE (retorno)",
       "requisition": "SPSR07108F5",
-      "originOm": "SP",
+      "originOm": "PAMA-SP",
       "originDerived": true,
       "partNumber": "20110",
       "serialNumber": "4139-5",
@@ -5833,7 +6115,7 @@
       "archivedOutOfScope": false,
       "outOfScopeReason": null,
       "qualityWarnings": [
-        "OM derivada dos dois primeiros caracteres da requisição"
+        "Parque / OM derivado da requisição e normalizado como PAMA-SP"
       ],
       "sourceFileName": "CONTROLE REPARO - SGT ROZENDO - 03082026.xlsx",
       "sourceSheet": "BD Monitoramento",
@@ -5868,7 +6150,11 @@
       "returnStatusSourceRow": 67,
       "returnStatusReferenceDate": "2026-08-20",
       "returnStatusUpdatedAt": "2026-08-20T00:00:00Z",
-      "returnCorrectionNote": null
+      "returnCorrectionNote": null,
+      "originOmSource": "SP",
+      "originOmShortCode": "SP",
+      "originOmNormalizationVersion": 2,
+      "originOmNormalizedAt": "2026-08-20"
     },
     {
       "id": "da747b19aabba03399f3a063c91748a9727a0c539fd339a32df160c92c9d653b",
@@ -5884,7 +6170,7 @@
       "realStatusDiscardReason": null,
       "visualStage": "CABW/CABE (retorno)",
       "requisition": "SPSR07109F5",
-      "originOm": "SP",
+      "originOm": "PAMA-SP",
       "originDerived": true,
       "partNumber": "20110",
       "serialNumber": "5355-4",
@@ -5919,7 +6205,7 @@
       "archivedOutOfScope": false,
       "outOfScopeReason": null,
       "qualityWarnings": [
-        "OM derivada dos dois primeiros caracteres da requisição"
+        "Parque / OM derivado da requisição e normalizado como PAMA-SP"
       ],
       "sourceFileName": "CONTROLE REPARO - SGT ROZENDO - 03082026.xlsx",
       "sourceSheet": "BD Monitoramento",
@@ -5954,7 +6240,11 @@
       "returnStatusSourceRow": 68,
       "returnStatusReferenceDate": "2026-08-20",
       "returnStatusUpdatedAt": "2026-08-20T00:00:00Z",
-      "returnCorrectionNote": null
+      "returnCorrectionNote": null,
+      "originOmSource": "SP",
+      "originOmShortCode": "SP",
+      "originOmNormalizationVersion": 2,
+      "originOmNormalizedAt": "2026-08-20"
     },
     {
       "id": "22fa3aed7e911a3487fdcb4cf859ca7832e889ae7bf6b587803c6b94d601b172",
@@ -5970,7 +6260,7 @@
       "realStatusDiscardReason": null,
       "visualStage": "CABW/CABE (retorno)",
       "requisition": "SPSR08502F5",
-      "originOm": "SP",
+      "originOm": "PAMA-SP",
       "originDerived": true,
       "partNumber": "2760003-102",
       "serialNumber": "1171",
@@ -6005,7 +6295,7 @@
       "archivedOutOfScope": false,
       "outOfScopeReason": null,
       "qualityWarnings": [
-        "OM derivada dos dois primeiros caracteres da requisição"
+        "Parque / OM derivado da requisição e normalizado como PAMA-SP"
       ],
       "sourceFileName": "CONTROLE REPARO - SGT ROZENDO - 03082026.xlsx",
       "sourceSheet": "BD Monitoramento",
@@ -6040,7 +6330,11 @@
       "returnStatusSourceRow": 69,
       "returnStatusReferenceDate": "2026-08-20",
       "returnStatusUpdatedAt": "2026-08-20T00:00:00Z",
-      "returnCorrectionNote": null
+      "returnCorrectionNote": null,
+      "originOmSource": "SP",
+      "originOmShortCode": "SP",
+      "originOmNormalizationVersion": 2,
+      "originOmNormalizedAt": "2026-08-20"
     },
     {
       "id": "d54486308c66b8eb2071949c220c586f364e450e886fdc6e9d8d99ac17627ed5",
@@ -6056,7 +6350,7 @@
       "realStatusDiscardReason": null,
       "visualStage": "Reparador",
       "requisition": "GLSR03615P3",
-      "originOm": "GL",
+      "originOm": "PAMA-GL",
       "originDerived": true,
       "partNumber": "A-8-0065-A0",
       "serialNumber": "007",
@@ -6091,7 +6385,7 @@
       "archivedOutOfScope": false,
       "outOfScopeReason": null,
       "qualityWarnings": [
-        "OM derivada dos dois primeiros caracteres da requisição"
+        "Parque / OM derivado da requisição e normalizado como PAMA-GL"
       ],
       "sourceFileName": "CONTROLE REPARO - SGT ROZENDO - 03082026.xlsx",
       "sourceSheet": "BD Monitoramento",
@@ -6126,7 +6420,11 @@
       "returnStatusSourceRow": 70,
       "returnStatusReferenceDate": "2026-08-20",
       "returnStatusUpdatedAt": "2026-08-20T00:00:00Z",
-      "returnCorrectionNote": null
+      "returnCorrectionNote": null,
+      "originOmSource": "GL",
+      "originOmShortCode": "GL",
+      "originOmNormalizationVersion": 2,
+      "originOmNormalizedAt": "2026-08-20"
     },
     {
       "id": "809de63a5937ff3b2deb9d10493d759a9ef44d040f2303670123b1a5f465c73a",
@@ -6142,7 +6440,7 @@
       "realStatusDiscardReason": null,
       "visualStage": "CABW/CABE (retorno)",
       "requisition": "GLSR04903P3",
-      "originOm": "GL",
+      "originOm": "PAMA-GL",
       "originDerived": true,
       "partNumber": "725-101-P2",
       "serialNumber": "365-065542",
@@ -6177,7 +6475,7 @@
       "archivedOutOfScope": false,
       "outOfScopeReason": null,
       "qualityWarnings": [
-        "OM derivada dos dois primeiros caracteres da requisição"
+        "Parque / OM derivado da requisição e normalizado como PAMA-GL"
       ],
       "sourceFileName": "CONTROLE REPARO - SGT ROZENDO - 03082026.xlsx",
       "sourceSheet": "BD Monitoramento",
@@ -6212,7 +6510,11 @@
       "returnStatusSourceRow": 72,
       "returnStatusReferenceDate": "2026-08-20",
       "returnStatusUpdatedAt": "2026-08-20T00:00:00Z",
-      "returnCorrectionNote": null
+      "returnCorrectionNote": null,
+      "originOmSource": "GL",
+      "originOmShortCode": "GL",
+      "originOmNormalizationVersion": 2,
+      "originOmNormalizedAt": "2026-08-20"
     },
     {
       "id": "b5140f2cab8a8e47f1ada17b8aebe6b7ff78ee3bb2b3182ae193774c2c80d156",
@@ -6228,7 +6530,7 @@
       "realStatusDiscardReason": null,
       "visualStage": "CABW/CABE (retorno)",
       "requisition": "GLSR07601P3",
-      "originOm": "GL",
+      "originOm": "PAMA-GL",
       "originDerived": true,
       "partNumber": "71-0154RK",
       "serialNumber": "E2F869",
@@ -6263,7 +6565,7 @@
       "archivedOutOfScope": false,
       "outOfScopeReason": null,
       "qualityWarnings": [
-        "OM derivada dos dois primeiros caracteres da requisição"
+        "Parque / OM derivado da requisição e normalizado como PAMA-GL"
       ],
       "sourceFileName": "CONTROLE REPARO - SGT ROZENDO - 03082026.xlsx",
       "sourceSheet": "BD Monitoramento",
@@ -6298,7 +6600,11 @@
       "returnStatusSourceRow": 71,
       "returnStatusReferenceDate": "2026-08-20",
       "returnStatusUpdatedAt": "2026-08-20T00:00:00Z",
-      "returnCorrectionNote": null
+      "returnCorrectionNote": null,
+      "originOmSource": "GL",
+      "originOmShortCode": "GL",
+      "originOmNormalizationVersion": 2,
+      "originOmNormalizedAt": "2026-08-20"
     },
     {
       "id": "2e17af1ad5271232b6b93b08bf4dd1f0e00b59bb19612342343291d8e5eebf03",
@@ -6314,7 +6620,7 @@
       "realStatusDiscardReason": null,
       "visualStage": "CABW/CABE (retorno)",
       "requisition": "SPSR17602A7",
-      "originOm": "SP",
+      "originOm": "PAMA-SP",
       "originDerived": true,
       "partNumber": "3034794",
       "serialNumber": "002957",
@@ -6349,7 +6655,7 @@
       "archivedOutOfScope": false,
       "outOfScopeReason": null,
       "qualityWarnings": [
-        "OM derivada dos dois primeiros caracteres da requisição"
+        "Parque / OM derivado da requisição e normalizado como PAMA-SP"
       ],
       "sourceFileName": "CONTROLE REPARO - SGT ROZENDO - 03082026.xlsx",
       "sourceSheet": "BD Monitoramento",
@@ -6384,7 +6690,11 @@
       "returnStatusSourceRow": 73,
       "returnStatusReferenceDate": "2026-08-20",
       "returnStatusUpdatedAt": "2026-08-20T00:00:00Z",
-      "returnCorrectionNote": null
+      "returnCorrectionNote": null,
+      "originOmSource": "SP",
+      "originOmShortCode": "SP",
+      "originOmNormalizationVersion": 2,
+      "originOmNormalizedAt": "2026-08-20"
     },
     {
       "id": "8593fe9cb247106fe37c2b57c82455191e57aa582a5c3d2eb1cf7ad6f115b935",
@@ -6400,7 +6710,7 @@
       "realStatusDiscardReason": null,
       "visualStage": "CABW/CABE (retorno)",
       "requisition": "SPSR17501A7",
-      "originOm": "SP",
+      "originOm": "PAMA-SP",
       "originDerived": true,
       "partNumber": "3034794",
       "serialNumber": "003377",
@@ -6435,7 +6745,7 @@
       "archivedOutOfScope": false,
       "outOfScopeReason": null,
       "qualityWarnings": [
-        "OM derivada dos dois primeiros caracteres da requisição"
+        "Parque / OM derivado da requisição e normalizado como PAMA-SP"
       ],
       "sourceFileName": "CONTROLE REPARO - SGT ROZENDO - 03082026.xlsx",
       "sourceSheet": "BD Monitoramento",
@@ -6470,7 +6780,11 @@
       "returnStatusSourceRow": 74,
       "returnStatusReferenceDate": "2026-08-20",
       "returnStatusUpdatedAt": "2026-08-20T00:00:00Z",
-      "returnCorrectionNote": null
+      "returnCorrectionNote": null,
+      "originOmSource": "SP",
+      "originOmShortCode": "SP",
+      "originOmNormalizationVersion": 2,
+      "originOmNormalizedAt": "2026-08-20"
     },
     {
       "id": "fcea3157f5efd54ced491a53a11b986c23e9a741c7c535e04fbab3e1a51300a2",
@@ -6486,7 +6800,7 @@
       "realStatusDiscardReason": null,
       "visualStage": "CABW/CABE (retorno)",
       "requisition": "SPSR17502A7",
-      "originOm": "SP",
+      "originOm": "PAMA-SP",
       "originDerived": true,
       "partNumber": "3034794",
       "serialNumber": "002898",
@@ -6521,7 +6835,7 @@
       "archivedOutOfScope": false,
       "outOfScopeReason": null,
       "qualityWarnings": [
-        "OM derivada dos dois primeiros caracteres da requisição"
+        "Parque / OM derivado da requisição e normalizado como PAMA-SP"
       ],
       "sourceFileName": "CONTROLE REPARO - SGT ROZENDO - 03082026.xlsx",
       "sourceSheet": "BD Monitoramento",
@@ -6556,7 +6870,11 @@
       "returnStatusSourceRow": 75,
       "returnStatusReferenceDate": "2026-08-20",
       "returnStatusUpdatedAt": "2026-08-20T00:00:00Z",
-      "returnCorrectionNote": null
+      "returnCorrectionNote": null,
+      "originOmSource": "SP",
+      "originOmShortCode": "SP",
+      "originOmNormalizationVersion": 2,
+      "originOmNormalizedAt": "2026-08-20"
     },
     {
       "id": "6d2a9a04f5adb3efe3b699b84c9f663fab953a2c5ed13f9d5c5acf3f11ff6e1f",
@@ -6572,7 +6890,7 @@
       "realStatusDiscardReason": null,
       "visualStage": "Reparador",
       "requisition": "SPSR11401A7",
-      "originOm": "SP",
+      "originOm": "PAMA-SP",
       "originDerived": true,
       "partNumber": "3244834-6",
       "serialNumber": "C62170",
@@ -6607,7 +6925,7 @@
       "archivedOutOfScope": false,
       "outOfScopeReason": null,
       "qualityWarnings": [
-        "OM derivada dos dois primeiros caracteres da requisição"
+        "Parque / OM derivado da requisição e normalizado como PAMA-SP"
       ],
       "sourceFileName": "CONTROLE REPARO - SGT ROZENDO - 03082026.xlsx",
       "sourceSheet": "BD Monitoramento",
@@ -6642,7 +6960,11 @@
       "returnStatusSourceRow": 76,
       "returnStatusReferenceDate": "2026-08-20",
       "returnStatusUpdatedAt": "2026-08-20T00:00:00Z",
-      "returnCorrectionNote": null
+      "returnCorrectionNote": null,
+      "originOmSource": "SP",
+      "originOmShortCode": "SP",
+      "originOmNormalizationVersion": 2,
+      "originOmNormalizedAt": "2026-08-20"
     },
     {
       "id": "cadf8ad8efb1793e240fd9720dc0f8087ed92651221bda0f6899372725b9b39b",
@@ -6658,7 +6980,7 @@
       "realStatusDiscardReason": null,
       "visualStage": "CABW/CABE (retorno)",
       "requisition": "SPSR17701A7",
-      "originOm": "SP",
+      "originOm": "PAMA-SP",
       "originDerived": true,
       "partNumber": "3034794E",
       "serialNumber": "002410",
@@ -6693,7 +7015,7 @@
       "archivedOutOfScope": false,
       "outOfScopeReason": null,
       "qualityWarnings": [
-        "OM derivada dos dois primeiros caracteres da requisição"
+        "Parque / OM derivado da requisição e normalizado como PAMA-SP"
       ],
       "sourceFileName": "CONTROLE REPARO - SGT ROZENDO - 03082026.xlsx",
       "sourceSheet": "BD Monitoramento",
@@ -6728,7 +7050,11 @@
       "returnStatusSourceRow": 77,
       "returnStatusReferenceDate": "2026-08-20",
       "returnStatusUpdatedAt": "2026-08-20T00:00:00Z",
-      "returnCorrectionNote": null
+      "returnCorrectionNote": null,
+      "originOmSource": "SP",
+      "originOmShortCode": "SP",
+      "originOmNormalizationVersion": 2,
+      "originOmNormalizedAt": "2026-08-20"
     },
     {
       "id": "faf3f6cea3c957eb6099642bd71af7e11edc404441b87d41a6e4d1b96ac6c363",
@@ -6744,7 +7070,7 @@
       "realStatusDiscardReason": null,
       "visualStage": "CABW/CABE (retorno)",
       "requisition": "SPSR17702A7",
-      "originOm": "SP",
+      "originOm": "PAMA-SP",
       "originDerived": true,
       "partNumber": "3034794E",
       "serialNumber": "002437",
@@ -6779,7 +7105,7 @@
       "archivedOutOfScope": false,
       "outOfScopeReason": null,
       "qualityWarnings": [
-        "OM derivada dos dois primeiros caracteres da requisição"
+        "Parque / OM derivado da requisição e normalizado como PAMA-SP"
       ],
       "sourceFileName": "CONTROLE REPARO - SGT ROZENDO - 03082026.xlsx",
       "sourceSheet": "BD Monitoramento",
@@ -6814,7 +7140,11 @@
       "returnStatusSourceRow": 78,
       "returnStatusReferenceDate": "2026-08-20",
       "returnStatusUpdatedAt": "2026-08-20T00:00:00Z",
-      "returnCorrectionNote": null
+      "returnCorrectionNote": null,
+      "originOmSource": "SP",
+      "originOmShortCode": "SP",
+      "originOmNormalizationVersion": 2,
+      "originOmNormalizedAt": "2026-08-20"
     },
     {
       "id": "9bb4f297819d1e9c54cab4fbde27f4121a7b0cfb00d8405090d4fe75c7b847a2",
@@ -6830,7 +7160,7 @@
       "realStatusDiscardReason": null,
       "visualStage": "CABW/CABE (retorno)",
       "requisition": "SPSR17801F5",
-      "originOm": "SP",
+      "originOm": "PAMA-SP",
       "originDerived": true,
       "partNumber": "181RA38R176",
       "serialNumber": "561",
@@ -6865,7 +7195,7 @@
       "archivedOutOfScope": false,
       "outOfScopeReason": null,
       "qualityWarnings": [
-        "OM derivada dos dois primeiros caracteres da requisição"
+        "Parque / OM derivado da requisição e normalizado como PAMA-SP"
       ],
       "sourceFileName": "CONTROLE REPARO - SGT ROZENDO - 03082026.xlsx",
       "sourceSheet": "BD Monitoramento",
@@ -6900,7 +7230,11 @@
       "returnStatusSourceRow": 79,
       "returnStatusReferenceDate": "2026-08-20",
       "returnStatusUpdatedAt": "2026-08-20T00:00:00Z",
-      "returnCorrectionNote": null
+      "returnCorrectionNote": null,
+      "originOmSource": "SP",
+      "originOmShortCode": "SP",
+      "originOmNormalizationVersion": 2,
+      "originOmNormalizedAt": "2026-08-20"
     },
     {
       "id": "693257a25b1ebf084774151c680aa66c56a11ddc13ce06ecb7252731500c8ae3",
@@ -6916,7 +7250,7 @@
       "realStatusDiscardReason": null,
       "visualStage": "CABW/CABE (retorno)",
       "requisition": "SPSR17802F5",
-      "originOm": "SP",
+      "originOm": "PAMA-SP",
       "originDerived": true,
       "partNumber": "181RA38R176",
       "serialNumber": "2432",
@@ -6951,7 +7285,7 @@
       "archivedOutOfScope": false,
       "outOfScopeReason": null,
       "qualityWarnings": [
-        "OM derivada dos dois primeiros caracteres da requisição"
+        "Parque / OM derivado da requisição e normalizado como PAMA-SP"
       ],
       "sourceFileName": "CONTROLE REPARO - SGT ROZENDO - 03082026.xlsx",
       "sourceSheet": "BD Monitoramento",
@@ -6986,7 +7320,11 @@
       "returnStatusSourceRow": 80,
       "returnStatusReferenceDate": "2026-08-20",
       "returnStatusUpdatedAt": "2026-08-20T00:00:00Z",
-      "returnCorrectionNote": null
+      "returnCorrectionNote": null,
+      "originOmSource": "SP",
+      "originOmShortCode": "SP",
+      "originOmNormalizationVersion": 2,
+      "originOmNormalizedAt": "2026-08-20"
     },
     {
       "id": "ef0c0862f7baf69472882a076db8b5895efd11fdb87d4e16f7926620eee514cc",
@@ -7002,7 +7340,7 @@
       "realStatusDiscardReason": null,
       "visualStage": "CABW/CABE (retorno)",
       "requisition": "SPSR17803F5",
-      "originOm": "SP",
+      "originOm": "PAMA-SP",
       "originDerived": true,
       "partNumber": "181RA38R176",
       "serialNumber": "54",
@@ -7037,7 +7375,7 @@
       "archivedOutOfScope": false,
       "outOfScopeReason": null,
       "qualityWarnings": [
-        "OM derivada dos dois primeiros caracteres da requisição"
+        "Parque / OM derivado da requisição e normalizado como PAMA-SP"
       ],
       "sourceFileName": "CONTROLE REPARO - SGT ROZENDO - 03082026.xlsx",
       "sourceSheet": "BD Monitoramento",
@@ -7072,7 +7410,11 @@
       "returnStatusSourceRow": 81,
       "returnStatusReferenceDate": "2026-08-20",
       "returnStatusUpdatedAt": "2026-08-20T00:00:00Z",
-      "returnCorrectionNote": null
+      "returnCorrectionNote": null,
+      "originOmSource": "SP",
+      "originOmShortCode": "SP",
+      "originOmNormalizationVersion": 2,
+      "originOmNormalizedAt": "2026-08-20"
     },
     {
       "id": "e50540fc8528dba099620470f6966eac9c08f02d2f4481eef73b8a5d0b109719",
@@ -7088,7 +7430,7 @@
       "realStatusDiscardReason": null,
       "visualStage": "Reparador",
       "requisition": "SPSR20901F5",
-      "originOm": "SP",
+      "originOm": "PAMA-SP",
       "originDerived": true,
       "partNumber": "3261163-0101",
       "serialNumber": "000188985",
@@ -7123,7 +7465,7 @@
       "archivedOutOfScope": false,
       "outOfScopeReason": null,
       "qualityWarnings": [
-        "OM derivada dos dois primeiros caracteres da requisição",
+        "Parque / OM derivado da requisição e normalizado como PAMA-SP",
         "TDR ainda não recebido: colunas O e P em branco"
       ],
       "sourceFileName": "CONTROLE REPARO - SGT ROZENDO - 03082026.xlsx",
@@ -7159,7 +7501,11 @@
       "returnStatusSourceRow": 82,
       "returnStatusReferenceDate": "2026-08-20",
       "returnStatusUpdatedAt": "2026-08-20T00:00:00Z",
-      "returnCorrectionNote": null
+      "returnCorrectionNote": null,
+      "originOmSource": "SP",
+      "originOmShortCode": "SP",
+      "originOmNormalizationVersion": 2,
+      "originOmNormalizedAt": "2026-08-20"
     },
     {
       "id": "611f9f8db7fc593de15549de18914ae17a442ceccae59fe8efaec12f14ddb55f",
@@ -7175,7 +7521,7 @@
       "realStatusDiscardReason": null,
       "visualStage": "Reparador",
       "requisition": "ELSR162014R",
-      "originOm": "EL",
+      "originOm": "PAME-RJ",
       "originDerived": true,
       "partNumber": "W63-2-100",
       "serialNumber": "011",
@@ -7210,7 +7556,7 @@
       "archivedOutOfScope": false,
       "outOfScopeReason": null,
       "qualityWarnings": [
-        "OM derivada dos dois primeiros caracteres da requisição"
+        "Parque / OM derivado da requisição e normalizado como PAME-RJ"
       ],
       "sourceFileName": "CONTROLE REPARO - SGT ROZENDO - 03082026.xlsx",
       "sourceSheet": "BD Monitoramento",
@@ -7245,7 +7591,11 @@
       "returnStatusSourceRow": 83,
       "returnStatusReferenceDate": "2026-08-20",
       "returnStatusUpdatedAt": "2026-08-20T00:00:00Z",
-      "returnCorrectionNote": null
+      "returnCorrectionNote": null,
+      "originOmSource": "EL",
+      "originOmShortCode": "EL",
+      "originOmNormalizationVersion": 2,
+      "originOmNormalizedAt": "2026-08-20"
     },
     {
       "id": "8aae20c1a426ac60b8ea4d9c26570b2e24b0c05c92adaeb32a3996986f14c816",
@@ -7261,7 +7611,7 @@
       "realStatusDiscardReason": null,
       "visualStage": "Reparador",
       "requisition": "ELSR162024R",
-      "originOm": "EL",
+      "originOm": "PAME-RJ",
       "originDerived": true,
       "partNumber": "W63-2-100",
       "serialNumber": "013",
@@ -7296,7 +7646,7 @@
       "archivedOutOfScope": false,
       "outOfScopeReason": null,
       "qualityWarnings": [
-        "OM derivada dos dois primeiros caracteres da requisição"
+        "Parque / OM derivado da requisição e normalizado como PAME-RJ"
       ],
       "sourceFileName": "CONTROLE REPARO - SGT ROZENDO - 03082026.xlsx",
       "sourceSheet": "BD Monitoramento",
@@ -7331,7 +7681,11 @@
       "returnStatusSourceRow": 84,
       "returnStatusReferenceDate": "2026-08-20",
       "returnStatusUpdatedAt": "2026-08-20T00:00:00Z",
-      "returnCorrectionNote": null
+      "returnCorrectionNote": null,
+      "originOmSource": "EL",
+      "originOmShortCode": "EL",
+      "originOmNormalizationVersion": 2,
+      "originOmNormalizedAt": "2026-08-20"
     },
     {
       "id": "6491ea82ec626156b26398727c5ea8439dafe663ef59925cdd9d278981df4942",
@@ -7347,7 +7701,7 @@
       "realStatusDiscardReason": null,
       "visualStage": "Reparador",
       "requisition": "ELSR162034R",
-      "originOm": "EL",
+      "originOm": "PAME-RJ",
       "originDerived": true,
       "partNumber": "W63-2-100",
       "serialNumber": "099",
@@ -7382,7 +7736,7 @@
       "archivedOutOfScope": false,
       "outOfScopeReason": null,
       "qualityWarnings": [
-        "OM derivada dos dois primeiros caracteres da requisição"
+        "Parque / OM derivado da requisição e normalizado como PAME-RJ"
       ],
       "sourceFileName": "CONTROLE REPARO - SGT ROZENDO - 03082026.xlsx",
       "sourceSheet": "BD Monitoramento",
@@ -7417,7 +7771,11 @@
       "returnStatusSourceRow": 85,
       "returnStatusReferenceDate": "2026-08-20",
       "returnStatusUpdatedAt": "2026-08-20T00:00:00Z",
-      "returnCorrectionNote": null
+      "returnCorrectionNote": null,
+      "originOmSource": "EL",
+      "originOmShortCode": "EL",
+      "originOmNormalizationVersion": 2,
+      "originOmNormalizedAt": "2026-08-20"
     },
     {
       "id": "ce58b491f2fdf50c8a0cd9389d6f0329e8449dba4caf02cfc21e3a3016a303b0",
@@ -7433,7 +7791,7 @@
       "realStatusDiscardReason": null,
       "visualStage": "Reparador",
       "requisition": "SPSR04801A7",
-      "originOm": "SP",
+      "originOm": "PAMA-SP",
       "originDerived": true,
       "partNumber": "025323-101-03",
       "serialNumber": "3158",
@@ -7468,7 +7826,7 @@
       "archivedOutOfScope": false,
       "outOfScopeReason": null,
       "qualityWarnings": [
-        "OM derivada dos dois primeiros caracteres da requisição",
+        "Parque / OM derivado da requisição e normalizado como PAMA-SP",
         "TDR ainda não recebido: colunas O e P em branco"
       ],
       "sourceFileName": "CONTROLE REPARO - SGT ROZENDO - 03082026.xlsx",
@@ -7504,7 +7862,11 @@
       "returnStatusSourceRow": 86,
       "returnStatusReferenceDate": "2026-08-20",
       "returnStatusUpdatedAt": "2026-08-20T00:00:00Z",
-      "returnCorrectionNote": null
+      "returnCorrectionNote": null,
+      "originOmSource": "SP",
+      "originOmShortCode": "SP",
+      "originOmNormalizationVersion": 2,
+      "originOmNormalizedAt": "2026-08-20"
     },
     {
       "id": "03a535d4340a3e1aa4756c80fd73876974afd9e2832a2840325090a51e912b9f",
@@ -7520,7 +7882,7 @@
       "realStatusDiscardReason": null,
       "visualStage": "CABW/CABE (retorno)",
       "requisition": "SPSR04902A7",
-      "originOm": "SP",
+      "originOm": "PAMA-SP",
       "originDerived": true,
       "partNumber": "3244834-6",
       "serialNumber": "C62124",
@@ -7555,7 +7917,7 @@
       "archivedOutOfScope": false,
       "outOfScopeReason": null,
       "qualityWarnings": [
-        "OM derivada dos dois primeiros caracteres da requisição"
+        "Parque / OM derivado da requisição e normalizado como PAMA-SP"
       ],
       "sourceFileName": "CONTROLE REPARO - SGT ROZENDO - 03082026.xlsx",
       "sourceSheet": "BD Monitoramento",
@@ -7590,7 +7952,11 @@
       "returnStatusSourceRow": 87,
       "returnStatusReferenceDate": "2026-08-20",
       "returnStatusUpdatedAt": "2026-08-20T00:00:00Z",
-      "returnCorrectionNote": null
+      "returnCorrectionNote": null,
+      "originOmSource": "SP",
+      "originOmShortCode": "SP",
+      "originOmNormalizationVersion": 2,
+      "originOmNormalizedAt": "2026-08-20"
     },
     {
       "id": "2624b6b4280f36d65cfe03a7bfafb34072f1ead46930424c48febb3a1e615cf8",
@@ -7606,7 +7972,7 @@
       "realStatusDiscardReason": null,
       "visualStage": "Trânsito ao Reparador",
       "requisition": "SPTR06201F5",
-      "originOm": "SP",
+      "originOm": "PAMA-SP",
       "originDerived": true,
       "partNumber": "20110",
       "serialNumber": "4139-4",
@@ -7641,7 +8007,7 @@
       "archivedOutOfScope": false,
       "outOfScopeReason": null,
       "qualityWarnings": [
-        "OM derivada dos dois primeiros caracteres da requisição",
+        "Parque / OM derivado da requisição e normalizado como PAMA-SP",
         "Prazo do TDR não informado na coluna M",
         "TDR ainda não recebido: colunas O e P em branco"
       ],
@@ -7678,7 +8044,11 @@
       "returnStatusSourceRow": 88,
       "returnStatusReferenceDate": "2026-08-20",
       "returnStatusUpdatedAt": "2026-08-20T00:00:00Z",
-      "returnCorrectionNote": null
+      "returnCorrectionNote": null,
+      "originOmSource": "SP",
+      "originOmShortCode": "SP",
+      "originOmNormalizationVersion": 2,
+      "originOmNormalizedAt": "2026-08-20"
     },
     {
       "id": "c47a037a309214d74bd92ca2922d4a4556b4cd445ea9f3e91738cb2be1e6c662",
@@ -7694,7 +8064,7 @@
       "realStatusDiscardReason": null,
       "visualStage": "Trânsito ao Reparador",
       "requisition": "SPTR06202F5",
-      "originOm": "SP",
+      "originOm": "PAMA-SP",
       "originDerived": true,
       "partNumber": "20110",
       "serialNumber": "5046-20",
@@ -7729,7 +8099,7 @@
       "archivedOutOfScope": false,
       "outOfScopeReason": null,
       "qualityWarnings": [
-        "OM derivada dos dois primeiros caracteres da requisição",
+        "Parque / OM derivado da requisição e normalizado como PAMA-SP",
         "Prazo do TDR não informado na coluna M",
         "TDR ainda não recebido: colunas O e P em branco"
       ],
@@ -7766,7 +8136,11 @@
       "returnStatusSourceRow": 89,
       "returnStatusReferenceDate": "2026-08-20",
       "returnStatusUpdatedAt": "2026-08-20T00:00:00Z",
-      "returnCorrectionNote": null
+      "returnCorrectionNote": null,
+      "originOmSource": "SP",
+      "originOmShortCode": "SP",
+      "originOmNormalizationVersion": 2,
+      "originOmNormalizedAt": "2026-08-20"
     },
     {
       "id": "354f857e75d58d4700c43128fee82edd5112b12697a3958d8fccfc075c0e2052",
@@ -7782,7 +8156,7 @@
       "realStatusDiscardReason": null,
       "visualStage": "Trânsito ao Reparador",
       "requisition": "SPTR06204F5",
-      "originOm": "SP",
+      "originOm": "PAMA-SP",
       "originDerived": true,
       "partNumber": "20110",
       "serialNumber": "5046-1",
@@ -7817,7 +8191,7 @@
       "archivedOutOfScope": false,
       "outOfScopeReason": null,
       "qualityWarnings": [
-        "OM derivada dos dois primeiros caracteres da requisição",
+        "Parque / OM derivado da requisição e normalizado como PAMA-SP",
         "Prazo do TDR não informado na coluna M",
         "TDR ainda não recebido: colunas O e P em branco"
       ],
@@ -7854,7 +8228,11 @@
       "returnStatusSourceRow": 90,
       "returnStatusReferenceDate": "2026-08-20",
       "returnStatusUpdatedAt": "2026-08-20T00:00:00Z",
-      "returnCorrectionNote": null
+      "returnCorrectionNote": null,
+      "originOmSource": "SP",
+      "originOmShortCode": "SP",
+      "originOmNormalizationVersion": 2,
+      "originOmNormalizedAt": "2026-08-20"
     },
     {
       "id": "7400396e6286c665ead3ad2feff32f9cf18128dcf8d02b4f4805a2c7100b5a83",
@@ -7870,7 +8248,7 @@
       "realStatusDiscardReason": null,
       "visualStage": "Trânsito ao Reparador",
       "requisition": "SPTR06205F5",
-      "originOm": "SP",
+      "originOm": "PAMA-SP",
       "originDerived": true,
       "partNumber": "20110",
       "serialNumber": "4139-1",
@@ -7905,7 +8283,7 @@
       "archivedOutOfScope": false,
       "outOfScopeReason": null,
       "qualityWarnings": [
-        "OM derivada dos dois primeiros caracteres da requisição",
+        "Parque / OM derivado da requisição e normalizado como PAMA-SP",
         "Prazo do TDR não informado na coluna M",
         "TDR ainda não recebido: colunas O e P em branco"
       ],
@@ -7942,7 +8320,11 @@
       "returnStatusSourceRow": 91,
       "returnStatusReferenceDate": "2026-08-20",
       "returnStatusUpdatedAt": "2026-08-20T00:00:00Z",
-      "returnCorrectionNote": null
+      "returnCorrectionNote": null,
+      "originOmSource": "SP",
+      "originOmShortCode": "SP",
+      "originOmNormalizationVersion": 2,
+      "originOmNormalizedAt": "2026-08-20"
     },
     {
       "id": "fe1b903d44f9a43aa64afccb89539988236d1fea197b118e83257cb55e1940fc",
@@ -7958,7 +8340,7 @@
       "realStatusDiscardReason": null,
       "visualStage": "Brasil / CTLA",
       "requisition": "SPTR07202T1",
-      "originOm": "SP",
+      "originOm": "PAMA-SP",
       "originDerived": true,
       "partNumber": "3244790-1",
       "serialNumber": "A87570",
@@ -7993,7 +8375,7 @@
       "archivedOutOfScope": false,
       "outOfScopeReason": null,
       "qualityWarnings": [
-        "OM derivada dos dois primeiros caracteres da requisição",
+        "Parque / OM derivado da requisição e normalizado como PAMA-SP",
         "Prazo do TDR não informado na coluna M",
         "TDR ainda não recebido: colunas O e P em branco"
       ],
@@ -8030,7 +8412,11 @@
       "returnStatusSourceRow": 92,
       "returnStatusReferenceDate": "2026-08-20",
       "returnStatusUpdatedAt": "2026-08-20T00:00:00Z",
-      "returnCorrectionNote": null
+      "returnCorrectionNote": null,
+      "originOmSource": "SP",
+      "originOmShortCode": "SP",
+      "originOmNormalizationVersion": 2,
+      "originOmNormalizedAt": "2026-08-20"
     },
     {
       "id": "08cc5935317172e66f9cb48b8550b9ac22fb449a1e68c63a7b23713330ba46bd",
@@ -8046,7 +8432,7 @@
       "realStatusDiscardReason": null,
       "visualStage": "Brasil / CTLA",
       "requisition": "SPTR07201T1",
-      "originOm": "SP",
+      "originOm": "PAMA-SP",
       "originDerived": true,
       "partNumber": "3244790-1",
       "serialNumber": "A87568",
@@ -8081,7 +8467,7 @@
       "archivedOutOfScope": false,
       "outOfScopeReason": null,
       "qualityWarnings": [
-        "OM derivada dos dois primeiros caracteres da requisição",
+        "Parque / OM derivado da requisição e normalizado como PAMA-SP",
         "Prazo do TDR não informado na coluna M",
         "TDR ainda não recebido: colunas O e P em branco"
       ],
@@ -8118,7 +8504,11 @@
       "returnStatusSourceRow": 93,
       "returnStatusReferenceDate": "2026-08-20",
       "returnStatusUpdatedAt": "2026-08-20T00:00:00Z",
-      "returnCorrectionNote": null
+      "returnCorrectionNote": null,
+      "originOmSource": "SP",
+      "originOmShortCode": "SP",
+      "originOmNormalizationVersion": 2,
+      "originOmNormalizedAt": "2026-08-20"
     },
     {
       "id": "69862657e189730baf5d04353aee32a9b5b4f2f6dd84f05d446d142afbe242ae",
@@ -8134,7 +8524,7 @@
       "realStatusDiscardReason": null,
       "visualStage": "Brasil / CTLA",
       "requisition": "SPTR07203T1",
-      "originOm": "SP",
+      "originOm": "PAMA-SP",
       "originDerived": true,
       "partNumber": "3244790-1",
       "serialNumber": "A87579",
@@ -8169,7 +8559,7 @@
       "archivedOutOfScope": false,
       "outOfScopeReason": null,
       "qualityWarnings": [
-        "OM derivada dos dois primeiros caracteres da requisição",
+        "Parque / OM derivado da requisição e normalizado como PAMA-SP",
         "Prazo do TDR não informado na coluna M",
         "TDR ainda não recebido: colunas O e P em branco"
       ],
@@ -8206,7 +8596,11 @@
       "returnStatusSourceRow": 94,
       "returnStatusReferenceDate": "2026-08-20",
       "returnStatusUpdatedAt": "2026-08-20T00:00:00Z",
-      "returnCorrectionNote": null
+      "returnCorrectionNote": null,
+      "originOmSource": "SP",
+      "originOmShortCode": "SP",
+      "originOmNormalizationVersion": 2,
+      "originOmNormalizedAt": "2026-08-20"
     },
     {
       "id": "55fda86bca6c75a05f267705b315f2d72d1e47e194dbce6545300d433e30d586",
@@ -8222,7 +8616,7 @@
       "realStatusDiscardReason": null,
       "visualStage": "Brasil / CTLA",
       "requisition": "SPTR07204T1",
-      "originOm": "SP",
+      "originOm": "PAMA-SP",
       "originDerived": true,
       "partNumber": "3244790-1",
       "serialNumber": "A87650",
@@ -8257,7 +8651,7 @@
       "archivedOutOfScope": false,
       "outOfScopeReason": null,
       "qualityWarnings": [
-        "OM derivada dos dois primeiros caracteres da requisição",
+        "Parque / OM derivado da requisição e normalizado como PAMA-SP",
         "Prazo do TDR não informado na coluna M",
         "TDR ainda não recebido: colunas O e P em branco"
       ],
@@ -8294,7 +8688,11 @@
       "returnStatusSourceRow": 95,
       "returnStatusReferenceDate": "2026-08-20",
       "returnStatusUpdatedAt": "2026-08-20T00:00:00Z",
-      "returnCorrectionNote": null
+      "returnCorrectionNote": null,
+      "originOmSource": "SP",
+      "originOmShortCode": "SP",
+      "originOmNormalizationVersion": 2,
+      "originOmNormalizedAt": "2026-08-20"
     },
     {
       "id": "fc55ab84e905af3d7ade9c6563a6fcd498cf1b0886dcd46aadc5ba18a0a7cce6",
@@ -8310,7 +8708,7 @@
       "realStatusDiscardReason": null,
       "visualStage": "Brasil / CTLA",
       "requisition": "SPTR07205T1",
-      "originOm": "SP",
+      "originOm": "PAMA-SP",
       "originDerived": true,
       "partNumber": "3244790-2",
       "serialNumber": "C23213",
@@ -8345,7 +8743,7 @@
       "archivedOutOfScope": false,
       "outOfScopeReason": null,
       "qualityWarnings": [
-        "OM derivada dos dois primeiros caracteres da requisição",
+        "Parque / OM derivado da requisição e normalizado como PAMA-SP",
         "Prazo do TDR não informado na coluna M",
         "TDR ainda não recebido: colunas O e P em branco"
       ],
@@ -8382,7 +8780,11 @@
       "returnStatusSourceRow": 96,
       "returnStatusReferenceDate": "2026-08-20",
       "returnStatusUpdatedAt": "2026-08-20T00:00:00Z",
-      "returnCorrectionNote": null
+      "returnCorrectionNote": null,
+      "originOmSource": "SP",
+      "originOmShortCode": "SP",
+      "originOmNormalizationVersion": 2,
+      "originOmNormalizedAt": "2026-08-20"
     },
     {
       "id": "8f13b7e69b402a66118872de0dbdf36d0132e469bbbab51693969066a523a0a0",
@@ -8398,7 +8800,7 @@
       "realStatusDiscardReason": null,
       "visualStage": "Brasil / CTLA",
       "requisition": "SPTR06203F5",
-      "originOm": "SP",
+      "originOm": "PAMA-SP",
       "originDerived": true,
       "partNumber": "20110",
       "serialNumber": "2192-45",
@@ -8433,7 +8835,7 @@
       "archivedOutOfScope": false,
       "outOfScopeReason": null,
       "qualityWarnings": [
-        "OM derivada dos dois primeiros caracteres da requisição",
+        "Parque / OM derivado da requisição e normalizado como PAMA-SP",
         "Prazo do TDR não informado na coluna M",
         "TDR ainda não recebido: colunas O e P em branco"
       ],
@@ -8470,7 +8872,11 @@
       "returnStatusSourceRow": 97,
       "returnStatusReferenceDate": "2026-08-20",
       "returnStatusUpdatedAt": "2026-08-20T00:00:00Z",
-      "returnCorrectionNote": null
+      "returnCorrectionNote": null,
+      "originOmSource": "SP",
+      "originOmShortCode": "SP",
+      "originOmNormalizationVersion": 2,
+      "originOmNormalizedAt": "2026-08-20"
     },
     {
       "id": "e22ba159aa344704fef25daeb77ac819afdb1e83dee263c0d4055c752dfa42f9",
@@ -8486,7 +8892,7 @@
       "realStatusDiscardReason": null,
       "visualStage": "Brasil / CTLA",
       "requisition": "SPTR07001F5",
-      "originOm": "SP",
+      "originOm": "PAMA-SP",
       "originDerived": true,
       "partNumber": "181RA38R176",
       "serialNumber": "6324",
@@ -8521,7 +8927,7 @@
       "archivedOutOfScope": false,
       "outOfScopeReason": null,
       "qualityWarnings": [
-        "OM derivada dos dois primeiros caracteres da requisição",
+        "Parque / OM derivado da requisição e normalizado como PAMA-SP",
         "Prazo do TDR não informado na coluna M",
         "TDR ainda não recebido: colunas O e P em branco"
       ],
@@ -8558,7 +8964,11 @@
       "returnStatusSourceRow": 98,
       "returnStatusReferenceDate": "2026-08-20",
       "returnStatusUpdatedAt": "2026-08-20T00:00:00Z",
-      "returnCorrectionNote": null
+      "returnCorrectionNote": null,
+      "originOmSource": "SP",
+      "originOmShortCode": "SP",
+      "originOmNormalizationVersion": 2,
+      "originOmNormalizedAt": "2026-08-20"
     },
     {
       "id": "8283a23c6cd4c95d873ef8213135925dbc90bddcc60d190cf526e3d5162f6118",
@@ -8574,7 +8984,7 @@
       "realStatusDiscardReason": null,
       "visualStage": "Brasil / CTLA",
       "requisition": "SPTR07102F5",
-      "originOm": "SP",
+      "originOm": "PAMA-SP",
       "originDerived": true,
       "partNumber": "181RA38R176",
       "serialNumber": "3217",
@@ -8609,7 +9019,7 @@
       "archivedOutOfScope": false,
       "outOfScopeReason": null,
       "qualityWarnings": [
-        "OM derivada dos dois primeiros caracteres da requisição",
+        "Parque / OM derivado da requisição e normalizado como PAMA-SP",
         "Prazo do TDR não informado na coluna M",
         "TDR ainda não recebido: colunas O e P em branco"
       ],
@@ -8646,7 +9056,11 @@
       "returnStatusSourceRow": 99,
       "returnStatusReferenceDate": "2026-08-20",
       "returnStatusUpdatedAt": "2026-08-20T00:00:00Z",
-      "returnCorrectionNote": null
+      "returnCorrectionNote": null,
+      "originOmSource": "SP",
+      "originOmShortCode": "SP",
+      "originOmNormalizationVersion": 2,
+      "originOmNormalizedAt": "2026-08-20"
     },
     {
       "id": "d6ade00772366f07519f367d76e5688af62fab84403b2629b69f647bc3793c68",
@@ -8662,7 +9076,7 @@
       "realStatusDiscardReason": null,
       "visualStage": "Brasil / CTLA",
       "requisition": "SPTR07103F5",
-      "originOm": "SP",
+      "originOm": "PAMA-SP",
       "originDerived": true,
       "partNumber": "181RA38R176",
       "serialNumber": "5487",
@@ -8697,7 +9111,7 @@
       "archivedOutOfScope": false,
       "outOfScopeReason": null,
       "qualityWarnings": [
-        "OM derivada dos dois primeiros caracteres da requisição",
+        "Parque / OM derivado da requisição e normalizado como PAMA-SP",
         "Prazo do TDR não informado na coluna M",
         "TDR ainda não recebido: colunas O e P em branco"
       ],
@@ -8734,7 +9148,11 @@
       "returnStatusSourceRow": 100,
       "returnStatusReferenceDate": "2026-08-20",
       "returnStatusUpdatedAt": "2026-08-20T00:00:00Z",
-      "returnCorrectionNote": null
+      "returnCorrectionNote": null,
+      "originOmSource": "SP",
+      "originOmShortCode": "SP",
+      "originOmNormalizationVersion": 2,
+      "originOmNormalizedAt": "2026-08-20"
     },
     {
       "id": "5108694dc13a4b579efcd9617a86ff45b440005cfe07527d8b2b5bb32204cd1b",
@@ -8750,7 +9168,7 @@
       "realStatusDiscardReason": null,
       "visualStage": "Brasil / CTLA",
       "requisition": "SPTR08201F5",
-      "originOm": "SP",
+      "originOm": "PAMA-SP",
       "originDerived": true,
       "partNumber": "5035L000-1",
       "serialNumber": "L1350",
@@ -8785,7 +9203,7 @@
       "archivedOutOfScope": false,
       "outOfScopeReason": null,
       "qualityWarnings": [
-        "OM derivada dos dois primeiros caracteres da requisição",
+        "Parque / OM derivado da requisição e normalizado como PAMA-SP",
         "Prazo do TDR não informado na coluna M",
         "TDR ainda não recebido: colunas O e P em branco"
       ],
@@ -8822,7 +9240,11 @@
       "returnStatusSourceRow": 101,
       "returnStatusReferenceDate": "2026-08-20",
       "returnStatusUpdatedAt": "2026-08-20T00:00:00Z",
-      "returnCorrectionNote": null
+      "returnCorrectionNote": null,
+      "originOmSource": "SP",
+      "originOmShortCode": "SP",
+      "originOmNormalizationVersion": 2,
+      "originOmNormalizedAt": "2026-08-20"
     },
     {
       "id": "61bddfb5be4aa466889316c09a7506a2775979e87054b1ede1acbb17fabba5b4",
@@ -8838,7 +9260,7 @@
       "realStatusDiscardReason": null,
       "visualStage": "Brasil / CTLA",
       "requisition": "GLSR08701P3",
-      "originOm": "GL",
+      "originOm": "PAMA-GL",
       "originDerived": true,
       "partNumber": "F103D000-15",
       "serialNumber": "842",
@@ -8873,7 +9295,7 @@
       "archivedOutOfScope": false,
       "outOfScopeReason": null,
       "qualityWarnings": [
-        "OM derivada dos dois primeiros caracteres da requisição",
+        "Parque / OM derivado da requisição e normalizado como PAMA-GL",
         "Prazo do TDR não informado na coluna M",
         "TDR ainda não recebido: colunas O e P em branco"
       ],
@@ -8910,7 +9332,11 @@
       "returnStatusSourceRow": 102,
       "returnStatusReferenceDate": "2026-08-20",
       "returnStatusUpdatedAt": "2026-08-20T00:00:00Z",
-      "returnCorrectionNote": null
+      "returnCorrectionNote": null,
+      "originOmSource": "GL",
+      "originOmShortCode": "GL",
+      "originOmNormalizationVersion": 2,
+      "originOmNormalizedAt": "2026-08-20"
     },
     {
       "id": "a2da08794bf1771237b24f28de0a46d4df804e960e10c40c109d73b4a3560d36",
@@ -8926,7 +9352,7 @@
       "realStatusDiscardReason": null,
       "visualStage": "Brasil / CTLA",
       "requisition": "GLSR07101P3",
-      "originOm": "GL",
+      "originOm": "PAMA-GL",
       "originDerived": true,
       "partNumber": "A-8-0047-A0",
       "serialNumber": "2",
@@ -8961,7 +9387,7 @@
       "archivedOutOfScope": false,
       "outOfScopeReason": null,
       "qualityWarnings": [
-        "OM derivada dos dois primeiros caracteres da requisição",
+        "Parque / OM derivado da requisição e normalizado como PAMA-GL",
         "Prazo do TDR não informado na coluna M",
         "TDR ainda não recebido: colunas O e P em branco"
       ],
@@ -8998,7 +9424,11 @@
       "returnStatusSourceRow": 103,
       "returnStatusReferenceDate": "2026-08-20",
       "returnStatusUpdatedAt": "2026-08-20T00:00:00Z",
-      "returnCorrectionNote": null
+      "returnCorrectionNote": null,
+      "originOmSource": "GL",
+      "originOmShortCode": "GL",
+      "originOmNormalizationVersion": 2,
+      "originOmNormalizedAt": "2026-08-20"
     },
     {
       "id": "ad81c6d63a95c5000392fb0efe88583951d7f0aed4f662e82a75df317f1bc401",
@@ -9014,7 +9444,7 @@
       "realStatusDiscardReason": null,
       "visualStage": "Brasil / CTLA",
       "requisition": "GLSR07122P3",
-      "originOm": "GL",
+      "originOm": "PAMA-GL",
       "originDerived": true,
       "partNumber": "C17053QA01",
       "serialNumber": "1522",
@@ -9049,7 +9479,7 @@
       "archivedOutOfScope": false,
       "outOfScopeReason": null,
       "qualityWarnings": [
-        "OM derivada dos dois primeiros caracteres da requisição",
+        "Parque / OM derivado da requisição e normalizado como PAMA-GL",
         "Prazo do TDR não informado na coluna M",
         "TDR ainda não recebido: colunas O e P em branco"
       ],
@@ -9086,7 +9516,11 @@
       "returnStatusSourceRow": 104,
       "returnStatusReferenceDate": "2026-08-20",
       "returnStatusUpdatedAt": "2026-08-20T00:00:00Z",
-      "returnCorrectionNote": null
+      "returnCorrectionNote": null,
+      "originOmSource": "GL",
+      "originOmShortCode": "GL",
+      "originOmNormalizationVersion": 2,
+      "originOmNormalizedAt": "2026-08-20"
     },
     {
       "id": "e3ae2d74df848010037b24a9902ae077aca3f7f3c740bbed135347e622356ad2",
@@ -9102,7 +9536,7 @@
       "realStatusDiscardReason": null,
       "visualStage": "Brasil / CTLA",
       "requisition": "GLSR07110P3",
-      "originOm": "GL",
+      "originOm": "PAMA-GL",
       "originDerived": true,
       "partNumber": "C17053QA01",
       "serialNumber": "1521",
@@ -9137,7 +9571,7 @@
       "archivedOutOfScope": false,
       "outOfScopeReason": null,
       "qualityWarnings": [
-        "OM derivada dos dois primeiros caracteres da requisição",
+        "Parque / OM derivado da requisição e normalizado como PAMA-GL",
         "Prazo do TDR não informado na coluna M",
         "TDR ainda não recebido: colunas O e P em branco",
         "DPE com #REF! tratado como campo vazio conforme orientação do usuário."
@@ -9175,7 +9609,11 @@
       "returnStatusSourceRow": 105,
       "returnStatusReferenceDate": "2026-08-20",
       "returnStatusUpdatedAt": "2026-08-20T00:00:00Z",
-      "returnCorrectionNote": "DPE com #REF! tratado como campo vazio conforme orientação do usuário."
+      "returnCorrectionNote": "DPE com #REF! tratado como campo vazio conforme orientação do usuário.",
+      "originOmSource": "GL",
+      "originOmShortCode": "GL",
+      "originOmNormalizationVersion": 2,
+      "originOmNormalizedAt": "2026-08-20"
     },
     {
       "id": "053d560d8f393b0cdf4c3275580e5db75506c968ccef1501052ed9100c7e7d23",
@@ -9191,7 +9629,7 @@
       "realStatusDiscardReason": null,
       "visualStage": "Brasil / CTLA",
       "requisition": "GLSR07111P3",
-      "originOm": "GL",
+      "originOm": "PAMA-GL",
       "originDerived": true,
       "partNumber": "C17053QA01",
       "serialNumber": "869",
@@ -9226,7 +9664,7 @@
       "archivedOutOfScope": false,
       "outOfScopeReason": null,
       "qualityWarnings": [
-        "OM derivada dos dois primeiros caracteres da requisição",
+        "Parque / OM derivado da requisição e normalizado como PAMA-GL",
         "Prazo do TDR não informado na coluna M",
         "TDR ainda não recebido: colunas O e P em branco"
       ],
@@ -9263,7 +9701,11 @@
       "returnStatusSourceRow": 106,
       "returnStatusReferenceDate": "2026-08-20",
       "returnStatusUpdatedAt": "2026-08-20T00:00:00Z",
-      "returnCorrectionNote": null
+      "returnCorrectionNote": null,
+      "originOmSource": "GL",
+      "originOmShortCode": "GL",
+      "originOmNormalizationVersion": 2,
+      "originOmNormalizedAt": "2026-08-20"
     },
     {
       "id": "2c3f951f8b86274089e337ed85942f9d6328b6d0260a154ffdf67ae168729f05",
@@ -9279,7 +9721,7 @@
       "realStatusDiscardReason": null,
       "visualStage": "Brasil / CTLA",
       "requisition": "GLSR07112P3",
-      "originOm": "GL",
+      "originOm": "PAMA-GL",
       "originDerived": true,
       "partNumber": "13245562",
       "serialNumber": "A0053",
@@ -9314,7 +9756,7 @@
       "archivedOutOfScope": false,
       "outOfScopeReason": null,
       "qualityWarnings": [
-        "OM derivada dos dois primeiros caracteres da requisição",
+        "Parque / OM derivado da requisição e normalizado como PAMA-GL",
         "Prazo do TDR não informado na coluna M",
         "TDR ainda não recebido: colunas O e P em branco"
       ],
@@ -9351,7 +9793,11 @@
       "returnStatusSourceRow": 108,
       "returnStatusReferenceDate": "2026-08-20",
       "returnStatusUpdatedAt": "2026-08-20T00:00:00Z",
-      "returnCorrectionNote": null
+      "returnCorrectionNote": null,
+      "originOmSource": "GL",
+      "originOmShortCode": "GL",
+      "originOmNormalizationVersion": 2,
+      "originOmNormalizedAt": "2026-08-20"
     },
     {
       "id": "d4c2650a518bc3279915dda956e4f9bd69ab0c7b6a53d044e8edb227fda9eb87",
@@ -9367,7 +9813,7 @@
       "realStatusDiscardReason": null,
       "visualStage": "Brasil / CTLA",
       "requisition": "GLSR07113P3",
-      "originOm": "GL",
+      "originOm": "PAMA-GL",
       "originDerived": true,
       "partNumber": "261500123-0501",
       "serialNumber": "10559",
@@ -9402,7 +9848,7 @@
       "archivedOutOfScope": false,
       "outOfScopeReason": null,
       "qualityWarnings": [
-        "OM derivada dos dois primeiros caracteres da requisição",
+        "Parque / OM derivado da requisição e normalizado como PAMA-GL",
         "Prazo do TDR não informado na coluna M",
         "TDR ainda não recebido: colunas O e P em branco"
       ],
@@ -9439,7 +9885,11 @@
       "returnStatusSourceRow": 107,
       "returnStatusReferenceDate": "2026-08-20",
       "returnStatusUpdatedAt": "2026-08-20T00:00:00Z",
-      "returnCorrectionNote": null
+      "returnCorrectionNote": null,
+      "originOmSource": "GL",
+      "originOmShortCode": "GL",
+      "originOmNormalizationVersion": 2,
+      "originOmNormalizedAt": "2026-08-20"
     },
     {
       "id": "3a5649e7e6677e8e6eea9c71732e8d74b85352256b7ac4e810fde77eefd618bb",
@@ -9455,7 +9905,7 @@
       "realStatusDiscardReason": null,
       "visualStage": "Brasil/ OM Requisitante",
       "requisition": "GLSR07121P3",
-      "originOm": "GL",
+      "originOm": "PAMA-GL",
       "originDerived": true,
       "partNumber": "0860211400000",
       "serialNumber": "3005",
@@ -9490,7 +9940,7 @@
       "archivedOutOfScope": false,
       "outOfScopeReason": null,
       "qualityWarnings": [
-        "OM derivada dos dois primeiros caracteres da requisição",
+        "Parque / OM derivado da requisição e normalizado como PAMA-GL",
         "Prazo do TDR não informado na coluna M",
         "TDR ainda não recebido: colunas O e P em branco"
       ],
@@ -9527,7 +9977,11 @@
       "returnStatusSourceRow": 109,
       "returnStatusReferenceDate": "2026-08-20",
       "returnStatusUpdatedAt": "2026-08-20T00:00:00Z",
-      "returnCorrectionNote": null
+      "returnCorrectionNote": null,
+      "originOmSource": "GL",
+      "originOmShortCode": "GL",
+      "originOmNormalizationVersion": 2,
+      "originOmNormalizedAt": "2026-08-20"
     },
     {
       "id": "5ef9d467790e623f4cfaee466bc40ef6f45b85adf9b9226387c695e6a3780cea",
@@ -9543,7 +9997,7 @@
       "realStatusDiscardReason": null,
       "visualStage": "Brasil/ OM Requisitante",
       "requisition": "GLSR07839P3",
-      "originOm": "GL",
+      "originOm": "PAMA-GL",
       "originDerived": true,
       "partNumber": "0864613000800",
       "serialNumber": "2008",
@@ -9578,7 +10032,7 @@
       "archivedOutOfScope": false,
       "outOfScopeReason": null,
       "qualityWarnings": [
-        "OM derivada dos dois primeiros caracteres da requisição",
+        "Parque / OM derivado da requisição e normalizado como PAMA-GL",
         "Prazo do TDR não informado na coluna M",
         "TDR ainda não recebido: colunas O e P em branco"
       ],
@@ -9615,7 +10069,11 @@
       "returnStatusSourceRow": 110,
       "returnStatusReferenceDate": "2026-08-20",
       "returnStatusUpdatedAt": "2026-08-20T00:00:00Z",
-      "returnCorrectionNote": null
+      "returnCorrectionNote": null,
+      "originOmSource": "GL",
+      "originOmShortCode": "GL",
+      "originOmNormalizationVersion": 2,
+      "originOmNormalizedAt": "2026-08-20"
     },
     {
       "id": "d2c4dd3bf91812cced5ce229e3549336aab4c1ea115bb7d8506cbc429a1737db",
@@ -9631,7 +10089,7 @@
       "realStatusDiscardReason": null,
       "visualStage": "Brasil/ OM Requisitante",
       "requisition": "GLSR07841P3",
-      "originOm": "GL",
+      "originOm": "PAMA-GL",
       "originDerived": true,
       "partNumber": "0864613000800",
       "serialNumber": "2007",
@@ -9666,7 +10124,7 @@
       "archivedOutOfScope": false,
       "outOfScopeReason": null,
       "qualityWarnings": [
-        "OM derivada dos dois primeiros caracteres da requisição",
+        "Parque / OM derivado da requisição e normalizado como PAMA-GL",
         "Prazo do TDR não informado na coluna M",
         "TDR ainda não recebido: colunas O e P em branco"
       ],
@@ -9703,7 +10161,11 @@
       "returnStatusSourceRow": 111,
       "returnStatusReferenceDate": "2026-08-20",
       "returnStatusUpdatedAt": "2026-08-20T00:00:00Z",
-      "returnCorrectionNote": null
+      "returnCorrectionNote": null,
+      "originOmSource": "GL",
+      "originOmShortCode": "GL",
+      "originOmNormalizationVersion": 2,
+      "originOmNormalizedAt": "2026-08-20"
     },
     {
       "id": "e1f4595ddca04fe7639d06d63b6bba99604ea161f9f16bd22fd613c81937685f",
@@ -9719,7 +10181,7 @@
       "realStatusDiscardReason": null,
       "visualStage": "Brasil / CTLA",
       "requisition": "GLSR07123P3",
-      "originOm": "GL",
+      "originOm": "PAMA-GL",
       "originDerived": true,
       "partNumber": "C17053QA01",
       "serialNumber": "2235",
@@ -9754,7 +10216,7 @@
       "archivedOutOfScope": false,
       "outOfScopeReason": null,
       "qualityWarnings": [
-        "OM derivada dos dois primeiros caracteres da requisição",
+        "Parque / OM derivado da requisição e normalizado como PAMA-GL",
         "Prazo do TDR não informado na coluna M",
         "TDR ainda não recebido: colunas O e P em branco"
       ],
@@ -9791,7 +10253,11 @@
       "returnStatusSourceRow": 112,
       "returnStatusReferenceDate": "2026-08-20",
       "returnStatusUpdatedAt": "2026-08-20T00:00:00Z",
-      "returnCorrectionNote": null
+      "returnCorrectionNote": null,
+      "originOmSource": "GL",
+      "originOmShortCode": "GL",
+      "originOmNormalizationVersion": 2,
+      "originOmNormalizedAt": "2026-08-20"
     },
     {
       "id": "e3806d6e071ac4b7e51c724dc9a7390d5e549e8ab6b5b19c20108198897faf23",
@@ -9807,7 +10273,7 @@
       "realStatusDiscardReason": null,
       "visualStage": "Brasil / CTLA",
       "requisition": "SPTR09701F5",
-      "originOm": "SP",
+      "originOm": "PAMA-SP",
       "originDerived": true,
       "partNumber": "20110",
       "serialNumber": "5048-7",
@@ -9842,7 +10308,7 @@
       "archivedOutOfScope": false,
       "outOfScopeReason": null,
       "qualityWarnings": [
-        "OM derivada dos dois primeiros caracteres da requisição",
+        "Parque / OM derivado da requisição e normalizado como PAMA-SP",
         "Prazo do TDR não informado na coluna M",
         "TDR ainda não recebido: colunas O e P em branco"
       ],
@@ -9879,7 +10345,11 @@
       "returnStatusSourceRow": 113,
       "returnStatusReferenceDate": "2026-08-20",
       "returnStatusUpdatedAt": "2026-08-20T00:00:00Z",
-      "returnCorrectionNote": null
+      "returnCorrectionNote": null,
+      "originOmSource": "SP",
+      "originOmShortCode": "SP",
+      "originOmNormalizationVersion": 2,
+      "originOmNormalizedAt": "2026-08-20"
     },
     {
       "id": "1af971d28b06a8b8b8f4014cb21b8f392f46af3d78d59627d0b3c369b872aded",
@@ -9895,7 +10365,7 @@
       "realStatusDiscardReason": null,
       "visualStage": "Trânsito ao Reparador",
       "requisition": "SPTR09803A7",
-      "originOm": "SP",
+      "originOm": "PAMA-SP",
       "originDerived": true,
       "partNumber": "3032151",
       "serialNumber": "HLAAAB110",
@@ -9930,7 +10400,7 @@
       "archivedOutOfScope": false,
       "outOfScopeReason": null,
       "qualityWarnings": [
-        "OM derivada dos dois primeiros caracteres da requisição",
+        "Parque / OM derivado da requisição e normalizado como PAMA-SP",
         "Prazo do TDR não informado na coluna M",
         "TDR ainda não recebido: colunas O e P em branco"
       ],
@@ -9967,7 +10437,11 @@
       "returnStatusSourceRow": 114,
       "returnStatusReferenceDate": "2026-08-20",
       "returnStatusUpdatedAt": "2026-08-20T00:00:00Z",
-      "returnCorrectionNote": null
+      "returnCorrectionNote": null,
+      "originOmSource": "SP",
+      "originOmShortCode": "SP",
+      "originOmNormalizationVersion": 2,
+      "originOmNormalizedAt": "2026-08-20"
     }
   ],
   "rejectedRows": []
