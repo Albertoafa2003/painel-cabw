@@ -1,0 +1,52 @@
+{
+  "build": "20260820-return-r1",
+  "referenceDate": "2026-08-20",
+  "sourceFile": "19AGO - CONTROLE REPARO - SGT ROZENDO.xlsx",
+  "sourceSheet": "BD Monitoramento",
+  "sourceRows": "2 a 114",
+  "recordsUpdated": 113,
+  "uniquePos": 60,
+  "returnDeadlineCounts": {
+    "returned-on-time": 20,
+    "returned-late": 50,
+    "not-authorized": 33,
+    "overdue": 7,
+    "on-time": 3
+  },
+  "currentOverdue": 7,
+  "returnedLate": 50,
+  "returnedOnTime": 20,
+  "notAuthorized": 33,
+  "pendingWithinDeadline": 3,
+  "correctionsApplied": [
+    {
+      "sourceRow": 11,
+      "po": "25T000160",
+      "correction": "Data de autorização corrigida para 13/07/2025 conforme orientação do usuário."
+    },
+    {
+      "sourceRow": 105,
+      "po": "26T000800",
+      "correction": "DPE com #REF! tratado como campo vazio conforme orientação do usuário."
+    }
+  ],
+  "dueDateMismatches": [
+    {
+      "sourceRow": 11,
+      "po": "25T000160",
+      "authorizationDate": "2025-07-13",
+      "deliveryDays": 30,
+      "expectedDueDate": "2025-08-12",
+      "sourceDueDate": "2025-09-12"
+    }
+  ],
+  "mappingCorrection": {
+    "10-Encerrado": "Brasil/ OM Requisitante"
+  },
+  "rules": {
+    "notAuthorized": "B, C ou D vazias => sem prazo e sem atraso",
+    "returnedLate": "E > D",
+    "overdue": "E vazia e data atual > D",
+    "returnedOnTime": "E <= D"
+  }
+}

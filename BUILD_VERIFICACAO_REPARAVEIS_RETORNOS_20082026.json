@@ -1,0 +1,90 @@
+{
+  "build": "20260820-return-r1",
+  "referenceDate": "2026-08-20",
+  "sourceFile": "19AGO - CONTROLE REPARO - SGT ROZENDO.xlsx",
+  "sourceSheet": "BD Monitoramento",
+  "records": 113,
+  "uniquePos": 60,
+  "returnDeadlineCounts": {
+    "returned-on-time": 20,
+    "returned-late": 50,
+    "not-authorized": 33,
+    "overdue": 7,
+    "on-time": 3
+  },
+  "correctionsApplied": [
+    {
+      "sourceRow": 11,
+      "po": "25T000160",
+      "correction": "Data de autorização corrigida para 13/07/2025 conforme orientação do usuário."
+    },
+    {
+      "sourceRow": 105,
+      "po": "26T000800",
+      "correction": "DPE com #REF! tratado como campo vazio conforme orientação do usuário."
+    }
+  ],
+  "dueDateMismatches": [
+    {
+      "sourceRow": 11,
+      "po": "25T000160",
+      "authorizationDate": "2025-07-13",
+      "deliveryDays": 30,
+      "expectedDueDate": "2025-08-12",
+      "sourceDueDate": "2025-09-12"
+    }
+  ],
+  "mappingCorrection": {
+    "10-Encerrado": "Brasil/ OM Requisitante"
+  },
+  "checks": {
+    "recordCount113": true,
+    "uniqueIds113": true,
+    "poSequenceMatchesSource": true,
+    "correctionPo160": true,
+    "correctionPo800": true,
+    "returnCountsExpected": true,
+    "stage10Mapped": true,
+    "oldStage10MappingRemoved": true,
+    "filterContainsAnyLate": true,
+    "latestCreditPreserved": true,
+    "latestStatusBuildPreserved": true,
+    "contractsPreserved": true,
+    "processesPreserved": true,
+    "rpPreserved": true
+  },
+  "javascriptChecks": {
+    "assets/js/repair-import-core.js": {
+      "returncode": 0,
+      "stderr": ""
+    },
+    "assets/js/repair-processes-panel.js": {
+      "returncode": 0,
+      "stderr": ""
+    },
+    "assets/js/repair-processes-current-data.js": {
+      "returncode": 0,
+      "stderr": ""
+    }
+  },
+  "npmCheck": "passed",
+  "npmTest": "passed",
+  "preservedBuildMarkers": [
+    "BUILD_VERIFICACAO_CREDITO_20082026.json",
+    "BUILD_VERIFICACAO_REPARAVEIS_STATUS_19082026.json",
+    "BUILD_VERIFICACAO_PROCESSOS_17082026.json",
+    "BUILD_VERIFICACAO_RP_JULHO_2026.json",
+    "BUILD_VERIFICACAO_CONTRATOS_13082026.json"
+  ],
+  "fileHashes": {
+    "governanca-reparaveis.html": "881f3f3a3bcb29c78444511040daaf85628e1570470bbce88423263016ec4085",
+    "assets/js/repair-import-core.js": "6f9150a9118806091f68b1456b5174e75d2b8fae65e589d34e534e5ce400299e",
+    "assets/js/repair-processes-panel.js": "e6863c7d6c0640948d6b8ca9864b7deffa3c1d110b670dcf31b995baf86bc459",
+    "assets/js/repair-processes-current-data.js": "e430d29581ff0f11cd76d93941675bad54a670a72f3db438fa359df5915fc73f",
+    "assets/data/repair-processes-current.json": "bc1a2b7b89dc23e9433b0e14d4d1b7f5f89fccebd37129d676ea8e872e6c1f21",
+    "assets/data/repair-processes-schema.json": "11028fe7817c92264caf2c71a058d5517d82a0f52fb40dc58cbf5cf635774322",
+    "assets/data/repair-return-update-audit-20082026.json": "26e553995389a614bff045e6123cf2c26523340a3a97e5de445fde7bc433c341",
+    "tests/repair-import.test.mjs": "8f997c0a09b27fc26e1d51aac121c8074a5bcab968fc770d3d04cf5bbe9fad57",
+    "INSTRUCOES_IMPORTACAO_MENSAL_REPARAVEIS.md": "d7e0779faddcc176565acec5b0826791aae80e8e821b48a6af95a1cae35c290e"
+  }
+}

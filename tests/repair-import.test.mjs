@@ -12,6 +12,7 @@ import {
   normalizeEvaluationFee,
   calculateTdrStatus,
   classifyDocumentaryStatus,
+  calculateReturnDeadline,
   mapVisualStage,
   isPo2024,
   stableKeySource,
@@ -123,7 +124,7 @@ test("correlação visual agrupa múltiplos status na mesma localização", () =
   assert.equal(mapVisualStage("7-Item Recebido"), "CABW/CABE (retorno)");
   assert.equal(mapVisualStage("8-Embarcado"), "ETAPA NÃO MAPEADA");
   assert.equal(mapVisualStage("9-Recebido Parque"), "ETAPA NÃO MAPEADA");
-  assert.equal(mapVisualStage("10-Encerrado"), "ETAPA NÃO MAPEADA");
+  assert.equal(mapVisualStage("10-Encerrado"), "Brasil/ OM Requisitante");
 });
 
 test("variações da planilha e nomenclaturas antigas são canonicalizadas", () => {
@@ -154,7 +155,7 @@ test("variações da planilha e nomenclaturas antigas são canonicalizadas", () 
 });
 
 test("base de status 19/08 possui 113 registros únicos e nenhuma PO 24T", () => {
-  assert.equal(payload.metadata.referenceDate, "2026-08-19");
+  assert.equal(payload.metadata.referenceDate, "2026-08-20");
   assert.equal(payload.metadata.statusReferenceDate, "2026-08-19");
   assert.equal(payload.metadata.validRows, 113);
   assert.equal(payload.records.length, 113);
@@ -230,4 +231,71 @@ test("chave estável é determinística", async () => {
   );
   assert.equal(a, b);
   assert.equal(await sha256Hex(a), await sha256Hex(b));
+});
+
+
+test("retorno sem autorização ou sem prazo não é atrasado", () => {
+  assert.equal(
+    calculateReturnDeadline({
+      serviceAuthorizationOrAsIsDate: null,
+      repairDeliveryDays: null,
+      dpeFinalDate: null,
+      returnMaterialDate: null
+    }, "2026-08-20").code,
+    "not-authorized"
+  );
+});
+
+test("retorno efetivo posterior à DPE é classificado como retornado com atraso", () => {
+  const result = calculateReturnDeadline({
+    serviceAuthorizationOrAsIsDate: "2025-01-01",
+    repairDeliveryDays: 30,
+    dpeFinalDate: "2025-01-31",
+    returnMaterialDate: "2025-02-05"
+  }, "2026-08-20");
+  assert.equal(result.code, "returned-late");
+  assert.equal(result.days, 5);
+});
+
+test("item sem retorno após a DPE está atrasado", () => {
+  const result = calculateReturnDeadline({
+    serviceAuthorizationOrAsIsDate: "2026-06-01",
+    repairDeliveryDays: 30,
+    dpeFinalDate: "2026-07-01",
+    returnMaterialDate: null
+  }, "2026-08-20");
+  assert.equal(result.code, "overdue");
+  assert.equal(result.days, -50);
+});
+
+test("retorno igual ou anterior à DPE é classificado no prazo", () => {
+  assert.equal(
+    calculateReturnDeadline({
+      serviceAuthorizationOrAsIsDate: "2025-01-01",
+      repairDeliveryDays: 30,
+      dpeFinalDate: "2025-01-31",
+      returnMaterialDate: "2025-01-25"
+    }, "2026-08-20").code,
+    "returned-on-time"
+  );
+});
+
+test("base de retorno 20/08 aplica correções confirmadas", () => {
+  assert.equal(payload.metadata.referenceDate, "2026-08-20");
+  assert.equal(payload.metadata.returnStatusSourceFileName, "19AGO - CONTROLE REPARO - SGT ROZENDO.xlsx");
+  const po160 = payload.records.find(item => item.po === "25T000160");
+  assert.equal(po160.serviceAuthorizationOrAsIsDate, "2025-07-13");
+  const po800 = payload.records.find(item => item.po === "26T000800" && item.sourceRow === 105);
+  assert.equal(po800.dpeFinalDate, null);
+  assert.equal(po800.returnDeadlineCodeAtImport, "not-authorized");
+});
+
+test("contagens de retorno correspondem à planilha atualizada", () => {
+  assert.deepEqual(payload.metadata.returnDeadlineCounts, {
+    "returned-on-time": 20,
+    "returned-late": 50,
+    "not-authorized": 33,
+    "overdue": 7,
+    "on-time": 3
+  });
 });

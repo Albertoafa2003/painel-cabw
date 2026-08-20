@@ -6319,3 +6319,34 @@ body.auth-is-admin .navbar-nav .admin-only {
 .rep-deadline--pending { color: #174d83; background: #edf5ff; border-color: #c5d9f1; }
 .rep-deadline--overdue { color: #9f1f2e; background: #fff0f2; border-color: #efb8c0; font-weight: 800; }
 .rep-deadline--due-soon { color: #7a5600; background: #fff8d8; border-color: #ead273; font-weight: 800; }
+
+
+/* ===== Situação de retorno dos materiais reparáveis — 20/08/2026 ===== */
+.rep-deadline--returned-late {
+  color: #922236;
+  background: #ffedf0;
+  border-color: #efb8c0;
+  font-weight: 800;
+}
+.rep-deadline--returned-on-time {
+  color: #14623e;
+  background: #e7f7ef;
+  border-color: #b9dfc6;
+  font-weight: 700;
+}
+.rep-deadline--not-authorized {
+  color: #4e5c71;
+  background: #eef1f5;
+  border-color: #d4dae3;
+}
+.rep-deadline--due-today {
+  color: #7a5600;
+  background: #fff8d8;
+  border-color: #ead273;
+  font-weight: 800;
+}
+.rep-deadline--on-time {
+  color: #174d83;
+  background: #edf5ff;
+  border-color: #c5d9f1;
+}

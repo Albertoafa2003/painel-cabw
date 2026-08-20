@@ -11,8 +11,8 @@ import {
   normalizeRealStatus, normalizeRepairCondition, normalizeEvaluationFee, calculateTdrStatus,
   classifyDocumentaryStatus, calculateReturnDeadline, stableKeySource, sha256Hex,
   importedDataEqual, contextualServiceDateLabel, moneyDisplay, textDisplay
-} from "./repair-import-core.js?v=20260819-status-r1";
-import { BUNDLED_REPAIR_DATA } from "./repair-processes-current-data.js?v=20260819-status-r1";
+} from "./repair-import-core.js?v=20260820-return-r1";
+import { BUNDLED_REPAIR_DATA } from "./repair-processes-current-data.js?v=20260820-return-r1";
 
 const firebaseConfig = {
   apiKey: "AIzaSyDZehcWZwnwlGG5LR6y7_hKAVErHiHDhXM",
@@ -203,7 +203,10 @@ function bundleSourceLabel() {
   const mapping = metadata.statusMappingFileName
     ? `correlação ${metadata.statusMappingFileName}`
     : null;
-  return [base, status, mapping].filter(Boolean).join(" · ");
+  const returns = metadata.returnStatusSourceFileName
+    ? `prazos/retornos ${metadata.returnStatusSourceFileName} (${formatDate(metadata.returnStatusReferenceDate || metadata.referenceDate)})`
+    : null;
+  return [base, status, mapping, returns].filter(Boolean).join(" · ");
 }
 
 function reportSourceLabel() {
@@ -300,7 +303,8 @@ function applyFilters() {
     if (filters.evaluationFee === "missing" && record.evaluationFee != null) return false;
     if (filters.tdr && info.tdr.code !== filters.tdr) return false;
     if (filters.documentary && info.documentary.label !== filters.documentary) return false;
-    if (filters.deadline && info.deadline.code !== filters.deadline) return false;
+    if (filters.deadline === "any-late" && !["overdue", "returned-late"].includes(info.deadline.code)) return false;
+    if (filters.deadline && filters.deadline !== "any-late" && info.deadline.code !== filters.deadline) return false;
     if (filters.search && !searchableText(record).includes(filters.search)) return false;
     if (state.flowGroup) { const step = FLOW_STEPS.find(item => item.code === state.flowGroup); if (step && !step.stages.includes(info.visualStage)) return false; }
     return true;
@@ -346,7 +350,7 @@ function renderKpis() {
   els.kpiTotal.textContent = fmtInteger.format(records.length);
   els.kpiRepair.textContent = fmtInteger.format(enriched.filter(item => item.visualStage === "CABW/CABE (retorno)").length);
   els.kpiTransit.textContent = fmtInteger.format(enriched.filter(item => item.visualStage === "Trânsito ao Reparador").length);
-  els.kpiOverdue.textContent = fmtInteger.format(enriched.filter(item => item.deadline.code === "overdue").length);
+  els.kpiOverdue.textContent = fmtInteger.format(enriched.filter(item => ["overdue", "returned-late"].includes(item.deadline.code)).length);
   els.kpiCompleted.textContent = fmtInteger.format(enriched.filter(item => item.visualStage === "Brasil / CTLA").length);
   els.kpiTdr.textContent = fmtInteger.format(enriched.filter(item => ["overdue", "due-soon"].includes(item.tdr.code)).length);
   els.kpiItemValue.textContent = itemValue.value;
@@ -440,7 +444,8 @@ function renderAttentionList() {
 function buildQualityCounts(records) {
   const counts = {
     tteInformed: 0, tteMissing: 0, omDerived: 0, unmapped: 0, tdrNoDueDate: 0, tdrOverdue: 0, tdrDelivered: 0,
-    tdrNotReceived: 0, documentaryNotRequired: 0, manualProcessMissing: 0, manualDescriptionMissing: 0,
+    tdrNotReceived: 0, documentaryNotRequired: 0, returnOverdue: 0, returnedLate: 0, returnedOnTime: 0,
+    returnNotAuthorized: 0, returnPending: 0, manualProcessMissing: 0, manualDescriptionMissing: 0,
     itemValueMissing: 0, repairValueMissing: 0, absent: state.absentRecords.filter(recordInCurrentScope).length
   };
   records.forEach(record => {
@@ -453,6 +458,11 @@ function buildQualityCounts(records) {
     if (info.tdr.code === "delivered") counts.tdrDelivered += 1;
     if (info.documentary.code === "tdr-not-received") counts.tdrNotReceived += 1;
     if (["not-required", "ficha-recorded-no-subprocess", "subprocess-recorded-no-ficha"].includes(info.documentary.code)) counts.documentaryNotRequired += 1;
+    if (info.deadline.code === "overdue") counts.returnOverdue += 1;
+    if (info.deadline.code === "returned-late") counts.returnedLate += 1;
+    if (info.deadline.code === "returned-on-time") counts.returnedOnTime += 1;
+    if (info.deadline.code === "not-authorized") counts.returnNotAuthorized += 1;
+    if (["due-today", "due-30", "on-time"].includes(info.deadline.code)) counts.returnPending += 1;
     if (!normalizeNullable(record.processNumber)) counts.manualProcessMissing += 1;
     if (!normalizeNullable(record.description)) counts.manualDescriptionMissing += 1;
     if (record.itemValue == null) counts.itemValueMissing += 1;
@@ -469,6 +479,11 @@ function renderQuality() {
     ["TDR entregue", counts.tdrDelivered, "bi-check2-circle"], ["TDR atrasado", counts.tdrOverdue, "bi-calendar-x"],
     ["Prazo do TDR não informado", counts.tdrNoDueDate, "bi-calendar-minus"], ["TDR ainda não recebido (O e P em branco)", counts.tdrNotReceived, "bi-inbox"],
     ["Subprocesso/ficha não necessários", counts.documentaryNotRequired, "bi-file-earmark-minus"],
+    ["Retorno atrasado — ainda não retornou", counts.returnOverdue, "bi-hourglass-bottom"],
+    ["Item retornou com atraso", counts.returnedLate, "bi-clock-history"],
+    ["Item retornou no prazo", counts.returnedOnTime, "bi-check2-circle"],
+    ["Serviço não autorizado / sem prazo", counts.returnNotAuthorized, "bi-calendar-minus"],
+    ["Retorno pendente dentro do prazo", counts.returnPending, "bi-calendar-check"],
     ["Número do processo não informado", counts.manualProcessMissing, "bi-folder-x"], ["Descrição do item não informada", counts.manualDescriptionMissing, "bi-card-text"],
     ["Valor do item não informado", counts.itemValueMissing, "bi-currency-dollar"], ["Valor do reparo não informado", counts.repairValueMissing, "bi-receipt"],
     ["Ausentes do lote atual preservados", counts.absent, "bi-archive"]
@@ -553,10 +568,10 @@ function openDetail(id) {
     <section class="rep-detail-group"><h3>Reparador</h3><dl>${detailRow("CAGE Code", record.repairerCage)}${detailRow("Nome do reparador", record.repairerName)}${detailRow("Valor do reparo contratado", moneyDisplay(record.repairValue, record.currency))}${detailRow("Taxa de Avaliação — TTE", tte)}</dl></section>
     <section class="rep-detail-group"><h3>Envio ao reparador</h3><dl>${detailRow("Data de recebimento no reparador", formatDate(record.receivedAtRepairerDate))}${detailRow("Tracking do envio", record.trackingToRepairer)}</dl></section>
     <section class="rep-detail-group"><h3>TDR e documentação</h3><dl>${detailRow("Prazo do TDR — coluna M", formatDate(record.tdrDueDate))}${detailRow("Entrega do TDR — coluna N", record.tdrSentDate ? formatDate(record.tdrSentDate) : (String(record.tdrDeliveryRaw || "").toLowerCase() === "none" ? "Entregue — sem data informada" : null))}${detailRow("Situação do TDR", info.tdr.label)}${detailRow("Subprocesso — coluna O", controlDisplay(record.subprocessRaw))}${detailRow("Ficha recebida — coluna P", controlDisplay(record.fichaRaw, record.fichaDate))}${detailRow("Situação documental", info.documentary.label)}${detailRow("Decisão sobre o serviço", record.serviceDecision)}${detailRow(record.serviceDateLabel || contextualServiceDateLabel(record.serviceDecision), formatDate(record.serviceAuthorizationOrAsIsDate))}</dl></section>
-    <section class="rep-detail-group"><h3>Execução e prazo</h3><dl>${detailRow("Prazo de entrega do reparo", record.repairDeliveryDays == null ? null : `${record.repairDeliveryDays} dia(s)`)}${detailRow("DPE FINAL", record.dpeFinalIndicator || formatDate(record.dpeFinalDate))}${detailRow("Situação do retorno", info.deadline.label)}</dl></section>
+    <section class="rep-detail-group"><h3>Execução e prazo</h3><dl>${detailRow("Data de autorização do serviço/retorno", formatDate(record.serviceAuthorizationOrAsIsDate))}${detailRow("Prazo para retorno", record.repairDeliveryDays == null ? null : `${record.repairDeliveryDays} dia(s)`)}${detailRow("Data final para entrega — DPE", formatDate(record.dpeFinalDate))}${detailRow("Data efetiva do retorno", formatDate(record.returnMaterialDate))}${detailRow("Situação do retorno", info.deadline.label)}</dl></section>
     <section class="rep-detail-group"><h3>Retorno</h3><dl>${detailRow("Tracking / volume de retorno", record.returnTrackingVolume)}${detailRow("Recebimento no depósito CABW", formatDate(record.returnMaterialDate))}</dl></section>
     <section class="rep-detail-group"><h3>Dados complementares</h3><dl>${detailRow("Moeda", record.currency)}${detailRow("Observações manuais", record.manualNotes)}</dl></section>
-    <section class="rep-detail-group"><h3>Metadados da importação</h3><dl>${detailRow("Arquivo-base", record.sourceFileName)}${detailRow("Aba-base", record.sourceSheet)}${detailRow("Linha de origem", record.sourceRow)}${detailRow("Lote", record.importBatchId)}${detailRow("Importado em", formatDateTime(record.importedAt))}${detailRow("Importado por", record.importedByName || record.importedBy || "Não informado")}${detailRow("Arquivo de status", record.statusSourceFileName)}${detailRow("Aba de status", record.statusSourceSheet)}${detailRow("Linha do status", record.statusSourceRow)}${detailRow("Referência do status", formatDate(record.statusReferenceDate))}${detailRow("Planilha de correlação", record.statusMappingFileName)}${detailRow("Linha da correlação", record.statusMappingSourceRow)}${detailRow("Atualizado em", formatDateTime(record.updatedAt || record.statusUpdatedAt))}</dl></section>
+    <section class="rep-detail-group"><h3>Metadados da importação</h3><dl>${detailRow("Arquivo-base", record.sourceFileName)}${detailRow("Aba-base", record.sourceSheet)}${detailRow("Linha de origem", record.sourceRow)}${detailRow("Lote", record.importBatchId)}${detailRow("Importado em", formatDateTime(record.importedAt))}${detailRow("Importado por", record.importedByName || record.importedBy || "Não informado")}${detailRow("Arquivo de status", record.statusSourceFileName)}${detailRow("Aba de status", record.statusSourceSheet)}${detailRow("Linha do status", record.statusSourceRow)}${detailRow("Referência do status", formatDate(record.statusReferenceDate))}${detailRow("Planilha de correlação", record.statusMappingFileName)}${detailRow("Linha da correlação", record.statusMappingSourceRow)}${detailRow("Arquivo de prazos/retornos", record.returnStatusSourceFileName)}${detailRow("Aba de prazos/retornos", record.returnStatusSourceSheet)}${detailRow("Linha de prazos/retornos", record.returnStatusSourceRow)}${detailRow("Referência dos prazos/retornos", formatDate(record.returnStatusReferenceDate))}${detailRow("Correção aplicada", record.returnCorrectionNote)}${detailRow("Atualizado em", formatDateTime(record.updatedAt || record.returnStatusUpdatedAt || record.statusUpdatedAt))}</dl></section>
     <section class="rep-detail-group rep-detail-group--warnings"><h3>Avisos de qualidade</h3>${warnings.length ? `<ul>${Array.from(new Set(warnings)).map(warning => `<li>${escapeHtml(warning)}</li>`).join("")}</ul>` : '<p>Nenhuma divergência identificada neste registro.</p>'}</section>`;
   els.detailEdit.hidden = !state.isAdmin; els.detailEdit.dataset.editId = record.id; els.detailDialog.showModal();
 }
@@ -681,7 +696,7 @@ async function parseWorkbookFile(file, referenceDateIso) {
   if (missingHeaders.length) throw new Error(`Cabeçalhos obrigatórios ausentes: ${missingHeaders.join(", ")}.`);
   const col = header => findHeaderColumn(map, header); const parsed = [], rejected = [], warnings = [], seen = new Set();
   let ignored = 0, excludedPo2024 = 0;
-  const quality = { tteDiscarded: 0, tteInformed: 0, omDerived: 0, unmapped: 0, tdrNoDueDate: 0, tdrDelivered: 0, tdrOverdue: 0, tdrNotReceived: 0, duplicateKeys: 0 };
+  const quality = { tteDiscarded: 0, tteInformed: 0, omDerived: 0, unmapped: 0, tdrNoDueDate: 0, tdrDelivered: 0, tdrOverdue: 0, tdrNotReceived: 0, returnOverdue: 0, returnedLate: 0, returnedOnTime: 0, returnNotAuthorized: 0, returnPending: 0, duplicateKeys: 0 };
   for (let row = 1; row <= range.e.r; row += 1) {
     const value = header => cellAt(sheet, row, col(header))?.v; const formula = header => cellAt(sheet, row, col(header))?.f || "";
     const po = normalizeIdentifier(value("PO")), requisition = normalizeIdentifier(value("REQUISIÇÃO")), pn = normalizeIdentifier(value("PN")), sn = normalizeIdentifier(value("SN"));
@@ -706,13 +721,26 @@ async function parseWorkbookFile(file, referenceDateIso) {
     const oSource = normalizeControlValue(value("SUBPROC #")); const subprocessRaw = oSource?.toLowerCase() === "none" ? "none" : oSource;
     const pSource = normalizeControlValue(value("FICHA RECEBIDA")); const fichaDate = parseDateToIso(value("FICHA RECEBIDA")); const fichaRaw = pSource?.toLowerCase() === "none" ? "none" : (fichaDate || pSource);
     const documentary = classifyDocumentaryStatus(subprocessRaw, fichaRaw); if (documentary.code === "tdr-not-received") quality.tdrNotReceived += 1;
-    const dpeControl = normalizeControlValue(value("DPE FINAL")); const dpeFinalIndicator = String(dpeControl || "").toUpperCase() === "ENTREGUE" ? "ENTREGUE" : null;
-    const serviceDecision = normalizeNullable(value("SERVIÇO APROVADO?")); const recordWarnings = [];
+    const serviceDecision = normalizeNullable(value("SERVIÇO APROVADO?"));
+    const serviceAuthorizationOrAsIsDate = parseDateToIso(value("SVC AUTORIZADO / SOL RETORNO AS IS"));
+    const repairDeliveryNumber = parseFlexibleNumber(value("PRAZO ENTREGA (DIAS)"));
+    const repairDeliveryDays = repairDeliveryNumber == null ? null : Math.trunc(repairDeliveryNumber);
+    const dpeFinalDate = parseDateToIso(value("DPE FINAL"));
+    const dpeFinalIndicator = null;
+    const returnMaterialDate = parseDateToIso(value("RETORNO MAT"));
+    const deadline = calculateReturnDeadline({ serviceAuthorizationOrAsIsDate, repairDeliveryDays, dpeFinalDate, returnMaterialDate }, referenceDateIso);
+    if (deadline.code === "overdue") quality.returnOverdue += 1;
+    if (deadline.code === "returned-late") quality.returnedLate += 1;
+    if (deadline.code === "returned-on-time") quality.returnedOnTime += 1;
+    if (deadline.code === "not-authorized") quality.returnNotAuthorized += 1;
+    if (["due-today", "due-30", "on-time"].includes(deadline.code)) quality.returnPending += 1;
+    const recordWarnings = [];
     if (origin.derived) recordWarnings.push("OM derivada dos dois primeiros caracteres da requisição");
     if (fee.discardedReason) recordWarnings.push("TTE descartada pela regra de qualidade");
     if (visualStage === "ETAPA NÃO MAPEADA") recordWarnings.push(`Status sem mapeamento visual ativo: ${statusNormalization.raw || "Não informado"}`);
     if (!tdrDueDate && tdr.code !== "delivered") recordWarnings.push("Prazo do TDR não informado na coluna M");
     if (documentary.code === "tdr-not-received") recordWarnings.push("TDR ainda não recebido: colunas O e P em branco");
+    if ((!serviceAuthorizationOrAsIsDate || repairDeliveryDays == null || !dpeFinalDate) && [serviceAuthorizationOrAsIsDate, repairDeliveryDays, dpeFinalDate].some(value => value !== null)) recordWarnings.push("Dados de autorização/prazo incompletos; item tratado como sem prazo de retorno e não atrasado");
     parsed.push({
       id, importKey: key, po, evaluationFee: fee.value, evaluationFeeCurrency: null, evaluationFeeRaw: fee.raw, evaluationFeeDiscardReason: fee.discardedReason,
       poIssueDate: parseDateToIso(value("DATA EMISSÃO PO")), realStatus, realStatusSource: statusNormalization.raw, realStatusDiscardReason: statusNormalization.discardedReason,
@@ -721,10 +749,11 @@ async function parseWorkbookFile(file, referenceDateIso) {
       receivedAtRepairerDate, trackingToRepairer: normalizeNullable(value("TRACKING ENVIO REPARADOR")), tdrDueDate,
       tdrDeliveryRaw, tdrDeliveryIndicator, tdrSentDate, tdrDelivered: tdr.code === "delivered",
       subprocessRaw, fichaRaw, fichaDate, documentaryStatusCode: documentary.code, documentaryStatusLabel: documentary.label,
-      serviceDecision, serviceAuthorizationOrAsIsDate: parseDateToIso(value("SVC AUTORIZADO / SOL RETORNO AS IS")), serviceDateLabel: contextualServiceDateLabel(serviceDecision),
-      repairDeliveryDays: parseFlexibleNumber(value("PRAZO ENTREGA (DIAS)")) == null ? null : Math.trunc(parseFlexibleNumber(value("PRAZO ENTREGA (DIAS)"))),
-      dpeFinalDate: parseDateToIso(value("DPE FINAL")), dpeFinalIndicator, returnTrackingVolume: normalizeNullable(value("TRACKING/VOLUME RETORNO REPARADOR -> DEPÓSITO")),
-      returnMaterialDate: parseDateToIso(value("RETORNO MAT")), repairerCage: normalizeIdentifier(value("CAGE CODE REPARADOR")), repairerName: normalizeNullable(value("NOME REPARADOR")),
+      serviceDecision, serviceAuthorizationOrAsIsDate, serviceDateLabel: contextualServiceDateLabel(serviceDecision), repairDeliveryDays,
+      dpeFinalDate, dpeFinalIndicator, returnTrackingVolume: normalizeNullable(value("TRACKING/VOLUME RETORNO REPARADOR -> DEPÓSITO")),
+      returnMaterialDate, returnDeadlineCodeAtImport: deadline.code, returnDeadlineLabelAtImport: deadline.label, returnDaysAtImport: deadline.days,
+      returnStatusSourceFileName: file.name, returnStatusSourceSheet: SOURCE_SHEET, returnStatusSourceRow: row + 1, returnStatusReferenceDate: referenceDateIso, returnStatusUpdatedAt: referenceDateIso,
+      repairerCage: normalizeIdentifier(value("CAGE CODE REPARADOR")), repairerName: normalizeNullable(value("NOME REPARADOR")),
       archivedOutOfScope: false, outOfScopeReason: null, qualityWarnings: recordWarnings, sourceFileName: file.name, sourceSheet: SOURCE_SHEET, sourceRow: row + 1
     });
   }
@@ -782,6 +811,9 @@ function renderImportPreview() {
   if (preview.quality.tdrOverdue) warnings.push(`${preview.quality.tdrOverdue} TDR(s) atrasado(s) pela data da coluna M.`);
   if (preview.quality.tdrNoDueDate) warnings.push(`${preview.quality.tdrNoDueDate} item(ns) sem prazo informado na coluna M.`);
   if (preview.quality.tdrNotReceived) warnings.push(`${preview.quality.tdrNotReceived} item(ns) com O e P em branco: TDR ainda não recebido.`);
+  if (preview.quality.returnOverdue) warnings.push(`${preview.quality.returnOverdue} item(ns) com retorno atrasado e ainda não recebido.`);
+  if (preview.quality.returnedLate) warnings.push(`${preview.quality.returnedLate} item(ns) retornaram após o prazo da coluna D.`);
+  if (preview.quality.returnNotAuthorized) warnings.push(`${preview.quality.returnNotAuthorized} item(ns) sem autorização/prazo de retorno; não classificados como atrasados.`);
   if (preview.missingIds.length) warnings.push(`${preview.missingIds.length} registro(s) não aparecem no novo arquivo; serão preservados e sinalizados como ausentes.`);
   if (preview.rejected.length) warnings.push(`${preview.rejected.length} linha(s) rejeitada(s).`);
   els.importWarnings.innerHTML = warnings.length ? `<ul>${warnings.map(item => `<li>${escapeHtml(item)}</li>`).join("")}</ul>` : '<p>Nenhum aviso de qualidade relevante.</p>';
@@ -809,7 +841,7 @@ async function commitImport() {
       batch.set(doc(db, COLLECTION_NAME, recordId), payload, { merge: true });
     });
     po2024Records.forEach(record => batch.set(doc(db, COLLECTION_NAME, record.id), { archivedOutOfScope: true, outOfScopeReason: "PO-2024", archivedAt: serverTimestamp(), archivedBy: state.user.uid, updatedAt: serverTimestamp() }, { merge: true }));
-    const metadata = { activeBatchId: batchId, sourceFileName: preview.fileName, sourceSheet: SOURCE_SHEET, referenceDate: preview.referenceDate, buildVersion: "20260819-status-r1", validRows: preview.records.length, excludedPo2024: (preview.excludedPo2024 || 0) + po2024Records.length, newCount: preview.newCount, updatedCount: preview.updatedCount, unchangedCount: preview.unchangedCount, rejectedCount: preview.rejected.length, ignoredRows: preview.ignored, missingRecordIds: preview.missingIds, quality: preview.quality, importedAt: serverTimestamp(), importedBy: state.user.uid, importedByName: state.user.displayName || state.user.email || "" };
+    const metadata = { activeBatchId: batchId, sourceFileName: preview.fileName, sourceSheet: SOURCE_SHEET, referenceDate: preview.referenceDate, buildVersion: "20260820-return-r1", validRows: preview.records.length, excludedPo2024: (preview.excludedPo2024 || 0) + po2024Records.length, newCount: preview.newCount, updatedCount: preview.updatedCount, unchangedCount: preview.unchangedCount, rejectedCount: preview.rejected.length, ignoredRows: preview.ignored, missingRecordIds: preview.missingIds, quality: preview.quality, importedAt: serverTimestamp(), importedBy: state.user.uid, importedByName: state.user.displayName || state.user.email || "" };
     batch.set(doc(db, "repairProcessesConfig", "current"), metadata, { merge: true }); batch.set(doc(db, IMPORT_COLLECTION, batchId), { ...metadata, batchId, rejectedRows: preview.rejected.slice(0, 100) });
     await batch.commit(); await logAction("Importação mensal de materiais reparáveis", { batchId, fileName: preview.fileName, validRows: preview.records.length, archivedPo2024: po2024Records.length, newCount: preview.newCount, updatedCount: preview.updatedCount, unchangedCount: preview.unchangedCount, missingCount: preview.missingIds.length });
     setImportMessage(`Importação concluída: ${preview.records.length} registros ativos e ${po2024Records.length} PO(s) 24T arquivada(s).`, "success"); state.importPreview = null; els.importFile.value = ""; renderImportPreview(); await loadImportHistory();
@@ -839,7 +871,7 @@ function filterSummaryText() {
   if (filters.status) values.push(`Status: ${filters.status}`); if (filters.stage) values.push(`Etapa: ${filters.stage}`);
   if (filters.origin) values.push(`OM: ${filters.origin}`); if (filters.repairer) values.push(`Reparador: ${filters.repairer}`);
   if (filters.condition) values.push(`Condição: ${filters.condition}`); if (filters.evaluationFee) values.push(`TTE: ${filters.evaluationFee}`);
-  if (filters.tdr) values.push(`TDR: ${filters.tdr}`); if (filters.documentary) values.push(`Documentação: ${filters.documentary}`); if (filters.deadline) values.push(`Prazo: ${filters.deadline}`);
+  if (filters.tdr) values.push(`TDR: ${filters.tdr}`); if (filters.documentary) values.push(`Documentação: ${filters.documentary}`); if (filters.deadline) values.push(`Prazo: ${els.deadlineFilter.options[els.deadlineFilter.selectedIndex]?.text || filters.deadline}`);
   if (filters.search) values.push(`Busca: ${els.search.value}`); if (filters.includeAbsent) values.push("Inclui ausentes do lote atual");
   return values.length ? values.join(" · ") : "Sem filtros adicionais";
 }
@@ -890,7 +922,10 @@ function generateSummaryPdf() {
     ["Itens controlados", String(records.length)], ["TDR entregue", String(enriched.filter(item => item.tdr.code === "delivered").length)],
     ["TDR atrasado/próximo", String(enriched.filter(item => ["overdue", "due-soon"].includes(item.tdr.code)).length)],
     ["TDR ainda não recebido", String(enriched.filter(item => item.documentary.code === "tdr-not-received").length)],
-    ["Retornos atrasados", String(enriched.filter(item => item.deadline.code === "overdue").length)],
+    ["Atrasados — ainda não retornaram", String(enriched.filter(item => item.deadline.code === "overdue").length)],
+    ["Retornaram com atraso", String(enriched.filter(item => item.deadline.code === "returned-late").length)],
+    ["Retornaram no prazo", String(enriched.filter(item => item.deadline.code === "returned-on-time").length)],
+    ["Sem autorização / sem prazo", String(enriched.filter(item => item.deadline.code === "not-authorized").length)],
     ["Valor dos itens", `${itemValue.value} (${itemValue.note})`], ["Reparos contratados", `${repairValue.value} (${repairValue.note})`]
   ], headStyles: { fillColor: [1, 58, 126] }, styles: { fontSize: 8 } });
   let y = pdf.lastAutoTable.finalY + 6; const status = new Map(); records.forEach(record => { const value = activeRealStatus(record) || "Não informado"; status.set(value, (status.get(value) || 0) + 1); });

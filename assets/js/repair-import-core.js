@@ -10,7 +10,7 @@ export const STATUS_STAGE_MAP = Object.freeze({
   "7-Item Recebido": "CABW/CABE (retorno)",
   "8-Embarcado": "ETAPA NÃO MAPEADA",
   "9-Recebido Parque": "ETAPA NÃO MAPEADA",
-  "10-Encerrado": "ETAPA NÃO MAPEADA"
+  "10-Encerrado": "Brasil/ OM Requisitante"
 });
 
 export const REAL_STATUS_OPTIONS = Object.freeze(Object.keys(STATUS_STAGE_MAP));
@@ -61,7 +61,9 @@ export const IMPORTED_FIELDS = Object.freeze([
   "tdrDueDate", "tdrDeliveryRaw", "tdrDeliveryIndicator", "tdrSentDate", "tdrDelivered",
   "subprocessRaw", "fichaRaw", "fichaDate", "documentaryStatusCode", "documentaryStatusLabel",
   "serviceDecision", "serviceAuthorizationOrAsIsDate", "serviceDateLabel", "repairDeliveryDays", "dpeFinalDate", "dpeFinalIndicator",
-  "returnTrackingVolume", "returnMaterialDate", "repairerCage", "repairerName", "importKey", "archivedOutOfScope", "outOfScopeReason"
+  "returnTrackingVolume", "returnMaterialDate", "returnDeadlineCodeAtImport", "returnDeadlineLabelAtImport", "returnDaysAtImport",
+  "returnStatusSourceFileName", "returnStatusSourceSheet", "returnStatusSourceRow", "returnStatusReferenceDate", "returnStatusUpdatedAt",
+  "repairerCage", "repairerName", "importKey", "archivedOutOfScope", "outOfScopeReason"
 ]);
 
 export const MANUAL_FIELDS = Object.freeze(["processNumber", "description", "itemValue", "repairValue", "currency", "manualNotes"]);
@@ -219,12 +221,82 @@ export function classifyDocumentaryStatus(subprocessRaw, fichaRaw) {
 }
 
 export function calculateReturnDeadline(record, referenceDateIso) {
-  const deliveredText = String(record.dpeFinalIndicator || "").toUpperCase() === "ENTREGUE";
-  if (!record.dpeFinalDate) return deliveredText ? { code: "delivered-indicator", label: "DPE indica ENTREGUE; validar status", days: null } : { code: "no-date", label: "Sem DPE informado", days: null };
-  const remaining = daysBetweenIso(referenceDateIso, record.dpeFinalDate);
-  if (remaining < 0) return { code: "overdue", label: `Retorno atrasado (${Math.abs(remaining)} dia(s))`, days: remaining };
-  if (remaining <= 30) return { code: "due-30", label: `Retorno em até 30 dias (${remaining} dia(s))`, days: remaining };
-  return { code: "on-time", label: `Retorno no prazo (${remaining} dia(s))`, days: remaining };
+  const authorizationDate = normalizeNullable(record.serviceAuthorizationOrAsIsDate);
+  const deliveryDays = Number(record.repairDeliveryDays);
+  const hasDeliveryDays = record.repairDeliveryDays !== null
+    && record.repairDeliveryDays !== undefined
+    && record.repairDeliveryDays !== ""
+    && Number.isFinite(deliveryDays);
+  const dueDate = normalizeNullable(record.dpeFinalDate);
+  const returnedDate = normalizeNullable(record.returnMaterialDate);
+
+  if (!authorizationDate || !hasDeliveryDays || !dueDate) {
+    return {
+      code: "not-authorized",
+      label: "Serviço ainda não autorizado — sem prazo de retorno",
+      days: null,
+      dueDate: dueDate || null,
+      returnedDate: returnedDate || null
+    };
+  }
+
+  if (returnedDate) {
+    const delay = daysBetweenIso(dueDate, returnedDate);
+    if (delay > 0) {
+      return {
+        code: "returned-late",
+        label: `Item retornou com atraso (${delay} dia(s))`,
+        days: delay,
+        dueDate,
+        returnedDate
+      };
+    }
+    return {
+      code: "returned-on-time",
+      label: delay === 0
+        ? "Item retornou no prazo"
+        : `Item retornou no prazo (${Math.abs(delay)} dia(s) antes)`,
+      days: delay,
+      dueDate,
+      returnedDate
+    };
+  }
+
+  const remaining = daysBetweenIso(referenceDateIso, dueDate);
+  if (remaining < 0) {
+    return {
+      code: "overdue",
+      label: `Retorno atrasado (${Math.abs(remaining)} dia(s)); item ainda não retornou`,
+      days: remaining,
+      dueDate,
+      returnedDate: null
+    };
+  }
+  if (remaining === 0) {
+    return {
+      code: "due-today",
+      label: "Retorno previsto para hoje",
+      days: 0,
+      dueDate,
+      returnedDate: null
+    };
+  }
+  if (remaining <= 30) {
+    return {
+      code: "due-30",
+      label: `Retorno em até 30 dias (${remaining} dia(s))`,
+      days: remaining,
+      dueDate,
+      returnedDate: null
+    };
+  }
+  return {
+    code: "on-time",
+    label: `Retorno no prazo (${remaining} dia(s) restantes)`,
+    days: remaining,
+    dueDate,
+    returnedDate: null
+  };
 }
 
 function formatIsoDate(value) { const match = String(value || "").match(/^(\d{4})-(\d{2})-(\d{2})/); return match ? `${match[3]}/${match[2]}/${match[1]}` : String(value || ""); }
