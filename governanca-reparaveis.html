@@ -71,6 +71,8 @@
 <div class="rep-card-heading"><span class="rep-card-icon"><i class="bi bi-funnel"></i></span><div><h2>Consulta e filtros</h2><p>Combine filtros de identificação, situação técnica, TDR, subprocesso/ficha, reparador e prazo.</p></div></div>
 <div class="rep-filter-grid rep-filter-grid--expanded">
 <label><span>Empenho / PO</span><input class="form-control" id="repPoFilter" placeholder="Ex.: 25T001234" type="search"/></label>
+<label><span>COTAÇÃO SISCAB</span><input class="form-control" id="repQuotationFilter" placeholder="Ex.: 260284" type="search"/></label>
+<label><span>NUP</span><input class="form-control" id="repNupFilter" placeholder="Ex.: 67102.260284/2026-61" type="search"/></label>
 <label><span>Requisição</span><input class="form-control" id="repRequisitionFilter" placeholder="Ex.: LSQR..." type="search"/></label>
 <label><span>Status real</span><select class="form-control" id="repStatusFilter"></select></label>
 <label><span>Etapa visual</span><select class="form-control" id="repStageFilter"></select></label>
@@ -83,7 +85,7 @@
 <label><span>CAGE Code</span><select class="form-control" id="repCageFilter"></select></label>
 <label><span>Situação do retorno</span><select class="form-control" id="repDeadlineFilter"><option value="">Todas as situações de retorno</option><option value="any-late">Todos os atrasos</option><option value="overdue">Atrasado — ainda não retornou</option><option value="returned-late">Retornou com atraso</option><option value="returned-on-time">Retornou no prazo</option><option value="due-today">Retorno previsto para hoje</option><option value="due-30">Retorno em até 30 dias</option><option value="on-time">Prazo superior a 30 dias</option><option value="not-authorized">Serviço não autorizado / sem prazo</option></select></label>
 <label><span>Ordenar por</span><select class="form-control" id="repSort"><option value="updated">Atualização mais recente</option><option value="dpe">DPE / retorno previsto</option><option value="tdr">Prazo do TDR</option><option value="po">Empenho / PO</option><option value="requisition">Requisição</option><option value="repairer">Reparador</option></select></label>
-<label class="rep-filter-wide"><span>Busca geral</span><input class="form-control" id="repSearch" placeholder="PO, requisição, PN, SN, OM, tracking, CAGE, reparador, status ou dado complementar" type="search"/></label>
+<label class="rep-filter-wide"><span>Busca geral</span><input class="form-control" id="repSearch" placeholder="PO, COTAÇÃO SISCAB, NUP, requisição, PN, SN, OM, tracking, CAGE, reparador ou status" type="search"/></label>
 <label class="rep-checkbox-label"><input id="repIncludeAbsent" type="checkbox"/><span>Incluir registros ausentes do lote atual</span></label>
 </div>
 <div class="rep-filter-actions"><button class="rep-btn rep-btn--light" id="repClearFilters" type="button"><i class="bi bi-arrow-counterclockwise"></i> Limpar filtros</button><span id="repResults">0 item(ns) exibido(s)</span></div>
@@ -132,7 +134,7 @@
 </section>
 <section aria-label="Detalhamento dos processos de manutenção" class="rep-card rep-table-card">
 <div class="rep-section-heading rep-section-heading--table"><div><span class="governance-eyebrow">Detalhamento</span><h2>Processos e itens reparáveis</h2><p>Clique em “ver detalhes” para consultar todos os grupos de informação e os metadados da importação.</p></div><span id="repTableCount">0 registro(s)</span></div>
-<div class="table-responsive rep-table-wrap"><table class="table rep-table rep-table--monitoring" id="repTable"><thead><tr><th>Empenho / PO</th><th>Requisição</th><th>PN / SN</th><th>OM</th><th>Condição</th><th>Status / etapa</th><th>Reparador</th><th>TDR</th><th>DPE / retorno</th><th>Ações</th></tr></thead><tbody></tbody></table></div>
+<div class="table-responsive rep-table-wrap"><table class="table rep-table rep-table--monitoring" id="repTable"><thead><tr><th>Empenho / PO</th><th>COTAÇÃO SISCAB</th><th>NUP</th><th>Requisição</th><th>PN / SN</th><th>OM</th><th>Condição</th><th>Status / etapa</th><th>Reparador</th><th>TDR</th><th>DPE / retorno</th><th>Ações</th></tr></thead><tbody></tbody></table></div>
 <div class="rep-mobile-list" id="repMobileList"></div>
 <div class="rep-empty-state" hidden="" id="repEmptyState"><i class="bi bi-inboxes"></i><h3>Nenhum item encontrado</h3><p>Ajuste os filtros ou importe uma planilha mensal válida.</p></div>
 </section>
@@ -171,6 +173,6 @@
 <script src="https://code.jquery.com/jquery-3.6.0.slim.min.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/js/bootstrap.bundle.min.js"></script>
 <script src="assets/js/auth.js" type="module"></script>
-<script src="assets/js/repair-processes-panel.js?v=20260820-overdue-split-r1" type="module"></script>
+<script src="assets/js/repair-processes-panel.js?v=20260827-pag-r1" type="module"></script>
 </body>
 </html>

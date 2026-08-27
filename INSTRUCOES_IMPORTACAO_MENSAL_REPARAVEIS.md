@@ -90,3 +90,14 @@ O painel apresenta dois indicadores distintos:
 - **Atrasados — sem retorno:** a DPE venceu e não existe data de retorno registrada.
 
 A Etapa Visual **ETAPA NÃO MAPEADA** permanece disponível apenas para eventual status futuro sem correlação oficial.
+
+
+## Atualização suplementar de COTAÇÃO SISCAB e NUP — 27/08/2026
+
+O painel utiliza os campos `cotacaoSiscab` e `nup` associados a cada item pela PO e pela linha da planilha `27AGO - CONTROLE REPARO - PAG.xlsx`.
+
+- Os filtros **COTAÇÃO SISCAB** e **NUP** aceitam consulta parcial ou integral.
+- A busca geral também considera esses dois campos.
+- O detalhamento e o PDF detalhado exibem COTAÇÃO SISCAB e NUP.
+- Quando uma planilha completa futura contiver esses cabeçalhos, o importador os reconhecerá como campos opcionais.
+- As correções confirmadas para as POs `26T000910` e `26T000915` estão registradas na auditoria do build.

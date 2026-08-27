@@ -1,0 +1,31 @@
+PAINEL CABW — ATUALIZAÇÃO DE COTAÇÃO SISCAB E NUP
+
+Fonte: 27AGO - CONTROLE REPARO - PAG.xlsx
+Aba: BD Monitoramento
+Referência: 27/08/2026
+
+RESULTADO:
+- Itens atualizados: 113
+- POs únicas: 60
+- Cotações SISCAB distintas: 38
+- NUPs distintos: 38
+- Campos em branco: 0
+- Duplicidades criadas: 0
+
+CORREÇÕES CONFIRMADAS:
+- 26T000910: COTAÇÃO 260284; NUP 67102.260284/2026-61.
+- 26T000915: COTAÇÃO 260285; NUP 67102.260285/2026-14.
+
+FUNCIONALIDADES:
+- Novos filtros COTAÇÃO SISCAB e NUP.
+- Inclusão na busca geral.
+- Inclusão na tabela e no detalhamento.
+- Inclusão das duas colunas no PDF detalhado.
+- Metadados e auditoria da origem dos dados.
+
+PUBLICAÇÃO:
+1. Extraia o ZIP.
+2. Envie todo o conteúdo extraído à raiz do repositório.
+3. Confirme a presença de BUILD_VERIFICACAO_REPARAVEIS_PAG_27082026.json.
+4. Faça o commit.
+5. Aguarde o GitHub Pages e pressione Ctrl + F5.
