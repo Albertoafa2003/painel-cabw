@@ -1,0 +1,68 @@
+{
+  "build": "credit-27082026-r1",
+  "position": "27/08/2026",
+  "sourceFile": "RELATÓRIO_CRÉDITO_DISPONÍVEL_CABW_27082026(1).docx",
+  "summaryRows": 17,
+  "summaryDateOccurrences": 1,
+  "ugRankingRows": 16,
+  "detailRowsNewPosition": 37,
+  "actionRankingRows": 18,
+  "actionByUGRows": 37,
+  "creditReceivedActionRows": 20,
+  "totals": {
+    "availableExpected": 2414126.38,
+    "availableByUG": 2414126.38,
+    "availableByAction": 2414126.38,
+    "availableByDetail": 2414126.38,
+    "receivedExpected": 120035277.94,
+    "receivedByAction": 120035277.94
+  },
+  "preservation": {
+    "contractsBuildPreserved": true,
+    "credit20082026BuildPreserved": true,
+    "rpBuildPreserved": true,
+    "processesBuildPreserved": true,
+    "repairStatusBuildPreserved": true,
+    "repairReturnsBuildPreserved": true,
+    "repairOmBuildPreserved": true,
+    "repairDelayBuildPreserved": true,
+    "repairPanelPreserved": true,
+    "insurancePanelPreserved": true,
+    "authorizedEmailsPreserved": true
+  },
+  "checks": {
+    "summaryNoDuplicate": true,
+    "ugTotalMatches": true,
+    "actionTotalMatches": true,
+    "detailTotalMatches": true,
+    "receivedTotalMatches": true,
+    "centralJsonUpdated": true,
+    "executiveUpdated": true,
+    "ugUpdated": true,
+    "actionUpdated": true,
+    "detailUpdated": true,
+    "consistencyUpdated": true,
+    "allPreservationMarkersPresent": true
+  },
+  "javascriptChecks": {
+    "assets/js/cabw-numeros.js": {
+      "returncode": 0,
+      "stderr": ""
+    },
+    "action-inline": {
+      "returncode": 0,
+      "stderr": ""
+    }
+  },
+  "fileHashes": {
+    "credito-visao-executiva.html": "67a8d421a50f9dc28b8c4fc6e5bbeaca770776abaf599ecdbb757bdb953508da",
+    "ug.html": "7ff63ddde8aa7f64021752be29f6436366bf8c4c08f6bfe436d02478766dbb23",
+    "action.html": "79d681eed385643e84c5e5b062b1068f5a281aa7b7cd1a350ba751e7eed7d5b5",
+    "detail.html": "48a5634db067c665c50c216070b86f224ac5d8b5947a12872bb9abd306b266ff",
+    "consistency.html": "acb6279ab4321796ab68f7349984e26b9acc2bc23aa0ea2158afa8b00261ae2a",
+    "governanca-cabw-numeros.html": "a1210f9592326bed1670f9265de62d5d8d86754ee22a0834fc029058dbc08d13",
+    "assets/data/credit-current.json": "29f24c84eb8f72235a934e79d7c7bf38b621484d4bd78afc3928682ede5c421b",
+    "assets/data/credit-27082026.json": "29f24c84eb8f72235a934e79d7c7bf38b621484d4bd78afc3928682ede5c421b",
+    "assets/js/cabw-numeros.js": "172d9311c6f0a728331e2728b2fd8e49293578fdde51243c10ee8e4ed637b303"
+  }
+}
