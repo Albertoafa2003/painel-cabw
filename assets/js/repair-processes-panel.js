@@ -11,8 +11,8 @@ import {
   normalizeRealStatus, normalizeRepairCondition, normalizeEvaluationFee, calculateTdrStatus,
   classifyDocumentaryStatus, calculateReturnDeadline, stableKeySource, sha256Hex,
   importedDataEqual, contextualServiceDateLabel, moneyDisplay, textDisplay
-} from "./repair-import-core.js?v=20260820-overdue-split-r1";
-import { BUNDLED_REPAIR_DATA } from "./repair-processes-current-data.js?v=20260820-overdue-split-r1";
+} from "./repair-import-core.js?v=20260827-pag-r1";
+import { BUNDLED_REPAIR_DATA } from "./repair-processes-current-data.js?v=20260827-pag-r1";
 
 const firebaseConfig = {
   apiKey: "AIzaSyDZehcWZwnwlGG5LR6y7_hKAVErHiHDhXM",
@@ -64,6 +64,11 @@ const state = {
 
 const els = {};
 const $ = id => document.getElementById(id);
+const PAG_SUPPLEMENTAL_FIELDS = Object.freeze([
+  "cotacaoSiscab", "nup", "pagSourceFileName", "pagSourceSheet", "pagSourceRow",
+  "pagReferenceDate", "pagUpdatedAt", "pagCorrectionNote"
+]);
+const BUNDLED_RECORDS_BY_ID = new Map(BUNDLED_REPAIR_DATA.records.map(record => [record.id, record]));
 
 function localTodayIso() {
   const date = new Date();
@@ -160,6 +165,17 @@ function bundledDataIsNewer() {
   return !firestore || bundled >= firestore;
 }
 
+function mergeSupplementalFromBundle(primaryRecord, bundledRecord) {
+  if (!bundledRecord) return { ...primaryRecord };
+  const merged = { ...primaryRecord };
+  PAG_SUPPLEMENTAL_FIELDS.forEach(field => {
+    if (merged[field] === undefined || merged[field] === null || merged[field] === "") {
+      merged[field] = bundledRecord[field] ?? null;
+    }
+  });
+  return merged;
+}
+
 function mergeBundledAndManualFields(bundleRecord, firestoreRecord) {
   if (!firestoreRecord) return { ...bundleRecord };
   const merged = { ...bundleRecord };
@@ -181,9 +197,11 @@ function rebuildRecordSet() {
   const eligibleFirestore = state.firestoreRecords.filter(recordInCurrentScope);
   if (current.length && !bundledDataIsNewer()) {
     state.sourceMode = "firestore";
-    state.records = current;
+    state.records = current.map(record => mergeSupplementalFromBundle(record, BUNDLED_RECORDS_BY_ID.get(record.id)));
     const currentIds = new Set(current.map(record => record.id));
-    state.absentRecords = eligibleFirestore.filter(record => !currentIds.has(record.id));
+    state.absentRecords = eligibleFirestore
+      .filter(record => !currentIds.has(record.id))
+      .map(record => mergeSupplementalFromBundle(record, BUNDLED_RECORDS_BY_ID.get(record.id)));
   } else {
     state.sourceMode = current.length ? "bundle-newer" : "bundle";
     const firestoreById = new Map(eligibleFirestore.map(record => [record.id, record]));
@@ -220,7 +238,10 @@ function bundleSourceLabel() {
   const origins = metadata.originOmMappingUpdatedAt
     ? `Parques/OM normalizados (${formatDate(metadata.originOmMappingUpdatedAt)})`
     : null;
-  return [base, status, mapping, returns, origins].filter(Boolean).join(" · ");
+  const pag = metadata.pagSourceFileName
+    ? `COTAÇÃO SISCAB/NUP ${metadata.pagSourceFileName} (${formatDate(metadata.pagReferenceDate || metadata.referenceDate)})`
+    : null;
+  return [base, status, mapping, returns, origins, pag].filter(Boolean).join(" · ");
 }
 
 function reportSourceLabel() {
@@ -282,7 +303,8 @@ function populateFilters() {
 
 function readFilters() {
   return {
-    po: normalizeSearch(els.poFilter.value), requisition: normalizeSearch(els.requisitionFilter.value),
+    po: normalizeSearch(els.poFilter.value), quotation: normalizeSearch(els.quotationFilter.value),
+    nup: normalizeSearch(els.nupFilter.value), requisition: normalizeSearch(els.requisitionFilter.value),
     status: els.statusFilter.value, stage: els.stageFilter.value, origin: els.originFilter.value,
     repairer: els.repairerFilter.value, condition: els.conditionFilter.value,
     evaluationFee: els.evaluationFeeFilter.value, tdr: els.tdrFilter.value,
@@ -293,7 +315,7 @@ function readFilters() {
 
 function searchableText(record) {
   return normalizeSearch([
-    record.po, record.requisition, record.partNumber, record.serialNumber, activeOriginOm(record),
+    record.po, record.cotacaoSiscab, record.nup, record.requisition, record.partNumber, record.serialNumber, activeOriginOm(record),
     record.trackingToRepairer, record.returnTrackingVolume, record.repairerCage, record.repairerName,
     sourceRealStatus(record), sourceCondition(record), record.processNumber, record.description, record.manualNotes,
     record.evaluationFee, record.tdrDeliveryRaw, record.subprocessRaw, record.fichaRaw, record.documentaryStatusLabel
@@ -306,6 +328,8 @@ function applyFilters() {
   let records = base.filter(record => {
     const info = derived(record);
     if (filters.po && !normalizeSearch(record.po).includes(filters.po)) return false;
+    if (filters.quotation && !normalizeSearch(record.cotacaoSiscab).includes(filters.quotation)) return false;
+    if (filters.nup && !normalizeSearch(record.nup).includes(filters.nup)) return false;
     if (filters.requisition && !normalizeSearch(record.requisition).includes(filters.requisition)) return false;
     if (filters.status && activeRealStatus(record) !== filters.status) return false;
     if (filters.stage && info.visualStage !== filters.stage) return false;
@@ -337,7 +361,7 @@ function applyFilters() {
 }
 
 function clearFilters() {
-  [els.poFilter, els.requisitionFilter, els.search].forEach(element => { element.value = ""; });
+  [els.poFilter, els.quotationFilter, els.nupFilter, els.requisitionFilter, els.search].forEach(element => { element.value = ""; });
   [els.statusFilter, els.stageFilter, els.originFilter, els.repairerFilter, els.conditionFilter, els.evaluationFeeFilter, els.tdrFilter, els.documentFilter, els.cageFilter, els.deadlineFilter].forEach(element => { element.value = ""; });
   els.sort.value = "updated"; els.includeAbsent.checked = false; state.flowGroup = ""; applyFilters();
 }
@@ -512,6 +536,8 @@ function renderTable() {
     const info = derived(record);
     return `<tr>
       <td><strong>${escapeHtml(record.po)}</strong><small>${escapeHtml(formatDate(record.poIssueDate))}</small></td>
+      <td><strong>${escapeHtml(textDisplay(record.cotacaoSiscab))}</strong></td>
+      <td class="rep-nowrap">${escapeHtml(textDisplay(record.nup))}</td>
       <td>${escapeHtml(record.requisition)}</td>
       <td><strong>PN ${escapeHtml(record.partNumber)}</strong><small>SN ${escapeHtml(record.serialNumber)}</small></td>
       <td>${escapeHtml(textDisplay(activeOriginOm(record)))}${record.originDerived ? '<small class="rep-derived-note">derivada</small>' : ""}</td>
@@ -528,7 +554,9 @@ function renderTable() {
     const info = derived(record);
     return `<article class="rep-mobile-card">
       <div class="rep-mobile-card__header"><div><span>${escapeHtml(record.po)}</span><strong>${escapeHtml(record.requisition)}</strong></div>${deadlineBadge(record)}</div>
-      <dl><div><dt>PN / SN</dt><dd>${escapeHtml(record.partNumber)} / ${escapeHtml(record.serialNumber)}</dd></div>
+      <dl><div><dt>COTAÇÃO SISCAB</dt><dd>${escapeHtml(textDisplay(record.cotacaoSiscab))}</dd></div>
+      <div><dt>NUP</dt><dd>${escapeHtml(textDisplay(record.nup))}</dd></div>
+      <div><dt>PN / SN</dt><dd>${escapeHtml(record.partNumber)} / ${escapeHtml(record.serialNumber)}</dd></div>
       <div><dt>Status</dt><dd>${escapeHtml(textDisplay(activeRealStatus(record)))}</dd></div><div><dt>Etapa</dt><dd>${escapeHtml(info.visualStage)}</dd></div>
       <div><dt>Reparador</dt><dd>${escapeHtml(textDisplay(record.repairerName))}</dd></div><div><dt>TDR</dt><dd>${escapeHtml(info.tdr.label)}</dd></div></dl>
       <div class="rep-mobile-card__actions"><button type="button" class="rep-btn rep-btn--light" data-view-id="${record.id}"><i class="bi bi-eye"></i> Detalhes</button>${state.isAdmin ? `<button type="button" class="rep-btn rep-btn--outline" data-edit-id="${record.id}"><i class="bi bi-pencil"></i> Complementar</button>` : ""}</div>
@@ -578,7 +606,7 @@ function openDetail(id) {
   const tte = record.evaluationFee == null ? "Não informado" : `${new Intl.NumberFormat("pt-BR", { minimumFractionDigits: 2, maximumFractionDigits: 2 }).format(record.evaluationFee)} — Moeda não informada`;
   els.detailContent.innerHTML = `
     <section class="rep-detail-group"><h3>Identificação</h3><dl>${detailRow("Número do processo", record.processNumber)}${detailRow("Descrição do item", record.description)}${detailRow("Chave estável", record.importKey)}${detailRow("Status real", activeRealStatus(record))}${detailRow("Etapa visual", info.visualStage)}${detailRow("Situação no lote", state.sourceMode.startsWith("bundle") || record.lastSeenBatchId === state.config?.activeBatchId ? "Presente no lote atual" : "Ausente do lote atual — registro preservado")}</dl></section>
-    <section class="rep-detail-group"><h3>Empenho e requisição</h3><dl>${detailRow("Empenho / PO", record.po)}${detailRow("Data de emissão", formatDate(record.poIssueDate))}${detailRow("Requisição", record.requisition)}${detailRow("Parque / OM", activeOriginOm(record), record.originDerived ? ' <span class="rep-inline-alert">derivada da requisição e normalizada</span>' : "")}</dl></section>
+    <section class="rep-detail-group"><h3>Empenho, cotação e processo</h3><dl>${detailRow("Empenho / PO", record.po)}${detailRow("COTAÇÃO SISCAB", record.cotacaoSiscab)}${detailRow("NUP", record.nup)}${detailRow("Data de emissão", formatDate(record.poIssueDate))}${detailRow("Requisição", record.requisition)}${detailRow("Parque / OM", activeOriginOm(record), record.originDerived ? ' <span class="rep-inline-alert">derivada da requisição e normalizada</span>' : "")}</dl></section>
     <section class="rep-detail-group"><h3>Item</h3><dl>${detailRow("Part Number", record.partNumber)}${detailRow("Serial Number", record.serialNumber)}${detailRow("Condição", activeCondition(record))}${detailRow("Valor do item", moneyDisplay(record.itemValue, record.currency))}</dl></section>
     <section class="rep-detail-group"><h3>Reparador</h3><dl>${detailRow("CAGE Code", record.repairerCage)}${detailRow("Nome do reparador", record.repairerName)}${detailRow("Valor do reparo contratado", moneyDisplay(record.repairValue, record.currency))}${detailRow("Taxa de Avaliação — TTE", tte)}</dl></section>
     <section class="rep-detail-group"><h3>Envio ao reparador</h3><dl>${detailRow("Data de recebimento no reparador", formatDate(record.receivedAtRepairerDate))}${detailRow("Tracking do envio", record.trackingToRepairer)}</dl></section>
@@ -586,7 +614,7 @@ function openDetail(id) {
     <section class="rep-detail-group"><h3>Execução e prazo</h3><dl>${detailRow("Data de autorização do serviço/retorno", formatDate(record.serviceAuthorizationOrAsIsDate))}${detailRow("Prazo para retorno", record.repairDeliveryDays == null ? null : `${record.repairDeliveryDays} dia(s)`)}${detailRow("Data final para entrega — DPE", formatDate(record.dpeFinalDate))}${detailRow("Data efetiva do retorno", formatDate(record.returnMaterialDate))}${detailRow("Situação do retorno", info.deadline.label)}</dl></section>
     <section class="rep-detail-group"><h3>Retorno</h3><dl>${detailRow("Tracking / volume de retorno", record.returnTrackingVolume)}${detailRow("Recebimento no depósito CABW", formatDate(record.returnMaterialDate))}</dl></section>
     <section class="rep-detail-group"><h3>Dados complementares</h3><dl>${detailRow("Moeda", record.currency)}${detailRow("Observações manuais", record.manualNotes)}</dl></section>
-    <section class="rep-detail-group"><h3>Metadados da importação</h3><dl>${detailRow("Arquivo-base", record.sourceFileName)}${detailRow("Aba-base", record.sourceSheet)}${detailRow("Linha de origem", record.sourceRow)}${detailRow("Lote", record.importBatchId)}${detailRow("Importado em", formatDateTime(record.importedAt))}${detailRow("Importado por", record.importedByName || record.importedBy || "Não informado")}${detailRow("Arquivo de status", record.statusSourceFileName)}${detailRow("Aba de status", record.statusSourceSheet)}${detailRow("Linha do status", record.statusSourceRow)}${detailRow("Referência do status", formatDate(record.statusReferenceDate))}${detailRow("Planilha de correlação", record.statusMappingFileName)}${detailRow("Linha da correlação", record.statusMappingSourceRow)}${detailRow("Arquivo de prazos/retornos", record.returnStatusSourceFileName)}${detailRow("Aba de prazos/retornos", record.returnStatusSourceSheet)}${detailRow("Linha de prazos/retornos", record.returnStatusSourceRow)}${detailRow("Referência dos prazos/retornos", formatDate(record.returnStatusReferenceDate))}${detailRow("Correção aplicada", record.returnCorrectionNote)}${detailRow("Atualizado em", formatDateTime(record.updatedAt || record.returnStatusUpdatedAt || record.statusUpdatedAt))}</dl></section>
+    <section class="rep-detail-group"><h3>Metadados da importação</h3><dl>${detailRow("Arquivo-base", record.sourceFileName)}${detailRow("Aba-base", record.sourceSheet)}${detailRow("Linha de origem", record.sourceRow)}${detailRow("Lote", record.importBatchId)}${detailRow("Importado em", formatDateTime(record.importedAt))}${detailRow("Importado por", record.importedByName || record.importedBy || "Não informado")}${detailRow("Arquivo de status", record.statusSourceFileName)}${detailRow("Aba de status", record.statusSourceSheet)}${detailRow("Linha do status", record.statusSourceRow)}${detailRow("Referência do status", formatDate(record.statusReferenceDate))}${detailRow("Planilha de correlação", record.statusMappingFileName)}${detailRow("Linha da correlação", record.statusMappingSourceRow)}${detailRow("Arquivo de prazos/retornos", record.returnStatusSourceFileName)}${detailRow("Aba de prazos/retornos", record.returnStatusSourceSheet)}${detailRow("Linha de prazos/retornos", record.returnStatusSourceRow)}${detailRow("Referência dos prazos/retornos", formatDate(record.returnStatusReferenceDate))}${detailRow("Correção aplicada", record.returnCorrectionNote)}${detailRow("Arquivo de COTAÇÃO/NUP", record.pagSourceFileName)}${detailRow("Aba de COTAÇÃO/NUP", record.pagSourceSheet)}${detailRow("Linha de COTAÇÃO/NUP", record.pagSourceRow)}${detailRow("Referência de COTAÇÃO/NUP", formatDate(record.pagReferenceDate))}${detailRow("Correção de COTAÇÃO/NUP", record.pagCorrectionNote)}${detailRow("Atualizado em", formatDateTime(record.updatedAt || record.pagUpdatedAt || record.returnStatusUpdatedAt || record.statusUpdatedAt))}</dl></section>
     <section class="rep-detail-group rep-detail-group--warnings"><h3>Avisos de qualidade</h3>${warnings.length ? `<ul>${Array.from(new Set(warnings)).map(warning => `<li>${escapeHtml(warning)}</li>`).join("")}</ul>` : '<p>Nenhuma divergência identificada neste registro.</p>'}</section>`;
   els.detailEdit.hidden = !state.isAdmin; els.detailEdit.dataset.editId = record.id; els.detailDialog.showModal();
 }
@@ -710,6 +738,8 @@ async function parseWorkbookFile(file, referenceDateIso) {
   const missingHeaders = REQUIRED_HEADERS.filter(header => findHeaderColumn(map, header) == null);
   if (missingHeaders.length) throw new Error(`Cabeçalhos obrigatórios ausentes: ${missingHeaders.join(", ")}.`);
   const col = header => findHeaderColumn(map, header); const parsed = [], rejected = [], warnings = [], seen = new Set();
+  const quotationColumn = col("COTAÇÃO SISCAB");
+  const nupColumn = col("NUP");
   let ignored = 0, excludedPo2024 = 0;
   const quality = { tteDiscarded: 0, tteInformed: 0, omDerived: 0, unmapped: 0, tdrNoDueDate: 0, tdrDelivered: 0, tdrOverdue: 0, tdrNotReceived: 0, returnOverdue: 0, returnedLate: 0, returnedOnTime: 0, returnNotAuthorized: 0, returnPending: 0, duplicateKeys: 0 };
   for (let row = 1; row <= range.e.r; row += 1) {
@@ -756,8 +786,11 @@ async function parseWorkbookFile(file, referenceDateIso) {
     if (!tdrDueDate && tdr.code !== "delivered") recordWarnings.push("Prazo do TDR não informado na coluna M");
     if (documentary.code === "tdr-not-received") recordWarnings.push("TDR ainda não recebido: colunas O e P em branco");
     if ((!serviceAuthorizationOrAsIsDate || repairDeliveryDays == null || !dpeFinalDate) && [serviceAuthorizationOrAsIsDate, repairDeliveryDays, dpeFinalDate].some(value => value !== null)) recordWarnings.push("Dados de autorização/prazo incompletos; item tratado como sem prazo de retorno e não atrasado");
+    const pagFields = {};
+    if (quotationColumn != null) pagFields.cotacaoSiscab = normalizeIdentifier(cellAt(sheet, row, quotationColumn)?.v);
+    if (nupColumn != null) pagFields.nup = normalizeIdentifier(cellAt(sheet, row, nupColumn)?.v);
     parsed.push({
-      id, importKey: key, po, evaluationFee: fee.value, evaluationFeeCurrency: null, evaluationFeeRaw: fee.raw, evaluationFeeDiscardReason: fee.discardedReason,
+      id, importKey: key, po, ...pagFields, evaluationFee: fee.value, evaluationFeeCurrency: null, evaluationFeeRaw: fee.raw, evaluationFeeDiscardReason: fee.discardedReason,
       poIssueDate: parseDateToIso(value("DATA EMISSÃO PO")), realStatus, realStatusSource: statusNormalization.raw, realStatusDiscardReason: statusNormalization.discardedReason,
       visualStage, requisition, originOm: origin.value, originOmSource: origin.source, originOmShortCode: origin.shortCode, originOmNormalizationVersion: 2, originDerived: origin.derived, partNumber: pn, serialNumber: sn,
       condition: conditionNormalization.value, conditionSource: conditionNormalization.raw, conditionDiscardReason: conditionNormalization.discardedReason,
@@ -856,7 +889,7 @@ async function commitImport() {
       batch.set(doc(db, COLLECTION_NAME, recordId), payload, { merge: true });
     });
     po2024Records.forEach(record => batch.set(doc(db, COLLECTION_NAME, record.id), { archivedOutOfScope: true, outOfScopeReason: "PO-2024", archivedAt: serverTimestamp(), archivedBy: state.user.uid, updatedAt: serverTimestamp() }, { merge: true }));
-    const metadata = { activeBatchId: batchId, sourceFileName: preview.fileName, sourceSheet: SOURCE_SHEET, referenceDate: preview.referenceDate, buildVersion: "20260820-overdue-split-r1", validRows: preview.records.length, excludedPo2024: (preview.excludedPo2024 || 0) + po2024Records.length, newCount: preview.newCount, updatedCount: preview.updatedCount, unchangedCount: preview.unchangedCount, rejectedCount: preview.rejected.length, ignoredRows: preview.ignored, missingRecordIds: preview.missingIds, quality: preview.quality, importedAt: serverTimestamp(), importedBy: state.user.uid, importedByName: state.user.displayName || state.user.email || "" };
+    const metadata = { activeBatchId: batchId, sourceFileName: preview.fileName, sourceSheet: SOURCE_SHEET, referenceDate: preview.referenceDate, buildVersion: "20260827-pag-r1", validRows: preview.records.length, excludedPo2024: (preview.excludedPo2024 || 0) + po2024Records.length, newCount: preview.newCount, updatedCount: preview.updatedCount, unchangedCount: preview.unchangedCount, rejectedCount: preview.rejected.length, ignoredRows: preview.ignored, missingRecordIds: preview.missingIds, quality: preview.quality, importedAt: serverTimestamp(), importedBy: state.user.uid, importedByName: state.user.displayName || state.user.email || "" };
     batch.set(doc(db, "repairProcessesConfig", "current"), metadata, { merge: true }); batch.set(doc(db, IMPORT_COLLECTION, batchId), { ...metadata, batchId, rejectedRows: preview.rejected.slice(0, 100) });
     await batch.commit(); await logAction("Importação mensal de materiais reparáveis", { batchId, fileName: preview.fileName, validRows: preview.records.length, archivedPo2024: po2024Records.length, newCount: preview.newCount, updatedCount: preview.updatedCount, unchangedCount: preview.unchangedCount, missingCount: preview.missingIds.length });
     setImportMessage(`Importação concluída: ${preview.records.length} registros ativos e ${po2024Records.length} PO(s) 24T arquivada(s).`, "success"); state.importPreview = null; els.importFile.value = ""; renderImportPreview(); await loadImportHistory();
@@ -882,7 +915,7 @@ function renderImportHistory() {
 
 function filterSummaryText() {
   const filters = readFilters(), values = [];
-  if (filters.po) values.push(`PO: ${els.poFilter.value}`); if (filters.requisition) values.push(`Requisição: ${els.requisitionFilter.value}`);
+  if (filters.po) values.push(`PO: ${els.poFilter.value}`); if (filters.quotation) values.push(`COTAÇÃO SISCAB: ${els.quotationFilter.value}`); if (filters.nup) values.push(`NUP: ${els.nupFilter.value}`); if (filters.requisition) values.push(`Requisição: ${els.requisitionFilter.value}`);
   if (filters.status) values.push(`Status: ${filters.status}`); if (filters.stage) values.push(`Etapa: ${filters.stage}`);
   if (filters.origin) values.push(`OM: ${filters.origin}`); if (filters.repairer) values.push(`Reparador: ${filters.repairer}`);
   if (filters.condition) values.push(`Condição: ${filters.condition}`); if (filters.evaluationFee) values.push(`TTE: ${filters.evaluationFee}`);
@@ -891,9 +924,9 @@ function filterSummaryText() {
   return values.length ? values.join(" · ") : "Sem filtros adicionais";
 }
 
-function setupPdf(title, orientation = "portrait") {
+function setupPdf(title, orientation = "portrait", format = "a4") {
   const { jsPDF } = window.jspdf;
-  const pdf = new jsPDF({ orientation, unit: "mm", format: "a4" });
+  const pdf = new jsPDF({ orientation, unit: "mm", format });
   pdf.setFillColor(1, 45, 107);
   pdf.rect(0, 0, pdf.internal.pageSize.getWidth(), 24, "F");
   pdf.setTextColor(255, 255, 255);
@@ -953,11 +986,12 @@ function generateSummaryPdf() {
 }
 
 function generateDetailedPdf() {
-  if (!ensurePdf()) return; const { pdf, startY } = setupPdf("Relatório Detalhado — Materiais Reparáveis", "landscape");
+  if (!ensurePdf()) return; const { pdf, startY } = setupPdf("Relatório Detalhado — Materiais Reparáveis", "landscape", "a3");
   pdf.autoTable({
-    startY, head: [["PO", "Requisição", "PN", "SN", "OM", "Status", "Etapa", "Reparador", "TTE", "TDR", "Subprocesso/Ficha", "DPE/Retorno"]],
-    body: state.filtered.map(record => { const info = derived(record); const tte = record.evaluationFee == null ? "Não informado" : `${new Intl.NumberFormat("pt-BR", { minimumFractionDigits: 2, maximumFractionDigits: 2 }).format(record.evaluationFee)} — moeda não informada`; return [record.po, record.requisition, record.partNumber, record.serialNumber, textDisplay(activeOriginOm(record)), textDisplay(activeRealStatus(record)), info.visualStage, textDisplay(record.repairerName), tte, info.tdr.label, info.documentary.label, info.deadline.label]; }),
-    headStyles: { fillColor: [1, 58, 126], fontSize: 6 }, styles: { fontSize: 5.2, cellPadding: 1.0, overflow: "linebreak" },
+    startY, head: [["PO", "COTAÇÃO SISCAB", "NUP", "Requisição", "PN", "SN", "OM", "Status", "Etapa", "Reparador", "TTE", "TDR", "Subprocesso/Ficha", "DPE/Retorno"]],
+    body: state.filtered.map(record => { const info = derived(record); const tte = record.evaluationFee == null ? "Não informado" : `${new Intl.NumberFormat("pt-BR", { minimumFractionDigits: 2, maximumFractionDigits: 2 }).format(record.evaluationFee)} — moeda não informada`; return [record.po, textDisplay(record.cotacaoSiscab), textDisplay(record.nup), record.requisition, record.partNumber, record.serialNumber, textDisplay(activeOriginOm(record)), textDisplay(activeRealStatus(record)), info.visualStage, textDisplay(record.repairerName), tte, info.tdr.label, info.documentary.label, info.deadline.label]; }),
+    headStyles: { fillColor: [1, 58, 126], fontSize: 5.8 }, styles: { fontSize: 4.9, cellPadding: 0.9, overflow: "linebreak" },
+    columnStyles: { 1: { cellWidth: 22 }, 2: { cellWidth: 38 }, 3: { cellWidth: 26 }, 4: { cellWidth: 24 }, 5: { cellWidth: 20 } },
     didDrawPage: () => { pdf.setFontSize(7); pdf.setTextColor(90, 100, 120); pdf.text(`Página ${pdf.internal.getNumberOfPages()}`, pdf.internal.pageSize.getWidth() - 22, pdf.internal.pageSize.getHeight() - 6); }
   }); pdf.save(`materiais-reparaveis-detalhado-${TODAY_ISO}.pdf`);
 }
@@ -981,7 +1015,7 @@ function subscribeData() {
 function cacheElements() {
   Object.assign(els, {
     source: $("repSourceInfo"), importToggle: $("repImportToggle"), manualNew: $("repManualNew"), importPanel: $("repImportPanel"), importFile: $("repImportFile"), importDate: $("repImportDate"), importPreviewButton: $("repImportPreviewButton"), importCommitButton: $("repImportCommitButton"), importCancelButton: $("repImportCancelButton"), importPreviewPanel: $("repImportPreviewPanel"), importPreviewGrid: $("repImportPreviewGrid"), importWarnings: $("repImportWarnings"), importMessage: $("repImportMessage"), importHistory: $("repImportHistory"),
-    poFilter: $("repPoFilter"), requisitionFilter: $("repRequisitionFilter"), statusFilter: $("repStatusFilter"), stageFilter: $("repStageFilter"), originFilter: $("repOriginFilter"), repairerFilter: $("repRepairerFilter"), conditionFilter: $("repConditionFilter"), evaluationFeeFilter: $("repEvaluationFeeFilter"), tdrFilter: $("repTdrFilter"), documentFilter: $("repDocumentFilter"), cageFilter: $("repCageFilter"), deadlineFilter: $("repDeadlineFilter"), search: $("repSearch"), sort: $("repSort"), includeAbsent: $("repIncludeAbsent"), clearFilters: $("repClearFilters"), results: $("repResults"),
+    poFilter: $("repPoFilter"), quotationFilter: $("repQuotationFilter"), nupFilter: $("repNupFilter"), requisitionFilter: $("repRequisitionFilter"), statusFilter: $("repStatusFilter"), stageFilter: $("repStageFilter"), originFilter: $("repOriginFilter"), repairerFilter: $("repRepairerFilter"), conditionFilter: $("repConditionFilter"), evaluationFeeFilter: $("repEvaluationFeeFilter"), tdrFilter: $("repTdrFilter"), documentFilter: $("repDocumentFilter"), cageFilter: $("repCageFilter"), deadlineFilter: $("repDeadlineFilter"), search: $("repSearch"), sort: $("repSort"), includeAbsent: $("repIncludeAbsent"), clearFilters: $("repClearFilters"), results: $("repResults"),
     pdfSummary: $("repPdfSummary"), pdfDetailed: $("repPdfDetailed"), kpiTotal: $("repKpiTotal"), kpiRepair: $("repKpiRepair"), kpiTransit: $("repKpiTransit"), kpiReturnedLate: $("repKpiReturnedLate"), kpiOverdue: $("repKpiOverdue"), kpiCompleted: $("repKpiCompleted"), kpiTdr: $("repKpiTdr"), kpiItemValue: $("repKpiItemValue"), kpiItemValueNote: $("repKpiItemValueNote"), kpiRepairValue: $("repKpiRepairValue"), kpiRepairValueNote: $("repKpiRepairValueNote"),
     flowGrid: $("repFlowGrid"), clearFlow: $("repClearFlow"), statusSummary: $("repStatusSummary"), attentionList: $("repAttentionList"), qualityGrid: $("repQualityGrid"), table: $("repTable"), tableCount: $("repTableCount"), mobileList: $("repMobileList"), emptyState: $("repEmptyState"),
     detailDialog: $("repDetailDialog"), detailTitle: $("repDetailTitle"), detailContent: $("repDetailContent"), detailClose: $("repDetailClose"), detailEdit: $("repDetailEdit"),
@@ -991,7 +1025,7 @@ function cacheElements() {
 
 function bindEvents() {
   [els.statusFilter, els.stageFilter, els.originFilter, els.repairerFilter, els.conditionFilter, els.evaluationFeeFilter, els.tdrFilter, els.documentFilter, els.cageFilter, els.deadlineFilter, els.sort, els.includeAbsent].forEach(element => element.addEventListener("change", applyFilters));
-  [els.poFilter, els.requisitionFilter, els.search].forEach(element => element.addEventListener("input", applyFilters));
+  [els.poFilter, els.quotationFilter, els.nupFilter, els.requisitionFilter, els.search].forEach(element => element.addEventListener("input", applyFilters));
   els.clearFilters.addEventListener("click", clearFilters); els.clearFlow.addEventListener("click", () => { state.flowGroup = ""; applyFilters(); });
   els.pdfSummary.addEventListener("click", generateSummaryPdf); els.pdfDetailed.addEventListener("click", generateDetailedPdf);
   els.importToggle.addEventListener("click", () => { els.importPanel.hidden = !els.importPanel.hidden; if (!els.importPanel.hidden) els.importFile.focus(); });

@@ -366,3 +366,30 @@ test("metadados registram os dois grupos de atraso separadamente", () => {
   });
   assert.equal(payload.metadata.returnKpiSplitVersion, 2);
 });
+
+
+test("base ativa possui COTAÇÃO SISCAB e NUP para todos os itens", () => {
+  assert.equal(payload.records.length, 113);
+  assert.equal(payload.records.every(item => /^\d{6}$/.test(String(item.cotacaoSiscab || ""))), true);
+  assert.equal(payload.records.every(item => /^67102\.\d{6}\/\d{4}-\d{2}$/.test(String(item.nup || ""))), true);
+  assert.equal(new Set(payload.records.map(item => item.po)).size, 60);
+});
+
+test("correções confirmadas de COTAÇÃO SISCAB e NUP foram aplicadas", () => {
+  const po910 = payload.records.find(item => item.po === "26T000910");
+  const po915 = payload.records.find(item => item.po === "26T000915");
+  assert.equal(po910.cotacaoSiscab, "260284");
+  assert.equal(po910.nup, "67102.260284/2026-61");
+  assert.equal(po915.cotacaoSiscab, "260285");
+  assert.equal(po915.nup, "67102.260285/2026-14");
+});
+
+test("painel inclui filtros e PDF detalhado de COTAÇÃO SISCAB e NUP", () => {
+  const html = fs.readFileSync(path.join(__dirname, "../governanca-reparaveis.html"), "utf8");
+  const panel = fs.readFileSync(path.join(__dirname, "../assets/js/repair-processes-panel.js"), "utf8");
+  assert.match(html, /id="repQuotationFilter"/);
+  assert.match(html, /id="repNupFilter"/);
+  assert.match(panel, /"COTAÇÃO SISCAB", "NUP"/);
+  assert.match(panel, /record\.cotacaoSiscab/);
+  assert.match(panel, /record\.nup/);
+});

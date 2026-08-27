@@ -8,6 +8,8 @@
   "sourceSheet": "BD Monitoramento",
   "sourceFields": {
     "PO": "po",
+    "COTAÇÃO SISCAB": "cotacaoSiscab",
+    "NUP": "nup",
     "TTE": "evaluationFee",
     "DATA EMISSÃO PO": "poIssueDate",
     "STATUS REAL DO MATERIAL": "realStatus",
@@ -46,7 +48,7 @@
     "currency",
     "manualNotes"
   ],
-  "buildVersion": "20260820-overdue-split-r1",
+  "buildVersion": "20260827-pag-r1",
   "statusUpdate": {
     "sourceFile": "19AGO V3 - CONTROLE REPARO - SGT ROZENDO.xlsx",
     "sourceSheet": "BD Monitoramento",
@@ -124,5 +126,35 @@
     "returnedLate": "Itens com data efetiva de retorno posterior à DPE.",
     "overdueNotReturned": "Itens sem retorno registrado e com DPE anterior à data atual.",
     "separateCards": true
+  },
+  "pagUpdate": {
+    "sourceFile": "27AGO - CONTROLE REPARO - PAG.xlsx",
+    "sourceSheet": "BD Monitoramento",
+    "referenceDate": "2026-08-27",
+    "matchRule": "Correspondência linha a linha validada pela PO e pela sequência dos 113 registros.",
+    "fields": {
+      "COTAÇÃO SISCAB": "cotacaoSiscab",
+      "NUP": "nup"
+    },
+    "filters": [
+      "COTAÇÃO SISCAB",
+      "NUP"
+    ],
+    "detailedPdfColumns": [
+      "COTAÇÃO SISCAB",
+      "NUP"
+    ],
+    "confirmedCorrections": [
+      {
+        "po": "26T000910",
+        "cotacaoSiscab": "260284",
+        "nup": "67102.260284/2026-61"
+      },
+      {
+        "po": "26T000915",
+        "cotacaoSiscab": "260285",
+        "nup": "67102.260285/2026-14"
+      }
+    ]
   }
 }

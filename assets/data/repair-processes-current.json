@@ -3,7 +3,7 @@
     "sourceFileName": "CONTROLE REPARO - SGT ROZENDO - 03082026.xlsx",
     "sourceSheet": "BD Monitoramento",
     "referenceDate": "2026-08-20",
-    "buildVersion": "20260820-overdue-split-r1",
+    "buildVersion": "20260827-pag-r1",
     "validRows": 113,
     "validSourceRows": "2 a 114",
     "uniqueKeys": 113,
@@ -227,7 +227,28 @@
       "returnedLate": 50,
       "overdueNotReturned": 7
     },
-    "returnKpiRule": "Os indicadores distinguem itens que já retornaram após a DPE dos itens cuja DPE venceu e cujo retorno ainda não foi registrado."
+    "returnKpiRule": "Os indicadores distinguem itens que já retornaram após a DPE dos itens cuja DPE venceu e cujo retorno ainda não foi registrado.",
+    "pagSourceFileName": "27AGO - CONTROLE REPARO - PAG.xlsx",
+    "pagSourceSheet": "BD Monitoramento",
+    "pagSourceRows": "2 a 114",
+    "pagReferenceDate": "2026-08-27",
+    "pagUpdateRows": 113,
+    "pagUpdateUniquePos": 60,
+    "pagQuotationCount": 38,
+    "pagNupCount": 38,
+    "pagCorrectionsApplied": [
+      {
+        "po": "26T000910",
+        "cotacaoSiscab": "260284",
+        "nup": "67102.260284/2026-61"
+      },
+      {
+        "po": "26T000915",
+        "cotacaoSiscab": "260285",
+        "nup": "67102.260285/2026-14"
+      }
+    ],
+    "pagRule": "A COTAÇÃO SISCAB e o NUP são associados a cada item pela linha/PO da planilha suplementar de 27/08/2026 e ficam disponíveis em filtros, consultas, detalhamento e PDF detalhado."
   },
   "records": [
     {
@@ -318,7 +339,15 @@
       "originOmSource": "EL",
       "originOmShortCode": "EL",
       "originOmNormalizationVersion": 2,
-      "originOmNormalizedAt": "2026-08-20"
+      "originOmNormalizedAt": "2026-08-20",
+      "cotacaoSiscab": "240793",
+      "nup": "67102.240793/2024-14",
+      "pagSourceFileName": "27AGO - CONTROLE REPARO - PAG.xlsx",
+      "pagSourceSheet": "BD Monitoramento",
+      "pagSourceRow": 2,
+      "pagReferenceDate": "2026-08-27",
+      "pagUpdatedAt": "2026-08-27",
+      "pagCorrectionNote": null
     },
     {
       "id": "1caf91943f06284022fbd2359dafe95f8ba7cbc946f42c739c990e7956552e70",
@@ -408,7 +437,15 @@
       "originOmSource": "SP",
       "originOmShortCode": "SP",
       "originOmNormalizationVersion": 2,
-      "originOmNormalizedAt": "2026-08-20"
+      "originOmNormalizedAt": "2026-08-20",
+      "cotacaoSiscab": "240669",
+      "nup": "67102.240669/2024-41",
+      "pagSourceFileName": "27AGO - CONTROLE REPARO - PAG.xlsx",
+      "pagSourceSheet": "BD Monitoramento",
+      "pagSourceRow": 3,
+      "pagReferenceDate": "2026-08-27",
+      "pagUpdatedAt": "2026-08-27",
+      "pagCorrectionNote": null
     },
     {
       "id": "d947a215cfd15d696ef2c0354051c921099799baf7056b96deafd67ecb9ebbcd",
@@ -498,7 +535,15 @@
       "originOmSource": "SP",
       "originOmShortCode": "SP",
       "originOmNormalizationVersion": 2,
-      "originOmNormalizedAt": "2026-08-20"
+      "originOmNormalizedAt": "2026-08-20",
+      "cotacaoSiscab": "240806",
+      "nup": "67102.240806/2024-47",
+      "pagSourceFileName": "27AGO - CONTROLE REPARO - PAG.xlsx",
+      "pagSourceSheet": "BD Monitoramento",
+      "pagSourceRow": 4,
+      "pagReferenceDate": "2026-08-27",
+      "pagUpdatedAt": "2026-08-27",
+      "pagCorrectionNote": null
     },
     {
       "id": "e8d2d58d9d32efbed96c41b535b6e705c60b2d8f0cd272d7b3c0cca91d82b22f",
@@ -588,7 +633,15 @@
       "originOmSource": "SP",
       "originOmShortCode": "SP",
       "originOmNormalizationVersion": 2,
-      "originOmNormalizedAt": "2026-08-20"
+      "originOmNormalizedAt": "2026-08-20",
+      "cotacaoSiscab": "240719",
+      "nup": "67102.240719/2024-90",
+      "pagSourceFileName": "27AGO - CONTROLE REPARO - PAG.xlsx",
+      "pagSourceSheet": "BD Monitoramento",
+      "pagSourceRow": 5,
+      "pagReferenceDate": "2026-08-27",
+      "pagUpdatedAt": "2026-08-27",
+      "pagCorrectionNote": null
     },
     {
       "id": "4c78230246a6c37afdd9412efa1a92435dca1608afcb862ff40ba21f86f4b57d",
@@ -678,7 +731,15 @@
       "originOmSource": "SP",
       "originOmShortCode": "SP",
       "originOmNormalizationVersion": 2,
-      "originOmNormalizedAt": "2026-08-20"
+      "originOmNormalizedAt": "2026-08-20",
+      "cotacaoSiscab": "240719",
+      "nup": "67102.240719/2024-90",
+      "pagSourceFileName": "27AGO - CONTROLE REPARO - PAG.xlsx",
+      "pagSourceSheet": "BD Monitoramento",
+      "pagSourceRow": 6,
+      "pagReferenceDate": "2026-08-27",
+      "pagUpdatedAt": "2026-08-27",
+      "pagCorrectionNote": null
     },
     {
       "id": "7a142c2bf4f0ab189a7b74a0e7a73fef3ced5077f4c5145a1319da94250284e3",
@@ -768,7 +829,15 @@
       "originOmSource": "SP",
       "originOmShortCode": "SP",
       "originOmNormalizationVersion": 2,
-      "originOmNormalizedAt": "2026-08-20"
+      "originOmNormalizedAt": "2026-08-20",
+      "cotacaoSiscab": "240719",
+      "nup": "67102.240719/2024-90",
+      "pagSourceFileName": "27AGO - CONTROLE REPARO - PAG.xlsx",
+      "pagSourceSheet": "BD Monitoramento",
+      "pagSourceRow": 7,
+      "pagReferenceDate": "2026-08-27",
+      "pagUpdatedAt": "2026-08-27",
+      "pagCorrectionNote": null
     },
     {
       "id": "44325dc10cc7134029d18cad76c88a1248c225ef395c387b26075da4a8947cfa",
@@ -858,7 +927,15 @@
       "originOmSource": "SP",
       "originOmShortCode": "SP",
       "originOmNormalizationVersion": 2,
-      "originOmNormalizedAt": "2026-08-20"
+      "originOmNormalizedAt": "2026-08-20",
+      "cotacaoSiscab": "240719",
+      "nup": "67102.240719/2024-90",
+      "pagSourceFileName": "27AGO - CONTROLE REPARO - PAG.xlsx",
+      "pagSourceSheet": "BD Monitoramento",
+      "pagSourceRow": 8,
+      "pagReferenceDate": "2026-08-27",
+      "pagUpdatedAt": "2026-08-27",
+      "pagCorrectionNote": null
     },
     {
       "id": "2b9ed105d6d5ee6a4e98b1a4bf1772d0a1ab6c02740d860e06e592f197ef5e53",
@@ -948,7 +1025,15 @@
       "originOmSource": "SP",
       "originOmShortCode": "SP",
       "originOmNormalizationVersion": 2,
-      "originOmNormalizedAt": "2026-08-20"
+      "originOmNormalizedAt": "2026-08-20",
+      "cotacaoSiscab": "240719",
+      "nup": "67102.240719/2024-90",
+      "pagSourceFileName": "27AGO - CONTROLE REPARO - PAG.xlsx",
+      "pagSourceSheet": "BD Monitoramento",
+      "pagSourceRow": 9,
+      "pagReferenceDate": "2026-08-27",
+      "pagUpdatedAt": "2026-08-27",
+      "pagCorrectionNote": null
     },
     {
       "id": "6ecea4ecd0718734e8275f7f5dc0329bedf245896be9e7b3762fbf06f3abbd4f",
@@ -1038,7 +1123,15 @@
       "originOmSource": "SP",
       "originOmShortCode": "SP",
       "originOmNormalizationVersion": 2,
-      "originOmNormalizedAt": "2026-08-20"
+      "originOmNormalizedAt": "2026-08-20",
+      "cotacaoSiscab": "240669",
+      "nup": "67102.240669/2024-41",
+      "pagSourceFileName": "27AGO - CONTROLE REPARO - PAG.xlsx",
+      "pagSourceSheet": "BD Monitoramento",
+      "pagSourceRow": 10,
+      "pagReferenceDate": "2026-08-27",
+      "pagUpdatedAt": "2026-08-27",
+      "pagCorrectionNote": null
     },
     {
       "id": "6077ef51c6c92bab151c8aa8bfd7cade498eaef49b4d2287fb1a5b0be90c4b63",
@@ -1130,7 +1223,15 @@
       "originOmSource": "SP",
       "originOmShortCode": "SP",
       "originOmNormalizationVersion": 2,
-      "originOmNormalizedAt": "2026-08-20"
+      "originOmNormalizedAt": "2026-08-20",
+      "cotacaoSiscab": "240626",
+      "nup": "67102.240626/2024-65",
+      "pagSourceFileName": "27AGO - CONTROLE REPARO - PAG.xlsx",
+      "pagSourceSheet": "BD Monitoramento",
+      "pagSourceRow": 11,
+      "pagReferenceDate": "2026-08-27",
+      "pagUpdatedAt": "2026-08-27",
+      "pagCorrectionNote": null
     },
     {
       "id": "2421515b682c38d8086b8b860cbfec381cda79e477630284a3a30d4ceb27f697",
@@ -1220,7 +1321,15 @@
       "originOmSource": "SP",
       "originOmShortCode": "SP",
       "originOmNormalizationVersion": 2,
-      "originOmNormalizedAt": "2026-08-20"
+      "originOmNormalizedAt": "2026-08-20",
+      "cotacaoSiscab": "240806",
+      "nup": "67102.240806/2024-47",
+      "pagSourceFileName": "27AGO - CONTROLE REPARO - PAG.xlsx",
+      "pagSourceSheet": "BD Monitoramento",
+      "pagSourceRow": 12,
+      "pagReferenceDate": "2026-08-27",
+      "pagUpdatedAt": "2026-08-27",
+      "pagCorrectionNote": null
     },
     {
       "id": "5884fc752ac5b3630d814d2027fe81943a6f094c651182280b259416daa9d8df",
@@ -1310,7 +1419,15 @@
       "originOmSource": "SP",
       "originOmShortCode": "SP",
       "originOmNormalizationVersion": 2,
-      "originOmNormalizedAt": "2026-08-20"
+      "originOmNormalizedAt": "2026-08-20",
+      "cotacaoSiscab": "240806",
+      "nup": "67102.240806/2024-47",
+      "pagSourceFileName": "27AGO - CONTROLE REPARO - PAG.xlsx",
+      "pagSourceSheet": "BD Monitoramento",
+      "pagSourceRow": 13,
+      "pagReferenceDate": "2026-08-27",
+      "pagUpdatedAt": "2026-08-27",
+      "pagCorrectionNote": null
     },
     {
       "id": "edb994e103c849f567f81de74417ce9ca6d776f019aad97319ca1ef4d3efa87a",
@@ -1400,7 +1517,15 @@
       "originOmSource": "SP",
       "originOmShortCode": "SP",
       "originOmNormalizationVersion": 2,
-      "originOmNormalizedAt": "2026-08-20"
+      "originOmNormalizedAt": "2026-08-20",
+      "cotacaoSiscab": "240806",
+      "nup": "67102.240806/2024-47",
+      "pagSourceFileName": "27AGO - CONTROLE REPARO - PAG.xlsx",
+      "pagSourceSheet": "BD Monitoramento",
+      "pagSourceRow": 14,
+      "pagReferenceDate": "2026-08-27",
+      "pagUpdatedAt": "2026-08-27",
+      "pagCorrectionNote": null
     },
     {
       "id": "ed07289957e841f264668a8de5c0d1633f1754c8ceecee71cef07e82b88c65ef",
@@ -1490,7 +1615,15 @@
       "originOmSource": "SP",
       "originOmShortCode": "SP",
       "originOmNormalizationVersion": 2,
-      "originOmNormalizedAt": "2026-08-20"
+      "originOmNormalizedAt": "2026-08-20",
+      "cotacaoSiscab": "240806",
+      "nup": "67102.240806/2024-47",
+      "pagSourceFileName": "27AGO - CONTROLE REPARO - PAG.xlsx",
+      "pagSourceSheet": "BD Monitoramento",
+      "pagSourceRow": 15,
+      "pagReferenceDate": "2026-08-27",
+      "pagUpdatedAt": "2026-08-27",
+      "pagCorrectionNote": null
     },
     {
       "id": "e76f38ffcb688bbb3b347648768014426a9b9b9eb1032af82b06178c685ca491",
@@ -1580,7 +1713,15 @@
       "originOmSource": "SP",
       "originOmShortCode": "SP",
       "originOmNormalizationVersion": 2,
-      "originOmNormalizedAt": "2026-08-20"
+      "originOmNormalizedAt": "2026-08-20",
+      "cotacaoSiscab": "240806",
+      "nup": "67102.240806/2024-47",
+      "pagSourceFileName": "27AGO - CONTROLE REPARO - PAG.xlsx",
+      "pagSourceSheet": "BD Monitoramento",
+      "pagSourceRow": 16,
+      "pagReferenceDate": "2026-08-27",
+      "pagUpdatedAt": "2026-08-27",
+      "pagCorrectionNote": null
     },
     {
       "id": "f025620441a2b46299e29765be879a491b7dfe71184ebb4ff6e89727a4b69f15",
@@ -1670,7 +1811,15 @@
       "originOmSource": "SP",
       "originOmShortCode": "SP",
       "originOmNormalizationVersion": 2,
-      "originOmNormalizedAt": "2026-08-20"
+      "originOmNormalizedAt": "2026-08-20",
+      "cotacaoSiscab": "250127",
+      "nup": "67102.250127/2025-67",
+      "pagSourceFileName": "27AGO - CONTROLE REPARO - PAG.xlsx",
+      "pagSourceSheet": "BD Monitoramento",
+      "pagSourceRow": 17,
+      "pagReferenceDate": "2026-08-27",
+      "pagUpdatedAt": "2026-08-27",
+      "pagCorrectionNote": null
     },
     {
       "id": "7f4a31628cdbc3e597f7e3d050af35eb8cfa123fd609e7f664d0865488986828",
@@ -1760,7 +1909,15 @@
       "originOmSource": "SP",
       "originOmShortCode": "SP",
       "originOmNormalizationVersion": 2,
-      "originOmNormalizedAt": "2026-08-20"
+      "originOmNormalizedAt": "2026-08-20",
+      "cotacaoSiscab": "250127",
+      "nup": "67102.250127/2025-67",
+      "pagSourceFileName": "27AGO - CONTROLE REPARO - PAG.xlsx",
+      "pagSourceSheet": "BD Monitoramento",
+      "pagSourceRow": 18,
+      "pagReferenceDate": "2026-08-27",
+      "pagUpdatedAt": "2026-08-27",
+      "pagCorrectionNote": null
     },
     {
       "id": "8954aba81286ed9a339af67b9546b55cb2dc33079169bdd88f5f6451d2317039",
@@ -1850,7 +2007,15 @@
       "originOmSource": "SP",
       "originOmShortCode": "SP",
       "originOmNormalizationVersion": 2,
-      "originOmNormalizedAt": "2026-08-20"
+      "originOmNormalizedAt": "2026-08-20",
+      "cotacaoSiscab": "250127",
+      "nup": "67102.250127/2025-67",
+      "pagSourceFileName": "27AGO - CONTROLE REPARO - PAG.xlsx",
+      "pagSourceSheet": "BD Monitoramento",
+      "pagSourceRow": 19,
+      "pagReferenceDate": "2026-08-27",
+      "pagUpdatedAt": "2026-08-27",
+      "pagCorrectionNote": null
     },
     {
       "id": "5fe1b7e81b6c115686a2d202a2eb664a52799d5a43a1c866f81bd384f4ec56f5",
@@ -1940,7 +2105,15 @@
       "originOmSource": "SP",
       "originOmShortCode": "SP",
       "originOmNormalizationVersion": 2,
-      "originOmNormalizedAt": "2026-08-20"
+      "originOmNormalizedAt": "2026-08-20",
+      "cotacaoSiscab": "250127",
+      "nup": "67102.250127/2025-67",
+      "pagSourceFileName": "27AGO - CONTROLE REPARO - PAG.xlsx",
+      "pagSourceSheet": "BD Monitoramento",
+      "pagSourceRow": 20,
+      "pagReferenceDate": "2026-08-27",
+      "pagUpdatedAt": "2026-08-27",
+      "pagCorrectionNote": null
     },
     {
       "id": "d440e5d63692cd64e0895b4bcf71e404009af1eb7bcf88ce9226f43a5d327011",
@@ -2030,7 +2203,15 @@
       "originOmSource": "SP",
       "originOmShortCode": "SP",
       "originOmNormalizationVersion": 2,
-      "originOmNormalizedAt": "2026-08-20"
+      "originOmNormalizedAt": "2026-08-20",
+      "cotacaoSiscab": "250127",
+      "nup": "67102.250127/2025-67",
+      "pagSourceFileName": "27AGO - CONTROLE REPARO - PAG.xlsx",
+      "pagSourceSheet": "BD Monitoramento",
+      "pagSourceRow": 21,
+      "pagReferenceDate": "2026-08-27",
+      "pagUpdatedAt": "2026-08-27",
+      "pagCorrectionNote": null
     },
     {
       "id": "7d2acde28f3ff7710e9cf98ed4f63f8d83f198fa505aa5a8cfd0127e336136db",
@@ -2120,7 +2301,15 @@
       "originOmSource": "SP",
       "originOmShortCode": "SP",
       "originOmNormalizationVersion": 2,
-      "originOmNormalizedAt": "2026-08-20"
+      "originOmNormalizedAt": "2026-08-20",
+      "cotacaoSiscab": "250127",
+      "nup": "67102.250127/2025-67",
+      "pagSourceFileName": "27AGO - CONTROLE REPARO - PAG.xlsx",
+      "pagSourceSheet": "BD Monitoramento",
+      "pagSourceRow": 22,
+      "pagReferenceDate": "2026-08-27",
+      "pagUpdatedAt": "2026-08-27",
+      "pagCorrectionNote": null
     },
     {
       "id": "673a3e32b1e8ac36b057fa2d7114bcc1d3252713039f05af5d098f3995a307bd",
@@ -2210,7 +2399,15 @@
       "originOmSource": "SP",
       "originOmShortCode": "SP",
       "originOmNormalizationVersion": 2,
-      "originOmNormalizedAt": "2026-08-20"
+      "originOmNormalizedAt": "2026-08-20",
+      "cotacaoSiscab": "250127",
+      "nup": "67102.250127/2025-67",
+      "pagSourceFileName": "27AGO - CONTROLE REPARO - PAG.xlsx",
+      "pagSourceSheet": "BD Monitoramento",
+      "pagSourceRow": 23,
+      "pagReferenceDate": "2026-08-27",
+      "pagUpdatedAt": "2026-08-27",
+      "pagCorrectionNote": null
     },
     {
       "id": "8ca193c40180204d2cda2532ddf457f372a6d2f84a375268869d1ea4ae29273a",
@@ -2300,7 +2497,15 @@
       "originOmSource": "SP",
       "originOmShortCode": "SP",
       "originOmNormalizationVersion": 2,
-      "originOmNormalizedAt": "2026-08-20"
+      "originOmNormalizedAt": "2026-08-20",
+      "cotacaoSiscab": "250127",
+      "nup": "67102.250127/2025-67",
+      "pagSourceFileName": "27AGO - CONTROLE REPARO - PAG.xlsx",
+      "pagSourceSheet": "BD Monitoramento",
+      "pagSourceRow": 24,
+      "pagReferenceDate": "2026-08-27",
+      "pagUpdatedAt": "2026-08-27",
+      "pagCorrectionNote": null
     },
     {
       "id": "fcd906a3ac660fcd21e289394fa3aba1dda4b12b0f5f1621d2135310c58f5281",
@@ -2390,7 +2595,15 @@
       "originOmSource": "SP",
       "originOmShortCode": "SP",
       "originOmNormalizationVersion": 2,
-      "originOmNormalizedAt": "2026-08-20"
+      "originOmNormalizedAt": "2026-08-20",
+      "cotacaoSiscab": "250184",
+      "nup": "67102.250184/2025-46",
+      "pagSourceFileName": "27AGO - CONTROLE REPARO - PAG.xlsx",
+      "pagSourceSheet": "BD Monitoramento",
+      "pagSourceRow": 25,
+      "pagReferenceDate": "2026-08-27",
+      "pagUpdatedAt": "2026-08-27",
+      "pagCorrectionNote": null
     },
     {
       "id": "b51a15eb420694a3c04f6d5501a866e6d357cc74c266b49183dc46538e9ec787",
@@ -2480,7 +2693,15 @@
       "originOmSource": "SP",
       "originOmShortCode": "SP",
       "originOmNormalizationVersion": 2,
-      "originOmNormalizedAt": "2026-08-20"
+      "originOmNormalizedAt": "2026-08-20",
+      "cotacaoSiscab": "250184",
+      "nup": "67102.250184/2025-46",
+      "pagSourceFileName": "27AGO - CONTROLE REPARO - PAG.xlsx",
+      "pagSourceSheet": "BD Monitoramento",
+      "pagSourceRow": 26,
+      "pagReferenceDate": "2026-08-27",
+      "pagUpdatedAt": "2026-08-27",
+      "pagCorrectionNote": null
     },
     {
       "id": "9c8cad49e085991ab1728b6d3384c026eb2192595d8ecaf1774a59ba7c9a9ad5",
@@ -2570,7 +2791,15 @@
       "originOmSource": "SP",
       "originOmShortCode": "SP",
       "originOmNormalizationVersion": 2,
-      "originOmNormalizedAt": "2026-08-20"
+      "originOmNormalizedAt": "2026-08-20",
+      "cotacaoSiscab": "250184",
+      "nup": "67102.250184/2025-46",
+      "pagSourceFileName": "27AGO - CONTROLE REPARO - PAG.xlsx",
+      "pagSourceSheet": "BD Monitoramento",
+      "pagSourceRow": 27,
+      "pagReferenceDate": "2026-08-27",
+      "pagUpdatedAt": "2026-08-27",
+      "pagCorrectionNote": null
     },
     {
       "id": "7c15408390b0b480b7609382ff7cef769dd92924770551e5f21e9030526d0e5e",
@@ -2660,7 +2889,15 @@
       "originOmSource": "SP",
       "originOmShortCode": "SP",
       "originOmNormalizationVersion": 2,
-      "originOmNormalizedAt": "2026-08-20"
+      "originOmNormalizedAt": "2026-08-20",
+      "cotacaoSiscab": "250184",
+      "nup": "67102.250184/2025-46",
+      "pagSourceFileName": "27AGO - CONTROLE REPARO - PAG.xlsx",
+      "pagSourceSheet": "BD Monitoramento",
+      "pagSourceRow": 28,
+      "pagReferenceDate": "2026-08-27",
+      "pagUpdatedAt": "2026-08-27",
+      "pagCorrectionNote": null
     },
     {
       "id": "c5d74fb2ebd81debd2ca24bbd591c6740b307420860816edb42b84070cfff679",
@@ -2750,7 +2987,15 @@
       "originOmSource": "SP",
       "originOmShortCode": "SP",
       "originOmNormalizationVersion": 2,
-      "originOmNormalizedAt": "2026-08-20"
+      "originOmNormalizedAt": "2026-08-20",
+      "cotacaoSiscab": "250184",
+      "nup": "67102.250184/2025-46",
+      "pagSourceFileName": "27AGO - CONTROLE REPARO - PAG.xlsx",
+      "pagSourceSheet": "BD Monitoramento",
+      "pagSourceRow": 29,
+      "pagReferenceDate": "2026-08-27",
+      "pagUpdatedAt": "2026-08-27",
+      "pagCorrectionNote": null
     },
     {
       "id": "f566aa6a1a161e3fcc72b5efc87fd274df7942eca5261fdc8c751acad8750fad",
@@ -2840,7 +3085,15 @@
       "originOmSource": "SP",
       "originOmShortCode": "SP",
       "originOmNormalizationVersion": 2,
-      "originOmNormalizedAt": "2026-08-20"
+      "originOmNormalizedAt": "2026-08-20",
+      "cotacaoSiscab": "250184",
+      "nup": "67102.250184/2025-46",
+      "pagSourceFileName": "27AGO - CONTROLE REPARO - PAG.xlsx",
+      "pagSourceSheet": "BD Monitoramento",
+      "pagSourceRow": 30,
+      "pagReferenceDate": "2026-08-27",
+      "pagUpdatedAt": "2026-08-27",
+      "pagCorrectionNote": null
     },
     {
       "id": "72e866fec5dec07c30bac5d98f79a8f23fb2a7a248a73ee8de5cceddef50a4eb",
@@ -2930,7 +3183,15 @@
       "originOmSource": "SP",
       "originOmShortCode": "SP",
       "originOmNormalizationVersion": 2,
-      "originOmNormalizedAt": "2026-08-20"
+      "originOmNormalizedAt": "2026-08-20",
+      "cotacaoSiscab": "250184",
+      "nup": "67102.250184/2025-46",
+      "pagSourceFileName": "27AGO - CONTROLE REPARO - PAG.xlsx",
+      "pagSourceSheet": "BD Monitoramento",
+      "pagSourceRow": 31,
+      "pagReferenceDate": "2026-08-27",
+      "pagUpdatedAt": "2026-08-27",
+      "pagCorrectionNote": null
     },
     {
       "id": "1ae694747a0a092509a2d7dab37a4917bb9642272e718d929d8e60e8b6e6f653",
@@ -3020,7 +3281,15 @@
       "originOmSource": "SP",
       "originOmShortCode": "SP",
       "originOmNormalizationVersion": 2,
-      "originOmNormalizedAt": "2026-08-20"
+      "originOmNormalizedAt": "2026-08-20",
+      "cotacaoSiscab": "250184",
+      "nup": "67102.250184/2025-46",
+      "pagSourceFileName": "27AGO - CONTROLE REPARO - PAG.xlsx",
+      "pagSourceSheet": "BD Monitoramento",
+      "pagSourceRow": 32,
+      "pagReferenceDate": "2026-08-27",
+      "pagUpdatedAt": "2026-08-27",
+      "pagCorrectionNote": null
     },
     {
       "id": "93de5870e03523f98540568c992ec5a7df15293c8abe12057c03c82d4640a093",
@@ -3110,7 +3379,15 @@
       "originOmSource": "SP",
       "originOmShortCode": "SP",
       "originOmNormalizationVersion": 2,
-      "originOmNormalizedAt": "2026-08-20"
+      "originOmNormalizedAt": "2026-08-20",
+      "cotacaoSiscab": "250186",
+      "nup": "67102.250186/2025-35",
+      "pagSourceFileName": "27AGO - CONTROLE REPARO - PAG.xlsx",
+      "pagSourceSheet": "BD Monitoramento",
+      "pagSourceRow": 33,
+      "pagReferenceDate": "2026-08-27",
+      "pagUpdatedAt": "2026-08-27",
+      "pagCorrectionNote": null
     },
     {
       "id": "200142d8ec96cd0e577037d851b2449f23a8d586c84c8b38eeafe23567510d54",
@@ -3200,7 +3477,15 @@
       "originOmSource": "SP",
       "originOmShortCode": "SP",
       "originOmNormalizationVersion": 2,
-      "originOmNormalizedAt": "2026-08-20"
+      "originOmNormalizedAt": "2026-08-20",
+      "cotacaoSiscab": "250186",
+      "nup": "67102.250186/2025-35",
+      "pagSourceFileName": "27AGO - CONTROLE REPARO - PAG.xlsx",
+      "pagSourceSheet": "BD Monitoramento",
+      "pagSourceRow": 34,
+      "pagReferenceDate": "2026-08-27",
+      "pagUpdatedAt": "2026-08-27",
+      "pagCorrectionNote": null
     },
     {
       "id": "770a09a9370ce25a9948595ab121f718db3a3c207b6819e0666da2be113ab2ca",
@@ -3290,7 +3575,15 @@
       "originOmSource": "SP",
       "originOmShortCode": "SP",
       "originOmNormalizationVersion": 2,
-      "originOmNormalizedAt": "2026-08-20"
+      "originOmNormalizedAt": "2026-08-20",
+      "cotacaoSiscab": "250186",
+      "nup": "67102.250186/2025-35",
+      "pagSourceFileName": "27AGO - CONTROLE REPARO - PAG.xlsx",
+      "pagSourceSheet": "BD Monitoramento",
+      "pagSourceRow": 37,
+      "pagReferenceDate": "2026-08-27",
+      "pagUpdatedAt": "2026-08-27",
+      "pagCorrectionNote": null
     },
     {
       "id": "7905389798678aa032ff26831e66abd9f441b82bc3dd63352e80d65caa9386d3",
@@ -3380,7 +3673,15 @@
       "originOmSource": "SP",
       "originOmShortCode": "SP",
       "originOmNormalizationVersion": 2,
-      "originOmNormalizedAt": "2026-08-20"
+      "originOmNormalizedAt": "2026-08-20",
+      "cotacaoSiscab": "250186",
+      "nup": "67102.250186/2025-35",
+      "pagSourceFileName": "27AGO - CONTROLE REPARO - PAG.xlsx",
+      "pagSourceSheet": "BD Monitoramento",
+      "pagSourceRow": 35,
+      "pagReferenceDate": "2026-08-27",
+      "pagUpdatedAt": "2026-08-27",
+      "pagCorrectionNote": null
     },
     {
       "id": "b6204ece4bee4aa0488ba1bf71cd367409e90c6e3887386c4c4c19c7f76bc0ea",
@@ -3470,7 +3771,15 @@
       "originOmSource": "SP",
       "originOmShortCode": "SP",
       "originOmNormalizationVersion": 2,
-      "originOmNormalizedAt": "2026-08-20"
+      "originOmNormalizedAt": "2026-08-20",
+      "cotacaoSiscab": "250186",
+      "nup": "67102.250186/2025-35",
+      "pagSourceFileName": "27AGO - CONTROLE REPARO - PAG.xlsx",
+      "pagSourceSheet": "BD Monitoramento",
+      "pagSourceRow": 36,
+      "pagReferenceDate": "2026-08-27",
+      "pagUpdatedAt": "2026-08-27",
+      "pagCorrectionNote": null
     },
     {
       "id": "5dc5d1daebadfbea313ef0f6be4f2f398a2ed872753ddc610441bc6595f78b75",
@@ -3561,7 +3870,15 @@
       "originOmSource": "GL",
       "originOmShortCode": "GL",
       "originOmNormalizationVersion": 2,
-      "originOmNormalizedAt": "2026-08-20"
+      "originOmNormalizedAt": "2026-08-20",
+      "cotacaoSiscab": "250227",
+      "nup": "67102.250227/2025-93",
+      "pagSourceFileName": "27AGO - CONTROLE REPARO - PAG.xlsx",
+      "pagSourceSheet": "BD Monitoramento",
+      "pagSourceRow": 38,
+      "pagReferenceDate": "2026-08-27",
+      "pagUpdatedAt": "2026-08-27",
+      "pagCorrectionNote": null
     },
     {
       "id": "660f31fa2fc7a3dc0b5e3b85eae6d475c84bd05b6cc85bd682d6e4cb2a5069bd",
@@ -3652,7 +3969,15 @@
       "originOmSource": "GL",
       "originOmShortCode": "GL",
       "originOmNormalizationVersion": 2,
-      "originOmNormalizedAt": "2026-08-20"
+      "originOmNormalizedAt": "2026-08-20",
+      "cotacaoSiscab": "250227",
+      "nup": "67102.250227/2025-93",
+      "pagSourceFileName": "27AGO - CONTROLE REPARO - PAG.xlsx",
+      "pagSourceSheet": "BD Monitoramento",
+      "pagSourceRow": 39,
+      "pagReferenceDate": "2026-08-27",
+      "pagUpdatedAt": "2026-08-27",
+      "pagCorrectionNote": null
     },
     {
       "id": "c0cd7c5fc7322ea985871f434389360e4fbba58369c640834600b799b2ee1df1",
@@ -3742,7 +4067,15 @@
       "originOmSource": "GL",
       "originOmShortCode": "GL",
       "originOmNormalizationVersion": 2,
-      "originOmNormalizedAt": "2026-08-20"
+      "originOmNormalizedAt": "2026-08-20",
+      "cotacaoSiscab": "250227",
+      "nup": "67102.250227/2025-93",
+      "pagSourceFileName": "27AGO - CONTROLE REPARO - PAG.xlsx",
+      "pagSourceSheet": "BD Monitoramento",
+      "pagSourceRow": 40,
+      "pagReferenceDate": "2026-08-27",
+      "pagUpdatedAt": "2026-08-27",
+      "pagCorrectionNote": null
     },
     {
       "id": "9b8cb86dbc8b0bfd702a82f6d4ea806509f488db1ad6692751414056a997c024",
@@ -3832,7 +4165,15 @@
       "originOmSource": "GL",
       "originOmShortCode": "GL",
       "originOmNormalizationVersion": 2,
-      "originOmNormalizedAt": "2026-08-20"
+      "originOmNormalizedAt": "2026-08-20",
+      "cotacaoSiscab": "250227",
+      "nup": "67102.250227/2025-93",
+      "pagSourceFileName": "27AGO - CONTROLE REPARO - PAG.xlsx",
+      "pagSourceSheet": "BD Monitoramento",
+      "pagSourceRow": 41,
+      "pagReferenceDate": "2026-08-27",
+      "pagUpdatedAt": "2026-08-27",
+      "pagCorrectionNote": null
     },
     {
       "id": "3b1e76f6743417b2db587ad6be83944fbe29f3a0155b87752adbd97a08e7c847",
@@ -3922,7 +4263,15 @@
       "originOmSource": "GL",
       "originOmShortCode": "GL",
       "originOmNormalizationVersion": 2,
-      "originOmNormalizedAt": "2026-08-20"
+      "originOmNormalizedAt": "2026-08-20",
+      "cotacaoSiscab": "250111",
+      "nup": "67102.250111/2025-54",
+      "pagSourceFileName": "27AGO - CONTROLE REPARO - PAG.xlsx",
+      "pagSourceSheet": "BD Monitoramento",
+      "pagSourceRow": 42,
+      "pagReferenceDate": "2026-08-27",
+      "pagUpdatedAt": "2026-08-27",
+      "pagCorrectionNote": null
     },
     {
       "id": "5633795b141f24ef68bd779a6806d154a9af9b2ed278d8a82ced3d8a3f7cad29",
@@ -4012,7 +4361,15 @@
       "originOmSource": "GL",
       "originOmShortCode": "GL",
       "originOmNormalizationVersion": 2,
-      "originOmNormalizedAt": "2026-08-20"
+      "originOmNormalizedAt": "2026-08-20",
+      "cotacaoSiscab": "250111",
+      "nup": "67102.250111/2025-54",
+      "pagSourceFileName": "27AGO - CONTROLE REPARO - PAG.xlsx",
+      "pagSourceSheet": "BD Monitoramento",
+      "pagSourceRow": 43,
+      "pagReferenceDate": "2026-08-27",
+      "pagUpdatedAt": "2026-08-27",
+      "pagCorrectionNote": null
     },
     {
       "id": "42c6cb5fa73c0d8357bf2a637d2c4fe8867151beb55e39c91a7acbbc4269136f",
@@ -4102,7 +4459,15 @@
       "originOmSource": "PB",
       "originOmShortCode": "PB",
       "originOmNormalizationVersion": 2,
-      "originOmNormalizedAt": "2026-08-20"
+      "originOmNormalizedAt": "2026-08-20",
+      "cotacaoSiscab": "250315",
+      "nup": "67102.250315/2025-95",
+      "pagSourceFileName": "27AGO - CONTROLE REPARO - PAG.xlsx",
+      "pagSourceSheet": "BD Monitoramento",
+      "pagSourceRow": 44,
+      "pagReferenceDate": "2026-08-27",
+      "pagUpdatedAt": "2026-08-27",
+      "pagCorrectionNote": null
     },
     {
       "id": "b82e8dc7f4dcc5cda4d8f219a4909bef40ec509c2dd31a9ab88c8a085b0f22b6",
@@ -4192,7 +4557,15 @@
       "originOmSource": "PB",
       "originOmShortCode": "PB",
       "originOmNormalizationVersion": 2,
-      "originOmNormalizedAt": "2026-08-20"
+      "originOmNormalizedAt": "2026-08-20",
+      "cotacaoSiscab": "250314",
+      "nup": "67102.250314/2025-41",
+      "pagSourceFileName": "27AGO - CONTROLE REPARO - PAG.xlsx",
+      "pagSourceSheet": "BD Monitoramento",
+      "pagSourceRow": 45,
+      "pagReferenceDate": "2026-08-27",
+      "pagUpdatedAt": "2026-08-27",
+      "pagCorrectionNote": null
     },
     {
       "id": "7c85c9c67ac35445ed74d53bb3ef7219b708449e3dd0e0ace0f73d2ab60e0509",
@@ -4283,7 +4656,15 @@
       "originOmSource": "GL",
       "originOmShortCode": "GL",
       "originOmNormalizationVersion": 2,
-      "originOmNormalizedAt": "2026-08-20"
+      "originOmNormalizedAt": "2026-08-20",
+      "cotacaoSiscab": "250227",
+      "nup": "67102.250227/2025-93",
+      "pagSourceFileName": "27AGO - CONTROLE REPARO - PAG.xlsx",
+      "pagSourceSheet": "BD Monitoramento",
+      "pagSourceRow": 46,
+      "pagReferenceDate": "2026-08-27",
+      "pagUpdatedAt": "2026-08-27",
+      "pagCorrectionNote": null
     },
     {
       "id": "9a62bf4bb1d86d3fbe822e3348a0de4a5108f8b786d7613a3b745d6e1a118bcf",
@@ -4374,7 +4755,15 @@
       "originOmSource": "GL",
       "originOmShortCode": "GL",
       "originOmNormalizationVersion": 2,
-      "originOmNormalizedAt": "2026-08-20"
+      "originOmNormalizedAt": "2026-08-20",
+      "cotacaoSiscab": "250227",
+      "nup": "67102.250227/2025-93",
+      "pagSourceFileName": "27AGO - CONTROLE REPARO - PAG.xlsx",
+      "pagSourceSheet": "BD Monitoramento",
+      "pagSourceRow": 47,
+      "pagReferenceDate": "2026-08-27",
+      "pagUpdatedAt": "2026-08-27",
+      "pagCorrectionNote": null
     },
     {
       "id": "9625b638d6039e97a45a8346598c8405a3395fcd28585711c79ff4e0502c68e6",
@@ -4464,7 +4853,15 @@
       "originOmSource": "GL",
       "originOmShortCode": "GL",
       "originOmNormalizationVersion": 2,
-      "originOmNormalizedAt": "2026-08-20"
+      "originOmNormalizedAt": "2026-08-20",
+      "cotacaoSiscab": "250227",
+      "nup": "67102.250227/2025-93",
+      "pagSourceFileName": "27AGO - CONTROLE REPARO - PAG.xlsx",
+      "pagSourceSheet": "BD Monitoramento",
+      "pagSourceRow": 48,
+      "pagReferenceDate": "2026-08-27",
+      "pagUpdatedAt": "2026-08-27",
+      "pagCorrectionNote": null
     },
     {
       "id": "13b17796a7dc2e822578cfb17e264a4ddbe3ff7a978401fe3a3ca530f4d1652a",
@@ -4554,7 +4951,15 @@
       "originOmSource": "GL",
       "originOmShortCode": "GL",
       "originOmNormalizationVersion": 2,
-      "originOmNormalizedAt": "2026-08-20"
+      "originOmNormalizedAt": "2026-08-20",
+      "cotacaoSiscab": "250227",
+      "nup": "67102.250227/2025-93",
+      "pagSourceFileName": "27AGO - CONTROLE REPARO - PAG.xlsx",
+      "pagSourceSheet": "BD Monitoramento",
+      "pagSourceRow": 49,
+      "pagReferenceDate": "2026-08-27",
+      "pagUpdatedAt": "2026-08-27",
+      "pagCorrectionNote": null
     },
     {
       "id": "58e6578cfe44e3cbf142a9927e3d818d34b501c4cb473b36c1c512426f284c47",
@@ -4644,7 +5049,15 @@
       "originOmSource": "GL",
       "originOmShortCode": "GL",
       "originOmNormalizationVersion": 2,
-      "originOmNormalizedAt": "2026-08-20"
+      "originOmNormalizedAt": "2026-08-20",
+      "cotacaoSiscab": "250289",
+      "nup": "67102.250289/2025-03",
+      "pagSourceFileName": "27AGO - CONTROLE REPARO - PAG.xlsx",
+      "pagSourceSheet": "BD Monitoramento",
+      "pagSourceRow": 50,
+      "pagReferenceDate": "2026-08-27",
+      "pagUpdatedAt": "2026-08-27",
+      "pagCorrectionNote": null
     },
     {
       "id": "5c30bb2ac6cbefee991b142b3b79b08cc157b8df13b9d0d8eb3a912299241732",
@@ -4734,7 +5147,15 @@
       "originOmSource": "GL",
       "originOmShortCode": "GL",
       "originOmNormalizationVersion": 2,
-      "originOmNormalizedAt": "2026-08-20"
+      "originOmNormalizedAt": "2026-08-20",
+      "cotacaoSiscab": "250289",
+      "nup": "67102.250289/2025-03",
+      "pagSourceFileName": "27AGO - CONTROLE REPARO - PAG.xlsx",
+      "pagSourceSheet": "BD Monitoramento",
+      "pagSourceRow": 51,
+      "pagReferenceDate": "2026-08-27",
+      "pagUpdatedAt": "2026-08-27",
+      "pagCorrectionNote": null
     },
     {
       "id": "6e4faaacdd13b050e9eb809cd4493de42a795c1e3c21572ca8715012fbc9d777",
@@ -4824,7 +5245,15 @@
       "originOmSource": "SP",
       "originOmShortCode": "SP",
       "originOmNormalizationVersion": 2,
-      "originOmNormalizedAt": "2026-08-20"
+      "originOmNormalizedAt": "2026-08-20",
+      "cotacaoSiscab": "250301",
+      "nup": "67102.250301/2025-71",
+      "pagSourceFileName": "27AGO - CONTROLE REPARO - PAG.xlsx",
+      "pagSourceSheet": "BD Monitoramento",
+      "pagSourceRow": 52,
+      "pagReferenceDate": "2026-08-27",
+      "pagUpdatedAt": "2026-08-27",
+      "pagCorrectionNote": null
     },
     {
       "id": "da042c02dd36158aba848f3681b47d6d154490ad4cdb337107b5098b07954c02",
@@ -4914,7 +5343,15 @@
       "originOmSource": "SP",
       "originOmShortCode": "SP",
       "originOmNormalizationVersion": 2,
-      "originOmNormalizedAt": "2026-08-20"
+      "originOmNormalizedAt": "2026-08-20",
+      "cotacaoSiscab": "250301",
+      "nup": "67102.250301/2025-71",
+      "pagSourceFileName": "27AGO - CONTROLE REPARO - PAG.xlsx",
+      "pagSourceSheet": "BD Monitoramento",
+      "pagSourceRow": 53,
+      "pagReferenceDate": "2026-08-27",
+      "pagUpdatedAt": "2026-08-27",
+      "pagCorrectionNote": null
     },
     {
       "id": "479fbaec292e005ac944eea6b593ca830619c332c43297ecb2282e490d5e8fca",
@@ -5004,7 +5441,15 @@
       "originOmSource": "SP",
       "originOmShortCode": "SP",
       "originOmNormalizationVersion": 2,
-      "originOmNormalizedAt": "2026-08-20"
+      "originOmNormalizedAt": "2026-08-20",
+      "cotacaoSiscab": "250297",
+      "nup": "67102.250297/2025-41",
+      "pagSourceFileName": "27AGO - CONTROLE REPARO - PAG.xlsx",
+      "pagSourceSheet": "BD Monitoramento",
+      "pagSourceRow": 54,
+      "pagReferenceDate": "2026-08-27",
+      "pagUpdatedAt": "2026-08-27",
+      "pagCorrectionNote": null
     },
     {
       "id": "f30e13e3b6136c65e37984a487bef75dd5c8584a97029e98a0940b34065d8c64",
@@ -5094,7 +5539,15 @@
       "originOmSource": "GL",
       "originOmShortCode": "GL",
       "originOmNormalizationVersion": 2,
-      "originOmNormalizedAt": "2026-08-20"
+      "originOmNormalizedAt": "2026-08-20",
+      "cotacaoSiscab": "250111",
+      "nup": "67102.250111/2025-54",
+      "pagSourceFileName": "27AGO - CONTROLE REPARO - PAG.xlsx",
+      "pagSourceSheet": "BD Monitoramento",
+      "pagSourceRow": 55,
+      "pagReferenceDate": "2026-08-27",
+      "pagUpdatedAt": "2026-08-27",
+      "pagCorrectionNote": null
     },
     {
       "id": "561d86aec1878e70a6f18f17629022cac6fde4867b4932c54fa816d3eb88fb47",
@@ -5184,7 +5637,15 @@
       "originOmSource": "GL",
       "originOmShortCode": "GL",
       "originOmNormalizationVersion": 2,
-      "originOmNormalizedAt": "2026-08-20"
+      "originOmNormalizedAt": "2026-08-20",
+      "cotacaoSiscab": "250348",
+      "nup": "67102.250348/2025-35",
+      "pagSourceFileName": "27AGO - CONTROLE REPARO - PAG.xlsx",
+      "pagSourceSheet": "BD Monitoramento",
+      "pagSourceRow": 56,
+      "pagReferenceDate": "2026-08-27",
+      "pagUpdatedAt": "2026-08-27",
+      "pagCorrectionNote": null
     },
     {
       "id": "071d4615dfe5ed03467f96bcf6b997eca76dc8fb720fb448b56c3086d60ca43d",
@@ -5274,7 +5735,15 @@
       "originOmSource": "GL",
       "originOmShortCode": "GL",
       "originOmNormalizationVersion": 2,
-      "originOmNormalizedAt": "2026-08-20"
+      "originOmNormalizedAt": "2026-08-20",
+      "cotacaoSiscab": "250350",
+      "nup": "67102.250350/2025-12",
+      "pagSourceFileName": "27AGO - CONTROLE REPARO - PAG.xlsx",
+      "pagSourceSheet": "BD Monitoramento",
+      "pagSourceRow": 57,
+      "pagReferenceDate": "2026-08-27",
+      "pagUpdatedAt": "2026-08-27",
+      "pagCorrectionNote": null
     },
     {
       "id": "5773ad5a5495a79b3cf532ead95fbf84cf80e450ae7e0a56370a2ecd0ff80241",
@@ -5364,7 +5833,15 @@
       "originOmSource": "GL",
       "originOmShortCode": "GL",
       "originOmNormalizationVersion": 2,
-      "originOmNormalizedAt": "2026-08-20"
+      "originOmNormalizedAt": "2026-08-20",
+      "cotacaoSiscab": "250348",
+      "nup": "67102.250348/2025-35",
+      "pagSourceFileName": "27AGO - CONTROLE REPARO - PAG.xlsx",
+      "pagSourceSheet": "BD Monitoramento",
+      "pagSourceRow": 58,
+      "pagReferenceDate": "2026-08-27",
+      "pagUpdatedAt": "2026-08-27",
+      "pagCorrectionNote": null
     },
     {
       "id": "29e4eca805daf9c5f35ef22a643118479715e07ff2aecf70198659a9b607a76d",
@@ -5454,7 +5931,15 @@
       "originOmSource": "GL",
       "originOmShortCode": "GL",
       "originOmNormalizationVersion": 2,
-      "originOmNormalizedAt": "2026-08-20"
+      "originOmNormalizedAt": "2026-08-20",
+      "cotacaoSiscab": "250348",
+      "nup": "67102.250348/2025-35",
+      "pagSourceFileName": "27AGO - CONTROLE REPARO - PAG.xlsx",
+      "pagSourceSheet": "BD Monitoramento",
+      "pagSourceRow": 59,
+      "pagReferenceDate": "2026-08-27",
+      "pagUpdatedAt": "2026-08-27",
+      "pagCorrectionNote": null
     },
     {
       "id": "1033e9f4c7d812a20c73e7ec5e41565dcb16487c63a67c48cd5d160350368ddc",
@@ -5544,7 +6029,15 @@
       "originOmSource": "SP",
       "originOmShortCode": "SP",
       "originOmNormalizationVersion": 2,
-      "originOmNormalizedAt": "2026-08-20"
+      "originOmNormalizedAt": "2026-08-20",
+      "cotacaoSiscab": "250301",
+      "nup": "67102.250301/2025-71",
+      "pagSourceFileName": "27AGO - CONTROLE REPARO - PAG.xlsx",
+      "pagSourceSheet": "BD Monitoramento",
+      "pagSourceRow": 60,
+      "pagReferenceDate": "2026-08-27",
+      "pagUpdatedAt": "2026-08-27",
+      "pagCorrectionNote": null
     },
     {
       "id": "6915b882bccdd9bbc01e9ece3bda9b4fb2723978a33bdc4856d4beffb7f65d21",
@@ -5634,7 +6127,15 @@
       "originOmSource": "SP",
       "originOmShortCode": "SP",
       "originOmNormalizationVersion": 2,
-      "originOmNormalizedAt": "2026-08-20"
+      "originOmNormalizedAt": "2026-08-20",
+      "cotacaoSiscab": "250301",
+      "nup": "67102.250301/2025-71",
+      "pagSourceFileName": "27AGO - CONTROLE REPARO - PAG.xlsx",
+      "pagSourceSheet": "BD Monitoramento",
+      "pagSourceRow": 61,
+      "pagReferenceDate": "2026-08-27",
+      "pagUpdatedAt": "2026-08-27",
+      "pagCorrectionNote": null
     },
     {
       "id": "e24bbea464d7b1fc0f8ae929856ab7d6a6a7d1fed4ed81ece4d53717cdac65f9",
@@ -5724,7 +6225,15 @@
       "originOmSource": "SP",
       "originOmShortCode": "SP",
       "originOmNormalizationVersion": 2,
-      "originOmNormalizedAt": "2026-08-20"
+      "originOmNormalizedAt": "2026-08-20",
+      "cotacaoSiscab": "250302",
+      "nup": "67102.250302/2025-16",
+      "pagSourceFileName": "27AGO - CONTROLE REPARO - PAG.xlsx",
+      "pagSourceSheet": "BD Monitoramento",
+      "pagSourceRow": 62,
+      "pagReferenceDate": "2026-08-27",
+      "pagUpdatedAt": "2026-08-27",
+      "pagCorrectionNote": null
     },
     {
       "id": "13ffec832aabee49ab10f3f82dfd9bb2cbf4635588f19e6c2628080f24d90dd3",
@@ -5814,7 +6323,15 @@
       "originOmSource": "SP",
       "originOmShortCode": "SP",
       "originOmNormalizationVersion": 2,
-      "originOmNormalizedAt": "2026-08-20"
+      "originOmNormalizedAt": "2026-08-20",
+      "cotacaoSiscab": "250225",
+      "nup": "67102.250225/2025-02",
+      "pagSourceFileName": "27AGO - CONTROLE REPARO - PAG.xlsx",
+      "pagSourceSheet": "BD Monitoramento",
+      "pagSourceRow": 63,
+      "pagReferenceDate": "2026-08-27",
+      "pagUpdatedAt": "2026-08-27",
+      "pagCorrectionNote": null
     },
     {
       "id": "1e30bbcf6e063485bdbdc9c36cae6ddb58953ae96c00da9d926b72ad5cb9b8b3",
@@ -5904,7 +6421,15 @@
       "originOmSource": "SP",
       "originOmShortCode": "SP",
       "originOmNormalizationVersion": 2,
-      "originOmNormalizedAt": "2026-08-20"
+      "originOmNormalizedAt": "2026-08-20",
+      "cotacaoSiscab": "250225",
+      "nup": "67102.250225/2025-02",
+      "pagSourceFileName": "27AGO - CONTROLE REPARO - PAG.xlsx",
+      "pagSourceSheet": "BD Monitoramento",
+      "pagSourceRow": 64,
+      "pagReferenceDate": "2026-08-27",
+      "pagUpdatedAt": "2026-08-27",
+      "pagCorrectionNote": null
     },
     {
       "id": "f0b751eb44e81f2ded02340c292733551ead132762538a903849e7ef0d4a7267",
@@ -5994,7 +6519,15 @@
       "originOmSource": "SP",
       "originOmShortCode": "SP",
       "originOmNormalizationVersion": 2,
-      "originOmNormalizedAt": "2026-08-20"
+      "originOmNormalizedAt": "2026-08-20",
+      "cotacaoSiscab": "250405",
+      "nup": "67102.250405/2025-86",
+      "pagSourceFileName": "27AGO - CONTROLE REPARO - PAG.xlsx",
+      "pagSourceSheet": "BD Monitoramento",
+      "pagSourceRow": 65,
+      "pagReferenceDate": "2026-08-27",
+      "pagUpdatedAt": "2026-08-27",
+      "pagCorrectionNote": null
     },
     {
       "id": "9990a99529df6e8d1988108d1c484c8e59d835f8218739bf1e2b33e9ea4c026f",
@@ -6084,7 +6617,15 @@
       "originOmSource": "SP",
       "originOmShortCode": "SP",
       "originOmNormalizationVersion": 2,
-      "originOmNormalizedAt": "2026-08-20"
+      "originOmNormalizedAt": "2026-08-20",
+      "cotacaoSiscab": "250405",
+      "nup": "67102.250405/2025-86",
+      "pagSourceFileName": "27AGO - CONTROLE REPARO - PAG.xlsx",
+      "pagSourceSheet": "BD Monitoramento",
+      "pagSourceRow": 66,
+      "pagReferenceDate": "2026-08-27",
+      "pagUpdatedAt": "2026-08-27",
+      "pagCorrectionNote": null
     },
     {
       "id": "fa2eed7999a2e7c5721e477420cc29f7370a9067723a3dd271674e23ef9b2ab9",
@@ -6174,7 +6715,15 @@
       "originOmSource": "SP",
       "originOmShortCode": "SP",
       "originOmNormalizationVersion": 2,
-      "originOmNormalizedAt": "2026-08-20"
+      "originOmNormalizedAt": "2026-08-20",
+      "cotacaoSiscab": "250405",
+      "nup": "67102.250405/2025-86",
+      "pagSourceFileName": "27AGO - CONTROLE REPARO - PAG.xlsx",
+      "pagSourceSheet": "BD Monitoramento",
+      "pagSourceRow": 67,
+      "pagReferenceDate": "2026-08-27",
+      "pagUpdatedAt": "2026-08-27",
+      "pagCorrectionNote": null
     },
     {
       "id": "da747b19aabba03399f3a063c91748a9727a0c539fd339a32df160c92c9d653b",
@@ -6264,7 +6813,15 @@
       "originOmSource": "SP",
       "originOmShortCode": "SP",
       "originOmNormalizationVersion": 2,
-      "originOmNormalizedAt": "2026-08-20"
+      "originOmNormalizedAt": "2026-08-20",
+      "cotacaoSiscab": "250405",
+      "nup": "67102.250405/2025-86",
+      "pagSourceFileName": "27AGO - CONTROLE REPARO - PAG.xlsx",
+      "pagSourceSheet": "BD Monitoramento",
+      "pagSourceRow": 68,
+      "pagReferenceDate": "2026-08-27",
+      "pagUpdatedAt": "2026-08-27",
+      "pagCorrectionNote": null
     },
     {
       "id": "22fa3aed7e911a3487fdcb4cf859ca7832e889ae7bf6b587803c6b94d601b172",
@@ -6354,7 +6911,15 @@
       "originOmSource": "SP",
       "originOmShortCode": "SP",
       "originOmNormalizationVersion": 2,
-      "originOmNormalizedAt": "2026-08-20"
+      "originOmNormalizedAt": "2026-08-20",
+      "cotacaoSiscab": "250297",
+      "nup": "67102.250297/2025-41",
+      "pagSourceFileName": "27AGO - CONTROLE REPARO - PAG.xlsx",
+      "pagSourceSheet": "BD Monitoramento",
+      "pagSourceRow": 69,
+      "pagReferenceDate": "2026-08-27",
+      "pagUpdatedAt": "2026-08-27",
+      "pagCorrectionNote": null
     },
     {
       "id": "d54486308c66b8eb2071949c220c586f364e450e886fdc6e9d8d99ac17627ed5",
@@ -6444,7 +7009,15 @@
       "originOmSource": "GL",
       "originOmShortCode": "GL",
       "originOmNormalizationVersion": 2,
-      "originOmNormalizedAt": "2026-08-20"
+      "originOmNormalizedAt": "2026-08-20",
+      "cotacaoSiscab": "250413",
+      "nup": "67102.250413/2025-22",
+      "pagSourceFileName": "27AGO - CONTROLE REPARO - PAG.xlsx",
+      "pagSourceSheet": "BD Monitoramento",
+      "pagSourceRow": 70,
+      "pagReferenceDate": "2026-08-27",
+      "pagUpdatedAt": "2026-08-27",
+      "pagCorrectionNote": null
     },
     {
       "id": "809de63a5937ff3b2deb9d10493d759a9ef44d040f2303670123b1a5f465c73a",
@@ -6534,7 +7107,15 @@
       "originOmSource": "GL",
       "originOmShortCode": "GL",
       "originOmNormalizationVersion": 2,
-      "originOmNormalizedAt": "2026-08-20"
+      "originOmNormalizedAt": "2026-08-20",
+      "cotacaoSiscab": "250423",
+      "nup": "67102.250423/2025-68",
+      "pagSourceFileName": "27AGO - CONTROLE REPARO - PAG.xlsx",
+      "pagSourceSheet": "BD Monitoramento",
+      "pagSourceRow": 72,
+      "pagReferenceDate": "2026-08-27",
+      "pagUpdatedAt": "2026-08-27",
+      "pagCorrectionNote": null
     },
     {
       "id": "b5140f2cab8a8e47f1ada17b8aebe6b7ff78ee3bb2b3182ae193774c2c80d156",
@@ -6624,7 +7205,15 @@
       "originOmSource": "GL",
       "originOmShortCode": "GL",
       "originOmNormalizationVersion": 2,
-      "originOmNormalizedAt": "2026-08-20"
+      "originOmNormalizedAt": "2026-08-20",
+      "cotacaoSiscab": "250423",
+      "nup": "67102.250423/2025-68",
+      "pagSourceFileName": "27AGO - CONTROLE REPARO - PAG.xlsx",
+      "pagSourceSheet": "BD Monitoramento",
+      "pagSourceRow": 71,
+      "pagReferenceDate": "2026-08-27",
+      "pagUpdatedAt": "2026-08-27",
+      "pagCorrectionNote": null
     },
     {
       "id": "2e17af1ad5271232b6b93b08bf4dd1f0e00b59bb19612342343291d8e5eebf03",
@@ -6714,7 +7303,15 @@
       "originOmSource": "SP",
       "originOmShortCode": "SP",
       "originOmNormalizationVersion": 2,
-      "originOmNormalizedAt": "2026-08-20"
+      "originOmNormalizedAt": "2026-08-20",
+      "cotacaoSiscab": "250437",
+      "nup": "67102.250437/2025-81",
+      "pagSourceFileName": "27AGO - CONTROLE REPARO - PAG.xlsx",
+      "pagSourceSheet": "BD Monitoramento",
+      "pagSourceRow": 73,
+      "pagReferenceDate": "2026-08-27",
+      "pagUpdatedAt": "2026-08-27",
+      "pagCorrectionNote": null
     },
     {
       "id": "8593fe9cb247106fe37c2b57c82455191e57aa582a5c3d2eb1cf7ad6f115b935",
@@ -6804,7 +7401,15 @@
       "originOmSource": "SP",
       "originOmShortCode": "SP",
       "originOmNormalizationVersion": 2,
-      "originOmNormalizedAt": "2026-08-20"
+      "originOmNormalizedAt": "2026-08-20",
+      "cotacaoSiscab": "250407",
+      "nup": "67102.250407/2025-75",
+      "pagSourceFileName": "27AGO - CONTROLE REPARO - PAG.xlsx",
+      "pagSourceSheet": "BD Monitoramento",
+      "pagSourceRow": 74,
+      "pagReferenceDate": "2026-08-27",
+      "pagUpdatedAt": "2026-08-27",
+      "pagCorrectionNote": null
     },
     {
       "id": "fcea3157f5efd54ced491a53a11b986c23e9a741c7c535e04fbab3e1a51300a2",
@@ -6894,7 +7499,15 @@
       "originOmSource": "SP",
       "originOmShortCode": "SP",
       "originOmNormalizationVersion": 2,
-      "originOmNormalizedAt": "2026-08-20"
+      "originOmNormalizedAt": "2026-08-20",
+      "cotacaoSiscab": "250407",
+      "nup": "67102.250407/2025-75",
+      "pagSourceFileName": "27AGO - CONTROLE REPARO - PAG.xlsx",
+      "pagSourceSheet": "BD Monitoramento",
+      "pagSourceRow": 75,
+      "pagReferenceDate": "2026-08-27",
+      "pagUpdatedAt": "2026-08-27",
+      "pagCorrectionNote": null
     },
     {
       "id": "6d2a9a04f5adb3efe3b699b84c9f663fab953a2c5ed13f9d5c5acf3f11ff6e1f",
@@ -6984,7 +7597,15 @@
       "originOmSource": "SP",
       "originOmShortCode": "SP",
       "originOmNormalizationVersion": 2,
-      "originOmNormalizedAt": "2026-08-20"
+      "originOmNormalizedAt": "2026-08-20",
+      "cotacaoSiscab": "250225",
+      "nup": "67102.250225/2025-02",
+      "pagSourceFileName": "27AGO - CONTROLE REPARO - PAG.xlsx",
+      "pagSourceSheet": "BD Monitoramento",
+      "pagSourceRow": 76,
+      "pagReferenceDate": "2026-08-27",
+      "pagUpdatedAt": "2026-08-27",
+      "pagCorrectionNote": null
     },
     {
       "id": "cadf8ad8efb1793e240fd9720dc0f8087ed92651221bda0f6899372725b9b39b",
@@ -7074,7 +7695,15 @@
       "originOmSource": "SP",
       "originOmShortCode": "SP",
       "originOmNormalizationVersion": 2,
-      "originOmNormalizedAt": "2026-08-20"
+      "originOmNormalizedAt": "2026-08-20",
+      "cotacaoSiscab": "250437",
+      "nup": "67102.250437/2025-81",
+      "pagSourceFileName": "27AGO - CONTROLE REPARO - PAG.xlsx",
+      "pagSourceSheet": "BD Monitoramento",
+      "pagSourceRow": 77,
+      "pagReferenceDate": "2026-08-27",
+      "pagUpdatedAt": "2026-08-27",
+      "pagCorrectionNote": null
     },
     {
       "id": "faf3f6cea3c957eb6099642bd71af7e11edc404441b87d41a6e4d1b96ac6c363",
@@ -7164,7 +7793,15 @@
       "originOmSource": "SP",
       "originOmShortCode": "SP",
       "originOmNormalizationVersion": 2,
-      "originOmNormalizedAt": "2026-08-20"
+      "originOmNormalizedAt": "2026-08-20",
+      "cotacaoSiscab": "250437",
+      "nup": "67102.250437/2025-81",
+      "pagSourceFileName": "27AGO - CONTROLE REPARO - PAG.xlsx",
+      "pagSourceSheet": "BD Monitoramento",
+      "pagSourceRow": 78,
+      "pagReferenceDate": "2026-08-27",
+      "pagUpdatedAt": "2026-08-27",
+      "pagCorrectionNote": null
     },
     {
       "id": "9bb4f297819d1e9c54cab4fbde27f4121a7b0cfb00d8405090d4fe75c7b847a2",
@@ -7254,7 +7891,15 @@
       "originOmSource": "SP",
       "originOmShortCode": "SP",
       "originOmNormalizationVersion": 2,
-      "originOmNormalizedAt": "2026-08-20"
+      "originOmNormalizedAt": "2026-08-20",
+      "cotacaoSiscab": "250438",
+      "nup": "67102.250438/2025-26",
+      "pagSourceFileName": "27AGO - CONTROLE REPARO - PAG.xlsx",
+      "pagSourceSheet": "BD Monitoramento",
+      "pagSourceRow": 79,
+      "pagReferenceDate": "2026-08-27",
+      "pagUpdatedAt": "2026-08-27",
+      "pagCorrectionNote": null
     },
     {
       "id": "693257a25b1ebf084774151c680aa66c56a11ddc13ce06ecb7252731500c8ae3",
@@ -7344,7 +7989,15 @@
       "originOmSource": "SP",
       "originOmShortCode": "SP",
       "originOmNormalizationVersion": 2,
-      "originOmNormalizedAt": "2026-08-20"
+      "originOmNormalizedAt": "2026-08-20",
+      "cotacaoSiscab": "250438",
+      "nup": "67102.250438/2025-26",
+      "pagSourceFileName": "27AGO - CONTROLE REPARO - PAG.xlsx",
+      "pagSourceSheet": "BD Monitoramento",
+      "pagSourceRow": 80,
+      "pagReferenceDate": "2026-08-27",
+      "pagUpdatedAt": "2026-08-27",
+      "pagCorrectionNote": null
     },
     {
       "id": "ef0c0862f7baf69472882a076db8b5895efd11fdb87d4e16f7926620eee514cc",
@@ -7434,7 +8087,15 @@
       "originOmSource": "SP",
       "originOmShortCode": "SP",
       "originOmNormalizationVersion": 2,
-      "originOmNormalizedAt": "2026-08-20"
+      "originOmNormalizedAt": "2026-08-20",
+      "cotacaoSiscab": "250438",
+      "nup": "67102.250438/2025-26",
+      "pagSourceFileName": "27AGO - CONTROLE REPARO - PAG.xlsx",
+      "pagSourceSheet": "BD Monitoramento",
+      "pagSourceRow": 81,
+      "pagReferenceDate": "2026-08-27",
+      "pagUpdatedAt": "2026-08-27",
+      "pagCorrectionNote": null
     },
     {
       "id": "e50540fc8528dba099620470f6966eac9c08f02d2f4481eef73b8a5d0b109719",
@@ -7525,7 +8186,15 @@
       "originOmSource": "SP",
       "originOmShortCode": "SP",
       "originOmNormalizationVersion": 2,
-      "originOmNormalizedAt": "2026-08-20"
+      "originOmNormalizedAt": "2026-08-20",
+      "cotacaoSiscab": "250529",
+      "nup": "67102.250529/2025-61",
+      "pagSourceFileName": "27AGO - CONTROLE REPARO - PAG.xlsx",
+      "pagSourceSheet": "BD Monitoramento",
+      "pagSourceRow": 82,
+      "pagReferenceDate": "2026-08-27",
+      "pagUpdatedAt": "2026-08-27",
+      "pagCorrectionNote": null
     },
     {
       "id": "611f9f8db7fc593de15549de18914ae17a442ceccae59fe8efaec12f14ddb55f",
@@ -7615,7 +8284,15 @@
       "originOmSource": "EL",
       "originOmShortCode": "EL",
       "originOmNormalizationVersion": 2,
-      "originOmNormalizedAt": "2026-08-20"
+      "originOmNormalizedAt": "2026-08-20",
+      "cotacaoSiscab": "250563",
+      "nup": "67102.250563/2025-36",
+      "pagSourceFileName": "27AGO - CONTROLE REPARO - PAG.xlsx",
+      "pagSourceSheet": "BD Monitoramento",
+      "pagSourceRow": 83,
+      "pagReferenceDate": "2026-08-27",
+      "pagUpdatedAt": "2026-08-27",
+      "pagCorrectionNote": null
     },
     {
       "id": "8aae20c1a426ac60b8ea4d9c26570b2e24b0c05c92adaeb32a3996986f14c816",
@@ -7705,7 +8382,15 @@
       "originOmSource": "EL",
       "originOmShortCode": "EL",
       "originOmNormalizationVersion": 2,
-      "originOmNormalizedAt": "2026-08-20"
+      "originOmNormalizedAt": "2026-08-20",
+      "cotacaoSiscab": "250563",
+      "nup": "67102.250563/2025-36",
+      "pagSourceFileName": "27AGO - CONTROLE REPARO - PAG.xlsx",
+      "pagSourceSheet": "BD Monitoramento",
+      "pagSourceRow": 84,
+      "pagReferenceDate": "2026-08-27",
+      "pagUpdatedAt": "2026-08-27",
+      "pagCorrectionNote": null
     },
     {
       "id": "6491ea82ec626156b26398727c5ea8439dafe663ef59925cdd9d278981df4942",
@@ -7795,7 +8480,15 @@
       "originOmSource": "EL",
       "originOmShortCode": "EL",
       "originOmNormalizationVersion": 2,
-      "originOmNormalizedAt": "2026-08-20"
+      "originOmNormalizedAt": "2026-08-20",
+      "cotacaoSiscab": "250563",
+      "nup": "67102.250563/2025-36",
+      "pagSourceFileName": "27AGO - CONTROLE REPARO - PAG.xlsx",
+      "pagSourceSheet": "BD Monitoramento",
+      "pagSourceRow": 85,
+      "pagReferenceDate": "2026-08-27",
+      "pagUpdatedAt": "2026-08-27",
+      "pagCorrectionNote": null
     },
     {
       "id": "ce58b491f2fdf50c8a0cd9389d6f0329e8449dba4caf02cfc21e3a3016a303b0",
@@ -7886,7 +8579,15 @@
       "originOmSource": "SP",
       "originOmShortCode": "SP",
       "originOmNormalizationVersion": 2,
-      "originOmNormalizedAt": "2026-08-20"
+      "originOmNormalizedAt": "2026-08-20",
+      "cotacaoSiscab": "250558",
+      "nup": "67102.250558/2025-23",
+      "pagSourceFileName": "27AGO - CONTROLE REPARO - PAG.xlsx",
+      "pagSourceSheet": "BD Monitoramento",
+      "pagSourceRow": 86,
+      "pagReferenceDate": "2026-08-27",
+      "pagUpdatedAt": "2026-08-27",
+      "pagCorrectionNote": null
     },
     {
       "id": "03a535d4340a3e1aa4756c80fd73876974afd9e2832a2840325090a51e912b9f",
@@ -7976,7 +8677,15 @@
       "originOmSource": "SP",
       "originOmShortCode": "SP",
       "originOmNormalizationVersion": 2,
-      "originOmNormalizedAt": "2026-08-20"
+      "originOmNormalizedAt": "2026-08-20",
+      "cotacaoSiscab": "250559",
+      "nup": "67102.250559/2025-78",
+      "pagSourceFileName": "27AGO - CONTROLE REPARO - PAG.xlsx",
+      "pagSourceSheet": "BD Monitoramento",
+      "pagSourceRow": 87,
+      "pagReferenceDate": "2026-08-27",
+      "pagUpdatedAt": "2026-08-27",
+      "pagCorrectionNote": null
     },
     {
       "id": "2624b6b4280f36d65cfe03a7bfafb34072f1ead46930424c48febb3a1e615cf8",
@@ -8068,7 +8777,15 @@
       "originOmSource": "SP",
       "originOmShortCode": "SP",
       "originOmNormalizationVersion": 2,
-      "originOmNormalizedAt": "2026-08-20"
+      "originOmNormalizedAt": "2026-08-20",
+      "cotacaoSiscab": "260186",
+      "nup": "67102.260186/2026-24",
+      "pagSourceFileName": "27AGO - CONTROLE REPARO - PAG.xlsx",
+      "pagSourceSheet": "BD Monitoramento",
+      "pagSourceRow": 88,
+      "pagReferenceDate": "2026-08-27",
+      "pagUpdatedAt": "2026-08-27",
+      "pagCorrectionNote": null
     },
     {
       "id": "c47a037a309214d74bd92ca2922d4a4556b4cd445ea9f3e91738cb2be1e6c662",
@@ -8160,7 +8877,15 @@
       "originOmSource": "SP",
       "originOmShortCode": "SP",
       "originOmNormalizationVersion": 2,
-      "originOmNormalizedAt": "2026-08-20"
+      "originOmNormalizedAt": "2026-08-20",
+      "cotacaoSiscab": "260186",
+      "nup": "67102.260186/2026-24",
+      "pagSourceFileName": "27AGO - CONTROLE REPARO - PAG.xlsx",
+      "pagSourceSheet": "BD Monitoramento",
+      "pagSourceRow": 89,
+      "pagReferenceDate": "2026-08-27",
+      "pagUpdatedAt": "2026-08-27",
+      "pagCorrectionNote": null
     },
     {
       "id": "354f857e75d58d4700c43128fee82edd5112b12697a3958d8fccfc075c0e2052",
@@ -8252,7 +8977,15 @@
       "originOmSource": "SP",
       "originOmShortCode": "SP",
       "originOmNormalizationVersion": 2,
-      "originOmNormalizedAt": "2026-08-20"
+      "originOmNormalizedAt": "2026-08-20",
+      "cotacaoSiscab": "260186",
+      "nup": "67102.260186/2026-24",
+      "pagSourceFileName": "27AGO - CONTROLE REPARO - PAG.xlsx",
+      "pagSourceSheet": "BD Monitoramento",
+      "pagSourceRow": 90,
+      "pagReferenceDate": "2026-08-27",
+      "pagUpdatedAt": "2026-08-27",
+      "pagCorrectionNote": null
     },
     {
       "id": "7400396e6286c665ead3ad2feff32f9cf18128dcf8d02b4f4805a2c7100b5a83",
@@ -8344,7 +9077,15 @@
       "originOmSource": "SP",
       "originOmShortCode": "SP",
       "originOmNormalizationVersion": 2,
-      "originOmNormalizedAt": "2026-08-20"
+      "originOmNormalizedAt": "2026-08-20",
+      "cotacaoSiscab": "260186",
+      "nup": "67102.260186/2026-24",
+      "pagSourceFileName": "27AGO - CONTROLE REPARO - PAG.xlsx",
+      "pagSourceSheet": "BD Monitoramento",
+      "pagSourceRow": 91,
+      "pagReferenceDate": "2026-08-27",
+      "pagUpdatedAt": "2026-08-27",
+      "pagCorrectionNote": null
     },
     {
       "id": "fe1b903d44f9a43aa64afccb89539988236d1fea197b118e83257cb55e1940fc",
@@ -8436,7 +9177,15 @@
       "originOmSource": "SP",
       "originOmShortCode": "SP",
       "originOmNormalizationVersion": 2,
-      "originOmNormalizedAt": "2026-08-20"
+      "originOmNormalizedAt": "2026-08-20",
+      "cotacaoSiscab": "260242",
+      "nup": "67102.260242/2026-21",
+      "pagSourceFileName": "27AGO - CONTROLE REPARO - PAG.xlsx",
+      "pagSourceSheet": "BD Monitoramento",
+      "pagSourceRow": 92,
+      "pagReferenceDate": "2026-08-27",
+      "pagUpdatedAt": "2026-08-27",
+      "pagCorrectionNote": null
     },
     {
       "id": "08cc5935317172e66f9cb48b8550b9ac22fb449a1e68c63a7b23713330ba46bd",
@@ -8528,7 +9277,15 @@
       "originOmSource": "SP",
       "originOmShortCode": "SP",
       "originOmNormalizationVersion": 2,
-      "originOmNormalizedAt": "2026-08-20"
+      "originOmNormalizedAt": "2026-08-20",
+      "cotacaoSiscab": "260243",
+      "nup": "67102.260243/2026-75",
+      "pagSourceFileName": "27AGO - CONTROLE REPARO - PAG.xlsx",
+      "pagSourceSheet": "BD Monitoramento",
+      "pagSourceRow": 93,
+      "pagReferenceDate": "2026-08-27",
+      "pagUpdatedAt": "2026-08-27",
+      "pagCorrectionNote": null
     },
     {
       "id": "69862657e189730baf5d04353aee32a9b5b4f2f6dd84f05d446d142afbe242ae",
@@ -8620,7 +9377,15 @@
       "originOmSource": "SP",
       "originOmShortCode": "SP",
       "originOmNormalizationVersion": 2,
-      "originOmNormalizedAt": "2026-08-20"
+      "originOmNormalizedAt": "2026-08-20",
+      "cotacaoSiscab": "260243",
+      "nup": "67102.260243/2026-75",
+      "pagSourceFileName": "27AGO - CONTROLE REPARO - PAG.xlsx",
+      "pagSourceSheet": "BD Monitoramento",
+      "pagSourceRow": 94,
+      "pagReferenceDate": "2026-08-27",
+      "pagUpdatedAt": "2026-08-27",
+      "pagCorrectionNote": null
     },
     {
       "id": "55fda86bca6c75a05f267705b315f2d72d1e47e194dbce6545300d433e30d586",
@@ -8712,7 +9477,15 @@
       "originOmSource": "SP",
       "originOmShortCode": "SP",
       "originOmNormalizationVersion": 2,
-      "originOmNormalizedAt": "2026-08-20"
+      "originOmNormalizedAt": "2026-08-20",
+      "cotacaoSiscab": "260243",
+      "nup": "67102.260243/2026-75",
+      "pagSourceFileName": "27AGO - CONTROLE REPARO - PAG.xlsx",
+      "pagSourceSheet": "BD Monitoramento",
+      "pagSourceRow": 95,
+      "pagReferenceDate": "2026-08-27",
+      "pagUpdatedAt": "2026-08-27",
+      "pagCorrectionNote": null
     },
     {
       "id": "fc55ab84e905af3d7ade9c6563a6fcd498cf1b0886dcd46aadc5ba18a0a7cce6",
@@ -8804,7 +9577,15 @@
       "originOmSource": "SP",
       "originOmShortCode": "SP",
       "originOmNormalizationVersion": 2,
-      "originOmNormalizedAt": "2026-08-20"
+      "originOmNormalizedAt": "2026-08-20",
+      "cotacaoSiscab": "260243",
+      "nup": "67102.260243/2026-75",
+      "pagSourceFileName": "27AGO - CONTROLE REPARO - PAG.xlsx",
+      "pagSourceSheet": "BD Monitoramento",
+      "pagSourceRow": 96,
+      "pagReferenceDate": "2026-08-27",
+      "pagUpdatedAt": "2026-08-27",
+      "pagCorrectionNote": null
     },
     {
       "id": "8f13b7e69b402a66118872de0dbdf36d0132e469bbbab51693969066a523a0a0",
@@ -8896,7 +9677,15 @@
       "originOmSource": "SP",
       "originOmShortCode": "SP",
       "originOmNormalizationVersion": 2,
-      "originOmNormalizedAt": "2026-08-20"
+      "originOmNormalizedAt": "2026-08-20",
+      "cotacaoSiscab": "260245",
+      "nup": "67102.260245/2026-64",
+      "pagSourceFileName": "27AGO - CONTROLE REPARO - PAG.xlsx",
+      "pagSourceSheet": "BD Monitoramento",
+      "pagSourceRow": 97,
+      "pagReferenceDate": "2026-08-27",
+      "pagUpdatedAt": "2026-08-27",
+      "pagCorrectionNote": null
     },
     {
       "id": "e22ba159aa344704fef25daeb77ac819afdb1e83dee263c0d4055c752dfa42f9",
@@ -8988,7 +9777,15 @@
       "originOmSource": "SP",
       "originOmShortCode": "SP",
       "originOmNormalizationVersion": 2,
-      "originOmNormalizedAt": "2026-08-20"
+      "originOmNormalizedAt": "2026-08-20",
+      "cotacaoSiscab": "260245",
+      "nup": "67102.260245/2026-64",
+      "pagSourceFileName": "27AGO - CONTROLE REPARO - PAG.xlsx",
+      "pagSourceSheet": "BD Monitoramento",
+      "pagSourceRow": 98,
+      "pagReferenceDate": "2026-08-27",
+      "pagUpdatedAt": "2026-08-27",
+      "pagCorrectionNote": null
     },
     {
       "id": "8283a23c6cd4c95d873ef8213135925dbc90bddcc60d190cf526e3d5162f6118",
@@ -9080,7 +9877,15 @@
       "originOmSource": "SP",
       "originOmShortCode": "SP",
       "originOmNormalizationVersion": 2,
-      "originOmNormalizedAt": "2026-08-20"
+      "originOmNormalizedAt": "2026-08-20",
+      "cotacaoSiscab": "260245",
+      "nup": "67102.260245/2026-64",
+      "pagSourceFileName": "27AGO - CONTROLE REPARO - PAG.xlsx",
+      "pagSourceSheet": "BD Monitoramento",
+      "pagSourceRow": 99,
+      "pagReferenceDate": "2026-08-27",
+      "pagUpdatedAt": "2026-08-27",
+      "pagCorrectionNote": null
     },
     {
       "id": "d6ade00772366f07519f367d76e5688af62fab84403b2629b69f647bc3793c68",
@@ -9172,7 +9977,15 @@
       "originOmSource": "SP",
       "originOmShortCode": "SP",
       "originOmNormalizationVersion": 2,
-      "originOmNormalizedAt": "2026-08-20"
+      "originOmNormalizedAt": "2026-08-20",
+      "cotacaoSiscab": "260245",
+      "nup": "67102.260245/2026-64",
+      "pagSourceFileName": "27AGO - CONTROLE REPARO - PAG.xlsx",
+      "pagSourceSheet": "BD Monitoramento",
+      "pagSourceRow": 100,
+      "pagReferenceDate": "2026-08-27",
+      "pagUpdatedAt": "2026-08-27",
+      "pagCorrectionNote": null
     },
     {
       "id": "5108694dc13a4b579efcd9617a86ff45b440005cfe07527d8b2b5bb32204cd1b",
@@ -9264,7 +10077,15 @@
       "originOmSource": "SP",
       "originOmShortCode": "SP",
       "originOmNormalizationVersion": 2,
-      "originOmNormalizedAt": "2026-08-20"
+      "originOmNormalizedAt": "2026-08-20",
+      "cotacaoSiscab": "260245",
+      "nup": "67102.260245/2026-64",
+      "pagSourceFileName": "27AGO - CONTROLE REPARO - PAG.xlsx",
+      "pagSourceSheet": "BD Monitoramento",
+      "pagSourceRow": 101,
+      "pagReferenceDate": "2026-08-27",
+      "pagUpdatedAt": "2026-08-27",
+      "pagCorrectionNote": null
     },
     {
       "id": "61bddfb5be4aa466889316c09a7506a2775979e87054b1ede1acbb17fabba5b4",
@@ -9356,7 +10177,15 @@
       "originOmSource": "GL",
       "originOmShortCode": "GL",
       "originOmNormalizationVersion": 2,
-      "originOmNormalizedAt": "2026-08-20"
+      "originOmNormalizedAt": "2026-08-20",
+      "cotacaoSiscab": "260580",
+      "nup": "67102.260580/2026-62",
+      "pagSourceFileName": "27AGO - CONTROLE REPARO - PAG.xlsx",
+      "pagSourceSheet": "BD Monitoramento",
+      "pagSourceRow": 102,
+      "pagReferenceDate": "2026-08-27",
+      "pagUpdatedAt": "2026-08-27",
+      "pagCorrectionNote": null
     },
     {
       "id": "a2da08794bf1771237b24f28de0a46d4df804e960e10c40c109d73b4a3560d36",
@@ -9448,7 +10277,15 @@
       "originOmSource": "GL",
       "originOmShortCode": "GL",
       "originOmNormalizationVersion": 2,
-      "originOmNormalizedAt": "2026-08-20"
+      "originOmNormalizedAt": "2026-08-20",
+      "cotacaoSiscab": "250414",
+      "nup": "67102.250414/2025-77",
+      "pagSourceFileName": "27AGO - CONTROLE REPARO - PAG.xlsx",
+      "pagSourceSheet": "BD Monitoramento",
+      "pagSourceRow": 103,
+      "pagReferenceDate": "2026-08-27",
+      "pagUpdatedAt": "2026-08-27",
+      "pagCorrectionNote": null
     },
     {
       "id": "ad81c6d63a95c5000392fb0efe88583951d7f0aed4f662e82a75df317f1bc401",
@@ -9540,7 +10377,15 @@
       "originOmSource": "GL",
       "originOmShortCode": "GL",
       "originOmNormalizationVersion": 2,
-      "originOmNormalizedAt": "2026-08-20"
+      "originOmNormalizedAt": "2026-08-20",
+      "cotacaoSiscab": "250414",
+      "nup": "67102.250414/2025-77",
+      "pagSourceFileName": "27AGO - CONTROLE REPARO - PAG.xlsx",
+      "pagSourceSheet": "BD Monitoramento",
+      "pagSourceRow": 104,
+      "pagReferenceDate": "2026-08-27",
+      "pagUpdatedAt": "2026-08-27",
+      "pagCorrectionNote": null
     },
     {
       "id": "e3ae2d74df848010037b24a9902ae077aca3f7f3c740bbed135347e622356ad2",
@@ -9633,7 +10478,15 @@
       "originOmSource": "GL",
       "originOmShortCode": "GL",
       "originOmNormalizationVersion": 2,
-      "originOmNormalizedAt": "2026-08-20"
+      "originOmNormalizedAt": "2026-08-20",
+      "cotacaoSiscab": "250413",
+      "nup": "67102.250413/2025-22",
+      "pagSourceFileName": "27AGO - CONTROLE REPARO - PAG.xlsx",
+      "pagSourceSheet": "BD Monitoramento",
+      "pagSourceRow": 105,
+      "pagReferenceDate": "2026-08-27",
+      "pagUpdatedAt": "2026-08-27",
+      "pagCorrectionNote": null
     },
     {
       "id": "053d560d8f393b0cdf4c3275580e5db75506c968ccef1501052ed9100c7e7d23",
@@ -9725,7 +10578,15 @@
       "originOmSource": "GL",
       "originOmShortCode": "GL",
       "originOmNormalizationVersion": 2,
-      "originOmNormalizedAt": "2026-08-20"
+      "originOmNormalizedAt": "2026-08-20",
+      "cotacaoSiscab": "250413",
+      "nup": "67102.250413/2025-22",
+      "pagSourceFileName": "27AGO - CONTROLE REPARO - PAG.xlsx",
+      "pagSourceSheet": "BD Monitoramento",
+      "pagSourceRow": 106,
+      "pagReferenceDate": "2026-08-27",
+      "pagUpdatedAt": "2026-08-27",
+      "pagCorrectionNote": null
     },
     {
       "id": "2c3f951f8b86274089e337ed85942f9d6328b6d0260a154ffdf67ae168729f05",
@@ -9817,7 +10678,15 @@
       "originOmSource": "GL",
       "originOmShortCode": "GL",
       "originOmNormalizationVersion": 2,
-      "originOmNormalizedAt": "2026-08-20"
+      "originOmNormalizedAt": "2026-08-20",
+      "cotacaoSiscab": "250413",
+      "nup": "67102.250413/2025-22",
+      "pagSourceFileName": "27AGO - CONTROLE REPARO - PAG.xlsx",
+      "pagSourceSheet": "BD Monitoramento",
+      "pagSourceRow": 108,
+      "pagReferenceDate": "2026-08-27",
+      "pagUpdatedAt": "2026-08-27",
+      "pagCorrectionNote": null
     },
     {
       "id": "d4c2650a518bc3279915dda956e4f9bd69ab0c7b6a53d044e8edb227fda9eb87",
@@ -9909,7 +10778,15 @@
       "originOmSource": "GL",
       "originOmShortCode": "GL",
       "originOmNormalizationVersion": 2,
-      "originOmNormalizedAt": "2026-08-20"
+      "originOmNormalizedAt": "2026-08-20",
+      "cotacaoSiscab": "250413",
+      "nup": "67102.250413/2025-22",
+      "pagSourceFileName": "27AGO - CONTROLE REPARO - PAG.xlsx",
+      "pagSourceSheet": "BD Monitoramento",
+      "pagSourceRow": 107,
+      "pagReferenceDate": "2026-08-27",
+      "pagUpdatedAt": "2026-08-27",
+      "pagCorrectionNote": null
     },
     {
       "id": "3a5649e7e6677e8e6eea9c71732e8d74b85352256b7ac4e810fde77eefd618bb",
@@ -10001,7 +10878,15 @@
       "originOmSource": "GL",
       "originOmShortCode": "GL",
       "originOmNormalizationVersion": 2,
-      "originOmNormalizedAt": "2026-08-20"
+      "originOmNormalizedAt": "2026-08-20",
+      "cotacaoSiscab": "250348",
+      "nup": "67102.250348/2025-35",
+      "pagSourceFileName": "27AGO - CONTROLE REPARO - PAG.xlsx",
+      "pagSourceSheet": "BD Monitoramento",
+      "pagSourceRow": 109,
+      "pagReferenceDate": "2026-08-27",
+      "pagUpdatedAt": "2026-08-27",
+      "pagCorrectionNote": null
     },
     {
       "id": "5ef9d467790e623f4cfaee466bc40ef6f45b85adf9b9226387c695e6a3780cea",
@@ -10093,7 +10978,15 @@
       "originOmSource": "GL",
       "originOmShortCode": "GL",
       "originOmNormalizationVersion": 2,
-      "originOmNormalizedAt": "2026-08-20"
+      "originOmNormalizedAt": "2026-08-20",
+      "cotacaoSiscab": "250350",
+      "nup": "67102.250350/2025-12",
+      "pagSourceFileName": "27AGO - CONTROLE REPARO - PAG.xlsx",
+      "pagSourceSheet": "BD Monitoramento",
+      "pagSourceRow": 110,
+      "pagReferenceDate": "2026-08-27",
+      "pagUpdatedAt": "2026-08-27",
+      "pagCorrectionNote": null
     },
     {
       "id": "d2c4dd3bf91812cced5ce229e3549336aab4c1ea115bb7d8506cbc429a1737db",
@@ -10185,7 +11078,15 @@
       "originOmSource": "GL",
       "originOmShortCode": "GL",
       "originOmNormalizationVersion": 2,
-      "originOmNormalizedAt": "2026-08-20"
+      "originOmNormalizedAt": "2026-08-20",
+      "cotacaoSiscab": "250350",
+      "nup": "67102.250350/2025-12",
+      "pagSourceFileName": "27AGO - CONTROLE REPARO - PAG.xlsx",
+      "pagSourceSheet": "BD Monitoramento",
+      "pagSourceRow": 111,
+      "pagReferenceDate": "2026-08-27",
+      "pagUpdatedAt": "2026-08-27",
+      "pagCorrectionNote": null
     },
     {
       "id": "e1f4595ddca04fe7639d06d63b6bba99604ea161f9f16bd22fd613c81937685f",
@@ -10277,7 +11178,15 @@
       "originOmSource": "GL",
       "originOmShortCode": "GL",
       "originOmNormalizationVersion": 2,
-      "originOmNormalizedAt": "2026-08-20"
+      "originOmNormalizedAt": "2026-08-20",
+      "cotacaoSiscab": "250506",
+      "nup": "67102.250506/2025-57",
+      "pagSourceFileName": "27AGO - CONTROLE REPARO - PAG.xlsx",
+      "pagSourceSheet": "BD Monitoramento",
+      "pagSourceRow": 112,
+      "pagReferenceDate": "2026-08-27",
+      "pagUpdatedAt": "2026-08-27",
+      "pagCorrectionNote": null
     },
     {
       "id": "e3806d6e071ac4b7e51c724dc9a7390d5e549e8ab6b5b19c20108198897faf23",
@@ -10369,7 +11278,15 @@
       "originOmSource": "SP",
       "originOmShortCode": "SP",
       "originOmNormalizationVersion": 2,
-      "originOmNormalizedAt": "2026-08-20"
+      "originOmNormalizedAt": "2026-08-20",
+      "cotacaoSiscab": "260284",
+      "nup": "67102.260284/2026-61",
+      "pagSourceFileName": "27AGO - CONTROLE REPARO - PAG.xlsx",
+      "pagSourceSheet": "BD Monitoramento",
+      "pagSourceRow": 113,
+      "pagReferenceDate": "2026-08-27",
+      "pagUpdatedAt": "2026-08-27",
+      "pagCorrectionNote": "NUP corrigido para 67102.260284/2026-61 conforme confirmação do usuário."
     },
     {
       "id": "1af971d28b06a8b8b8f4014cb21b8f392f46af3d78d59627d0b3c369b872aded",
@@ -10461,7 +11378,15 @@
       "originOmSource": "SP",
       "originOmShortCode": "SP",
       "originOmNormalizationVersion": 2,
-      "originOmNormalizedAt": "2026-08-20"
+      "originOmNormalizedAt": "2026-08-20",
+      "cotacaoSiscab": "260285",
+      "nup": "67102.260285/2026-14",
+      "pagSourceFileName": "27AGO - CONTROLE REPARO - PAG.xlsx",
+      "pagSourceSheet": "BD Monitoramento",
+      "pagSourceRow": 114,
+      "pagReferenceDate": "2026-08-27",
+      "pagUpdatedAt": "2026-08-27",
+      "pagCorrectionNote": "NUP corrigido para 67102.260285/2026-14 conforme confirmação do usuário."
     }
   ],
   "rejectedRows": []
