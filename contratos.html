@@ -1,17 +1,15 @@
 <!DOCTYPE html>
+
 <html lang="pt-BR">
 <head>
-  
-<meta charset="utf-8">
-<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/css/bootstrap.min.css">
-<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
-<link rel="stylesheet" type="text/css" href="css/style.css">
-
-  <title>Painel CABW - Contratos</title>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1, shrink-to-fit=no" name="viewport"/>
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/css/bootstrap.min.css" rel="stylesheet"/>
+<link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css" rel="stylesheet"/>
+<link href="css/style.css" rel="stylesheet" type="text/css"/>
+<title>Painel CABW - Contratos</title>
 </head>
 <body class="contracts-page">
-
 <nav class="navbar navbar-expand-lg navbar-dark bg-primary">
 <a class="navbar-brand" href="painel.html">Painel CABW</a>
 <img alt="Brasão da Comissão Aeronáutica Brasileira em Washington" class="header-logo" src="cabw_logo.png"/>
@@ -24,78 +22,69 @@
 <li class="nav-item"><a class="nav-link" href="credito.html">Crédito Disponível</a></li>
 <li class="nav-item active"><a aria-current="page" class="nav-link" href="contratos.html">Contratos</a></li>
 <li class="nav-item"><a class="nav-link" href="processos.html">Processos de Contratação</a></li>
-<li class="nav-item"><a class="nav-link" href="requisicoes.html">Requisições</a></li>
+<li class="nav-item"><a class="nav-link" href="requisicoes.html">Requisições</a></li><li class="nav-item"><a class="nav-link" href="pagamentos.html">Pagamentos</a></li>
 <li class="nav-item"><a class="nav-link" href="governanca.html">Governança</a></li>
 <li class="nav-item admin-only" data-admin-only="" hidden=""><a class="nav-link" href="administracao.html">Administração do Sistema</a></li>
 </ul>
 </div>
 </nav>
-
-<main class="container-fluid mt-4 contracts-menu-page" aria-label="Menus de contratos" data-contract-overview>
-  <header class="contracts-page-header contracts-page-header--wide">
-    <div>
-      <span class="contracts-eyebrow">Base de contratos CABW</span>
-      <h1>Contratos</h1>
-      <p>Selecione um painel para consultar os contratos classificados a partir do relatório de contratos da CABW, atualizado em 13/08/2026, com preservação dos campos institucionais já cadastrados.</p>
-    </div>
-    <div class="contracts-source-card">
-      <span>Total geral</span>
-      <strong data-all-contracts-count>135</strong>
-      <small data-all-contracts-paid>—</small>
-    </div>
-  </header>
-
-  <section class="contract-menu-grid contract-menu-grid--dashboard" aria-label="Áreas de contratos">
-    <a href="contratos-administrativos.html" class="home-card contract-menu-card" aria-label="Acessar Contratos Administrativos" data-contract-summary="administrativos">
-      <span class="contract-menu-card__icon" aria-hidden="true"><i class="bi bi-building-gear"></i></span>
-      <h2>Contratos Administrativos</h2>
-      <span class="home-card__rule" aria-hidden="true"></span>
-      <p>Apoio administrativo, serviços internos, infraestrutura, pessoal, gestão da CABW e manutenção predial.</p>
-      <dl class="contract-menu-card__metrics">
-        <div><dt>Contratos</dt><dd data-summary-count>21</dd></div>
-        <div><dt>Valor contratado</dt><dd data-summary-value>—</dd></div>
-        <div><dt>Empenhado USD</dt><dd data-summary-paid>—</dd></div>
-      </dl>
-      <span class="home-card__button">Acessar Painel</span>
-    </a>
-
-    <a href="contratos-finalisticos.html" class="home-card contract-menu-card" aria-label="Acessar Contratos Finalísticos" data-contract-summary="finalisticos">
-      <span class="contract-menu-card__icon" aria-hidden="true"><i class="bi bi-shield-check"></i></span>
-      <h2>Contratos Finalísticos</h2>
-      <span class="home-card__rule" aria-hidden="true"></span>
-      <p>Atividades operacionais, logísticas, aquisições, manutenção, treinamento e suporte técnico às unidades apoiadas.</p>
-      <dl class="contract-menu-card__metrics">
-        <div><dt>Contratos</dt><dd data-summary-count>62</dd></div>
-        <div><dt>Valor contratado</dt><dd data-summary-value>—</dd></div>
-        <div><dt>Empenhado USD</dt><dd data-summary-paid>—</dd></div>
-      </dl>
-      <span class="home-card__button">Acessar Painel</span>
-    </a>
-
-    <a href="fms.html" class="home-card contract-menu-card" aria-label="Acessar FMS Foreign Military Sales" data-contract-summary="fms">
-      <span class="contract-menu-card__icon" aria-hidden="true"><i class="bi bi-globe-americas"></i></span>
-      <h2>FMS <small>(Foreign Military Sales)</small></h2>
-      <span class="home-card__rule" aria-hidden="true"></span>
-      <p>Contratos cuja empresa é DEFENSE FINANCE &amp; ACCOUNTING SERVICE, classificados exclusivamente neste painel.</p>
-      <dl class="contract-menu-card__metrics">
-        <div><dt>Contratos</dt><dd data-summary-count>52</dd></div>
-        <div><dt>Valor contratado</dt><dd data-summary-value>—</dd></div>
-        <div><dt>Empenhado USD</dt><dd data-summary-paid>—</dd></div>
-      </dl>
-      <span class="home-card__button">Acessar Painel</span>
-    </a>
-  </section>
-
-  <p class="contracts-source-note" data-contract-source>Fonte: RELATÓRIO DE CONTRATO - 13082026.xls · posição de 13/08/2026</p>
+<main aria-label="Menus de contratos" class="container-fluid mt-4 contracts-menu-page" data-contract-overview="">
+<header class="contracts-page-header contracts-page-header--wide">
+<div>
+<span class="contracts-eyebrow">Base de contratos CABW</span>
+<h1>Contratos</h1>
+<p>Selecione um painel para consultar os contratos classificados a partir do relatório de contratos da CABW, atualizado em 13/08/2026, com preservação dos campos institucionais já cadastrados.</p>
+</div>
+<div class="contracts-source-card">
+<span>Total geral</span>
+<strong data-all-contracts-count="">135</strong>
+<small data-all-contracts-paid="">—</small>
+</div>
+</header>
+<section aria-label="Áreas de contratos" class="contract-menu-grid contract-menu-grid--dashboard">
+<a aria-label="Acessar Contratos Administrativos" class="home-card contract-menu-card" data-contract-summary="administrativos" href="contratos-administrativos.html">
+<span aria-hidden="true" class="contract-menu-card__icon"><i class="bi bi-building-gear"></i></span>
+<h2>Contratos Administrativos</h2>
+<span aria-hidden="true" class="home-card__rule"></span>
+<p>Apoio administrativo, serviços internos, infraestrutura, pessoal, gestão da CABW e manutenção predial.</p>
+<dl class="contract-menu-card__metrics">
+<div><dt>Contratos</dt><dd data-summary-count="">21</dd></div>
+<div><dt>Valor contratado</dt><dd data-summary-value="">—</dd></div>
+<div><dt>Empenhado USD</dt><dd data-summary-paid="">—</dd></div>
+</dl>
+<span class="home-card__button">Acessar Painel</span>
+</a>
+<a aria-label="Acessar Contratos Finalísticos" class="home-card contract-menu-card" data-contract-summary="finalisticos" href="contratos-finalisticos.html">
+<span aria-hidden="true" class="contract-menu-card__icon"><i class="bi bi-shield-check"></i></span>
+<h2>Contratos Finalísticos</h2>
+<span aria-hidden="true" class="home-card__rule"></span>
+<p>Atividades operacionais, logísticas, aquisições, manutenção, treinamento e suporte técnico às unidades apoiadas.</p>
+<dl class="contract-menu-card__metrics">
+<div><dt>Contratos</dt><dd data-summary-count="">62</dd></div>
+<div><dt>Valor contratado</dt><dd data-summary-value="">—</dd></div>
+<div><dt>Empenhado USD</dt><dd data-summary-paid="">—</dd></div>
+</dl>
+<span class="home-card__button">Acessar Painel</span>
+</a>
+<a aria-label="Acessar FMS Foreign Military Sales" class="home-card contract-menu-card" data-contract-summary="fms" href="fms.html">
+<span aria-hidden="true" class="contract-menu-card__icon"><i class="bi bi-globe-americas"></i></span>
+<h2>FMS <small>(Foreign Military Sales)</small></h2>
+<span aria-hidden="true" class="home-card__rule"></span>
+<p>Contratos cuja empresa é DEFENSE FINANCE &amp; ACCOUNTING SERVICE, classificados exclusivamente neste painel.</p>
+<dl class="contract-menu-card__metrics">
+<div><dt>Contratos</dt><dd data-summary-count="">52</dd></div>
+<div><dt>Valor contratado</dt><dd data-summary-value="">—</dd></div>
+<div><dt>Empenhado USD</dt><dd data-summary-paid="">—</dd></div>
+</dl>
+<span class="home-card__button">Acessar Painel</span>
+</a>
+</section>
+<p class="contracts-source-note" data-contract-source="">Fonte: RELATÓRIO DE CONTRATO - 13082026.xls · posição de 13/08/2026</p>
 </main>
-
 <script src="assets/js/contracts-data.js?v=20260813-contracts-r1"></script>
 <script src="assets/js/contracts-panel.js?v=20260813-contracts-r1"></script>
-
-
 <script src="https://code.jquery.com/jquery-3.6.0.slim.min.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/js/bootstrap.bundle.min.js"></script>
-
-<script type="module" src="assets/js/auth.js"></script>
+<script src="assets/js/auth.js" type="module"></script>
 </body>
 </html>

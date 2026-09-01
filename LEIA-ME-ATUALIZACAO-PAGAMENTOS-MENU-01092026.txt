@@ -1,0 +1,19 @@
+PAINEL CABW — PAGAMENTOS COMO MÓDULO PRINCIPAL
+
+ALTERAÇÕES:
+- Criado o menu principal Pagamentos na barra superior.
+- Criado o card Pagamentos na Página Principal.
+- Criada a página independente pagamentos.html.
+- Removido o card Pagamentos do Menu Governança.
+- Atualizado o Menu Governança de 8 para 7 painéis.
+- Mantido redirecionamento do endereço antigo governanca-pagamentos.html.
+- Atualizada a rota gravada no Histórico de Acesso.
+
+PUBLICAÇÃO:
+1. Extraia o arquivo ZIP.
+2. Envie todo o conteúdo extraído à raiz do repositório.
+3. Substitua os arquivos existentes.
+4. Confirme a presença de pagamentos.html e deste arquivo.
+5. Faça o commit.
+6. Aguarde o deploy do GitHub Pages.
+7. Pressione Ctrl + F5 no site.

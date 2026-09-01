@@ -3,7 +3,7 @@
   "private": true,
   "type": "module",
   "scripts": {
-    "test": "node --test tests/repair-import.test.mjs",
-    "check": "node --check assets/js/repair-import-core.js && node --check assets/js/repair-processes-panel.js"
+    "test": "node --test tests/repair-import.test.mjs tests/payment-tracking.test.mjs",
+    "check": "node --check assets/js/repair-import-core.js && node --check assets/js/repair-processes-panel.js && node --check assets/js/payment-tracking-core.js && node --check assets/js/payment-tracking-panel.js"
   }
 }

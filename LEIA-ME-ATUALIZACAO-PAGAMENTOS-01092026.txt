@@ -1,0 +1,41 @@
+PAINEL CABW — NOVO PAINEL DE ACOMPANHAMENTO DE PAGAMENTOS
+Build: 01/09/2026
+
+LOCALIZAÇÃO:
+Governança > Pagamentos — Acompanhamento a Fornecedores
+
+FUNCIONALIDADES:
+- acompanhamento do status de faturas e invoices;
+- filtros por fornecedor, status, etapa, prazo, moeda, unidade e período;
+- indicadores de pagamentos em processamento, vencidos, próximos do vencimento e pagos;
+- consolidação financeira separada por moeda;
+- relatórios PDF gerencial e detalhado;
+- cadastro manual e importação XLSX/XLS/CSV por administradores;
+- prevenção de duplicidades por chave determinística;
+- arquivamento lógico e trilha de auditoria.
+
+SEGURANÇA:
+Nenhum registro financeiro de fornecedor está incorporado ao GitHub Pages.
+A base operacional fica exclusivamente no Cloud Firestore.
+Antes do primeiro cadastro, publique o conteúdo de FIRESTORE_REGRAS_PAGAMENTOS.txt.
+
+O PAINEL INICIA SEM REGISTROS porque nenhuma base de pagamentos foi fornecida nesta atualização.
+Após publicar as regras, um administrador poderá cadastrar ou importar os pagamentos.
+
+ARQUIVOS PRINCIPAIS:
+- governanca.html
+- governanca-pagamentos.html
+- assets/js/payment-tracking-core.js
+- assets/js/payment-tracking-panel.js
+- assets/data/payment-tracking-schema.json
+- FIRESTORE_REGRAS_PAGAMENTOS.txt
+- INSTRUCOES_PAINEL_PAGAMENTOS.md
+- tests/payment-tracking.test.mjs
+
+PUBLICAÇÃO NO GITHUB:
+1. Extraia este ZIP.
+2. Envie todo o conteúdo extraído à raiz do repositório.
+3. Confirme a presença de BUILD_VERIFICACAO_PAGAMENTOS_01092026.json.
+4. Faça o commit e aguarde o deploy do GitHub Pages.
+5. Pressione Ctrl + F5 no site.
+6. Publique as regras do Firestore antes de cadastrar ou importar dados.

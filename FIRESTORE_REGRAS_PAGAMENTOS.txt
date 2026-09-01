@@ -1,0 +1,56 @@
+PAINEL CABW — REGRAS DO FIRESTORE PARA ACOMPANHAMENTO DE PAGAMENTOS
+
+ADICIONE OS BLOCOS ABAIXO DENTRO DE:
+
+service cloud.firestore {
+  match /databases/{database}/documents {
+    // Preserve as funções isAuthorizedEmail() e isAdmin() já existentes.
+
+    function validPaymentTypes(data) {
+      return (!('grossAmount' in data) || data.grossAmount == null || data.grossAmount is number)
+        && (!('deductions' in data) || data.deductions == null || data.deductions is number)
+        && (!('netAmount' in data) || data.netAmount == null || data.netAmount is number)
+        && (!('sourceRow' in data) || data.sourceRow == null || data.sourceRow is int)
+        && (!('archived' in data) || data.archived is bool)
+        && (!('supplier' in data) || data.supplier is string)
+        && (!('status' in data) || data.status is string)
+        && (!('stage' in data) || data.stage is string);
+    }
+
+    match /supplierPayments/{paymentId} {
+      // Somente usuários autenticados e autorizados consultam os dados financeiros.
+      allow read: if isAuthorizedEmail();
+
+      // Somente administradores cadastram, importam, editam ou arquivam registros.
+      allow create, update: if isAdmin() && validPaymentTypes(request.resource.data);
+
+      // A exclusão física fica bloqueada para preservar a trilha de auditoria.
+      allow delete: if false;
+    }
+
+    match /supplierPaymentsConfig/{configId} {
+      allow read: if isAuthorizedEmail();
+      allow create, update: if isAdmin();
+      allow delete: if false;
+    }
+
+    match /supplierPaymentImports/{importId} {
+      allow read: if isAdmin();
+      allow create: if isAdmin()
+        && request.resource.data.validRows is int
+        && request.resource.data.validRows > 0
+        && request.resource.data.validRows <= 10000;
+      allow update, delete: if false;
+    }
+  }
+}
+
+NÃO É NECESSÁRIO CRIAR ÍNDICE COMPOSTO NESTA VERSÃO.
+
+Motivo:
+- supplierPayments é lida como coleção e os filtros são aplicados no navegador.
+- supplierPaymentsConfig/current é lido diretamente pelo ID do documento.
+- supplierPaymentImports usa somente orderBy(importedAt), coberto pelo índice automático de campo único.
+
+IMPORTANTE:
+Os dados de pagamentos não são gravados em arquivos JSON ou JavaScript do GitHub Pages. Eles permanecem exclusivamente no Cloud Firestore e somente aparecem no painel após autenticação autorizada.
