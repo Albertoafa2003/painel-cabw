@@ -1,0 +1,80 @@
+{
+  "build": "credit-01092026-r1",
+  "position": "01/09/2026",
+  "sourceFile": "RELATÓRIO_CRÉDITO_DISPONÍVEL_CABW_01092026(1).docx",
+  "summaryRows": 18,
+  "summaryDateOccurrences": 1,
+  "ugRankingRows": 17,
+  "detailRowsNewPosition": 40,
+  "actionRankingRows": 18,
+  "actionByUGRows": 40,
+  "creditReceivedActionRows": 20,
+  "launchesExpected": 102,
+  "launchesByUG": 102,
+  "launchesByAction": 102,
+  "launchesByDetail": 102,
+  "totals": {
+    "availableExpected": 8420747.6,
+    "availableByUG": 8420747.6,
+    "availableByAction": 8420747.6,
+    "availableByDetail": 8420747.6,
+    "receivedExpected": 126562484.43,
+    "receivedByAction": 126562484.43
+  },
+  "preservation": {
+    "latestRepairPagBuildPreserved": true,
+    "previousCreditBuildPreserved": true,
+    "repairOverdueBuildPreserved": true,
+    "processesBuildPreserved": true,
+    "rpBuildPreserved": true,
+    "contractsBuildPreserved": true,
+    "repairPanelPreserved": true,
+    "insurancePanelPreserved": true,
+    "authorizedEmailsPreserved": true
+  },
+  "checks": {
+    "summaryNoDuplicate": true,
+    "ugTotalMatches": true,
+    "actionTotalMatches": true,
+    "detailTotalMatches": true,
+    "receivedTotalMatches": true,
+    "ugLaunchesMatch": true,
+    "actionLaunchesMatch": true,
+    "detailLaunchesMatch": true,
+    "centralJsonUpdated": true,
+    "executiveUpdated": true,
+    "ugUpdated": true,
+    "actionUpdated": true,
+    "detailUpdated": true,
+    "consistencyUpdated": true,
+    "allPreservationMarkersPresent": true
+  },
+  "javascriptChecks": {
+    "assets/js/cabw-numeros.js": {
+      "returncode": 0,
+      "stderr": ""
+    },
+    "action-inline": {
+      "returncode": 0,
+      "stderr": ""
+    }
+  },
+  "fileHashes": {
+    "credito-visao-executiva.html": "0e812516c4f1aa17065536d3f424979b5f156d01cfca8a62fe35db6a1bb9db89",
+    "ug.html": "09ebe6f85fd19209c6ae5fc63615f14c4be3e058c7f60702c6b9b5913bcef924",
+    "action.html": "f3c1ee7e6315897151309b6c97898cab8301169057dc668bd6720b932dd47a95",
+    "detail.html": "75552a33d40c1d91229f1175c2ea3ddbb48eb835aaa876f774a24d788e321d22",
+    "consistency.html": "9207cd2217fed5847cf424eb3601defddb04190395c39db6fcfc2446bbd28613",
+    "governanca-cabw-numeros.html": "05d80744bf5b71f12ab212b64e00fea973215e1a03eaf07e29ece20cfc752e4c",
+    "assets/data/credit-current.json": "dbbfc2e7261d070394efe4964bb3ca44457b60f5f5893a0398e1c7fed06d778e",
+    "assets/data/credit-01092026.json": "dbbfc2e7261d070394efe4964bb3ca44457b60f5f5893a0398e1c7fed06d778e",
+    "assets/js/cabw-numeros.js": "13ed8a2726c6518d6804007807e69d0e821b6fed00c7eb4311e975131640c3b1"
+  },
+  "repairDataPreserved": {
+    "records": 113,
+    "pagFieldsDetected": [
+      "nup"
+    ],
+    "has113Records": true
+  }
+}
