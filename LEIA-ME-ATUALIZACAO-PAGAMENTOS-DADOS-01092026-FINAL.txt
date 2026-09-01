@@ -1,0 +1,29 @@
+PAINEL CABW — BASE CONSOLIDADA DE PAGAMENTOS
+
+Fonte: pagamentos.html
+Data de incorporação: 01/09/2026
+
+RESULTADOS:
+- Lançamentos: 756
+- Valor total: 34.747.706,13
+- Notas de Empenho distintas: 617
+- Favorecidos distintos por nome: 143
+- Planos Internos: 49
+- Ações de Governo: 16
+- Linhas de valor zero preservadas: 104
+
+O painel possui duas áreas complementares:
+1. Pagamentos consolidados, com filtros, indicadores, gráficos e relatórios.
+2. Acompanhamento operacional de faturas e prazos no Firestore.
+
+A fonte não informa a moeda nem a data de posição contábil; nenhuma delas foi inferida.
+
+NOTA DE SEGURANÇA:
+A base consolidada está incorporada aos arquivos estáticos do GitHub Pages. Esses dados podem ser acessados diretamente no repositório, independentemente da tela de login. A base operacional permanece no Firestore.
+
+PUBLICAÇÃO:
+1. Extraia o ZIP.
+2. Envie todo o conteúdo extraído à raiz do repositório.
+3. Confirme BUILD_VERIFICACAO_PAGAMENTOS_DADOS_01092026_FINAL.json.
+4. Faça o commit e aguarde o GitHub Pages.
+5. Pressione Ctrl + F5.

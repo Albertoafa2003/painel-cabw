@@ -1,0 +1,42 @@
+PAINEL CABW — INSERÇÃO DA BASE CONSOLIDADA DE PAGAMENTOS
+
+Fonte: pagamentos.html
+Data de incorporação: 01/09/2026
+Data de posição contábil: não informada no arquivo de origem
+Moeda: não informada no arquivo de origem
+
+RESULTADOS DA BASE:
+- Valor total: 34.747.706,13
+- Lançamentos: 756
+- Notas de empenho distintas: 617
+- Favorecidos distintos por nome: 143
+- Combinações código/nome de favorecido: 151
+- Planos Internos: 49
+- Ações de Governo: 16
+- Lançamentos de valor zero preservados: 104
+- Duplicidades exatas: 0
+
+O PAINEL AGORA POSSUI DUAS VISÕES:
+1. Pagamentos consolidados por favorecido, PI e Ação de Governo.
+2. Acompanhamento operacional de faturas e prazos no Cloud Firestore.
+
+ARQUIVOS PRINCIPAIS CRIADOS OU ALTERADOS:
+- pagamentos.html
+- painel.html
+- css/style.css
+- assets/data/payment-execution-current.json
+- assets/data/payment-execution-update-audit-01092026.json
+- assets/js/payment-execution-panel.js
+- tests/payment-execution.test.mjs
+- package.json
+
+ATENÇÃO:
+A base consolidada foi incorporada aos arquivos estáticos do site, seguindo a estrutura do arquivo enviado. Em hospedagem GitHub Pages, esses dados fazem parte dos arquivos publicados. O acompanhamento operacional de faturas permanece no Firestore.
+
+PUBLICAÇÃO:
+1. Extraia o arquivo ZIP.
+2. Envie todo o conteúdo extraído para a raiz do repositório.
+3. Confirme a presença deste arquivo e de BUILD_VERIFICACAO_PAGAMENTOS_DADOS_01092026.json.
+4. Faça o commit.
+5. Aguarde o deploy do GitHub Pages.
+6. Pressione Ctrl + F5 no site.

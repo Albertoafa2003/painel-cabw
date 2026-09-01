@@ -6,7 +6,7 @@
 <meta content="width=device-width, initial-scale=1, shrink-to-fit=no" name="viewport"/>
 <link href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/css/bootstrap.min.css" rel="stylesheet"/>
 <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css" rel="stylesheet"/>
-<link href="css/style.css?v=20260901-payments-menu-r1" rel="stylesheet" type="text/css"/>
+<link href="css/style.css?v=20260901-payments-data-final-r2" rel="stylesheet" type="text/css"/>
 <title>Painel CABW - Pagamentos</title>
 </head>
 <body class="module-page governance-page governance-detail-page payment-page">
@@ -28,33 +28,99 @@
 </ul>
 </div>
 </nav>
-<main aria-label="Acompanhamento de Pagamentos a Fornecedores" class="container-fluid mt-4 payment-main">
+<main aria-label="Pagamentos da CABW — execução consolidada e acompanhamento operacional" class="container-fluid mt-4 payment-main">
 <a class="governance-back-link" href="painel.html">← Voltar para a Página Principal</a>
 <section class="pay-hero">
 <div class="pay-hero__content">
 <span class="governance-eyebrow">Execução financeira e relacionamento com fornecedores</span>
-<h1>Acompanhamento de Pagamentos</h1>
-<p>Monitore o ciclo das faturas e invoices dos fornecedores da CABW, identifique vencimentos, pendências e pagamentos realizados e gere relatórios conforme a consulta.</p>
-<div class="pay-hero__badges">
-<span><i class="bi bi-shield-lock"></i> Dados protegidos no Firestore</span>
-<span><i class="bi bi-funnel"></i> Consultas combináveis</span>
-<span><i class="bi bi-file-earmark-pdf"></i> Relatórios em PDF</span>
-</div>
+<h1>Pagamentos — Execução e Acompanhamento</h1>
+<p>Analise os pagamentos consolidados por favorecido, Plano Interno e Ação de Governo e acompanhe o ciclo operacional de faturas, vencimentos, pendências e pagamentos a fornecedores.</p>
+<div class="pay-hero__badges"><span><i class="bi bi-bar-chart-line"></i> 756 lançamentos consolidados</span><span><i class="bi bi-funnel"></i> Consultas combináveis</span><span><i class="bi bi-file-earmark-pdf"></i> Relatórios em PDF</span></div>
 </div>
 <aside aria-label="Fonte e atualização da base" class="pay-hero__status">
-<span>BASE DE PAGAMENTOS</span>
+<span>ACOMPANHAMENTO OPERACIONAL</span>
 <strong id="paySourceTitle">Aguardando autenticação</strong>
 <small id="paySourceInfo">Os registros financeiros são carregados exclusivamente do Firestore.</small>
 </aside>
-</section>
-<section aria-label="Nota de segurança" class="pay-security-note">
-<i class="bi bi-database-lock"></i>
+</section><nav aria-label="Visões do Painel de Pagamentos" class="pay-section-nav">
+<a href="#payExecutionSection"><i class="bi bi-bar-chart-line"></i><span>Pagamentos consolidados</span></a>
+<a href="#payOperationalSection"><i class="bi bi-receipt"></i><span>Acompanhamento operacional</span></a>
+</nav>
+<section aria-label="Nota de segurança" class="pay-security-note"><i class="bi bi-layers-half"></i><div>
+<strong>Duas visões complementares</strong>
+<p>A base consolidada abaixo foi incorporada do arquivo <code>pagamentos.html</code> e faz parte dos arquivos estáticos do site. O documento não informa data de posição nem moeda, por isso esses elementos não foram inferidos. O acompanhamento operacional de faturas e prazos permanece protegido no Cloud Firestore.</p>
+</div></section><section aria-label="Pagamentos consolidados por favorecido, PI e Ação de Governo" class="pay-exec-section" id="payExecutionSection">
+<div class="pay-exec-heading">
 <div>
-<strong>Proteção da informação financeira</strong>
-<p>O GitHub Pages contém somente a interface. Os dados de fornecedores e pagamentos não são incluídos nos arquivos públicos do site e permanecem no Cloud Firestore, sujeitos às regras de acesso do Painel CABW.</p>
+<span class="governance-eyebrow">Base consolidada incorporada</span>
+<h2>Pagamentos consolidados — visão por favorecido, PI e ação</h2>
+<p>Os registros foram incorporados conforme o arquivo enviado, preservando NE, código e nome do favorecido, Ação de Governo, Plano Interno e valor.</p>
 </div>
+<aside aria-label="Fonte da base consolidada" class="pay-exec-source">
+<span>FONTE</span>
+<strong id="payExecSourceTitle">Carregando base...</strong>
+<small id="payExecSourceInfo">Aguarde a leitura dos registros.</small>
+</aside>
+</div>
+<div class="pay-exec-loading" id="payExecLoading"><span aria-hidden="true" class="spinner-border spinner-border-sm" role="status"></span><span>Carregando os dados consolidados...</span></div>
+<div class="pay-exec-toolbar">
+<div class="pay-exec-toolbar__note"><i class="bi bi-info-circle"></i><span id="payExecQualityInfo">A moeda e a data de posição não são informadas na fonte.</span></div>
+<div class="pay-exec-toolbar__actions">
+<button class="pay-btn pay-btn--primary" id="payExecManagementPdf" type="button"><i class="bi bi-file-earmark-bar-graph"></i> PDF gerencial</button>
+<button class="pay-btn pay-btn--outline" id="payExecDetailedPdf" type="button"><i class="bi bi-file-earmark-spreadsheet"></i> PDF detalhado</button>
+<button class="pay-btn pay-btn--light" id="payExecExportCsv" type="button"><i class="bi bi-filetype-csv"></i> Exportar CSV</button>
+</div>
+</div>
+<p aria-live="polite" class="pay-form-message" id="payExecReportMessage"></p>
+<article class="pay-card pay-exec-filter-card">
+<div class="pay-card-heading">
+<span class="pay-card-icon"><i class="bi bi-funnel"></i></span>
+<div><h2>Filtros da execução consolidada</h2><p>Refine a consulta por favorecido, Plano Interno, Ação de Governo ou busca textual.</p></div>
+</div>
+<div class="pay-exec-filter-grid">
+<label><span>Favorecido</span><select class="form-control" id="payExecFavoredFilter"><option value="">Todos os favorecidos</option></select></label>
+<label><span>Plano Interno — PI</span><select class="form-control" id="payExecPiFilter"><option value="">Todos os PIs</option></select></label>
+<label><span>Ação de Governo</span><select class="form-control" id="payExecActionFilter"><option value="">Todas as ações</option></select></label>
+<label><span>Busca geral</span><input class="form-control" id="payExecSearchFilter" placeholder="NE, favorecido, código, PI ou ação" type="search"/></label>
+</div>
+<div class="pay-exec-filter-footer"><button class="pay-btn pay-btn--light" id="payExecClearFilters" type="button"><i class="bi bi-arrow-counterclockwise"></i> Limpar filtros</button></div>
+</article>
+<div aria-label="Indicadores da execução consolidada" class="pay-exec-kpi-grid">
+<article class="pay-exec-kpi pay-exec-kpi--primary"><span>Valor total</span><strong id="payExecKpiValue">0,00</strong><small>moeda não informada</small></article>
+<article class="pay-exec-kpi"><span>Lançamentos</span><strong id="payExecKpiRows">0</strong><small>linhas da base</small></article>
+<article class="pay-exec-kpi"><span>Notas de empenho</span><strong id="payExecKpiNes">0</strong><small>NEs distintas</small></article>
+<article class="pay-exec-kpi"><span>Favorecidos</span><strong id="payExecKpiFavored">0</strong><small>nomes distintos</small></article>
+<article class="pay-exec-kpi"><span>Planos Internos</span><strong id="payExecKpiPis">0</strong><small>PIs distintos</small></article>
+<article class="pay-exec-kpi"><span>Ações de Governo</span><strong id="payExecKpiActions">0</strong><small>ações distintas</small></article>
+</div>
+<div class="pay-exec-chart-grid">
+<article class="pay-card pay-exec-chart-card"><div class="pay-exec-card-title"><div><h3>Valores por favorecido</h3><p>Os 15 maiores favorecidos no filtro atual.</p></div><i class="bi bi-buildings"></i></div><div class="pay-exec-chart" id="payExecFavoredChart"></div></article>
+<article class="pay-card pay-exec-chart-card"><div class="pay-exec-card-title"><div><h3>Valores por Plano Interno</h3><p>Os 15 PIs de maior valor no filtro atual.</p></div><i class="bi bi-diagram-3"></i></div><div class="pay-exec-chart" id="payExecPiChart"></div></article>
+<article class="pay-card pay-exec-chart-card pay-exec-chart-card--wide"><div class="pay-exec-card-title"><div><h3>Valores por Ação de Governo</h3><p>Distribuição integral das ações existentes na consulta.</p></div><i class="bi bi-bar-chart-steps"></i></div><div class="pay-exec-chart pay-exec-chart--action" id="payExecActionChart"></div></article>
+</div>
+<article class="pay-card pay-exec-table-card">
+<div class="pay-detail-header">
+<div><span class="governance-eyebrow">Base detalhada incorporada</span><h2>Detalhamento dos lançamentos</h2><p id="payExecRowsInfo">Aguardando carregamento...</p></div>
+<span class="pay-detail-badge">clique nos cabeçalhos para ordenar</span>
+</div>
+<div class="table-responsive pay-exec-table-scroll">
+<table class="table table-striped table-sm pay-table pay-exec-table" id="payExecTable">
+<thead><tr>
+<th data-key="ne" tabindex="0">NE</th>
+<th data-key="fav" tabindex="0">Favorecido</th>
+<th data-key="acao" tabindex="0">Ação de Governo</th>
+<th data-key="pi" tabindex="0">Plano Interno — PI</th>
+<th aria-sort="descending" class="text-right" data-key="valor" tabindex="0">Valor</th>
+</tr></thead>
+<tbody id="payExecDetailBody"></tbody>
+</table>
+</div>
+</article>
 </section>
-<section aria-label="Ações administrativas" class="pay-admin-actions" data-payment-admin="" hidden="">
+<section aria-label="Acompanhamento operacional de faturas" class="pay-operational-intro" id="payOperationalSection">
+<div><span class="governance-eyebrow">Controle operacional no Firestore</span><h2>Faturas, vencimentos e pagamentos a fornecedores</h2><p>Utilize esta área para cadastrar ou importar faturas, controlar prazos e pendências e registrar o pagamento efetivo.</p></div>
+<a class="pay-btn pay-btn--outline" href="#payExecutionSection"><i class="bi bi-arrow-up"></i> Voltar à visão consolidada</a>
+</section><section aria-label="Ações administrativas" class="pay-admin-actions" data-payment-admin="" hidden="">
 <button class="pay-btn pay-btn--primary" id="payImportToggle" type="button"><i class="bi bi-file-earmark-arrow-up"></i> Importar planilha</button>
 <button class="pay-btn pay-btn--outline" id="payNewButton" type="button"><i class="bi bi-plus-lg"></i> Cadastrar pagamento</button>
 <button class="pay-btn pay-btn--light" id="payTemplateButton" type="button"><i class="bi bi-download"></i> Baixar modelo CSV</button>
@@ -220,8 +286,8 @@
 </div>
 <div class="pay-empty-state" hidden="" id="payEmptyState">
 <span><i class="bi bi-receipt"></i></span>
-<h3>Nenhum pagamento cadastrado</h3>
-<p>A base financeira não é incluída nos arquivos públicos do GitHub Pages. Um administrador deve cadastrar os registros ou importar uma planilha após publicar as regras do Firestore fornecidas no pacote.</p>
+<h3>Nenhum acompanhamento operacional cadastrado</h3>
+<p>A base consolidada permanece disponível acima. Para acompanhar faturas, prazos, pendências e pagamentos individuais, um administrador deve cadastrar registros ou importar uma planilha para o Cloud Firestore.</p>
 </div>
 <div class="table-responsive pay-detail-scroll" id="payTableWrap">
 <table class="table table-striped table-sm pay-table pay-detail-table">
@@ -290,7 +356,7 @@
 <script src="https://cdnjs.cloudflare.com/ajax/libs/xlsx/0.18.5/xlsx.full.min.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf-autotable/3.8.3/jspdf.plugin.autotable.min.js"></script>
-<script src="assets/js/auth.js" type="module"></script>
-<script src="assets/js/payment-tracking-panel.js?v=20260901-payments-menu-r1" type="module"></script>
+<script src="https://cdn.plot.ly/plotly-2.35.2.min.js"></script><script src="assets/js/payment-execution-panel.js?v=20260901-payments-data-final-r2"></script><script src="assets/js/auth.js" type="module"></script>
+<script src="assets/js/payment-tracking-panel.js?v=20260901-payments-data-final-r2" type="module"></script>
 </body>
 </html>
