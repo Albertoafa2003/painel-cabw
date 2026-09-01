@@ -1,0 +1,57 @@
+{
+  "version": "20260901-payments-r1",
+  "storage": {
+    "mode": "firestore-only",
+    "collections": {
+      "records": "supplierPayments",
+      "config": "supplierPaymentsConfig/current",
+      "imports": "supplierPaymentImports"
+    },
+    "publicStaticData": false
+  },
+  "fields": {
+    "supplier": "Fornecedor",
+    "nup": "NUP ou número do processo",
+    "contractPag": "Número do contrato ou PAG",
+    "commitmentPo": "Empenho ou Purchase Order",
+    "invoiceNumber": "Fatura, invoice ou nota fiscal",
+    "documentType": "Tipo do documento",
+    "currency": "Moeda original",
+    "grossAmount": "Valor bruto",
+    "deductions": "Retenções ou descontos",
+    "netAmount": "Valor líquido",
+    "issueDate": "Data de emissão",
+    "receivedDate": "Data de recebimento",
+    "dueDate": "Data de vencimento",
+    "scheduledDate": "Previsão de pagamento",
+    "paidDate": "Data efetiva do pagamento",
+    "status": "Status do processamento",
+    "stage": "Etapa gerencial derivada do status",
+    "requestingUnit": "Unidade demandante",
+    "responsible": "Responsável pelo acompanhamento",
+    "paymentReference": "Referência do pagamento",
+    "observations": "Observações e pendências",
+    "archived": "Arquivamento lógico"
+  },
+  "statuses": [
+    "Fatura recebida",
+    "Em conferência documental",
+    "Pendência documental",
+    "Aguardando atesto",
+    "Aguardando liquidação",
+    "Aguardando autorização de pagamento",
+    "Pagamento programado",
+    "Pago",
+    "Suspenso",
+    "Cancelado"
+  ],
+  "stages": [
+    "Documentação",
+    "Atestação",
+    "Liquidação",
+    "Programação financeira",
+    "Pagamento",
+    "Pendência",
+    "Encerrado sem pagamento"
+  ]
+}

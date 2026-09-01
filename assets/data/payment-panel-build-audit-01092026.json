@@ -1,0 +1,89 @@
+{
+  "build": "payments-01092026-r1",
+  "generatedAt": "2026-09-01",
+  "panel": "Governança > Acompanhamento de Pagamentos",
+  "dataArchitecture": {
+    "mode": "Firestore only",
+    "operationalRecordsEmbeddedInGitHubPages": 0,
+    "collections": [
+      "supplierPayments",
+      "supplierPaymentsConfig",
+      "supplierPaymentImports"
+    ]
+  },
+  "capabilities": {
+    "officialStatuses": 10,
+    "managementStages": 7,
+    "filterControls": 11,
+    "pdfReports": 2,
+    "adminEntryModes": [
+      "Cadastro manual",
+      "Importação XLSX/XLS/CSV"
+    ],
+    "duplicatePrevention": "Chave determinística e upsert por documento",
+    "currencyTreatment": "Consolidação separada por moeda; sem conversão automática",
+    "recordDeletion": "Arquivamento lógico; exclusão física bloqueada nas regras sugeridas"
+  },
+  "checks": {
+    "governanceHasEightPanels": true,
+    "governanceCounterIsEight": true,
+    "paymentCardIsUnique": true,
+    "paymentPageHasAuth": true,
+    "paymentPageHasPanelModule": true,
+    "paymentPageHasPdfLibraries": true,
+    "paymentPageHasSpreadsheetLibrary": true,
+    "paymentPageHasTwoReports": true,
+    "paymentPageHasImportAndManualEntry": true,
+    "paymentPageHasEmptyState": true,
+    "paymentDataIsFirestoreOnly": true,
+    "firestoreRulesIncluded": true,
+    "paymentInstructionsIncluded": true,
+    "paymentSchemaIncluded": true,
+    "governanca.html:noDuplicateIds": true,
+    "governanca.html:internalAssetsExist": true,
+    "governanca-pagamentos.html:noDuplicateIds": true,
+    "governanca-pagamentos.html:internalAssetsExist": true,
+    "allPaymentDomIdsExist": true,
+    "jsonFilesValid": true,
+    "cssCopiesAreIdentical": true,
+    "latestBuildMarkersPreserved": true,
+    "npmTest": true,
+    "npmCheck": true
+  },
+  "commands": {
+    "npmTest": {
+      "returncode": 0,
+      "stdoutTail": "  ---\n  duration_ms: 0.23174\n  type: 'test'\n  ...\n# Subtest: correções confirmadas de COTAÇÃO SISCAB e NUP foram aplicadas\nok 42 - correções confirmadas de COTAÇÃO SISCAB e NUP foram aplicadas\n  ---\n  duration_ms: 0.095644\n  type: 'test'\n  ...\n# Subtest: painel inclui filtros e PDF detalhado de COTAÇÃO SISCAB e NUP\nok 43 - painel inclui filtros e PDF detalhado de COTAÇÃO SISCAB e NUP\n  ---\n  duration_ms: 1.371322\n  type: 'test'\n  ...\n1..43\n# tests 43\n# suites 0\n# pass 43\n# fail 0\n# cancelled 0\n# skipped 0\n# todo 0\n# duration_ms 85.018486",
+      "stderrTail": ""
+    },
+    "npmCheck": {
+      "returncode": 0,
+      "stdoutTail": "\n> check\n> node --check assets/js/repair-import-core.js && node --check assets/js/repair-processes-panel.js && node --check assets/js/payment-tracking-core.js && node --check assets/js/payment-tracking-panel.js\n",
+      "stderrTail": ""
+    }
+  },
+  "preservedBuildMarkers": [
+    "BUILD_VERIFICACAO_CREDITO_01092026.json",
+    "BUILD_VERIFICACAO_REPARAVEIS_PAG_27082026.json",
+    "BUILD_VERIFICACAO_REPARAVEIS_ATRASOS_20082026.json",
+    "BUILD_VERIFICACAO_REPARAVEIS_OM_20082026.json",
+    "BUILD_VERIFICACAO_REPARAVEIS_RETORNOS_20082026.json",
+    "BUILD_VERIFICACAO_REPARAVEIS_STATUS_19082026.json",
+    "BUILD_VERIFICACAO_PROCESSOS_17082026.json",
+    "BUILD_VERIFICACAO_RP_JULHO_2026.json",
+    "BUILD_VERIFICACAO_CONTRATOS_13082026.json"
+  ],
+  "fileHashes": {
+    "governanca.html": "b6131eb19fd2ad2895bf81affe0757390b42e313d6361bfbd859adc2fd5e2fc3",
+    "governanca-pagamentos.html": "74c59c171c9c7f40d6292b51c28fa96fd7fb42b26dbba862196bdb770f8763ca",
+    "css/style.css": "5d93e673bb3da351fd14aab01f688723dbb08a8907aeff9825ca319176b79b08",
+    "style.css": "5d93e673bb3da351fd14aab01f688723dbb08a8907aeff9825ca319176b79b08",
+    "assets/js/payment-tracking-core.js": "b151daef6e65ce23c0a353e107e44fbfa5e2867697053823d38d4802c1f9360f",
+    "assets/js/payment-tracking-panel.js": "29d6c1c20ba57738cc6533d2b21df86a3af4e370e727e131f8bbd15a23df1322",
+    "assets/data/payment-tracking-schema.json": "859c830041436cdc9b67af038146273c5f6f92ade588a3b7e3f70ed282284280",
+    "FIRESTORE_REGRAS_PAGAMENTOS.txt": "2d65377489202b84d39d1b2aa1d36af0773c459a15e3c65e1ddb7b4c84b0201d",
+    "INSTRUCOES_PAINEL_PAGAMENTOS.md": "93bd330a54c4a4cd8a1b64758e75ee6dbd5f8afb7d231ede492c48d8928bc10b",
+    "tests/payment-tracking.test.mjs": "d347a1a7259ffb38f9bf34a723927ea4e6eaadba4ec4c8fa7500752e482a2d81",
+    "package.json": "08a8d0b266634f7552046fe8ca96cc9d8b341d2c6ee97457f95c2e1af7ff46ae"
+  }
+}

@@ -1,15 +1,15 @@
 <!DOCTYPE html>
+
 <html lang="pt-BR">
 <head>
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/css/bootstrap.min.css">
-  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
-  <link rel="stylesheet" type="text/css" href="css/style.css">
-  <title>Painel CABW - Administração do Sistema</title>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1, shrink-to-fit=no" name="viewport"/>
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/css/bootstrap.min.css" rel="stylesheet"/>
+<link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css" rel="stylesheet"/>
+<link href="css/style.css" rel="stylesheet" type="text/css"/>
+<title>Painel CABW - Administração do Sistema</title>
 </head>
 <body class="module-page governance-page admin-page">
-
 <nav class="navbar navbar-expand-lg navbar-dark bg-primary">
 <a class="navbar-brand" href="painel.html">Painel CABW</a>
 <img alt="Brasão da Comissão Aeronáutica Brasileira em Washington" class="header-logo" src="cabw_logo.png"/>
@@ -22,53 +22,49 @@
 <li class="nav-item"><a class="nav-link" href="credito.html">Crédito Disponível</a></li>
 <li class="nav-item"><a class="nav-link" href="contratos.html">Contratos</a></li>
 <li class="nav-item"><a class="nav-link" href="processos.html">Processos de Contratação</a></li>
-<li class="nav-item"><a class="nav-link" href="requisicoes.html">Requisições</a></li>
+<li class="nav-item"><a class="nav-link" href="requisicoes.html">Requisições</a></li><li class="nav-item"><a class="nav-link" href="pagamentos.html">Pagamentos</a></li>
 <li class="nav-item"><a class="nav-link" href="governanca.html">Governança</a></li>
 <li class="nav-item active admin-only" data-admin-only="" hidden=""><a aria-current="page" class="nav-link" href="administracao.html">Administração do Sistema</a></li>
 </ul>
 </div>
 </nav>
-
-<main class="container-fluid mt-4 governance-menu-page admin-menu-page" aria-label="Administração do Sistema">
-  <header class="governance-page-header governance-page-header--wide admin-hero-header">
-    <div>
-      <span class="governance-eyebrow">Controle de acesso e auditoria</span>
-      <h1>Administração do Sistema</h1>
-      <p>Gerencie usuários cadastrados no Firebase/Firestore e acompanhe o histórico de acesso ao sistema e aos painéis disponíveis.</p>
-    </div>
-    <div class="governance-source-card" aria-label="Resumo da administração do sistema">
-      <span>Usuários</span>
-      <strong data-admin-kpi="users">0</strong>
-      <small><span data-admin-kpi="logs">0</span> registro(s) de acesso</small>
-    </div>
-  </header>
-
-  <section class="admin-kpi-strip" aria-label="Resumo do sistema">
-    <article><span>Usuário atual</span><strong data-admin-kpi="current-user">-</strong></article>
-    <article><span>Último acesso registrado</span><strong data-admin-kpi="last-access">-</strong></article>
-  </section>
-
-  <section class="governance-menu-grid admin-menu-grid" aria-label="Painéis de Administração do Sistema">
-    <a href="admin-usuarios.html" class="home-card governance-menu-card admin-menu-card" aria-label="Acessar Usuários Cadastrados">
-      <span class="governance-menu-card__icon" aria-hidden="true"><i class="bi bi-people"></i></span>
-      <h2>Usuários Cadastrados</h2>
-      <span class="home-card__rule" aria-hidden="true"></span>
-      <p>Consulte os nomes e e-mails dos usuários registrados no Firebase/Firestore.</p>
-      <span class="home-card__button">Acessar Painel</span>
-    </a>
-
-    <a href="admin-historico.html" class="home-card governance-menu-card admin-menu-card" aria-label="Acessar Histórico de Acesso">
-      <span class="governance-menu-card__icon" aria-hidden="true"><i class="bi bi-clock-history"></i></span>
-      <h2>Histórico de Acesso</h2>
-      <span class="home-card__rule" aria-hidden="true"></span>
-      <p>Acompanhe os registros de login, criação de conta, saída e acesso aos painéis disponíveis no sistema.</p>
-      <span class="home-card__button">Acessar Painel</span>
-    </a>
-  </section>
+<main aria-label="Administração do Sistema" class="container-fluid mt-4 governance-menu-page admin-menu-page">
+<header class="governance-page-header governance-page-header--wide admin-hero-header">
+<div>
+<span class="governance-eyebrow">Controle de acesso e auditoria</span>
+<h1>Administração do Sistema</h1>
+<p>Gerencie usuários cadastrados no Firebase/Firestore e acompanhe o histórico de acesso ao sistema e aos painéis disponíveis.</p>
+</div>
+<div aria-label="Resumo da administração do sistema" class="governance-source-card">
+<span>Usuários</span>
+<strong data-admin-kpi="users">0</strong>
+<small><span data-admin-kpi="logs">0</span> registro(s) de acesso</small>
+</div>
+</header>
+<section aria-label="Resumo do sistema" class="admin-kpi-strip">
+<article><span>Usuário atual</span><strong data-admin-kpi="current-user">-</strong></article>
+<article><span>Último acesso registrado</span><strong data-admin-kpi="last-access">-</strong></article>
+</section>
+<section aria-label="Painéis de Administração do Sistema" class="governance-menu-grid admin-menu-grid">
+<a aria-label="Acessar Usuários Cadastrados" class="home-card governance-menu-card admin-menu-card" href="admin-usuarios.html">
+<span aria-hidden="true" class="governance-menu-card__icon"><i class="bi bi-people"></i></span>
+<h2>Usuários Cadastrados</h2>
+<span aria-hidden="true" class="home-card__rule"></span>
+<p>Consulte os nomes e e-mails dos usuários registrados no Firebase/Firestore.</p>
+<span class="home-card__button">Acessar Painel</span>
+</a>
+<a aria-label="Acessar Histórico de Acesso" class="home-card governance-menu-card admin-menu-card" href="admin-historico.html">
+<span aria-hidden="true" class="governance-menu-card__icon"><i class="bi bi-clock-history"></i></span>
+<h2>Histórico de Acesso</h2>
+<span aria-hidden="true" class="home-card__rule"></span>
+<p>Acompanhe os registros de login, criação de conta, saída e acesso aos painéis disponíveis no sistema.</p>
+<span class="home-card__button">Acessar Painel</span>
+</a>
+</section>
 </main>
 <script src="https://code.jquery.com/jquery-3.6.0.slim.min.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/js/bootstrap.bundle.min.js"></script>
-<script type="module" src="assets/js/auth.js"></script>
-<script type="module" src="assets/js/admin-system.js"></script>
+<script src="assets/js/auth.js" type="module"></script>
+<script src="assets/js/admin-system.js" type="module"></script>
 </body>
 </html>
