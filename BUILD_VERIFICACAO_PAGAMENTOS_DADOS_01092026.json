@@ -1,0 +1,75 @@
+{
+  "build": "20260901-payments-data-r1",
+  "source": {
+    "sourceFileName": "pagamentos.html",
+    "sourceFileSha256": "87f6f6bfd92347a5d4db3b30ce213d60f8479e9aa1b34f9641f5fb065ae9cb8e",
+    "sourceTitle": "Pagamentos - CABW",
+    "sourceSubtitle": "Valores consolidados por favorecido, Plano Interno (PI) e Ação de Governo.",
+    "incorporatedAt": "2026-09-01",
+    "accountingReferenceDate": null,
+    "accountingReferenceNote": "O arquivo de origem não informa data de posição contábil.",
+    "currency": null,
+    "currencyNote": "A moeda não é informada no arquivo de origem; os valores são exibidos sem símbolo monetário.",
+    "recordCount": 756,
+    "distinctNes": 617,
+    "distinctFavoredNames": 143,
+    "distinctFavoredCodeNamePairs": 151,
+    "distinctPis": 49,
+    "distinctActions": 16,
+    "zeroValueRows": 104,
+    "positiveValueRows": 652,
+    "negativeValueRows": 0,
+    "exactDuplicateRows": 0,
+    "totalValue": 34747706.13,
+    "fields": [
+      "ne",
+      "favCod",
+      "fav",
+      "acaoCod",
+      "acao",
+      "piCod",
+      "pi",
+      "valor"
+    ],
+    "sourcePreservationPolicy": "Os códigos, nomes e descrições foram preservados exatamente conforme o arquivo enviado, sem correções silenciosas."
+  },
+  "checks": {
+    "baseZipExists": true,
+    "sourceFileExists": true,
+    "recordCountIs756": true,
+    "totalValueMatches": true,
+    "distinctNesIs617": true,
+    "distinctFavoredNamesIs143": true,
+    "distinctPisIs49": true,
+    "distinctActionsIs16": true,
+    "zeroRowsIs104": true,
+    "negativeRowsIsZero": true,
+    "exactDuplicatesIsZero": true,
+    "credit01092026Preserved": true,
+    "repairPag27082026Preserved": true,
+    "paymentMenuPreserved": true,
+    "paymentsPageHasConsolidatedSection": true,
+    "paymentsPageHasOperationalSection": true,
+    "homeCardUpdated": true
+  },
+  "npmCheck": {
+    "returncode": 0,
+    "stdout": "\n> check\n> node --check assets/js/repair-import-core.js && node --check assets/js/repair-processes-panel.js && node --check assets/js/payment-tracking-core.js && node --check assets/js/payment-tracking-panel.js && node --check assets/js/payment-execution-panel.js\n\n",
+    "stderr": ""
+  },
+  "npmTest": {
+    "returncode": 0,
+    "stdout": "t'\n  ...\n# Subtest: TDR com none ou data é entregue\nok 23 - TDR com none ou data é entregue\n  ---\n  duration_ms: 0.195806\n  type: 'test'\n  ...\n# Subtest: TDR vencido com N vazia é atrasado\nok 24 - TDR vencido com N vazia é atrasado\n  ---\n  duration_ms: 0.173132\n  type: 'test'\n  ...\n# Subtest: situação documental segue O e P\nok 25 - situação documental segue O e P\n  ---\n  duration_ms: 0.178039\n  type: 'test'\n  ...\n# Subtest: dez Status Reais oficiais estão disponíveis no filtro\nok 26 - dez Status Reais oficiais estão disponíveis no filtro\n  ---\n  duration_ms: 0.122475\n  type: 'test'\n  ...\n# Subtest: seis Etapas Visuais oficiais estão disponíveis no filtro\nok 27 - seis Etapas Visuais oficiais estão disponíveis no filtro\n  ---\n  duration_ms: 0.117738\n  type: 'test'\n  ...\n# Subtest: correlação visual agrupa múltiplos status na mesma localização\nok 28 - correlação visual agrupa múltiplos status na mesma localização\n  ---\n  duration_ms: 0.414165\n  type: 'test'\n  ...\n# Subtest: variações da planilha e nomenclaturas antigas são canonicalizadas\nok 29 - variações da planilha e nomenclaturas antigas são canonicalizadas\n  ---\n  duration_ms: 0.467226\n  type: 'test'\n  ...\n# Subtest: base de status 19/08 possui 113 registros únicos e nenhuma PO 24T\nok 30 - base de status 19/08 possui 113 registros únicos e nenhuma PO 24T\n  ---\n  duration_ms: 0.784425\n  type: 'test'\n  ...\n# Subtest: todos os registros possuem status e etapa conforme as opções oficiais\nok 31 - todos os registros possuem status e etapa conforme as opções oficiais\n  ---\n  duration_ms: 0.135985\n  type: 'test'\n  ...\n# Subtest: contagens de status e etapas correspondem à planilha de atualização\nok 32 - contagens de status e etapas correspondem à planilha de atualização\n  ---\n  duration_ms: 0.081473\n  type: 'test'\n  ...\n# Subtest: todas as 113 linhas mantêm TTE válida e dados anteriores\nok 33 - todas as 113 linhas mantêm TTE válida e dados anteriores\n  ---\n  duration_ms: 0.0661\n  type: 'test'\n  ...\n# Subtest: reimportação idêntica não duplica\nok 34 - reimportação idêntica não duplica\n  ---\n  duration_ms: 3.346997\n  type: 'test'\n  ...\n# Subtest: chave estável é determinística\nok 35 - chave estável é determinística\n  ---\n  duration_ms: 9.763674\n  type: 'test'\n  ...\n# Subtest: retorno sem autorização ou sem prazo não é atrasado\nok 36 - retorno sem autorização ou sem prazo não é atrasado\n  ---\n  duration_ms: 0.215435\n  type: 'test'\n  ...\n# Subtest: retorno efetivo posterior à DPE é classificado como retornado com atraso\nok 37 - retorno efetivo posterior à DPE é classificado como retornado com atraso\n  ---\n  duration_ms: 0.105289\n  type: 'test'\n  ...\n# Subtest: item sem retorno após a DPE está atrasado\nok 38 - item sem retorno após a DPE está atrasado\n  ---\n  duration_ms: 0.157578\n  type: 'test'\n  ...\n# Subtest: retorno igual ou anterior à DPE é classificado no prazo\nok 39 - retorno igual ou anterior à DPE é classificado no prazo\n  ---\n  duration_ms: 0.15893\n  type: 'test'\n  ...\n# Subtest: base de retorno 20/08 aplica correções confirmadas\nok 40 - base de retorno 20/08 aplica correções confirmadas\n  ---\n  duration_ms: 0.190759\n  type: 'test'\n  ...\n# Subtest: contagens de retorno correspondem à planilha atualizada\nok 41 - contagens de retorno correspondem à planilha atualizada\n  ---\n  duration_ms: 0.09313\n  type: 'test'\n  ...\n# Subtest: Parques e OMs são normalizados para as nomenclaturas institucionais\nok 42 - Parques e OMs são normalizados para as nomenclaturas institucionais\n  ---\n  duration_ms: 0.317901\n  type: 'test'\n  ...\n# Subtest: base ativa não contém abreviações antigas no campo Parque / OM\nok 43 - base ativa não contém abreviações antigas no campo Parque / OM\n  ---\n  duration_ms: 0.20516\n  type: 'test'\n  ...\n# Subtest: todos os dez Status Reais oficiais possuem Etapa Visual mapeada\nok 44 - todos os dez Status Reais oficiais possuem Etapa Visual mapeada\n  ---\n  duration_ms: 0.129966\n  type: 'test'\n  ...\n# Subtest: painel separa retornos tardios de itens atrasados ainda sem retorno\nok 45 - painel separa retornos tardios de itens atrasados ainda sem retorno\n  ---\n  duration_ms: 0.729031\n  type: 'test'\n  ...\n# Subtest: metadados registram os dois grupos de atraso separadamente\nok 46 - metadados registram os dois grupos de atraso separadamente\n  ---\n  duration_ms: 0.160993\n  type: 'test'\n  ...\n# Subtest: base ativa possui COTAÇÃO SISCAB e NUP para todos os itens\nok 47 - base ativa possui COTAÇÃO SISCAB e NUP para todos os itens\n  ---\n  duration_ms: 0.243197\n  type: 'test'\n  ...\n# Subtest: correções confirmadas de COTAÇÃO SISCAB e NUP foram aplicadas\nok 48 - correções confirmadas de COTAÇÃO SISCAB e NUP foram aplicadas\n  ---\n  duration_ms: 0.148664\n  type: 'test'\n  ...\n# Subtest: painel inclui filtros e PDF detalhado de COTAÇÃO SISCAB e NUP\nok 49 - painel inclui filtros e PDF detalhado de COTAÇÃO SISCAB e NUP\n  ---\n  duration_ms: 0.615419\n  type: 'test'\n  ...\n1..49\n# tests 49\n# suites 0\n# pass 49\n# fail 0\n# cancelled 0\n# skipped 0\n# todo 0\n# duration_ms 89.664749\n",
+    "stderr": ""
+  },
+  "fileHashes": {
+    "pagamentos.html": "d2f110d83763adf7678784a4c2ad96047fa1cd7854c1216e64e1891ba7b671dc",
+    "painel.html": "813ea51c33e5720e14b829adce5690711d0f01cce8edf6ea157a0d6dc7038e60",
+    "css/style.css": "703690588cd58aeb15682918615dd4fc7ac4266e8bd067f6c3a69d26cf5630f2",
+    "assets/data/payment-execution-current.json": "0ab1505a366a4ee2a8712ef4da66caea22da88f64202da6a0fd80ab109fb1f38",
+    "assets/data/payment-execution-update-audit-01092026.json": "05604b2abfddfc234480544e45169d25479d2086538e2767fa9219baaecb4623",
+    "assets/js/payment-execution-panel.js": "dec2af2a9c43a9b0df6f863d57cbe2c6bcbeda360970e4f94216e7d3b54a4819",
+    "tests/payment-execution.test.mjs": "d9ce84f8f743b2171c02047e77fe962fdfe24bc4f165602284b8dc43b9b56c04",
+    "package.json": "f825c752b512dffbd1cc09662941692db0a1541ce4b1e85547170d4be1f09641"
+  }
+}
