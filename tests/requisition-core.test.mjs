@@ -12,6 +12,7 @@ import {
   groupRequisitions,
   requisitionMatchesCredit,
   crossCreditAndRequisitions,
+  buildDetailedCrossReportData,
 } from "../assets/js/requisition-core.js";
 
 test("buildMatchKey uses exact UG, action, PI and full nature", () => {
@@ -303,3 +304,92 @@ test("current crossing groups the 59 requests by three OMs and uses each OM cred
     2918752.19,
   );
 });
+
+test("detailed report data groups requisitions by OM without repeating credit", () => {
+  const credit = [
+    {
+      ugCode: "120026",
+      om: "PAMA-LS",
+      action: "2048",
+      pi: "PI1",
+      expenseNature: "339030",
+      creditAvailable: 150,
+      ptres: "229177",
+      fundingSource: "1000000000",
+    },
+  ];
+  const requisitions = [
+    {
+      requestNumber: "R1",
+      ugCode: "120026",
+      om: "PAMA-LS",
+      action: "",
+      pi: "",
+      expenseNature: "",
+      requestValue: 70,
+      committedValue: 0,
+    },
+    {
+      requestNumber: "R2",
+      ugCode: "120026",
+      om: "PAMA-LS",
+      action: "",
+      pi: "",
+      expenseNature: "",
+      requestValue: 30,
+      committedValue: 0,
+    },
+  ];
+  const crossing = crossCreditAndRequisitions(credit, requisitions);
+  const report = buildDetailedCrossReportData(crossing, requisitions);
+
+  assert.equal(report.omSummaries.length, 1);
+  assert.equal(report.requests.length, 2);
+  assert.equal(report.totals.requestValue, 100);
+  assert.equal(report.totals.balanceToCommit, 100);
+  assert.equal(report.totals.creditAvailable, 150);
+  assert.equal(report.totals.creditRemaining, 50);
+  assert.equal(report.totals.deficit, 0);
+  assert.equal(report.omSummaries[0].requests.length, 2);
+  assert.equal(report.omSummaries[0].status, "Crédito suficiente");
+});
+
+test("current detailed report contains 59 requisitions organized into three OMs", () => {
+  const requests = JSON.parse(
+    fs.readFileSync(
+      new URL(
+        "../assets/data/requisitions-available-current.json",
+        import.meta.url,
+      ),
+      "utf8",
+    ),
+  );
+  const credit = JSON.parse(
+    fs.readFileSync(
+      new URL(
+        "../assets/data/credit-budget-detailed-current.json",
+        import.meta.url,
+      ),
+      "utf8",
+    ),
+  );
+  const crossing = crossCreditAndRequisitions(
+    credit.groupedByMatchKey,
+    requests.records,
+  );
+  const report = buildDetailedCrossReportData(crossing, requests.records);
+
+  assert.equal(report.omSummaries.length, 3);
+  assert.equal(report.requests.length, 59);
+  assert.equal(report.totals.requestCount, 59);
+  assert.equal(report.totals.requestValue, 834465.59);
+  assert.equal(report.totals.balanceToCommit, 834465.59);
+  assert.equal(report.totals.creditAvailable, 3753217.78);
+  assert.equal(report.totals.creditRemaining, 2918752.19);
+  assert.equal(report.totals.deficit, 0);
+  assert.equal(
+    report.omSummaries.reduce((sum, om) => sum + om.requests.length, 0),
+    59,
+  );
+});
+
