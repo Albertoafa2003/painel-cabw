@@ -1,0 +1,36 @@
+PAINEL CABW — REQUISIÇÕES E DETALHAMENTO DO CRÉDITO PARA EMPENHO
+
+Data do build: 03/09/2026
+Fonte do crédito analítico: CONRAZAO(20260903-153318).TXt
+Posição contábil: 01/09/2026
+
+ALTERAÇÕES:
+1. Menu Requisições transformado em menu interno com dois painéis:
+   - Requisições Disponíveis para Empenho;
+   - Crédito Disponível x Requisições.
+2. Menu Crédito Disponível ampliado para seis painéis, com novo detalhamento por:
+   - OM/UG;
+   - Ação;
+   - PTRES;
+   - Plano Interno — PI;
+   - Natureza de Despesa;
+   - Fonte de Recursos.
+3. Chave oficial do cruzamento:
+   OM/UG + Ação + PI + Natureza de Despesa completa.
+4. Base inicial de requisições mantida vazia, aguardando a planilha anunciada pelo usuário.
+
+DADOS DO CONRAZAO:
+- Lançamentos: 102
+- Chaves orçamentárias agregadas: 87
+- Crédito disponível: US$ 8.420.747,60
+- UGs: 17
+- Ações: 18
+- PIs: 46
+- Naturezas: 7
+
+PUBLICAÇÃO:
+1. Extraia o ZIP.
+2. Envie todo o conteúdo extraído à raiz do repositório.
+3. Confirme a presença de BUILD_VERIFICACAO_REQUISICOES_CREDITO_03092026.json.
+4. Faça o commit e aguarde o GitHub Pages.
+5. Pressione Ctrl + F5.

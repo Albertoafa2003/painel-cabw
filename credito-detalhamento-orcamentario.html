@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1, shrink-to-fit=no" name="viewport"/>
+<title>Painel CABW - Crédito por PI e Natureza</title>
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/css/bootstrap.min.css" rel="stylesheet"/>
+<link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css" rel="stylesheet"/>
+<link href="css/style.css?v=20260903-requisitions-credit-r1" rel="stylesheet" type="text/css"/>
+</head>
+<body class="module-page budget-detail-page">
+<nav class="navbar navbar-expand-lg navbar-dark bg-primary">
+<a class="navbar-brand" href="painel.html">Painel CABW</a>
+<img alt="Brasão da Comissão Aeronáutica Brasileira em Washington" class="header-logo" src="cabw_logo.png"/>
+<button aria-controls="navbarNav" aria-expanded="false" aria-label="Alternar navegação" class="navbar-toggler" data-target="#navbarNav" data-toggle="collapse" type="button"><span class="navbar-toggler-icon"></span></button>
+<div class="collapse navbar-collapse" id="navbarNav"><ul class="navbar-nav mr-auto"><li class="nav-item"><a class="nav-link" href="painel.html">Início</a></li><li class="nav-item active"><a class="nav-link" href="credito.html" aria-current="page">Crédito Disponível</a></li><li class="nav-item"><a class="nav-link" href="contratos.html">Contratos</a></li><li class="nav-item"><a class="nav-link" href="processos.html">Processos de Contratação</a></li><li class="nav-item"><a class="nav-link" href="requisicoes.html">Requisições</a></li><li class="nav-item"><a class="nav-link" href="pagamentos.html">Pagamentos</a></li><li class="nav-item"><a class="nav-link" href="prestacao-contas.html">Prestação de Contas</a></li><li class="nav-item"><a class="nav-link" href="governanca.html">Governança</a></li><li class="nav-item admin-only" data-admin-only="" hidden><a class="nav-link" href="administracao.html">Administração do Sistema</a></li></ul></div>
+</nav>
+<main class="container-fluid mt-4 budget-dashboard" aria-label="Detalhamento do Crédito por PI e Natureza">
+<a class="governance-back-link" href="credito.html"><i class="bi bi-arrow-left"></i> Voltar para Crédito Disponível</a>
+<header class="budget-hero-card">
+<div>
+<span class="governance-eyebrow">Base analítica para empenho e cruzamento</span>
+<h1>Crédito por PI e Natureza de Despesa</h1>
+<p>Detalhamento da posição de 01/09/2026 por OM/UG, Ação, PTRES, Plano Interno, Natureza de Despesa e Fonte de Recursos.</p>
+<div class="budget-source-line"><i class="bi bi-database-check"></i><span id="budgetSource">Carregando fonte...</span></div>
+</div>
+<div class="budget-key-card"><span>Chave de cruzamento</span><strong>OM/UG + Ação + PI + Natureza</strong><small>Código completo da Natureza de Despesa</small></div>
+</header>
+<section class="budget-kpi-grid" aria-label="Indicadores do detalhamento orçamentário">
+<article class="budget-kpi-card budget-kpi-card--primary"><span>Crédito filtrado</span><strong id="creditDetailTotal">US$ 0,00</strong><small>Posição atual</small></article>
+<article class="budget-kpi-card"><span>Chaves orçamentárias</span><strong id="creditDetailKeys">0</strong><small>Combinações para cruzamento</small></article>
+<article class="budget-kpi-card"><span>Organizações Militares</span><strong id="creditDetailOms">0</strong><small>UGs no filtro</small></article>
+<article class="budget-kpi-card"><span>Planos Internos</span><strong id="creditDetailPis">0</strong><small>PIs no filtro</small></article>
+<article class="budget-kpi-card"><span>Naturezas</span><strong id="creditDetailNatures">0</strong><small>Códigos completos</small></article>
+</section>
+<section class="budget-filter-card" aria-label="Filtros do crédito detalhado">
+<div class="budget-section-heading"><div><h2>Filtros orçamentários</h2><p>Refine a consulta sem alterar a chave oficial utilizada no cruzamento.</p></div><div class="budget-actions"><button id="creditDetailClear" class="budget-button budget-button--secondary" type="button"><i class="bi bi-arrow-counterclockwise"></i> Limpar</button><button id="creditDetailCsv" class="budget-button budget-button--secondary" type="button"><i class="bi bi-filetype-csv"></i> CSV</button><button id="creditDetailPdf" class="budget-button budget-button--primary" type="button"><i class="bi bi-filetype-pdf"></i> PDF</button></div></div>
+<div class="budget-filter-grid">
+<label><span>OM / Unidade Gestora</span><select id="creditFilterUg"><option value="">Todas</option></select></label>
+<label><span>Ação</span><select id="creditFilterAction"><option value="">Todas</option></select></label>
+<label><span>Plano Interno — PI</span><select id="creditFilterPi"><option value="">Todos</option></select></label>
+<label><span>Natureza de Despesa</span><select id="creditFilterNature"><option value="">Todas</option></select></label>
+<label><span>PTRES</span><select id="creditFilterPtres"><option value="">Todos</option></select></label>
+<label><span>Fonte</span><select id="creditFilterSource"><option value="">Todas</option></select></label>
+<label class="budget-field--wide"><span>Busca geral</span><input id="creditFilterSearch" type="search" placeholder="UG, OM, Ação, PI, Natureza, PTRES ou Fonte"/></label>
+</div>
+</section>
+<section class="budget-table-card" aria-label="Crédito agrupado pela chave de cruzamento">
+<div class="budget-table-heading"><div><h2>Crédito disponível por chave de empenho</h2><p>Valores agregados sem dupla contagem para uso no cruzamento com as requisições.</p></div><span id="creditGroupedCount" class="budget-badge">0 chaves</span></div>
+<div class="budget-table-scroll"><table class="budget-table"><thead><tr><th>OM / UG</th><th>Ação</th><th>PI</th><th>Natureza</th><th>PTRES</th><th>Fonte</th><th class="text-right">Lanç.</th><th class="text-right">Crédito disponível</th></tr></thead><tbody id="creditGroupedBody"></tbody></table></div>
+</section>
+<section class="budget-table-card" aria-label="Lançamentos do CONRAZAO">
+<div class="budget-table-heading"><div><h2>Lançamentos analíticos do CONRAZÃO</h2><p>Rastreabilidade de cada conta corrente que compõe os agrupamentos acima.</p></div><span id="creditLineCount" class="budget-badge">0 lançamentos</span></div>
+<div class="budget-table-scroll budget-table-scroll--tall"><table class="budget-table"><thead><tr><th>Linha</th><th>OM / UG</th><th>Ação</th><th>PTRES</th><th>PI</th><th>Natureza</th><th>Fonte</th><th class="text-right">Crédito disponível</th></tr></thead><tbody id="creditLinesBody"></tbody></table></div>
+</section>
+<p class="budget-live-status" id="creditDetailStatus" aria-live="polite"></p>
+</main>
+<script src="https://code.jquery.com/jquery-3.6.0.slim.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/js/bootstrap.bundle.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf-autotable/3.8.3/jspdf.plugin.autotable.min.js"></script>
+<script src="assets/js/credit-budget-detail.js?v=20260903-requisitions-credit-r1" type="module"></script>
+<script src="assets/js/auth.js" type="module"></script>
+</body>
+</html>

@@ -8,24 +8,6 @@
 <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css" rel="stylesheet"/>
 <link href="css/style.css?v=20260903-accountability-r1" rel="stylesheet" type="text/css"/>
 <title>Painel CABW - Pagamentos</title>
-
-<style>
-.pay-modern-analytics{margin-top:1.5rem}
-.pay-modern-heading{display:flex;justify-content:space-between;gap:1rem;align-items:flex-end;margin-bottom:1rem}
-.pay-modern-heading h2{margin-bottom:.25rem}.pay-modern-heading p{margin:0;color:#6c757d}
-.pay-modern-badge{display:inline-flex;align-items:center;gap:.4rem;padding:.45rem .75rem;border-radius:999px;background:rgba(0,64,133,.08);color:#004085;font-size:.82rem;font-weight:700;white-space:nowrap}
-.pay-modern-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:1rem}
-.pay-modern-chart-card{border:0;border-radius:18px;box-shadow:0 8px 28px rgba(18,38,63,.08);overflow:hidden;background:#fff}
-.pay-modern-chart-card--wide{grid-column:1/-1}
-.pay-modern-card-head{display:flex;justify-content:space-between;gap:1rem;align-items:flex-start;padding:1.1rem 1.2rem .35rem}
-.pay-modern-card-head h3{margin:0 0 .2rem;font-size:1rem;font-weight:700;color:#16324f}
-.pay-modern-card-head p{margin:0;color:#6c757d;font-size:.86rem}
-.pay-modern-card-head i{color:#004085;font-size:1.2rem}
-.pay-modern-chart{min-height:320px;padding:0 .35rem .35rem}
-.pay-modern-note{margin-top:.75rem;padding:.75rem 1rem;border-radius:12px;background:#f8fafc;color:#61758a;font-size:.83rem}
-@media(max-width:991.98px){.pay-modern-grid{grid-template-columns:1fr}.pay-modern-chart-card--wide{grid-column:auto}.pay-modern-heading{align-items:flex-start;flex-direction:column}}
-</style>
-
 </head>
 <body class="module-page governance-page governance-detail-page payment-page">
 <nav class="navbar navbar-expand-lg navbar-dark bg-primary">
@@ -115,26 +97,7 @@
 <article class="pay-card pay-exec-chart-card"><div class="pay-exec-card-title"><div><h3>Valores por favorecido</h3><p>Os 15 maiores favorecidos no filtro atual.</p></div><i class="bi bi-buildings"></i></div><div class="pay-exec-chart" id="payExecFavoredChart"></div></article>
 <article class="pay-card pay-exec-chart-card"><div class="pay-exec-card-title"><div><h3>Valores por Plano Interno</h3><p>Os 15 PIs de maior valor no filtro atual.</p></div><i class="bi bi-diagram-3"></i></div><div class="pay-exec-chart" id="payExecPiChart"></div></article>
 <article class="pay-card pay-exec-chart-card pay-exec-chart-card--wide"><div class="pay-exec-card-title"><div><h3>Valores por Ação de Governo</h3><p>Distribuição integral das ações existentes na consulta.</p></div><i class="bi bi-bar-chart-steps"></i></div><div class="pay-exec-chart pay-exec-chart--action" id="payExecActionChart"></div></article>
-
 </div>
-<section aria-label="Análises gráficas avançadas da execução consolidada" class="pay-modern-analytics">
-  <div class="pay-modern-heading">
-    <div><span class="governance-eyebrow">Análise avançada</span><h2>Concentração dos pagamentos</h2>
-    <p>Curvas acumuladas recalculadas automaticamente conforme os filtros.</p></div>
-    <span class="pay-modern-badge"><i class="bi bi-activity"></i> visualização dinâmica</span>
-  </div>
-  <div class="pay-modern-grid">
-    <article class="pay-modern-chart-card">
-      <div class="pay-modern-card-head"><div><h3>Concentração acumulada por favorecido</h3><p>Participação acumulada dos maiores favorecidos.</p></div><i class="bi bi-graph-up-arrow"></i></div>
-      <div class="pay-modern-chart" id="payExecFavoredCumulativeChart"></div>
-    </article>
-    <article class="pay-modern-chart-card">
-      <div class="pay-modern-card-head"><div><h3>Concentração acumulada por PI</h3><p>Participação acumulada dos Planos Internos de maior valor.</p></div><i class="bi bi-bezier2"></i></div>
-      <div class="pay-modern-chart" id="payExecPiCumulativeChart"></div>
-    </article>
-  </div>
-  <div class="pay-modern-note"><i class="bi bi-info-circle"></i> A base consolidada não informa data de posição; por isso não é criada uma série temporal artificial nessa seção.</div>
-</section>
 <article class="pay-card pay-exec-table-card">
 <div class="pay-detail-header">
 <div><span class="governance-eyebrow">Base detalhada incorporada</span><h2>Detalhamento dos lançamentos</h2><p id="payExecRowsInfo">Aguardando carregamento...</p></div>
@@ -312,20 +275,6 @@
 </div>
 </article>
 </section>
-
-<section aria-label="Evolução temporal dos pagamentos operacionais" class="pay-modern-analytics">
-  <div class="pay-modern-heading">
-    <div><span class="governance-eyebrow">Evolução temporal</span><h2>Pagamentos e vencimentos ao longo do tempo</h2>
-    <p>Séries mensais produzidas a partir dos registros operacionais exibidos.</p></div>
-    <span class="pay-modern-badge"><i class="bi bi-calendar3"></i> visão mensal</span>
-  </div>
-  <div class="pay-modern-grid">
-    <article class="pay-modern-chart-card pay-modern-chart-card--wide">
-      <div class="pay-modern-card-head"><div><h3>Movimento mensal de faturas</h3><p>Pagamentos efetivados e vencimentos registrados por mês.</p></div><i class="bi bi-graph-up"></i></div>
-      <div class="pay-modern-chart" id="payOperationalMonthlyChart"></div>
-    </article>
-  </div>
-</section>
 <section aria-label="Detalhamento dos pagamentos" class="pay-card pay-detail-card">
 <div class="pay-detail-header">
 <div>
@@ -409,72 +358,5 @@
 <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf-autotable/3.8.3/jspdf.plugin.autotable.min.js"></script>
 <script src="https://cdn.plot.ly/plotly-2.35.2.min.js"></script><script src="assets/js/payment-execution-panel.js?v=20260901-payments-data-final-r2"></script><script src="assets/js/auth.js" type="module"></script>
 <script src="assets/js/payment-tracking-panel.js?v=20260901-payments-data-final-r2" type="module"></script>
-
-<script>
-(function(){
-"use strict";
-const config={responsive:true,displaylogo:false,modeBarButtonsToRemove:["lasso2d","select2d","autoScale2d"]};
-const layoutBase={paper_bgcolor:"rgba(0,0,0,0)",plot_bgcolor:"rgba(0,0,0,0)",margin:{l:58,r:24,t:24,b:58},font:{family:"Arial, sans-serif",color:"#31485d",size:12},hoverlabel:{bgcolor:"#16324f",font:{color:"#fff"}},xaxis:{gridcolor:"rgba(100,116,139,.12)",zeroline:false,automargin:true},yaxis:{gridcolor:"rgba(100,116,139,.12)",zeroline:false,automargin:true},legend:{orientation:"h",x:0,y:1.12}};
-
-function num(v){
- let s=String(v||"").trim().replace(/\s/g,"").replace(/[^\d,.\-]/g,"");
- if(s.includes(",")&&s.includes(".")){s=s.lastIndexOf(",")>s.lastIndexOf(".")?s.replace(/\./g,"").replace(",","."):s.replace(/,/g,"");}
- else if(s.includes(",")){s=s.replace(/\./g,"").replace(",",".");}
- const n=Number(s); return Number.isFinite(n)?n:0;
-}
-function aggregate(idx){
- const m=new Map();
- document.querySelectorAll("#payExecDetailBody tr").forEach(tr=>{
-   const td=tr.querySelectorAll("td"); if(td.length<5)return;
-   const k=(td[idx]?.textContent||"").trim()||"Não informado";
-   m.set(k,(m.get(k)||0)+num(td[4]?.textContent));
- });
- return Array.from(m,([label,value])=>({label,value})).sort((a,b)=>b.value-a.value);
-}
-function cumulative(targetId,items,xTitle){
- const el=document.getElementById(targetId); if(!el||typeof Plotly==="undefined")return;
- if(!items.length){Plotly.react(el,[],{...layoutBase,annotations:[{text:"Sem dados para a consulta atual",showarrow:false,font:{size:14,color:"#7a8ea3"}}]},config);return;}
- const total=items.reduce((s,d)=>s+d.value,0), top=items.slice(0,25); let acc=0;
- const x=top.map((_,i)=>i+1), y=top.map(d=>{acc+=d.value;return total?(acc/total)*100:0;});
- Plotly.react(el,[{x,y,type:"scatter",mode:"lines+markers",fill:"tozeroy",line:{width:3,shape:"spline"},marker:{size:7},text:top.map(d=>d.label),customdata:top.map(d=>d.value),hovertemplate:"<b>%{text}</b><br>Posição: %{x}<br>Acumulado: %{y:.1f}%<br>Valor do item: %{customdata:,.2f}<extra></extra>"}],
- {...layoutBase,xaxis:{...layoutBase.xaxis,title:{text:xTitle},dtick:1},yaxis:{...layoutBase.yaxis,title:{text:"% acumulado do valor"},range:[0,105],ticksuffix:"%"},shapes:[{type:"line",x0:1,x1:Math.max(1,x.length),y0:80,y1:80,line:{dash:"dot",width:1}}]},config);
-}
-function parseDate(s){
- s=String(s||"").trim(); if(!s||s==="-"||s==="—")return null;
- let m=s.match(/^(\d{2})\/(\d{2})\/(\d{4})/); if(m)return new Date(+m[3],+m[2]-1,+m[1]);
- m=s.match(/^(\d{4})-(\d{2})-(\d{2})/); if(m)return new Date(+m[1],+m[2]-1,+m[3]);
- const d=new Date(s); return Number.isNaN(d.getTime())?null:d;
-}
-const mkey=d=>`${d.getFullYear()}-${String(d.getMonth()+1).padStart(2,"0")}`;
-function mlabel(k){const [y,m]=k.split("-").map(Number);return new Date(y,m-1,1).toLocaleDateString("pt-BR",{month:"short",year:"2-digit"}).replace(".","");}
-function monthly(){
- const el=document.getElementById("payOperationalMonthlyChart"); if(!el||typeof Plotly==="undefined")return;
- const paid=new Map(), due=new Map();
- document.querySelectorAll("#payDetailBody tr").forEach(tr=>{
-   const td=tr.querySelectorAll("td"); if(td.length<14)return;
-   const d1=parseDate(td[10]?.textContent), d2=parseDate(td[12]?.textContent);
-   if(d1){const k=mkey(d1);due.set(k,(due.get(k)||0)+1);}
-   if(d2){const k=mkey(d2);paid.set(k,(paid.get(k)||0)+1);}
- });
- const keys=Array.from(new Set([...paid.keys(),...due.keys()])).sort();
- if(!keys.length){Plotly.react(el,[],{...layoutBase,annotations:[{text:"A série mensal aparecerá quando houver datas operacionais na consulta.",showarrow:false,font:{size:14,color:"#7a8ea3"}}]},config);return;}
- const labels=keys.map(mlabel);
- Plotly.react(el,[
-   {x:labels,y:keys.map(k=>paid.get(k)||0),type:"scatter",mode:"lines+markers",name:"Pagamentos efetivados",line:{width:3,shape:"spline"},marker:{size:7},hovertemplate:"<b>%{x}</b><br>Pagamentos: %{y}<extra></extra>"},
-   {x:labels,y:keys.map(k=>due.get(k)||0),type:"scatter",mode:"lines+markers",name:"Vencimentos",line:{width:2,dash:"dot",shape:"spline"},marker:{size:6},hovertemplate:"<b>%{x}</b><br>Vencimentos: %{y}<extra></extra>"}
- ],{...layoutBase,xaxis:{...layoutBase.xaxis,title:{text:"Mês"}},yaxis:{...layoutBase.yaxis,title:{text:"Quantidade de faturas"},rangemode:"tozero",dtick:1}},config);
-}
-function redrawExec(){cumulative("payExecFavoredCumulativeChart",aggregate(1),"Maiores favorecidos — posição no ranking");cumulative("payExecPiCumulativeChart",aggregate(3),"Maiores PIs — posição no ranking");}
-function debounce(fn,delay){let t;return()=>{clearTimeout(t);t=setTimeout(fn,delay);};}
-function init(){
- const e=document.getElementById("payExecDetailBody"),o=document.getElementById("payDetailBody");
- if(e)new MutationObserver(debounce(redrawExec,120)).observe(e,{childList:true,subtree:true,characterData:true});
- if(o)new MutationObserver(debounce(monthly,120)).observe(o,{childList:true,subtree:true,characterData:true});
- redrawExec();monthly();setTimeout(redrawExec,900);setTimeout(monthly,900);
-}
-document.readyState==="loading"?document.addEventListener("DOMContentLoaded",init):init();
-})();
-</script>
-
 </body>
 </html>
