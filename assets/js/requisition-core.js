@@ -437,3 +437,190 @@ export function crossCreditAndRequisitions(
     };
   });
 }
+
+/**
+ * Builds the non-overlapping data structure used by the detailed PDF report.
+ * Credit, remaining balance and deficit stay at budget-group / OM level; the
+ * individual requisitions are listed beneath the corresponding OM without
+ * repeating the same credit as if it belonged independently to each BAC#.
+ */
+export function buildDetailedCrossReportData(
+  crossRows = [],
+  requisitionRecords = [],
+) {
+  const rows = Array.isArray(crossRows) ? crossRows : [];
+  const normalizedRequests = (Array.isArray(requisitionRecords)
+    ? requisitionRecords
+    : []
+  ).map(normalizeRequisition);
+
+  const rowByRequestNumber = new Map();
+  rows.forEach((row) => {
+    (Array.isArray(row.requestNumbers) ? row.requestNumbers : []).forEach(
+      (requestNumber) => {
+        const normalizedNumber = normalizeUpper(requestNumber);
+        if (normalizedNumber) rowByRequestNumber.set(normalizedNumber, row);
+      },
+    );
+  });
+
+  const omMap = new Map();
+  const ensureOm = (row) => {
+    const key = normalizeUgCode(row?.ugCode) || normalizeText(row?.om) || "SEM-OM";
+    if (!omMap.has(key)) {
+      omMap.set(key, {
+        key,
+        ugCode: normalizeUgCode(row?.ugCode),
+        om: normalizeText(row?.om),
+        ugName: normalizeText(row?.ugName),
+        requestCount: 0,
+        requestValue: 0,
+        committedValue: 0,
+        balanceToCommit: 0,
+        creditAvailable: 0,
+        creditRemaining: 0,
+        deficit: 0,
+        coveragePercent: 0,
+        status: "Crédito suficiente",
+        statuses: new Set(),
+        groups: [],
+        requests: [],
+      });
+    }
+    return omMap.get(key);
+  };
+
+  rows.forEach((row) => {
+    const om = ensureOm(row);
+    om.requestCount += Number(row.requestCount || 0);
+    om.requestValue = toMoney(om.requestValue + Number(row.requestValue || 0));
+    om.committedValue = toMoney(
+      om.committedValue + Number(row.committedValue || 0),
+    );
+    om.balanceToCommit = toMoney(
+      om.balanceToCommit + Number(row.balanceToCommit || 0),
+    );
+    om.creditAvailable = toMoney(
+      om.creditAvailable + Number(row.creditAvailable || 0),
+    );
+    om.creditRemaining = toMoney(
+      om.creditRemaining + Number(row.creditRemaining || 0),
+    );
+    om.deficit = toMoney(om.deficit + Number(row.deficit || 0));
+    if (row.status) om.statuses.add(row.status);
+    om.groups.push(row);
+  });
+
+  const detailedRequests = normalizedRequests
+    .filter((record) => rowByRequestNumber.has(record.requestNumber))
+    .map((record) => {
+      const group = rowByRequestNumber.get(record.requestNumber);
+      const om = ensureOm(group);
+      const detail = {
+        ...record,
+        crossMatchKey: group.matchKey,
+        crossStatus: group.status,
+        groupCreditAvailable: toMoney(group.creditAvailable),
+        groupCreditRemaining: toMoney(group.creditRemaining),
+        groupDeficit: toMoney(group.deficit),
+        groupCoveragePercent: Number(group.coveragePercent || 0),
+      };
+      om.requests.push(detail);
+      return detail;
+    });
+
+  const aggregateStatus = (om) => {
+    if (om.statuses.has("Sem correspondência orçamentária")) {
+      return "Sem correspondência orçamentária";
+    }
+    if (om.deficit > 0 && om.creditAvailable <= 0) {
+      return "Sem crédito compatível";
+    }
+    if (om.deficit > 0) return "Crédito insuficiente";
+    return "Crédito suficiente";
+  };
+
+  const omSummaries = Array.from(omMap.values())
+    .map((om) => ({
+      ...om,
+      coveragePercent:
+        om.balanceToCommit > 0
+          ? (om.creditAvailable / om.balanceToCommit) * 100
+          : 100,
+      status: aggregateStatus(om),
+      statuses: Array.from(om.statuses).sort(),
+      groups: [...om.groups].sort(
+        (a, b) =>
+          String(a.action).localeCompare(String(b.action), "pt-BR", {
+            numeric: true,
+          }) ||
+          String(a.pi).localeCompare(String(b.pi), "pt-BR", {
+            numeric: true,
+          }) ||
+          String(a.expenseNature).localeCompare(
+            String(b.expenseNature),
+            "pt-BR",
+            { numeric: true },
+          ),
+      ),
+      requests: [...om.requests].sort((a, b) =>
+        a.requestNumber.localeCompare(b.requestNumber, "pt-BR", {
+          numeric: true,
+        }),
+      ),
+    }))
+    .sort(
+      (a, b) =>
+        String(a.om || a.ugCode).localeCompare(
+          String(b.om || b.ugCode),
+          "pt-BR",
+          { numeric: true },
+        ),
+    );
+
+  const totals = rows.reduce(
+    (accumulator, row) => {
+      accumulator.requestCount += Number(row.requestCount || 0);
+      accumulator.requestValue = toMoney(
+        accumulator.requestValue + Number(row.requestValue || 0),
+      );
+      accumulator.committedValue = toMoney(
+        accumulator.committedValue + Number(row.committedValue || 0),
+      );
+      accumulator.balanceToCommit = toMoney(
+        accumulator.balanceToCommit + Number(row.balanceToCommit || 0),
+      );
+      accumulator.creditAvailable = toMoney(
+        accumulator.creditAvailable + Number(row.creditAvailable || 0),
+      );
+      accumulator.creditRemaining = toMoney(
+        accumulator.creditRemaining + Number(row.creditRemaining || 0),
+      );
+      accumulator.deficit = toMoney(
+        accumulator.deficit + Number(row.deficit || 0),
+      );
+      return accumulator;
+    },
+    {
+      requestCount: 0,
+      requestValue: 0,
+      committedValue: 0,
+      balanceToCommit: 0,
+      creditAvailable: 0,
+      creditRemaining: 0,
+      deficit: 0,
+    },
+  );
+  totals.coveragePercent =
+    totals.balanceToCommit > 0
+      ? (totals.creditAvailable / totals.balanceToCommit) * 100
+      : 100;
+
+  return {
+    totals,
+    omSummaries,
+    groups: rows,
+    requests: detailedRequests,
+  };
+}
+

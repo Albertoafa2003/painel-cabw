@@ -1,13 +1,14 @@
 import {
   ANY,
+  buildDetailedCrossReportData,
   criterionLabel,
   crossCreditAndRequisitions,
-} from "./requisition-core.js";
+} from "./requisition-core.js?v=20260903-cross-detailed-r3";
 
 const CREDIT_URL =
-  "assets/data/credit-budget-detailed-current.json?v=20260903-requisitions-data-r2";
+  "assets/data/credit-budget-detailed-current.json?v=20260903-cross-detailed-r3";
 const REQUEST_URL =
-  "assets/data/requisitions-available-current.json?v=20260903-requisitions-data-r2";
+  "assets/data/requisitions-available-current.json?v=20260903-cross-detailed-r3";
 
 const state = {
   credit: null,
@@ -66,6 +67,53 @@ function addOptions(select, values, labeler = (value) => value) {
     option.textContent = labeler(value);
     select.appendChild(option);
   });
+}
+
+
+
+function formatDate(value) {
+  if (!value) return "Não informada";
+  const parsed = new Date(`${value}T12:00:00`);
+  if (Number.isNaN(parsed.getTime())) return String(value);
+  return parsed.toLocaleDateString("pt-BR");
+}
+
+function percent(value) {
+  return `${Number(value || 0).toLocaleString("pt-BR", {
+    minimumFractionDigits: 1,
+    maximumFractionDigits: 1,
+  })}%`;
+}
+
+function listText(values, fallback = "Não informado") {
+  const list = Array.isArray(values) ? values.filter(Boolean) : [];
+  return list.length ? list.join(", ") : fallback;
+}
+
+function selectedOptionText(select) {
+  if (!select || !select.value) return "";
+  return select.options[select.selectedIndex]?.textContent?.trim() || select.value;
+}
+
+function activeFilterDescriptions() {
+  const descriptions = [
+    ["OM / UG", selectedOptionText(els.crossFilterUg)],
+    ["Ação", selectedOptionText(els.crossFilterAction)],
+    ["PI", selectedOptionText(els.crossFilterPi)],
+    ["Natureza", selectedOptionText(els.crossFilterNature)],
+    ["Situação", selectedOptionText(els.crossFilterStatus)],
+  ]
+    .filter(([, value]) => value)
+    .map(([label, value]) => `${label}: ${value}`);
+
+  const search = String(els.crossFilterSearch?.value || "").trim();
+  if (search) descriptions.push(`Busca geral: ${search}`);
+  return descriptions.length ? descriptions : ["Nenhum filtro adicional aplicado"];
+}
+
+function requestSituation(request) {
+  const operational = request.status || "Disponível para empenho";
+  return `${operational} · ${request.crossStatus}`;
 }
 
 function criterionHtml(value, kind) {
@@ -311,59 +359,370 @@ function clear() {
 function exportPdf() {
   if (!window.jspdf?.jsPDF || !state.filtered.length) return;
 
+  const report = buildDetailedCrossReportData(
+    state.filtered,
+    state.requests?.records || [],
+  );
+  if (!report.requests.length) return;
+
   const doc = new window.jspdf.jsPDF({
     orientation: "landscape",
     unit: "mm",
     format: "a3",
   });
+  doc.setProperties({
+    title: "Relatório Detalhado — Crédito Disponível x Requisições",
+    subject: "Compatibilidade orçamentária das requisições disponíveis para empenho",
+    author: "Painel CABW",
+    creator: "Painel CABW",
+  });
 
+  const marginX = 14;
+  const pageWidth = doc.internal.pageSize.getWidth();
+  const pageHeight = doc.internal.pageSize.getHeight();
+  const usableWidth = pageWidth - marginX * 2;
+  const generatedAt = new Date().toLocaleString("pt-BR");
+  const filters = activeFilterDescriptions().join(" · ");
+  const creditPosition = state.credit?.metadata?.position || "Não informada";
+  const requestPosition = state.requests?.metadata?.position || "Não informada";
+
+  const tableBase = {
+    theme: "grid",
+    margin: { left: marginX, right: marginX, top: 14, bottom: 14 },
+    styles: {
+      fontSize: 7,
+      cellPadding: 1.6,
+      overflow: "linebreak",
+      valign: "middle",
+      lineColor: [205, 214, 226],
+      lineWidth: 0.15,
+    },
+    headStyles: {
+      fillColor: [6, 46, 102],
+      textColor: [255, 255, 255],
+      fontStyle: "bold",
+      halign: "center",
+    },
+    alternateRowStyles: { fillColor: [247, 249, 252] },
+  };
+
+  let y = 16;
+  doc.setTextColor(6, 46, 102);
   doc.setFontSize(18);
-  doc.text("Crédito Disponível x Requisições", 14, 16);
+  doc.text("Relatório Detalhado — Crédito Disponível x Requisições", marginX, y);
+  y += 7;
+
+  doc.setTextColor(55, 70, 92);
   doc.setFontSize(9);
   doc.text(
-    "OM/UG é obrigatória. Ação, PI e Natureza em branco abrangem qualquer classificação da OM, sem dupla contagem do crédito.",
-    14,
-    23,
+    `Posição do crédito: ${creditPosition} · Posição das requisições: ${requestPosition}`,
+    marginX,
+    y,
   );
+  y += 5;
+
+  const methodology =
+    "Metodologia: a OM/UG é obrigatória; Ação, PI e Natureza em branco abrangem " +
+    "qualquer classificação da respectiva OM. O crédito é consumido uma única vez. " +
+    "Por esse motivo, crédito compatível, valor remanescente e déficit são apresentados " +
+    "no nível da OM e do agrupamento orçamentário, enquanto cada BAC# é detalhado " +
+    "individualmente com seu valor e saldo a empenhar.";
+  const methodologyLines = doc.splitTextToSize(methodology, usableWidth);
+  doc.text(methodologyLines, marginX, y);
+  y += methodologyLines.length * 4 + 2;
+
+  const filterLines = doc.splitTextToSize(`Filtros: ${filters}`, usableWidth);
+  doc.text(filterLines, marginX, y);
+  y += filterLines.length * 4 + 3;
 
   doc.autoTable({
-    startY: 29,
-    head: [
+    ...tableBase,
+    startY: y,
+    head: [["Indicador", "Valor", "Indicador", "Valor"]],
+    body: [
       [
-        "OM/UG",
-        "Ação",
-        "PI",
-        "Natureza",
-        "Req.",
+        "Organizações Militares",
+        String(report.omSummaries.length),
+        "Requisições",
+        String(report.totals.requestCount),
+      ],
+      [
+        "Valor das requisições",
+        money(report.totals.requestValue),
+        "Valor já empenhado",
+        money(report.totals.committedValue),
+      ],
+      [
+        "Saldo a empenhar",
+        money(report.totals.balanceToCommit),
+        "Crédito compatível",
+        money(report.totals.creditAvailable),
+      ],
+      [
+        "Crédito remanescente",
+        money(report.totals.creditRemaining),
+        "Déficit",
+        money(report.totals.deficit),
+      ],
+      [
+        "Cobertura global",
+        percent(report.totals.coveragePercent),
+        "Grupos orçamentários",
+        String(report.groups.length),
+      ],
+    ],
+    columnStyles: {
+      0: { fontStyle: "bold", cellWidth: 55 },
+      1: { halign: "right", cellWidth: 45 },
+      2: { fontStyle: "bold", cellWidth: 55 },
+      3: { halign: "right", cellWidth: 45 },
+    },
+  });
+
+  y = doc.lastAutoTable.finalY + 8;
+  doc.setTextColor(6, 46, 102);
+  doc.setFontSize(12);
+  doc.text("Resumo por Organização Militar", marginX, y);
+
+  doc.autoTable({
+    ...tableBase,
+    startY: y + 3,
+    head: [[
+      "OM / UG",
+      "Req.",
+      "Valor das requisições",
+      "Já empenhado",
+      "Saldo a empenhar",
+      "Crédito compatível",
+      "Remanescente",
+      "Déficit",
+      "Cobertura",
+      "Situação",
+    ]],
+    body: report.omSummaries.map((om) => [
+      `${om.om || om.ugCode} / ${om.ugCode}`,
+      String(om.requestCount),
+      money(om.requestValue),
+      money(om.committedValue),
+      money(om.balanceToCommit),
+      money(om.creditAvailable),
+      money(om.creditRemaining),
+      money(om.deficit),
+      percent(om.coveragePercent),
+      om.status,
+    ]),
+    columnStyles: {
+      0: { cellWidth: 39 },
+      1: { halign: "right", cellWidth: 14 },
+      2: { halign: "right", cellWidth: 34 },
+      3: { halign: "right", cellWidth: 29 },
+      4: { halign: "right", cellWidth: 31 },
+      5: { halign: "right", cellWidth: 32 },
+      6: { halign: "right", cellWidth: 30 },
+      7: { halign: "right", cellWidth: 27 },
+      8: { halign: "right", cellWidth: 22 },
+      9: { cellWidth: 38 },
+    },
+  });
+
+  report.omSummaries.forEach((om) => {
+    doc.addPage("a3", "landscape");
+    let sectionY = 16;
+
+    doc.setTextColor(6, 46, 102);
+    doc.setFontSize(16);
+    doc.text(
+      `${om.om || om.ugCode} — UG ${om.ugCode || "não informada"}`,
+      marginX,
+      sectionY,
+    );
+    sectionY += 6;
+
+    doc.setTextColor(80, 92, 110);
+    doc.setFontSize(9);
+    const omNameLines = doc.splitTextToSize(
+      om.ugName || "Organização Militar sem denominação informada",
+      usableWidth,
+    );
+    doc.text(omNameLines, marginX, sectionY);
+    sectionY += omNameLines.length * 4 + 3;
+
+    doc.autoTable({
+      ...tableBase,
+      startY: sectionY,
+      head: [[
+        "Requisições",
+        "Valor",
+        "Já empenhado",
         "Saldo a empenhar",
         "Crédito compatível",
         "Remanescente",
         "Déficit",
         "Cobertura",
         "Situação",
-      ],
-    ],
-    body: state.filtered.map((row) => [
-      `${row.om} / ${row.ugCode}`,
-      criterionLabel(row.action, "action"),
-      criterionLabel(row.pi, "pi"),
-      criterionLabel(row.expenseNature, "expenseNature"),
-      String(row.requestCount),
-      money(row.balanceToCommit),
-      money(row.creditAvailable),
-      money(row.creditRemaining),
-      money(row.deficit),
-      `${Number(row.coveragePercent || 0).toLocaleString("pt-BR", {
-        maximumFractionDigits: 1,
-      })}%`,
-      row.status,
-    ]),
-    styles: { fontSize: 7, cellPadding: 1.7 },
-    headStyles: { fillColor: [6, 46, 102] },
+      ]],
+      body: [[
+        String(om.requestCount),
+        money(om.requestValue),
+        money(om.committedValue),
+        money(om.balanceToCommit),
+        money(om.creditAvailable),
+        money(om.creditRemaining),
+        money(om.deficit),
+        percent(om.coveragePercent),
+        om.status,
+      ]],
+      columnStyles: {
+        0: { halign: "right", cellWidth: 23 },
+        1: { halign: "right", cellWidth: 34 },
+        2: { halign: "right", cellWidth: 31 },
+        3: { halign: "right", cellWidth: 34 },
+        4: { halign: "right", cellWidth: 34 },
+        5: { halign: "right", cellWidth: 32 },
+        6: { halign: "right", cellWidth: 28 },
+        7: { halign: "right", cellWidth: 24 },
+        8: { cellWidth: 45 },
+      },
+    });
+
+    sectionY = doc.lastAutoTable.finalY + 7;
+    doc.setTextColor(6, 46, 102);
+    doc.setFontSize(12);
+    doc.text("Requisições da Organização Militar", marginX, sectionY);
+
+    doc.autoTable({
+      ...tableBase,
+      startY: sectionY + 3,
+      head: [[
+        "Requisição",
+        "Certame",
+        "Ação",
+        "PI",
+        "Natureza",
+        "Vencedor",
+        "Validade",
+        "Valor da requisição",
+        "Já empenhado",
+        "Saldo a empenhar",
+        "Situação",
+      ]],
+      body: om.requests.map((request) => [
+        request.requestNumber,
+        request.certame || "Não informado",
+        criterionLabel(request.action, "action"),
+        criterionLabel(request.pi, "pi"),
+        criterionLabel(request.expenseNature, "expenseNature"),
+        request.vendorCode
+          ? `${request.vendorCode} — ${request.vendor}`
+          : request.vendor || "Não informado",
+        formatDate(request.proposalValidityDate),
+        money(request.requestValue),
+        money(request.committedValue),
+        money(request.balanceToCommit),
+        requestSituation(request),
+      ]),
+      styles: { ...tableBase.styles, fontSize: 6.2, cellPadding: 1.35 },
+      columnStyles: {
+        0: { cellWidth: 29 },
+        1: { cellWidth: 20 },
+        2: { cellWidth: 25 },
+        3: { cellWidth: 24 },
+        4: { cellWidth: 23 },
+        5: { cellWidth: 51 },
+        6: { cellWidth: 22 },
+        7: { halign: "right", cellWidth: 31 },
+        8: { halign: "right", cellWidth: 28 },
+        9: { halign: "right", cellWidth: 30 },
+        10: { cellWidth: 49 },
+      },
+    });
+
+    sectionY = doc.lastAutoTable.finalY + 7;
+    if (sectionY > pageHeight - 65) {
+      doc.addPage("a3", "landscape");
+      sectionY = 16;
+    }
+
+    doc.setTextColor(6, 46, 102);
+    doc.setFontSize(12);
+    doc.text("Composição do crédito compatível", marginX, sectionY);
+
+    doc.autoTable({
+      ...tableBase,
+      startY: sectionY + 3,
+      head: [[
+        "Ação solicitada",
+        "PI solicitado",
+        "Natureza solicitada",
+        "Ações encontradas",
+        "PIs encontrados",
+        "Naturezas encontradas",
+        "PTRES",
+        "Fontes",
+        "Crédito compatível",
+        "Remanescente",
+        "Déficit",
+        "Situação",
+      ]],
+      body: om.groups.map((group) => [
+        criterionLabel(group.action, "action"),
+        criterionLabel(group.pi, "pi"),
+        criterionLabel(group.expenseNature, "expenseNature"),
+        listText(group.matchedActions),
+        listText(group.matchedPis),
+        listText(group.matchedNatures),
+        listText(group.ptres),
+        listText(group.fundingSources),
+        money(group.creditAvailable),
+        money(group.creditRemaining),
+        money(group.deficit),
+        group.status,
+      ]),
+      styles: { ...tableBase.styles, fontSize: 5.7, cellPadding: 1.2 },
+      columnStyles: {
+        0: { cellWidth: 25 },
+        1: { cellWidth: 25 },
+        2: { cellWidth: 25 },
+        3: { cellWidth: 38 },
+        4: { cellWidth: 58 },
+        5: { cellWidth: 34 },
+        6: { cellWidth: 26 },
+        7: { cellWidth: 35 },
+        8: { halign: "right", cellWidth: 30 },
+        9: { halign: "right", cellWidth: 29 },
+        10: { halign: "right", cellWidth: 24 },
+        11: { cellWidth: 35 },
+      },
+    });
   });
 
-  doc.save("credito-x-requisicoes-01092026.pdf");
+  const pageCount = doc.internal.getNumberOfPages();
+  for (let page = 1; page <= pageCount; page += 1) {
+    doc.setPage(page);
+    doc.setDrawColor(205, 214, 226);
+    doc.line(marginX, pageHeight - 11, pageWidth - marginX, pageHeight - 11);
+    doc.setTextColor(90, 102, 120);
+    doc.setFontSize(7);
+    doc.text(`Gerado em ${generatedAt}`, marginX, pageHeight - 6);
+    doc.text(
+      `Página ${page} de ${pageCount}`,
+      pageWidth - marginX,
+      pageHeight - 6,
+      { align: "right" },
+    );
+  }
+
+  doc.save("relatorio-detalhado-credito-x-requisicoes-01092026.pdf");
+
+  const status = document.getElementById("crossStatus");
+  if (status) {
+    status.textContent =
+      `Relatório detalhado gerado: ${report.totals.requestCount} requisições ` +
+      `de ${report.omSummaries.length} Organizações Militares.`;
+    status.dataset.status = "success";
+  }
 }
+
 
 async function init() {
   const status = document.getElementById("crossStatus");
