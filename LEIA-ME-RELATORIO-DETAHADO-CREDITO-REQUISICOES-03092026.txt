@@ -1,0 +1,30 @@
+PAINEL CABW — RELATÓRIO DETALHADO DE CRÉDITO X REQUISIÇÕES
+
+CORREÇÃO DE ESCOPO:
+O relatório detalhado foi criado no painel:
+Requisições > Crédito Disponível x Requisições.
+
+O painel Requisições Disponíveis para Empenho não foi alterado.
+
+CONTEÚDO DO PDF DETALHADO:
+- indicadores consolidados;
+- resumo por Organização Militar;
+- valor das requisições, valor já empenhado e saldo a empenhar;
+- crédito compatível, remanescente, déficit, cobertura e situação;
+- relação individual de cada BAC# por Organização Militar;
+- certame, vencedor e validade da proposta;
+- composição do crédito por Ação, PI, Natureza, PTRES e fonte;
+- filtros aplicados, metodologia, data de geração e paginação.
+
+O crédito compatível não é repetido artificialmente para cada requisição.
+Ele permanece consolidado no nível da OM e do agrupamento orçamentário,
+enquanto os valores e saldos das requisições são apresentados individualmente.
+
+PUBLICAÇÃO:
+1. Extraia o ZIP.
+2. Envie todo o conteúdo extraído à raiz do repositório.
+3. Confirme a presença de:
+   BUILD_VERIFICACAO_RELATORIO_DETALHADO_CREDITO_REQUISICOES_03092026.json
+4. Faça o commit.
+5. Aguarde o deploy do GitHub Pages.
+6. Pressione Ctrl + F5 no site.
