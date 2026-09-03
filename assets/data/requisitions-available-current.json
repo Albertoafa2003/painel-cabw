@@ -1,0 +1,29 @@
+{
+  "metadata": {
+    "status": "awaiting-source-file",
+    "position": null,
+    "sourceFile": null,
+    "createdAt": "2026-09-03T15:33:18-04:00",
+    "recordCount": 0,
+    "matchingKey": [
+      "ugCode",
+      "action",
+      "pi",
+      "expenseNature"
+    ],
+    "requiredFields": [
+      "requestNumber",
+      "ugCode",
+      "om",
+      "action",
+      "pi",
+      "expenseNature",
+      "requestValue",
+      "committedValue",
+      "balanceToCommit"
+    ],
+    "calculation": "balanceToCommit = requestValue - committedValue",
+    "message": "Aguardando a planilha de requisições disponíveis para empenho."
+  },
+  "records": []
+}
