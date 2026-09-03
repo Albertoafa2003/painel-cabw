@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+
+<html lang="pt-BR">
+<head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1, shrink-to-fit=no" name="viewport"/>
+<title>Painel CABW - Prestação de Contas - Prestação de Contas — Organizações Militares Apoiadas</title>
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/css/bootstrap.min.css" rel="stylesheet"/>
+<link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css" rel="stylesheet"/>
+<link href="css/style.css?v=20260903-accountability-r1" rel="stylesheet" type="text/css"/>
+</head>
+<body class="module-page governance-page accountability-page accountability-detail-page" data-accountability-scope="supported">
+<nav class="navbar navbar-expand-lg navbar-dark bg-primary">
+<a class="navbar-brand" href="painel.html">Painel CABW</a>
+<img alt="Brasão da Comissão Aeronáutica Brasileira em Washington" class="header-logo" src="cabw_logo.png"/>
+<button aria-controls="navbarNav" aria-expanded="false" aria-label="Alternar navegação" class="navbar-toggler" data-target="#navbarNav" data-toggle="collapse" type="button"><span class="navbar-toggler-icon"></span></button>
+<div class="collapse navbar-collapse" id="navbarNav"><ul class="navbar-nav mr-auto"><li class="nav-item"><a class="nav-link" href="painel.html">Início</a></li><li class="nav-item"><a class="nav-link" href="credito.html">Crédito Disponível</a></li><li class="nav-item"><a class="nav-link" href="contratos.html">Contratos</a></li><li class="nav-item"><a class="nav-link" href="processos.html">Processos de Contratação</a></li><li class="nav-item"><a class="nav-link" href="requisicoes.html">Requisições</a></li><li class="nav-item"><a class="nav-link" href="pagamentos.html">Pagamentos</a></li><li class="nav-item active"><a aria-current="page" class="nav-link" href="prestacao-contas.html">Prestação de Contas</a></li><li class="nav-item"><a class="nav-link" href="governanca.html">Governança</a></li><li class="nav-item admin-only" data-admin-only="" hidden=""><a class="nav-link" href="administracao.html">Administração do Sistema</a></li></ul></div>
+</nav>
+<main aria-label="Prestação de Contas - Prestação de Contas — Organizações Militares Apoiadas" class="container-fluid mt-4 accountability-main">
+<a class="governance-back-link" href="prestacao-contas.html">← Voltar para Prestação de Contas</a>
+<header class="acc-hero">
+<div>
+<span class="governance-eyebrow">Contratos de apoio institucional</span>
+<h1>Prestação de Contas — Organizações Militares Apoiadas</h1>
+<p>Acompanhe os contratos vinculados às Organizações Militares apoiadas pela CABW, com filtros por Unidade, vigência, tipo e prazo para Termo Aditivo.</p>
+<div class="acc-hero__badges"><span><i class="bi bi-file-earmark-check"></i> Base contratual: 13/08/2026</span><span><i class="bi bi-calendar-range"></i> Termo Aditivo: D−120</span><span><i class="bi bi-receipt"></i> Pagamento bruto: Firestore</span></div>
+</div>
+<aside class="acc-hero__source" id="accSourceCard"><span>FONTE DOS PAGAMENTOS</span><strong id="accSourceTitle">Aguardando autenticação</strong><small id="accSourceInfo">O painel consulta a coleção supplierPayments do Firestore.</small></aside>
+</header>
+<section class="acc-info-note"><i class="bi bi-link-45deg"></i><div><strong>Vínculo entre pagamentos e contratos</strong><p>O valor pago utiliza o <b>valor bruto</b> das faturas marcadas como pagas e é vinculado pelo campo <b>Contrato/PAG</b> do Painel de Pagamentos. Registros sem correspondência contratual não são atribuídos automaticamente.</p></div></section>
+<section aria-label="Filtros de contratos" class="acc-filter-card">
+<div class="acc-filter-heading"><div><span class="governance-eyebrow">Consulta</span><h2>Filtros da Prestação de Contas</h2></div><span class="acc-results-info" id="accResultsInfo">Carregando contratos...</span></div>
+<div class="acc-filter-grid">
+<div class="acc-filter-field acc-filter-wide"><label for="accSearch">Pesquisar contrato, empresa ou objeto</label><input id="accSearch" placeholder="Digite o número do contrato, fornecedor, objeto ou unidade" type="search"/></div>
+<div class="acc-filter-field"><label for="accLifecycleFilter">Situação de vigência</label><select id="accLifecycleFilter"><option value="current">Vigentes e sem data</option><option value="ended">Contratos encerrados</option><option value="all">Todos os contratos</option></select></div>
+<div class="acc-filter-field"><label for="accTypeFilter">Tipo de contrato</label><select id="accTypeFilter"><option value="">Todos os tipos</option></select></div>
+<div class="acc-filter-field"><label for="accCurrencyFilter">Moeda</label><select id="accCurrencyFilter"><option value="">Todas as moedas</option></select></div>
+<div class="acc-filter-field"><label for="accUnitFilter">Organização Militar</label><select id="accUnitFilter"><option value="">Todas as Organizações Militares</option></select></div>
+<div class="acc-filter-field"><label for="accAmendmentFilter">Prazo para Termo Aditivo</label><select id="accAmendmentFilter"><option value="">Todas as situações</option><option value="overdue">Prazo vencido</option><option value="due-30">Vence em até 30 dias</option><option value="due-60">Vence em até 60 dias</option><option value="unknown">Prazo não calculável</option></select></div>
+<div class="acc-filter-field"><label for="accSortFilter">Ordenar por</label><select id="accSortFilter"><option value="amendment">Prazo do Termo Aditivo</option><option value="end">Término da vigência</option><option value="contract">Número do contrato</option><option value="supplier">Fornecedor</option><option value="paid">Maior valor pago</option></select></div>
+</div>
+<button class="acc-clear-button" id="accClearFilters" type="button"><i class="bi bi-arrow-counterclockwise"></i>Limpar filtros</button>
+</section>
+<section aria-label="Indicadores dos contratos filtrados" class="acc-kpi-grid">
+<div class="acc-kpi"><span>Contratos exibidos</span><strong id="accKpiDisplayed">—</strong></div>
+<div class="acc-kpi acc-kpi--success"><span>Vigentes</span><strong id="accKpiActive">—</strong></div>
+<div class="acc-kpi"><span>Sem data de vigência</span><strong id="accKpiNoDate">—</strong></div>
+<div class="acc-kpi acc-kpi--muted"><span>Encerrados</span><strong id="accKpiEnded">—</strong></div>
+<div class="acc-kpi acc-kpi--danger"><span>Prazo de TA vencido</span><strong id="accKpiOverdue">—</strong><small>Somente contratos ainda vigentes</small></div>
+<div class="acc-kpi acc-kpi--continued"><span>Contratos continuados</span><strong id="accKpiContinued">—</strong></div>
+<div class="acc-kpi"><span>Faturas pagas vinculadas</span><strong id="accKpiPaidInvoices">—</strong></div>
+<div class="acc-kpi acc-kpi--money"><span>Valor bruto pago</span><strong id="accKpiPaidAmount">—</strong></div>
+</section>
+<section aria-live="polite" class="acc-contract-list" id="accContractCards"></section>
+</main>
+<script src="https://code.jquery.com/jquery-3.6.0.slim.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/js/bootstrap.bundle.min.js"></script>
+<script src="assets/js/contracts-data.js?v=20260813-contracts-r1"></script>
+<script src="assets/js/contract-monitoring-data.js?v=20260813-monitoring-r1"></script>
+<script src="assets/js/accountability-panel.js?v=20260903-accountability-r1" type="module"></script>
+<script src="assets/js/auth.js" type="module"></script>
+</body>
+</html>

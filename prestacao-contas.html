@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+
+<html lang="pt-BR">
+<head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1, shrink-to-fit=no" name="viewport"/>
+<title>Painel CABW - Prestação de Contas</title>
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/css/bootstrap.min.css" rel="stylesheet"/>
+<link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css" rel="stylesheet"/>
+<link href="css/style.css?v=20260903-accountability-r1" rel="stylesheet" type="text/css"/>
+</head>
+<body class="module-page governance-page accountability-page accountability-landing-page">
+<nav class="navbar navbar-expand-lg navbar-dark bg-primary">
+<a class="navbar-brand" href="painel.html">Painel CABW</a>
+<img alt="Brasão da Comissão Aeronáutica Brasileira em Washington" class="header-logo" src="cabw_logo.png"/>
+<button aria-controls="navbarNav" aria-expanded="false" aria-label="Alternar navegação" class="navbar-toggler" data-target="#navbarNav" data-toggle="collapse" type="button"><span class="navbar-toggler-icon"></span></button>
+<div class="collapse navbar-collapse" id="navbarNav"><ul class="navbar-nav mr-auto"><li class="nav-item"><a class="nav-link" href="painel.html">Início</a></li><li class="nav-item"><a class="nav-link" href="credito.html">Crédito Disponível</a></li><li class="nav-item"><a class="nav-link" href="contratos.html">Contratos</a></li><li class="nav-item"><a class="nav-link" href="processos.html">Processos de Contratação</a></li><li class="nav-item"><a class="nav-link" href="requisicoes.html">Requisições</a></li><li class="nav-item"><a class="nav-link" href="pagamentos.html">Pagamentos</a></li><li class="nav-item active"><a aria-current="page" class="nav-link" href="prestacao-contas.html">Prestação de Contas</a></li><li class="nav-item"><a class="nav-link" href="governanca.html">Governança</a></li><li class="nav-item admin-only" data-admin-only="" hidden=""><a class="nav-link" href="administracao.html">Administração do Sistema</a></li></ul></div>
+</nav>
+<main aria-label="Prestação de Contas" class="container-fluid mt-4 accountability-main">
+<a class="governance-back-link" href="painel.html">← Voltar para a Página Principal</a>
+<header class="acc-hero acc-hero--landing">
+<div>
+<span class="governance-eyebrow">Execução contratual e acompanhamento financeiro</span>
+<h1>Prestação de Contas</h1>
+<p>Acompanhe cada contrato individualmente, com vigência, prazo para instrução de Termo Aditivo, valores empenhado e faturado e pagamentos brutos vinculados no Firestore.</p>
+<div class="acc-hero__badges"><span><i class="bi bi-calendar-check"></i> Prazo de TA: 120 dias</span><span><i class="bi bi-bank"></i> Pagamentos em tempo real</span><span><i class="bi bi-journal-text"></i> Visão por contrato</span></div>
+</div>
+<aside class="acc-hero__source"><span>BASE CONTRATUAL</span><strong>Posição de 13/08/2026</strong><small>Situação de vigência calculada em <b id="accReferenceDate">03/09/2026</b>. Valores pagos: Firestore.</small></aside>
+</header>
+<section class="acc-info-note"><i class="bi bi-info-circle"></i><div><strong>Critérios aplicados</strong><p>A abertura padrão considera contratos vigentes e contratos sem data final. Os contratos encerrados permanecem disponíveis no filtro próprio. Para contratos expressamente classificados como CONTINUADO, a cobertura é calculada pelo saldo empenhado dividido pela média dos três últimos meses completos com pagamento bruto.</p></div></section>
+<section aria-label="Segmentos da Prestação de Contas" class="acc-segment-grid">
+<a class="acc-segment-card acc-segment-card--cabw" href="prestacao-contas-cabw.html">
+<div class="acc-segment-card__icon"><i class="bi bi-building-check"></i></div>
+<div><span class="governance-eyebrow">Gestão própria</span><h2>CABW</h2><p>Contratos cuja Unidade responsável está identificada como CABW.</p></div>
+<div class="acc-segment-stats"><div><strong id="accCabwCurrent">—</strong><span>exibidos inicialmente</span></div><div><strong id="accCabwActive">—</strong><span>vigentes</span></div><div><strong id="accCabwNoDate">—</strong><span>sem data</span></div><div><strong id="accCabwEnded">—</strong><span>encerrados</span></div></div>
+<div class="acc-segment-value"><span>Total empenhado</span><strong id="accCabwCommitted">—</strong></div>
+<span class="acc-segment-action">Acessar contratos <i class="bi bi-arrow-right"></i></span>
+</a>
+<a class="acc-segment-card acc-segment-card--supported" href="prestacao-contas-oms.html">
+<div class="acc-segment-card__icon"><i class="bi bi-diagram-3"></i></div>
+<div><span class="governance-eyebrow">Apoio institucional</span><h2>Organizações Militares Apoiadas</h2><p>Contratos vinculados a qualquer Unidade distinta da CABW.</p></div>
+<div class="acc-segment-stats"><div><strong id="accSupportedCurrent">—</strong><span>exibidos inicialmente</span></div><div><strong id="accSupportedActive">—</strong><span>vigentes</span></div><div><strong id="accSupportedNoDate">—</strong><span>sem data</span></div><div><strong id="accSupportedEnded">—</strong><span>encerrados</span></div></div>
+<div class="acc-segment-value"><span>Total empenhado</span><strong id="accSupportedCommitted">—</strong></div>
+<span class="acc-segment-action">Acessar contratos <i class="bi bi-arrow-right"></i></span>
+</a>
+</section>
+</main>
+<script src="https://code.jquery.com/jquery-3.6.0.slim.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/js/bootstrap.bundle.min.js"></script>
+<script src="assets/js/contracts-data.js?v=20260813-contracts-r1"></script>
+<script src="assets/js/accountability-landing.js?v=20260903-accountability-r1" type="module"></script>
+<script src="assets/js/auth.js" type="module"></script>
+</body>
+</html>
