@@ -3,7 +3,7 @@
   "private": true,
   "type": "module",
   "scripts": {
-    "test": "node --test tests/repair-import.test.mjs tests/payment-tracking.test.mjs tests/payment-execution.test.mjs",
-    "check": "node --check assets/js/repair-import-core.js && node --check assets/js/repair-processes-panel.js && node --check assets/js/payment-tracking-core.js && node --check assets/js/payment-tracking-panel.js && node --check assets/js/payment-execution-panel.js"
+    "test": "node --test tests/repair-import.test.mjs tests/payment-tracking.test.mjs tests/payment-execution.test.mjs tests/accountability-core.test.mjs",
+    "check": "node --check assets/js/repair-import-core.js && node --check assets/js/repair-processes-panel.js && node --check assets/js/payment-tracking-core.js && node --check assets/js/payment-tracking-panel.js && node --check assets/js/payment-execution-panel.js && node --check assets/js/accountability-core.js && node --check assets/js/accountability-landing.js && node --check assets/js/accountability-panel.js"
   }
 }

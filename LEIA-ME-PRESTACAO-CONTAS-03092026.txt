@@ -1,0 +1,32 @@
+PAINEL CABW — PRESTAÇÃO DE CONTAS POR CONTRATO
+
+Build: 20260903-accountability-r1
+Base contratual: posição de 13/08/2026
+Data de classificação de vigência na verificação: 03/09/2026
+
+ESTRUTURA CRIADA
+- Prestação de Contas — página principal do módulo
+- Prestação de Contas — CABW
+- Prestação de Contas — Organizações Militares Apoiadas
+
+CRITÉRIOS CONFIRMADOS
+- Exibição inicial: 111 contratos vigentes + 2 sem data de vigência
+- Encerrados: 22 contratos, acessíveis por filtro
+- CABW: Unidade = CABW
+- OMs apoiadas: qualquer Unidade diferente de CABW
+- Prazo para Termo Aditivo: 120 dias antes do término da vigência
+- Valor pago: valor bruto da fatura no Firestore
+- Coleção: supplierPayments
+- Vínculo: campo contractPag
+- Contratos continuados: somente os expressamente classificados como CONTINUADO
+- Meses de cobertura: (empenhado - faturado) / média dos 3 últimos meses completos com pagamentos
+
+IMPORTANTE
+Para que um pagamento seja associado a um contrato, o campo Contrato/PAG do registro em supplierPayments deve corresponder ao número do contrato ou ao identificador contratual presente na base.
+
+PUBLICAÇÃO
+1. Extraia o ZIP.
+2. Envie todo o conteúdo extraído à raiz do repositório.
+3. Confirme a presença de BUILD_VERIFICACAO_PRESTACAO_CONTAS_03092026.json.
+4. Faça o commit e aguarde o deploy do GitHub Pages.
+5. Atualize o navegador com Ctrl + F5.
