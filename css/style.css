@@ -7415,3 +7415,42 @@ body.auth-is-admin .navbar-nav .admin-only {
 @media (max-width: 991.98px) { .requisition-menu-grid { grid-template-columns: 1fr; } .budget-hero-card { grid-template-columns: 1fr; } .budget-section-heading, .budget-table-heading { flex-direction: column; } .budget-actions { justify-content: flex-start; } }
 @media (max-width: 767.98px) { .budget-dashboard { padding-right: 14px; padding-left: 14px; } .budget-hero-card, .budget-filter-card, .budget-table-card { padding: 20px; } .budget-kpi-grid, .budget-filter-grid { grid-template-columns: 1fr; } .budget-field--wide { grid-column: auto; } }
 
+
+/* ===== Requisições disponíveis — base 01/09/2026 ===== */
+.budget-policy-note {
+  display: flex;
+  gap: 14px;
+  align-items: flex-start;
+  margin-top: 18px;
+  padding: 16px 18px;
+  color: #143764;
+  background: linear-gradient(90deg, rgba(255, 210, 0, .14), rgba(0, 54, 118, .05));
+  border: 1px solid rgba(207, 166, 0, .28);
+  border-radius: 14px;
+  line-height: 1.55;
+}
+.budget-policy-note i {
+  flex: 0 0 auto;
+  margin-top: 2px;
+  color: var(--cabw-navy-800);
+  font-size: 1.25rem;
+}
+.budget-policy-note strong { color: var(--cabw-navy-900); }
+.budget-criterion-any {
+  display: inline-flex;
+  align-items: center;
+  padding: 5px 8px;
+  color: #634b00;
+  background: #fff3bd;
+  border: 1px solid rgba(191, 145, 0, .22);
+  border-radius: 999px;
+  font-size: .73rem;
+  font-weight: 900;
+  white-space: nowrap;
+}
+.budget-live-status[data-status="success"] { color: #0b6b45; }
+.budget-live-status[data-status="warning"] { color: #8a5c00; }
+.budget-live-status[data-status="error"] { color: #a12634; }
+@media (max-width: 767.98px) {
+  .budget-policy-note { padding: 14px; }
+}
