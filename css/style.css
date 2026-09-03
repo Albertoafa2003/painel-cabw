@@ -7157,3 +7157,202 @@ body.auth-is-admin .navbar-nav .admin-only {
 .payment-page .pay-hero .governance-eyebrow {
   color: #ffd200 !important;
 }
+
+
+/* ===== Prestação de Contas por Contrato — 03/09/2026 ===== */
+.accountability-main {
+  width: min(100%, 1580px) !important;
+  margin: 0 auto;
+  padding: 12px 34px 72px !important;
+}
+
+.acc-hero {
+  display: grid;
+  grid-template-columns: minmax(0, 1.65fr) minmax(290px, 0.55fr);
+  gap: 26px;
+  align-items: stretch;
+  margin: 18px 0 22px;
+  padding: 34px;
+  overflow: hidden;
+  color: #fff;
+  background:
+    radial-gradient(circle at 88% 12%, rgba(255, 210, 0, 0.20), transparent 25%),
+    radial-gradient(circle at 8% 90%, rgba(28, 139, 211, 0.24), transparent 34%),
+    linear-gradient(135deg, #001b47 0%, #003676 58%, #082966 100%);
+  border: 1px solid rgba(255, 255, 255, 0.12);
+  border-radius: 24px;
+  box-shadow: 0 22px 44px rgba(2, 27, 70, 0.20);
+}
+.acc-hero .governance-eyebrow { color: var(--cabw-gold); }
+.acc-hero h1 { margin: 8px 0 12px !important; color: #fff !important; font-size: clamp(2.15rem, 4vw, 3.35rem) !important; }
+.acc-hero p { max-width: 980px; margin: 0; color: rgba(255, 255, 255, 0.91); line-height: 1.7; }
+.acc-hero__badges { display: flex; flex-wrap: wrap; gap: 9px; margin-top: 22px; }
+.acc-hero__badges span { display: inline-flex; gap: 8px; align-items: center; padding: 9px 12px; background: rgba(255, 255, 255, 0.10); border: 1px solid rgba(255, 255, 255, 0.16); border-radius: 999px; font-size: 0.73rem; font-weight: 700; }
+.acc-hero__badges i { color: var(--cabw-gold); }
+.acc-hero__source { display: flex; flex-direction: column; justify-content: center; padding: 24px; background: rgba(255, 255, 255, 0.11); border: 1px solid rgba(255, 255, 255, 0.15); border-radius: 18px; backdrop-filter: blur(8px); }
+.acc-hero__source.is-error { background: rgba(131, 17, 34, 0.30); }
+.acc-hero__source > span { color: rgba(255, 255, 255, 0.72); font-size: 0.69rem; font-weight: 800; letter-spacing: 0.09em; }
+.acc-hero__source strong { margin: 8px 0; color: #fff; font-size: 1.28rem; line-height: 1.28; }
+.acc-hero__source small { color: rgba(255, 255, 255, 0.84); line-height: 1.55; }
+
+.acc-info-note { display: flex; gap: 15px; align-items: flex-start; margin: 0 0 22px; padding: 16px 18px; background: linear-gradient(90deg, rgba(0, 54, 118, 0.06), rgba(255, 210, 0, 0.10)); border: 1px solid rgba(0, 54, 118, 0.13); border-radius: 16px; }
+.acc-info-note > i { flex: 0 0 auto; padding: 9px; color: #00549b; background: #fff; border-radius: 12px; box-shadow: 0 7px 14px rgba(2, 27, 70, 0.09); font-size: 1.3rem; }
+.acc-info-note strong { display: block; margin-bottom: 4px; color: #113662; }
+.acc-info-note p { margin: 0; color: #48546a; line-height: 1.6; }
+
+.acc-segment-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 24px; }
+.acc-segment-card { position: relative; display: grid; grid-template-columns: 86px minmax(0, 1fr); gap: 20px; min-height: 450px; padding: 30px; overflow: hidden; color: #0a2e61; background: #fff; border: 1px solid rgba(0, 54, 118, 0.09); border-radius: 22px; box-shadow: 0 18px 36px rgba(2, 27, 70, 0.13); text-decoration: none !important; transition: transform 160ms ease, box-shadow 160ms ease, border-color 160ms ease; }
+.acc-segment-card:hover { transform: translateY(-4px); border-color: rgba(255, 210, 0, 0.75); box-shadow: 0 24px 48px rgba(2, 27, 70, 0.18); }
+.acc-segment-card::after { content: ''; position: absolute; right: -85px; top: -95px; width: 260px; height: 260px; border-radius: 50%; background: rgba(0, 78, 151, 0.035); }
+.acc-segment-card__icon { position: relative; z-index: 1; display: inline-flex; width: 86px; height: 86px; align-items: center; justify-content: center; color: #004a91; background: linear-gradient(145deg, #edf5ff, #fff9d9); border-radius: 24px; font-size: 2.45rem; box-shadow: 0 12px 22px rgba(2, 27, 70, 0.10); }
+.acc-segment-card .governance-eyebrow { color: #b18300; }
+.acc-segment-card h2 { margin: 5px 0 8px !important; font-size: clamp(1.55rem, 2.7vw, 2.2rem) !important; }
+.acc-segment-card p { margin: 0; color: #536175; line-height: 1.6; }
+.acc-segment-stats { grid-column: 1 / -1; display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: 10px; }
+.acc-segment-stats div { min-height: 92px; padding: 15px; background: #f7f9fc; border: 1px solid #e6eaf0; border-radius: 14px; }
+.acc-segment-stats strong { display: block; color: #003676; font-size: 1.7rem; }
+.acc-segment-stats span { color: #727d8e; font-size: 0.67rem; font-weight: 700; text-transform: uppercase; }
+.acc-segment-value { grid-column: 1 / -1; padding: 15px 17px; background: linear-gradient(90deg, #eef5fc, #fffaf0); border-radius: 14px; }
+.acc-segment-value span { display: block; color: #6c788a; font-size: 0.68rem; font-weight: 800; text-transform: uppercase; }
+.acc-segment-value strong { display: block; margin-top: 6px; color: #073369; font-size: 1.05rem; line-height: 1.5; }
+.acc-segment-action { grid-column: 1 / -1; display: inline-flex; align-items: center; justify-content: center; gap: 14px; min-height: 52px; margin-top: auto; color: #fff; background: linear-gradient(180deg, #003f88, #00245f); border-radius: 10px; font-weight: 700; }
+.acc-segment-action i { color: var(--cabw-gold); }
+
+.acc-filter-card { margin-bottom: 20px; padding: 22px; background: #fff; border: 1px solid rgba(0, 54, 118, 0.09); border-radius: 18px; box-shadow: 0 12px 26px rgba(2, 27, 70, 0.10); }
+.acc-filter-heading { display: flex; gap: 18px; align-items: flex-end; justify-content: space-between; margin-bottom: 18px; }
+.acc-filter-heading h2 { margin: 3px 0 0 !important; font-size: 1.35rem !important; }
+.acc-results-info { display: inline-flex; padding: 8px 11px; color: #24456f; background: #eef3f9; border-radius: 999px; font-size: 0.72rem; font-weight: 700; }
+.acc-filter-grid { display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: 13px; }
+.acc-filter-field { min-width: 0; }
+.acc-filter-wide { grid-column: span 2; }
+.acc-filter-field label { display: block; margin-bottom: 6px; color: #5c687a; font-size: 0.69rem; font-weight: 800; text-transform: uppercase; }
+.acc-filter-field input, .acc-filter-field select { width: 100%; min-height: 44px; padding: 9px 11px; color: #16395f; background: #fff; border: 1px solid #ced7e2; border-radius: 9px; font-size: 0.82rem; }
+.acc-clear-button { display: inline-flex; gap: 8px; align-items: center; margin-top: 14px; padding: 9px 13px; color: #174b82; background: #f1f5f9; border: 1px solid #d6dfe9; border-radius: 9px; font-size: 0.76rem; font-weight: 700; cursor: pointer; }
+
+.acc-kpi-grid { display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: 13px; margin-bottom: 22px; }
+.acc-kpi { min-height: 122px; padding: 18px; background: #fff; border: 1px solid rgba(0, 54, 118, 0.08); border-top: 4px solid #0060aa; border-radius: 16px; box-shadow: 0 11px 23px rgba(2, 27, 70, 0.09); }
+.acc-kpi > span { display: block; color: #657184; font-size: 0.68rem; font-weight: 800; letter-spacing: 0.03em; text-transform: uppercase; }
+.acc-kpi > strong { display: block; margin: 9px 0 4px; color: #072f65; font-size: 1.75rem; line-height: 1.15; overflow-wrap: anywhere; }
+.acc-kpi > small { color: #7a8494; font-size: 0.65rem; }
+.acc-kpi--success { border-top-color: #188457; background: linear-gradient(180deg, #fff, #f4fbf7); }
+.acc-kpi--danger { border-top-color: #c12b3f; background: linear-gradient(180deg, #fff, #fff5f6); }
+.acc-kpi--muted { border-top-color: #7c8797; }
+.acc-kpi--continued { border-top-color: #d9a300; background: linear-gradient(180deg, #fff, #fffbec); }
+.acc-kpi--money > strong { font-size: 1.02rem; line-height: 1.45; }
+
+.acc-contract-list { display: grid; gap: 18px; }
+.acc-contract-card { overflow: hidden; background: #fff; border: 1px solid rgba(0, 54, 118, 0.09); border-radius: 20px; box-shadow: 0 14px 30px rgba(2, 27, 70, 0.11); }
+.acc-contract-header { display: flex; gap: 18px; align-items: flex-start; justify-content: space-between; padding: 22px 24px 16px; border-bottom: 1px solid #e8ecf1; }
+.acc-contract-header h3 { margin: 7px 0 3px; color: #062f67; font-size: 1.35rem; font-weight: 800; }
+.acc-contract-header p { margin: 0; color: #5d697b; font-size: 0.82rem; font-weight: 600; }
+.acc-contract-badges { display: flex; flex-wrap: wrap; gap: 7px; align-items: center; }
+.acc-contract-badges > span:has(i) { display: inline-flex; gap: 5px; align-items: center; padding: 5px 8px; color: #3d5f83; background: #eef3f8; border-radius: 999px; font-size: 0.63rem; font-weight: 700; }
+.acc-contract-currency { flex: 0 0 auto; padding: 8px 11px; color: #123c70; background: #eef4fa; border-radius: 10px; font-size: 0.72rem; font-weight: 800; }
+.acc-badge, .acc-deadline { display: inline-flex; align-items: center; padding: 5px 8px; border: 1px solid transparent; border-radius: 999px; font-size: 0.63rem; font-weight: 800; }
+.acc-badge--active { color: #17623b; background: #e8f6ed; border-color: #b8dfc6; }
+.acc-badge--ended { color: #5d6675; background: #edf0f3; border-color: #d6dce3; }
+.acc-badge--no-date { color: #805600; background: #fff7d7; border-color: #ead172; }
+.acc-badge--type { color: #174d83; background: #edf5ff; border-color: #c5d9f1; }
+.acc-badge--continued { color: #6c5000; background: #fff6ce; border-color: #e7cc5f; }
+.acc-deadline--overdue { color: #9f1f2e; background: #fff0f2; border-color: #efb8c0; }
+.acc-deadline--today, .acc-deadline--urgent { color: #8a4b00; background: #fff1de; border-color: #e9c18e; }
+.acc-deadline--attention { color: #805600; background: #fff7d7; border-color: #ead172; }
+.acc-deadline--regular { color: #17623b; background: #e8f6ed; border-color: #b8dfc6; }
+.acc-deadline--unknown { color: #5d6675; background: #edf0f3; border-color: #d6dce3; }
+
+.acc-contract-object { padding: 15px 24px; background: #fafbfd; }
+.acc-contract-object > span, .acc-contract-dates span, .acc-financial-grid span, .acc-coverage-summary span, .acc-continuous-kpis span { display: block; color: #6a7587; font-size: 0.65rem; font-weight: 800; letter-spacing: 0.025em; text-transform: uppercase; }
+.acc-contract-object p { margin: 5px 0 0; color: #25486f; line-height: 1.55; }
+.acc-contract-dates { display: grid; grid-template-columns: 1fr 1fr; gap: 14px; padding: 18px 24px 0; }
+.acc-contract-dates > div { min-height: 115px; padding: 15px; background: #f7f9fc; border: 1px solid #e4e9ef; border-radius: 14px; }
+.acc-contract-dates strong { display: block; margin: 7px 0; color: #0d3a70; font-size: 0.88rem; }
+.acc-contract-dates small { display: block; margin-top: 7px; color: #7a8493; font-size: 0.65rem; }
+.acc-financial-grid { display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: 11px; padding: 14px 24px; }
+.acc-financial-grid > div { min-height: 108px; padding: 14px; background: #fff; border: 1px solid #e4e9ef; border-radius: 13px; }
+.acc-financial-grid strong { display: block; margin-top: 8px; color: #07366e; font-size: 0.94rem; overflow-wrap: anywhere; }
+.acc-financial-grid small { display: block; margin-top: 6px; color: #7a8493; font-size: 0.62rem; }
+.acc-financial-warning { color: #9a5a00 !important; }
+.acc-progress-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 18px; padding: 0 24px 18px; }
+.acc-progress-row > div:first-child { display: flex; gap: 12px; justify-content: space-between; margin-bottom: 6px; color: #536176; font-size: 0.68rem; }
+.acc-progress-row strong { color: #173e70; }
+.acc-progress { height: 7px; overflow: hidden; background: #e4eaf1; border-radius: 999px; }
+.acc-progress i { display: block; height: 100%; border-radius: inherit; }
+.acc-progress--blue { background: linear-gradient(90deg, #0055a2, #2493d5); }
+.acc-progress--gold { background: linear-gradient(90deg, #d89d00, #ffd200); }
+.acc-coverage-summary { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 10px; margin: 0 24px 18px; padding: 15px; background: linear-gradient(90deg, #fff9e0, #f4f8fd); border: 1px solid #ebd987; border-radius: 14px; }
+.acc-coverage-summary strong { display: block; margin-top: 6px; color: #163d6f; font-size: 0.83rem; }
+
+.acc-contract-details { border-top: 1px solid #e4e9ef; }
+.acc-contract-details > summary { display: flex; align-items: center; justify-content: space-between; padding: 15px 24px; color: #164b83; background: #f8fafc; font-size: 0.76rem; font-weight: 800; cursor: pointer; list-style: none; }
+.acc-contract-details > summary::-webkit-details-marker { display: none; }
+.acc-contract-details > summary span { display: inline-flex; gap: 8px; align-items: center; }
+.acc-contract-details[open] > summary > i { transform: rotate(180deg); }
+.acc-contract-details__body { display: grid; gap: 18px; padding: 22px 24px 26px; }
+.acc-contract-details__body h4 { margin: 0 0 12px; color: #0c396f; font-size: 1rem; font-weight: 800; }
+.acc-continuous-block { padding: 18px; background: #fbfcfe; border: 1px solid #e3e8ef; border-radius: 15px; }
+.acc-continuous-heading { display: flex; gap: 15px; align-items: flex-start; justify-content: space-between; }
+.acc-continuous-heading > div > span { color: #9a7400; font-size: 0.65rem; font-weight: 800; text-transform: uppercase; }
+.acc-continuous-heading h4 { margin: 4px 0 0; }
+.acc-continuous-kpis { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 10px; margin: 16px 0 20px; }
+.acc-continuous-kpis > div { padding: 13px; background: #fff; border: 1px solid #e4e9ef; border-radius: 12px; }
+.acc-continuous-kpis strong { display: block; margin: 7px 0 4px; color: #0d3b70; font-size: 0.87rem; }
+.acc-continuous-kpis small { color: #768193; font-size: 0.63rem; }
+.acc-continuous-block h5 { margin: 0 0 12px; color: #31577e; font-size: 0.78rem; font-weight: 800; }
+.acc-month-chart { display: grid; gap: 7px; }
+.acc-month-row { display: grid; grid-template-columns: 100px minmax(80px, 1fr) 150px; gap: 10px; align-items: center; font-size: 0.68rem; }
+.acc-month-row > span { color: #5f6b7d; font-weight: 700; }
+.acc-month-row em { color: #9a6e00; font-size: 0.58rem; }
+.acc-month-row > div { height: 8px; overflow: hidden; background: #e5ebf2; border-radius: 999px; }
+.acc-month-row > div i { display: block; height: 100%; background: linear-gradient(90deg, #0060ae, #ffd200); border-radius: inherit; }
+.acc-month-row > strong { color: #174570; text-align: right; }
+.acc-payment-table-wrap { overflow-x: auto; border: 1px solid #e3e8ef; border-radius: 12px; }
+.acc-payment-table { width: 100%; min-width: 800px; border-collapse: collapse; font-size: 0.71rem; }
+.acc-payment-table th { padding: 10px; color: #fff; background: #003676; text-align: left; }
+.acc-payment-table td { padding: 9px 10px; color: #24476f; border-bottom: 1px solid #e7ebf0; }
+.acc-empty-inline { margin: 0; padding: 22px; color: #6b7687; background: #f8fafc; border-radius: 12px; text-align: center; }
+.acc-quality { padding: 14px 16px; color: #7a4b00; background: #fff8e1; border: 1px solid #ebd48d; border-radius: 12px; }
+.acc-quality strong { display: block; margin-bottom: 7px; }
+.acc-quality ul { margin: 0; padding-left: 18px; font-size: 0.72rem; }
+.acc-source-note { margin: 0; padding: 13px 15px; color: #5c6878; background: #f4f7fa; border-radius: 11px; font-size: 0.68rem; line-height: 1.55; }
+.acc-empty-state { padding: 58px 20px; background: #fff; border: 1px solid #e4e9ef; border-radius: 18px; text-align: center; }
+.acc-empty-state i { display: inline-flex; width: 68px; height: 68px; align-items: center; justify-content: center; color: #0053a0; background: linear-gradient(145deg, #edf5ff, #fff8d7); border-radius: 50%; font-size: 1.85rem; }
+.acc-empty-state h3 { margin: 15px 0 6px; color: #0b3569; font-size: 1.15rem; }
+.acc-empty-state p { margin: 0; color: #657184; }
+
+.home-grid--eight { grid-template-columns: repeat(4, minmax(0, 1fr)); width: min(calc(100% - 96px), 1540px); gap: 22px; }
+.home-grid--eight .home-card { min-height: 405px; padding-right: 25px; padding-left: 25px; }
+.home-grid--eight .home-card__symbol { width: 112px; height: 112px; }
+.home-grid--eight .home-card__symbol i { font-size: 3.2rem; }
+.home-card--accountability .home-card__symbol { background: radial-gradient(circle at 34% 28%, #fff 0%, #f7fbff 38%, #fff6c7 100%); }
+
+@media (max-width: 1750px) and (min-width: 992px) {
+  .navbar-nav .nav-link { padding-right: 8px !important; padding-left: 8px !important; font-size: 0.82rem; }
+  .navbar-brand { margin-right: 14px; }
+}
+@media (max-width: 1380px) {
+  .home-grid--eight { grid-template-columns: repeat(2, minmax(0, 1fr)); width: min(calc(100% - 64px), 980px); }
+}
+@media (max-width: 1199.98px) {
+  .acc-hero { grid-template-columns: 1fr; }
+  .acc-filter-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+  .acc-kpi-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+  .acc-financial-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+}
+@media (max-width: 991.98px) {
+  .accountability-main { padding-right: 18px !important; padding-left: 18px !important; }
+  .acc-segment-grid { grid-template-columns: 1fr; }
+}
+@media (max-width: 767.98px) {
+  .accountability-main { padding-right: 12px !important; padding-left: 12px !important; }
+  .acc-hero { padding: 24px 20px; border-radius: 19px; }
+  .acc-segment-card { grid-template-columns: 1fr; padding: 23px; }
+  .acc-segment-card__icon { width: 72px; height: 72px; }
+  .acc-segment-stats { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+  .acc-filter-heading { align-items: flex-start; flex-direction: column; }
+  .acc-filter-grid, .acc-kpi-grid, .acc-contract-dates, .acc-financial-grid, .acc-progress-grid, .acc-coverage-summary, .acc-continuous-kpis { grid-template-columns: 1fr; }
+  .acc-filter-wide { grid-column: auto; }
+  .acc-contract-header { flex-direction: column; }
+  .acc-month-row { grid-template-columns: 80px minmax(50px, 1fr); }
+  .acc-month-row > strong { grid-column: 1 / -1; text-align: left; }
+  .home-grid--eight { grid-template-columns: 1fr; width: min(calc(100% - 34px), 600px); }
+}
