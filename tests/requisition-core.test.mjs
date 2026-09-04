@@ -236,7 +236,18 @@ test("missing OM remains without budget correspondence", () => {
   assert.equal(result.status, "Sem correspondência orçamentária");
 });
 
-test("current requisition file contains 59 unique BAC numbers, specific natures and expected totals", () => {
+test("normalizeRequisition preserves the Part Number", () => {
+  const record = normalizeRequisition({
+    requestNumber: "BAC-PN",
+    partNumber: "PN-123/A",
+    ugCode: "120026",
+    expenseNature: "339030",
+    requestValue: 10,
+  });
+  assert.equal(record.partNumber, "PN-123/A");
+});
+
+test("current requisition file contains 67 unique BAC numbers, Part Numbers, specific natures and expected totals", () => {
   const data = JSON.parse(
     fs.readFileSync(
       new URL(
@@ -246,12 +257,14 @@ test("current requisition file contains 59 unique BAC numbers, specific natures 
       "utf8",
     ),
   );
-  assert.equal(data.records.length, 59);
-  assert.equal(new Set(data.records.map((row) => row.requestNumber)).size, 59);
+  assert.equal(data.records.length, 67);
+  assert.equal(new Set(data.records.map((row) => row.requestNumber)).size, 67);
   assert.equal(data.metadata.position, "04/09/2026");
-  assert.equal(data.metadata.requestValueTotal, 834465.59);
+  assert.equal(data.metadata.requestValueTotal, 1316467.79);
   assert.equal(data.metadata.committedValueTotal, 0);
-  assert.equal(data.metadata.balanceToCommitTotal, 834465.59);
+  assert.equal(data.metadata.balanceToCommitTotal, 1316467.79);
+  assert.equal(data.records.every((row) => row.partNumber), true);
+  assert.equal(new Set(data.records.map((row) => row.partNumber)).size, 61);
   assert.equal(data.records.every((row) => row.action === ANY), true);
   assert.equal(data.records.every((row) => row.pi === ANY), true);
   assert.equal(data.records.every((row) => row.expenseNature !== ANY), true);
@@ -265,9 +278,9 @@ test("current requisition file contains 59 unique BAC numbers, specific natures 
     return acc;
   }, {});
   assert.deepEqual(natureCounts, {
-    "339030": 32,
+    "339030": 36,
     "339039": 12,
-    "449052": 15,
+    "449052": 19,
   });
 
   const corrected = data.records.find(
@@ -276,14 +289,19 @@ test("current requisition file contains 59 unique BAC numbers, specific natures 
   assert.equal(corrected.expenseNatureSource, "459052");
   assert.equal(corrected.expenseNature, "449052");
   assert.match(corrected.expenseNatureCorrection, /corrigida de 459052 para 449052/);
+  assert.equal(corrected.partNumber, "ADA145M612");
 
   const first = data.records.find(
     (row) => row.requestNumber === "GLS045004P3",
   );
-  assert.equal(first.proposalValidityDate, "2026-10-03");
+  assert.equal(first.proposalValidityDate, "2026-10-04");
+  assert.equal(first.partNumber, "59J6185");
+
+  assert.equal(data.records.some((row) => row.requestNumber === "GLT100004R2"), true);
+  assert.equal(data.records.some((row) => row.requestNumber === "LST025004T9"), false);
 });
 
-test("current crossing groups the 59 requests by OM and Natureza without double counting", () => {
+test("current crossing groups the 67 requests by OM and Natureza without double counting", () => {
   const requests = JSON.parse(
     fs.readFileSync(
       new URL(
@@ -306,53 +324,56 @@ test("current crossing groups the 59 requests by OM and Natureza without double 
     credit.groupedByMatchKey,
     requests.records,
   );
-  assert.equal(result.length, 5);
+  assert.equal(result.length, 6);
   assert.equal(
     result.reduce((sum, row) => sum + row.requestCount, 0),
-    59,
+    67,
   );
   assert.equal(
-    Math.round(
-      result.reduce((sum, row) => sum + row.balanceToCommit, 0) * 100,
-    ) / 100,
-    834465.59,
+    Math.round(result.reduce((sum, row) => sum + row.balanceToCommit, 0) * 100) / 100,
+    1316467.79,
   );
   assert.equal(
-    Math.round(
-      result.reduce((sum, row) => sum + row.creditAvailable, 0) * 100,
-    ) / 100,
-    2083324.01,
+    Math.round(result.reduce((sum, row) => sum + row.creditAvailable, 0) * 100) / 100,
+    2111185.77,
   );
   assert.equal(
-    Math.round(
-      result.reduce((sum, row) => sum + row.creditRemaining, 0) * 100,
-    ) / 100,
-    1289640.39,
+    Math.round(result.reduce((sum, row) => sum + row.creditRemaining, 0) * 100) / 100,
+    1040509.39,
   );
   assert.equal(
-    Math.round(
-      result.reduce((sum, row) => sum + row.deficit, 0) * 100,
-    ) / 100,
-    40781.97,
+    Math.round(result.reduce((sum, row) => sum + row.deficit, 0) * 100) / 100,
+    245791.41,
   );
-  assert.equal(
-    result.filter((row) => row.status === "Crédito suficiente").length,
-    4,
-  );
-  assert.equal(
-    result.filter((row) => row.status === "Crédito insuficiente").length,
-    1,
-  );
+  assert.equal(result.filter((row) => row.status === "Crédito suficiente").length, 4);
+  assert.equal(result.filter((row) => row.status === "Crédito insuficiente").length, 2);
 
   const glEquipment = result.find(
-    (row) =>
-      row.ugCode === "120049" && row.expenseNature === "449052",
+    (row) => row.ugCode === "120049" && row.expenseNature === "449052",
   );
-  assert.equal(glEquipment.requestCount, 15);
-  assert.equal(glEquipment.balanceToCommit, 212371.35);
+  assert.equal(glEquipment.requestCount, 18);
+  assert.equal(glEquipment.balanceToCommit, 339045.35);
   assert.equal(glEquipment.creditAvailable, 171589.38);
-  assert.equal(glEquipment.deficit, 40781.97);
+  assert.equal(glEquipment.deficit, 167455.97);
   assert.equal(glEquipment.status, "Crédito insuficiente");
+
+  const lsMaterial = result.find(
+    (row) => row.ugCode === "120026" && row.expenseNature === "339030",
+  );
+  assert.equal(lsMaterial.requestCount, 16);
+  assert.equal(lsMaterial.balanceToCommit, 511822.48);
+  assert.equal(lsMaterial.creditAvailable, 433487.04);
+  assert.equal(lsMaterial.deficit, 78335.44);
+  assert.equal(lsMaterial.status, "Crédito insuficiente");
+
+  const lsEquipment = result.find(
+    (row) => row.ugCode === "120026" && row.expenseNature === "449052",
+  );
+  assert.equal(lsEquipment.requestCount, 1);
+  assert.equal(lsEquipment.balanceToCommit, 16256);
+  assert.equal(lsEquipment.creditAvailable, 27861.76);
+  assert.equal(lsEquipment.creditRemaining, 11605.76);
+  assert.equal(lsEquipment.status, "Crédito suficiente");
 });
 
 test("detailed report data groups requisitions by OM without repeating credit", () => {
@@ -404,7 +425,7 @@ test("detailed report data groups requisitions by OM without repeating credit", 
   assert.equal(report.omSummaries[0].status, "Crédito suficiente");
 });
 
-test("current detailed report contains 59 requisitions organized into three OMs", () => {
+test("current detailed report contains 67 requisitions with Part Numbers organized into three OMs", () => {
   const requests = JSON.parse(
     fs.readFileSync(
       new URL(
@@ -430,16 +451,20 @@ test("current detailed report contains 59 requisitions organized into three OMs"
   const report = buildDetailedCrossReportData(crossing, requests.records);
 
   assert.equal(report.omSummaries.length, 3);
-  assert.equal(report.requests.length, 59);
-  assert.equal(report.totals.requestCount, 59);
-  assert.equal(report.totals.requestValue, 834465.59);
-  assert.equal(report.totals.balanceToCommit, 834465.59);
-  assert.equal(report.totals.creditAvailable, 2083324.01);
-  assert.equal(report.totals.creditRemaining, 1289640.39);
-  assert.equal(report.totals.deficit, 40781.97);
+  assert.equal(report.requests.length, 67);
+  assert.equal(report.totals.requestCount, 67);
+  assert.equal(report.totals.requestValue, 1316467.79);
+  assert.equal(report.totals.balanceToCommit, 1316467.79);
+  assert.equal(report.totals.creditAvailable, 2111185.77);
+  assert.equal(report.totals.creditRemaining, 1040509.39);
+  assert.equal(report.totals.deficit, 245791.41);
+  assert.equal(report.requests.every((request) => request.partNumber), true);
+  assert.equal(
+    report.requests.find((request) => request.requestNumber === "LST167001A2").partNumber,
+    "ADA120-612",
+  );
   assert.equal(
     report.omSummaries.reduce((sum, om) => sum + om.requests.length, 0),
-    59,
+    67,
   );
 });
-
