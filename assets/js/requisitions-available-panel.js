@@ -2,10 +2,10 @@ import {
   ANY,
   criterionLabel,
   normalizeRequisition,
-} from "./requisition-core.js";
+} from "./requisition-core.js?v=20260904-requisitions-natures-r4";
 
 const DATA_URL =
-  "assets/data/requisitions-available-current.json?v=20260903-requisitions-data-r2";
+  "assets/data/requisitions-available-current.json?v=20260904-requisitions-natures-r4";
 
 const state = {
   data: null,
@@ -289,7 +289,7 @@ function exportCsv() {
   );
   const anchor = document.createElement("a");
   anchor.href = URL.createObjectURL(blob);
-  anchor.download = "requisicoes-disponiveis-empenho-01092026.csv";
+  anchor.download = "requisicoes-disponiveis-empenho-04092026.csv";
   anchor.click();
   URL.revokeObjectURL(anchor.href);
 }
@@ -305,9 +305,11 @@ function exportPdf() {
 
   doc.setFontSize(18);
   doc.text("Requisições Disponíveis para Empenho", 14, 16);
+  const metadata = state.data?.metadata || {};
+  const position = metadata.position || "Não informada";
   doc.setFontSize(9);
   doc.text(
-    "Posição: 01/09/2026 · Campos orçamentários em branco significam qualquer classificação da OM.",
+    `Posição: ${position} · Ação e PI em branco significam qualquer classificação da OM; Natureza conforme a planilha.`,
     14,
     23,
   );
@@ -356,7 +358,7 @@ function exportPdf() {
     },
   });
 
-  doc.save("requisicoes-disponiveis-empenho-01092026.pdf");
+  doc.save("requisicoes-disponiveis-empenho-04092026.pdf");
 }
 
 async function init() {

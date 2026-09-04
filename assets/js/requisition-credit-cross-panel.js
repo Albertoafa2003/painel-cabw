@@ -3,12 +3,12 @@ import {
   buildDetailedCrossReportData,
   criterionLabel,
   crossCreditAndRequisitions,
-} from "./requisition-core.js?v=20260903-cross-detailed-r3";
+} from "./requisition-core.js?v=20260904-requisitions-natures-r4";
 
 const CREDIT_URL =
-  "assets/data/credit-budget-detailed-current.json?v=20260903-cross-detailed-r3";
+  "assets/data/credit-budget-detailed-current.json?v=20260904-requisitions-natures-r4";
 const REQUEST_URL =
-  "assets/data/requisitions-available-current.json?v=20260903-cross-detailed-r3";
+  "assets/data/requisitions-available-current.json?v=20260904-requisitions-natures-r4";
 
 const state = {
   credit: null,
@@ -422,11 +422,12 @@ function exportPdf() {
   y += 5;
 
   const methodology =
-    "Metodologia: a OM/UG é obrigatória; Ação, PI e Natureza em branco abrangem " +
-    "qualquer classificação da respectiva OM. O crédito é consumido uma única vez. " +
-    "Por esse motivo, crédito compatível, valor remanescente e déficit são apresentados " +
-    "no nível da OM e do agrupamento orçamentário, enquanto cada BAC# é detalhado " +
-    "individualmente com seu valor e saldo a empenhar.";
+    "Metodologia: a OM/UG e a Natureza de Despesa são obrigatórias na base atual; " +
+    "Ação e PI em branco abrangem qualquer classificação da respectiva OM. O crédito " +
+    "é consumido uma única vez e somente dentro da mesma OM e Natureza. Por esse motivo, " +
+    "crédito compatível, valor remanescente e déficit são apresentados no nível da OM " +
+    "e do agrupamento orçamentário, enquanto cada BAC# é detalhado individualmente " +
+    "com seu valor e saldo a empenhar.";
   const methodologyLines = doc.splitTextToSize(methodology, usableWidth);
   doc.text(methodologyLines, marginX, y);
   y += methodologyLines.length * 4 + 2;
@@ -712,7 +713,7 @@ function exportPdf() {
     );
   }
 
-  doc.save("relatorio-detalhado-credito-x-requisicoes-01092026.pdf");
+  doc.save("relatorio-detalhado-credito-x-requisicoes-04092026.pdf");
 
   const status = document.getElementById("crossStatus");
   if (status) {

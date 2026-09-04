@@ -1,0 +1,529 @@
+{
+  "build": "requisitions-natures-04092026-r4",
+  "generatedAt": "2026-09-04T12:37:54Z",
+  "sourceSpreadsheet": "REQUISIÇÕES DISPONÍVEIS PARA EMPENHO - 04092026.xlsx",
+  "sourceSpreadsheetSha256": "d970d1dd541392b07b81460e6859a03d636e0f9f8ded4c14deb7a999339e458d",
+  "sourceSheet": "Sheet1",
+  "sourceRows": "2 a 60",
+  "requisitionPosition": "04/09/2026",
+  "creditPosition": "01/09/2026",
+  "recordCount": 59,
+  "uniqueRequestCount": 59,
+  "omCount": 3,
+  "requestValueTotal": 834465.59,
+  "committedValueTotal": 0.0,
+  "balanceToCommitTotal": 834465.59,
+  "natureDistribution": [
+    {
+      "expenseNature": "339030",
+      "recordCount": 32,
+      "balanceToCommit": 468716.38
+    },
+    {
+      "expenseNature": "339039",
+      "recordCount": 12,
+      "balanceToCommit": 153377.86
+    },
+    {
+      "expenseNature": "449052",
+      "recordCount": 15,
+      "balanceToCommit": 212371.35
+    }
+  ],
+  "confirmedCorrection": [
+    {
+      "requestNumber": "GLT099002R2",
+      "sourceRow": 14,
+      "sourceValue": "459052",
+      "correctedValue": "449052",
+      "reason": "Natureza de Despesa corrigida de 459052 para 449052 conforme confirmação do usuário."
+    }
+  ],
+  "matchingPolicy": "OM/UG e Natureza de Despesa são obrigatórias na base atual; Ação e PI em branco funcionam como wildcards. O crédito é comparado somente dentro da mesma OM e da mesma Natureza de Despesa.",
+  "crossing": {
+    "groupCount": 5,
+    "omCount": 3,
+    "requestCount": 59,
+    "requestValue": 834465.59,
+    "committedValue": 0,
+    "balanceToCommit": 834465.59,
+    "compatibleCredit": 2083324.01,
+    "creditRemaining": 1289640.39,
+    "deficit": 40781.97,
+    "coveragePercent": 249.65966661369464,
+    "statusCounts": {
+      "Crédito insuficiente": 1,
+      "Crédito suficiente": 4
+    },
+    "groups": [
+      {
+        "ugCode": "120049",
+        "om": "PAMA-GL",
+        "ugName": "PARQUE DE MATERIAL AERONÁUTICO DO GALEÃO",
+        "action": "*",
+        "pi": "*",
+        "expenseNature": "449052",
+        "requestCount": 15,
+        "requestNumbers": [
+          "GLS045004P3",
+          "GLT120008IX",
+          "GLT124007IX",
+          "GLT125002IX",
+          "GLT125003IX",
+          "GLT125004IX",
+          "GLT126004IX",
+          "GLT127001IX",
+          "GLT127002IX",
+          "GLT131002IX",
+          "GLT099002R2",
+          "GLT100003R2",
+          "GLT105005R2",
+          "GLT138001C1",
+          "GLT138002C1"
+        ],
+        "requestValue": 212371.35,
+        "committedValue": 0,
+        "balanceToCommit": 212371.35,
+        "creditAvailable": 171589.38,
+        "creditRemaining": 0,
+        "deficit": 40781.97,
+        "coveragePercent": 80.79685889834009,
+        "status": "Crédito insuficiente",
+        "matchedActions": [
+          "2048"
+        ],
+        "matchedPis": [
+          "CA080200IVR",
+          "CA0802TRNSP"
+        ],
+        "matchedNatures": [
+          "449052"
+        ],
+        "ptres": [
+          "229177"
+        ],
+        "fundingSources": [
+          "1051000140",
+          "3050000140"
+        ],
+        "creditSourceLines": [
+          91,
+          104,
+          105
+        ]
+      },
+      {
+        "ugCode": "120049",
+        "om": "PAMA-GL",
+        "ugName": "PARQUE DE MATERIAL AERONÁUTICO DO GALEÃO",
+        "action": "*",
+        "pi": "*",
+        "expenseNature": "339030",
+        "requestCount": 2,
+        "requestNumbers": [
+          "GLT103003IX",
+          "GLT008004P3"
+        ],
+        "requestValue": 21207.4,
+        "committedValue": 0,
+        "balanceToCommit": 21207.4,
+        "creditAvailable": 25906.55,
+        "creditRemaining": 4699.15,
+        "deficit": 0,
+        "coveragePercent": 122.15806746701622,
+        "status": "Crédito suficiente",
+        "matchedActions": [
+          "2048"
+        ],
+        "matchedPis": [
+          "CA0802APOIO",
+          "CA0802TRNSP"
+        ],
+        "matchedNatures": [
+          "339030"
+        ],
+        "ptres": [
+          "229177"
+        ],
+        "fundingSources": [
+          "1050000140"
+        ],
+        "creditSourceLines": [
+          75,
+          76
+        ]
+      },
+      {
+        "ugCode": "120026",
+        "om": "PAMA-LS",
+        "ugName": "PARQUE DE MATERIAL AERONÁUTICO DE LAGOA SANTA",
+        "action": "*",
+        "pi": "*",
+        "expenseNature": "339030",
+        "requestCount": 13,
+        "requestNumbers": [
+          "LST051002AS",
+          "LST084001AS",
+          "LST084002AS",
+          "LST040018BR",
+          "LST040021BR",
+          "LST040022BR",
+          "LST040023BR",
+          "LST040024BR",
+          "LST138014T9",
+          "LST025004T9",
+          "LST025006T9",
+          "LST104006A7",
+          "LST162010A7"
+        ],
+        "requestValue": 172816.48,
+        "committedValue": 0,
+        "balanceToCommit": 172816.48,
+        "creditAvailable": 433487.04,
+        "creditRemaining": 260670.56,
+        "deficit": 0,
+        "coveragePercent": 250.8366331729474,
+        "status": "Crédito suficiente",
+        "matchedActions": [
+          "2048",
+          "20IH",
+          "20XV"
+        ],
+        "matchedPis": [
+          "CA080200T25",
+          "CA08020INSP",
+          "CA0802APOIO",
+          "CA0802INSTR",
+          "CA0802PJC97",
+          "CA0802PJT25",
+          "CA0802TRNSP"
+        ],
+        "matchedNatures": [
+          "339030"
+        ],
+        "ptres": [
+          "229166",
+          "229177",
+          "249587",
+          "249589"
+        ],
+        "fundingSources": [
+          "1000000000",
+          "1050000140",
+          "1052000140",
+          "3050000140"
+        ],
+        "creditSourceLines": [
+          46,
+          69,
+          71,
+          72,
+          73,
+          74,
+          92,
+          93,
+          94,
+          117,
+          118
+        ]
+      },
+      {
+        "ugCode": "120068",
+        "om": "PAMA-SP",
+        "ugName": "PARQUE DE MATERIAL AERONÁUTICO DE SÃO PAULO",
+        "action": "*",
+        "pi": "*",
+        "expenseNature": "339030",
+        "requestCount": 17,
+        "requestNumbers": [
+          "SPT070001PE",
+          "SPT104001T9",
+          "SPT061001PE",
+          "SPT061013PE",
+          "SPT126002H7",
+          "SPT148002PQ",
+          "SPT149002PQ",
+          "SPT153013PQ",
+          "SPT154004PQ",
+          "SPT154005PQ",
+          "SPT146001PE",
+          "SPT147002PE",
+          "SPT147007PE",
+          "SPT148005PE",
+          "SPT152030PE",
+          "SPT153014PE",
+          "SPT153016PE"
+        ],
+        "requestValue": 274692.5,
+        "committedValue": 0,
+        "balanceToCommit": 274692.5,
+        "creditAvailable": 938027.82,
+        "creditRemaining": 663335.32,
+        "deficit": 0,
+        "coveragePercent": 341.4828653858405,
+        "status": "Crédito suficiente",
+        "matchedActions": [
+          "2048",
+          "20XV",
+          "2868"
+        ],
+        "matchedPis": [
+          "CA080200SAR",
+          "CA08020COMB",
+          "CA08020VANT",
+          "CA0802APOIO",
+          "CA0802FIGHT"
+        ],
+        "matchedNatures": [
+          "339030"
+        ],
+        "ptres": [
+          "229166",
+          "229177",
+          "229179"
+        ],
+        "fundingSources": [
+          "1050000140",
+          "1052000140",
+          "3050000140"
+        ],
+        "creditSourceLines": [
+          51,
+          52,
+          77,
+          78,
+          79,
+          95,
+          96,
+          107
+        ]
+      },
+      {
+        "ugCode": "120068",
+        "om": "PAMA-SP",
+        "ugName": "PARQUE DE MATERIAL AERONÁUTICO DE SÃO PAULO",
+        "action": "*",
+        "pi": "*",
+        "expenseNature": "339039",
+        "requestCount": 12,
+        "requestNumbers": [
+          "SPTR09807A7",
+          "SPTR09808A7",
+          "SPTR09809A7",
+          "SPTR09804A7",
+          "SPTR10001A7",
+          "SPTR10002A7",
+          "SPTR09601F5",
+          "SPTR09810A7",
+          "SPTR10010T1",
+          "SPTR12001F5",
+          "SPTR12002F5",
+          "SPTR12003F5"
+        ],
+        "requestValue": 153377.86,
+        "committedValue": 0,
+        "balanceToCommit": 153377.86,
+        "creditAvailable": 514313.22,
+        "creditRemaining": 360935.36,
+        "deficit": 0,
+        "coveragePercent": 335.3242899594505,
+        "status": "Crédito suficiente",
+        "matchedActions": [
+          "2048",
+          "20XV"
+        ],
+        "matchedPis": [
+          "CA080200SAR",
+          "CA080200VIP",
+          "CA0802FIGHT"
+        ],
+        "matchedNatures": [
+          "339039"
+        ],
+        "ptres": [
+          "229166",
+          "229177"
+        ],
+        "fundingSources": [
+          "1050000140",
+          "1052000140",
+          "3050000140"
+        ],
+        "creditSourceLines": [
+          62,
+          86,
+          87,
+          101
+        ]
+      }
+    ],
+    "byOm": [
+      {
+        "ugCode": "120049",
+        "om": "PAMA-GL",
+        "ugName": "PARQUE DE MATERIAL AERONÁUTICO DO GALEÃO",
+        "requestCount": 17,
+        "requestValue": 233578.75,
+        "committedValue": 0,
+        "balanceToCommit": 233578.75,
+        "creditAvailable": 197495.93,
+        "creditRemaining": 4699.15,
+        "deficit": 40781.97,
+        "coveragePercent": 84.55218207991952,
+        "status": "Crédito insuficiente"
+      },
+      {
+        "ugCode": "120026",
+        "om": "PAMA-LS",
+        "ugName": "PARQUE DE MATERIAL AERONÁUTICO DE LAGOA SANTA",
+        "requestCount": 13,
+        "requestValue": 172816.48,
+        "committedValue": 0,
+        "balanceToCommit": 172816.48,
+        "creditAvailable": 433487.04,
+        "creditRemaining": 260670.56,
+        "deficit": 0,
+        "coveragePercent": 250.8366331729474,
+        "status": "Crédito suficiente"
+      },
+      {
+        "ugCode": "120068",
+        "om": "PAMA-SP",
+        "ugName": "PARQUE DE MATERIAL AERONÁUTICO DE SÃO PAULO",
+        "requestCount": 29,
+        "requestValue": 428070.36,
+        "committedValue": 0,
+        "balanceToCommit": 428070.36,
+        "creditAvailable": 1452341.04,
+        "creditRemaining": 1024270.68,
+        "deficit": 0,
+        "coveragePercent": 339.2762442136849,
+        "status": "Crédito suficiente"
+      }
+    ]
+  },
+  "checks": {
+    "sourceSpreadsheetExists": true,
+    "basePackageExists": true,
+    "recordCountIs59": true,
+    "uniqueBacCountIs59": true,
+    "positionIs04092026": true,
+    "allActionsAreWildcard": true,
+    "allPisAreWildcard": true,
+    "allNaturesAreSpecific": true,
+    "allNaturesHaveSixDigits": true,
+    "natureCountsMatch": true,
+    "correctedNatureApplied": true,
+    "proposalValidityUpdateApplied": true,
+    "requestTotalMatches": true,
+    "committedTotalMatches": true,
+    "balanceTotalMatches": true,
+    "crossHasFiveGroups": true,
+    "crossHasThreeOms": true,
+    "crossRequestCountIs59": true,
+    "crossDemandMatches": true,
+    "crossCreditMatches": true,
+    "crossRemainingMatches": true,
+    "crossDeficitMatches": true,
+    "oneInsufficientGroup": true,
+    "fourSufficientGroups": true,
+    "pamaGlEquipmentDeficitCorrect": true,
+    "noDuplicateIdsOnUpdatedPages": true,
+    "noMissingLocalLinksOnUpdatedPages": true,
+    "npmCheckPassed": true,
+    "npmTestsPassed": true,
+    "creditBasePreserved": true,
+    "latestCreditBuildPreserved": true,
+    "detailedReportBuildPreserved": true,
+    "accountabilityBuildPreserved": true,
+    "paymentsBuildPreserved": true,
+    "repairBuildPreserved": true,
+    "contractsBuildPreserved": true,
+    "rpBuildPreserved": true,
+    "processesBuildPreserved": true
+  },
+  "htmlChecks": {
+    "requisicoes.html": {
+      "duplicateIds": [],
+      "missingLocalLinks": []
+    },
+    "requisicoes-disponiveis-empenho.html": {
+      "duplicateIds": [],
+      "missingLocalLinks": []
+    },
+    "requisicoes-cruzamento-credito.html": {
+      "duplicateIds": [],
+      "missingLocalLinks": []
+    }
+  },
+  "npmCheck": {
+    "returnCode": 0,
+    "summary": "> check\n> node --check assets/js/repair-import-core.js && node --check assets/js/repair-processes-panel.js && node --check assets/js/payment-tracking-core.js && node --check assets/js/payment-tracking-panel.js && node --check assets/js/payment-execution-panel.js && node --check assets/js/accountability-core.js && node --check assets/js/accountability-landing.js && node --check assets/js/accountability-panel.js && node --check assets/js/requisition-core.js && node --check assets/js/credit-budget-detail.js && node --check assets/js/requisitions-available-panel.js && node --check assets/js/requisition-credit-cross-panel.js"
+  },
+  "npmTest": {
+    "returnCode": 0,
+    "tests": 69,
+    "passed": 69,
+    "failed": 0
+  },
+  "detailedReportVerification": {
+    "omCount": 3,
+    "requestCount": 59,
+    "totals": {
+      "requestCount": 59,
+      "requestValue": 834465.59,
+      "committedValue": 0,
+      "balanceToCommit": 834465.59,
+      "creditAvailable": 2083324.01,
+      "creditRemaining": 1289640.39,
+      "deficit": 40781.97,
+      "coveragePercent": 249.65966661369464
+    },
+    "byOm": [
+      {
+        "om": "PAMA-GL",
+        "ugCode": "120049",
+        "requests": 17,
+        "requestValue": 233578.75,
+        "balanceToCommit": 233578.75,
+        "creditAvailable": 197495.93,
+        "creditRemaining": 4699.15,
+        "deficit": 40781.97,
+        "status": "Crédito insuficiente"
+      },
+      {
+        "om": "PAMA-LS",
+        "ugCode": "120026",
+        "requests": 13,
+        "requestValue": 172816.48,
+        "balanceToCommit": 172816.48,
+        "creditAvailable": 433487.04,
+        "creditRemaining": 260670.56,
+        "deficit": 0,
+        "status": "Crédito suficiente"
+      },
+      {
+        "om": "PAMA-SP",
+        "ugCode": "120068",
+        "requests": 29,
+        "requestValue": 428070.36,
+        "balanceToCommit": 428070.36,
+        "creditAvailable": 1452341.04,
+        "creditRemaining": 1024270.68,
+        "deficit": 0,
+        "status": "Crédito suficiente"
+      }
+    ]
+  },
+  "fileHashes": {
+    "requisicoes.html": "fc50ca10e5605880b5482c45a9c1d540cdc21aadd85b561eb95bdaf466508098",
+    "requisicoes-disponiveis-empenho.html": "5e8b22063797f26b1241c1b0d37de967a760599e7f12726a4ff050fd2719e430",
+    "requisicoes-cruzamento-credito.html": "90e39fe2e2503a8b5e78c559395099b823a940cabc21f2ea7a6bcaf7b9ec1f17",
+    "assets/data/requisitions-available-current.json": "c2e37c77f711e9dd3274236969b8c60df225949916accfb611edc61f4ce43bc6",
+    "assets/data/requisitions-available-04092026.json": "c2e37c77f711e9dd3274236969b8c60df225949916accfb611edc61f4ce43bc6",
+    "assets/data/requisition-credit-cross-summary-04092026.json": "73072285722abc8c65f64650c18421485f6584206d01db3989ed171ff12a774f",
+    "assets/js/requisitions-available-panel.js": "77102170afe26bedd97f014ac148ffa055c029818e9cbb0c8fa47c8d6eeca1da",
+    "assets/js/requisition-credit-cross-panel.js": "e43cf57334d24a1dfe60a6bbbd510f9f509aceb748b025a899c701deefdaea9f",
+    "tests/requisition-core.test.mjs": "9f36a412fcc9df20975309b6bae3a37813822da1415c02ac8a1f340f97051c69"
+  }
+}
