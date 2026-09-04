@@ -1,0 +1,41 @@
+PAINEL CABW - REQUISIÇÕES DISPONÍVEIS PARA EMPENHO
+ATUALIZAÇÃO COM PART NUMBERS - POSIÇÃO DE 04/09/2026
+
+Fonte: REQUISIÇÕES DISPONÍVEIS PARA EMPENHO - 04092026(1).xlsx
+Aba: Sheet1
+Linhas processadas: 2 a 68
+
+RESULTADO:
+- Requisições ativas: 67
+- BAC# únicos: 67
+- Requisições com Part Number: 67
+- Part Numbers distintos: 61
+- Valor total das requisições: US$ 1,316,467.79
+- Valor já empenhado: US$ 0.00
+- Saldo a empenhar: US$ 1,316,467.79
+- Requisições adicionadas em relação à base anterior: 10
+- Requisições retiradas da base atual: 2
+
+CRUZAMENTO COM O CRÉDITO:
+- Grupos orçamentários: 6
+- Crédito compatível: US$ 2,111,185.77
+- Crédito remanescente: US$ 1,040,509.39
+- Déficit: US$ 245,791.41
+
+ALTERAÇÕES FUNCIONAIS:
+- Part Number incorporado à base de cada BAC#.
+- Part Number incluído na tabela, pesquisa, CSV e PDF de Requisições Disponíveis.
+- Part Number incluído no relatório PDF detalhado do painel Crédito x Requisições.
+- Pesquisa do cruzamento também localiza Part Number.
+- Natureza de Despesa da requisição GLT099002R2 mantida corrigida como 449052.
+
+ARQUIVO DE VERIFICAÇÃO:
+BUILD_VERIFICACAO_REQUISICOES_PART_NUMBERS_04092026.json
+
+PUBLICAÇÃO:
+1. Extraia o ZIP.
+2. Envie todo o conteúdo extraído à raiz do repositório.
+3. Substitua os arquivos existentes.
+4. Confirme a presença do arquivo de verificação acima.
+5. Faça o commit e aguarde o GitHub Pages.
+6. Atualize o site com Ctrl + F5.

@@ -1,0 +1,100 @@
+{
+  "build": "requisitions-part-numbers-04092026-r5",
+  "generatedAt": "2026-09-04T16:34:33Z",
+  "sourceSpreadsheet": "REQUISIÇÕES DISPONÍVEIS PARA EMPENHO - 04092026(1).xlsx",
+  "sourceSpreadsheetSha256": "e02d16745a4c3845ea67d9881bf8932981e09c267de613ae6ba6bfb215739763",
+  "basePackage": "cabw_site_requisicoes_naturezas_04092026_VERIFICADO.zip",
+  "basePackageSha256": "7aadb80b2e620cdf011c32756887d738e78503a3781ffe7bf10d8ea9ee2a9d94",
+  "recordCount": 67,
+  "uniqueRequestCount": 67,
+  "partNumberRecordCount": 67,
+  "uniquePartNumberCount": 61,
+  "requestValueTotal": 1316467.79,
+  "committedValueTotal": 0.0,
+  "balanceToCommitTotal": 1316467.79,
+  "addedRequests": [
+    "GLT091002P3",
+    "GLT099004C1",
+    "GLT100004R2",
+    "GLT105002R2",
+    "LST055003AS",
+    "LST077011A2",
+    "LST097007A2",
+    "LST138003T2",
+    "LST140005SS",
+    "LST167001A2"
+  ],
+  "removedRequests": [
+    "LST025004T9",
+    "LST138014T9"
+  ],
+  "confirmedCorrections": [
+    {
+      "requestNumber": "GLT099002R2",
+      "sourceRow": 14,
+      "sourceValue": "459052",
+      "correctedValue": "449052",
+      "reason": "Natureza de Despesa corrigida de 459052 para 449052 conforme confirmação do usuário."
+    }
+  ],
+  "crossing": {
+    "groupCount": 6,
+    "omCount": 3,
+    "requestCount": 67,
+    "requestValue": 1316467.79,
+    "committedValue": 0,
+    "balanceToCommit": 1316467.79,
+    "creditAvailable": 2111185.77,
+    "creditRemaining": 1040509.39,
+    "deficit": 245791.41,
+    "coveragePercent": 160.36744583017864,
+    "statusCounts": {
+      "Crédito insuficiente": 2,
+      "Crédito suficiente": 4
+    }
+  },
+  "checks": {
+    "recordCount67": true,
+    "uniqueBac67": true,
+    "allPartNumbersPresent": true,
+    "uniquePartNumbers61": true,
+    "partNumberInAvailableTable": true,
+    "partNumberInAvailableExports": true,
+    "partNumberInDetailedCrossPdf": true,
+    "crossSearchIncludesPartNumber": true,
+    "natureCorrectionPreserved": true,
+    "addedRequests10": true,
+    "removedRequests2": true,
+    "crossGroupCount6": true,
+    "crossDeficitMatches": true,
+    "creditNotDoubleCounted": true,
+    "priorNatureBuildPreserved": true,
+    "creditBuildPreserved": true,
+    "paymentsPanelPreserved": true,
+    "accountabilityPanelPreserved": true
+  },
+  "htmlDuplicateIds": {
+    "requisicoes.html": [],
+    "requisicoes-disponiveis-empenho.html": [],
+    "requisicoes-cruzamento-credito.html": []
+  },
+  "automatedTests": {
+    "tests": 70,
+    "passed": 70,
+    "failed": 0
+  },
+  "npmCheck": "> check\n> node --check assets/js/repair-import-core.js && node --check assets/js/repair-processes-panel.js && node --check assets/js/payment-tracking-core.js && node --check assets/js/payment-tracking-panel.js && node --check assets/js/payment-execution-panel.js && node --check assets/js/accountability-core.js && node --check assets/js/accountability-landing.js && node --check assets/js/accountability-panel.js && node --check assets/js/requisition-core.js && node --check assets/js/credit-budget-detail.js && node --check assets/js/requisitions-available-panel.js && node --check assets/js/requisition-credit-cross-panel.js",
+  "fileHashes": {
+    "requisicoes.html": "b268cf99934489cc2fe00302b9b00271d54d0c33d1f3f00fe8cc8cff2286b80d",
+    "requisicoes-disponiveis-empenho.html": "ed227226db9bb6cc7243708b61e3e5863af62a3a7a853289a57b150891971952",
+    "requisicoes-cruzamento-credito.html": "7d72d19ee70139d3e563484e80e2aee3f04696d315904e60b2cc1b8edf5c69be",
+    "assets/js/requisition-core.js": "206042bd1a38b5b68201fc2117b69a5a1a0bce5d7c755b5df45ac3518aab1b72",
+    "assets/js/requisitions-available-panel.js": "0311d36cc1964a3eb537fc5da92f23fbb1d273922410fb901082986ab041124c",
+    "assets/js/requisition-credit-cross-panel.js": "c10088ffe8667abb117b069be2b9b3a21319aa714e38f68bbcaa9eb8e0a7770c",
+    "assets/data/requisitions-available-current.json": "ec842c5d59e8c6ea09cb3230b8a5613111e8940c483dd81d7ea88ca0f2935ace",
+    "assets/data/requisitions-available-04092026.json": "ec842c5d59e8c6ea09cb3230b8a5613111e8940c483dd81d7ea88ca0f2935ace",
+    "assets/data/requisition-credit-cross-summary-04092026.json": "c60802098c679e06f4a3862f8d4dfbb73c0a19955b3dd29d5fa09a2c65304118",
+    "assets/data/requisitions-part-number-update-audit-04092026.json": "36ee325dfe3c9bd3cf3cc73ae7f53c5442a3040bbe470bd44351ef66abef3eb2",
+    "tests/requisition-core.test.mjs": "e45a810d74067e1d18c4a4d5d0aca43d3fb061230d11e21ea84b7bbd38b02f72"
+  }
+}
