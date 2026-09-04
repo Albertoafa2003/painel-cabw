@@ -1,0 +1,73 @@
+PAINEL CABW — ATUALIZAÇÃO DAS REQUISIÇÕES DISPONÍVEIS PARA EMPENHO
+
+Fonte:
+REQUISIÇÕES DISPONÍVEIS PARA EMPENHO - 04092026.xlsx
+
+Posição da base de requisições:
+04/09/2026
+
+Posição do crédito analítico utilizado no cruzamento:
+01/09/2026
+
+RESULTADO DA IMPORTAÇÃO:
+- Requisições: 59
+- BAC# únicos: 59
+- Organizações Militares: 3
+- Valor total das requisições: US$ 834.465,59
+- Valor já empenhado: US$ 0,00
+- Saldo total a empenhar: US$ 834.465,59
+
+NATUREZAS DE DESPESA:
+- 339030: 32 requisições
+- 339039: 12 requisições
+- 449052: 15 requisições
+
+CORREÇÃO CONFIRMADA:
+- Requisição GLT099002R2
+- Valor na planilha: 459052
+- Natureza correta utilizada no site: 449052
+
+REGRA DE CRUZAMENTO:
+- OM/UG obrigatória
+- Natureza de Despesa específica, pelo código completo de seis dígitos
+- Ação em branco = qualquer Ação da mesma OM
+- PI em branco = qualquer PI da mesma OM
+- Nenhuma parcela de crédito é contabilizada mais de uma vez
+
+RESULTADO DO CRUZAMENTO:
+- Grupos OM/Natureza: 5
+- Crédito compatível: US$ 2.083.324,01
+- Crédito remanescente nos grupos compatíveis: US$ 1.289.640,39
+- Déficit: US$ 40.781,97
+- Grupos com crédito suficiente: 4
+- Grupos com crédito insuficiente: 1
+
+PONTO DE ATENÇÃO:
+O déficit está concentrado nas requisições do PAMA-GL classificadas na
+Natureza 449052:
+- Saldo a empenhar: US$ 212.371,35
+- Crédito compatível: US$ 171.589,38
+- Déficit: US$ 40.781,97
+
+O crédito remanescente existente em outras Naturezas de Despesa não foi
+utilizado para compensar esse déficit, em respeito à classificação
+orçamentária informada.
+
+ARQUIVOS PRINCIPAIS ATUALIZADOS:
+- requisicoes.html
+- requisicoes-disponiveis-empenho.html
+- requisicoes-cruzamento-credito.html
+- assets/data/requisitions-available-current.json
+- assets/data/requisitions-available-04092026.json
+- assets/js/requisitions-available-panel.js
+- assets/js/requisition-credit-cross-panel.js
+- tests/requisition-core.test.mjs
+
+PUBLICAÇÃO:
+1. Extraia o ZIP.
+2. Envie todo o conteúdo extraído à raiz do repositório.
+3. Confirme a presença deste arquivo e de
+   BUILD_VERIFICACAO_REQUISICOES_NATUREZAS_04092026.json.
+4. Faça o commit.
+5. Aguarde o deploy do GitHub Pages.
+6. Pressione Ctrl + F5 no site.

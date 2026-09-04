@@ -7404,7 +7404,7 @@ body.auth-is-admin .navbar-nav .admin-only {
 @media (max-width: 767.98px) { .budget-dashboard { padding-right: 14px; padding-left: 14px; } .budget-hero-card, .budget-filter-card, .budget-table-card { padding: 20px; } .budget-kpi-grid, .budget-filter-grid { grid-template-columns: 1fr; } .budget-field--wide { grid-column: auto; } }
 
 
-/* ===== Requisições disponíveis — base 01/09/2026 ===== */
+/* ===== Requisições disponíveis — base 04/09/2026 ===== */
 .budget-policy-note { display:flex; gap:14px; align-items:flex-start; margin-top:18px; padding:16px 18px; color:#143764; background:linear-gradient(90deg,rgba(255,210,0,.14),rgba(0,54,118,.05)); border:1px solid rgba(207,166,0,.28); border-radius:14px; line-height:1.55; }
 .budget-policy-note i { flex:0 0 auto; margin-top:2px; color:#06326b; font-size:1.25rem; }
 .budget-policy-note strong { color:#041f4a; }
