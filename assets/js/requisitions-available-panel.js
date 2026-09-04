@@ -2,10 +2,10 @@ import {
   ANY,
   criterionLabel,
   normalizeRequisition,
-} from "./requisition-core.js?v=20260904-requisitions-natures-r4";
+} from "./requisition-core.js?v=20260904-requisitions-pn-r5";
 
 const DATA_URL =
-  "assets/data/requisitions-available-current.json?v=20260904-requisitions-natures-r4";
+  "assets/data/requisitions-available-current.json?v=20260904-requisitions-pn-r5";
 
 const state = {
   data: null,
@@ -136,6 +136,7 @@ function apply() {
     if (filters.search) {
       const searchable = [
         record.requestNumber,
+        record.partNumber,
         record.certame,
         record.ugCode,
         record.om,
@@ -175,6 +176,7 @@ function render() {
                     : record.vendor || "Vencedor não informado",
                 )}</small>
               </td>
+              <td><strong>${esc(record.partNumber || "Não informado")}</strong></td>
               <td>
                 <strong>${esc(record.om || record.ugCode)}</strong>
                 <small>${esc(record.ugCode)} — ${esc(record.ugName)}</small>
@@ -203,7 +205,7 @@ function render() {
             </tr>`,
         )
         .join("")
-    : `<tr><td colspan="9"><div class="budget-empty-state"><i class="bi bi-search"></i><strong>Nenhuma requisição encontrada</strong><span>Revise os filtros aplicados.</span></div></td></tr>`;
+    : `<tr><td colspan="10"><div class="budget-empty-state"><i class="bi bi-search"></i><strong>Nenhuma requisição encontrada</strong><span>Revise os filtros aplicados.</span></div></td></tr>`;
 
   const requestValue = state.filtered.reduce(
     (sum, record) => sum + record.requestValue,
@@ -251,6 +253,7 @@ function exportCsv() {
   const rows = [
     [
       "Número da Requisição",
+      "Part Number (PN)",
       "Certame",
       "UG",
       "OM",
@@ -266,6 +269,7 @@ function exportCsv() {
     ],
     ...state.filtered.map((record) => [
       record.requestNumber,
+      record.partNumber,
       record.certame,
       record.ugCode,
       record.om,
@@ -289,7 +293,7 @@ function exportCsv() {
   );
   const anchor = document.createElement("a");
   anchor.href = URL.createObjectURL(blob);
-  anchor.download = "requisicoes-disponiveis-empenho-04092026.csv";
+  anchor.download = "requisicoes-disponiveis-empenho-04092026-pn.csv";
   anchor.click();
   URL.revokeObjectURL(anchor.href);
 }
@@ -319,6 +323,7 @@ function exportPdf() {
     head: [
       [
         "Requisição",
+        "Part Number (PN)",
         "Certame",
         "OM/UG",
         "Ação",
@@ -334,6 +339,7 @@ function exportPdf() {
     ],
     body: state.filtered.map((record) => [
       record.requestNumber,
+      record.partNumber || "Não informado",
       record.certame,
       `${record.om} / ${record.ugCode}`,
       criterionLabel(record.action, "action"),
@@ -352,13 +358,14 @@ function exportPdf() {
     headStyles: { fillColor: [6, 46, 102] },
     columnStyles: {
       0: { cellWidth: 27 },
-      1: { cellWidth: 18 },
-      2: { cellWidth: 25 },
-      6: { cellWidth: 49 },
+      1: { cellWidth: 34 },
+      2: { cellWidth: 18 },
+      3: { cellWidth: 25 },
+      7: { cellWidth: 49 },
     },
   });
 
-  doc.save("requisicoes-disponiveis-empenho-04092026.pdf");
+  doc.save("requisicoes-disponiveis-empenho-04092026-pn.pdf");
 }
 
 async function init() {

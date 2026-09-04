@@ -2,19 +2,21 @@
   "metadata": {
     "status": "loaded",
     "position": "04/09/2026",
-    "sourceFile": "REQUISIÇÕES DISPONÍVEIS PARA EMPENHO - 04092026.xlsx",
+    "sourceFile": "REQUISIÇÕES DISPONÍVEIS PARA EMPENHO - 04092026(1).xlsx",
     "sourceSheet": "Sheet1",
-    "sourceRows": "2 a 60",
-    "generatedAt": "2026-09-04T12:33:15Z",
-    "recordCount": 59,
-    "uniqueRequestCount": 59,
+    "sourceRows": "2 a 68",
+    "generatedAt": "2026-09-04T16:34:32Z",
+    "recordCount": 67,
+    "uniqueRequestCount": 67,
+    "partNumberRecordCount": 67,
+    "uniquePartNumberCount": 61,
     "omCount": 3,
-    "certameCount": 24,
-    "vendorCount": 18,
+    "certameCount": 30,
+    "vendorCount": 19,
     "expenseNatureCount": 3,
-    "requestValueTotal": 834465.59,
+    "requestValueTotal": 1316467.79,
     "committedValueTotal": 0.0,
-    "balanceToCommitTotal": 834465.59,
+    "balanceToCommitTotal": 1316467.79,
     "matchingKey": [
       "ugCode",
       "action",
@@ -29,6 +31,7 @@
     },
     "matchingPolicy": "OM/UG e Natureza de Despesa são obrigatórias na base atual; Ação e PI em branco funcionam como wildcards. O crédito é comparado somente dentro da mesma OM e da mesma Natureza de Despesa.",
     "expenseNaturePolicy": "Código completo de seis dígitos. A requisição GLT099002R2 foi corrigida de 459052 para 449052 conforme confirmação do usuário.",
+    "partNumberPolicy": "O Part Number é vinculado individualmente ao BAC# e apresentado nos relatórios detalhados, sem alterar ou multiplicar os valores financeiros.",
     "omMappings": {
       "PAMAGL": {
         "ugCode": "120049",
@@ -47,7 +50,7 @@
       }
     },
     "calculation": "balanceToCommit = requestValue - committedValue",
-    "message": "Base de 04/09/2026: 59 requisições disponíveis para empenho.",
+    "message": "Base de 04/09/2026: 67 requisições disponíveis para empenho, todas com Part Number.",
     "corrections": [
       {
         "requestNumber": "GLT099002R2",
@@ -57,24 +60,45 @@
         "reason": "Natureza de Despesa corrigida de 459052 para 449052 conforme confirmação do usuário."
       }
     ],
+    "changesFromPreviousBase": {
+      "retainedCount": 57,
+      "addedCount": 10,
+      "removedCount": 2,
+      "addedRequests": [
+        "GLT091002P3",
+        "GLT099004C1",
+        "GLT100004R2",
+        "GLT105002R2",
+        "LST055003AS",
+        "LST077011A2",
+        "LST097007A2",
+        "LST138003T2",
+        "LST140005SS",
+        "LST167001A2"
+      ],
+      "removedRequests": [
+        "LST025004T9",
+        "LST138014T9"
+      ]
+    },
     "byOm": [
       {
         "om": "PAMA-GL",
         "ugCode": "120049",
         "ugName": "PARQUE DE MATERIAL AERONÁUTICO DO GALEÃO",
-        "recordCount": 17,
-        "requestValue": 233578.75,
+        "recordCount": 21,
+        "requestValue": 360318.95,
         "committedValue": 0.0,
-        "balanceToCommit": 233578.75
+        "balanceToCommit": 360318.95
       },
       {
         "om": "PAMA-LS",
         "ugCode": "120026",
         "ugName": "PARQUE DE MATERIAL AERONÁUTICO DE LAGOA SANTA",
-        "recordCount": 13,
-        "requestValue": 172816.48,
+        "recordCount": 17,
+        "requestValue": 528078.48,
         "committedValue": 0.0,
-        "balanceToCommit": 172816.48
+        "balanceToCommit": 528078.48
       },
       {
         "om": "PAMA-SP",
@@ -89,9 +113,9 @@
     "byExpenseNature": [
       {
         "expenseNature": "339030",
-        "recordCount": 32,
-        "requestValue": 468716.38,
-        "balanceToCommit": 468716.38
+        "recordCount": 36,
+        "requestValue": 807788.58,
+        "balanceToCommit": 807788.58
       },
       {
         "expenseNature": "339039",
@@ -101,9 +125,9 @@
       },
       {
         "expenseNature": "449052",
-        "recordCount": 15,
-        "requestValue": 212371.35,
-        "balanceToCommit": 212371.35
+        "recordCount": 19,
+        "requestValue": 355301.35,
+        "balanceToCommit": 355301.35
       }
     ],
     "byOmExpenseNature": [
@@ -111,28 +135,37 @@
         "ugCode": "120026",
         "om": "PAMA-LS",
         "expenseNature": "339030",
-        "recordCount": 13,
-        "requestValue": 172816.48,
+        "recordCount": 16,
+        "requestValue": 511822.48,
         "committedValue": 0.0,
-        "balanceToCommit": 172816.48
+        "balanceToCommit": 511822.48
+      },
+      {
+        "ugCode": "120026",
+        "om": "PAMA-LS",
+        "expenseNature": "449052",
+        "recordCount": 1,
+        "requestValue": 16256.0,
+        "committedValue": 0.0,
+        "balanceToCommit": 16256.0
       },
       {
         "ugCode": "120049",
         "om": "PAMA-GL",
         "expenseNature": "339030",
-        "recordCount": 2,
-        "requestValue": 21207.4,
+        "recordCount": 3,
+        "requestValue": 21273.6,
         "committedValue": 0.0,
-        "balanceToCommit": 21207.4
+        "balanceToCommit": 21273.6
       },
       {
         "ugCode": "120049",
         "om": "PAMA-GL",
         "expenseNature": "449052",
-        "recordCount": 15,
-        "requestValue": 212371.35,
+        "recordCount": 18,
+        "requestValue": 339045.35,
         "committedValue": 0.0,
-        "balanceToCommit": 212371.35
+        "balanceToCommit": 339045.35
       },
       {
         "ugCode": "120068",
@@ -158,6 +191,8 @@
     {
       "id": "req-d83bc0e0cad615fe",
       "requestNumber": "GLS045004P3",
+      "partNumber": "59J6185",
+      "partNumberSource": "59J6185",
       "certame": "239/2025",
       "ugCode": "120049",
       "om": "PAMA-GL",
@@ -177,7 +212,7 @@
       },
       "vendor": "ALAMO AIRCRAFT, LTD",
       "vendorCode": "55345",
-      "proposalValidityDate": "2026-10-03",
+      "proposalValidityDate": "2026-10-04",
       "requestValue": 24497.77,
       "committedValue": 0.0,
       "balanceToCommit": 24497.77,
@@ -187,6 +222,8 @@
     {
       "id": "req-c4080e25b11d7c0d",
       "requestNumber": "GLT120008IX",
+      "partNumber": "06-5022-6500",
+      "partNumberSource": "06-5022-6500",
       "certame": "157/2026",
       "ugCode": "120049",
       "om": "PAMA-GL",
@@ -216,6 +253,8 @@
     {
       "id": "req-e662a6a41b3f65dc",
       "requestNumber": "GLT124007IX",
+      "partNumber": "20-4502-6000",
+      "partNumberSource": "20-4502-6000",
       "certame": "157/2026",
       "ugCode": "120049",
       "om": "PAMA-GL",
@@ -245,6 +284,8 @@
     {
       "id": "req-8edfa2f67c21088e",
       "requestNumber": "GLT125002IX",
+      "partNumber": "14-6805-6010",
+      "partNumberSource": "14-6805-6010",
       "certame": "157/2026",
       "ugCode": "120049",
       "om": "PAMA-GL",
@@ -274,6 +315,8 @@
     {
       "id": "req-eefad716fe1746df",
       "requestNumber": "GLT125003IX",
+      "partNumber": "14-6808-6000",
+      "partNumberSource": "14-6808-6000",
       "certame": "157/2026",
       "ugCode": "120049",
       "om": "PAMA-GL",
@@ -303,6 +346,8 @@
     {
       "id": "req-0bea6cbaa6b9e666",
       "requestNumber": "GLT125004IX",
+      "partNumber": "02-7813C0100",
+      "partNumberSource": "02-7813C0100",
       "certame": "157/2026",
       "ugCode": "120049",
       "om": "PAMA-GL",
@@ -332,6 +377,8 @@
     {
       "id": "req-1a19cefa3633369c",
       "requestNumber": "GLT126004IX",
+      "partNumber": "CTR-GAWL-150",
+      "partNumberSource": "CTR-GAWL-150",
       "certame": "157/2026",
       "ugCode": "120049",
       "om": "PAMA-GL",
@@ -361,6 +408,8 @@
     {
       "id": "req-d495615e2a81cb28",
       "requestNumber": "GLT127001IX",
+      "partNumber": "10-6402-0010",
+      "partNumberSource": "10-6402-0010",
       "certame": "157/2026",
       "ugCode": "120049",
       "om": "PAMA-GL",
@@ -390,6 +439,8 @@
     {
       "id": "req-562709404c054e72",
       "requestNumber": "GLT127002IX",
+      "partNumber": "14-6804-6000",
+      "partNumberSource": "14-6804-6000",
       "certame": "157/2026",
       "ugCode": "120049",
       "om": "PAMA-GL",
@@ -419,6 +470,8 @@
     {
       "id": "req-ae01e0cd84b9da11",
       "requestNumber": "GLT131002IX",
+      "partNumber": "20-4505-7000",
+      "partNumberSource": "20-4505-7000",
       "certame": "158/2026",
       "ugCode": "120049",
       "om": "PAMA-GL",
@@ -448,6 +501,8 @@
     {
       "id": "req-04a2bd374168d45f",
       "requestNumber": "GLT103003IX",
+      "partNumber": "3876001-8",
+      "partNumberSource": "3876001-8",
       "certame": "161/2026",
       "ugCode": "120049",
       "om": "PAMA-GL",
@@ -477,6 +532,8 @@
     {
       "id": "req-e7b2fac979b3c69f",
       "requestNumber": "GLT008004P3",
+      "partNumber": "02T13640",
+      "partNumberSource": "02T13640",
       "certame": "175/2026",
       "ugCode": "120049",
       "om": "PAMA-GL",
@@ -506,6 +563,8 @@
     {
       "id": "req-3fd74b11be5aca00",
       "requestNumber": "GLT099002R2",
+      "partNumber": "ADA145M612",
+      "partNumberSource": "ADA145M612",
       "certame": "176/2026",
       "ugCode": "120049",
       "om": "PAMA-GL",
@@ -535,6 +594,8 @@
     {
       "id": "req-c80b3ff6e920f1c0",
       "requestNumber": "GLT100003R2",
+      "partNumber": "CC0183-02",
+      "partNumberSource": "CC0183-02",
       "certame": "176/2026",
       "ugCode": "120049",
       "om": "PAMA-GL",
@@ -562,8 +623,72 @@
       "sourceRow": 15
     },
     {
+      "id": "req-efc4eb02548057fa",
+      "requestNumber": "GLT100004R2",
+      "partNumber": "04-6035-1100",
+      "partNumberSource": "04-6035-1100",
+      "certame": "176/2026",
+      "ugCode": "120049",
+      "om": "PAMA-GL",
+      "omSource": "PAMAGL",
+      "ugName": "PARQUE DE MATERIAL AERONÁUTICO DO GALEÃO",
+      "action": "*",
+      "actionSource": null,
+      "pi": "*",
+      "piSource": null,
+      "expenseNature": "449052",
+      "expenseNatureSource": "449052",
+      "expenseNatureCorrection": null,
+      "wildcards": {
+        "action": true,
+        "pi": true,
+        "expenseNature": false
+      },
+      "vendor": "ESDA GLOBAL, LLC",
+      "vendorCode": "413E6",
+      "proposalValidityDate": "2026-09-13",
+      "requestValue": 82260.0,
+      "committedValue": 0.0,
+      "balanceToCommit": 82260.0,
+      "status": "Disponível para empenho",
+      "sourceRow": 16
+    },
+    {
+      "id": "req-ddfe7d2a7161e0c6",
+      "requestNumber": "GLT105002R2",
+      "partNumber": "04-6029-5111",
+      "partNumberSource": "04-6029-5111",
+      "certame": "176/2026",
+      "ugCode": "120049",
+      "om": "PAMA-GL",
+      "omSource": "PAMAGL",
+      "ugName": "PARQUE DE MATERIAL AERONÁUTICO DO GALEÃO",
+      "action": "*",
+      "actionSource": null,
+      "pi": "*",
+      "piSource": null,
+      "expenseNature": "449052",
+      "expenseNatureSource": "449052",
+      "expenseNatureCorrection": null,
+      "wildcards": {
+        "action": true,
+        "pi": true,
+        "expenseNature": false
+      },
+      "vendor": "GAMA IVB SOLUTIONS",
+      "vendorCode": "8UE16",
+      "proposalValidityDate": "2026-09-13",
+      "requestValue": 42750.0,
+      "committedValue": 0.0,
+      "balanceToCommit": 42750.0,
+      "status": "Disponível para empenho",
+      "sourceRow": 17
+    },
+    {
       "id": "req-f5a4e4da3bc6c7e6",
       "requestNumber": "GLT105005R2",
+      "partNumber": "04-6001-1100",
+      "partNumberSource": "04-6001-1100",
       "certame": "176/2026",
       "ugCode": "120049",
       "om": "PAMA-GL",
@@ -588,11 +713,75 @@
       "committedValue": 0.0,
       "balanceToCommit": 40020.0,
       "status": "Disponível para empenho",
-      "sourceRow": 16
+      "sourceRow": 18
+    },
+    {
+      "id": "req-1d8af5b7c1b35756",
+      "requestNumber": "GLT091002P3",
+      "partNumber": "MS21914-5",
+      "partNumberSource": "MS21914-5",
+      "certame": "177/2026",
+      "ugCode": "120049",
+      "om": "PAMA-GL",
+      "omSource": "PAMAGL",
+      "ugName": "PARQUE DE MATERIAL AERONÁUTICO DO GALEÃO",
+      "action": "*",
+      "actionSource": null,
+      "pi": "*",
+      "piSource": null,
+      "expenseNature": "339030",
+      "expenseNatureSource": "339030",
+      "expenseNatureCorrection": null,
+      "wildcards": {
+        "action": true,
+        "pi": true,
+        "expenseNature": false
+      },
+      "vendor": "ESDA GLOBAL, LLC",
+      "vendorCode": "413E6",
+      "proposalValidityDate": "2026-09-20",
+      "requestValue": 66.2,
+      "committedValue": 0.0,
+      "balanceToCommit": 66.2,
+      "status": "Disponível para empenho",
+      "sourceRow": 19
+    },
+    {
+      "id": "req-f64d453fa3ad3dae",
+      "requestNumber": "GLT099004C1",
+      "partNumber": "98D27803500001",
+      "partNumberSource": "98D27803500001",
+      "certame": "190/2026",
+      "ugCode": "120049",
+      "om": "PAMA-GL",
+      "omSource": "PAMAGL",
+      "ugName": "PARQUE DE MATERIAL AERONÁUTICO DO GALEÃO",
+      "action": "*",
+      "actionSource": null,
+      "pi": "*",
+      "piSource": null,
+      "expenseNature": "449052",
+      "expenseNatureSource": "449052",
+      "expenseNatureCorrection": null,
+      "wildcards": {
+        "action": true,
+        "pi": true,
+        "expenseNature": false
+      },
+      "vendor": "FLORIDA SUPPLY USA, INC",
+      "vendorCode": "7CAV4",
+      "proposalValidityDate": "2026-09-26",
+      "requestValue": 1664.0,
+      "committedValue": 0.0,
+      "balanceToCommit": 1664.0,
+      "status": "Disponível para empenho",
+      "sourceRow": 20
     },
     {
       "id": "req-66f3dc0a952cf58a",
       "requestNumber": "GLT138001C1",
+      "partNumber": "D97B00-003",
+      "partNumberSource": "D97B00-003",
       "certame": "190/2026",
       "ugCode": "120049",
       "om": "PAMA-GL",
@@ -617,11 +806,13 @@
       "committedValue": 0.0,
       "balanceToCommit": 9200.0,
       "status": "Disponível para empenho",
-      "sourceRow": 17
+      "sourceRow": 21
     },
     {
       "id": "req-bfcaf73956667f1b",
       "requestNumber": "GLT138002C1",
+      "partNumber": "B32012-45",
+      "partNumberSource": "B32012-45",
       "certame": "190/2026",
       "ugCode": "120049",
       "om": "PAMA-GL",
@@ -646,11 +837,13 @@
       "committedValue": 0.0,
       "balanceToCommit": 4500.0,
       "status": "Disponível para empenho",
-      "sourceRow": 18
+      "sourceRow": 22
     },
     {
       "id": "req-9b1ef7a19444e917",
       "requestNumber": "LST051002AS",
+      "partNumber": "908DFT",
+      "partNumberSource": "908DFT",
       "certame": "201/2026",
       "ugCode": "120026",
       "om": "PAMA-LS",
@@ -675,11 +868,44 @@
       "committedValue": 0.0,
       "balanceToCommit": 14535.0,
       "status": "Disponível para empenho",
-      "sourceRow": 19
+      "sourceRow": 23
+    },
+    {
+      "id": "req-f5ef9d623d96f3fb",
+      "requestNumber": "LST055003AS",
+      "partNumber": "MS24498-1",
+      "partNumberSource": "MS24498-1",
+      "certame": "201/2026",
+      "ugCode": "120026",
+      "om": "PAMA-LS",
+      "omSource": "PAMALS",
+      "ugName": "PARQUE DE MATERIAL AERONÁUTICO DE LAGOA SANTA",
+      "action": "*",
+      "actionSource": null,
+      "pi": "*",
+      "piSource": null,
+      "expenseNature": "339030",
+      "expenseNatureSource": "339030",
+      "expenseNatureCorrection": null,
+      "wildcards": {
+        "action": true,
+        "pi": true,
+        "expenseNature": false
+      },
+      "vendor": "METTA TRADING, LLC",
+      "vendorCode": "9BVR5",
+      "proposalValidityDate": "2026-10-04",
+      "requestValue": 73000.0,
+      "committedValue": 0.0,
+      "balanceToCommit": 73000.0,
+      "status": "Disponível para empenho",
+      "sourceRow": 24
     },
     {
       "id": "req-905a997a4153c822",
       "requestNumber": "LST084001AS",
+      "partNumber": "301440000099",
+      "partNumberSource": "301440000099",
       "certame": "201/2026",
       "ugCode": "120026",
       "om": "PAMA-LS",
@@ -704,11 +930,13 @@
       "committedValue": 0.0,
       "balanceToCommit": 24120.0,
       "status": "Disponível para empenho",
-      "sourceRow": 20
+      "sourceRow": 25
     },
     {
       "id": "req-65c426d89462e6fa",
       "requestNumber": "LST084002AS",
+      "partNumber": "301440000382",
+      "partNumberSource": "301440000382",
       "certame": "201/2026",
       "ugCode": "120026",
       "om": "PAMA-LS",
@@ -733,11 +961,13 @@
       "committedValue": 0.0,
       "balanceToCommit": 15600.0,
       "status": "Disponível para empenho",
-      "sourceRow": 21
+      "sourceRow": 26
     },
     {
       "id": "req-68203a8f6142e91d",
       "requestNumber": "LST040018BR",
+      "partNumber": "70001-009",
+      "partNumberSource": "70001-009",
       "certame": "202/2026",
       "ugCode": "120026",
       "om": "PAMA-LS",
@@ -762,11 +992,13 @@
       "committedValue": 0.0,
       "balanceToCommit": 300.0,
       "status": "Disponível para empenho",
-      "sourceRow": 22
+      "sourceRow": 27
     },
     {
       "id": "req-4bc615474ff25ea9",
       "requestNumber": "LST040021BR",
+      "partNumber": "34535-2",
+      "partNumberSource": "34535-2",
       "certame": "202/2026",
       "ugCode": "120026",
       "om": "PAMA-LS",
@@ -791,11 +1023,13 @@
       "committedValue": 0.0,
       "balanceToCommit": 540.0,
       "status": "Disponível para empenho",
-      "sourceRow": 23
+      "sourceRow": 28
     },
     {
       "id": "req-70327d554a8b7154",
       "requestNumber": "LST040022BR",
+      "partNumber": "52C8637-1",
+      "partNumberSource": "52C8637-1",
       "certame": "202/2026",
       "ugCode": "120026",
       "om": "PAMA-LS",
@@ -820,11 +1054,13 @@
       "committedValue": 0.0,
       "balanceToCommit": 680.0,
       "status": "Disponível para empenho",
-      "sourceRow": 24
+      "sourceRow": 29
     },
     {
       "id": "req-651b054f91dde41d",
       "requestNumber": "LST040023BR",
+      "partNumber": "34564-49",
+      "partNumberSource": "34564-49",
       "certame": "202/2026",
       "ugCode": "120026",
       "om": "PAMA-LS",
@@ -849,11 +1085,13 @@
       "committedValue": 0.0,
       "balanceToCommit": 82.16,
       "status": "Disponível para empenho",
-      "sourceRow": 25
+      "sourceRow": 30
     },
     {
       "id": "req-924dca1fd32d999a",
       "requestNumber": "LST040024BR",
+      "partNumber": "34564-61",
+      "partNumberSource": "34564-61",
       "certame": "202/2026",
       "ugCode": "120026",
       "om": "PAMA-LS",
@@ -878,69 +1116,13 @@
       "committedValue": 0.0,
       "balanceToCommit": 684.24,
       "status": "Disponível para empenho",
-      "sourceRow": 26
-    },
-    {
-      "id": "req-6e59d7769cfaf791",
-      "requestNumber": "LST138014T9",
-      "certame": "203/2026",
-      "ugCode": "120026",
-      "om": "PAMA-LS",
-      "omSource": "PAMALS",
-      "ugName": "PARQUE DE MATERIAL AERONÁUTICO DE LAGOA SANTA",
-      "action": "*",
-      "actionSource": null,
-      "pi": "*",
-      "piSource": null,
-      "expenseNature": "339030",
-      "expenseNatureSource": "339030",
-      "expenseNatureCorrection": null,
-      "wildcards": {
-        "action": true,
-        "pi": true,
-        "expenseNature": false
-      },
-      "vendor": "FLORIDA SUPPLY USA, INC",
-      "vendorCode": "7CAV4",
-      "proposalValidityDate": "2026-10-04",
-      "requestValue": 25600.0,
-      "committedValue": 0.0,
-      "balanceToCommit": 25600.0,
-      "status": "Disponível para empenho",
-      "sourceRow": 27
-    },
-    {
-      "id": "req-88ca62ef969d1735",
-      "requestNumber": "LST025004T9",
-      "certame": "203/2026",
-      "ugCode": "120026",
-      "om": "PAMA-LS",
-      "omSource": "PAMALS",
-      "ugName": "PARQUE DE MATERIAL AERONÁUTICO DE LAGOA SANTA",
-      "action": "*",
-      "actionSource": null,
-      "pi": "*",
-      "piSource": null,
-      "expenseNature": "339030",
-      "expenseNatureSource": "339030",
-      "expenseNatureCorrection": null,
-      "wildcards": {
-        "action": true,
-        "pi": true,
-        "expenseNature": false
-      },
-      "vendor": "M X CONSULTING & MEDIATION SERVICES, INC",
-      "vendorCode": "6T5Q2",
-      "proposalValidityDate": "2026-10-04",
-      "requestValue": 53310.0,
-      "committedValue": 0.0,
-      "balanceToCommit": 53310.0,
-      "status": "Disponível para empenho",
-      "sourceRow": 28
+      "sourceRow": 31
     },
     {
       "id": "req-4e5f9ac4d4111373",
       "requestNumber": "LST025006T9",
+      "partNumber": "494-30029-00",
+      "partNumberSource": "494-30029-00",
       "certame": "203/2026",
       "ugCode": "120026",
       "om": "PAMA-LS",
@@ -965,11 +1147,44 @@
       "committedValue": 0.0,
       "balanceToCommit": 35850.0,
       "status": "Disponível para empenho",
-      "sourceRow": 29
+      "sourceRow": 32
+    },
+    {
+      "id": "req-52027ec38cb0a235",
+      "requestNumber": "LST140005SS",
+      "partNumber": "3991601",
+      "partNumberSource": "3991601",
+      "certame": "204/2026",
+      "ugCode": "120026",
+      "om": "PAMA-LS",
+      "omSource": "PAMALS",
+      "ugName": "PARQUE DE MATERIAL AERONÁUTICO DE LAGOA SANTA",
+      "action": "*",
+      "actionSource": null,
+      "pi": "*",
+      "piSource": null,
+      "expenseNature": "339030",
+      "expenseNatureSource": "339030",
+      "expenseNatureCorrection": null,
+      "wildcards": {
+        "action": true,
+        "pi": true,
+        "expenseNature": false
+      },
+      "vendor": "GAMA IVB SOLUTIONS",
+      "vendorCode": "8UE16",
+      "proposalValidityDate": "2026-10-04",
+      "requestValue": 29500.0,
+      "committedValue": 0.0,
+      "balanceToCommit": 29500.0,
+      "status": "Disponível para empenho",
+      "sourceRow": 33
     },
     {
       "id": "req-fb828273636d78a2",
       "requestNumber": "LST104006A7",
+      "partNumber": "18216G-01",
+      "partNumberSource": "18216G-01",
       "certame": "205/2026",
       "ugCode": "120026",
       "om": "PAMA-LS",
@@ -994,11 +1209,13 @@
       "committedValue": 0.0,
       "balanceToCommit": 280.77,
       "status": "Disponível para empenho",
-      "sourceRow": 30
+      "sourceRow": 34
     },
     {
       "id": "req-40253c1af2c8c58f",
       "requestNumber": "LST162010A7",
+      "partNumber": "BST-2813",
+      "partNumberSource": "BST-2813",
       "certame": "206/2026",
       "ugCode": "120026",
       "om": "PAMA-LS",
@@ -1023,11 +1240,137 @@
       "committedValue": 0.0,
       "balanceToCommit": 1234.31,
       "status": "Disponível para empenho",
-      "sourceRow": 31
+      "sourceRow": 35
+    },
+    {
+      "id": "req-63ad14b8d1f39724",
+      "requestNumber": "LST097007A2",
+      "partNumber": "MS27473T22B35P-LC",
+      "partNumberSource": "MS27473T22B35P-LC",
+      "certame": "207/2026",
+      "ugCode": "120026",
+      "om": "PAMA-LS",
+      "omSource": "PAMALS",
+      "ugName": "PARQUE DE MATERIAL AERONÁUTICO DE LAGOA SANTA",
+      "action": "*",
+      "actionSource": null,
+      "pi": "*",
+      "piSource": null,
+      "expenseNature": "339030",
+      "expenseNatureSource": "339030",
+      "expenseNatureCorrection": null,
+      "wildcards": {
+        "action": true,
+        "pi": true,
+        "expenseNature": false
+      },
+      "vendor": "ESDA GLOBAL, LLC",
+      "vendorCode": "413E6",
+      "proposalValidityDate": "2026-10-11",
+      "requestValue": 276.0,
+      "committedValue": 0.0,
+      "balanceToCommit": 276.0,
+      "status": "Disponível para empenho",
+      "sourceRow": 36
+    },
+    {
+      "id": "req-9c806ec189a49f94",
+      "requestNumber": "LST077011A2",
+      "partNumber": "7100094223",
+      "partNumberSource": "7100094223",
+      "certame": "208/2026",
+      "ugCode": "120026",
+      "om": "PAMA-LS",
+      "omSource": "PAMALS",
+      "ugName": "PARQUE DE MATERIAL AERONÁUTICO DE LAGOA SANTA",
+      "action": "*",
+      "actionSource": null,
+      "pi": "*",
+      "piSource": null,
+      "expenseNature": "339030",
+      "expenseNatureSource": "339030",
+      "expenseNatureCorrection": null,
+      "wildcards": {
+        "action": true,
+        "pi": true,
+        "expenseNature": false
+      },
+      "vendor": "ESDA GLOBAL, LLC",
+      "vendorCode": "413E6",
+      "proposalValidityDate": "2026-10-11",
+      "requestValue": 140.0,
+      "committedValue": 0.0,
+      "balanceToCommit": 140.0,
+      "status": "Disponível para empenho",
+      "sourceRow": 37
+    },
+    {
+      "id": "req-c106694c03fdf96b",
+      "requestNumber": "LST167001A2",
+      "partNumber": "ADA120-612",
+      "partNumberSource": "ADA120-612",
+      "certame": "209/2026",
+      "ugCode": "120026",
+      "om": "PAMA-LS",
+      "omSource": "PAMALS",
+      "ugName": "PARQUE DE MATERIAL AERONÁUTICO DE LAGOA SANTA",
+      "action": "*",
+      "actionSource": null,
+      "pi": "*",
+      "piSource": null,
+      "expenseNature": "449052",
+      "expenseNatureSource": "449052",
+      "expenseNatureCorrection": null,
+      "wildcards": {
+        "action": true,
+        "pi": true,
+        "expenseNature": false
+      },
+      "vendor": "INTERBYTE",
+      "vendorCode": "07QZ6",
+      "proposalValidityDate": "2026-10-04",
+      "requestValue": 16256.0,
+      "committedValue": 0.0,
+      "balanceToCommit": 16256.0,
+      "status": "Disponível para empenho",
+      "sourceRow": 38
+    },
+    {
+      "id": "req-5a16d60aed56432d",
+      "requestNumber": "LST138003T2",
+      "partNumber": "186400-05",
+      "partNumberSource": "186400-05",
+      "certame": "212/2026",
+      "ugCode": "120026",
+      "om": "PAMA-LS",
+      "omSource": "PAMALS",
+      "ugName": "PARQUE DE MATERIAL AERONÁUTICO DE LAGOA SANTA",
+      "action": "*",
+      "actionSource": null,
+      "pi": "*",
+      "piSource": null,
+      "expenseNature": "339030",
+      "expenseNatureSource": "339030",
+      "expenseNatureCorrection": null,
+      "wildcards": {
+        "action": true,
+        "pi": true,
+        "expenseNature": false
+      },
+      "vendor": "PRC-DESOTO INTERNATIONAL, INC",
+      "vendorCode": "4Z701",
+      "proposalValidityDate": "2026-10-11",
+      "requestValue": 315000.0,
+      "committedValue": 0.0,
+      "balanceToCommit": 315000.0,
+      "status": "Disponível para empenho",
+      "sourceRow": 39
     },
     {
       "id": "req-0555a7dfec43da83",
       "requestNumber": "SPT070001PE",
+      "partNumber": "C-13",
+      "partNumberSource": "C-13",
       "certame": "156/2026",
       "ugCode": "120068",
       "om": "PAMA-SP",
@@ -1052,11 +1395,13 @@
       "committedValue": 0.0,
       "balanceToCommit": 113520.0,
       "status": "Disponível para empenho",
-      "sourceRow": 32
+      "sourceRow": 40
     },
     {
       "id": "req-86615b97425f9b19",
       "requestNumber": "SPT104001T9",
+      "partNumber": "90-3011",
+      "partNumberSource": "90-3011",
       "certame": "163/2026",
       "ugCode": "120068",
       "om": "PAMA-SP",
@@ -1081,11 +1426,13 @@
       "committedValue": 0.0,
       "balanceToCommit": 11670.0,
       "status": "Disponível para empenho",
-      "sourceRow": 33
+      "sourceRow": 41
     },
     {
       "id": "req-51b57961cd3cbe07",
       "requestNumber": "SPT061001PE",
+      "partNumber": "4346",
+      "partNumberSource": "4346",
       "certame": "165/2026",
       "ugCode": "120068",
       "om": "PAMA-SP",
@@ -1110,11 +1457,13 @@
       "committedValue": 0.0,
       "balanceToCommit": 28864.0,
       "status": "Disponível para empenho",
-      "sourceRow": 34
+      "sourceRow": 42
     },
     {
       "id": "req-972b6425931e2481",
       "requestNumber": "SPT061013PE",
+      "partNumber": "4375",
+      "partNumberSource": "4375",
       "certame": "165/2026",
       "ugCode": "120068",
       "om": "PAMA-SP",
@@ -1139,11 +1488,13 @@
       "committedValue": 0.0,
       "balanceToCommit": 29766.0,
       "status": "Disponível para empenho",
-      "sourceRow": 35
+      "sourceRow": 43
     },
     {
       "id": "req-5bb0eede581faaf3",
       "requestNumber": "SPTR09807A7",
+      "partNumber": "3032151",
+      "partNumberSource": "3032151",
       "certame": "166/2026",
       "ugCode": "120068",
       "om": "PAMA-SP",
@@ -1168,11 +1519,13 @@
       "committedValue": 0.0,
       "balanceToCommit": 15384.62,
       "status": "Disponível para empenho",
-      "sourceRow": 36
+      "sourceRow": 44
     },
     {
       "id": "req-29d5180b9a430116",
       "requestNumber": "SPTR09808A7",
+      "partNumber": "3032151",
+      "partNumberSource": "3032151",
       "certame": "166/2026",
       "ugCode": "120068",
       "om": "PAMA-SP",
@@ -1197,11 +1550,13 @@
       "committedValue": 0.0,
       "balanceToCommit": 15384.62,
       "status": "Disponível para empenho",
-      "sourceRow": 37
+      "sourceRow": 45
     },
     {
       "id": "req-2a5550a0fa34dd10",
       "requestNumber": "SPTR09809A7",
+      "partNumber": "3032151",
+      "partNumberSource": "3032151",
       "certame": "166/2026",
       "ugCode": "120068",
       "om": "PAMA-SP",
@@ -1226,11 +1581,13 @@
       "committedValue": 0.0,
       "balanceToCommit": 15384.62,
       "status": "Disponível para empenho",
-      "sourceRow": 38
+      "sourceRow": 46
     },
     {
       "id": "req-75f9df91b263a739",
       "requestNumber": "SPTR09804A7",
+      "partNumber": "3032151",
+      "partNumberSource": "3032151",
       "certame": "170/2026",
       "ugCode": "120068",
       "om": "PAMA-SP",
@@ -1255,11 +1612,13 @@
       "committedValue": 0.0,
       "balanceToCommit": 13500.0,
       "status": "Disponível para empenho",
-      "sourceRow": 39
+      "sourceRow": 47
     },
     {
       "id": "req-02d16fa85d43b02e",
       "requestNumber": "SPTR10001A7",
+      "partNumber": "3018262CL",
+      "partNumberSource": "3018262CL",
       "certame": "170/2026",
       "ugCode": "120068",
       "om": "PAMA-SP",
@@ -1284,11 +1643,13 @@
       "committedValue": 0.0,
       "balanceToCommit": 11500.0,
       "status": "Disponível para empenho",
-      "sourceRow": 40
+      "sourceRow": 48
     },
     {
       "id": "req-948695ede158ae09",
       "requestNumber": "SPTR10002A7",
+      "partNumber": "3043682CL02",
+      "partNumberSource": "3043682CL02",
       "certame": "170/2026",
       "ugCode": "120068",
       "om": "PAMA-SP",
@@ -1313,11 +1674,13 @@
       "committedValue": 0.0,
       "balanceToCommit": 8500.0,
       "status": "Disponível para empenho",
-      "sourceRow": 41
+      "sourceRow": 49
     },
     {
       "id": "req-32d6d743ef82ca3e",
       "requestNumber": "SPTR09601F5",
+      "partNumber": "2562A13M",
+      "partNumberSource": "2562A13M",
       "certame": "171/2026",
       "ugCode": "120068",
       "om": "PAMA-SP",
@@ -1342,11 +1705,13 @@
       "committedValue": 0.0,
       "balanceToCommit": 2100.0,
       "status": "Disponível para empenho",
-      "sourceRow": 42
+      "sourceRow": 50
     },
     {
       "id": "req-8405c1d15d2ff2ee",
       "requestNumber": "SPT126002H7",
+      "partNumber": "071-00161-0101",
+      "partNumberSource": "071-00161-0101",
       "certame": "172/2026",
       "ugCode": "120068",
       "om": "PAMA-SP",
@@ -1371,11 +1736,13 @@
       "committedValue": 0.0,
       "balanceToCommit": 22260.0,
       "status": "Disponível para empenho",
-      "sourceRow": 43
+      "sourceRow": 51
     },
     {
       "id": "req-7b652b133ca42871",
       "requestNumber": "SPT148002PQ",
+      "partNumber": "ARDROX 5502",
+      "partNumberSource": "ARDROX 5502",
       "certame": "183/2026",
       "ugCode": "120068",
       "om": "PAMA-SP",
@@ -1400,11 +1767,13 @@
       "committedValue": 0.0,
       "balanceToCommit": 10787.0,
       "status": "Disponível para empenho",
-      "sourceRow": 44
+      "sourceRow": 52
     },
     {
       "id": "req-57975ebfb94a5c72",
       "requestNumber": "SPT149002PQ",
+      "partNumber": "ARDROX 5503",
+      "partNumberSource": "ARDROX 5503",
       "certame": "183/2026",
       "ugCode": "120068",
       "om": "PAMA-SP",
@@ -1429,11 +1798,13 @@
       "committedValue": 0.0,
       "balanceToCommit": 11888.0,
       "status": "Disponível para empenho",
-      "sourceRow": 45
+      "sourceRow": 53
     },
     {
       "id": "req-73f2aa614c620619",
       "requestNumber": "SPT153013PQ",
+      "partNumber": "ARDROX 185L",
+      "partNumberSource": "ARDROX 185L",
       "certame": "183/2026",
       "ugCode": "120068",
       "om": "PAMA-SP",
@@ -1458,11 +1829,13 @@
       "committedValue": 0.0,
       "balanceToCommit": 7349.2,
       "status": "Disponível para empenho",
-      "sourceRow": 46
+      "sourceRow": 54
     },
     {
       "id": "req-774427fb685a355e",
       "requestNumber": "SPT154004PQ",
+      "partNumber": "ZL-37",
+      "partNumberSource": "ZL-37",
       "certame": "183/2026",
       "ugCode": "120068",
       "om": "PAMA-SP",
@@ -1487,11 +1860,13 @@
       "committedValue": 0.0,
       "balanceToCommit": 3722.4,
       "status": "Disponível para empenho",
-      "sourceRow": 47
+      "sourceRow": 55
     },
     {
       "id": "req-2c7d4a8de16b02af",
       "requestNumber": "SPT154005PQ",
+      "partNumber": "ZL-56",
+      "partNumberSource": "ZL-56",
       "certame": "183/2026",
       "ugCode": "120068",
       "om": "PAMA-SP",
@@ -1516,11 +1891,13 @@
       "committedValue": 0.0,
       "balanceToCommit": 17479.0,
       "status": "Disponível para empenho",
-      "sourceRow": 48
+      "sourceRow": 56
     },
     {
       "id": "req-8421dc15631d10f4",
       "requestNumber": "SPT146001PE",
+      "partNumber": "PR 1829 B-2 NOIRSEMKIT 654",
+      "partNumberSource": "PR 1829 B-2 NOIRSEMKIT 654",
       "certame": "184/2026",
       "ugCode": "120068",
       "om": "PAMA-SP",
@@ -1545,11 +1922,13 @@
       "committedValue": 0.0,
       "balanceToCommit": 4509.0,
       "status": "Disponível para empenho",
-      "sourceRow": 49
+      "sourceRow": 57
     },
     {
       "id": "req-759651673199aa58",
       "requestNumber": "SPT147002PE",
+      "partNumber": "NYCO GREASE GN 22",
+      "partNumberSource": "NYCO GREASE GN 22",
       "certame": "184/2026",
       "ugCode": "120068",
       "om": "PAMA-SP",
@@ -1574,11 +1953,13 @@
       "committedValue": 0.0,
       "balanceToCommit": 3474.0,
       "status": "Disponível para empenho",
-      "sourceRow": 50
+      "sourceRow": 58
     },
     {
       "id": "req-be3b60c6709d34e8",
       "requestNumber": "SPT147007PE",
+      "partNumber": "TF26020",
+      "partNumberSource": "TF26020",
       "certame": "184/2026",
       "ugCode": "120068",
       "om": "PAMA-SP",
@@ -1603,11 +1984,13 @@
       "committedValue": 0.0,
       "balanceToCommit": 729.36,
       "status": "Disponível para empenho",
-      "sourceRow": 51
+      "sourceRow": 59
     },
     {
       "id": "req-a0e2e74e21ba51b1",
       "requestNumber": "SPT148005PE",
+      "partNumber": "EC1300L",
+      "partNumberSource": "EC1300L",
       "certame": "184/2026",
       "ugCode": "120068",
       "om": "PAMA-SP",
@@ -1632,11 +2015,13 @@
       "committedValue": 0.0,
       "balanceToCommit": 3126.6,
       "status": "Disponível para empenho",
-      "sourceRow": 52
+      "sourceRow": 60
     },
     {
       "id": "req-3290a8520a4cdaa7",
       "requestNumber": "SPT152030PE",
+      "partNumber": "AC251BLKB2",
+      "partNumberSource": "AC251BLKB2",
       "certame": "184/2026",
       "ugCode": "120068",
       "om": "PAMA-SP",
@@ -1661,11 +2046,13 @@
       "committedValue": 0.0,
       "balanceToCommit": 2443.54,
       "status": "Disponível para empenho",
-      "sourceRow": 53
+      "sourceRow": 61
     },
     {
       "id": "req-dd70e76860b2397a",
       "requestNumber": "SPT153014PE",
+      "partNumber": "MC780 B1/2",
+      "partNumberSource": "MC780 B1/2",
       "certame": "184/2026",
       "ugCode": "120068",
       "om": "PAMA-SP",
@@ -1690,11 +2077,13 @@
       "committedValue": 0.0,
       "balanceToCommit": 2226.0,
       "status": "Disponível para empenho",
-      "sourceRow": 54
+      "sourceRow": 62
     },
     {
       "id": "req-0f89017d57fc03bd",
       "requestNumber": "SPT153016PE",
+      "partNumber": "D12-100",
+      "partNumberSource": "D12-100",
       "certame": "184/2026",
       "ugCode": "120068",
       "om": "PAMA-SP",
@@ -1719,11 +2108,13 @@
       "committedValue": 0.0,
       "balanceToCommit": 878.4,
       "status": "Disponível para empenho",
-      "sourceRow": 55
+      "sourceRow": 63
     },
     {
       "id": "req-0d2e87edf015d8fb",
       "requestNumber": "SPTR09810A7",
+      "partNumber": "3032151",
+      "partNumberSource": "3032151",
       "certame": "186/2026",
       "ugCode": "120068",
       "om": "PAMA-SP",
@@ -1748,11 +2139,13 @@
       "committedValue": 0.0,
       "balanceToCommit": 13500.0,
       "status": "Disponível para empenho",
-      "sourceRow": 56
+      "sourceRow": 64
     },
     {
       "id": "req-a7104d0f3286be2e",
       "requestNumber": "SPTR10010T1",
+      "partNumber": "3024862",
+      "partNumberSource": "3024862",
       "certame": "188/2026",
       "ugCode": "120068",
       "om": "PAMA-SP",
@@ -1777,11 +2170,13 @@
       "committedValue": 0.0,
       "balanceToCommit": 8999.0,
       "status": "Disponível para empenho",
-      "sourceRow": 57
+      "sourceRow": 65
     },
     {
       "id": "req-e4248ba8a1e8c82e",
       "requestNumber": "SPTR12001F5",
+      "partNumber": "3261163-0101",
+      "partNumberSource": "3261163-0101",
       "certame": "215/2026",
       "ugCode": "120068",
       "om": "PAMA-SP",
@@ -1806,11 +2201,13 @@
       "committedValue": 0.0,
       "balanceToCommit": 16375.0,
       "status": "Disponível para empenho",
-      "sourceRow": 58
+      "sourceRow": 66
     },
     {
       "id": "req-28a57f4cb57f4bc8",
       "requestNumber": "SPTR12002F5",
+      "partNumber": "3261163-0101",
+      "partNumberSource": "3261163-0101",
       "certame": "215/2026",
       "ugCode": "120068",
       "om": "PAMA-SP",
@@ -1835,11 +2232,13 @@
       "committedValue": 0.0,
       "balanceToCommit": 16375.0,
       "status": "Disponível para empenho",
-      "sourceRow": 59
+      "sourceRow": 67
     },
     {
       "id": "req-5841accdcba85ffb",
       "requestNumber": "SPTR12003F5",
+      "partNumber": "3261163-0101",
+      "partNumberSource": "3261163-0101",
       "certame": "215/2026",
       "ugCode": "120068",
       "om": "PAMA-SP",
@@ -1864,7 +2263,7 @@
       "committedValue": 0.0,
       "balanceToCommit": 16375.0,
       "status": "Disponível para empenho",
-      "sourceRow": 60
+      "sourceRow": 68
     }
   ]
 }

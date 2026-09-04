@@ -100,6 +100,7 @@ export function normalizeRequisition(record, index = 0) {
   const normalized = {
     id: normalizeText(record?.id) || `req-${index + 1}`,
     requestNumber: normalizeUpper(record?.requestNumber ?? record?.requisition),
+    partNumber: normalizeText(record?.partNumber ?? record?.pn),
     certame: normalizeText(record?.certame),
     ugCode: normalizeUgCode(record?.ugCode ?? record?.ug ?? record?.omCode),
     om: normalizeText(record?.om ?? record?.omName ?? record?.ugName),
@@ -218,6 +219,7 @@ export function groupRequisitions(records = []) {
         committedValue: 0,
         balanceToCommit: 0,
         requestNumbers: [],
+        partNumbers: new Set(),
         certames: new Set(),
         vendors: new Set(),
         proposalValidityDates: new Set(),
@@ -236,6 +238,7 @@ export function groupRequisitions(records = []) {
     );
 
     if (record.requestNumber) group.requestNumbers.push(record.requestNumber);
+    if (record.partNumber) group.partNumbers.add(record.partNumber);
     if (record.certame) group.certames.add(record.certame);
     if (record.vendor) {
       group.vendors.add(
@@ -254,6 +257,9 @@ export function groupRequisitions(records = []) {
 
   return Array.from(groups.values()).map((group) => ({
     ...group,
+    partNumbers: Array.from(group.partNumbers).sort((a, b) =>
+      String(a).localeCompare(String(b), "pt-BR", { numeric: true }),
+    ),
     certames: Array.from(group.certames).sort(),
     vendors: Array.from(group.vendors).sort(),
     proposalValidityDates: Array.from(group.proposalValidityDates).sort(),

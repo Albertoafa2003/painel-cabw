@@ -3,12 +3,12 @@ import {
   buildDetailedCrossReportData,
   criterionLabel,
   crossCreditAndRequisitions,
-} from "./requisition-core.js?v=20260904-requisitions-natures-r4";
+} from "./requisition-core.js?v=20260904-requisitions-pn-r5";
 
 const CREDIT_URL =
-  "assets/data/credit-budget-detailed-current.json?v=20260904-requisitions-natures-r4";
+  "assets/data/credit-budget-detailed-current.json?v=20260904-requisitions-pn-r5";
 const REQUEST_URL =
-  "assets/data/requisitions-available-current.json?v=20260904-requisitions-natures-r4";
+  "assets/data/requisitions-available-current.json?v=20260904-requisitions-pn-r5";
 
 const state = {
   credit: null,
@@ -180,6 +180,7 @@ function apply() {
         criterionLabel(row.pi, "pi"),
         criterionLabel(row.expenseNature, "expenseNature"),
         row.requestNumbers?.join(" "),
+        row.partNumbers?.join(" "),
         row.certames?.join(" "),
         row.vendors?.join(" "),
         row.status,
@@ -427,7 +428,7 @@ function exportPdf() {
     "é consumido uma única vez e somente dentro da mesma OM e Natureza. Por esse motivo, " +
     "crédito compatível, valor remanescente e déficit são apresentados no nível da OM " +
     "e do agrupamento orçamentário, enquanto cada BAC# é detalhado individualmente " +
-    "com seu valor e saldo a empenhar.";
+    "com seu Part Number, valor e saldo a empenhar.";
   const methodologyLines = doc.splitTextToSize(methodology, usableWidth);
   doc.text(methodologyLines, marginX, y);
   y += methodologyLines.length * 4 + 2;
@@ -596,6 +597,7 @@ function exportPdf() {
       startY: sectionY + 3,
       head: [[
         "Requisição",
+        "Part Number (PN)",
         "Certame",
         "Ação",
         "PI",
@@ -609,6 +611,7 @@ function exportPdf() {
       ]],
       body: om.requests.map((request) => [
         request.requestNumber,
+        request.partNumber || "Não informado",
         request.certame || "Não informado",
         criterionLabel(request.action, "action"),
         criterionLabel(request.pi, "pi"),
@@ -624,17 +627,18 @@ function exportPdf() {
       ]),
       styles: { ...tableBase.styles, fontSize: 6.2, cellPadding: 1.35 },
       columnStyles: {
-        0: { cellWidth: 29 },
-        1: { cellWidth: 20 },
-        2: { cellWidth: 25 },
-        3: { cellWidth: 24 },
-        4: { cellWidth: 23 },
-        5: { cellWidth: 51 },
-        6: { cellWidth: 22 },
-        7: { halign: "right", cellWidth: 31 },
-        8: { halign: "right", cellWidth: 28 },
-        9: { halign: "right", cellWidth: 30 },
-        10: { cellWidth: 49 },
+        0: { cellWidth: 28 },
+        1: { cellWidth: 38 },
+        2: { cellWidth: 18 },
+        3: { cellWidth: 22 },
+        4: { cellWidth: 22 },
+        5: { cellWidth: 21 },
+        6: { cellWidth: 48 },
+        7: { cellWidth: 21 },
+        8: { halign: "right", cellWidth: 29 },
+        9: { halign: "right", cellWidth: 27 },
+        10: { halign: "right", cellWidth: 29 },
+        11: { cellWidth: 46 },
       },
     });
 
@@ -713,7 +717,7 @@ function exportPdf() {
     );
   }
 
-  doc.save("relatorio-detalhado-credito-x-requisicoes-04092026.pdf");
+  doc.save("relatorio-detalhado-credito-x-requisicoes-04092026-pn.pdf");
 
   const status = document.getElementById("crossStatus");
   if (status) {
