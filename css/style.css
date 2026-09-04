@@ -7416,7 +7416,7 @@ body.auth-is-admin .navbar-nav .admin-only {
 @media (max-width: 767.98px) { .budget-dashboard { padding-right: 14px; padding-left: 14px; } .budget-hero-card, .budget-filter-card, .budget-table-card { padding: 20px; } .budget-kpi-grid, .budget-filter-grid { grid-template-columns: 1fr; } .budget-field--wide { grid-column: auto; } }
 
 
-/* ===== Requisições disponíveis — base 01/09/2026 ===== */
+/* ===== Requisições disponíveis — base 04/09/2026 ===== */
 .budget-policy-note {
   display: flex;
   gap: 14px;

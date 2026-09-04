@@ -236,7 +236,7 @@ test("missing OM remains without budget correspondence", () => {
   assert.equal(result.status, "Sem correspondência orçamentária");
 });
 
-test("current requisition file contains 59 unique BAC numbers and expected totals", () => {
+test("current requisition file contains 59 unique BAC numbers, specific natures and expected totals", () => {
   const data = JSON.parse(
     fs.readFileSync(
       new URL(
@@ -248,15 +248,42 @@ test("current requisition file contains 59 unique BAC numbers and expected total
   );
   assert.equal(data.records.length, 59);
   assert.equal(new Set(data.records.map((row) => row.requestNumber)).size, 59);
+  assert.equal(data.metadata.position, "04/09/2026");
   assert.equal(data.metadata.requestValueTotal, 834465.59);
   assert.equal(data.metadata.committedValueTotal, 0);
   assert.equal(data.metadata.balanceToCommitTotal, 834465.59);
   assert.equal(data.records.every((row) => row.action === ANY), true);
   assert.equal(data.records.every((row) => row.pi === ANY), true);
-  assert.equal(data.records.every((row) => row.expenseNature === ANY), true);
+  assert.equal(data.records.every((row) => row.expenseNature !== ANY), true);
+  assert.equal(
+    data.records.every((row) => /^\d{6}$/.test(row.expenseNature)),
+    true,
+  );
+
+  const natureCounts = data.records.reduce((acc, row) => {
+    acc[row.expenseNature] = (acc[row.expenseNature] || 0) + 1;
+    return acc;
+  }, {});
+  assert.deepEqual(natureCounts, {
+    "339030": 32,
+    "339039": 12,
+    "449052": 15,
+  });
+
+  const corrected = data.records.find(
+    (row) => row.requestNumber === "GLT099002R2",
+  );
+  assert.equal(corrected.expenseNatureSource, "459052");
+  assert.equal(corrected.expenseNature, "449052");
+  assert.match(corrected.expenseNatureCorrection, /corrigida de 459052 para 449052/);
+
+  const first = data.records.find(
+    (row) => row.requestNumber === "GLS045004P3",
+  );
+  assert.equal(first.proposalValidityDate, "2026-10-03");
 });
 
-test("current crossing groups the 59 requests by three OMs and uses each OM credit once", () => {
+test("current crossing groups the 59 requests by OM and Natureza without double counting", () => {
   const requests = JSON.parse(
     fs.readFileSync(
       new URL(
@@ -279,7 +306,7 @@ test("current crossing groups the 59 requests by three OMs and uses each OM cred
     credit.groupedByMatchKey,
     requests.records,
   );
-  assert.equal(result.length, 3);
+  assert.equal(result.length, 5);
   assert.equal(
     result.reduce((sum, row) => sum + row.requestCount, 0),
     59,
@@ -294,15 +321,38 @@ test("current crossing groups the 59 requests by three OMs and uses each OM cred
     Math.round(
       result.reduce((sum, row) => sum + row.creditAvailable, 0) * 100,
     ) / 100,
-    3753217.78,
+    2083324.01,
   );
-  assert.equal(result.every((row) => row.status === "Crédito suficiente"), true);
   assert.equal(
     Math.round(
       result.reduce((sum, row) => sum + row.creditRemaining, 0) * 100,
     ) / 100,
-    2918752.19,
+    1289640.39,
   );
+  assert.equal(
+    Math.round(
+      result.reduce((sum, row) => sum + row.deficit, 0) * 100,
+    ) / 100,
+    40781.97,
+  );
+  assert.equal(
+    result.filter((row) => row.status === "Crédito suficiente").length,
+    4,
+  );
+  assert.equal(
+    result.filter((row) => row.status === "Crédito insuficiente").length,
+    1,
+  );
+
+  const glEquipment = result.find(
+    (row) =>
+      row.ugCode === "120049" && row.expenseNature === "449052",
+  );
+  assert.equal(glEquipment.requestCount, 15);
+  assert.equal(glEquipment.balanceToCommit, 212371.35);
+  assert.equal(glEquipment.creditAvailable, 171589.38);
+  assert.equal(glEquipment.deficit, 40781.97);
+  assert.equal(glEquipment.status, "Crédito insuficiente");
 });
 
 test("detailed report data groups requisitions by OM without repeating credit", () => {
@@ -384,9 +434,9 @@ test("current detailed report contains 59 requisitions organized into three OMs"
   assert.equal(report.totals.requestCount, 59);
   assert.equal(report.totals.requestValue, 834465.59);
   assert.equal(report.totals.balanceToCommit, 834465.59);
-  assert.equal(report.totals.creditAvailable, 3753217.78);
-  assert.equal(report.totals.creditRemaining, 2918752.19);
-  assert.equal(report.totals.deficit, 0);
+  assert.equal(report.totals.creditAvailable, 2083324.01);
+  assert.equal(report.totals.creditRemaining, 1289640.39);
+  assert.equal(report.totals.deficit, 40781.97);
   assert.equal(
     report.omSummaries.reduce((sum, om) => sum + om.requests.length, 0),
     59,
