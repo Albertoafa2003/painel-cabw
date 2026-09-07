@@ -1,0 +1,28 @@
+PAINEL CABW — ATUALIZAÇÃO DAS REQUISIÇÕES DISPONÍVEIS PARA EMPENHO
+
+Fonte: 2 - REQUISIÇÕES DISPONÍVEIS PARA EMPENHO - 07092026.xlsx
+Posição: 07/09/2026
+Crédito utilizado no cruzamento: posição 01/09/2026
+
+RESULTADO:
+- Requisições: 67
+- BAC# únicos: 67
+- Part Numbers preservados: 67
+- Organizações Militares: 3
+- Valor total: US$ 1.316.467,79
+- Valor já empenhado: US$ 0,00
+- Saldo a empenhar: US$ 1.316.467,79
+
+OBSERVAÇÕES:
+- A planilha de 07/09/2026 não contém coluna de Part Number. Os PNs da base vigente anterior foram preservados por correspondência exata do BAC#.
+- A requisição GLT099002R2 continua utilizando a Natureza de Despesa correta 449052, conforme confirmação anterior do usuário. O valor 459052 foi mantido apenas como valor de origem/auditoria.
+- Não houve inclusão ou retirada de BAC# em relação à base anterior.
+- O cruzamento Crédito x Requisições mantém os mesmos valores, pois as classificações e valores líquidos da carteira não mudaram após a correção confirmada.
+
+PUBLICAÇÃO:
+1. Extraia o ZIP.
+2. Envie todo o conteúdo extraído à raiz do repositório.
+3. Confirme a presença de BUILD_VERIFICACAO_REQUISICOES_07092026.json.
+4. Faça o commit.
+5. Aguarde o GitHub Pages.
+6. Pressione Ctrl + F5.

@@ -1,0 +1,44 @@
+{
+  "build": "requisitions-07092026-r6",
+  "generatedAt": "2026-09-07T23:35:00Z",
+  "sourceFile": "2 - REQUISIÇÕES DISPONÍVEIS PARA EMPENHO - 07092026.xlsx",
+  "sourceSha256": "1b2b5c77514e29c57a55ff90d60c283c0ace706239b82fb83d57b3f0c363e293",
+  "position": "07/09/2026",
+  "creditPosition": "01/09/2026",
+  "recordCount": 67,
+  "uniqueRequestCount": 67,
+  "partNumberRecordCount": 67,
+  "uniquePartNumberCount": 61,
+  "requestValueTotal": 1316467.79,
+  "committedValueTotal": 0.0,
+  "balanceToCommitTotal": 1316467.79,
+  "sourceComparison": {
+    "sameBacSetAsPrevious": true,
+    "sameBacSequenceAsPrevious": true,
+    "addedRequests": [],
+    "removedRequests": [],
+    "onlyRawDifferenceFromPrevious": "GLT099002R2 ND 459052 in source; preserved confirmed correction to 449052.",
+    "partNumbersPreservedByBac": 67
+  },
+  "checks": {
+    "recordCount": true,
+    "uniqueBac": true,
+    "allPartNumbers": true,
+    "noDuplicateBac": true,
+    "natureCorrection": true,
+    "valuesMatchPreviousAfterCorrection": true,
+    "totalsMatchPrevious": true,
+    "allCommittedZero": true,
+    "allBalanceEqualsValue": true
+  },
+  "fileHashes": {
+    "requisicoes.html": "eb05112f2a2148a10d7874b13d03535a0ddc4a15e6d5947a4bd45f789e330939",
+    "requisicoes-disponiveis-empenho.html": "193ce97fa3737c769de029c5a6061d38c97e6a21a9ccb5bde7ee1d0d8d5581b2",
+    "requisicoes-cruzamento-credito.html": "c5d058268cae7527f449f4f64838960aeebaf08abd42ed4faf432d9dcdec38e0",
+    "assets/data/requisitions-available-current.json": "fecfebd6fee853049127d456df24ca29f37cf72b9e19dfc8c838f1783ea384d8",
+    "assets/data/requisitions-available-07092026.json": "fecfebd6fee853049127d456df24ca29f37cf72b9e19dfc8c838f1783ea384d8",
+    "assets/data/requisition-credit-cross-summary-07092026.json": "980c66349460e88afa5e173cdd9b6b349454123dc35eafc0a592e9bf147535d6",
+    "assets/js/requisitions-available-panel.js": "751d05b6e8b1471d28a9ed6a9a6bf49e1233668e47f7b476de5bb34c963f7196",
+    "assets/js/requisition-credit-cross-panel.js": "b7dc4902f531b3eb58a9e88b8ffeff2777296e5515597fc19bb0a418a93f00be"
+  }
+}
