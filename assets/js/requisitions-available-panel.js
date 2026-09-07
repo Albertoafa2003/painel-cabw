@@ -2,10 +2,10 @@ import {
   ANY,
   criterionLabel,
   normalizeRequisition,
-} from "./requisition-core.js?v=20260904-requisitions-pn-r5";
+} from "./requisition-core.js?v=20260907-requisitions-r6";
 
 const DATA_URL =
-  "assets/data/requisitions-available-current.json?v=20260904-requisitions-pn-r5";
+  "assets/data/requisitions-available-current.json?v=20260907-requisitions-r6";
 
 const state = {
   data: null,
