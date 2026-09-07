@@ -259,7 +259,7 @@ test("current requisition file contains 67 unique BAC numbers, Part Numbers, spe
   );
   assert.equal(data.records.length, 67);
   assert.equal(new Set(data.records.map((row) => row.requestNumber)).size, 67);
-  assert.equal(data.metadata.position, "04/09/2026");
+  assert.equal(data.metadata.position, "07/09/2026");
   assert.equal(data.metadata.requestValueTotal, 1316467.79);
   assert.equal(data.metadata.committedValueTotal, 0);
   assert.equal(data.metadata.balanceToCommitTotal, 1316467.79);
