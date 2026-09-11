@@ -5,6 +5,34 @@
   const META = window.CONTRACT_MONITORING_METADATA || {};
   const MAX_TABLE_ROWS = 250;
 
+  let deadlineReferenceLabel = '';
+  function refreshDeadlineStatuses() {
+    const now = new Date();
+    const reference = Date.UTC(now.getFullYear(), now.getMonth(), now.getDate());
+    deadlineReferenceLabel = new Intl.DateTimeFormat('pt-BR').format(now);
+    DATA.forEach(function (item) {
+      const iso = item.dataFinal && item.dataFinal.iso;
+      const match = typeof iso === 'string' && iso.match(/^(\d{4})-(\d{2})-(\d{2})$/);
+      const days = match ? Math.round((Date.UTC(Number(match[1]), Number(match[2]) - 1, Number(match[3])) - reference) / 86400000) : null;
+      item.diasParaVencimento = days;
+      const status = !item.monitorado ? ['desconsiderar', 'Desconsiderar', 90]
+        : days === null ? ['sem-data', 'Sem data de vigência', 70]
+        : days < 0 ? ['vencido', 'Vencido', 0]
+        : days <= 30 ? ['ate-30', 'Até 30 dias', 10]
+        : days <= 90 ? ['31-90', '31 a 90 dias', 20]
+        : days <= 150 ? ['91-150', '91 a 150 dias', 30]
+        : ['regular', 'Acima de 150 dias', 50];
+      [item.situacaoCode, item.situacaoGerencial, item.prioridade] = status;
+    });
+  }
+
+  function sourceWarningHtml(item) {
+    return (item.sourceWarnings || []).map(function (text) {
+      return '<small class="contract-source-warning">' + escapeHtml(text) + '</small>';
+    }).join('');
+  }
+
+
   const statusConfig = [
     { code: 'vencido', label: 'Vencido', short: 'Vencidos', icon: 'bi-exclamation-octagon', className: 'danger' },
     { code: 'ate-30', label: 'Até 30 dias', short: 'Até 30 dias', icon: 'bi-alarm', className: 'critical' },
@@ -223,6 +251,7 @@
   }
 
   function applyFilters() {
+    refreshDeadlineStatuses();
     const filters = readFilters();
     state.filters = filters;
     state.baseForStatus = DATA.filter(function (item) { return recordMatches(item, filters, true); });
@@ -235,7 +264,7 @@
   function renderSource() {
     if (!els.source) return;
     const reference = META.referenceDate && META.referenceDate.br ? META.referenceDate.br : '—';
-    els.source.textContent = 'Fonte: ' + (META.sourceFile || 'Relatório de monitoramento') + ' · correspondência por número do contrato · posição de ' + reference + ' · ' + formatNumber(META.totalMonitored || 0) + ' contratos monitorados';
+    els.source.textContent = 'Fonte: ' + (META.sourceFile || 'Relatório de monitoramento') + ' · correspondência por número do contrato · posição de ' + reference + ' · ' + formatNumber(META.totalMonitored || 0) + ' contratos monitorados · prazos calculados em ' + deadlineReferenceLabel;
   }
 
   function renderKpis() {
@@ -360,7 +389,7 @@
         '<td>' + escapeHtml(item.unidade || '—') + '</td>' +
         '<td>' + escapeHtml(item.grandeComando || '—') + '</td>' +
         '<td class="cm-company-cell">' + escapeHtml(item.empresa || '—') + '</td>' +
-        '<td class="cm-object-cell">' + escapeHtml(item.objetoResumo || '—') + '</td>' +
+        '<td class="cm-object-cell">' + escapeHtml(item.objetoResumo || '—') + sourceWarningHtml(item) + '</td>' +
         '<td>' + escapeHtml(item.tipoContrato || '—') + '</td>' +
         '<td class="text-center">' + escapeHtml(item.moeda || '—') + '</td>' +
         '<td class="text-right cm-nowrap">' + formatMoney(item.valorContrato, item.moeda) + '</td>' +
@@ -465,8 +494,9 @@
     if (!state.filtered.length || !window.jspdf) return;
     const jsPDF = window.jspdf.jsPDF;
     const doc = new jsPDF({ orientation: 'landscape', unit: 'mm', format: 'a4' });
+    refreshDeadlineStatuses();
     const reference = META.referenceDate && META.referenceDate.br ? META.referenceDate.br : '—';
-    addPdfHeader(doc, 'Monitoramento de Contratos - Relatório Gerencial', 'Posição de ' + reference + ' · ' + pdfText(META.sourceFile || 'Planilha de monitoramento'));
+    addPdfHeader(doc, 'Monitoramento de Contratos - Relatório Gerencial', 'Posição de ' + reference + ' · ' + pdfText(META.sourceFile || 'Planilha de monitoramento') + ' · prazos em ' + deadlineReferenceLabel);
 
     doc.setFontSize(8.5);
     doc.setFont('helvetica', 'normal');
@@ -514,7 +544,7 @@
         const bd = b.diasParaVencimento == null ? 999999 : b.diasParaVencimento;
         return a.prioridade - b.prioridade || ad - bd;
       }).slice(0, 12).map(function (item) {
-        return [item.situacaoGerencial, daysLabel(item), item.numero, item.unidade, item.empresa, item.dataFinal ? item.dataFinal.br : '-', item.observacao || '-'];
+        return [item.situacaoGerencial, daysLabel(item), item.numero, item.unidade, item.empresa, item.dataFinal ? item.dataFinal.br : '-', ([item.observacao, ...(item.sourceWarnings || [])].filter(Boolean).join(' | ') || '-')];
       });
 
     doc.autoTable({
@@ -569,8 +599,9 @@
     if (!state.filtered.length || !window.jspdf) return;
     const jsPDF = window.jspdf.jsPDF;
     const doc = new jsPDF({ orientation: 'landscape', unit: 'mm', format: 'a4' });
+    refreshDeadlineStatuses();
     const reference = META.referenceDate && META.referenceDate.br ? META.referenceDate.br : '—';
-    addPdfHeader(doc, 'Monitoramento de Contratos - Relatório Detalhado', 'Posição de ' + reference + ' · ' + pdfText(META.sourceFile || 'Planilha de monitoramento'));
+    addPdfHeader(doc, 'Monitoramento de Contratos - Relatório Detalhado', 'Posição de ' + reference + ' · ' + pdfText(META.sourceFile || 'Planilha de monitoramento') + ' · prazos em ' + deadlineReferenceLabel);
     doc.setFontSize(8.3);
     doc.text('Filtros: ' + pdfText(filterDescription()), 14, 31, { maxWidth: 270 });
     doc.text(formatNumber(state.filtered.length) + ' registro(s) selecionado(s)', 14, 36);
@@ -590,7 +621,7 @@
         formatMoney(item.totalEmpenhado, item.moeda),
         formatMoney(item.totalFaturado, item.moeda),
         item.dataFinal ? item.dataFinal.br : '-',
-        item.observacao || '-'
+        ([item.observacao, ...(item.sourceWarnings || [])].filter(Boolean).join(' | ') || '-')
       ].map(pdfText);
     });
 
@@ -694,6 +725,7 @@
   }
 
   function init() {
+    refreshDeadlineStatuses();
     cacheElements();
     renderSource();
     populateFilters();

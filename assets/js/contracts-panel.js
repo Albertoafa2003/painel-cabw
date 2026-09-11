@@ -104,6 +104,10 @@
     return value && String(value).trim() ? String(value).trim() : fallback;
   }
 
+  function sourceWarningHtml(item) {
+    return (item.sourceWarnings || []).map(text => `<small class="contract-source-warning">${escapeHtml(text)}</small>`).join('');
+  }
+
   function renderOverview() {
     const overview = document.querySelector('[data-contract-overview]');
     if (!overview) return;
@@ -227,7 +231,7 @@
               <td>${escapeHtml(item.ordenadorDespesas || '—')}</td>
               <td>${escapeHtml(item.grandComando || '—')}</td>
               <td>${escapeHtml(item.empresa)}</td>
-              <td class="contracts-object-cell">${escapeHtml(item.objetoResumo)}</td>
+              <td class="contracts-object-cell">${escapeHtml(item.objetoResumo)}${sourceWarningHtml(item)}</td>
               <td>${escapeHtml(item.moeda)}</td>
               <td class="text-right">${money(item.valorContrato, item.moeda)}</td>
               <td class="text-right">${moneyUsd(item.totalEmpenhadoUsd)}</td>
@@ -250,7 +254,7 @@
               </div>
               <p class="contract-mobile-card__number">${escapeHtml(item.numero)}</p>
               <h3>${escapeHtml(item.empresa)}</h3>
-              <p>${escapeHtml(item.objetoResumo)}</p>
+              <p>${escapeHtml(item.objetoResumo)}</p>${sourceWarningHtml(item)}
               <dl>
                 <div><dt>Unidade</dt><dd>${escapeHtml(item.unidade || '—')}</dd></div>
                 <div><dt>Ordenador de Despesas</dt><dd>${escapeHtml(item.ordenadorDespesas || '—')}</dd></div>
@@ -359,7 +363,7 @@
         item.ordenadorDespesas || '-',
         item.grandComando || '-',
         item.empresa,
-        item.objetoResumo,
+        [item.objetoResumo, ...(item.sourceWarnings || [])].join(' | '),
         item.moeda,
         money(item.valorContrato, item.moeda),
         moneyUsd(item.totalEmpenhadoUsd),

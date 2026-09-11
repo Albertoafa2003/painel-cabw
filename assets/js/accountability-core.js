@@ -25,7 +25,7 @@ export function validContractAlias(value) {
 export function buildContractAliasIndex(contracts = []) {
   const candidates = new Map();
   contracts.forEach(contract => {
-    [contract?.numero, contract?.contrato].forEach(source => {
+    [contract?.numero, contract?.contrato, ...(Array.isArray(contract?.numeroAliases) ? contract.numeroAliases : [])].forEach(source => {
       if (!validContractAlias(source)) return;
       const alias = normalizeContractIdentifier(source);
       const current = candidates.get(alias) || new Set();

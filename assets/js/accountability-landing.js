@@ -1,4 +1,4 @@
-import { contractLifecycle, formatMoney, normalizeUnit, todayIso } from "./accountability-core.js?v=20260903-accountability-r1";
+import { contractLifecycle, formatMoney, normalizeUnit, todayIso } from "./accountability-core.js?v=20260911-contracts-r1";
 
 const contracts = Array.isArray(window.CABW_CONTRACTS_DATA) ? window.CABW_CONTRACTS_DATA : [];
 const reference = todayIso();
