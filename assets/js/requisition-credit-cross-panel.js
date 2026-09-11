@@ -6,7 +6,7 @@ import {
 } from "./requisition-core.js?v=20260907-requisitions-r6";
 
 const CREDIT_URL =
-  "assets/data/credit-budget-detailed-current.json?v=20260907-requisitions-r6";
+  "assets/data/credit-budget-detailed-current.json?v=20260911-credit-r1";
 const REQUEST_URL =
   "assets/data/requisitions-available-current.json?v=20260907-requisitions-r6";
 
@@ -717,7 +717,7 @@ function exportPdf() {
     );
   }
 
-  doc.save("relatorio-detalhado-credito-x-requisicoes-04092026-pn.pdf");
+  doc.save(`relatorio-detalhado-credito-${state.credit.metadata.position.replace(/\//g, "")}-requisicoes-${state.requests.metadata.position.replace(/\//g, "")}.pdf`);
 
   const status = document.getElementById("crossStatus");
   if (status) {
@@ -750,9 +750,9 @@ async function init() {
     );
 
     document.getElementById("crossSource").textContent =
-      `Crédito: ${state.credit.metadata.groupedKeyCount} chaves / ` +
+      `Crédito: ${state.credit.metadata.position} · ${state.credit.metadata.groupedKeyCount} chaves / ` +
       `${state.credit.metadata.totalCreditAvailableText} · ` +
-      `Requisições: ${state.requests.metadata.recordCount} registros / ` +
+      `Requisições: ${state.requests.metadata.position} · ${state.requests.metadata.recordCount} registros / ` +
       `${money(state.requests.metadata.balanceToCommitTotal)} a empenhar`;
 
     hydrate();

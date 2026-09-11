@@ -1,4 +1,4 @@
-const DATA_URL = "assets/data/credit-budget-detailed-current.json?v=20260903-requisitions-credit-r1";
+const DATA_URL = "assets/data/credit-budget-detailed-current.json?v=20260911-credit-r1";
 
 const state = { data: null, groups: [], lines: [], filteredGroups: [], filteredLines: [] };
 const ids = ["creditFilterUg", "creditFilterAction", "creditFilterPi", "creditFilterNature", "creditFilterPtres", "creditFilterSource", "creditFilterSearch"];
@@ -88,7 +88,7 @@ function csvCell(value) { const text = String(value ?? ""); return /[;"\n]/.test
 function downloadCsv() {
   const rows = [["UG", "OM", "Unidade Gestora", "Ação", "PI", "Natureza", "PTRES", "Fonte", "Lançamentos", "Crédito Disponível"], ...state.filteredGroups.map((r) => [r.ugCode, r.om, r.ugName, r.action, r.pi, r.expenseNature, r.ptres.join(", "), r.fundingSources.join(", "), r.launches, r.creditAvailable.toFixed(2)])];
   const blob = new Blob(["\ufeff" + rows.map((row) => row.map(csvCell).join(";")).join("\n")], { type: "text/csv;charset=utf-8" });
-  const link = document.createElement("a"); link.href = URL.createObjectURL(blob); link.download = "credito-por-pi-natureza-01092026.csv"; link.click(); URL.revokeObjectURL(link.href);
+  const link = document.createElement("a"); link.href = URL.createObjectURL(blob); link.download = `credito-por-pi-natureza-${state.data.metadata.position.replace(/\//g, "")}.csv`; link.click(); URL.revokeObjectURL(link.href);
 }
 function generatePdf() {
   if (!window.jspdf?.jsPDF) return;
@@ -97,7 +97,7 @@ function generatePdf() {
   doc.setFontSize(10); doc.text(`Posição: ${state.data.metadata.position} | Fonte: ${state.data.metadata.sourceFile}`, 14, 23);
   doc.text(`Total filtrado: ${document.getElementById("creditDetailTotal").textContent} | Chaves: ${state.filteredGroups.length}`, 14, 29);
   doc.autoTable({ startY: 35, head: [["OM/UG", "Ação", "PI", "Natureza", "PTRES", "Fonte", "Lanç.", "Crédito"]], body: state.filteredGroups.map((r) => [`${r.om} / ${r.ugCode}`, r.action, r.pi, r.expenseNature, r.ptres.join(", "), r.fundingSources.join(", "), String(r.launches), formatMoney(r.creditAvailable)]), styles: { fontSize: 7 }, headStyles: { fillColor: [6, 46, 102] }, columnStyles: { 7: { halign: "right" } }, margin: { left: 14, right: 14 } });
-  doc.save("credito-por-pi-natureza-01092026.pdf");
+  doc.save(`credito-por-pi-natureza-${state.data.metadata.position.replace(/\//g, "")}.pdf`);
 }
 async function init() {
   const status = document.getElementById("creditDetailStatus");
