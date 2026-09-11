@@ -301,11 +301,11 @@ test("current requisition file contains 67 unique BAC numbers, Part Numbers, spe
   assert.equal(data.records.some((row) => row.requestNumber === "LST025004T9"), false);
 });
 
-test("current crossing groups the 67 requests by OM and Natureza without double counting", () => {
+test("01/09/2026 credit and 07/09/2026 requests: historical crossing groups the 67 requests by OM and Natureza without double counting", () => {
   const requests = JSON.parse(
     fs.readFileSync(
       new URL(
-        "../assets/data/requisitions-available-current.json",
+        "../assets/data/requisitions-available-07092026.json",
         import.meta.url,
       ),
       "utf8",
@@ -314,7 +314,7 @@ test("current crossing groups the 67 requests by OM and Natureza without double 
   const credit = JSON.parse(
     fs.readFileSync(
       new URL(
-        "../assets/data/credit-budget-detailed-current.json",
+        "../assets/data/credit-budget-detailed-01092026.json",
         import.meta.url,
       ),
       "utf8",
@@ -425,11 +425,11 @@ test("detailed report data groups requisitions by OM without repeating credit", 
   assert.equal(report.omSummaries[0].status, "Crédito suficiente");
 });
 
-test("current detailed report contains 67 requisitions with Part Numbers organized into three OMs", () => {
+test("01/09/2026 historical detailed report contains 67 requisitions with Part Numbers organized into three OMs", () => {
   const requests = JSON.parse(
     fs.readFileSync(
       new URL(
-        "../assets/data/requisitions-available-current.json",
+        "../assets/data/requisitions-available-07092026.json",
         import.meta.url,
       ),
       "utf8",
@@ -438,7 +438,7 @@ test("current detailed report contains 67 requisitions with Part Numbers organiz
   const credit = JSON.parse(
     fs.readFileSync(
       new URL(
-        "../assets/data/credit-budget-detailed-current.json",
+        "../assets/data/credit-budget-detailed-01092026.json",
         import.meta.url,
       ),
       "utf8",

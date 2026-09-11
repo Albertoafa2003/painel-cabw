@@ -1,0 +1,292 @@
+{
+  "build": "credito-conrazao-requisicoes-11092026-r1",
+  "createdAtUtc": "2026-09-11T15:11:23.526713+00:00",
+  "publication": "Pacote preparado para upload; nenhuma publicação no GitHub ou gravação no Firebase executada.",
+  "sources": {
+    "report": {
+      "name": "RELATÓRIO_CRÉDITO_DISPONÍVEL_CABW_11092026(1).docx",
+      "sha256": "9ab5215272a6036231b1a5e7c1a0994cb14d23317c76c3d7b47f300e2f50ab00"
+    },
+    "conrazao": {
+      "name": "CONRAZAO(20260911-144100).TX",
+      "sha256": "29f73211b36958b134b42da3efa3d9b3fc5fc1413104c661f3cdc3a5113bdf48",
+      "generatedAt": "11/09/2026 11:27:42",
+      "sourceLineRange": [
+        20,
+        118
+      ]
+    },
+    "conor": {
+      "reference": "11/09/2026 00:02",
+      "source": "Crédito recebido extraído das tabelas do relatório; consulta CONOR separada não fornecida neste turno."
+    },
+    "basePackage": {
+      "name": "cabw_site_requisicoes_07092026_VERIFICADO.zip",
+      "sha256": "df11a38211de3c8b0893f8557f18a66d93ea878f68d4fd2139659e92c95d55a9"
+    },
+    "requisitions": {
+      "name": "2 - REQUISIÇÕES DISPONÍVEIS PARA EMPENHO - 07092026.xlsx",
+      "position": "07/09/2026",
+      "sha256OfActiveJson": "fecfebd6fee853049127d456df24ca29f37cf72b9e19dfc8c838f1783ea384d8",
+      "unchanged": true
+    }
+  },
+  "credit": {
+    "position": "11/09/2026",
+    "available": 3279443.02,
+    "received": 129266335.74,
+    "availablePercent": 2.54,
+    "arithmeticDifference": 125986892.72,
+    "currency": "USD",
+    "launches": 99,
+    "rawRecords": 99,
+    "matchingGroups": 84,
+    "ugs": 16,
+    "actions": 18,
+    "pis": 44,
+    "expenseNatures": 7,
+    "fundingSources": 7,
+    "ugPtresGroups": 41,
+    "receivedActions": 20,
+    "historyPositions": 19
+  },
+  "sourceReconciliation": {
+    "allUgTotalsAndCounts": true,
+    "allUgPtresTotalsAndCounts": true,
+    "allActionTotalsAndCounts": true,
+    "allActionUgPtresTotalsAndCounts": true,
+    "conrazaoPrintedTotalMatches": true,
+    "receivedActionSumMatchesReport": true,
+    "unknownUgCount": 0,
+    "unknownPtresCount": 0,
+    "errors": []
+  },
+  "requisitions": {
+    "position": "07/09/2026",
+    "records": 67,
+    "uniqueBacs": 67,
+    "pnRecords": 67,
+    "uniquePns": 61,
+    "requestValue": 1316467.79,
+    "committedValue": 0,
+    "balanceToCommit": 1316467.79,
+    "recordsAdded": 0,
+    "recordsRemoved": 0,
+    "recordsChanged": 0
+  },
+  "checks": {
+    "unitTests": {
+      "command": "npm test",
+      "passed": 86,
+      "failed": 0,
+      "newTests": 16
+    },
+    "javascriptSyntax": {
+      "command": "npm run check",
+      "passed": true,
+      "inlineScriptsChecked": 3
+    },
+    "html": {
+      "filesChecked": 39,
+      "duplicateIds": [],
+      "missingLocalFiles": []
+    },
+    "offlineBrowser": {
+      "environment": "Chromium local; Firebase isolated. Project data and code unchanged in test.",
+      "externalDependencies": "Offline: jQuery 3.6.0 from environment; Bootstrap 5.1.1 used ONLY for QA display; no remote fonts or DataTables; jsPDF calls recorded, no real PDF binary generated.",
+      "checks": {
+        "executive_current_values": true,
+        "executive_history_dates": true,
+        "ug_rows": true,
+        "ug_largest": true,
+        "action_rows": true,
+        "receipt_rows": true,
+        "action_pdf_inputs": true,
+        "detail_latest_option": true,
+        "detail_report_latest_option": true,
+        "detail_latest_credit": true,
+        "detail_pdf_inputs": true,
+        "budget_lines": true,
+        "budget_groups": true,
+        "budget_sum": true,
+        "budget_sp_service": true,
+        "budget_pdf_inputs": true,
+        "cross_6_groups": true,
+        "cross_requests": true,
+        "cross_credit": true,
+        "cross_deficit": true,
+        "cross_both_reference_dates": true,
+        "cross_pdf_all_67_pns": true,
+        "cross_pdf_dates_and_totals": true,
+        "cross_filter_12_requests": true,
+        "cross_filter_deficit": true,
+        "cross_filtered_pdf_12_pns": true,
+        "cabw_credit_updated": true,
+        "cabw_received_updated": true,
+        "cabw_position": true,
+        "requests_preserved_67": true,
+        "requests_still_0709": true,
+        "consistency_analytical_audit": true,
+        "browser_no_js_exceptions": true
+      },
+      "pageErrors": [],
+      "pdfDataTablesChecked": 5
+    },
+    "preservation": {
+      "baseFileCount": 213,
+      "baseFilesUnchanged": 197,
+      "baseFilesChanged": 16,
+      "removedFiles": 0,
+      "changedFiles": [
+        "action.html",
+        "assets/data/credit-budget-detailed-current.json",
+        "assets/data/credit-current.json",
+        "assets/js/cabw-numeros.js",
+        "assets/js/credit-budget-detail.js",
+        "assets/js/requisition-credit-cross-panel.js",
+        "consistency.html",
+        "credito-detalhamento-orcamentario.html",
+        "credito-visao-executiva.html",
+        "detail.html",
+        "governanca-cabw-numeros.html",
+        "package.json",
+        "requisicoes-cruzamento-credito.html",
+        "requisicoes.html",
+        "tests/requisition-core.test.mjs",
+        "ug.html"
+      ]
+    }
+  },
+  "limitations": [
+    "Testes de conteúdo e filtros executados offline com o código do projeto e dados reais, sem autenticação de produção.",
+    "Os parâmetros entregues ao jsPDF/AutoTable foram conferidos em cinco cenários por captura das chamadas. A geração de arquivos PDF reais não foi validada neste ambiente, pois os CDNs externos estavam indisponíveis.",
+    "A visualização offline usou Arial de reserva e Bootstrap 5.1.1 apenas no teste; o pacote mantém as bibliotecas e fontes externas originais, sem alterações.",
+    "DataTables e acesso autenticado a Firestore/GitHub Pages não foram testados em produção; suas configurações foram preservadas."
+  ],
+  "crossingTotals": {
+    "requestCount": 67,
+    "requestValue": 1316467.79,
+    "committedValue": 0,
+    "balanceToCommit": 1316467.79,
+    "creditAvailable": 2002627.1,
+    "creditRemaining": 892627.79,
+    "deficit": 206468.48,
+    "coveragePercent": 152.1212379985385
+  },
+  "crossingByGroup": [
+    {
+      "ugCode": "120026",
+      "om": "PAMA-LS",
+      "action": "*",
+      "pi": "*",
+      "expenseNature": "339030",
+      "requestCount": 16,
+      "requestValue": 511822.48,
+      "committedValue": 0,
+      "balanceToCommit": 511822.48,
+      "creditAvailable": 836354.31,
+      "creditRemaining": 324531.83,
+      "deficit": 0.0,
+      "status": "Crédito suficiente"
+    },
+    {
+      "ugCode": "120026",
+      "om": "PAMA-LS",
+      "action": "*",
+      "pi": "*",
+      "expenseNature": "449052",
+      "requestCount": 1,
+      "requestValue": 16256.0,
+      "committedValue": 0,
+      "balanceToCommit": 16256.0,
+      "creditAvailable": 27861.76,
+      "creditRemaining": 11605.76,
+      "deficit": 0.0,
+      "status": "Crédito suficiente"
+    },
+    {
+      "ugCode": "120049",
+      "om": "PAMA-GL",
+      "action": "*",
+      "pi": "*",
+      "expenseNature": "339030",
+      "requestCount": 3,
+      "requestValue": 21273.6,
+      "committedValue": 0,
+      "balanceToCommit": 21273.6,
+      "creditAvailable": 25906.55,
+      "creditRemaining": 4632.95,
+      "deficit": 0.0,
+      "status": "Crédito suficiente"
+    },
+    {
+      "ugCode": "120049",
+      "om": "PAMA-GL",
+      "action": "*",
+      "pi": "*",
+      "expenseNature": "449052",
+      "requestCount": 18,
+      "requestValue": 339045.35,
+      "committedValue": 0,
+      "balanceToCommit": 339045.35,
+      "creditAvailable": 272236.65,
+      "creditRemaining": 0.0,
+      "deficit": 66808.7,
+      "status": "Crédito insuficiente"
+    },
+    {
+      "ugCode": "120068",
+      "om": "PAMA-SP",
+      "action": "*",
+      "pi": "*",
+      "expenseNature": "339030",
+      "requestCount": 17,
+      "requestValue": 274692.5,
+      "committedValue": 0,
+      "balanceToCommit": 274692.5,
+      "creditAvailable": 826549.75,
+      "creditRemaining": 551857.25,
+      "deficit": 0.0,
+      "status": "Crédito suficiente"
+    },
+    {
+      "ugCode": "120068",
+      "om": "PAMA-SP",
+      "action": "*",
+      "pi": "*",
+      "expenseNature": "339039",
+      "requestCount": 12,
+      "requestValue": 153377.86,
+      "committedValue": 0,
+      "balanceToCommit": 153377.86,
+      "creditAvailable": 13718.08,
+      "creditRemaining": 0.0,
+      "deficit": 139659.78,
+      "status": "Crédito insuficiente"
+    }
+  ],
+  "fileHashes": {
+    "LEIA-ME-ATUALIZACAO-CREDITO-11092026.txt": "f33d428632d7360d8664ac5a08621285fd3c3254577af3e238504c8aad23cfc1",
+    "action.html": "c3499b56620d6304e7b68641fa1123c5a0d66939785af03b16062ca66257ec5a",
+    "assets/data/credit-11092026.json": "ccd2106552ea243a6c3050f692a2e3e6247f803b80f0de5ff0945b9bb9c4b727",
+    "assets/data/credit-budget-detailed-11092026.json": "7199b2baae4298bb73f75b1fc17b512dfcfaafef7f5055333ae1044d1a517227",
+    "assets/data/credit-budget-detailed-current.json": "7199b2baae4298bb73f75b1fc17b512dfcfaafef7f5055333ae1044d1a517227",
+    "assets/data/credit-current.json": "ccd2106552ea243a6c3050f692a2e3e6247f803b80f0de5ff0945b9bb9c4b727",
+    "assets/data/credit-update-audit-11092026.json": "a8c4604ef103dbae9b391a6e311c6163ed5e4b12e5aac6a6d4f7ea26803b5bd3",
+    "assets/data/requisition-credit-cross-summary-11092026.json": "fa199b544b48e3c6dde89fa55a963eda08022c9c40e234fdbca18faf701f425f",
+    "assets/js/cabw-numeros.js": "d9a325fe3fa1d8eb43e320d5f3c0d3c7abcd428b82857b96930087e924f472a5",
+    "assets/js/credit-budget-detail.js": "cd62f8de2b7cab0e40317c5b2ce4fb68e69ae9aa928f4adf122b112cd1a898a3",
+    "assets/js/requisition-credit-cross-panel.js": "b4d77aecd47d869f811807c427213ed2ae8e1431185fa78823a985af24b61829",
+    "consistency.html": "3bfa25400516d57d46c7ce2623fb84b117fc18bf0fca04378d23ecc8fc03d5ec",
+    "credito-detalhamento-orcamentario.html": "f71e1d5abfe7a05327ed9f31a0c5a3ee4489a97d3cb38a678bc9cada93ab0390",
+    "credito-visao-executiva.html": "ac20ed0529f2eee5d3adebacfecfe07b453ca51cd04177f319f879f3c897378c",
+    "detail.html": "da8008c4d5a014d130f11bfe35e5e6970a422d3ac425b7478540b747b074ad10",
+    "governanca-cabw-numeros.html": "9ac5b3ba3807177db3e2140352fb6e14cc62bf9f9cd5bc87293b2bbe31371864",
+    "package.json": "455e8d998a7ad3159c28073d57ca8f99a4a336bdf367805b5e427135de999f3c",
+    "requisicoes-cruzamento-credito.html": "b805bc3f5caba2e5d5dd6ca574d12bec929e3ba7c20c7656944a21cf103891b6",
+    "requisicoes.html": "d633f349274b2f9571fa07fa12c3ba85c7f3834666c9670ff7562bf6c4600581",
+    "tests/credit-update-11092026.test.mjs": "5c733fb900136898fa830863095bb1808a6d8ab457bb312de37ba81c0302c7d1",
+    "tests/requisition-core.test.mjs": "bb0869a4c2326b02a20b075d0df767aa4f08e1d1bee033772b13790804521956",
+    "ug.html": "e93804a06f95b757d6ff5c885b33a942e1d7050eaed6ef264819abde06ae6c79"
+  }
+}
