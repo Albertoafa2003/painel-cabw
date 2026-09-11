@@ -1,0 +1,61 @@
+PAINEL CABW — CRÉDITO E CONRAZÃO DE 11/09/2026
+
+PACOTE COMPLETO, NÃO PUBLICADO AUTOMATICAMENTE.
+
+FONTES
+Relatório: RELATÓRIO_CRÉDITO_DISPONÍVEL_CABW_11092026(1).docx
+CONRAZÃO: CONRAZAO(20260911-144100).TX
+Geração do CONRAZÃO: 11/09/2026 às 11:27:42.
+Crédito recebido: referência CONOR de 11/09/2026 às 00:02, conforme relatório.
+Requisições mantidas: posição de 07/09/2026, 67 BAC# com Part Numbers.
+
+RESULTADOS
+Crédito disponível: US$ 3.279.443,02.
+Crédito recebido em 2026: US$ 129.266.335,74.
+Percentual disponível: 2,54%.
+Diferença aritmética: US$ 125.986.892,72. Não representa automaticamente valor pago.
+99 lançamentos; 84 chaves UG/Ação/PI/ND; 16 UGs; 18 Ações; 44 PIs.
+41 grupos UG/PTRES; 20 Ações com crédito recebido; 19 datas no histórico.
+
+CRUZAMENTO COM AS REQUISIÇÕES
+Saldo a empenhar: US$ 1.316.467,79.
+Crédito compatível: US$ 2.002.627,10.
+Crédito remanescente nos grupos: US$ 892.627,79.
+Déficit total: US$ 206.468,48.
+PAMA-GL / ND 449052: déficit de US$ 66.808,70.
+PAMA-SP / ND 339039: déficit de US$ 139.659,78.
+Os demais quatro grupos têm crédito suficiente.
+Não foram alterados BAC#, PN, valores, Naturezas ou datas das requisições.
+Crédito remanescente de outra OM/ND não compensa o déficit automaticamente.
+A correspondência orçamentária não constitui autorização para emitir empenho.
+
+ÁREAS ATUALIZADAS
+Crédito Disponível: Visão Executiva, UG, Ação, Detalhamento, Consistência e PI/Natureza.
+Requisições: crédito utilizado no cruzamento, datas das bases e dados dos relatórios.
+Governança: CABW em Números.
+Relatórios: crédito recebido por Ação, crédito por UG/data, crédito analítico e Crédito x Requisições.
+Foram mantidos históricos e demais módulos, inclusive Prestação de Contas, Pagamentos,
+Contratos, Materiais Reparáveis, Restos a Pagar, autenticação e regras de acesso.
+Nenhuma nova regra ou coleção Firebase é necessária para esta atualização.
+
+PUBLICAÇÃO COM MAIN PROTEGIDA
+1. Extraia o ZIP. Ele contém arquivos e pastas na raiz, incluindo assets/ e tests/.
+2. No repositório, utilize uma branch de atualização, por exemplo atualizacao-credito-11092026.
+3. Faça upload de TODO o conteúdo extraído à raiz dessa branch, preservando as subpastas.
+   Não envie apenas o ZIP nem somente os arquivos HTML: os dados e scripts estão em assets/.
+4. Confirme a presença de BUILD_VERIFICACAO_CREDITO_CONRAZAO_11092026.json.
+5. Abra um Pull Request para main e siga a revisão/aprovação configurada.
+6. Após a integração e a publicação, atualize o navegador com Ctrl + F5.
+7. Confira os valores da Visão Executiva e do CABW em Números. Em Crédito x Requisições,
+   confirme Crédito 11/09/2026 e Requisições 07/09/2026; filtre PAMA-SP/339039 e verifique
+   o déficit de US$ 139.659,78. Gere o PDF detalhado e confira os PNs e ambas as datas.
+
+VALIDAÇÃO E LIMITES
+86 testes automatizados aprovados; sintaxe JS e referências locais conferidas.
+33 verificações de conteúdo/interação em navegador offline aprovadas.
+As chamadas dos relatórios foram verificadas com captura de parâmetros jsPDF/AutoTable
+em cinco cenários. Não foi possível validar a geração de PDF real pelos CDNs externos
+neste ambiente. Confira a geração final dos PDFs após publicar e autenticar no site.
+Nenhuma publicação no GitHub nem gravação no Firestore foi executada durante a atualização.
+O ZIP mantém a arquitetura estática anterior: arquivos incorporados não recebem proteção
+adicional da tela de login. Não foram incluídos arquivos brutos do CONRAZÃO/relatório.
