@@ -1,9 +1,9 @@
 {
-  "total": 135,
+  "total": 137,
   "counts": {
     "fms": 52,
-    "administrativos": 21,
-    "finalisticos": 62
+    "finalisticos": 62,
+    "administrativos": 23
   },
   "grandComandos": [
     "CMTAER",
@@ -28,19 +28,50 @@
     "PAME-RJ"
   ],
   "duplicates_check": "ok",
-  "source": "RELATÓRIO DE CONTRATO - 13082026.xls",
-  "updatedFrom": "Posição de 13/08/2026",
+  "source": "RELATÓRIO DE CONTRATO - 11092026.xls",
+  "updatedFrom": "Posição de 11/09/2026",
   "preservedFieldsFrom": "Base contratual institucional já existente no Painel CABW",
   "removedContracts": [
-    "015/CABW/2024",
-    "020/CABW-PAMASP/2025",
-    "050/CABW-PAMASP/2024",
-    "BR-D-QAP-USAF"
+    "015/CABW/2021",
+    "016/CABW/2021",
+    "018/CABW-CISCEA/2025",
+    "019/CABW-CENIPA/2025"
   ],
   "addedContracts": [
-    "010/CABW-PAMERJ/2026",
-    "CNT 009/CABW-PAME-RJ/2026",
-    "CNT 099/CAE-CABW-DECEA/2026"
+    "CT 012-CABW-2026",
+    "011/CABW-DECEA/2026",
+    "CT 013/CABW/2026",
+    "CT 016/CABW/2026",
+    "014/CABW-CISCEA/2026",
+    "015/CABW-CISCEA/2026"
   ],
-  "notMatchedToPreviousCategory": []
+  "notMatchedToPreviousCategory": [],
+  "referenceDate": "2026-09-11",
+  "renamedContracts": {
+    "004/CAE-PAMERJ/2025": "004/CAE-CABW-PAMERJ/2025",
+    "CNT 009/CABW-PAME-RJ/2026": "009/CABW-PAME-RJ/2026"
+  },
+  "lifecycle": {
+    "encerrado": 20,
+    "vigente": 112,
+    "sem-data": 5
+  },
+  "totalEmpenhadoUsd": 657754725.91,
+  "totalFaturadoUsd": 544517182.34,
+  "currencyTotals": {
+    "EUR": {
+      "valorContrato": 18211512.11,
+      "totalEmpenhado": 12314733.75,
+      "totalFaturado": 10327520.16,
+      "saldoSiloms": 1987213.59,
+      "valorEmpenhar": 5896778.36
+    },
+    "USD": {
+      "valorContrato": 1106671484.87,
+      "totalEmpenhado": 681581372.5,
+      "totalFaturado": 570388867.2,
+      "saldoSiloms": 111192505.3,
+      "valorEmpenhar": 425090112.37
+    }
+  }
 }

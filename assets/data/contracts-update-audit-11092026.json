@@ -1,0 +1,2678 @@
+{
+  "referenceDate": "2026-09-11",
+  "source": {
+    "name": "RELATÓRIO DE CONTRATO - 11092026.xls",
+    "sheet": "Sheet0",
+    "sha256": "da0a427327ff0f58cae6acf665694ab15065ff3c1e86241f91b72015c8e2a358",
+    "rows": 137,
+    "columns": [
+      "NÚMERO",
+      "EMPRESA",
+      "OBJETO RESUMO",
+      "MOEDA",
+      "VALOR DO CONTRATO",
+      "TOTAL EMPENHADO",
+      "TOTAL FATURADO",
+      "SALDO SILOMS-EXT",
+      "VALOR A EMPENHAR",
+      "DATA ASSINATURA",
+      "DATA INÍCIO",
+      "DATA FINAL",
+      "TOTAL EMPENHADO USD",
+      "TOTAL FATURADO USD"
+    ]
+  },
+  "basePackage": "cabw_site_credito_requisicoes_11092026_VERIFICADO.zip",
+  "baseSha256": "80791c130052b3284080822d854193e67a4a0692c0720c23e3a17efb8e3fde6f",
+  "matching": {
+    "exactNumbers": 129,
+    "reviewedNumberUpdates": {
+      "004/CAE-PAMERJ/2025": "004/CAE-CABW-PAMERJ/2025",
+      "CNT 009/CABW-PAME-RJ/2026": "009/CABW-PAME-RJ/2026"
+    },
+    "differentContractsNeverMerged": [
+      "004/CAE-CABW-PAMERJ/2025",
+      "009/CABW-PAME-RJ/2026"
+    ],
+    "newContracts": [
+      "CT 012-CABW-2026",
+      "011/CABW-DECEA/2026",
+      "CT 013/CABW/2026",
+      "CT 016/CABW/2026",
+      "014/CABW-CISCEA/2026",
+      "015/CABW-CISCEA/2026"
+    ],
+    "removedContracts": [
+      "015/CABW/2021",
+      "016/CABW/2021",
+      "018/CABW-CISCEA/2025",
+      "019/CABW-CENIPA/2025"
+    ]
+  },
+  "beforeCount": 135,
+  "afterCount": 137,
+  "existingContractsUpdated": 131,
+  "existingWithChangedSourceFields": 47,
+  "fieldChangeCounts": {
+    "totalFaturado": 39,
+    "totalFaturadoUsd": 39,
+    "saldoSiloms": 47,
+    "totalEmpenhado": 19,
+    "valorEmpenhar": 20,
+    "totalEmpenhadoUsd": 19,
+    "valorContrato": 3,
+    "numero": 2,
+    "dataFinal": 2,
+    "dataAssinatura": 2,
+    "dataInicio": 2
+  },
+  "changes": [
+    {
+      "numberBefore": "BR-D-PUN-USAF",
+      "numberAfter": "BR-D-PUN-USAF",
+      "id": 1,
+      "sourceRow": 2,
+      "changedFields": {},
+      "institutionalFieldsPreserved": true
+    },
+    {
+      "numberBefore": "BR-D-CCG-USAF",
+      "numberAfter": "BR-D-CCG-USAF",
+      "id": 2,
+      "sourceRow": 3,
+      "changedFields": {},
+      "institutionalFieldsPreserved": true
+    },
+    {
+      "numberBefore": "BR-B-KRT-USARMY",
+      "numberAfter": "BR-B-KRT-USARMY",
+      "id": 3,
+      "sourceRow": 4,
+      "changedFields": {
+        "totalFaturado": {
+          "before": 42449849.39,
+          "after": 47826068.05
+        },
+        "totalFaturadoUsd": {
+          "before": 38459034.52,
+          "after": 43835253.18
+        },
+        "saldoSiloms": {
+          "before": 5376218.66,
+          "after": 0.0
+        }
+      },
+      "institutionalFieldsPreserved": true
+    },
+    {
+      "numberBefore": "BR-D-KAA-USAF",
+      "numberAfter": "BR-D-KAA-USAF",
+      "id": 4,
+      "sourceRow": 5,
+      "changedFields": {},
+      "institutionalFieldsPreserved": true
+    },
+    {
+      "numberBefore": "BR-B-KIF-USARMY",
+      "numberAfter": "BR-B-KIF-USARMY",
+      "id": 5,
+      "sourceRow": 6,
+      "changedFields": {},
+      "institutionalFieldsPreserved": true
+    },
+    {
+      "numberBefore": "BR-D-TBT-USAF",
+      "numberAfter": "BR-D-TBT-USAF",
+      "id": 6,
+      "sourceRow": 7,
+      "changedFields": {},
+      "institutionalFieldsPreserved": true
+    },
+    {
+      "numberBefore": "BR-D-QNC-USAF",
+      "numberAfter": "BR-D-QNC-USAF",
+      "id": 7,
+      "sourceRow": 8,
+      "changedFields": {},
+      "institutionalFieldsPreserved": true
+    },
+    {
+      "numberBefore": "BR-D-GIN-USAF",
+      "numberAfter": "BR-D-GIN-USAF",
+      "id": 8,
+      "sourceRow": 9,
+      "changedFields": {},
+      "institutionalFieldsPreserved": true
+    },
+    {
+      "numberBefore": "BR-B-UUC-USARMY",
+      "numberAfter": "BR-B-UUC-USARMY",
+      "id": 9,
+      "sourceRow": 10,
+      "changedFields": {},
+      "institutionalFieldsPreserved": true
+    },
+    {
+      "numberBefore": "BR-B-TYM-USARMY",
+      "numberAfter": "BR-B-TYM-USARMY",
+      "id": 10,
+      "sourceRow": 11,
+      "changedFields": {},
+      "institutionalFieldsPreserved": true
+    },
+    {
+      "numberBefore": "BR-B-OBR-USARMY",
+      "numberAfter": "BR-B-OBR-USARMY",
+      "id": 11,
+      "sourceRow": 12,
+      "changedFields": {},
+      "institutionalFieldsPreserved": true
+    },
+    {
+      "numberBefore": "BR-P-ASP-USNAVY",
+      "numberAfter": "BR-P-ASP-USNAVY",
+      "id": 12,
+      "sourceRow": 13,
+      "changedFields": {},
+      "institutionalFieldsPreserved": true
+    },
+    {
+      "numberBefore": "BR-D-KCP-USAF",
+      "numberAfter": "BR-D-KCP-USAF",
+      "id": 13,
+      "sourceRow": 14,
+      "changedFields": {},
+      "institutionalFieldsPreserved": true
+    },
+    {
+      "numberBefore": "BR-D-QAM-USAF",
+      "numberAfter": "BR-D-QAM-USAF",
+      "id": 14,
+      "sourceRow": 15,
+      "changedFields": {},
+      "institutionalFieldsPreserved": true
+    },
+    {
+      "numberBefore": "BR-D-QAN-USAF",
+      "numberAfter": "BR-D-QAN-USAF",
+      "id": 15,
+      "sourceRow": 16,
+      "changedFields": {},
+      "institutionalFieldsPreserved": true
+    },
+    {
+      "numberBefore": "BR-D-GAI-USAF",
+      "numberAfter": "BR-D-GAI-USAF",
+      "id": 16,
+      "sourceRow": 17,
+      "changedFields": {},
+      "institutionalFieldsPreserved": true
+    },
+    {
+      "numberBefore": "34/2017-CENSIPAM",
+      "numberAfter": "34/2017-CENSIPAM",
+      "id": 34,
+      "sourceRow": 18,
+      "changedFields": {},
+      "institutionalFieldsPreserved": true
+    },
+    {
+      "numberBefore": "BR-P-BUV-USNAVY",
+      "numberAfter": "BR-P-BUV-USNAVY",
+      "id": 18,
+      "sourceRow": 19,
+      "changedFields": {},
+      "institutionalFieldsPreserved": true
+    },
+    {
+      "numberBefore": "BR-D-RAK-USAF",
+      "numberAfter": "BR-D-RAK-USAF",
+      "id": 19,
+      "sourceRow": 20,
+      "changedFields": {
+        "totalFaturado": {
+          "before": 4461510.0,
+          "after": 4611510.0
+        },
+        "totalEmpenhado": {
+          "before": 4547931.25,
+          "after": 4611510.0
+        },
+        "valorEmpenhar": {
+          "before": 323578.75,
+          "after": 260000.0
+        },
+        "totalEmpenhadoUsd": {
+          "before": 4243991.25,
+          "after": 4307570.0
+        },
+        "totalFaturadoUsd": {
+          "before": 4157570.0,
+          "after": 4307570.0
+        },
+        "saldoSiloms": {
+          "before": 86421.25,
+          "after": 0.0
+        }
+      },
+      "institutionalFieldsPreserved": true
+    },
+    {
+      "numberBefore": "BR-D-GAK-USAF",
+      "numberAfter": "BR-D-GAK-USAF",
+      "id": 20,
+      "sourceRow": 21,
+      "changedFields": {},
+      "institutionalFieldsPreserved": true
+    },
+    {
+      "numberBefore": "BR-D-QAQ-USAF",
+      "numberAfter": "BR-D-QAQ-USAF",
+      "id": 21,
+      "sourceRow": 22,
+      "changedFields": {
+        "totalFaturado": {
+          "before": 22672099.86,
+          "after": 24018118.76
+        },
+        "totalEmpenhado": {
+          "before": 27446727.43,
+          "after": 27028818.1
+        },
+        "valorEmpenhar": {
+          "before": -604727.43,
+          "after": -186818.1
+        },
+        "totalEmpenhadoUsd": {
+          "before": 25657622.83,
+          "after": 25239713.5
+        },
+        "totalFaturadoUsd": {
+          "before": 20882995.26,
+          "after": 22229014.16
+        },
+        "saldoSiloms": {
+          "before": 4774627.57,
+          "after": 3010699.34
+        }
+      },
+      "institutionalFieldsPreserved": true
+    },
+    {
+      "numberBefore": "010/CABW/2020",
+      "numberAfter": "010/CABW/2020",
+      "id": 22,
+      "sourceRow": 23,
+      "changedFields": {},
+      "institutionalFieldsPreserved": true
+    },
+    {
+      "numberBefore": "BR-D-OAA-USAF",
+      "numberAfter": "BR-D-OAA-USAF",
+      "id": 23,
+      "sourceRow": 24,
+      "changedFields": {},
+      "institutionalFieldsPreserved": true
+    },
+    {
+      "numberBefore": "BR-D-GAM-USAF",
+      "numberAfter": "BR-D-GAM-USAF",
+      "id": 24,
+      "sourceRow": 25,
+      "changedFields": {},
+      "institutionalFieldsPreserved": true
+    },
+    {
+      "numberBefore": "BR-D-QAR-USAF",
+      "numberAfter": "BR-D-QAR-USAF",
+      "id": 25,
+      "sourceRow": 26,
+      "changedFields": {},
+      "institutionalFieldsPreserved": true
+    },
+    {
+      "numberBefore": "012/CABW/2020",
+      "numberAfter": "012/CABW/2020",
+      "id": 27,
+      "sourceRow": 27,
+      "changedFields": {
+        "totalFaturado": {
+          "before": 10868348.1,
+          "after": 11010429.36
+        },
+        "totalEmpenhado": {
+          "before": 11193354.62,
+          "after": 11532183.18
+        },
+        "valorEmpenhar": {
+          "before": 4478243.98,
+          "after": 4139415.42
+        },
+        "totalEmpenhadoUsd": {
+          "before": 11193354.62,
+          "after": 11532183.18
+        },
+        "totalFaturadoUsd": {
+          "before": 10868348.1,
+          "after": 11010429.36
+        },
+        "saldoSiloms": {
+          "before": 325006.52,
+          "after": 521753.82
+        }
+      },
+      "institutionalFieldsPreserved": true
+    },
+    {
+      "numberBefore": "033/CABW/2021",
+      "numberAfter": "033/CABW/2021",
+      "id": 29,
+      "sourceRow": 28,
+      "changedFields": {
+        "totalFaturado": {
+          "before": 114755.89,
+          "after": 117153.2
+        },
+        "totalFaturadoUsd": {
+          "before": 114755.89,
+          "after": 117153.2
+        },
+        "saldoSiloms": {
+          "before": 7279.43,
+          "after": 4882.12
+        }
+      },
+      "institutionalFieldsPreserved": true
+    },
+    {
+      "numberBefore": "022/CABW/2021",
+      "numberAfter": "022/CABW/2021",
+      "id": 30,
+      "sourceRow": 29,
+      "changedFields": {
+        "totalFaturado": {
+          "before": 10801515.53,
+          "after": 11029355.1
+        },
+        "totalEmpenhado": {
+          "before": 11291562.67,
+          "after": 11414163.21
+        },
+        "valorEmpenhar": {
+          "before": 903.39,
+          "after": -121697.15
+        },
+        "totalEmpenhadoUsd": {
+          "before": 11291562.67,
+          "after": 11414163.21
+        },
+        "totalFaturadoUsd": {
+          "before": 10801515.53,
+          "after": 11029355.1
+        },
+        "saldoSiloms": {
+          "before": 490047.14,
+          "after": 384808.11
+        }
+      },
+      "institutionalFieldsPreserved": true
+    },
+    {
+      "numberBefore": "BR-P-GVW-USNAVY",
+      "numberAfter": "BR-P-GVW-USNAVY",
+      "id": 31,
+      "sourceRow": 30,
+      "changedFields": {},
+      "institutionalFieldsPreserved": true
+    },
+    {
+      "numberBefore": "BR-D-AAI-USAF",
+      "numberAfter": "BR-D-AAI-USAF",
+      "id": 32,
+      "sourceRow": 31,
+      "changedFields": {
+        "totalFaturado": {
+          "before": 5418728.0,
+          "after": 5658732.79
+        },
+        "totalFaturadoUsd": {
+          "before": 4524824.96,
+          "after": 4764829.75
+        },
+        "saldoSiloms": {
+          "before": 240004.79,
+          "after": 0.0
+        }
+      },
+      "institutionalFieldsPreserved": true
+    },
+    {
+      "numberBefore": "BR-D-GAO-USAF",
+      "numberAfter": "BR-D-GAO-USAF",
+      "id": 33,
+      "sourceRow": 32,
+      "changedFields": {},
+      "institutionalFieldsPreserved": true
+    },
+    {
+      "numberBefore": "BR-D-PAB-USAF",
+      "numberAfter": "BR-D-PAB-USAF",
+      "id": 35,
+      "sourceRow": 33,
+      "changedFields": {},
+      "institutionalFieldsPreserved": true
+    },
+    {
+      "numberBefore": "BR-P-GVX-USNAVY",
+      "numberAfter": "BR-P-GVX-USNAVY",
+      "id": 36,
+      "sourceRow": 34,
+      "changedFields": {},
+      "institutionalFieldsPreserved": true
+    },
+    {
+      "numberBefore": "016/CABW/2022",
+      "numberAfter": "016/CABW/2022",
+      "id": 37,
+      "sourceRow": 35,
+      "changedFields": {},
+      "institutionalFieldsPreserved": true
+    },
+    {
+      "numberBefore": "BR-D-QAS-USAF",
+      "numberAfter": "BR-D-QAS-USAF",
+      "id": 38,
+      "sourceRow": 36,
+      "changedFields": {},
+      "institutionalFieldsPreserved": true
+    },
+    {
+      "numberBefore": "025/CABW/2022",
+      "numberAfter": "025/CABW/2022",
+      "id": 39,
+      "sourceRow": 37,
+      "changedFields": {
+        "totalFaturado": {
+          "before": 62156.87,
+          "after": 63654.01
+        },
+        "totalFaturadoUsd": {
+          "before": 62156.87,
+          "after": 63654.01
+        },
+        "saldoSiloms": {
+          "before": 10334.51,
+          "after": 8837.37
+        }
+      },
+      "institutionalFieldsPreserved": true
+    },
+    {
+      "numberBefore": "BR-P-TDV-USNAVY",
+      "numberAfter": "BR-P-TDV-USNAVY",
+      "id": 40,
+      "sourceRow": 38,
+      "changedFields": {},
+      "institutionalFieldsPreserved": true
+    },
+    {
+      "numberBefore": "BR-P-TDW-USNAVY",
+      "numberAfter": "BR-P-TDW-USNAVY",
+      "id": 41,
+      "sourceRow": 39,
+      "changedFields": {},
+      "institutionalFieldsPreserved": true
+    },
+    {
+      "numberBefore": "156/CAE-PAME-RJ/2022",
+      "numberAfter": "156/CAE-PAME-RJ/2022",
+      "id": 42,
+      "sourceRow": 40,
+      "changedFields": {
+        "totalFaturado": {
+          "before": 3525389.94,
+          "after": 3580493.94
+        },
+        "totalFaturadoUsd": {
+          "before": 3525389.94,
+          "after": 3580493.94
+        },
+        "saldoSiloms": {
+          "before": 247885.98,
+          "after": 192781.98
+        }
+      },
+      "institutionalFieldsPreserved": true
+    },
+    {
+      "numberBefore": "020/CABW/2022",
+      "numberAfter": "020/CABW/2022",
+      "id": 43,
+      "sourceRow": 41,
+      "changedFields": {
+        "totalEmpenhado": {
+          "before": 123101.3,
+          "after": 122625.99
+        },
+        "valorEmpenhar": {
+          "before": 0.0,
+          "after": 475.31
+        },
+        "totalEmpenhadoUsd": {
+          "before": 123101.3,
+          "after": 122625.99
+        },
+        "saldoSiloms": {
+          "before": 475.31,
+          "after": 0.0
+        }
+      },
+      "institutionalFieldsPreserved": true
+    },
+    {
+      "numberBefore": "BR-D-QAT-USAF",
+      "numberAfter": "BR-D-QAT-USAF",
+      "id": 44,
+      "sourceRow": 42,
+      "changedFields": {},
+      "institutionalFieldsPreserved": true
+    },
+    {
+      "numberBefore": "021/CABW/2022",
+      "numberAfter": "021/CABW/2022",
+      "id": 45,
+      "sourceRow": 43,
+      "changedFields": {
+        "totalFaturado": {
+          "before": 27477.1,
+          "after": 28127.88
+        },
+        "totalFaturadoUsd": {
+          "before": 27477.1,
+          "after": 28127.88
+        },
+        "saldoSiloms": {
+          "before": 3899.22,
+          "after": 3248.44
+        }
+      },
+      "institutionalFieldsPreserved": true
+    },
+    {
+      "numberBefore": "001/CABW/2023",
+      "numberAfter": "001/CABW/2023",
+      "id": 46,
+      "sourceRow": 44,
+      "changedFields": {
+        "totalFaturado": {
+          "before": 1154984.0,
+          "after": 1250684.0
+        },
+        "totalEmpenhado": {
+          "before": 1155749.15,
+          "after": 1250684.0
+        },
+        "valorEmpenhar": {
+          "before": 283134.85,
+          "after": 188200.0
+        },
+        "totalEmpenhadoUsd": {
+          "before": 1155749.15,
+          "after": 1250684.0
+        },
+        "totalFaturadoUsd": {
+          "before": 1154984.0,
+          "after": 1250684.0
+        },
+        "saldoSiloms": {
+          "before": 765.15,
+          "after": 0.0
+        }
+      },
+      "institutionalFieldsPreserved": true
+    },
+    {
+      "numberBefore": "033/CABW/2022",
+      "numberAfter": "033/CABW/2022",
+      "id": 47,
+      "sourceRow": 45,
+      "changedFields": {
+        "totalFaturado": {
+          "before": 45252.46,
+          "after": 46063.11
+        },
+        "totalFaturadoUsd": {
+          "before": 45252.46,
+          "after": 46063.11
+        },
+        "saldoSiloms": {
+          "before": 4815.57,
+          "after": 4004.92
+        }
+      },
+      "institutionalFieldsPreserved": true
+    },
+    {
+      "numberBefore": "027/CELOG-PAMAGL/2023",
+      "numberAfter": "027/CELOG-PAMAGL/2023",
+      "id": 48,
+      "sourceRow": 46,
+      "changedFields": {},
+      "institutionalFieldsPreserved": true
+    },
+    {
+      "numberBefore": "060/CAE-PAME-RJ/2023",
+      "numberAfter": "060/CAE-PAME-RJ/2023",
+      "id": 49,
+      "sourceRow": 47,
+      "changedFields": {},
+      "institutionalFieldsPreserved": true
+    },
+    {
+      "numberBefore": "061/CAE-PAME-RJ/2023",
+      "numberAfter": "061/CAE-PAME-RJ/2023",
+      "id": 50,
+      "sourceRow": 48,
+      "changedFields": {
+        "totalFaturado": {
+          "before": 3031943.88,
+          "after": 3541514.28
+        },
+        "totalFaturadoUsd": {
+          "before": 3429615.31,
+          "after": 4027303.17
+        },
+        "saldoSiloms": {
+          "before": 1588384.22,
+          "after": 1078813.82
+        }
+      },
+      "institutionalFieldsPreserved": true
+    },
+    {
+      "numberBefore": "BR-P-JZO-USNAVY",
+      "numberAfter": "BR-P-JZO-USNAVY",
+      "id": 51,
+      "sourceRow": 49,
+      "changedFields": {
+        "totalFaturado": {
+          "before": 1531129.62,
+          "after": 1809956.48
+        },
+        "totalFaturadoUsd": {
+          "before": 1431129.62,
+          "after": 1709956.48
+        },
+        "saldoSiloms": {
+          "before": 619247.37,
+          "after": 340420.51
+        }
+      },
+      "institutionalFieldsPreserved": true
+    },
+    {
+      "numberBefore": "BR-P-GVZ-USNAVY",
+      "numberAfter": "BR-P-GVZ-USNAVY",
+      "id": 52,
+      "sourceRow": 50,
+      "changedFields": {},
+      "institutionalFieldsPreserved": true
+    },
+    {
+      "numberBefore": "BR-D-GAR-USAF",
+      "numberAfter": "BR-D-GAR-USAF",
+      "id": 53,
+      "sourceRow": 51,
+      "changedFields": {},
+      "institutionalFieldsPreserved": true
+    },
+    {
+      "numberBefore": "023/CABW/2023",
+      "numberAfter": "023/CABW/2023",
+      "id": 54,
+      "sourceRow": 52,
+      "changedFields": {},
+      "institutionalFieldsPreserved": true
+    },
+    {
+      "numberBefore": "BR-D-GAQ-USAF",
+      "numberAfter": "BR-D-GAQ-USAF",
+      "id": 55,
+      "sourceRow": 53,
+      "changedFields": {},
+      "institutionalFieldsPreserved": true
+    },
+    {
+      "numberBefore": "BR-D-GAP-USAF",
+      "numberAfter": "BR-D-GAP-USAF",
+      "id": 56,
+      "sourceRow": 54,
+      "changedFields": {},
+      "institutionalFieldsPreserved": true
+    },
+    {
+      "numberBefore": "BR-B-OBV-USARMY",
+      "numberAfter": "BR-B-OBV-USARMY",
+      "id": 57,
+      "sourceRow": 55,
+      "changedFields": {},
+      "institutionalFieldsPreserved": true
+    },
+    {
+      "numberBefore": "017/CABW-DIRMAB/2023",
+      "numberAfter": "017/CABW-DIRMAB/2023",
+      "id": 58,
+      "sourceRow": 56,
+      "changedFields": {},
+      "institutionalFieldsPreserved": true
+    },
+    {
+      "numberBefore": "019/CABW-DIREF/2023",
+      "numberAfter": "019/CABW-DIREF/2023",
+      "id": 59,
+      "sourceRow": 57,
+      "changedFields": {
+        "totalFaturado": {
+          "before": 74174.5,
+          "after": 76839.5
+        },
+        "totalFaturadoUsd": {
+          "before": 74174.5,
+          "after": 76839.5
+        },
+        "saldoSiloms": {
+          "before": 19962.57,
+          "after": 17297.57
+        }
+      },
+      "institutionalFieldsPreserved": true
+    },
+    {
+      "numberBefore": "BR-B-UAH-USARMY",
+      "numberAfter": "BR-B-UAH-USARMY",
+      "id": 60,
+      "sourceRow": 58,
+      "changedFields": {},
+      "institutionalFieldsPreserved": true
+    },
+    {
+      "numberBefore": "BR-D-KCQ-USAF",
+      "numberAfter": "BR-D-KCQ-USAF",
+      "id": 61,
+      "sourceRow": 59,
+      "changedFields": {
+        "totalFaturado": {
+          "before": 15056664.89,
+          "after": 18731009.7
+        },
+        "totalEmpenhado": {
+          "before": 32124090.77,
+          "after": 32276419.19
+        },
+        "valorEmpenhar": {
+          "before": 17043673.37,
+          "after": 16891344.95
+        },
+        "totalEmpenhadoUsd": {
+          "before": 31802635.95,
+          "after": 31954964.37
+        },
+        "totalFaturadoUsd": {
+          "before": 14735210.07,
+          "after": 18409554.88
+        },
+        "saldoSiloms": {
+          "before": 17067425.88,
+          "after": 13545409.49
+        }
+      },
+      "institutionalFieldsPreserved": true
+    },
+    {
+      "numberBefore": "022/CABW/2023",
+      "numberAfter": "022/CABW/2023",
+      "id": 62,
+      "sourceRow": 60,
+      "changedFields": {},
+      "institutionalFieldsPreserved": true
+    },
+    {
+      "numberBefore": "002/CABW/2024",
+      "numberAfter": "002/CABW/2024",
+      "id": 63,
+      "sourceRow": 61,
+      "changedFields": {
+        "totalFaturado": {
+          "before": 31498.0,
+          "after": 32560.0
+        },
+        "totalFaturadoUsd": {
+          "before": 31498.0,
+          "after": 32560.0
+        },
+        "saldoSiloms": {
+          "before": 2133.0,
+          "after": 1071.0
+        }
+      },
+      "institutionalFieldsPreserved": true
+    },
+    {
+      "numberBefore": "001/CABW-CISCEA/2024",
+      "numberAfter": "001/CABW-CISCEA/2024",
+      "id": 64,
+      "sourceRow": 62,
+      "changedFields": {},
+      "institutionalFieldsPreserved": true
+    },
+    {
+      "numberBefore": "006/CABW/2024",
+      "numberAfter": "006/CABW/2024",
+      "id": 65,
+      "sourceRow": 63,
+      "changedFields": {
+        "totalFaturado": {
+          "before": 151313.0,
+          "after": 162514.0
+        },
+        "totalFaturadoUsd": {
+          "before": 151313.0,
+          "after": 162514.0
+        },
+        "saldoSiloms": {
+          "before": 14411.67,
+          "after": 3210.67
+        }
+      },
+      "institutionalFieldsPreserved": true
+    },
+    {
+      "numberBefore": "BR-D-MAC-USAF",
+      "numberAfter": "BR-D-MAC-USAF",
+      "id": 66,
+      "sourceRow": 64,
+      "changedFields": {
+        "totalFaturado": {
+          "before": 1000000.0,
+          "after": 1500000.0
+        },
+        "totalFaturadoUsd": {
+          "before": 319549.51,
+          "after": 819549.51
+        },
+        "saldoSiloms": {
+          "before": 573258.48,
+          "after": 73258.48
+        }
+      },
+      "institutionalFieldsPreserved": true
+    },
+    {
+      "numberBefore": "007/CABW-PAMASP/2024",
+      "numberAfter": "007/CABW-PAMASP/2024",
+      "id": 67,
+      "sourceRow": 65,
+      "changedFields": {
+        "totalFaturado": {
+          "before": 10359481.72,
+          "after": 11081825.39
+        },
+        "totalEmpenhado": {
+          "before": 14422405.94,
+          "after": 14923001.08
+        },
+        "valorEmpenhar": {
+          "before": 40935705.65,
+          "after": 40435110.51
+        },
+        "totalEmpenhadoUsd": {
+          "before": 14422405.94,
+          "after": 14923001.08
+        },
+        "totalFaturadoUsd": {
+          "before": 10359481.72,
+          "after": 11081825.39
+        },
+        "saldoSiloms": {
+          "before": 4062924.22,
+          "after": 3841175.69
+        }
+      },
+      "institutionalFieldsPreserved": true
+    },
+    {
+      "numberBefore": "014/CABW/2024",
+      "numberAfter": "014/CABW/2024",
+      "id": 68,
+      "sourceRow": 66,
+      "changedFields": {
+        "totalEmpenhado": {
+          "before": 38354.93,
+          "after": 46354.93
+        },
+        "valorEmpenhar": {
+          "before": 64314.82,
+          "after": 56314.82
+        },
+        "totalEmpenhadoUsd": {
+          "before": 38354.93,
+          "after": 46354.93
+        },
+        "saldoSiloms": {
+          "before": 3880.66,
+          "after": 11880.66
+        }
+      },
+      "institutionalFieldsPreserved": true
+    },
+    {
+      "numberBefore": "BR-B-UUP-USARMY",
+      "numberAfter": "BR-B-UUP-USARMY",
+      "id": 70,
+      "sourceRow": 67,
+      "changedFields": {},
+      "institutionalFieldsPreserved": true
+    },
+    {
+      "numberBefore": "030/CABW-PAMERJ/2024",
+      "numberAfter": "030/CABW-PAMERJ/2024",
+      "id": 71,
+      "sourceRow": 68,
+      "changedFields": {},
+      "institutionalFieldsPreserved": true
+    },
+    {
+      "numberBefore": "029/CABW-PAMASP/2024",
+      "numberAfter": "029/CABW-PAMASP/2024",
+      "id": 72,
+      "sourceRow": 69,
+      "changedFields": {
+        "totalFaturado": {
+          "before": 157804.61,
+          "after": 228060.16
+        },
+        "totalEmpenhado": {
+          "before": 3907210.59,
+          "after": 4426508.84
+        },
+        "valorEmpenhar": {
+          "before": 30003363.92,
+          "after": 29484065.67
+        },
+        "totalEmpenhadoUsd": {
+          "before": 3907210.59,
+          "after": 4426508.84
+        },
+        "totalFaturadoUsd": {
+          "before": 157804.61,
+          "after": 228060.16
+        },
+        "saldoSiloms": {
+          "before": 3749405.98,
+          "after": 4198448.68
+        }
+      },
+      "institutionalFieldsPreserved": true
+    },
+    {
+      "numberBefore": "014/CABW-CENIPA/2025",
+      "numberAfter": "014/CABW-CENIPA/2025",
+      "id": 73,
+      "sourceRow": 70,
+      "changedFields": {},
+      "institutionalFieldsPreserved": true
+    },
+    {
+      "numberBefore": "028/CABW-PAMAGL/2024",
+      "numberAfter": "028/CABW-PAMAGL/2024",
+      "id": 74,
+      "sourceRow": 71,
+      "changedFields": {},
+      "institutionalFieldsPreserved": true
+    },
+    {
+      "numberBefore": "027/CABW/2024",
+      "numberAfter": "027/CABW/2024",
+      "id": 76,
+      "sourceRow": 72,
+      "changedFields": {},
+      "institutionalFieldsPreserved": true
+    },
+    {
+      "numberBefore": "BR-D-TBU-USAF",
+      "numberAfter": "BR-D-TBU-USAF",
+      "id": 77,
+      "sourceRow": 73,
+      "changedFields": {},
+      "institutionalFieldsPreserved": true
+    },
+    {
+      "numberBefore": "035/CABW/2024",
+      "numberAfter": "035/CABW/2024",
+      "id": 78,
+      "sourceRow": 74,
+      "changedFields": {
+        "totalFaturado": {
+          "before": 13308.93,
+          "after": 13423.24
+        },
+        "totalFaturadoUsd": {
+          "before": 13308.93,
+          "after": 13423.24
+        },
+        "saldoSiloms": {
+          "before": 3719.78,
+          "after": 3605.47
+        }
+      },
+      "institutionalFieldsPreserved": true
+    },
+    {
+      "numberBefore": "034/CABW/2024",
+      "numberAfter": "034/CABW/2024",
+      "id": 79,
+      "sourceRow": 75,
+      "changedFields": {},
+      "institutionalFieldsPreserved": true
+    },
+    {
+      "numberBefore": "038/CABW/2024",
+      "numberAfter": "038/CABW/2024",
+      "id": 80,
+      "sourceRow": 76,
+      "changedFields": {
+        "totalFaturado": {
+          "before": 1775.48,
+          "after": 2110.59
+        },
+        "totalFaturadoUsd": {
+          "before": 1775.48,
+          "after": 2110.59
+        },
+        "saldoSiloms": {
+          "before": 367.13,
+          "after": 32.02
+        }
+      },
+      "institutionalFieldsPreserved": true
+    },
+    {
+      "numberBefore": "033/CABW/2024",
+      "numberAfter": "033/CABW/2024",
+      "id": 81,
+      "sourceRow": 77,
+      "changedFields": {
+        "totalFaturado": {
+          "before": 95150.69,
+          "after": 101525.73
+        },
+        "totalFaturadoUsd": {
+          "before": 95150.69,
+          "after": 101525.73
+        },
+        "saldoSiloms": {
+          "before": 21215.41,
+          "after": 14840.37
+        }
+      },
+      "institutionalFieldsPreserved": true
+    },
+    {
+      "numberBefore": "027/CABW-PAMAGL/2025",
+      "numberAfter": "027/CABW-PAMAGL/2025",
+      "id": 82,
+      "sourceRow": 78,
+      "changedFields": {},
+      "institutionalFieldsPreserved": true
+    },
+    {
+      "numberBefore": "040/CABW/2024",
+      "numberAfter": "040/CABW/2024",
+      "id": 83,
+      "sourceRow": 79,
+      "changedFields": {},
+      "institutionalFieldsPreserved": true
+    },
+    {
+      "numberBefore": "048/CABW/2024",
+      "numberAfter": "048/CABW/2024",
+      "id": 84,
+      "sourceRow": 80,
+      "changedFields": {},
+      "institutionalFieldsPreserved": true
+    },
+    {
+      "numberBefore": "051/CELOG-PAMASP/2024",
+      "numberAfter": "051/CELOG-PAMASP/2024",
+      "id": 85,
+      "sourceRow": 81,
+      "changedFields": {
+        "totalEmpenhado": {
+          "before": 17150765.51,
+          "after": 18509700.08
+        },
+        "valorEmpenhar": {
+          "before": 17184194.41,
+          "after": 18041927.5
+        },
+        "totalEmpenhadoUsd": {
+          "before": 17150765.51,
+          "after": 18509700.08
+        },
+        "valorContrato": {
+          "before": 34334959.92,
+          "after": 36551627.58
+        },
+        "saldoSiloms": {
+          "before": 5654950.22,
+          "after": 7013884.79
+        }
+      },
+      "institutionalFieldsPreserved": true
+    },
+    {
+      "numberBefore": "039/CABW-PAMALS/2024",
+      "numberAfter": "039/CABW-PAMALS/2024",
+      "id": 86,
+      "sourceRow": 82,
+      "changedFields": {
+        "totalFaturado": {
+          "before": 1780512.73,
+          "after": 2282905.01
+        },
+        "totalFaturadoUsd": {
+          "before": 1780512.73,
+          "after": 2282905.01
+        },
+        "saldoSiloms": {
+          "before": 657295.74,
+          "after": 154903.46
+        }
+      },
+      "institutionalFieldsPreserved": true
+    },
+    {
+      "numberBefore": "002/CABW-PAMASP/2025",
+      "numberAfter": "002/CABW-PAMASP/2025",
+      "id": 87,
+      "sourceRow": 83,
+      "changedFields": {},
+      "institutionalFieldsPreserved": true
+    },
+    {
+      "numberBefore": "001/CABW-PAMASP/2025",
+      "numberAfter": "001/CABW-PAMASP/2025",
+      "id": 88,
+      "sourceRow": 84,
+      "changedFields": {},
+      "institutionalFieldsPreserved": true
+    },
+    {
+      "numberBefore": "005/CABW-PAMASP/2025",
+      "numberAfter": "005/CABW-PAMASP/2025",
+      "id": 89,
+      "sourceRow": 85,
+      "changedFields": {},
+      "institutionalFieldsPreserved": true
+    },
+    {
+      "numberBefore": "004/CAE-PAMERJ/2025",
+      "numberAfter": "004/CAE-CABW-PAMERJ/2025",
+      "id": 90,
+      "sourceRow": 86,
+      "changedFields": {
+        "totalEmpenhado": {
+          "before": 9200000.0,
+          "after": 11513969.17
+        },
+        "valorEmpenhar": {
+          "before": 18565.72,
+          "after": 18565.73
+        },
+        "totalEmpenhadoUsd": {
+          "before": 9200000.0,
+          "after": 11513969.17
+        },
+        "numero": {
+          "before": "004/CAE-PAMERJ/2025",
+          "after": "004/CAE-CABW-PAMERJ/2025"
+        },
+        "valorContrato": {
+          "before": 9218565.72,
+          "after": 11532534.9
+        },
+        "saldoSiloms": {
+          "before": 492699.52,
+          "after": 2806668.69
+        }
+      },
+      "institutionalFieldsPreserved": true
+    },
+    {
+      "numberBefore": "003/CABW-PAMASP/2025",
+      "numberAfter": "003/CABW-PAMASP/2025",
+      "id": 91,
+      "sourceRow": 87,
+      "changedFields": {},
+      "institutionalFieldsPreserved": true
+    },
+    {
+      "numberBefore": "005/CAE-CABW-CISCEA/2024",
+      "numberAfter": "005/CAE-CABW-CISCEA/2024",
+      "id": 92,
+      "sourceRow": 88,
+      "changedFields": {
+        "totalFaturado": {
+          "before": 14092286.3,
+          "after": 14488608.3
+        },
+        "totalFaturadoUsd": {
+          "before": 14092286.3,
+          "after": 14488608.3
+        },
+        "saldoSiloms": {
+          "before": 4743284.39,
+          "after": 4346962.39
+        }
+      },
+      "institutionalFieldsPreserved": true
+    },
+    {
+      "numberBefore": "BR-D-QAU-USAF",
+      "numberAfter": "BR-D-QAU-USAF",
+      "id": 94,
+      "sourceRow": 89,
+      "changedFields": {},
+      "institutionalFieldsPreserved": true
+    },
+    {
+      "numberBefore": "043/CABW/2024",
+      "numberAfter": "043/CABW/2024",
+      "id": 95,
+      "sourceRow": 90,
+      "changedFields": {},
+      "institutionalFieldsPreserved": true
+    },
+    {
+      "numberBefore": "045/CABW/2024",
+      "numberAfter": "045/CABW/2024",
+      "id": 96,
+      "sourceRow": 91,
+      "changedFields": {},
+      "institutionalFieldsPreserved": true
+    },
+    {
+      "numberBefore": "044/CABW/2024",
+      "numberAfter": "044/CABW/2024",
+      "id": 97,
+      "sourceRow": 92,
+      "changedFields": {},
+      "institutionalFieldsPreserved": true
+    },
+    {
+      "numberBefore": "046/CABW/2024",
+      "numberAfter": "046/CABW/2024",
+      "id": 98,
+      "sourceRow": 93,
+      "changedFields": {},
+      "institutionalFieldsPreserved": true
+    },
+    {
+      "numberBefore": "256/CAE-CABW-PAME-RJ/2024",
+      "numberAfter": "256/CAE-CABW-PAME-RJ/2024",
+      "id": 99,
+      "sourceRow": 94,
+      "changedFields": {},
+      "institutionalFieldsPreserved": true
+    },
+    {
+      "numberBefore": "BR-D-QAV-USAF",
+      "numberAfter": "BR-D-QAV-USAF",
+      "id": 100,
+      "sourceRow": 95,
+      "changedFields": {},
+      "institutionalFieldsPreserved": true
+    },
+    {
+      "numberBefore": "BR-B-UUY-USARMY",
+      "numberAfter": "BR-B-UUY-USARMY",
+      "id": 101,
+      "sourceRow": 96,
+      "changedFields": {
+        "totalFaturado": {
+          "before": 39958.0,
+          "after": 50167.0
+        },
+        "totalFaturadoUsd": {
+          "before": 33409.1,
+          "after": 43618.1
+        },
+        "saldoSiloms": {
+          "before": 19924.0,
+          "after": 9715.0
+        }
+      },
+      "institutionalFieldsPreserved": true
+    },
+    {
+      "numberBefore": "009/CABW-PAMERJ/2025",
+      "numberAfter": "009/CABW-PAMERJ/2025",
+      "id": 102,
+      "sourceRow": 97,
+      "changedFields": {
+        "totalFaturado": {
+          "before": 561049.56,
+          "after": 607803.69
+        },
+        "valorEmpenhar": {
+          "before": 2010427.59,
+          "after": 2073265.35
+        },
+        "totalFaturadoUsd": {
+          "before": 561049.56,
+          "after": 607803.69
+        },
+        "valorContrato": {
+          "before": 2805247.8,
+          "after": 2868085.56
+        },
+        "saldoSiloms": {
+          "before": 233770.65,
+          "after": 187016.52
+        }
+      },
+      "institutionalFieldsPreserved": true
+    },
+    {
+      "numberBefore": "011/CABW-PAMERJ/2025",
+      "numberAfter": "011/CABW-PAMERJ/2025",
+      "id": 103,
+      "sourceRow": 98,
+      "changedFields": {},
+      "institutionalFieldsPreserved": true
+    },
+    {
+      "numberBefore": "007/CABW/2025",
+      "numberAfter": "007/CABW/2025",
+      "id": 104,
+      "sourceRow": 99,
+      "changedFields": {
+        "totalEmpenhado": {
+          "before": 2162381.44,
+          "after": 2156841.74
+        },
+        "valorEmpenhar": {
+          "before": 6177174.27,
+          "after": 6182713.97
+        },
+        "totalEmpenhadoUsd": {
+          "before": 2162381.44,
+          "after": 2156841.74
+        },
+        "saldoSiloms": {
+          "before": 122702.3,
+          "after": 117162.6
+        }
+      },
+      "institutionalFieldsPreserved": true
+    },
+    {
+      "numberBefore": "006/CABW/2025",
+      "numberAfter": "006/CABW/2025",
+      "id": 105,
+      "sourceRow": 100,
+      "changedFields": {
+        "totalFaturado": {
+          "before": 1291176.86,
+          "after": 1450281.63
+        },
+        "totalFaturadoUsd": {
+          "before": 1291176.86,
+          "after": 1450281.63
+        },
+        "saldoSiloms": {
+          "before": 246887.92,
+          "after": 87783.15
+        }
+      },
+      "institutionalFieldsPreserved": true
+    },
+    {
+      "numberBefore": "028/CABW-PAMAGL/2025",
+      "numberAfter": "028/CABW-PAMAGL/2025",
+      "id": 106,
+      "sourceRow": 101,
+      "changedFields": {},
+      "institutionalFieldsPreserved": true
+    },
+    {
+      "numberBefore": "015/CABW/2025",
+      "numberAfter": "015/CABW/2025",
+      "id": 108,
+      "sourceRow": 102,
+      "changedFields": {},
+      "institutionalFieldsPreserved": true
+    },
+    {
+      "numberBefore": "BR-D-QAW-USAF",
+      "numberAfter": "BR-D-QAW-USAF",
+      "id": 109,
+      "sourceRow": 103,
+      "changedFields": {
+        "totalEmpenhado": {
+          "before": 485301.58,
+          "after": 488301.58
+        },
+        "valorEmpenhar": {
+          "before": -38301.58,
+          "after": -41301.58
+        },
+        "totalEmpenhadoUsd": {
+          "before": 38301.58,
+          "after": 41301.58
+        },
+        "saldoSiloms": {
+          "before": 38301.58,
+          "after": 41301.58
+        }
+      },
+      "institutionalFieldsPreserved": true
+    },
+    {
+      "numberBefore": "110/CAE-CABW-CISCEA/2025",
+      "numberAfter": "110/CAE-CABW-CISCEA/2025",
+      "id": 110,
+      "sourceRow": 104,
+      "changedFields": {
+        "totalFaturado": {
+          "before": 1356561.39,
+          "after": 1420654.48
+        },
+        "totalFaturadoUsd": {
+          "before": 1356561.39,
+          "after": 1420654.48
+        },
+        "saldoSiloms": {
+          "before": 1463054.12,
+          "after": 1398961.03
+        }
+      },
+      "institutionalFieldsPreserved": true
+    },
+    {
+      "numberBefore": "120/CAE-DECEA/2025",
+      "numberAfter": "120/CAE-DECEA/2025",
+      "id": 111,
+      "sourceRow": 105,
+      "changedFields": {},
+      "institutionalFieldsPreserved": true
+    },
+    {
+      "numberBefore": "022/CABW-PAMASP/2025",
+      "numberAfter": "022/CABW-PAMASP/2025",
+      "id": 112,
+      "sourceRow": 106,
+      "changedFields": {},
+      "institutionalFieldsPreserved": true
+    },
+    {
+      "numberBefore": "001/CABW-CISCEA/2025",
+      "numberAfter": "001/CABW-CISCEA/2025",
+      "id": 113,
+      "sourceRow": 107,
+      "changedFields": {
+        "totalFaturado": {
+          "before": 2128171.59,
+          "after": 2411540.24
+        },
+        "totalFaturadoUsd": {
+          "before": 2128171.59,
+          "after": 2411540.24
+        },
+        "saldoSiloms": {
+          "before": 2695554.99,
+          "after": 2412186.34
+        }
+      },
+      "institutionalFieldsPreserved": true
+    },
+    {
+      "numberBefore": "033/CELOG-PAMAGL/2025",
+      "numberAfter": "033/CELOG-PAMAGL/2025",
+      "id": 114,
+      "sourceRow": 108,
+      "changedFields": {},
+      "institutionalFieldsPreserved": true
+    },
+    {
+      "numberBefore": "BR-B-UAK-USARMY",
+      "numberAfter": "BR-B-UAK-USARMY",
+      "id": 115,
+      "sourceRow": 109,
+      "changedFields": {},
+      "institutionalFieldsPreserved": true
+    },
+    {
+      "numberBefore": "017/CABW-CISCEA/2025",
+      "numberAfter": "017/CABW-CISCEA/2025",
+      "id": 116,
+      "sourceRow": 110,
+      "changedFields": {},
+      "institutionalFieldsPreserved": true
+    },
+    {
+      "numberBefore": "BR-P-LDY-USNAVY",
+      "numberAfter": "BR-P-LDY-USNAVY",
+      "id": 118,
+      "sourceRow": 111,
+      "changedFields": {},
+      "institutionalFieldsPreserved": true
+    },
+    {
+      "numberBefore": "016/CABW/2025",
+      "numberAfter": "016/CABW/2025",
+      "id": 119,
+      "sourceRow": 112,
+      "changedFields": {
+        "totalFaturado": {
+          "before": 6264.0,
+          "after": 6960.0
+        },
+        "totalFaturadoUsd": {
+          "before": 6264.0,
+          "after": 6960.0
+        },
+        "saldoSiloms": {
+          "before": 3480.0,
+          "after": 2784.0
+        }
+      },
+      "institutionalFieldsPreserved": true
+    },
+    {
+      "numberBefore": "250550/CABW/2025",
+      "numberAfter": "250550/CABW/2025",
+      "id": 120,
+      "sourceRow": 113,
+      "changedFields": {},
+      "institutionalFieldsPreserved": true
+    },
+    {
+      "numberBefore": "021/CABW-PAMASP/2025",
+      "numberAfter": "021/CABW-PAMASP/2025",
+      "id": 121,
+      "sourceRow": 114,
+      "changedFields": {},
+      "institutionalFieldsPreserved": true
+    },
+    {
+      "numberBefore": "250577/CABW/2025",
+      "numberAfter": "250577/CABW/2025",
+      "id": 122,
+      "sourceRow": 115,
+      "changedFields": {
+        "totalFaturado": {
+          "before": 9261.23,
+          "after": 10775.77
+        },
+        "totalFaturadoUsd": {
+          "before": 9261.23,
+          "after": 10775.77
+        },
+        "saldoSiloms": {
+          "before": 24903.77,
+          "after": 23389.23
+        }
+      },
+      "institutionalFieldsPreserved": true
+    },
+    {
+      "numberBefore": "025/CABW-CISCEA/2025",
+      "numberAfter": "025/CABW-CISCEA/2025",
+      "id": 123,
+      "sourceRow": 116,
+      "changedFields": {
+        "totalFaturado": {
+          "before": 0.0,
+          "after": 841731.72
+        },
+        "totalFaturadoUsd": {
+          "before": 0.0,
+          "after": 841731.72
+        },
+        "saldoSiloms": {
+          "before": 1162200.0,
+          "after": 320468.28
+        }
+      },
+      "institutionalFieldsPreserved": true
+    },
+    {
+      "numberBefore": "026/CABW-CISCEA/2025",
+      "numberAfter": "026/CABW-CISCEA/2025",
+      "id": 124,
+      "sourceRow": 117,
+      "changedFields": {},
+      "institutionalFieldsPreserved": true
+    },
+    {
+      "numberBefore": "003/CABW/2026",
+      "numberAfter": "003/CABW/2026",
+      "id": 125,
+      "sourceRow": 118,
+      "changedFields": {
+        "totalFaturado": {
+          "before": 5907.71,
+          "after": 6806.71
+        },
+        "totalFaturadoUsd": {
+          "before": 5907.71,
+          "after": 6806.71
+        },
+        "saldoSiloms": {
+          "before": 4495.0,
+          "after": 3596.0
+        }
+      },
+      "institutionalFieldsPreserved": true
+    },
+    {
+      "numberBefore": "002/CABW/2026",
+      "numberAfter": "002/CABW/2026",
+      "id": 126,
+      "sourceRow": 119,
+      "changedFields": {},
+      "institutionalFieldsPreserved": true
+    },
+    {
+      "numberBefore": "001/CABW/2026",
+      "numberAfter": "001/CABW/2026",
+      "id": 127,
+      "sourceRow": 120,
+      "changedFields": {
+        "totalFaturado": {
+          "before": 37874.76,
+          "after": 40133.76
+        },
+        "totalEmpenhado": {
+          "before": 48080.51,
+          "after": 63080.51
+        },
+        "valorEmpenhar": {
+          "before": 95699.49,
+          "after": 80699.49
+        },
+        "totalEmpenhadoUsd": {
+          "before": 48080.51,
+          "after": 63080.51
+        },
+        "totalFaturadoUsd": {
+          "before": 37874.76,
+          "after": 40133.76
+        },
+        "saldoSiloms": {
+          "before": 10205.75,
+          "after": 22946.75
+        }
+      },
+      "institutionalFieldsPreserved": true
+    },
+    {
+      "numberBefore": "004/CABW/2026",
+      "numberAfter": "004/CABW/2026",
+      "id": 128,
+      "sourceRow": 122,
+      "changedFields": {
+        "totalFaturado": {
+          "before": 4360.9,
+          "after": 5517.9
+        },
+        "totalEmpenhado": {
+          "before": 6300.0,
+          "after": 13300.0
+        },
+        "valorEmpenhar": {
+          "before": 14170.0,
+          "after": 7170.0
+        },
+        "totalEmpenhadoUsd": {
+          "before": 6300.0,
+          "after": 13300.0
+        },
+        "totalFaturadoUsd": {
+          "before": 4360.9,
+          "after": 5517.9
+        },
+        "saldoSiloms": {
+          "before": 1939.1,
+          "after": 7782.1
+        }
+      },
+      "institutionalFieldsPreserved": true
+    },
+    {
+      "numberBefore": "BR-D-QAY-USAF",
+      "numberAfter": "BR-D-QAY-USAF",
+      "id": 129,
+      "sourceRow": 123,
+      "changedFields": {},
+      "institutionalFieldsPreserved": true
+    },
+    {
+      "numberBefore": "010/CABW-PAMERJ/2026",
+      "numberAfter": "010/CABW-PAMERJ/2026",
+      "id": 137,
+      "sourceRow": 124,
+      "changedFields": {},
+      "institutionalFieldsPreserved": true
+    },
+    {
+      "numberBefore": "BR-B-OBZ-USARMY",
+      "numberAfter": "BR-B-OBZ-USARMY",
+      "id": 130,
+      "sourceRow": 125,
+      "changedFields": {},
+      "institutionalFieldsPreserved": true
+    },
+    {
+      "numberBefore": "CNT 009/CABW-PAME-RJ/2026",
+      "numberAfter": "009/CABW-PAME-RJ/2026",
+      "id": 138,
+      "sourceRow": 126,
+      "changedFields": {
+        "totalEmpenhado": {
+          "before": 199100.14,
+          "after": 398200.32
+        },
+        "valorEmpenhar": {
+          "before": 199100.18,
+          "after": 0.0
+        },
+        "totalEmpenhadoUsd": {
+          "before": 199100.14,
+          "after": 398200.32
+        },
+        "numero": {
+          "before": "CNT 009/CABW-PAME-RJ/2026",
+          "after": "009/CABW-PAME-RJ/2026"
+        },
+        "dataFinal": {
+          "before": null,
+          "after": {
+            "iso": "2027-08-06",
+            "br": "06/08/2027"
+          }
+        },
+        "dataAssinatura": {
+          "before": null,
+          "after": {
+            "iso": "2026-08-06",
+            "br": "06/08/2026"
+          }
+        },
+        "saldoSiloms": {
+          "before": 199100.14,
+          "after": 398200.32
+        },
+        "dataInicio": {
+          "before": null,
+          "after": {
+            "iso": "2026-08-06",
+            "br": "06/08/2026"
+          }
+        }
+      },
+      "institutionalFieldsPreserved": true
+    },
+    {
+      "numberBefore": "005/CABW/2026",
+      "numberAfter": "005/CABW/2026",
+      "id": 131,
+      "sourceRow": 127,
+      "changedFields": {},
+      "institutionalFieldsPreserved": true
+    },
+    {
+      "numberBefore": "260113/CABW/2026",
+      "numberAfter": "260113/CABW/2026",
+      "id": 132,
+      "sourceRow": 128,
+      "changedFields": {
+        "totalFaturado": {
+          "before": 8233.6,
+          "after": 10292.0
+        },
+        "totalFaturadoUsd": {
+          "before": 8233.6,
+          "after": 10292.0
+        },
+        "saldoSiloms": {
+          "before": 4116.8,
+          "after": 2058.4
+        }
+      },
+      "institutionalFieldsPreserved": true
+    },
+    {
+      "numberBefore": "005/CELOG-PAMASP/2026",
+      "numberAfter": "005/CELOG-PAMASP/2026",
+      "id": 133,
+      "sourceRow": 129,
+      "changedFields": {
+        "totalEmpenhado": {
+          "before": 1895556.36,
+          "after": 2836648.48
+        },
+        "valorEmpenhar": {
+          "before": 2816128.92,
+          "after": 1875036.8
+        },
+        "totalEmpenhadoUsd": {
+          "before": 1895556.36,
+          "after": 2836648.48
+        },
+        "saldoSiloms": {
+          "before": 1895556.36,
+          "after": 2836648.48
+        }
+      },
+      "institutionalFieldsPreserved": true
+    },
+    {
+      "numberBefore": "006/CABW/2026",
+      "numberAfter": "006/CABW/2026",
+      "id": 134,
+      "sourceRow": 130,
+      "changedFields": {},
+      "institutionalFieldsPreserved": true
+    },
+    {
+      "numberBefore": "007/CABW/2026",
+      "numberAfter": "007/CABW/2026",
+      "id": 135,
+      "sourceRow": 131,
+      "changedFields": {
+        "totalFaturado": {
+          "before": 26633.42,
+          "after": 42916.72
+        },
+        "totalEmpenhado": {
+          "before": 26650.92,
+          "after": 42932.32
+        },
+        "valorEmpenhar": {
+          "before": 17172.1,
+          "after": 890.7
+        },
+        "totalEmpenhadoUsd": {
+          "before": 26650.92,
+          "after": 42932.32
+        },
+        "totalFaturadoUsd": {
+          "before": 26633.42,
+          "after": 42916.72
+        },
+        "dataFinal": {
+          "before": {
+            "iso": "2026-09-02",
+            "br": "02/09/2026"
+          },
+          "after": {
+            "iso": "2026-08-18",
+            "br": "18/08/2026"
+          }
+        },
+        "dataAssinatura": {
+          "before": {
+            "iso": "2026-06-02",
+            "br": "02/06/2026"
+          },
+          "after": {
+            "iso": "2026-05-18",
+            "br": "18/05/2026"
+          }
+        },
+        "saldoSiloms": {
+          "before": 17.5,
+          "after": 15.6
+        },
+        "dataInicio": {
+          "before": {
+            "iso": "2026-06-02",
+            "br": "02/06/2026"
+          },
+          "after": {
+            "iso": "2026-05-18",
+            "br": "18/05/2026"
+          }
+        }
+      },
+      "institutionalFieldsPreserved": true
+    },
+    {
+      "numberBefore": "BR-P-GWA-USNAVY",
+      "numberAfter": "BR-P-GWA-USNAVY",
+      "id": 136,
+      "sourceRow": 132,
+      "changedFields": {},
+      "institutionalFieldsPreserved": true
+    },
+    {
+      "numberBefore": "CNT 099/CAE-CABW-DECEA/2026",
+      "numberAfter": "CNT 099/CAE-CABW-DECEA/2026",
+      "id": 139,
+      "sourceRow": 135,
+      "changedFields": {},
+      "institutionalFieldsPreserved": true
+    }
+  ],
+  "manualSettingsNewContracts": {
+    "CT 012-CABW-2026": {
+      "unidade": "CABW",
+      "grandComando": "COMGAP",
+      "acao": "2000",
+      "ordenadorDespesas": "CABW",
+      "categoria": "administrativos",
+      "tipoContrato": "CONTINUADO",
+      "numeroAliases": [
+        "012/CABW/2026"
+      ]
+    },
+    "011/CABW-DECEA/2026": {
+      "unidade": "DECEA",
+      "grandComando": "DECEA",
+      "acao": "20XV",
+      "ordenadorDespesas": "DECEA",
+      "categoria": "finalisticos",
+      "tipoContrato": "DEMANDA PONTUAL"
+    },
+    "CT 013/CABW/2026": {
+      "unidade": "CABW",
+      "grandComando": "COMGAP",
+      "acao": "2000",
+      "ordenadorDespesas": "CABW",
+      "categoria": "administrativos",
+      "tipoContrato": "CONTINUADO",
+      "numeroAliases": [
+        "013/CABW/2026"
+      ]
+    },
+    "CT 016/CABW/2026": {
+      "unidade": "CABW",
+      "grandComando": "COMGAP",
+      "acao": "2000",
+      "ordenadorDespesas": "CABW",
+      "categoria": "administrativos",
+      "tipoContrato": "CONTINUADO",
+      "numeroAliases": [
+        "016/CABW/2026"
+      ]
+    },
+    "014/CABW-CISCEA/2026": {
+      "unidade": "CISCEA",
+      "grandComando": "DECEA",
+      "acao": "20XV",
+      "ordenadorDespesas": "CISCEA",
+      "categoria": "finalisticos",
+      "tipoContrato": "DEMANDA PONTUAL"
+    },
+    "015/CABW-CISCEA/2026": {
+      "unidade": "CISCEA",
+      "grandComando": "DECEA",
+      "acao": "20XV",
+      "ordenadorDespesas": "CISCEA",
+      "categoria": "finalisticos",
+      "tipoContrato": "DEMANDA PONTUAL"
+    }
+  },
+  "exceptionsPreserved": {
+    "022/CABW/2021": {
+      "id": 30,
+      "contrato": "211258",
+      "numero": "022/CABW/2021",
+      "unidade": "CABW",
+      "ordenadorDespesas": "CABW",
+      "cage": "3CRH1",
+      "empresa": "UNITED HEALTHCARE SERVICES, INC.",
+      "objetoResumo": "CONTRATACAO DE EMPRESA ESPECIALIZADA NOS SERVICOS DE SEGURO SAUDE, PARA ATENDER MILITARES E CIVIS",
+      "moeda": "USD",
+      "valorContrato": 11292466.06,
+      "totalEmpenhado": 11414163.21,
+      "totalFaturado": 11029355.1,
+      "saldoSiloms": 384808.11,
+      "valorEmpenhar": -121697.15,
+      "dataAssinatura": {
+        "iso": "2021-09-28",
+        "br": "28/09/2021"
+      },
+      "dataInicio": {
+        "iso": "2021-10-01",
+        "br": "01/10/2021"
+      },
+      "dataFinal": {
+        "iso": "2026-09-30",
+        "br": "30/09/2026"
+      },
+      "pressuposto": "L",
+      "grandComando": "COMGAP",
+      "acao": "2000",
+      "acdComp": "N",
+      "totalEmpenhadoUsd": 11414163.21,
+      "totalFaturadoUsd": 11029355.1,
+      "categoria": "administrativos",
+      "categoriaNome": "Contratos Administrativos",
+      "criterioClassificacao": "Objeto de apoio administrativo, serviços internos, infraestrutura, pessoal ou gestão da CABW",
+      "sourceReference": {
+        "file": "RELATÓRIO DE CONTRATO - 11092026.xls",
+        "sheet": "Sheet0",
+        "row": 29,
+        "date": "2026-09-11"
+      },
+      "sourceWarnings": [
+        "O total empenhado supera o valor contratual em US$ 121.697,15. Valores e saldo a empenhar negativo mantidos conforme a planilha e a orientação do usuário."
+      ]
+    },
+    "BR-D-QAU-USAF": {
+      "id": 94,
+      "contrato": "240761",
+      "numero": "BR-D-QAU-USAF",
+      "unidade": "EBL",
+      "ordenadorDespesas": "CABW",
+      "cage": "W2525",
+      "empresa": "DEFENSE FINANCE & ACCOUNTING SERVICE",
+      "objetoResumo": "SPARES AND SUPPORT EQUIPMENT",
+      "moeda": "USD",
+      "valorContrato": 11000.0,
+      "totalEmpenhado": 11967.57,
+      "totalFaturado": 11000.0,
+      "saldoSiloms": 967.57,
+      "valorEmpenhar": -967.57,
+      "dataAssinatura": {
+        "iso": "2024-12-12",
+        "br": "12/12/2024"
+      },
+      "dataInicio": {
+        "iso": "2024-12-12",
+        "br": "12/12/2024"
+      },
+      "dataFinal": {
+        "iso": "2024-10-10",
+        "br": "10/10/2024"
+      },
+      "pressuposto": "D",
+      "grandComando": "COMGAP",
+      "acao": "2048",
+      "acdComp": "N",
+      "totalEmpenhadoUsd": 11198.98,
+      "totalFaturadoUsd": 10231.41,
+      "categoria": "fms",
+      "categoriaNome": "FMS (Foreign Military Sales)",
+      "criterioClassificacao": "Empresa DEFENSE FINANCE & ACCOUNTING SERVICE",
+      "sourceReference": {
+        "file": "RELATÓRIO DE CONTRATO - 11092026.xls",
+        "sheet": "Sheet0",
+        "row": 89,
+        "date": "2026-09-11"
+      },
+      "sourceWarnings": [
+        "Data final 10/10/2024 anterior ao início em 12/12/2024. Datas da fonte mantidas conforme orientação do usuário, sem correção automática."
+      ]
+    }
+  },
+  "missingDates": [
+    "CT 013/CABW/2026",
+    "CNT 099/CAE-CABW-DECEA/2026",
+    "CT 016/CABW/2026",
+    "014/CABW-CISCEA/2026",
+    "015/CABW-CISCEA/2026"
+  ],
+  "negativeCommitmentBalances": [
+    {
+      "number": "BR-B-UUC-USARMY",
+      "currency": "USD",
+      "balance": -9151033.42
+    },
+    {
+      "number": "BR-D-QAQ-USAF",
+      "currency": "USD",
+      "balance": -186818.1
+    },
+    {
+      "number": "BR-D-QAR-USAF",
+      "currency": "USD",
+      "balance": -161888.16
+    },
+    {
+      "number": "022/CABW/2021",
+      "currency": "USD",
+      "balance": -121697.15
+    },
+    {
+      "number": "BR-P-GVW-USNAVY",
+      "currency": "USD",
+      "balance": -5031.99
+    },
+    {
+      "number": "BR-D-QAS-USAF",
+      "currency": "USD",
+      "balance": -12852.01
+    },
+    {
+      "number": "BR-P-TDV-USNAVY",
+      "currency": "USD",
+      "balance": -40272.93
+    },
+    {
+      "number": "BR-D-GAQ-USAF",
+      "currency": "USD",
+      "balance": -74948.02
+    },
+    {
+      "number": "BR-D-GAP-USAF",
+      "currency": "USD",
+      "balance": -291500.05
+    },
+    {
+      "number": "BR-D-TBU-USAF",
+      "currency": "USD",
+      "balance": -300.0
+    },
+    {
+      "number": "BR-D-QAU-USAF",
+      "currency": "USD",
+      "balance": -967.57
+    },
+    {
+      "number": "256/CAE-CABW-PAME-RJ/2024",
+      "currency": "USD",
+      "balance": -1730.45
+    },
+    {
+      "number": "BR-D-QAW-USAF",
+      "currency": "USD",
+      "balance": -41301.58
+    }
+  ],
+  "summary": {
+    "total": 137,
+    "counts": {
+      "fms": 52,
+      "finalisticos": 62,
+      "administrativos": 23
+    },
+    "grandComandos": [
+      "CMTAER",
+      "COMGAP",
+      "DCTA",
+      "DECEA",
+      "GABAER",
+      "Ministério da Defesa — MD",
+      "SEFA"
+    ],
+    "ordenadoresDespesas": [
+      "CABW",
+      "CENIPA",
+      "CENSIPAM",
+      "CISCEA",
+      "DCTA",
+      "DECEA",
+      "DIRMAB",
+      "PAMAGL",
+      "PAMALS",
+      "PAMASP",
+      "PAME-RJ"
+    ],
+    "duplicates_check": "ok",
+    "source": "RELATÓRIO DE CONTRATO - 11092026.xls",
+    "updatedFrom": "Posição de 11/09/2026",
+    "preservedFieldsFrom": "Base contratual institucional já existente no Painel CABW",
+    "removedContracts": [
+      "015/CABW/2021",
+      "016/CABW/2021",
+      "018/CABW-CISCEA/2025",
+      "019/CABW-CENIPA/2025"
+    ],
+    "addedContracts": [
+      "CT 012-CABW-2026",
+      "011/CABW-DECEA/2026",
+      "CT 013/CABW/2026",
+      "CT 016/CABW/2026",
+      "014/CABW-CISCEA/2026",
+      "015/CABW-CISCEA/2026"
+    ],
+    "notMatchedToPreviousCategory": [],
+    "referenceDate": "2026-09-11",
+    "renamedContracts": {
+      "004/CAE-PAMERJ/2025": "004/CAE-CABW-PAMERJ/2025",
+      "CNT 009/CABW-PAME-RJ/2026": "009/CABW-PAME-RJ/2026"
+    },
+    "lifecycle": {
+      "encerrado": 20,
+      "vigente": 112,
+      "sem-data": 5
+    },
+    "totalEmpenhadoUsd": 657754725.91,
+    "totalFaturadoUsd": 544517182.34,
+    "currencyTotals": {
+      "EUR": {
+        "valorContrato": 18211512.11,
+        "totalEmpenhado": 12314733.75,
+        "totalFaturado": 10327520.16,
+        "saldoSiloms": 1987213.59,
+        "valorEmpenhar": 5896778.36
+      },
+      "USD": {
+        "valorContrato": 1106671484.87,
+        "totalEmpenhado": 681581372.5,
+        "totalFaturado": 570388867.2,
+        "saldoSiloms": 111192505.3,
+        "valorEmpenhar": 425090112.37
+      }
+    }
+  },
+  "monitoring": {
+    "beforeCount": 83,
+    "removedCount": 4,
+    "addedCount": 6,
+    "afterCount": 85,
+    "monitored": 84,
+    "manualFieldsPreserved": true,
+    "changes": [
+      {
+        "numberBefore": "010/CABW/2020",
+        "numberAfter": "010/CABW/2020",
+        "manualFieldsPreserved": true
+      },
+      {
+        "numberBefore": "012/CABW/2020",
+        "numberAfter": "012/CABW/2020",
+        "manualFieldsPreserved": true
+      },
+      {
+        "numberBefore": "033/CABW/2021",
+        "numberAfter": "033/CABW/2021",
+        "manualFieldsPreserved": true
+      },
+      {
+        "numberBefore": "022/CABW/2021",
+        "numberAfter": "022/CABW/2021",
+        "manualFieldsPreserved": true
+      },
+      {
+        "numberBefore": "34/2017-CENSIPAM",
+        "numberAfter": "34/2017-CENSIPAM",
+        "manualFieldsPreserved": true
+      },
+      {
+        "numberBefore": "016/CABW/2022",
+        "numberAfter": "016/CABW/2022",
+        "manualFieldsPreserved": true
+      },
+      {
+        "numberBefore": "025/CABW/2022",
+        "numberAfter": "025/CABW/2022",
+        "manualFieldsPreserved": true
+      },
+      {
+        "numberBefore": "156/CAE-PAME-RJ/2022",
+        "numberAfter": "156/CAE-PAME-RJ/2022",
+        "manualFieldsPreserved": true
+      },
+      {
+        "numberBefore": "020/CABW/2022",
+        "numberAfter": "020/CABW/2022",
+        "manualFieldsPreserved": true
+      },
+      {
+        "numberBefore": "021/CABW/2022",
+        "numberAfter": "021/CABW/2022",
+        "manualFieldsPreserved": true
+      },
+      {
+        "numberBefore": "001/CABW/2023",
+        "numberAfter": "001/CABW/2023",
+        "manualFieldsPreserved": true
+      },
+      {
+        "numberBefore": "033/CABW/2022",
+        "numberAfter": "033/CABW/2022",
+        "manualFieldsPreserved": true
+      },
+      {
+        "numberBefore": "027/CELOG-PAMAGL/2023",
+        "numberAfter": "027/CELOG-PAMAGL/2023",
+        "manualFieldsPreserved": true
+      },
+      {
+        "numberBefore": "060/CAE-PAME-RJ/2023",
+        "numberAfter": "060/CAE-PAME-RJ/2023",
+        "manualFieldsPreserved": true
+      },
+      {
+        "numberBefore": "061/CAE-PAME-RJ/2023",
+        "numberAfter": "061/CAE-PAME-RJ/2023",
+        "manualFieldsPreserved": true
+      },
+      {
+        "numberBefore": "023/CABW/2023",
+        "numberAfter": "023/CABW/2023",
+        "manualFieldsPreserved": true
+      },
+      {
+        "numberBefore": "017/CABW-DIRMAB/2023",
+        "numberAfter": "017/CABW-DIRMAB/2023",
+        "manualFieldsPreserved": true
+      },
+      {
+        "numberBefore": "019/CABW-DIREF/2023",
+        "numberAfter": "019/CABW-DIREF/2023",
+        "manualFieldsPreserved": true
+      },
+      {
+        "numberBefore": "022/CABW/2023",
+        "numberAfter": "022/CABW/2023",
+        "manualFieldsPreserved": true
+      },
+      {
+        "numberBefore": "002/CABW/2024",
+        "numberAfter": "002/CABW/2024",
+        "manualFieldsPreserved": true
+      },
+      {
+        "numberBefore": "001/CABW-CISCEA/2024",
+        "numberAfter": "001/CABW-CISCEA/2024",
+        "manualFieldsPreserved": true
+      },
+      {
+        "numberBefore": "006/CABW/2024",
+        "numberAfter": "006/CABW/2024",
+        "manualFieldsPreserved": true
+      },
+      {
+        "numberBefore": "007/CABW-PAMASP/2024",
+        "numberAfter": "007/CABW-PAMASP/2024",
+        "manualFieldsPreserved": true
+      },
+      {
+        "numberBefore": "014/CABW/2024",
+        "numberAfter": "014/CABW/2024",
+        "manualFieldsPreserved": true
+      },
+      {
+        "numberBefore": "030/CABW-PAMERJ/2024",
+        "numberAfter": "030/CABW-PAMERJ/2024",
+        "manualFieldsPreserved": true
+      },
+      {
+        "numberBefore": "029/CABW-PAMASP/2024",
+        "numberAfter": "029/CABW-PAMASP/2024",
+        "manualFieldsPreserved": true
+      },
+      {
+        "numberBefore": "014/CABW-CENIPA/2025",
+        "numberAfter": "014/CABW-CENIPA/2025",
+        "manualFieldsPreserved": true
+      },
+      {
+        "numberBefore": "028/CABW-PAMAGL/2024",
+        "numberAfter": "028/CABW-PAMAGL/2024",
+        "manualFieldsPreserved": true
+      },
+      {
+        "numberBefore": "027/CABW/2024",
+        "numberAfter": "027/CABW/2024",
+        "manualFieldsPreserved": true
+      },
+      {
+        "numberBefore": "035/CABW/2024",
+        "numberAfter": "035/CABW/2024",
+        "manualFieldsPreserved": true
+      },
+      {
+        "numberBefore": "034/CABW/2024",
+        "numberAfter": "034/CABW/2024",
+        "manualFieldsPreserved": true
+      },
+      {
+        "numberBefore": "038/CABW/2024",
+        "numberAfter": "038/CABW/2024",
+        "manualFieldsPreserved": true
+      },
+      {
+        "numberBefore": "033/CABW/2024",
+        "numberAfter": "033/CABW/2024",
+        "manualFieldsPreserved": true
+      },
+      {
+        "numberBefore": "027/CABW-PAMAGL/2025",
+        "numberAfter": "027/CABW-PAMAGL/2025",
+        "manualFieldsPreserved": true
+      },
+      {
+        "numberBefore": "040/CABW/2024",
+        "numberAfter": "040/CABW/2024",
+        "manualFieldsPreserved": true
+      },
+      {
+        "numberBefore": "048/CABW/2024",
+        "numberAfter": "048/CABW/2024",
+        "manualFieldsPreserved": true
+      },
+      {
+        "numberBefore": "051/CELOG-PAMASP/2024",
+        "numberAfter": "051/CELOG-PAMASP/2024",
+        "manualFieldsPreserved": true
+      },
+      {
+        "numberBefore": "039/CABW-PAMALS/2024",
+        "numberAfter": "039/CABW-PAMALS/2024",
+        "manualFieldsPreserved": true
+      },
+      {
+        "numberBefore": "002/CABW-PAMASP/2025",
+        "numberAfter": "002/CABW-PAMASP/2025",
+        "manualFieldsPreserved": true
+      },
+      {
+        "numberBefore": "001/CABW-PAMASP/2025",
+        "numberAfter": "001/CABW-PAMASP/2025",
+        "manualFieldsPreserved": true
+      },
+      {
+        "numberBefore": "005/CABW-PAMASP/2025",
+        "numberAfter": "005/CABW-PAMASP/2025",
+        "manualFieldsPreserved": true
+      },
+      {
+        "numberBefore": "004/CAE-PAMERJ/2025",
+        "numberAfter": "004/CAE-CABW-PAMERJ/2025",
+        "manualFieldsPreserved": true
+      },
+      {
+        "numberBefore": "003/CABW-PAMASP/2025",
+        "numberAfter": "003/CABW-PAMASP/2025",
+        "manualFieldsPreserved": true
+      },
+      {
+        "numberBefore": "005/CAE-CABW-CISCEA/2024",
+        "numberAfter": "005/CAE-CABW-CISCEA/2024",
+        "manualFieldsPreserved": true
+      },
+      {
+        "numberBefore": "043/CABW/2024",
+        "numberAfter": "043/CABW/2024",
+        "manualFieldsPreserved": true
+      },
+      {
+        "numberBefore": "045/CABW/2024",
+        "numberAfter": "045/CABW/2024",
+        "manualFieldsPreserved": true
+      },
+      {
+        "numberBefore": "044/CABW/2024",
+        "numberAfter": "044/CABW/2024",
+        "manualFieldsPreserved": true
+      },
+      {
+        "numberBefore": "046/CABW/2024",
+        "numberAfter": "046/CABW/2024",
+        "manualFieldsPreserved": true
+      },
+      {
+        "numberBefore": "256/CAE-CABW-PAME-RJ/2024",
+        "numberAfter": "256/CAE-CABW-PAME-RJ/2024",
+        "manualFieldsPreserved": true
+      },
+      {
+        "numberBefore": "009/CABW-PAMERJ/2025",
+        "numberAfter": "009/CABW-PAMERJ/2025",
+        "manualFieldsPreserved": true
+      },
+      {
+        "numberBefore": "011/CABW-PAMERJ/2025",
+        "numberAfter": "011/CABW-PAMERJ/2025",
+        "manualFieldsPreserved": true
+      },
+      {
+        "numberBefore": "007/CABW/2025",
+        "numberAfter": "007/CABW/2025",
+        "manualFieldsPreserved": true
+      },
+      {
+        "numberBefore": "006/CABW/2025",
+        "numberAfter": "006/CABW/2025",
+        "manualFieldsPreserved": true
+      },
+      {
+        "numberBefore": "028/CABW-PAMAGL/2025",
+        "numberAfter": "028/CABW-PAMAGL/2025",
+        "manualFieldsPreserved": true
+      },
+      {
+        "numberBefore": "015/CABW/2025",
+        "numberAfter": "015/CABW/2025",
+        "manualFieldsPreserved": true
+      },
+      {
+        "numberBefore": "110/CAE-CABW-CISCEA/2025",
+        "numberAfter": "110/CAE-CABW-CISCEA/2025",
+        "manualFieldsPreserved": true
+      },
+      {
+        "numberBefore": "120/CAE-DECEA/2025",
+        "numberAfter": "120/CAE-DECEA/2025",
+        "manualFieldsPreserved": true
+      },
+      {
+        "numberBefore": "022/CABW-PAMASP/2025",
+        "numberAfter": "022/CABW-PAMASP/2025",
+        "manualFieldsPreserved": true
+      },
+      {
+        "numberBefore": "001/CABW-CISCEA/2025",
+        "numberAfter": "001/CABW-CISCEA/2025",
+        "manualFieldsPreserved": true
+      },
+      {
+        "numberBefore": "033/CELOG-PAMAGL/2025",
+        "numberAfter": "033/CELOG-PAMAGL/2025",
+        "manualFieldsPreserved": true
+      },
+      {
+        "numberBefore": "017/CABW-CISCEA/2025",
+        "numberAfter": "017/CABW-CISCEA/2025",
+        "manualFieldsPreserved": true
+      },
+      {
+        "numberBefore": "016/CABW/2025",
+        "numberAfter": "016/CABW/2025",
+        "manualFieldsPreserved": true
+      },
+      {
+        "numberBefore": "250550/CABW/2025",
+        "numberAfter": "250550/CABW/2025",
+        "manualFieldsPreserved": true
+      },
+      {
+        "numberBefore": "021/CABW-PAMASP/2025",
+        "numberAfter": "021/CABW-PAMASP/2025",
+        "manualFieldsPreserved": true
+      },
+      {
+        "numberBefore": "250577/CABW/2025",
+        "numberAfter": "250577/CABW/2025",
+        "manualFieldsPreserved": true
+      },
+      {
+        "numberBefore": "025/CABW-CISCEA/2025",
+        "numberAfter": "025/CABW-CISCEA/2025",
+        "manualFieldsPreserved": true
+      },
+      {
+        "numberBefore": "026/CABW-CISCEA/2025",
+        "numberAfter": "026/CABW-CISCEA/2025",
+        "manualFieldsPreserved": true
+      },
+      {
+        "numberBefore": "003/CABW/2026",
+        "numberAfter": "003/CABW/2026",
+        "manualFieldsPreserved": true
+      },
+      {
+        "numberBefore": "002/CABW/2026",
+        "numberAfter": "002/CABW/2026",
+        "manualFieldsPreserved": true
+      },
+      {
+        "numberBefore": "001/CABW/2026",
+        "numberAfter": "001/CABW/2026",
+        "manualFieldsPreserved": true
+      },
+      {
+        "numberBefore": "004/CABW/2026",
+        "numberAfter": "004/CABW/2026",
+        "manualFieldsPreserved": true
+      },
+      {
+        "numberBefore": "005/CABW/2026",
+        "numberAfter": "005/CABW/2026",
+        "manualFieldsPreserved": true
+      },
+      {
+        "numberBefore": "260113/CABW/2026",
+        "numberAfter": "260113/CABW/2026",
+        "manualFieldsPreserved": true
+      },
+      {
+        "numberBefore": "005/CELOG-PAMASP/2026",
+        "numberAfter": "005/CELOG-PAMASP/2026",
+        "manualFieldsPreserved": true
+      },
+      {
+        "numberBefore": "006/CABW/2026",
+        "numberAfter": "006/CABW/2026",
+        "manualFieldsPreserved": true
+      },
+      {
+        "numberBefore": "007/CABW/2026",
+        "numberAfter": "007/CABW/2026",
+        "manualFieldsPreserved": true
+      },
+      {
+        "numberBefore": "010/CABW-PAMERJ/2026",
+        "numberAfter": "010/CABW-PAMERJ/2026",
+        "manualFieldsPreserved": true
+      },
+      {
+        "numberBefore": "CNT 009/CABW-PAME-RJ/2026",
+        "numberAfter": "009/CABW-PAME-RJ/2026",
+        "manualFieldsPreserved": true
+      },
+      {
+        "numberBefore": "CNT 099/CAE-CABW-DECEA/2026",
+        "numberAfter": "CNT 099/CAE-CABW-DECEA/2026",
+        "manualFieldsPreserved": true
+      }
+    ]
+  }
+}
