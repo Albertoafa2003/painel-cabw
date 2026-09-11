@@ -7454,3 +7454,6 @@ body.auth-is-admin .navbar-nav .admin-only {
 @media (max-width: 767.98px) {
   .budget-policy-note { padding: 14px; }
 }
+
+/* Apontamentos preservados na fonte contratual de 11/09/2026. */
+.contract-source-warning { display:block; color:#8a3219; background:#fff5eb; border-left:3px solid #be7427; padding:.45rem .6rem; margin:.5rem 0; font-size:.8rem; line-height:1.45; white-space:normal; }

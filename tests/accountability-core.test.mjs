@@ -25,21 +25,21 @@ function readWindowArray(file, variable) {
 const contracts = readWindowArray("../assets/js/contracts-data.js", "CABW_CONTRACTS_DATA");
 const monitoring = readWindowArray("../assets/js/contract-monitoring-data.js", "CONTRACT_MONITORING_DATA");
 
-test("base contratual preserva 135 contratos", () => {
-  assert.equal(contracts.length, 135);
+test("base contratual atualizada contém 137 contratos", () => {
+  assert.equal(contracts.length, 137);
 });
 
-test("situação em 03/09/2026 resulta em 111 vigentes, 22 encerrados e 2 sem data", () => {
+test("situação em 11/09/2026 resulta em 112 vigentes, 20 encerrados e 5 sem data", () => {
   const counts = { active: 0, ended: 0, "no-date": 0 };
-  contracts.forEach(contract => { counts[contractLifecycle(contract, "2026-09-03").code] += 1; });
-  assert.deepEqual(counts, { active: 111, ended: 22, "no-date": 2 });
+  contracts.forEach(contract => { counts[contractLifecycle(contract, "2026-09-11").code] += 1; });
+  assert.deepEqual(counts, { active: 112, ended: 20, "no-date": 5 });
 });
 
 test("separação CABW e OMs apoiadas usa Unidade igual a CABW", () => {
   const cabw = contracts.filter(contract => normalizeUnit(contract.unidade) === "CABW");
   const supported = contracts.filter(contract => normalizeUnit(contract.unidade) !== "CABW");
-  assert.equal(cabw.length, 28);
-  assert.equal(supported.length, 107);
+  assert.equal(cabw.length, 29);
+  assert.equal(supported.length, 108);
 });
 
 test("prazo para termo aditivo é 120 dias antes do término", () => {
@@ -48,16 +48,16 @@ test("prazo para termo aditivo é 120 dias antes do término", () => {
   assert.equal(result.date, "2026-09-02");
 });
 
-test("somente 11 contratos são expressamente continuados", () => {
+test("somente 12 contratos são expressamente continuados", () => {
   const map = monitoringTypeMap(monitoring);
   const count = contracts.filter(contract => map.get(normalizeContractIdentifier(contract.numero)) === "CONTINUADO").length;
-  assert.equal(count, 11);
+  assert.equal(count, 12);
 });
 
 test("pagamento é vinculado por número do contrato normalizado", () => {
   const index = buildContractAliasIndex(contracts);
-  const contract = resolveContractForPayment({ contractPag: "Contrato nº 015/CABW/2021" }, index);
-  assert.equal(contract.numero, "015/CABW/2021");
+  const contract = resolveContractForPayment({ contractPag: "Contrato nº 022/CABW/2021" }, index);
+  assert.equal(contract.numero, "022/CABW/2021");
 });
 
 test("valor pago usa valor bruto e média exclui mês corrente", () => {

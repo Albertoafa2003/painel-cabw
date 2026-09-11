@@ -1,0 +1,497 @@
+{
+  "build": "contracts-11092026-r1",
+  "position": "11/09/2026",
+  "createdAtUtc": "2026-09-11T16:34:54.016791+00:00",
+  "sourceFile": "RELATÓRIO DE CONTRATO - 11092026.xls",
+  "sourceSha256": "da0a427327ff0f58cae6acf665694ab15065ff3c1e86241f91b72015c8e2a358",
+  "basePackage": "cabw_site_credito_requisicoes_11092026_VERIFICADO.zip",
+  "basePackageSha256": "80791c130052b3284080822d854193e67a4a0692c0720c23e3a17efb8e3fde6f",
+  "sourceReading": "Legacy BIFF8/OLE cached values parsed from original bytes; original workbook unchanged. Parser cross-checked against all numeric fields of previous XLS and previous site base: zero discrepancies.",
+  "contracts": {
+    "before": 135,
+    "after": 137,
+    "existingPreserved": 131,
+    "added": 6,
+    "removed": 4,
+    "renamedWithinSameContract": {
+      "004/CAE-PAMERJ/2025": "004/CAE-CABW-PAMERJ/2025",
+      "CNT 009/CABW-PAME-RJ/2026": "009/CABW-PAME-RJ/2026"
+    },
+    "categoryCounts": {
+      "fms": 52,
+      "finalisticos": 62,
+      "administrativos": 23
+    },
+    "lifecycleOn20260911": {
+      "encerrado": 20,
+      "vigente": 112,
+      "sem-data": 5
+    },
+    "totalCommittedUsd": 657754725.91,
+    "totalInvoicedUsd": 544517182.34
+  },
+  "monitoring": {
+    "before": 83,
+    "after": 85,
+    "monitored": 84,
+    "ignored": 1,
+    "types": {
+      "DEMANDA PONTUAL": 17,
+      "CONTINUADO": 12,
+      "Não informado": 55,
+      "DESCONSIDERAR": 1
+    },
+    "sourceDatesUnknown": 5,
+    "manualObservationsPreserved": true
+  },
+  "accountability": {
+    "CABW": {
+      "total": 29,
+      "vigentes": 26,
+      "semData": 2,
+      "encerrados": 1,
+      "exibicaoInicial": 28
+    },
+    "OMs apoiadas": {
+      "total": 108,
+      "vigentes": 86,
+      "semData": 3,
+      "encerrados": 19,
+      "exibicaoInicial": 89
+    }
+  },
+  "changedExistingFiles": [
+    "assets/data/contract-monitoring-summary.json",
+    "assets/data/contracts-summary.json",
+    "assets/js/accountability-core.js",
+    "assets/js/accountability-landing.js",
+    "assets/js/accountability-panel.js",
+    "assets/js/cabw-numeros.js",
+    "assets/js/contract-monitoring-data.js",
+    "assets/js/contract-monitoring-panel.js",
+    "assets/js/contracts-data.js",
+    "assets/js/contracts-panel.js",
+    "contratos-administrativos.html",
+    "contratos-finalisticos.html",
+    "contratos.html",
+    "css/style.css",
+    "fms.html",
+    "governanca-cabw-numeros.html",
+    "governanca-monitoramento-contratos.html",
+    "package.json",
+    "prestacao-contas-cabw.html",
+    "prestacao-contas-oms.html",
+    "prestacao-contas.html",
+    "style.css",
+    "tests/accountability-core.test.mjs"
+  ],
+  "originalFilesRemoved": [],
+  "htmlPagesChecked": 39,
+  "javascriptFilesChecked": 33,
+  "automatedTests": {
+    "total": 100,
+    "passed": 100,
+    "failed": 0
+  },
+  "offlineBrowserChecks": {
+    "total": 47,
+    "passed": 47,
+    "failed": 0,
+    "pdfPayloadScenarios": 6,
+    "realPdfFilesGenerated": false,
+    "productionAuthenticationTested": false,
+    "productionFirestoreReadOrWritten": false
+  },
+  "limitations": [
+    "Testes de interação realizados offline com HTML/CSS local, núcleo JavaScript original e SDK Firebase simulado.",
+    "Bibliotecas de PDF/CDN indisponíveis no ambiente: conferidos os dados destinados aos PDFs, não a geração/layout dos arquivos PDF reais.",
+    "Nenhuma leitura ou escrita no Firestore de produção, nenhuma alteração do repositório GitHub."
+  ],
+  "preservation": {
+    "assets/data/credit-current.json": "ccd2106552ea243a6c3050f692a2e3e6247f803b80f0de5ff0945b9bb9c4b727",
+    "assets/data/credit-budget-detailed-current.json": "7199b2baae4298bb73f75b1fc17b512dfcfaafef7f5055333ae1044d1a517227",
+    "assets/data/requisitions-available-current.json": "fecfebd6fee853049127d456df24ca29f37cf72b9e19dfc8c838f1783ea384d8",
+    "assets/data/rp-summary.json": "b9831586fa8d3bcd80370d2e07381735d4d839f53af8bcd0b202b2822c6ed9b2",
+    "assets/js/rp-data.js": "3bee3596d5629b537bb77f7a0fe9430547344d87c724d9ae04178dd5200d57dd",
+    "assets/data/repair-processes-current.json": "2c2f1791f19bc9ec8cb5d6f4820a05349499c8acca32b30db18f377da6fca6aa",
+    "assets/js/processes-data.js": "ec8c81fd44f71b768984e9e0f665041c1b19409b3c0cc5596a42e897d2d841ec",
+    "assets/js/auth.js": "af59391f872fe27532bf2378abd795b54f84259cb5a4b439a65b7e03d80300fb",
+    "assets/js/authorized-emails.js": "81c8a3e06d9aa8040e6acb25fd769316f1ea988008bcc089a5f9af81f1f74d82"
+  },
+  "checks": [
+    {
+      "name": "137 unique source contracts",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "No additions not present in the source",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "Source text field NÚMERO",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "Source text field EMPRESA",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "Source text field OBJETO RESUMO",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "Source text field MOEDA",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "Source monetary field VALOR DO CONTRATO",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "Source monetary field TOTAL EMPENHADO",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "Source monetary field TOTAL FATURADO",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "Source monetary field SALDO SILOMS-EXT",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "Source monetary field VALOR A EMPENHAR",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "Source monetary field TOTAL EMPENHADO USD",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "Source monetary field TOTAL FATURADO USD",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "Source date field DATA ASSINATURA",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "Source date field DATA INÍCIO",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "Source date field DATA FINAL",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "Existing 131 contracts preserve all non-source fields",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "Existing 79 monitoring records preserve manual data",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "Deleted contracts absent in both active bases",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "137 unique primary contract IDs",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "85 unique monitoring IDs and numbers",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "5 unknown end dates remain null",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "U-TT and IPT remain distinct",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "No duplicate HTML IDs",
+      "passed": true,
+      "detail": []
+    },
+    {
+      "name": "Local HTML references exist",
+      "passed": true,
+      "detail": []
+    },
+    {
+      "name": "All original files preserved",
+      "passed": true,
+      "detail": []
+    },
+    {
+      "name": "Credit requests RP repair processes authentication byte-identical",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "No payment dataset or operational logic edited",
+      "passed": true,
+      "detail": []
+    },
+    {
+      "name": "Historical audits/snapshots unchanged",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "Edits confined to contract consumers and validation",
+      "passed": true,
+      "detail": [
+        "assets/data/contract-monitoring-summary.json",
+        "assets/data/contracts-summary.json",
+        "assets/js/accountability-core.js",
+        "assets/js/accountability-landing.js",
+        "assets/js/accountability-panel.js",
+        "assets/js/cabw-numeros.js",
+        "assets/js/contract-monitoring-data.js",
+        "assets/js/contract-monitoring-panel.js",
+        "assets/js/contracts-data.js",
+        "assets/js/contracts-panel.js",
+        "contratos-administrativos.html",
+        "contratos-finalisticos.html",
+        "contratos.html",
+        "css/style.css",
+        "fms.html",
+        "governanca-cabw-numeros.html",
+        "governanca-monitoramento-contratos.html",
+        "package.json",
+        "prestacao-contas-cabw.html",
+        "prestacao-contas-oms.html",
+        "prestacao-contas.html",
+        "style.css",
+        "tests/accountability-core.test.mjs"
+      ]
+    },
+    {
+      "name": "JS syntax requisitions-available-panel.js",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "JS syntax repair-import-core.js",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "JS syntax payment-execution-panel.js",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "JS syntax processes-reports.js",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "JS syntax accountability-panel.js",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "JS syntax cabw-numeros.js",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "JS syntax contracts-panel.js",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "JS syntax authorized-emails.js",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "JS syntax payment-tracking-core.js",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "JS syntax requisition-core.js",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "JS syntax accountability-landing.js",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "JS syntax requisition-credit-cross-panel.js",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "JS syntax contract-monitoring-data.js",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "JS syntax rp-data.js",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "JS syntax credit-budget-detail.js",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "JS syntax rp-panel.js",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "JS syntax repair-processes-panel.js",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "JS syntax contract-monitoring-panel.js",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "JS syntax accountability-core.js",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "JS syntax auth.js",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "JS syntax admin-system.js",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "JS syntax contracts-data.js",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "JS syntax processes-data.js",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "JS syntax payment-tracking-panel.js",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "JS syntax repair-processes-current-data.js",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "JS syntax contracts-update-11092026.test.mjs",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "JS syntax requisition-core.test.mjs",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "JS syntax accountability-core.test.mjs",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "JS syntax payment-tracking.test.mjs",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "JS syntax payment-execution.test.mjs",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "JS syntax verify-detailed-cross-report.mjs",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "JS syntax credit-update-11092026.test.mjs",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "JS syntax repair-import.test.mjs",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "100 automated tests pass",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "47 offline interaction checks pass",
+      "passed": true,
+      "detail": null
+    }
+  ],
+  "keyFileHashes": {
+    "assets/data/contract-monitoring-summary.json": "f93780fbf7f6cf30bba7f5a70c2c2b147b5f10be61d754947bac4259f7d5fbc9",
+    "assets/data/contracts-summary.json": "88ef307fdd0b3d2fd015a5415286f526eddfaaa00917a63b062c545ef5b2cc9b",
+    "assets/js/accountability-core.js": "21dea86ba2f56f8a27e5aaf705f8268a88eca33ad43b2dde0a9e7b99a283f167",
+    "assets/js/accountability-landing.js": "2b9a52fcb2f8b3f0665d11d633886ff0f36758db0dc904d5b299e55cf338ea1e",
+    "assets/js/accountability-panel.js": "75825ecc6f8834382cb81d8abdb73ebe01ed36c507ed7967b1ca9d57ca3d11a4",
+    "assets/js/cabw-numeros.js": "6359b9239a257b52cc01716aac59fef8ecca141c7d1202f7de563d897eb80eae",
+    "assets/js/contract-monitoring-data.js": "a7165fd6b994f09e163c41fc44f39ebe106401e12a33da2bbe2ccce058c28017",
+    "assets/js/contract-monitoring-panel.js": "fb721187256ab9361036da87b10fe048a9e4c1d675b3ecd140740497b7eb6ee8",
+    "assets/js/contracts-data.js": "19c4a6e946a485c32cdbb300c8a2c0f8563681c5b1d1055ff82a652f2a4aa952",
+    "assets/js/contracts-panel.js": "274389481beb58a3fcf1c9b69f676bb332a136df8aa19574fee922c884b51696",
+    "contratos-administrativos.html": "e9d6672e855a0015b5ab138a424f86cd3d7049b135a10b1b2c0d952d28a8cae2",
+    "contratos-finalisticos.html": "a352588aa4910f8626861e3f063d93f9127d354b350322f88271d0740b532193",
+    "contratos.html": "3a5043e5f47c5ad4a78438c8fb594482c4e5efe82baec4c9cddb7c653fe29c03",
+    "css/style.css": "d1e80961e72e8bbce87232b43003f981c6cb4c23aff220516c44e55a0dfebf53",
+    "fms.html": "0e0e0af7cbd416cf69b122a5ccfd660a6a79219f7162b8a2fceae4d56df1032e",
+    "governanca-cabw-numeros.html": "562069b129c99bbbb006502a452b687cf7c62fe0cf0df0b224dd31977cf49799",
+    "governanca-monitoramento-contratos.html": "0c484d3d1f867e992d19e09e5741cbee3a85e0e76301aafaecde812a70727d81",
+    "package.json": "f5052f4b82220244356ebdc136e0adcf7d961e79e6d62d895fae673ea8712f30",
+    "prestacao-contas-cabw.html": "834f5b0b94a0f3050de773d7ea3c1b3632c4b36300e27da87565e901adc27a62",
+    "prestacao-contas-oms.html": "894b94b5fe5fb380d6707b241c847dfc17c13965fc7f4538f451dabcdc839ee1",
+    "prestacao-contas.html": "286da845a15f2b38974a4670361dd00baab6e16897f04b8af52d40700b1236b5",
+    "style.css": "6d904e0e0c45fadb46ab067be32d83ff500a73ab5320492cff018c0c6ff1c34a",
+    "tests/accountability-core.test.mjs": "ad061c1391d049092cc2cf7a7ea75e6231eb41063971486af86d5a61893c7e43"
+  }
+}
