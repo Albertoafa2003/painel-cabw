@@ -1,0 +1,75 @@
+PAINEL CABW — CONTRATOS — POSIÇÃO DE 11/09/2026
+
+Fonte: RELATÓRIO DE CONTRATO - 11092026.xls
+Base utilizada: cabw_site_credito_requisicoes_11092026_VERIFICADO.zip
+
+RESULTADO
+137 contratos distintos: 52 FMS, 62 finalísticos e 23 administrativos.
+112 vigentes, 20 encerrados e 5 sem data de vigência na data de referência.
+Monitoramento: 85 registros, sendo 84 monitorados e 1 desconsiderado anteriormente (mantido).
+
+IDENTIFICAÇÕES
+Os contratos abaixo permanecem separados, com identidades próprias:
+- 004/CAE-CABW-PAMERJ/2025 — U-TT INTERNATIONAL, INC.
+- 009/CABW-PAME-RJ/2026 — INTEGRATED PROCUREMENT TECHNOLOGIES DBA IPT
+A nomenclatura é exatamente a da nova planilha; a antiga identificação de cada um
+é reconhecida apenas como alias do respectivo contrato para preservar vínculos.
+Os seis novos registros mantêm inclusive o prefixo CT e os separadores da fonte.
+
+EXCLUSÕES AUTORIZADAS
+015/CABW/2021; 016/CABW/2021; 018/CABW-CISCEA/2025; 019/CABW-CENIPA/2025.
+As exclusões atingem os cadastros ativos de Contratos, Monitoramento e Prestação de Contas.
+Não foram apagados pagamentos históricos, processos, arquivos de auditoria anteriores
+nem documentos no Firestore.
+
+NOVOS CONTRATOS
+CT 012-CABW-2026 — MILCLEAN — CABW — Administrativo — Continuado — COMGAP — 2000 — OD CABW.
+011/CABW-DECEA/2026 — FLIGHTSAFETY — DECEA — Finalístico — Demanda Pontual — DECEA — 20XV — OD DECEA.
+CT 013/CABW/2026 — AETNA — CABW — Administrativo — Continuado — COMGAP — 2000 — OD CABW.
+CT 016/CABW/2026 — MILCLEAN — CABW — Administrativo — Continuado — COMGAP — 2000 — OD CABW.
+014/CABW-CISCEA/2026 — ATC SOLUTIONS — CISCEA — Finalístico — Demanda Pontual — DECEA — 20XV — OD CISCEA.
+015/CABW-CISCEA/2026 — SUNHILLO — CISCEA — Finalístico — Demanda Pontual — DECEA — 20XV — OD CISCEA.
+Observações/providências dos novos contratos em branco.
+Campos não informados na fonte, como código interno ou CAGE dos novos contratos, não foram inventados.
+
+DATAS E CONSISTÊNCIA
+AETNA, MILCLEAN resíduos, ATC SOLUTIONS e SUNHILLO entram sem datas de vigência.
+A EMBRY-RIDDLE permanece sem datas. A IPT passa a ter as datas da nova planilha.
+UHC mantém o saldo a empenhar negativo de USD -121.697,15.
+BR-D-QAU-USAF mantém término em 10/10/2024, anterior ao início em 12/12/2024.
+Os dois apontamentos foram sinalizados sem correção automática.
+Outros saldos negativos existentes na fonte também foram preservados.
+
+ÁREAS ATUALIZADAS
+Contratos (visão geral, administrativos, finalísticos e FMS), Monitoramento de
+Contratos, CABW em Números e Prestação de Contas (CABW e OMs apoiadas).
+Os relatórios dos painéis utilizam a mesma base atualizada.
+As datas de referência dos contratos passaram a ser 11/09/2026.
+As classificações de prazo do Monitoramento são recalculadas pela data final ao consultar.
+
+PRESERVAÇÃO
+Os 131 contratos anteriores mantidos preservam seus IDs, Unidade, Grande Comando,
+Ação, Ordenador de Despesas, CAGE, código interno e demais campos ausentes da planilha.
+Os tipos e observações anteriores do Monitoramento foram mantidos.
+Crédito de 11/09/2026, carteira de 67 requisições de 07/09/2026 e respectivos PNs,
+Materiais Reparáveis, RP, Pagamentos, processos e autenticação permaneceram preservados.
+Nenhuma nova regra ou coleção Firestore é exigida por este pacote.
+
+TESTES
+100 testes automatizados aprovados. 47 verificações de interação offline aprovadas.
+Dados enviados aos relatórios verificados em 6 cenários.
+CDNs indisponíveis: PDFs reais e ambiente autenticado de produção não foram testados.
+Conferir PDFs e autenticação após a publicação.
+
+PUBLICAÇÃO
+1. Extraia o ZIP; não envie o arquivo ZIP como conteúdo do site.
+2. Envie todo o conteúdo extraído, incluindo assets e css, à raiz do repositório
+   em uma branch de atualização.
+3. Confirme a presença de BUILD_VERIFICACAO_CONTRATOS_11092026.json.
+4. Siga o fluxo de Pull Request/revisão configurado para integrar na main protegida.
+5. Aguarde a publicação e recarregue o navegador sem o cache antigo.
+6. Confirme: Contratos = 137; fonte de contratos = 11/09/2026;
+   U-TT e IPT aparecem separadamente; Monitoramento = 84 monitorados;
+   Crédito permanece em 11/09/2026 e Requisições em 07/09/2026.
+
+Este pacote não publicou arquivos no GitHub nem modificou o Firestore.

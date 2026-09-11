@@ -7412,3 +7412,6 @@ body.auth-is-admin .navbar-nav .admin-only {
 .budget-live-status[data-status="success"] { color:#0b6b45; }
 .budget-live-status[data-status="warning"] { color:#8a5c00; }
 .budget-live-status[data-status="error"] { color:#a12634; }
+
+/* Apontamentos preservados na fonte contratual de 11/09/2026. */
+.contract-source-warning { display:block; color:#8a3219; background:#fff5eb; border-left:3px solid #be7427; padding:.45rem .6rem; margin:.5rem 0; font-size:.8rem; line-height:1.45; white-space:normal; }
