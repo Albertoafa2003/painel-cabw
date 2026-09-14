@@ -3,12 +3,12 @@ import {
   buildDetailedCrossReportData,
   criterionLabel,
   crossCreditAndRequisitions,
-} from "./requisition-core.js?v=20260907-requisitions-r6";
+} from "./requisition-core.js?v=20260914-requisitions-r7";
 
 const CREDIT_URL =
   "assets/data/credit-budget-detailed-current.json?v=20260911-credit-r1";
 const REQUEST_URL =
-  "assets/data/requisitions-available-current.json?v=20260907-requisitions-r6";
+  "assets/data/requisitions-available-current.json?v=20260914-requisitions-r7";
 
 const state = {
   credit: null,

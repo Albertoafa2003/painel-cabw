@@ -2,10 +2,10 @@ import {
   ANY,
   criterionLabel,
   normalizeRequisition,
-} from "./requisition-core.js?v=20260907-requisitions-r6";
+} from "./requisition-core.js?v=20260914-requisitions-r7";
 
 const DATA_URL =
-  "assets/data/requisitions-available-current.json?v=20260907-requisitions-r6";
+  "assets/data/requisitions-available-current.json?v=20260914-requisitions-r7";
 
 const state = {
   data: null,
@@ -293,7 +293,7 @@ function exportCsv() {
   );
   const anchor = document.createElement("a");
   anchor.href = URL.createObjectURL(blob);
-  anchor.download = "requisicoes-disponiveis-empenho-04092026-pn.csv";
+  anchor.download = "requisicoes-disponiveis-empenho-14092026.csv";
   anchor.click();
   URL.revokeObjectURL(anchor.href);
 }
@@ -365,7 +365,7 @@ function exportPdf() {
     },
   });
 
-  doc.save("requisicoes-disponiveis-empenho-04092026-pn.pdf");
+  doc.save("requisicoes-disponiveis-empenho-14092026.pdf");
 }
 
 async function init() {
