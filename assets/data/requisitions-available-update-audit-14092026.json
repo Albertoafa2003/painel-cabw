@@ -1,0 +1,261 @@
+{
+  "build": "requisitions-14092026-r7",
+  "generatedAt": "2026-09-14T12:06:00Z",
+  "sourceSpreadsheet": "REQUISIÇÕES DISPONÍVEIS PARA EMPENHO - 14092026.xlsx",
+  "sourceSpreadsheetSha256": "fa826f3cf3ddbeb7a98524cb1321c23055169b3ec697976e67e1753023a616ec",
+  "sourceSheet": "Sheet1",
+  "sourceRows": "2 a 91",
+  "requisitionPosition": "14/09/2026",
+  "creditPosition": "11/09/2026",
+  "recordCount": 90,
+  "uniqueRequestCount": 90,
+  "partNumberRecordCount": 90,
+  "uniquePartNumberCount": 84,
+  "omCount": 3,
+  "requestValueTotal": 2577417.71,
+  "committedValueTotal": 0.0,
+  "balanceToCommitTotal": 2577417.71,
+  "blankCommittedValueTreatment": {
+    "policy": "Opção A confirmada pelo usuário: campo SALDO EMPENHADO vazio = US$ 0,00.",
+    "count": 23,
+    "requests": [
+      "SPTR09809A7",
+      "SPTR09804A7",
+      "SPTR10001A7",
+      "SPTR10002A7",
+      "SPTR09601F5",
+      "SPT126002H7",
+      "SPT148002PQ",
+      "SPT149002PQ",
+      "SPT153013PQ",
+      "SPT154004PQ",
+      "SPT154005PQ",
+      "SPT146001PE",
+      "SPT147002PE",
+      "SPT147007PE",
+      "SPT148005PE",
+      "SPT152030PE",
+      "SPT153014PE",
+      "SPT153016PE",
+      "SPTR09810A7",
+      "SPTR10010T1",
+      "SPTR12001F5",
+      "SPTR12002F5",
+      "SPTR12003F5"
+    ]
+  },
+  "natureDistribution": [
+    {
+      "expenseNature": "339030",
+      "recordCount": 57,
+      "requestValue": 2015466.1,
+      "committedValue": 0.0,
+      "balanceToCommit": 2015466.1
+    },
+    {
+      "expenseNature": "339039",
+      "recordCount": 12,
+      "requestValue": 153377.86,
+      "committedValue": 0.0,
+      "balanceToCommit": 153377.86
+    },
+    {
+      "expenseNature": "449052",
+      "recordCount": 21,
+      "requestValue": 408573.75,
+      "committedValue": 0.0,
+      "balanceToCommit": 408573.75
+    }
+  ],
+  "portfolioChanges": {
+    "previousPosition": "07/09/2026",
+    "previousCount": 67,
+    "retainedCount": 63,
+    "addedCount": 27,
+    "removedCount": 4,
+    "addedRequests": [
+      "GLT090001P3",
+      "GLT126003IX",
+      "GLT138003C1",
+      "LST013005UE",
+      "LST028002UE",
+      "LST085001U8",
+      "LST091001U8",
+      "LST124005UE",
+      "LST124006UE",
+      "LST124009UE",
+      "LST134002GP",
+      "LST134004GP",
+      "LST134005GP",
+      "LST134006GP",
+      "LST138004T2",
+      "LST145005U8",
+      "LST175005SS",
+      "LST176003U8",
+      "LST176004U8",
+      "LST176005U8",
+      "LST176007U8",
+      "LST176008U8",
+      "LST176009U8",
+      "LST176010U8",
+      "LST177001T2",
+      "LST196004U8",
+      "LST196005U8"
+    ],
+    "removedRequests": [
+      "GLT103003IX",
+      "SPT061001PE",
+      "SPT061013PE",
+      "SPT104001T9"
+    ],
+    "retainedDataChanges": [
+      {
+        "requestNumber": "GLS045004P3",
+        "changes": {
+          "proposalValidityDate": {
+            "before": "2026-10-04",
+            "after": "2026-10-11"
+          }
+        }
+      }
+    ]
+  },
+  "confirmedCorrections": [
+    {
+      "requestNumber": "GLT099002R2",
+      "sourceRow": 14,
+      "sourceValue": "459052",
+      "correctedValue": "449052",
+      "reason": "Natureza de Despesa corrigida de 459052 para 449052 conforme confirmação do usuário."
+    }
+  ],
+  "matchingPolicy": "OM/UG e Natureza de Despesa são obrigatórias na base atual; Ação e PI em branco funcionam como wildcards. O crédito é comparado somente dentro da mesma OM e da mesma Natureza de Despesa.",
+  "crossing": {
+    "creditPosition": "11/09/2026",
+    "totals": {
+      "requestCount": 90,
+      "requestValue": 2577417.71,
+      "committedValue": 0,
+      "balanceToCommit": 2577417.71,
+      "creditAvailable": 2002627.1,
+      "creditRemaining": 657977.81,
+      "deficit": 1232768.42,
+      "coveragePercent": 77.69897336508951
+    },
+    "byOm": [
+      {
+        "om": "PAMA-GL",
+        "ugCode": "120049",
+        "requests": 23,
+        "requestValue": 394009.5,
+        "balanceToCommit": 394009.5,
+        "creditAvailable": 298143.2,
+        "creditRemaining": 24214.8,
+        "deficit": 120081.1,
+        "status": "Crédito insuficiente"
+      },
+      {
+        "om": "PAMA-LS",
+        "ugCode": "120026",
+        "requests": 41,
+        "requestValue": 1825637.85,
+        "balanceToCommit": 1825637.85,
+        "creditAvailable": 864216.07,
+        "creditRemaining": 11605.76,
+        "deficit": 973027.54,
+        "status": "Crédito insuficiente"
+      },
+      {
+        "om": "PAMA-SP",
+        "ugCode": "120068",
+        "requests": 26,
+        "requestValue": 357770.36,
+        "balanceToCommit": 357770.36,
+        "creditAvailable": 840267.83,
+        "creditRemaining": 622157.25,
+        "deficit": 139659.78,
+        "status": "Crédito insuficiente"
+      }
+    ],
+    "groups": [
+      {
+        "ugCode": "120049",
+        "om": "PAMA-GL",
+        "expenseNature": "449052",
+        "requestCount": 20,
+        "requestValue": 392317.75,
+        "committedValue": 0,
+        "balanceToCommit": 392317.75,
+        "creditAvailable": 272236.65,
+        "creditRemaining": 0,
+        "deficit": 120081.1,
+        "status": "Crédito insuficiente"
+      },
+      {
+        "ugCode": "120049",
+        "om": "PAMA-GL",
+        "expenseNature": "339030",
+        "requestCount": 3,
+        "requestValue": 1691.75,
+        "committedValue": 0,
+        "balanceToCommit": 1691.75,
+        "creditAvailable": 25906.55,
+        "creditRemaining": 24214.8,
+        "deficit": 0,
+        "status": "Crédito suficiente"
+      },
+      {
+        "ugCode": "120026",
+        "om": "PAMA-LS",
+        "expenseNature": "339030",
+        "requestCount": 40,
+        "requestValue": 1809381.85,
+        "committedValue": 0,
+        "balanceToCommit": 1809381.85,
+        "creditAvailable": 836354.31,
+        "creditRemaining": 0,
+        "deficit": 973027.54,
+        "status": "Crédito insuficiente"
+      },
+      {
+        "ugCode": "120026",
+        "om": "PAMA-LS",
+        "expenseNature": "449052",
+        "requestCount": 1,
+        "requestValue": 16256,
+        "committedValue": 0,
+        "balanceToCommit": 16256,
+        "creditAvailable": 27861.76,
+        "creditRemaining": 11605.76,
+        "deficit": 0,
+        "status": "Crédito suficiente"
+      },
+      {
+        "ugCode": "120068",
+        "om": "PAMA-SP",
+        "expenseNature": "339030",
+        "requestCount": 14,
+        "requestValue": 204392.5,
+        "committedValue": 0,
+        "balanceToCommit": 204392.5,
+        "creditAvailable": 826549.75,
+        "creditRemaining": 622157.25,
+        "deficit": 0,
+        "status": "Crédito suficiente"
+      },
+      {
+        "ugCode": "120068",
+        "om": "PAMA-SP",
+        "expenseNature": "339039",
+        "requestCount": 12,
+        "requestValue": 153377.86,
+        "committedValue": 0,
+        "balanceToCommit": 153377.86,
+        "creditAvailable": 13718.08,
+        "creditRemaining": 0,
+        "deficit": 139659.78,
+        "status": "Crédito insuficiente"
+      }
+    ]
+  }
+}
