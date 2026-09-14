@@ -1,0 +1,242 @@
+{
+  "build": "requisitions-14092026-r7",
+  "generatedAt": "2026-09-14T12:06:00Z",
+  "sourceFile": "REQUISIÇÕES DISPONÍVEIS PARA EMPENHO - 14092026.xlsx",
+  "sourceSha256": "fa826f3cf3ddbeb7a98524cb1321c23055169b3ec697976e67e1753023a616ec",
+  "position": "14/09/2026",
+  "creditPosition": "11/09/2026",
+  "recordCount": 90,
+  "uniqueRequestCount": 90,
+  "partNumberRecordCount": 90,
+  "uniquePartNumberCount": 84,
+  "requestValueTotal": 2577417.71,
+  "committedValueTotal": 0.0,
+  "balanceToCommitTotal": 2577417.71,
+  "blankCommittedValueCount": 23,
+  "portfolioChanges": {
+    "previousPosition": "07/09/2026",
+    "previousCount": 67,
+    "retainedCount": 63,
+    "addedCount": 27,
+    "removedCount": 4,
+    "addedRequests": [
+      "GLT090001P3",
+      "GLT126003IX",
+      "GLT138003C1",
+      "LST013005UE",
+      "LST028002UE",
+      "LST085001U8",
+      "LST091001U8",
+      "LST124005UE",
+      "LST124006UE",
+      "LST124009UE",
+      "LST134002GP",
+      "LST134004GP",
+      "LST134005GP",
+      "LST134006GP",
+      "LST138004T2",
+      "LST145005U8",
+      "LST175005SS",
+      "LST176003U8",
+      "LST176004U8",
+      "LST176005U8",
+      "LST176007U8",
+      "LST176008U8",
+      "LST176009U8",
+      "LST176010U8",
+      "LST177001T2",
+      "LST196004U8",
+      "LST196005U8"
+    ],
+    "removedRequests": [
+      "GLT103003IX",
+      "SPT061001PE",
+      "SPT061013PE",
+      "SPT104001T9"
+    ],
+    "retainedDataChanges": [
+      {
+        "requestNumber": "GLS045004P3",
+        "changes": {
+          "proposalValidityDate": {
+            "before": "2026-10-04",
+            "after": "2026-10-11"
+          }
+        }
+      }
+    ]
+  },
+  "confirmedCorrections": [
+    {
+      "requestNumber": "GLT099002R2",
+      "sourceRow": 14,
+      "sourceValue": "459052",
+      "correctedValue": "449052",
+      "reason": "Natureza de Despesa corrigida de 459052 para 449052 conforme confirmação do usuário."
+    }
+  ],
+  "crossing": {
+    "creditPosition": "11/09/2026",
+    "totals": {
+      "requestCount": 90,
+      "requestValue": 2577417.71,
+      "committedValue": 0,
+      "balanceToCommit": 2577417.71,
+      "creditAvailable": 2002627.1,
+      "creditRemaining": 657977.81,
+      "deficit": 1232768.42,
+      "coveragePercent": 77.69897336508951
+    },
+    "byOm": [
+      {
+        "om": "PAMA-GL",
+        "ugCode": "120049",
+        "requests": 23,
+        "requestValue": 394009.5,
+        "balanceToCommit": 394009.5,
+        "creditAvailable": 298143.2,
+        "creditRemaining": 24214.8,
+        "deficit": 120081.1,
+        "status": "Crédito insuficiente"
+      },
+      {
+        "om": "PAMA-LS",
+        "ugCode": "120026",
+        "requests": 41,
+        "requestValue": 1825637.85,
+        "balanceToCommit": 1825637.85,
+        "creditAvailable": 864216.07,
+        "creditRemaining": 11605.76,
+        "deficit": 973027.54,
+        "status": "Crédito insuficiente"
+      },
+      {
+        "om": "PAMA-SP",
+        "ugCode": "120068",
+        "requests": 26,
+        "requestValue": 357770.36,
+        "balanceToCommit": 357770.36,
+        "creditAvailable": 840267.83,
+        "creditRemaining": 622157.25,
+        "deficit": 139659.78,
+        "status": "Crédito insuficiente"
+      }
+    ],
+    "groups": [
+      {
+        "ugCode": "120049",
+        "om": "PAMA-GL",
+        "expenseNature": "449052",
+        "requestCount": 20,
+        "requestValue": 392317.75,
+        "committedValue": 0,
+        "balanceToCommit": 392317.75,
+        "creditAvailable": 272236.65,
+        "creditRemaining": 0,
+        "deficit": 120081.1,
+        "status": "Crédito insuficiente"
+      },
+      {
+        "ugCode": "120049",
+        "om": "PAMA-GL",
+        "expenseNature": "339030",
+        "requestCount": 3,
+        "requestValue": 1691.75,
+        "committedValue": 0,
+        "balanceToCommit": 1691.75,
+        "creditAvailable": 25906.55,
+        "creditRemaining": 24214.8,
+        "deficit": 0,
+        "status": "Crédito suficiente"
+      },
+      {
+        "ugCode": "120026",
+        "om": "PAMA-LS",
+        "expenseNature": "339030",
+        "requestCount": 40,
+        "requestValue": 1809381.85,
+        "committedValue": 0,
+        "balanceToCommit": 1809381.85,
+        "creditAvailable": 836354.31,
+        "creditRemaining": 0,
+        "deficit": 973027.54,
+        "status": "Crédito insuficiente"
+      },
+      {
+        "ugCode": "120026",
+        "om": "PAMA-LS",
+        "expenseNature": "449052",
+        "requestCount": 1,
+        "requestValue": 16256,
+        "committedValue": 0,
+        "balanceToCommit": 16256,
+        "creditAvailable": 27861.76,
+        "creditRemaining": 11605.76,
+        "deficit": 0,
+        "status": "Crédito suficiente"
+      },
+      {
+        "ugCode": "120068",
+        "om": "PAMA-SP",
+        "expenseNature": "339030",
+        "requestCount": 14,
+        "requestValue": 204392.5,
+        "committedValue": 0,
+        "balanceToCommit": 204392.5,
+        "creditAvailable": 826549.75,
+        "creditRemaining": 622157.25,
+        "deficit": 0,
+        "status": "Crédito suficiente"
+      },
+      {
+        "ugCode": "120068",
+        "om": "PAMA-SP",
+        "expenseNature": "339039",
+        "requestCount": 12,
+        "requestValue": 153377.86,
+        "committedValue": 0,
+        "balanceToCommit": 153377.86,
+        "creditAvailable": 13718.08,
+        "creditRemaining": 0,
+        "deficit": 139659.78,
+        "status": "Crédito insuficiente"
+      }
+    ]
+  },
+  "checks": {
+    "recordCount90": true,
+    "uniqueBac90": true,
+    "allPartNumbersPresent": true,
+    "noDuplicateBac": true,
+    "allActionsWildcard": true,
+    "allPiWildcard": true,
+    "allNatureCodesValid": true,
+    "natureCorrectionPreserved": true,
+    "blankCommittedTreatedAsZero": true,
+    "allCommittedZero": true,
+    "allBalanceEqualsValue": true,
+    "creditPositionPreserved11092026": true,
+    "creditNoDoubleCount": true,
+    "htmlPagesChecked": 39,
+    "missingLocalReferences": 0,
+    "duplicateHtmlIds": 0,
+    "automatedTests": 100,
+    "automatedTestsPassed": 100,
+    "automatedTestsFailed": 0,
+    "javascriptSyntaxCheck": "approved"
+  },
+  "fileHashes": {
+    "requisicoes.html": "fde1d7c297ef5f7d09879b5018d3b48714daf6298f075b96aad6a5c3260d9ac6",
+    "requisicoes-disponiveis-empenho.html": "70af080aeeb56e5c1c5903025761ac7e92e4bbe6467f00ea203d4c02280b80b8",
+    "requisicoes-cruzamento-credito.html": "36084fc8fc4022c4fe74adc54196057ca8818a57e2fdcafba9c55cc4041f7fd0",
+    "assets/data/requisitions-available-current.json": "fda0b812639f89ae278ca4f872eaa5a5b0b5af66c7dfdc42f0b1f71a298a1607",
+    "assets/data/requisitions-available-14092026.json": "fda0b812639f89ae278ca4f872eaa5a5b0b5af66c7dfdc42f0b1f71a298a1607",
+    "assets/data/requisition-credit-cross-summary-14092026.json": "b8e6ac84003a546bcd2546750c1171dfe1d08772e90a9f8a6d4b8b5bf93c48dc",
+    "assets/data/requisitions-available-update-audit-14092026.json": "576dbee2f8ca63f6931e9fabd047adb19a600efb32ad636ea64a7759f53e6aa0",
+    "assets/js/requisitions-available-panel.js": "cd53a897af030c71c4e44c21b88278cbee7f788aef05a4c135b9a249f97a20be",
+    "assets/js/requisition-credit-cross-panel.js": "acbc6fb87a202e1fb9187a04562ee13b55cc8162cb6ad0a3208a627ba7a16a36",
+    "tests/requisition-core.test.mjs": "f1aa41fecbb1f69a1bf7be33104dc3dbd99d40cb7fd5bb10293da8a1e8f284a7",
+    "tests/credit-update-11092026.test.mjs": "2bf20bbbe01e6cbab972eccf707d551ed56cce0097e439647a5a21e0ee50ee8a",
+    "tests/contracts-update-11092026.test.mjs": "81fa7012cba62db15b1c4326751e5ec7748717f4e81c98a03f0f986d860cb06f"
+  }
+}

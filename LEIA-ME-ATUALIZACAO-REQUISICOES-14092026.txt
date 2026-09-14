@@ -1,0 +1,40 @@
+ATUALIZAÇÃO DO PAINEL CABW — REQUISIÇÕES — 14/09/2026
+
+Fonte:
+- REQUISIÇÕES DISPONÍVEIS PARA EMPENHO - 14092026.xlsx
+- SHA-256: fa826f3cf3ddbeb7a98524cb1321c23055169b3ec697976e67e1753023a616ec
+
+Tratamentos confirmados:
+- Campo SALDO EMPENHADO vazio: considerado US$ 0,00 (23 registros).
+- GLT099002R2: Natureza de Despesa mantida em 449052, conforme correção anteriormente confirmada; a planilha-fonte continua apresentando 459052.
+- Ação em branco = qualquer Ação da mesma OM.
+- PI em branco = qualquer PI da mesma OM.
+- Cruzamento preserva OM/UG + Natureza e não compensa déficit entre Naturezas distintas.
+
+Base atual:
+- Requisições: 90
+- Part Numbers preenchidos: 90
+- Part Numbers distintos: 84
+- Valor / saldo a empenhar: US$ 2,577,417.71
+- Valor já empenhado: US$ 0.00
+
+Mudanças versus 07/09/2026:
+- Mantidas: 63
+- Incluídas: 27
+- Retiradas: 4
+- Alteração em registro mantido: GLS045004P3, validade da proposta de 04/10/2026 para 11/10/2026.
+
+Cruzamento com crédito de 11/09/2026:
+- Crédito compatível: US$ 2,002,627.10
+- Crédito remanescente dentro dos grupos compatíveis: US$ 657,977.81
+- Déficit: US$ 1,232,768.42
+
+Validação:
+- 100 testes automatizados aprovados.
+- Sintaxe JavaScript aprovada.
+- 39 páginas HTML verificadas.
+- 0 referências locais ausentes.
+- 0 IDs HTML duplicados.
+
+Publicação:
+Extraia todo o conteúdo do ZIP para uma branch do repositório, abra Pull Request e aguarde o deploy do GitHub Pages. Depois force a atualização do navegador (Ctrl+F5).
