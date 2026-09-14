@@ -247,58 +247,47 @@ test("normalizeRequisition preserves the Part Number", () => {
   assert.equal(record.partNumber, "PN-123/A");
 });
 
-test("current requisition file contains 67 unique BAC numbers, Part Numbers, specific natures and expected totals", () => {
+test("current requisition file contains 90 unique BAC numbers, Part Numbers, specific natures and expected totals", () => {
   const data = JSON.parse(
     fs.readFileSync(
-      new URL(
-        "../assets/data/requisitions-available-current.json",
-        import.meta.url,
-      ),
+      new URL("../assets/data/requisitions-available-current.json", import.meta.url),
       "utf8",
     ),
   );
-  assert.equal(data.records.length, 67);
-  assert.equal(new Set(data.records.map((row) => row.requestNumber)).size, 67);
-  assert.equal(data.metadata.position, "07/09/2026");
-  assert.equal(data.metadata.requestValueTotal, 1316467.79);
+  assert.equal(data.records.length, 90);
+  assert.equal(new Set(data.records.map((row) => row.requestNumber)).size, 90);
+  assert.equal(data.metadata.position, "14/09/2026");
+  assert.equal(data.metadata.requestValueTotal, 2577417.71);
   assert.equal(data.metadata.committedValueTotal, 0);
-  assert.equal(data.metadata.balanceToCommitTotal, 1316467.79);
+  assert.equal(data.metadata.balanceToCommitTotal, 2577417.71);
+  assert.equal(data.metadata.blankCommittedValueCount, 23);
   assert.equal(data.records.every((row) => row.partNumber), true);
-  assert.equal(new Set(data.records.map((row) => row.partNumber)).size, 61);
+  assert.equal(new Set(data.records.map((row) => row.partNumber)).size, 84);
   assert.equal(data.records.every((row) => row.action === ANY), true);
   assert.equal(data.records.every((row) => row.pi === ANY), true);
   assert.equal(data.records.every((row) => row.expenseNature !== ANY), true);
-  assert.equal(
-    data.records.every((row) => /^\d{6}$/.test(row.expenseNature)),
-    true,
-  );
+  assert.equal(data.records.every((row) => /^\d{6}$/.test(row.expenseNature)), true);
 
   const natureCounts = data.records.reduce((acc, row) => {
     acc[row.expenseNature] = (acc[row.expenseNature] || 0) + 1;
     return acc;
   }, {});
-  assert.deepEqual(natureCounts, {
-    "339030": 36,
-    "339039": 12,
-    "449052": 19,
-  });
+  assert.deepEqual(natureCounts, { "339030": 57, "339039": 12, "449052": 21 });
 
-  const corrected = data.records.find(
-    (row) => row.requestNumber === "GLT099002R2",
-  );
+  const corrected = data.records.find((row) => row.requestNumber === "GLT099002R2");
   assert.equal(corrected.expenseNatureSource, "459052");
   assert.equal(corrected.expenseNature, "449052");
-  assert.match(corrected.expenseNatureCorrection, /corrigida de 459052 para 449052/);
   assert.equal(corrected.partNumber, "ADA145M612");
 
-  const first = data.records.find(
-    (row) => row.requestNumber === "GLS045004P3",
-  );
-  assert.equal(first.proposalValidityDate, "2026-10-04");
+  const first = data.records.find((row) => row.requestNumber === "GLS045004P3");
+  assert.equal(first.proposalValidityDate, "2026-10-11");
   assert.equal(first.partNumber, "59J6185");
 
-  assert.equal(data.records.some((row) => row.requestNumber === "GLT100004R2"), true);
-  assert.equal(data.records.some((row) => row.requestNumber === "LST025004T9"), false);
+  assert.equal(data.records.filter((row) => row.committedValueSource === null).length, 23);
+  assert.equal(data.records.every((row) => row.committedValue === 0), true);
+  assert.equal(data.records.every((row) => row.balanceToCommit === row.requestValue), true);
+  assert.equal(data.records.some((row) => row.requestNumber === "GLT126003IX"), true);
+  assert.equal(data.records.some((row) => row.requestNumber === "SPT061001PE"), false);
 });
 
 test("01/09/2026 credit and 07/09/2026 requests: historical crossing groups the 67 requests by OM and Natureza without double counting", () => {

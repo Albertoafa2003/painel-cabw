@@ -12,11 +12,11 @@ const parseMoney = v => Number(String(v).replace(/US\$\s*/g,'').replace(/\./g,''
 const cross = crossCreditAndRequisitions(budget.groupedByMatchKey, req.records);
 const report = buildDetailedCrossReportData(cross, req.records);
 const expected = [
-  ['120026','339030',16,511822.48,836354.31,324531.83,0],
+  ['120026','339030',40,1809381.85,836354.31,0,973027.54],
   ['120026','449052',1,16256,27861.76,11605.76,0],
-  ['120049','339030',3,21273.60,25906.55,4632.95,0],
-  ['120049','449052',18,339045.35,272236.65,0,66808.70],
-  ['120068','339030',17,274692.50,826549.75,551857.25,0],
+  ['120049','339030',3,1691.75,25906.55,24214.80,0],
+  ['120049','449052',20,392317.75,272236.65,0,120081.10],
+  ['120068','339030',14,204392.50,826549.75,622157.25,0],
   ['120068','339039',12,153377.86,13718.08,0,139659.78],
 ];
 
@@ -104,12 +104,14 @@ test('history retains all 18 old dates and adds 11/09 exactly once',()=>{
   assert.deepEqual(credit.summary.at(-1),['11/09/2026','US$ 3.279.443,02','US$ 129.266.335,74','2,54%','US$ 125.986.892,72','99']);
 });
 
-test('current requisitions remain the 07/09 snapshot with all 67 PN and approved ND correction',()=>{
-  assert.deepEqual(req,load('requisitions-available-07092026.json'));
-  assert.equal(req.records.length,67);
-  assert.equal(req.metadata.position,'07/09/2026');
+test('current requisitions are the 14/09 snapshot with 90 PN, blank committed values treated as zero and approved ND correction',()=>{
+  assert.deepEqual(req,load('requisitions-available-14092026.json'));
+  assert.equal(req.records.length,90);
+  assert.equal(req.metadata.position,'14/09/2026');
+  assert.equal(req.metadata.blankCommittedValueCount,23);
   assert.equal(req.records.every(r=>r.partNumber && r.action==='*' && r.pi==='*'),true);
-  assert.equal(new Set(req.records.map(r=>r.partNumber)).size,61);
+  assert.equal(new Set(req.records.map(r=>r.partNumber)).size,84);
+  assert.equal(req.records.every(r=>r.committedValue===0 && r.balanceToCommit===r.requestValue),true);
   assert.equal(req.records.find(r=>r.requestNumber==='GLT099002R2').expenseNature,'449052');
 });
 
@@ -130,19 +132,19 @@ for(const [ug,nd,count,demand,amount,remaining,deficit] of expected){
 
 test('current crossing never counts the same credit twice or offsets deficits between classifications',()=>{
   assert.equal(cross.length,6);
-  assert.equal(report.totals.requestCount,67);
-  assert.equal(cents(report.totals.balanceToCommit),131646779);
+  assert.equal(report.totals.requestCount,90);
+  assert.equal(cents(report.totals.balanceToCommit),257741771);
   assert.equal(cents(report.totals.creditAvailable),200262710);
-  assert.equal(cents(report.totals.creditRemaining),89262779);
-  assert.equal(cents(report.totals.deficit),20646848);
+  assert.equal(cents(report.totals.creditRemaining),65797781);
+  assert.equal(cents(report.totals.deficit),123276842);
   assert.equal(cents(report.totals.creditAvailable)+cents(report.totals.deficit)-cents(report.totals.balanceToCommit),cents(report.totals.creditRemaining));
   const lines=cross.flatMap(g=>g.creditSourceLines);
   assert.equal(lines.length,new Set(lines).size);
-  assert.equal(cross.filter(g=>g.status==='Crédito insuficiente').length,2);
+  assert.equal(cross.filter(g=>g.status==='Crédito insuficiente').length,3);
 });
 
 test('the detailed PDF data retains every PN and isolates filtered OM/Natureza without inflated credit',()=>{
-  assert.equal(report.omSummaries.length,3);assert.equal(report.requests.length,67);
+  assert.equal(report.omSummaries.length,3);assert.equal(report.requests.length,90);
   assert.ok(report.requests.every(r=>r.partNumber));
   const filtered=cross.filter(g=>g.ugCode==='120068'&&g.expenseNature==='339039');
   const r=buildDetailedCrossReportData(filtered,req.records);
