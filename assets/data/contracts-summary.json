@@ -73,5 +73,14 @@
       "saldoSiloms": 111192505.3,
       "valorEmpenhar": 425090112.37
     }
+  },
+  "lastInstitutionalCorrection": {
+    "date": "2026-09-18",
+    "contract": "001/CABW-PAMASP/2025",
+    "field": "ordenadorDespesas",
+    "before": "CABW",
+    "after": "PAMASP",
+    "displayAfter": "PAMA-SP",
+    "source": "CT 001_CABW-PAMASP_2025.pdf"
   }
 }

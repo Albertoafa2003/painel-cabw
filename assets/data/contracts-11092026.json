@@ -3541,7 +3541,7 @@
       "contrato": "240648",
       "numero": "001/CABW-PAMASP/2025",
       "unidade": "PAMASP",
-      "ordenadorDespesas": "CABW",
+      "ordenadorDespesas": "PAMASP",
       "cage": "7CAV4",
       "empresa": "FLORIDA SUPPLY USA, INC.",
       "objetoResumo": "AQUISICAO DE CINCO MOTORES OVERHAULED PT6A-114A",
@@ -3577,7 +3577,18 @@
         "sheet": "Sheet0",
         "row": 84,
         "date": "2026-09-11"
-      }
+      },
+      "fieldCorrections": [
+        {
+          "field": "ordenadorDespesas",
+          "before": "CABW",
+          "after": "PAMASP",
+          "displayAfter": "PAMA-SP",
+          "date": "2026-09-18",
+          "source": "CT 001_CABW-PAMASP_2025.pdf",
+          "basis": "Documento encaminhado em 18/09/2026 informa que o Contrato 001/CABW-PAMASP/2025 é de titularidade do PAMA-SP."
+        }
+      ]
     },
     {
       "id": 89,
