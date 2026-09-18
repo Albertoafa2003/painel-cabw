@@ -1,0 +1,48 @@
+{
+  "buildDate": "2026-09-18",
+  "basePackage": "cabw_site_requisicoes_14092026_VERIFICADO.zip",
+  "update": "Ordenador de Despesas do Contrato 001/CABW-PAMASP/2025 alterado de CABW para PAMASP (PAMA-SP).",
+  "source": "CT 001_CABW-PAMASP_2025.pdf",
+  "contractsTotal": 137,
+  "duplicateContractNumbers": 0,
+  "updatedPagesWithContractsData": [
+    "prestacao-contas.html",
+    "prestacao-contas-cabw.html",
+    "contratos-administrativos.html",
+    "fms.html",
+    "contratos-finalisticos.html",
+    "contratos.html",
+    "prestacao-contas-oms.html",
+    "governanca-cabw-numeros.html"
+  ],
+  "checks": {
+    "targetContractOccurrences": 1,
+    "beforeOrdenador": "CABW",
+    "afterOrdenadorCanonical": "PAMASP",
+    "afterOrdenadorDisplay": "PAMA-SP",
+    "contractsTotal": 137,
+    "uniqueContractNumbers": 137,
+    "otherContractRecordsChanged": 0,
+    "targetOtherFieldsPreserved": true,
+    "contractMonitoringRecordPreserved": true,
+    "htmlPagesChecked": 39,
+    "htmlDuplicateIdFiles": 0,
+    "missingLocalReferences": 0,
+    "jsFilesSyntaxChecked": 25,
+    "jsSyntaxFailures": 0,
+    "testFilesExecuted": 9,
+    "testSubchecksPassed": 102,
+    "testFailures": 0,
+    "cacheBustedPages": 8
+  },
+  "evidence": {
+    "document": "CT 001_CABW-PAMASP_2025.pdf",
+    "documentDate": "2026-09-18",
+    "finding": "O documento afirma que o contrato é de titularidade do PAMA-SP."
+  },
+  "preservedPositions": {
+    "contractsBase": "11/09/2026 + correção institucional de 18/09/2026",
+    "credit": "11/09/2026",
+    "requisitions": "14/09/2026"
+  }
+}
