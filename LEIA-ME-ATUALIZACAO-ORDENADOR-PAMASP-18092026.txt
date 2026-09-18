@@ -1,0 +1,12 @@
+PAINEL CABW — ATUALIZAÇÃO DE 18/09/2026
+
+Correção pontual:
+- Contrato: 001/CABW-PAMASP/2025
+- Empresa: FLORIDA SUPPLY USA, INC.
+- Ordenador de Despesas anterior: CABW
+- Ordenador de Despesas correto: PAMA-SP (valor canônico no sistema: PAMASP)
+
+Fonte: CT 001_CABW-PAMASP_2025.pdf, encaminhado em 18/09/2026.
+O documento informa que o contrato é de titularidade do PAMA-SP.
+
+Todos os demais dados e bases do site foram preservados.
