@@ -1,0 +1,814 @@
+{
+  "generatedAt": "2026-09-21",
+  "sourceFile": "CONTROLE REPARO - SGT ROZENDO - atz PAINEL 21SET.xlsx",
+  "sourceSheet": "PO's 2025 - 2026",
+  "referenceDate": "2026-09-21",
+  "decision": "Opção B — manter correções anteriormente confirmadas",
+  "previousRecords": 113,
+  "currentRecords": 160,
+  "uniquePos": 81,
+  "retainedRecords": 113,
+  "addedRecords": 47,
+  "removedRecords": 0,
+  "changedRetainedRecords": 13,
+  "added": [
+    {
+      "id": "089cf010f807bbf6b8aef85b4cc08766ac007cf109bc3f8a89a1b40454e592c4",
+      "po": "26T001054",
+      "requisition": "SPTR10003A7",
+      "partNumber": "3024862",
+      "serialNumber": "15EK13580",
+      "realStatus": "2-Item Chegou CTLA",
+      "originOm": "PAMA-SP"
+    },
+    {
+      "id": "9ebdc40884a78a519b24a932b20aa7fa60a758696d55e7425816621e2d853c65",
+      "po": "26T001054",
+      "requisition": "SPTR10004A7",
+      "partNumber": "3024862",
+      "serialNumber": "12140",
+      "realStatus": "2-Item Chegou CTLA",
+      "originOm": "PAMA-SP"
+    },
+    {
+      "id": "ae871bf51f76aec3f858c6821ccef7e3a8d244573953e7feba9b04a6d544366b",
+      "po": "26T001054",
+      "requisition": "SPTR10005A7",
+      "partNumber": "3024862",
+      "serialNumber": "HLACW992",
+      "realStatus": "2-Item Chegou CTLA",
+      "originOm": "PAMA-SP"
+    },
+    {
+      "id": "d26b9d1cb166c914dcfb0b6e2b8c7d9d6b6a0d60ea8953066613b3b85f3eb645",
+      "po": "26T001055",
+      "requisition": "SPTR10006A7",
+      "partNumber": "3024862",
+      "serialNumber": "BL25",
+      "realStatus": "2-Item Chegou CTLA",
+      "originOm": "PAMA-SP"
+    },
+    {
+      "id": "d05a9f852593d94f24ba8d7e02ff559c3f7f1c9b88ba1b2a3964176958d02bfd",
+      "po": "26T001056",
+      "requisition": "SPTR13902F5",
+      "partNumber": "22253350",
+      "serialNumber": "3019",
+      "realStatus": "2-Item Chegou CTLA",
+      "originOm": "PAMA-SP"
+    },
+    {
+      "id": "82db933dfc43524c2128378c0a53cf2cd9183201dd9b94f4f62aa7aa92ee25fd",
+      "po": "26T001057",
+      "requisition": "SPTR10007T1",
+      "partNumber": "3024862",
+      "serialNumber": "59CW",
+      "realStatus": "2-Item Chegou CTLA",
+      "originOm": "PAMA-SP"
+    },
+    {
+      "id": "20b5a5cd57f56db97c22259e2e41e0813f2c1e22c445d21ab49a02d8a89f9dae",
+      "po": "26T001057",
+      "requisition": "SPTR10008T1",
+      "partNumber": "3024862",
+      "serialNumber": "Y2203",
+      "realStatus": "2-Item Chegou CTLA",
+      "originOm": "PAMA-SP"
+    },
+    {
+      "id": "0731a75de956556d3490d2fca088dd98efa0b0eafcb7e4a33240773551b4dfef",
+      "po": "26T001058",
+      "requisition": "SPTR09801A7",
+      "partNumber": "3032151",
+      "serialNumber": "711B",
+      "realStatus": "1-Empenho Aprovado",
+      "originOm": "PAMA-SP"
+    },
+    {
+      "id": "66bbef121301259dfe05989befc79d1faf952f676682f27947fc53894ad9236d",
+      "po": "26T001058",
+      "requisition": "SPTR09802A7",
+      "partNumber": "3032151",
+      "serialNumber": "HLAAA191",
+      "realStatus": "1-Empenho Aprovado",
+      "originOm": "PAMA-SP"
+    },
+    {
+      "id": "91d51daf158b6e794e38b07697d84700169851fd21875a13272fc03759e5e835",
+      "po": "26T001059",
+      "requisition": "SPTR09604F5",
+      "partNumber": "2562A13M",
+      "serialNumber": "346-42",
+      "realStatus": "1-Empenho Aprovado",
+      "originOm": "PAMA-SP"
+    },
+    {
+      "id": "ed596847c37720dda6f128e84c5fd3f21f7795e01647e380394ac484369ff327",
+      "po": "26T001059",
+      "requisition": "SPTR09605F5",
+      "partNumber": "2562A13M",
+      "serialNumber": "GST04411",
+      "realStatus": "1-Empenho Aprovado",
+      "originOm": "PAMA-SP"
+    },
+    {
+      "id": "703af3fa1acf9ed48bfcc4bc5b7eb0cf058473b26667971789c618b7cf2677dc",
+      "po": "26T001059",
+      "requisition": "SPTR09602F5",
+      "partNumber": "2562A13M",
+      "serialNumber": "377-378",
+      "realStatus": "1-Empenho Aprovado",
+      "originOm": "PAMA-SP"
+    },
+    {
+      "id": "7e86d10802b30f91eae594983dffea6218c6bdeb0f9efe00218072877c399c12",
+      "po": "26T001059",
+      "requisition": "SPTR09603F5",
+      "partNumber": "2562A13M",
+      "serialNumber": "495-18",
+      "realStatus": "1-Empenho Aprovado",
+      "originOm": "PAMA-SP"
+    },
+    {
+      "id": "219004127bc84aa29b8e8a28f542df932ad37feb517f316bafbb847a1037144f",
+      "po": "26T001060",
+      "requisition": "SPTR09806T1",
+      "partNumber": "3032151",
+      "serialNumber": "2C072",
+      "realStatus": "1-Empenho Aprovado",
+      "originOm": "PAMA-SP"
+    },
+    {
+      "id": "519c78ce59b2fe25352893b4d5cf0f7b22996724e52bb965447f4f510335b948",
+      "po": "26T001061",
+      "requisition": "SPTR10009T1",
+      "partNumber": "3024862",
+      "serialNumber": "2174",
+      "realStatus": "1-Empenho Aprovado",
+      "originOm": "PAMA-SP"
+    },
+    {
+      "id": "fb957fb89f7aea02109ac226b8a164389a3512aeff560f72b0d2efe94a948c57",
+      "po": "26T001062",
+      "requisition": "SPTR09805T1",
+      "partNumber": "3032151",
+      "serialNumber": "414946",
+      "realStatus": "1-Empenho Aprovado",
+      "originOm": "PAMA-SP"
+    },
+    {
+      "id": "bf41d49da5fbf87254648d59d724b62f0d1b286c7aea40d035201db8974ec529",
+      "po": "26T001063",
+      "requisition": "SPTR13901F5",
+      "partNumber": "20110",
+      "serialNumber": "5046-8",
+      "realStatus": "2-Item Chegou CTLA",
+      "originOm": "PAMA-SP"
+    },
+    {
+      "id": "91aacac2b51526dff7c50dcc84f80ce0c36bf85341a24a6fe6dd32d46adde990",
+      "po": "26T001064",
+      "requisition": "SPTR10501F5",
+      "partNumber": "22253350",
+      "serialNumber": "2415",
+      "realStatus": "2-Item Chegou CTLA",
+      "originOm": "PAMA-SP"
+    },
+    {
+      "id": "fd6c6e0633a9b4d6ced006e07b1887aed716dff500cf1827af102e7e73663b6a",
+      "po": "26T001064",
+      "requisition": "SPTR10502F5",
+      "partNumber": "22253350",
+      "serialNumber": "3025",
+      "realStatus": "2-Item Chegou CTLA",
+      "originOm": "PAMA-SP"
+    },
+    {
+      "id": "33fa5d7f802b008c0cbc054ebf14c6d77c490ef05de290b74a42246bea6c02fc",
+      "po": "26T001065",
+      "requisition": "SPTR09606F5",
+      "partNumber": "20110",
+      "serialNumber": "5046-14",
+      "realStatus": "2-Item Chegou CTLA",
+      "originOm": "PAMA-SP"
+    },
+    {
+      "id": "8301413604228bd0471e5a4c79fe0d5928f14a5f6676f9f8b251ac27e0543450",
+      "po": "26T001069",
+      "requisition": "SPTR11201F5",
+      "partNumber": "3260079-0102",
+      "serialNumber": "112119",
+      "realStatus": "2-Item Chegou CTLA",
+      "originOm": "PAMA-SP"
+    },
+    {
+      "id": "a8f8e7bbb4d548bfc237b024ffa78511cacd0a91a581d2ec1b1ef8c92e07ced0",
+      "po": "26T001069",
+      "requisition": "SPTR11202F5",
+      "partNumber": "3260079-0102",
+      "serialNumber": "10041",
+      "realStatus": "2-Item Chegou CTLA",
+      "originOm": "PAMA-SP"
+    },
+    {
+      "id": "39d691bf39b660414704dc3570f1123cf1f9e5baf8fbc4ad886808e19b2d9853",
+      "po": "26T001069",
+      "requisition": "SPTR11203F5",
+      "partNumber": "3260079-0102",
+      "serialNumber": "15097",
+      "realStatus": "2-Item Chegou CTLA",
+      "originOm": "PAMA-SP"
+    },
+    {
+      "id": "df2096284c00b8bda6ec6b7d70d556320f48fc8e893e5454503122b73f0c1478",
+      "po": "26T001069",
+      "requisition": "SPTR11204F5",
+      "partNumber": "3260079-0102",
+      "serialNumber": "15099",
+      "realStatus": "2-Item Chegou CTLA",
+      "originOm": "PAMA-SP"
+    },
+    {
+      "id": "6c29ee686234aa34a324c513dcaf81faaa6f0cba13efe10481a63cc0fe6deabb",
+      "po": "26T001069",
+      "requisition": "SPTR11205F5",
+      "partNumber": "3260079-0102",
+      "serialNumber": "10044",
+      "realStatus": "2-Item Chegou CTLA",
+      "originOm": "PAMA-SP"
+    },
+    {
+      "id": "9960688db531477edc7d665011d7df9a711dc4a45e3e8c66a38591f542a6b1c0",
+      "po": "26T001069",
+      "requisition": "SPTR11901F5",
+      "partNumber": "3261163-0101",
+      "serialNumber": "12568",
+      "realStatus": "2-Item Chegou CTLA",
+      "originOm": "PAMA-SP"
+    },
+    {
+      "id": "06777f82524c8cfa18242e730f1ff7b0fe2194b7a0a14cc2766ae5f069850969",
+      "po": "26T001070",
+      "requisition": "SPTR07701F5",
+      "partNumber": "3261163-0101",
+      "serialNumber": "54869",
+      "realStatus": "2-Item Chegou CTLA",
+      "originOm": "PAMA-SP"
+    },
+    {
+      "id": "45d86b4c0648f32853909176e8e5895b2edcc29c27542d7f42057519352530bb",
+      "po": "26T001070",
+      "requisition": "SPTR07801F5",
+      "partNumber": "3261163-0101",
+      "serialNumber": "188643",
+      "realStatus": "2-Item Chegou CTLA",
+      "originOm": "PAMA-SP"
+    },
+    {
+      "id": "b8ad0d232268440c0f391cc1b43a7333a9aa0f48ed44deced15a90168d110914",
+      "po": "26T001070",
+      "requisition": "SPTR07802F5",
+      "partNumber": "3261163-0101",
+      "serialNumber": "140542",
+      "realStatus": "2-Item Chegou CTLA",
+      "originOm": "PAMA-SP"
+    },
+    {
+      "id": "c980c224d3793916ed73a46d123729c78434bc6cd537d310f2a43cf67d77a695",
+      "po": "26T001070",
+      "requisition": "SPTR07803F5",
+      "partNumber": "3261163-0101",
+      "serialNumber": "31152",
+      "realStatus": "2-Item Chegou CTLA",
+      "originOm": "PAMA-SP"
+    },
+    {
+      "id": "7e48755d3be27fc8fb3b8f9b3dffebe32e81982cec3d5ea3195b0a2fc2dbb68a",
+      "po": "26T001070",
+      "requisition": "SPTR07804F5",
+      "partNumber": "3261163-0101",
+      "serialNumber": "54870",
+      "realStatus": "2-Item Chegou CTLA",
+      "originOm": "PAMA-SP"
+    },
+    {
+      "id": "45462436aad52eefb698852184369d70b80fcaceff93ff8b37075142be9d8a28",
+      "po": "26T001070",
+      "requisition": "SPTR08901F5",
+      "partNumber": "3261163-0101",
+      "serialNumber": "146733",
+      "realStatus": "2-Item Chegou CTLA",
+      "originOm": "PAMA-SP"
+    },
+    {
+      "id": "c3d557af2d5eee3467b67c8da97914e274b553f91e43a3a7517218ced9f841dd",
+      "po": "26T001071",
+      "requisition": "SPTR09702F5",
+      "partNumber": "3261163-0101",
+      "serialNumber": "9394",
+      "realStatus": "2-Item Chegou CTLA",
+      "originOm": "PAMA-SP"
+    },
+    {
+      "id": "7fa8c7ecdd524f2372b22b4e5ddc670d6ae5fbf24b0fd46e29005bcfbb39eba8",
+      "po": "26T001071",
+      "requisition": "SPTR09703F5",
+      "partNumber": "3261163-0101",
+      "serialNumber": "104",
+      "realStatus": "2-Item Chegou CTLA",
+      "originOm": "PAMA-SP"
+    },
+    {
+      "id": "c039b3ba39032458881b858d318c43c5baedc962d720d627d86034ef33b43a8c",
+      "po": "26T001071",
+      "requisition": "SPTR09704F5",
+      "partNumber": "3261163-0101",
+      "serialNumber": "58151",
+      "realStatus": "2-Item Chegou CTLA",
+      "originOm": "PAMA-SP"
+    },
+    {
+      "id": "c0245ff07cd9cdb8def816258f786d14d617f0be06d6bc817c6885de1e5075db",
+      "po": "26T001072",
+      "requisition": "SPTR08202F5",
+      "partNumber": "5035L000-1",
+      "serialNumber": "L2988",
+      "realStatus": "2-Item Chegou CTLA",
+      "originOm": "PAMA-SP"
+    },
+    {
+      "id": "5a26f9fdeb28a0eec2e3dbee026bac0b582f57aa75fe1195efabb349d7677d87",
+      "po": "26T001072",
+      "requisition": "SPTR08301F5",
+      "partNumber": "5035L000-1",
+      "serialNumber": "L1929",
+      "realStatus": "2-Item Chegou CTLA",
+      "originOm": "PAMA-SP"
+    },
+    {
+      "id": "a8bd5ca32ec640e20a7b471537dbce3811ed8c9d1b9da8d2570c9fad2ed0c113",
+      "po": "26T001072",
+      "requisition": "SPTR08302F5",
+      "partNumber": "5035L000-1",
+      "serialNumber": "L1872A",
+      "realStatus": "2-Item Chegou CTLA",
+      "originOm": "PAMA-SP"
+    },
+    {
+      "id": "b79a13b0949d225fe3a40a5faf64a3cc1300da056cb64544138a26c5696d5cfe",
+      "po": "26T001072",
+      "requisition": "SPTR08303F5",
+      "partNumber": "5035L000-1",
+      "serialNumber": "1923",
+      "realStatus": "2-Item Chegou CTLA",
+      "originOm": "PAMA-SP"
+    },
+    {
+      "id": "bbe055183f49871fd897e8a3fde05e3501b438b5e5dfb1a3369a7330f071c7bc",
+      "po": "26T001073",
+      "requisition": "SPTR07101F5",
+      "partNumber": "181RA38R176",
+      "serialNumber": "135",
+      "realStatus": "2-Item Chegou CTLA",
+      "originOm": "PAMA-SP"
+    },
+    {
+      "id": "a673dc3ef7cff07b2e87fb8d1965e3e812e1d19d4b7e39a269341da7fc744552",
+      "po": "26T001073",
+      "requisition": "SPTR07104F5",
+      "partNumber": "181RA38R176",
+      "serialNumber": "2378",
+      "realStatus": "2-Item Chegou CTLA",
+      "originOm": "PAMA-SP"
+    },
+    {
+      "id": "0147c893b72f3413cc07dc4d0da6bdc8b1b7ea6375d422d497ccdc645d89873d",
+      "po": "26T001200",
+      "requisition": "SPTR09807A7",
+      "partNumber": "3032151",
+      "serialNumber": "C10280",
+      "realStatus": "1-Empenho Aprovado",
+      "originOm": "PAMA-SP"
+    },
+    {
+      "id": "d0fbc99658b85ca008f320c0483e292798aa90fb9c6729b11f210899871ca1da",
+      "po": "26T001200",
+      "requisition": "SPTR09808A7",
+      "partNumber": "3032151",
+      "serialNumber": "4B574",
+      "realStatus": "1-Empenho Aprovado",
+      "originOm": "PAMA-SP"
+    },
+    {
+      "id": "6d806a3423472269d0d8f595cec74454d75223b3c1da77731a287c01f3fb38d8",
+      "po": "26T001201",
+      "requisition": "SPTR09810A7",
+      "partNumber": "3032151",
+      "serialNumber": "HLA502D",
+      "realStatus": "1-Empenho Aprovado",
+      "originOm": "PAMA-SP"
+    },
+    {
+      "id": "3cd2073a9fc42053720bba8a43322179e0f4f398e717b7fe0a70961ed5f56316",
+      "po": "26T001202",
+      "requisition": "SPTR10001A7",
+      "partNumber": "3018262CL",
+      "serialNumber": "B456",
+      "realStatus": "1-Empenho Aprovado",
+      "originOm": "PAMA-SP"
+    },
+    {
+      "id": "deb4e6526a9ad0777ed9568efea70b6b00c4d36b8d4264d9a91452625147ea7f",
+      "po": "26T001207",
+      "requisition": "SPTR09804A7",
+      "partNumber": "3032151",
+      "serialNumber": "HLAAA547",
+      "realStatus": "1-Empenho Aprovado",
+      "originOm": "PAMA-SP"
+    },
+    {
+      "id": "280cf0210f96db5ad7b3d70ac47777f416f67a6d95eb4f6187977df28898d8d7",
+      "po": "26T001207",
+      "requisition": "SPTR10002A7",
+      "partNumber": "3043682CL02",
+      "serialNumber": "HLAAA735",
+      "realStatus": "1-Empenho Aprovado",
+      "originOm": "PAMA-SP"
+    }
+  ],
+  "removed": [],
+  "changedRetained": [
+    {
+      "id": "1af971d28b06a8b8b8f4014cb21b8f392f46af3d78d59627d0b3c369b872aded",
+      "po": "26T000915",
+      "requisition": "SPTR09803A7",
+      "differences": {
+        "receivedAtRepairerDate": {
+          "before": null,
+          "after": "2026-08-17"
+        },
+        "trackingToRepairer": {
+          "before": null,
+          "after": "684515411, AWB 8754-5519-8514"
+        },
+        "tdrDueDate": {
+          "before": null,
+          "after": "2026-10-06"
+        }
+      }
+    },
+    {
+      "id": "2624b6b4280f36d65cfe03a7bfafb34072f1ead46930424c48febb3a1e615cf8",
+      "po": "26T000548",
+      "requisition": "SPTR06201F5",
+      "differences": {
+        "realStatus": {
+          "before": "4-Item chegou CABW/CABE",
+          "after": "6-Item no Reparador"
+        },
+        "receivedAtRepairerDate": {
+          "before": null,
+          "after": "2026-08-20"
+        },
+        "trackingToRepairer": {
+          "before": null,
+          "after": "875746366356"
+        },
+        "tdrDueDate": {
+          "before": null,
+          "after": "2026-10-09"
+        },
+        "tdrDeliveryRaw": {
+          "before": null,
+          "after": "2026-09-14"
+        },
+        "subprocessRaw": {
+          "before": null,
+          "after": "330889"
+        }
+      }
+    },
+    {
+      "id": "354f857e75d58d4700c43128fee82edd5112b12697a3958d8fccfc075c0e2052",
+      "po": "26T000548",
+      "requisition": "SPTR06204F5",
+      "differences": {
+        "realStatus": {
+          "before": "4-Item chegou CABW/CABE",
+          "after": "6-Item no Reparador"
+        },
+        "receivedAtRepairerDate": {
+          "before": null,
+          "after": "2026-08-20"
+        },
+        "trackingToRepairer": {
+          "before": null,
+          "after": "875746366356"
+        },
+        "tdrDueDate": {
+          "before": null,
+          "after": "2026-10-09"
+        },
+        "tdrDeliveryRaw": {
+          "before": null,
+          "after": "2026-09-14"
+        },
+        "subprocessRaw": {
+          "before": null,
+          "after": "330889"
+        }
+      }
+    },
+    {
+      "id": "3a5649e7e6677e8e6eea9c71732e8d74b85352256b7ac4e810fde77eefd618bb",
+      "po": "26T000814",
+      "requisition": "GLSR07121P3",
+      "differences": {
+        "realStatus": {
+          "before": "1-Empenho Aprovado",
+          "after": "3-Item Exp CTLA"
+        },
+        "receivedAtRepairerDate": {
+          "before": null,
+          "after": "2026-09-18"
+        },
+        "trackingToRepairer": {
+          "before": null,
+          "after": "AWB 047-35934076"
+        },
+        "tdrDueDate": {
+          "before": null,
+          "after": "2026-11-07"
+        }
+      }
+    },
+    {
+      "id": "3b1e76f6743417b2db587ad6be83944fbe29f3a0155b87752adbd97a08e7c847",
+      "po": "25T001028",
+      "requisition": "GLSR00801P3",
+      "differences": {
+        "realStatus": {
+          "before": "6-Item no Reparador",
+          "after": "7-Item Recebido"
+        },
+        "returnMaterialDate": {
+          "before": null,
+          "after": "2026-09-11"
+        }
+      }
+    },
+    {
+      "id": "5633795b141f24ef68bd779a6806d154a9af9b2ed278d8a82ced3d8a3f7cad29",
+      "po": "25T001028",
+      "requisition": "GLSR00802P3",
+      "differences": {
+        "realStatus": {
+          "before": "6-Item no Reparador",
+          "after": "7-Item Recebido"
+        },
+        "returnMaterialDate": {
+          "before": null,
+          "after": "2026-09-11"
+        }
+      }
+    },
+    {
+      "id": "5ef9d467790e623f4cfaee466bc40ef6f45b85adf9b9226387c695e6a3780cea",
+      "po": "26T000815",
+      "requisition": "GLSR07839P3",
+      "differences": {
+        "realStatus": {
+          "before": "1-Empenho Aprovado",
+          "after": "3-Item Exp CTLA"
+        },
+        "receivedAtRepairerDate": {
+          "before": null,
+          "after": "2026-09-18"
+        },
+        "trackingToRepairer": {
+          "before": null,
+          "after": "AWB 047-35934076"
+        },
+        "tdrDueDate": {
+          "before": null,
+          "after": "2026-11-07"
+        }
+      }
+    },
+    {
+      "id": "6d2a9a04f5adb3efe3b699b84c9f663fab953a2c5ed13f9d5c5acf3f11ff6e1f",
+      "po": "25T001961",
+      "requisition": "SPSR11401A7",
+      "differences": {
+        "realStatus": {
+          "before": "6-Item no Reparador",
+          "after": "7-Item Recebido"
+        },
+        "returnMaterialDate": {
+          "before": null,
+          "after": "2026-08-31"
+        }
+      }
+    },
+    {
+      "id": "7400396e6286c665ead3ad2feff32f9cf18128dcf8d02b4f4805a2c7100b5a83",
+      "po": "26T000548",
+      "requisition": "SPTR06205F5",
+      "differences": {
+        "realStatus": {
+          "before": "4-Item chegou CABW/CABE",
+          "after": "6-Item no Reparador"
+        },
+        "receivedAtRepairerDate": {
+          "before": null,
+          "after": "2026-08-20"
+        },
+        "trackingToRepairer": {
+          "before": null,
+          "after": "875746366356"
+        },
+        "tdrDueDate": {
+          "before": null,
+          "after": "2026-10-09"
+        },
+        "tdrDeliveryRaw": {
+          "before": null,
+          "after": "2026-09-14"
+        },
+        "subprocessRaw": {
+          "before": null,
+          "after": "330889"
+        }
+      }
+    },
+    {
+      "id": "c47a037a309214d74bd92ca2922d4a4556b4cd445ea9f3e91738cb2be1e6c662",
+      "po": "26T000548",
+      "requisition": "SPTR06202F5",
+      "differences": {
+        "realStatus": {
+          "before": "4-Item chegou CABW/CABE",
+          "after": "6-Item no Reparador"
+        },
+        "receivedAtRepairerDate": {
+          "before": null,
+          "after": "2026-08-20"
+        },
+        "trackingToRepairer": {
+          "before": null,
+          "after": "875746366356"
+        },
+        "tdrDueDate": {
+          "before": null,
+          "after": "2026-10-09"
+        },
+        "tdrDeliveryRaw": {
+          "before": null,
+          "after": "2026-09-14"
+        },
+        "subprocessRaw": {
+          "before": null,
+          "after": "330889"
+        }
+      }
+    },
+    {
+      "id": "ce58b491f2fdf50c8a0cd9389d6f0329e8449dba4caf02cfc21e3a3016a303b0",
+      "po": "26T000138",
+      "requisition": "SPSR04801A7",
+      "differences": {
+        "tdrDeliveryRaw": {
+          "before": null,
+          "after": "2026-09-02"
+        },
+        "subprocessRaw": {
+          "before": null,
+          "after": "330797"
+        },
+        "fichaRaw": {
+          "before": null,
+          "after": "2026-09-17"
+        },
+        "serviceDecision": {
+          "before": null,
+          "after": "BER"
+        },
+        "serviceAuthorizationOrAsIsDate": {
+          "before": null,
+          "after": "2026-09-17"
+        },
+        "repairDeliveryDays": {
+          "before": null,
+          "after": 30
+        },
+        "dpeFinalDate": {
+          "before": null,
+          "after": "2026-10-17"
+        }
+      }
+    },
+    {
+      "id": "d2c4dd3bf91812cced5ce229e3549336aab4c1ea115bb7d8506cbc429a1737db",
+      "po": "26T000815",
+      "requisition": "GLSR07841P3",
+      "differences": {
+        "realStatus": {
+          "before": "1-Empenho Aprovado",
+          "after": "3-Item Exp CTLA"
+        },
+        "receivedAtRepairerDate": {
+          "before": null,
+          "after": "2026-09-18"
+        },
+        "trackingToRepairer": {
+          "before": null,
+          "after": "AWB 047-35934076"
+        },
+        "tdrDueDate": {
+          "before": null,
+          "after": "2026-11-07"
+        }
+      }
+    },
+    {
+      "id": "f30e13e3b6136c65e37984a487bef75dd5c8584a97029e98a0940b34065d8c64",
+      "po": "25T001420",
+      "requisition": "GLSR00803P3",
+      "differences": {
+        "realStatus": {
+          "before": "6-Item no Reparador",
+          "after": "7-Item Recebido"
+        },
+        "returnMaterialDate": {
+          "before": null,
+          "after": "2026-09-11"
+        }
+      }
+    }
+  ],
+  "confirmedCorrectionsApplied": [
+    {
+      "po": "25T000160",
+      "field": "serviceAuthorizationOrAsIsDate",
+      "sourceValue": "2025-08-13",
+      "appliedValue": "2025-07-13"
+    },
+    {
+      "po": "26T000910",
+      "field": "nup",
+      "sourceValue": "67102.250284/2025-72",
+      "appliedValue": "67102.260284/2026-61"
+    },
+    {
+      "po": "26T000915",
+      "field": "nup",
+      "sourceValue": "67102.250285/2025-17",
+      "appliedValue": "67102.260285/2026-14"
+    }
+  ],
+  "counts": {
+    "status": {
+      "7-Item Recebido": 74,
+      "6-Item no Reparador": 16,
+      "2-Item Chegou CTLA": 51,
+      "3-Item Exp CTLA": 3,
+      "5-Item Exp Reparador": 1,
+      "1-Empenho Aprovado": 15
+    },
+    "stage": {
+      "CABW/CABE (retorno)": 74,
+      "Reparador": 16,
+      "Brasil / CTLA": 51,
+      "Trânsito ao Reparador": 4,
+      "Brasil/ OM Requisitante": 15
+    },
+    "originOm": {
+      "PAME-RJ": 4,
+      "PAMA-SP": 123,
+      "PAMA-GL": 31,
+      "PAMB-RJ": 2
+    },
+    "condition": {
+      "OVERHAUL": 31,
+      "REPAIR": 129
+    },
+    "tdr": {
+      "delivered": 85,
+      "overdue": 5,
+      "not-calculable": 66,
+      "pending": 4
+    },
+    "returnDeadline": {
+      "returned-on-time": 20,
+      "returned-late": 54,
+      "not-authorized": 79,
+      "overdue": 3,
+      "on-time": 3,
+      "due-30": 1
+    }
+  },
+  "notes": [
+    "COTAÇÃO SISCAB preservada para registros já existentes porque a planilha de 21/09/2026 não contém essa coluna.",
+    "VALOR ATUAL DO ITEM e OBS permanecem fora da importação automática conforme o esquema vigente; campos manuais existentes foram preservados."
+  ]
+}
