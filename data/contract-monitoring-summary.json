@@ -1,0 +1,94 @@
+{
+  "sourceFile": "RELATÓRIO DE CONTRATO - 11092026.xls",
+  "monitoringSource": "RelContrFin MONITORAMENTO CTT EM ANDAMENTO - ALERTA(3).xls",
+  "sheetName": "Sheet0",
+  "referenceDate": {
+    "iso": "2026-09-11",
+    "br": "11/09/2026"
+  },
+  "totalSourceRecords": 137,
+  "totalPanelRecords": 85,
+  "totalMonitored": 84,
+  "excludedRecords": 1,
+  "withObservation": 19,
+  "statusSummary": [
+    {
+      "code": "vencido",
+      "label": "Vencido",
+      "count": 2
+    },
+    {
+      "code": "ate-30",
+      "label": "Até 30 dias",
+      "count": 6
+    },
+    {
+      "code": "31-90",
+      "label": "31 a 90 dias",
+      "count": 11
+    },
+    {
+      "code": "91-150",
+      "label": "91 a 150 dias",
+      "count": 12
+    },
+    {
+      "code": "regular",
+      "label": "Acima de 150 dias",
+      "count": 48
+    },
+    {
+      "code": "sem-data",
+      "label": "Sem data de vigência",
+      "count": 5
+    },
+    {
+      "code": "desconsiderar",
+      "label": "Desconsiderar",
+      "count": 1
+    }
+  ],
+  "alertCount": 31,
+  "urgentCount": 8,
+  "totalEmpenhadoUsd": 264473495.55,
+  "totalFaturadoUsd": 169656463.54,
+  "saldoAFaturarUsd": 94817032.01,
+  "percentualFaturadoSobreEmpenhado": 64.15,
+  "currencyTotals": {
+    "EUR": {
+      "valorContrato": 18211512.11,
+      "totalEmpenhado": 12314733.75,
+      "totalFaturado": 10327520.16,
+      "saldoSilomsExt": 1987213.59,
+      "valorAEmpenhar": 5896778.36
+    },
+    "USD": {
+      "valorContrato": 632300907.73,
+      "totalEmpenhado": 250744281.7,
+      "totalFaturado": 157972287.96,
+      "saldoSilomsExt": 92771993.74,
+      "valorAEmpenhar": 381556626.03
+    }
+  },
+  "updateNotes": "Posição de 11/09/2026: atualização por número de contrato. U-TT e IPT mantidos separados, com a nomenclatura da nova planilha. Quatro exclusões e seis inclusões autorizadas. Campos institucionais, tipos e observações dos registros anteriores preservados. Situação gerencial calculada pela data final; datas ausentes não recebem prazo presumido.",
+  "sourceOnlyNotImported": [],
+  "preservedOutsideSource": [],
+  "removedContracts": [
+    "015/CABW/2021",
+    "016/CABW/2021",
+    "018/CABW-CISCEA/2025",
+    "019/CABW-CENIPA/2025"
+  ],
+  "addedContracts": [
+    "CT 012-CABW-2026",
+    "011/CABW-DECEA/2026",
+    "CT 013/CABW/2026",
+    "CT 016/CABW/2026",
+    "014/CABW-CISCEA/2026",
+    "015/CABW-CISCEA/2026"
+  ],
+  "renamedContracts": {
+    "004/CAE-PAMERJ/2025": "004/CAE-CABW-PAMERJ/2025",
+    "CNT 009/CABW-PAME-RJ/2026": "009/CABW-PAME-RJ/2026"
+  }
+}

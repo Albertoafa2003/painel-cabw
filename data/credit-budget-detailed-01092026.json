@@ -1,0 +1,4014 @@
+{
+  "metadata": {
+    "position": "01/09/2026",
+    "sourceFile": "CONRAZAO(20260903-153318).TXt",
+    "sourceGeneratedAt": "01/09/2026 09:08:34",
+    "positionLabel": "SETEMBRO - ABERTO",
+    "emitterUg": "120090",
+    "emitterManagement": "00001",
+    "account": "622110000",
+    "accountDescription": "Crédito Disponível",
+    "currency": "USD",
+    "recordCount": 102,
+    "groupedKeyCount": 87,
+    "totalCreditAvailable": 8420747.6,
+    "totalCreditAvailableText": "US$ 8.420.747,60",
+    "matchingKey": [
+      "ugCode",
+      "action",
+      "pi",
+      "expenseNature"
+    ],
+    "matchingPolicy": "Correspondência exata por UG/OM + Ação + PI + Natureza de Despesa completa, sem pontuação.",
+    "expenseNaturePolicy": "Código completo de seis dígitos.",
+    "generatedForSiteAt": "2026-09-03T15:33:18-04:00"
+  },
+  "records": [
+    {
+      "id": "credit-line-020",
+      "sourceLine": 20,
+      "isf": "N",
+      "accountIndicator": "1",
+      "ptres": "168579",
+      "action": "2000",
+      "actionDescription": "ADMINISTRAÇÃO DA UNIDADE",
+      "ptresDescription": "ADMINISTRAÇÃO DA UNIDADE",
+      "fundingSource": "1000000000",
+      "expenseNature": "339039",
+      "ugCode": "120111",
+      "om": "EMAER",
+      "ugName": "ESTADO-MAIOR DA AERONÁUTICA",
+      "pi": "D0000010000",
+      "creditAvailable": 1690.05,
+      "creditAvailableText": "US$ 1.690,05",
+      "debitCredit": "C",
+      "matchKey": "120111|2000|D0000010000|339039"
+    },
+    {
+      "id": "credit-line-021",
+      "sourceLine": 21,
+      "isf": "N",
+      "accountIndicator": "1",
+      "ptres": "168901",
+      "action": "2000",
+      "actionDescription": "ADMINISTRAÇÃO DA UNIDADE",
+      "ptresDescription": "ADMINISTRAÇÃO DA UNIDADE",
+      "fundingSource": "1000000000",
+      "expenseNature": "449052",
+      "ugCode": "120090",
+      "om": "CABW",
+      "ugName": "COMISSÃO AERONÁUTICA BRASILEIRA EM WASHINGTON",
+      "pi": "CA063100102",
+      "creditAvailable": 134.59,
+      "creditAvailableText": "US$ 134,59",
+      "debitCredit": "C",
+      "matchKey": "120090|2000|CA063100102|449052"
+    },
+    {
+      "id": "credit-line-022",
+      "sourceLine": 22,
+      "isf": "N",
+      "accountIndicator": "1",
+      "ptres": "168901",
+      "action": "2000",
+      "actionDescription": "ADMINISTRAÇÃO DA UNIDADE",
+      "ptresDescription": "ADMINISTRAÇÃO DA UNIDADE",
+      "fundingSource": "1000000000",
+      "expenseNature": "449052",
+      "ugCode": "120090",
+      "om": "CABW",
+      "ugName": "COMISSÃO AERONÁUTICA BRASILEIRA EM WASHINGTON",
+      "pi": "SF063100003",
+      "creditAvailable": 4838.86,
+      "creditAvailableText": "US$ 4.838,86",
+      "debitCredit": "C",
+      "matchKey": "120090|2000|SF063100003|449052"
+    },
+    {
+      "id": "credit-line-023",
+      "sourceLine": 23,
+      "isf": "N",
+      "accountIndicator": "1",
+      "ptres": "168901",
+      "action": "2000",
+      "actionDescription": "ADMINISTRAÇÃO DA UNIDADE",
+      "ptresDescription": "ADMINISTRAÇÃO DA UNIDADE",
+      "fundingSource": "1000000000",
+      "expenseNature": "449052",
+      "ugCode": "120111",
+      "om": "EMAER",
+      "ugName": "ESTADO-MAIOR DA AERONÁUTICA",
+      "pi": "EM0469ADITA",
+      "creditAvailable": 4010.0,
+      "creditAvailableText": "US$ 4.010,00",
+      "debitCredit": "C",
+      "matchKey": "120111|2000|EM0469ADITA|449052"
+    },
+    {
+      "id": "credit-line-024",
+      "sourceLine": 24,
+      "isf": "N",
+      "accountIndicator": "1",
+      "ptres": "168919",
+      "action": "2000",
+      "actionDescription": "ADMINISTRAÇÃO DA UNIDADE",
+      "ptresDescription": "ADMINISTRAÇÃO DA UNIDADE",
+      "fundingSource": "1050000140",
+      "expenseNature": "339030",
+      "ugCode": "120111",
+      "om": "EMAER",
+      "ugName": "ESTADO-MAIOR DA AERONÁUTICA",
+      "pi": "EM0469ADITA",
+      "creditAvailable": 700.25,
+      "creditAvailableText": "US$ 700,25",
+      "debitCredit": "C",
+      "matchKey": "120111|2000|EM0469ADITA|339030"
+    },
+    {
+      "id": "credit-line-025",
+      "sourceLine": 25,
+      "isf": "N",
+      "accountIndicator": "1",
+      "ptres": "168919",
+      "action": "2000",
+      "actionDescription": "ADMINISTRAÇÃO DA UNIDADE",
+      "ptresDescription": "ADMINISTRAÇÃO DA UNIDADE",
+      "fundingSource": "1050000140",
+      "expenseNature": "339030",
+      "ugCode": "120111",
+      "om": "EMAER",
+      "ugName": "ESTADO-MAIOR DA AERONÁUTICA",
+      "pi": "EM0519ADITA",
+      "creditAvailable": 0.74,
+      "creditAvailableText": "US$ 0,74",
+      "debitCredit": "C",
+      "matchKey": "120111|2000|EM0519ADITA|339030"
+    },
+    {
+      "id": "credit-line-026",
+      "sourceLine": 26,
+      "isf": "N",
+      "accountIndicator": "1",
+      "ptres": "168919",
+      "action": "2000",
+      "actionDescription": "ADMINISTRAÇÃO DA UNIDADE",
+      "ptresDescription": "ADMINISTRAÇÃO DA UNIDADE",
+      "fundingSource": "1050000140",
+      "expenseNature": "339039",
+      "ugCode": "120090",
+      "om": "CABW",
+      "ugName": "COMISSÃO AERONÁUTICA BRASILEIRA EM WASHINGTON",
+      "pi": "CA063100100",
+      "creditAvailable": 300.0,
+      "creditAvailableText": "US$ 300,00",
+      "debitCredit": "C",
+      "matchKey": "120090|2000|CA063100100|339039"
+    },
+    {
+      "id": "credit-line-027",
+      "sourceLine": 27,
+      "isf": "N",
+      "accountIndicator": "1",
+      "ptres": "168919",
+      "action": "2000",
+      "actionDescription": "ADMINISTRAÇÃO DA UNIDADE",
+      "ptresDescription": "ADMINISTRAÇÃO DA UNIDADE",
+      "fundingSource": "1050000140",
+      "expenseNature": "339039",
+      "ugCode": "120090",
+      "om": "CABW",
+      "ugName": "COMISSÃO AERONÁUTICA BRASILEIRA EM WASHINGTON",
+      "pi": "CA063100109",
+      "creditAvailable": 3539.7,
+      "creditAvailableText": "US$ 3.539,70",
+      "debitCredit": "C",
+      "matchKey": "120090|2000|CA063100109|339039"
+    },
+    {
+      "id": "credit-line-028",
+      "sourceLine": 28,
+      "isf": "N",
+      "accountIndicator": "1",
+      "ptres": "168919",
+      "action": "2000",
+      "actionDescription": "ADMINISTRAÇÃO DA UNIDADE",
+      "ptresDescription": "ADMINISTRAÇÃO DA UNIDADE",
+      "fundingSource": "1050000140",
+      "expenseNature": "339039",
+      "ugCode": "120090",
+      "om": "CABW",
+      "ugName": "COMISSÃO AERONÁUTICA BRASILEIRA EM WASHINGTON",
+      "pi": "CA063100200",
+      "creditAvailable": 40.38,
+      "creditAvailableText": "US$ 40,38",
+      "debitCredit": "C",
+      "matchKey": "120090|2000|CA063100200|339039"
+    },
+    {
+      "id": "credit-line-029",
+      "sourceLine": 29,
+      "isf": "N",
+      "accountIndicator": "1",
+      "ptres": "168919",
+      "action": "2000",
+      "actionDescription": "ADMINISTRAÇÃO DA UNIDADE",
+      "ptresDescription": "ADMINISTRAÇÃO DA UNIDADE",
+      "fundingSource": "1050000140",
+      "expenseNature": "339039",
+      "ugCode": "120090",
+      "om": "CABW",
+      "ugName": "COMISSÃO AERONÁUTICA BRASILEIRA EM WASHINGTON",
+      "pi": "CA063100600",
+      "creditAvailable": 12741.7,
+      "creditAvailableText": "US$ 12.741,70",
+      "debitCredit": "C",
+      "matchKey": "120090|2000|CA063100600|339039"
+    },
+    {
+      "id": "credit-line-030",
+      "sourceLine": 30,
+      "isf": "N",
+      "accountIndicator": "1",
+      "ptres": "168919",
+      "action": "2000",
+      "actionDescription": "ADMINISTRAÇÃO DA UNIDADE",
+      "ptresDescription": "ADMINISTRAÇÃO DA UNIDADE",
+      "fundingSource": "1050000140",
+      "expenseNature": "339039",
+      "ugCode": "120091",
+      "om": "CABE",
+      "ugName": "COMISSÃO AERONÁUTICA BRASILEIRA NA EUROPA",
+      "pi": "CA063100600",
+      "creditAvailable": 8390.54,
+      "creditAvailableText": "US$ 8.390,54",
+      "debitCredit": "C",
+      "matchKey": "120091|2000|CA063100600|339039"
+    },
+    {
+      "id": "credit-line-031",
+      "sourceLine": 31,
+      "isf": "N",
+      "accountIndicator": "1",
+      "ptres": "168919",
+      "action": "2000",
+      "actionDescription": "ADMINISTRAÇÃO DA UNIDADE",
+      "ptresDescription": "ADMINISTRAÇÃO DA UNIDADE",
+      "fundingSource": "1050000140",
+      "expenseNature": "339039",
+      "ugCode": "120111",
+      "om": "EMAER",
+      "ugName": "ESTADO-MAIOR DA AERONÁUTICA",
+      "pi": "EM0469ADITA",
+      "creditAvailable": 6831.69,
+      "creditAvailableText": "US$ 6.831,69",
+      "debitCredit": "C",
+      "matchKey": "120111|2000|EM0469ADITA|339039"
+    },
+    {
+      "id": "credit-line-032",
+      "sourceLine": 32,
+      "isf": "N",
+      "accountIndicator": "1",
+      "ptres": "168919",
+      "action": "2000",
+      "actionDescription": "ADMINISTRAÇÃO DA UNIDADE",
+      "ptresDescription": "ADMINISTRAÇÃO DA UNIDADE",
+      "fundingSource": "1050000140",
+      "expenseNature": "339039",
+      "ugCode": "120111",
+      "om": "EMAER",
+      "ugName": "ESTADO-MAIOR DA AERONÁUTICA",
+      "pi": "EM0519ADITA",
+      "creditAvailable": 13.07,
+      "creditAvailableText": "US$ 13,07",
+      "debitCredit": "C",
+      "matchKey": "120111|2000|EM0519ADITA|339039"
+    },
+    {
+      "id": "credit-line-033",
+      "sourceLine": 33,
+      "isf": "N",
+      "accountIndicator": "1",
+      "ptres": "168919",
+      "action": "2000",
+      "actionDescription": "ADMINISTRAÇÃO DA UNIDADE",
+      "ptresDescription": "ADMINISTRAÇÃO DA UNIDADE",
+      "fundingSource": "1050000140",
+      "expenseNature": "339040",
+      "ugCode": "120111",
+      "om": "EMAER",
+      "ugName": "ESTADO-MAIOR DA AERONÁUTICA",
+      "pi": "EM0469ADITA",
+      "creditAvailable": 200.0,
+      "creditAvailableText": "US$ 200,00",
+      "debitCredit": "C",
+      "matchKey": "120111|2000|EM0469ADITA|339040"
+    },
+    {
+      "id": "credit-line-034",
+      "sourceLine": 34,
+      "isf": "N",
+      "accountIndicator": "1",
+      "ptres": "214537",
+      "action": "2004",
+      "actionDescription": "ASSISTÊNCIA MÉDICA E ODONTOLÓGICA",
+      "ptresDescription": "ASSISTÊNCIA MÉDICA E ODONTOLÓGICA",
+      "fundingSource": "1000000000",
+      "expenseNature": "339093",
+      "ugCode": "120090",
+      "om": "CABW",
+      "ugName": "COMISSÃO AERONÁUTICA BRASILEIRA EM WASHINGTON",
+      "pi": "CG190904100",
+      "creditAvailable": 7213.68,
+      "creditAvailableText": "US$ 7.213,68",
+      "debitCredit": "C",
+      "matchKey": "120090|2004|CG190904100|339093"
+    },
+    {
+      "id": "credit-line-035",
+      "sourceLine": 35,
+      "isf": "N",
+      "accountIndicator": "1",
+      "ptres": "228676",
+      "action": "151S",
+      "actionDescription": "IMPLANTAÇÃO E DESENVOLVIMENTO",
+      "ptresDescription": "IMPLANTAÇÃO E DESENVOLVIMENTO",
+      "fundingSource": "1000000000",
+      "expenseNature": "339039",
+      "ugCode": "120115",
+      "om": "COMAE",
+      "ugName": "COMANDO DE OPERAÇÕES AEROESPACIAIS",
+      "pi": "P0011690200",
+      "creditAvailable": 2000.0,
+      "creditAvailableText": "US$ 2.000,00",
+      "debitCredit": "C",
+      "matchKey": "120115|151S|P0011690200|339039"
+    },
+    {
+      "id": "credit-line-036",
+      "sourceLine": 36,
+      "isf": "N",
+      "accountIndicator": "1",
+      "ptres": "228692",
+      "action": "20X7",
+      "actionDescription": "EMPREGO CONJUNTO OU COMBINADO DAS FFAA",
+      "ptresDescription": "EMPREGO CONJUNTO OU COMBINADO DAS FFAA",
+      "fundingSource": "1000000000",
+      "expenseNature": "339030",
+      "ugCode": "120111",
+      "om": "EMAER",
+      "ugName": "ESTADO-MAIOR DA AERONÁUTICA",
+      "pi": "D0000010000",
+      "creditAvailable": 513.82,
+      "creditAvailableText": "US$ 513,82",
+      "debitCredit": "C",
+      "matchKey": "120111|20X7|D0000010000|339030"
+    },
+    {
+      "id": "credit-line-037",
+      "sourceLine": 37,
+      "isf": "N",
+      "accountIndicator": "1",
+      "ptres": "228692",
+      "action": "20X7",
+      "actionDescription": "EMPREGO CONJUNTO OU COMBINADO DAS FFAA",
+      "ptresDescription": "EMPREGO CONJUNTO OU COMBINADO DAS FFAA",
+      "fundingSource": "1000000000",
+      "expenseNature": "339033",
+      "ugCode": "120111",
+      "om": "EMAER",
+      "ugName": "ESTADO-MAIOR DA AERONÁUTICA",
+      "pi": "D0000010000",
+      "creditAvailable": 281.03,
+      "creditAvailableText": "US$ 281,03",
+      "debitCredit": "C",
+      "matchKey": "120111|20X7|D0000010000|339033"
+    },
+    {
+      "id": "credit-line-038",
+      "sourceLine": 38,
+      "isf": "N",
+      "accountIndicator": "1",
+      "ptres": "228692",
+      "action": "20X7",
+      "actionDescription": "EMPREGO CONJUNTO OU COMBINADO DAS FFAA",
+      "ptresDescription": "EMPREGO CONJUNTO OU COMBINADO DAS FFAA",
+      "fundingSource": "1000000000",
+      "expenseNature": "339039",
+      "ugCode": "120111",
+      "om": "EMAER",
+      "ugName": "ESTADO-MAIOR DA AERONÁUTICA",
+      "pi": "D0000010000",
+      "creditAvailable": 1185.67,
+      "creditAvailableText": "US$ 1.185,67",
+      "debitCredit": "C",
+      "matchKey": "120111|20X7|D0000010000|339039"
+    },
+    {
+      "id": "credit-line-039",
+      "sourceLine": 39,
+      "isf": "N",
+      "accountIndicator": "1",
+      "ptres": "228715",
+      "action": "20X7",
+      "actionDescription": "EMPREGO CONJUNTO OU COMBINADO DAS FFAA",
+      "ptresDescription": "EMPREGO CONJUNTO OU COMBINADO DAS FFAA",
+      "fundingSource": "1000000000",
+      "expenseNature": "339039",
+      "ugCode": "120038",
+      "om": "DIRMAB",
+      "ugName": "DIRETORIA DE MATERIAL AERONÁUTICO E BÉLICO",
+      "pi": "OCS90003000",
+      "creditAvailable": 35442.91,
+      "creditAvailableText": "US$ 35.442,91",
+      "debitCredit": "C",
+      "matchKey": "120038|20X7|OCS90003000|339039"
+    },
+    {
+      "id": "credit-line-040",
+      "sourceLine": 40,
+      "isf": "N",
+      "accountIndicator": "1",
+      "ptres": "228715",
+      "action": "20X7",
+      "actionDescription": "EMPREGO CONJUNTO OU COMBINADO DAS FFAA",
+      "ptresDescription": "EMPREGO CONJUNTO OU COMBINADO DAS FFAA",
+      "fundingSource": "1000000000",
+      "expenseNature": "339039",
+      "ugCode": "120038",
+      "om": "DIRMAB",
+      "ugName": "DIRETORIA DE MATERIAL AERONÁUTICO E BÉLICO",
+      "pi": "OCS90014000",
+      "creditAvailable": 32803.47,
+      "creditAvailableText": "US$ 32.803,47",
+      "debitCredit": "C",
+      "matchKey": "120038|20X7|OCS90014000|339039"
+    },
+    {
+      "id": "credit-line-041",
+      "sourceLine": 41,
+      "isf": "N",
+      "accountIndicator": "1",
+      "ptres": "228715",
+      "action": "20X7",
+      "actionDescription": "EMPREGO CONJUNTO OU COMBINADO DAS FFAA",
+      "ptresDescription": "EMPREGO CONJUNTO OU COMBINADO DAS FFAA",
+      "fundingSource": "1000000000",
+      "expenseNature": "339039",
+      "ugCode": "120038",
+      "om": "DIRMAB",
+      "ugName": "DIRETORIA DE MATERIAL AERONÁUTICO E BÉLICO",
+      "pi": "OCS90015000",
+      "creditAvailable": 48878.97,
+      "creditAvailableText": "US$ 48.878,97",
+      "debitCredit": "C",
+      "matchKey": "120038|20X7|OCS90015000|339039"
+    },
+    {
+      "id": "credit-line-042",
+      "sourceLine": 42,
+      "isf": "N",
+      "accountIndicator": "1",
+      "ptres": "228769",
+      "action": "20X5",
+      "actionDescription": "OPERAÇÕES DE COMANDO E CONTROLE DA DEFESA NACIONAL",
+      "ptresDescription": "OPERAÇÕES DE COMANDO E CONTROLE DA DEFESA NACIONAL",
+      "fundingSource": "1000000000",
+      "expenseNature": "339039",
+      "ugCode": "120111",
+      "om": "EMAER",
+      "ugName": "ESTADO-MAIOR DA AERONÁUTICA",
+      "pi": "D0000010000",
+      "creditAvailable": 937.53,
+      "creditAvailableText": "US$ 937,53",
+      "debitCredit": "C",
+      "matchKey": "120111|20X5|D0000010000|339039"
+    },
+    {
+      "id": "credit-line-043",
+      "sourceLine": 43,
+      "isf": "N",
+      "accountIndicator": "1",
+      "ptres": "228786",
+      "action": "2D55",
+      "actionDescription": "ADIDÂNCIAS MILITARES NO EXTERIOR",
+      "ptresDescription": "ADIDÂNCIAS MILITARES NO EXTERIOR",
+      "fundingSource": "1000000000",
+      "expenseNature": "339039",
+      "ugCode": "120111",
+      "om": "EMAER",
+      "ugName": "ESTADO-MAIOR DA AERONÁUTICA",
+      "pi": "D0000010000",
+      "creditAvailable": 748.61,
+      "creditAvailableText": "US$ 748,61",
+      "debitCredit": "C",
+      "matchKey": "120111|2D55|D0000010000|339039"
+    },
+    {
+      "id": "credit-line-044",
+      "sourceLine": 44,
+      "isf": "N",
+      "accountIndicator": "1",
+      "ptres": "229140",
+      "action": "212O",
+      "actionDescription": "MOVIMENTAÇÃO DE MILITARES",
+      "ptresDescription": "MOVIMENTAÇÃO DE MILITARES",
+      "fundingSource": "1000000000",
+      "expenseNature": "339033",
+      "ugCode": "120136",
+      "om": "DIRAP",
+      "ugName": "DIRETORIA DE ADMINISTRAÇÃO DO PESSOAL",
+      "pi": "CG0622DPS03",
+      "creditAvailable": 9500.0,
+      "creditAvailableText": "US$ 9.500,00",
+      "debitCredit": "C",
+      "matchKey": "120136|212O|CG0622DPS03|339033"
+    },
+    {
+      "id": "credit-line-045",
+      "sourceLine": 45,
+      "isf": "N",
+      "accountIndicator": "1",
+      "ptres": "229163",
+      "action": "2913",
+      "actionDescription": "INVESTIGAÇÃO E PREVENÇÃO DE ACIDENTES AERONÁUTICOS",
+      "ptresDescription": "INVESTIGAÇÃO E PREVENÇÃO DE ACIDENTES AERONÁUTICOS",
+      "fundingSource": "1052000140",
+      "expenseNature": "339039",
+      "ugCode": "120106",
+      "om": "CENIPA",
+      "ugName": "CENTRO DE INVESTIGAÇÃO E PREVENÇÃO DE ACIDENTES AERONÁUTICOS",
+      "pi": "GB2016ATV01",
+      "creditAvailable": 2700.0,
+      "creditAvailableText": "US$ 2.700,00",
+      "debitCredit": "C",
+      "matchKey": "120106|2913|GB2016ATV01|339039"
+    },
+    {
+      "id": "credit-line-046",
+      "sourceLine": 46,
+      "isf": "N",
+      "accountIndicator": "1",
+      "ptres": "229166",
+      "action": "20XV",
+      "actionDescription": "OPERAÇÃO E MANUTENÇÃO DE EQUIPAMENTOS DO SISCEAB",
+      "ptresDescription": "OPERAÇÃO E MANUTENÇÃO DE EQUIPAMENTOS DO SISCEAB",
+      "fundingSource": "1052000140",
+      "expenseNature": "339030",
+      "ugCode": "120026",
+      "om": "PAMA-LS",
+      "ugName": "PARQUE DE MATERIAL AERONÁUTICO DE LAGOA SANTA",
+      "pi": "CA08020INSP",
+      "creditAvailable": 0.01,
+      "creditAvailableText": "US$ 0,01",
+      "debitCredit": "C",
+      "matchKey": "120026|20XV|CA08020INSP|339030"
+    },
+    {
+      "id": "credit-line-047",
+      "sourceLine": 47,
+      "isf": "N",
+      "accountIndicator": "1",
+      "ptres": "229166",
+      "action": "20XV",
+      "actionDescription": "OPERAÇÃO E MANUTENÇÃO DE EQUIPAMENTOS DO SISCEAB",
+      "ptresDescription": "OPERAÇÃO E MANUTENÇÃO DE EQUIPAMENTOS DO SISCEAB",
+      "fundingSource": "1052000140",
+      "expenseNature": "339030",
+      "ugCode": "120036",
+      "om": "DECEA",
+      "ugName": "DEPARTAMENTO DE CONTROLE DO ESPAÇO AÉREO",
+      "pi": "DC012102SAR",
+      "creditAvailable": 0.09,
+      "creditAvailableText": "US$ 0,09",
+      "debitCredit": "C",
+      "matchKey": "120036|20XV|DC012102SAR|339030"
+    },
+    {
+      "id": "credit-line-048",
+      "sourceLine": 48,
+      "isf": "N",
+      "accountIndicator": "1",
+      "ptres": "229166",
+      "action": "20XV",
+      "actionDescription": "OPERAÇÃO E MANUTENÇÃO DE EQUIPAMENTOS DO SISCEAB",
+      "ptresDescription": "OPERAÇÃO E MANUTENÇÃO DE EQUIPAMENTOS DO SISCEAB",
+      "fundingSource": "1052000140",
+      "expenseNature": "339030",
+      "ugCode": "120036",
+      "om": "DECEA",
+      "ugName": "DEPARTAMENTO DE CONTROLE DO ESPAÇO AÉREO",
+      "pi": "DC060401100",
+      "creditAvailable": 5060.17,
+      "creditAvailableText": "US$ 5.060,17",
+      "debitCredit": "C",
+      "matchKey": "120036|20XV|DC060401100|339030"
+    },
+    {
+      "id": "credit-line-049",
+      "sourceLine": 49,
+      "isf": "N",
+      "accountIndicator": "1",
+      "ptres": "229166",
+      "action": "20XV",
+      "actionDescription": "OPERAÇÃO E MANUTENÇÃO DE EQUIPAMENTOS DO SISCEAB",
+      "ptresDescription": "OPERAÇÃO E MANUTENÇÃO DE EQUIPAMENTOS DO SISCEAB",
+      "fundingSource": "1052000140",
+      "expenseNature": "339030",
+      "ugCode": "120048",
+      "om": "PAME-RJ",
+      "ugName": "PARQUE DE MATERIAL DE ELETRÔNICA DA AERONÁUTICA DO RIO DE JANEIRO",
+      "pi": "DC012101SAR",
+      "creditAvailable": 199100.21,
+      "creditAvailableText": "US$ 199.100,21",
+      "debitCredit": "C",
+      "matchKey": "120048|20XV|DC012101SAR|339030"
+    },
+    {
+      "id": "credit-line-050",
+      "sourceLine": 50,
+      "isf": "N",
+      "accountIndicator": "1",
+      "ptres": "229166",
+      "action": "20XV",
+      "actionDescription": "OPERAÇÃO E MANUTENÇÃO DE EQUIPAMENTOS DO SISCEAB",
+      "ptresDescription": "OPERAÇÃO E MANUTENÇÃO DE EQUIPAMENTOS DO SISCEAB",
+      "fundingSource": "1052000140",
+      "expenseNature": "339030",
+      "ugCode": "120048",
+      "om": "PAME-RJ",
+      "ugName": "PARQUE DE MATERIAL DE ELETRÔNICA DA AERONÁUTICA DO RIO DE JANEIRO",
+      "pi": "DC170401TEL",
+      "creditAvailable": 2096514.38,
+      "creditAvailableText": "US$ 2.096.514,38",
+      "debitCredit": "C",
+      "matchKey": "120048|20XV|DC170401TEL|339030"
+    },
+    {
+      "id": "credit-line-051",
+      "sourceLine": 51,
+      "isf": "N",
+      "accountIndicator": "1",
+      "ptres": "229166",
+      "action": "20XV",
+      "actionDescription": "OPERAÇÃO E MANUTENÇÃO DE EQUIPAMENTOS DO SISCEAB",
+      "ptresDescription": "OPERAÇÃO E MANUTENÇÃO DE EQUIPAMENTOS DO SISCEAB",
+      "fundingSource": "1052000140",
+      "expenseNature": "339030",
+      "ugCode": "120068",
+      "om": "PAMA-SP",
+      "ugName": "PARQUE DE MATERIAL AERONÁUTICO DE SÃO PAULO",
+      "pi": "CA08020VANT",
+      "creditAvailable": 0.01,
+      "creditAvailableText": "US$ 0,01",
+      "debitCredit": "C",
+      "matchKey": "120068|20XV|CA08020VANT|339030"
+    },
+    {
+      "id": "credit-line-052",
+      "sourceLine": 52,
+      "isf": "N",
+      "accountIndicator": "1",
+      "ptres": "229166",
+      "action": "20XV",
+      "actionDescription": "OPERAÇÃO E MANUTENÇÃO DE EQUIPAMENTOS DO SISCEAB",
+      "ptresDescription": "OPERAÇÃO E MANUTENÇÃO DE EQUIPAMENTOS DO SISCEAB",
+      "fundingSource": "1052000140",
+      "expenseNature": "339030",
+      "ugCode": "120068",
+      "om": "PAMA-SP",
+      "ugName": "PARQUE DE MATERIAL AERONÁUTICO DE SÃO PAULO",
+      "pi": "CA080200SAR",
+      "creditAvailable": 0.01,
+      "creditAvailableText": "US$ 0,01",
+      "debitCredit": "C",
+      "matchKey": "120068|20XV|CA080200SAR|339030"
+    },
+    {
+      "id": "credit-line-053",
+      "sourceLine": 53,
+      "isf": "N",
+      "accountIndicator": "1",
+      "ptres": "229166",
+      "action": "20XV",
+      "actionDescription": "OPERAÇÃO E MANUTENÇÃO DE EQUIPAMENTOS DO SISCEAB",
+      "ptresDescription": "OPERAÇÃO E MANUTENÇÃO DE EQUIPAMENTOS DO SISCEAB",
+      "fundingSource": "1052000140",
+      "expenseNature": "339033",
+      "ugCode": "120036",
+      "om": "DECEA",
+      "ugName": "DEPARTAMENTO DE CONTROLE DO ESPAÇO AÉREO",
+      "pi": "DC060401100",
+      "creditAvailable": 3220.99,
+      "creditAvailableText": "US$ 3.220,99",
+      "debitCredit": "C",
+      "matchKey": "120036|20XV|DC060401100|339033"
+    },
+    {
+      "id": "credit-line-054",
+      "sourceLine": 54,
+      "isf": "N",
+      "accountIndicator": "1",
+      "ptres": "229166",
+      "action": "20XV",
+      "actionDescription": "OPERAÇÃO E MANUTENÇÃO DE EQUIPAMENTOS DO SISCEAB",
+      "ptresDescription": "OPERAÇÃO E MANUTENÇÃO DE EQUIPAMENTOS DO SISCEAB",
+      "fundingSource": "1052000140",
+      "expenseNature": "339039",
+      "ugCode": "120026",
+      "om": "PAMA-LS",
+      "ugName": "PARQUE DE MATERIAL AERONÁUTICO DE LAGOA SANTA",
+      "pi": "CA0802TRNSP",
+      "creditAvailable": 776.34,
+      "creditAvailableText": "US$ 776,34",
+      "debitCredit": "C",
+      "matchKey": "120026|20XV|CA0802TRNSP|339039"
+    },
+    {
+      "id": "credit-line-055",
+      "sourceLine": 55,
+      "isf": "N",
+      "accountIndicator": "1",
+      "ptres": "229166",
+      "action": "20XV",
+      "actionDescription": "OPERAÇÃO E MANUTENÇÃO DE EQUIPAMENTOS DO SISCEAB",
+      "ptresDescription": "OPERAÇÃO E MANUTENÇÃO DE EQUIPAMENTOS DO SISCEAB",
+      "fundingSource": "1052000140",
+      "expenseNature": "339039",
+      "ugCode": "120026",
+      "om": "PAMA-LS",
+      "ugName": "PARQUE DE MATERIAL AERONÁUTICO DE LAGOA SANTA",
+      "pi": "CA08020INSP",
+      "creditAvailable": 118090.59,
+      "creditAvailableText": "US$ 118.090,59",
+      "debitCredit": "C",
+      "matchKey": "120026|20XV|CA08020INSP|339039"
+    },
+    {
+      "id": "credit-line-056",
+      "sourceLine": 56,
+      "isf": "N",
+      "accountIndicator": "1",
+      "ptres": "229166",
+      "action": "20XV",
+      "actionDescription": "OPERAÇÃO E MANUTENÇÃO DE EQUIPAMENTOS DO SISCEAB",
+      "ptresDescription": "OPERAÇÃO E MANUTENÇÃO DE EQUIPAMENTOS DO SISCEAB",
+      "fundingSource": "1052000140",
+      "expenseNature": "339039",
+      "ugCode": "120036",
+      "om": "DECEA",
+      "ugName": "DEPARTAMENTO DE CONTROLE DO ESPAÇO AÉREO",
+      "pi": "DC010401ATM",
+      "creditAvailable": 0.05,
+      "creditAvailableText": "US$ 0,05",
+      "debitCredit": "C",
+      "matchKey": "120036|20XV|DC010401ATM|339039"
+    },
+    {
+      "id": "credit-line-057",
+      "sourceLine": 57,
+      "isf": "N",
+      "accountIndicator": "1",
+      "ptres": "229166",
+      "action": "20XV",
+      "actionDescription": "OPERAÇÃO E MANUTENÇÃO DE EQUIPAMENTOS DO SISCEAB",
+      "ptresDescription": "OPERAÇÃO E MANUTENÇÃO DE EQUIPAMENTOS DO SISCEAB",
+      "fundingSource": "1052000140",
+      "expenseNature": "339039",
+      "ugCode": "120036",
+      "om": "DECEA",
+      "ugName": "DEPARTAMENTO DE CONTROLE DO ESPAÇO AÉREO",
+      "pi": "DC060401100",
+      "creditAvailable": 18353.21,
+      "creditAvailableText": "US$ 18.353,21",
+      "debitCredit": "C",
+      "matchKey": "120036|20XV|DC060401100|339039"
+    },
+    {
+      "id": "credit-line-058",
+      "sourceLine": 58,
+      "isf": "N",
+      "accountIndicator": "1",
+      "ptres": "229166",
+      "action": "20XV",
+      "actionDescription": "OPERAÇÃO E MANUTENÇÃO DE EQUIPAMENTOS DO SISCEAB",
+      "ptresDescription": "OPERAÇÃO E MANUTENÇÃO DE EQUIPAMENTOS DO SISCEAB",
+      "fundingSource": "1052000140",
+      "expenseNature": "339039",
+      "ugCode": "120036",
+      "om": "DECEA",
+      "ugName": "DEPARTAMENTO DE CONTROLE DO ESPAÇO AÉREO",
+      "pi": "DC163401PTX",
+      "creditAvailable": 19802.88,
+      "creditAvailableText": "US$ 19.802,88",
+      "debitCredit": "C",
+      "matchKey": "120036|20XV|DC163401PTX|339039"
+    },
+    {
+      "id": "credit-line-059",
+      "sourceLine": 59,
+      "isf": "N",
+      "accountIndicator": "1",
+      "ptres": "229166",
+      "action": "20XV",
+      "actionDescription": "OPERAÇÃO E MANUTENÇÃO DE EQUIPAMENTOS DO SISCEAB",
+      "ptresDescription": "OPERAÇÃO E MANUTENÇÃO DE EQUIPAMENTOS DO SISCEAB",
+      "fundingSource": "1052000140",
+      "expenseNature": "339039",
+      "ugCode": "120048",
+      "om": "PAME-RJ",
+      "ugName": "PARQUE DE MATERIAL DE ELETRÔNICA DA AERONÁUTICA DO RIO DE JANEIRO",
+      "pi": "DC080401LOG",
+      "creditAvailable": 0.01,
+      "creditAvailableText": "US$ 0,01",
+      "debitCredit": "C",
+      "matchKey": "120048|20XV|DC080401LOG|339039"
+    },
+    {
+      "id": "credit-line-060",
+      "sourceLine": 60,
+      "isf": "N",
+      "accountIndicator": "1",
+      "ptres": "229166",
+      "action": "20XV",
+      "actionDescription": "OPERAÇÃO E MANUTENÇÃO DE EQUIPAMENTOS DO SISCEAB",
+      "ptresDescription": "OPERAÇÃO E MANUTENÇÃO DE EQUIPAMENTOS DO SISCEAB",
+      "fundingSource": "1052000140",
+      "expenseNature": "339039",
+      "ugCode": "120049",
+      "om": "PAMA-GL",
+      "ugName": "PARQUE DE MATERIAL AERONÁUTICO DO GALEÃO",
+      "pi": "CA080200IVR",
+      "creditAvailable": 0.01,
+      "creditAvailableText": "US$ 0,01",
+      "debitCredit": "C",
+      "matchKey": "120049|20XV|CA080200IVR|339039"
+    },
+    {
+      "id": "credit-line-061",
+      "sourceLine": 61,
+      "isf": "N",
+      "accountIndicator": "1",
+      "ptres": "229166",
+      "action": "20XV",
+      "actionDescription": "OPERAÇÃO E MANUTENÇÃO DE EQUIPAMENTOS DO SISCEAB",
+      "ptresDescription": "OPERAÇÃO E MANUTENÇÃO DE EQUIPAMENTOS DO SISCEAB",
+      "fundingSource": "1052000140",
+      "expenseNature": "339039",
+      "ugCode": "120049",
+      "om": "PAMA-GL",
+      "ugName": "PARQUE DE MATERIAL AERONÁUTICO DO GALEÃO",
+      "pi": "CA080200SAR",
+      "creditAvailable": 6922.76,
+      "creditAvailableText": "US$ 6.922,76",
+      "debitCredit": "C",
+      "matchKey": "120049|20XV|CA080200SAR|339039"
+    },
+    {
+      "id": "credit-line-062",
+      "sourceLine": 62,
+      "isf": "N",
+      "accountIndicator": "1",
+      "ptres": "229166",
+      "action": "20XV",
+      "actionDescription": "OPERAÇÃO E MANUTENÇÃO DE EQUIPAMENTOS DO SISCEAB",
+      "ptresDescription": "OPERAÇÃO E MANUTENÇÃO DE EQUIPAMENTOS DO SISCEAB",
+      "fundingSource": "1052000140",
+      "expenseNature": "339039",
+      "ugCode": "120068",
+      "om": "PAMA-SP",
+      "ugName": "PARQUE DE MATERIAL AERONÁUTICO DE SÃO PAULO",
+      "pi": "CA080200VIP",
+      "creditAvailable": 12012.0,
+      "creditAvailableText": "US$ 12.012,00",
+      "debitCredit": "C",
+      "matchKey": "120068|20XV|CA080200VIP|339039"
+    },
+    {
+      "id": "credit-line-063",
+      "sourceLine": 63,
+      "isf": "N",
+      "accountIndicator": "1",
+      "ptres": "229166",
+      "action": "20XV",
+      "actionDescription": "OPERAÇÃO E MANUTENÇÃO DE EQUIPAMENTOS DO SISCEAB",
+      "ptresDescription": "OPERAÇÃO E MANUTENÇÃO DE EQUIPAMENTOS DO SISCEAB",
+      "fundingSource": "1052000140",
+      "expenseNature": "339039",
+      "ugCode": "120090",
+      "om": "CABW",
+      "ugName": "COMISSÃO AERONÁUTICA BRASILEIRA EM WASHINGTON",
+      "pi": "CA063100200",
+      "creditAvailable": 4104.64,
+      "creditAvailableText": "US$ 4.104,64",
+      "debitCredit": "C",
+      "matchKey": "120090|20XV|CA063100200|339039"
+    },
+    {
+      "id": "credit-line-064",
+      "sourceLine": 64,
+      "isf": "N",
+      "accountIndicator": "1",
+      "ptres": "229166",
+      "action": "20XV",
+      "actionDescription": "OPERAÇÃO E MANUTENÇÃO DE EQUIPAMENTOS DO SISCEAB",
+      "ptresDescription": "OPERAÇÃO E MANUTENÇÃO DE EQUIPAMENTOS DO SISCEAB",
+      "fundingSource": "1052000140",
+      "expenseNature": "339040",
+      "ugCode": "120048",
+      "om": "PAME-RJ",
+      "ugName": "PARQUE DE MATERIAL DE ELETRÔNICA DA AERONÁUTICA DO RIO DE JANEIRO",
+      "pi": "DC170401TEL",
+      "creditAvailable": 217454.79,
+      "creditAvailableText": "US$ 217.454,79",
+      "debitCredit": "C",
+      "matchKey": "120048|20XV|DC170401TEL|339040"
+    },
+    {
+      "id": "credit-line-065",
+      "sourceLine": 65,
+      "isf": "N",
+      "accountIndicator": "1",
+      "ptres": "229166",
+      "action": "20XV",
+      "actionDescription": "OPERAÇÃO E MANUTENÇÃO DE EQUIPAMENTOS DO SISCEAB",
+      "ptresDescription": "OPERAÇÃO E MANUTENÇÃO DE EQUIPAMENTOS DO SISCEAB",
+      "fundingSource": "1052000140",
+      "expenseNature": "449052",
+      "ugCode": "120036",
+      "om": "DECEA",
+      "ugName": "DEPARTAMENTO DE CONTROLE DO ESPAÇO AÉREO",
+      "pi": "DC060402100",
+      "creditAvailable": 74990.0,
+      "creditAvailableText": "US$ 74.990,00",
+      "debitCredit": "C",
+      "matchKey": "120036|20XV|DC060402100|449052"
+    },
+    {
+      "id": "credit-line-066",
+      "sourceLine": 66,
+      "isf": "N",
+      "accountIndicator": "1",
+      "ptres": "229166",
+      "action": "20XV",
+      "actionDescription": "OPERAÇÃO E MANUTENÇÃO DE EQUIPAMENTOS DO SISCEAB",
+      "ptresDescription": "OPERAÇÃO E MANUTENÇÃO DE EQUIPAMENTOS DO SISCEAB",
+      "fundingSource": "1052000140",
+      "expenseNature": "449052",
+      "ugCode": "120127",
+      "om": "CISCEA",
+      "ugName": "COMISSÃO DE IMPLANTAÇÃO DO SISTEMA DE CONTROLE DO ESPAÇO AÉREO",
+      "pi": "DC080401LOG",
+      "creditAvailable": 1250802.0,
+      "creditAvailableText": "US$ 1.250.802,00",
+      "debitCredit": "C",
+      "matchKey": "120127|20XV|DC080401LOG|449052"
+    },
+    {
+      "id": "credit-line-067",
+      "sourceLine": 67,
+      "isf": "N",
+      "accountIndicator": "1",
+      "ptres": "229175",
+      "action": "20SA",
+      "actionDescription": "MANUTENÇÃO DE SISTEMAS DE INFORMAÇÕES MILITARES",
+      "ptresDescription": "MANUTENÇÃO DE SISTEMAS DE INFORMAÇÕES MILITARES",
+      "fundingSource": "1050000140",
+      "expenseNature": "339040",
+      "ugCode": "120090",
+      "om": "CABW",
+      "ugName": "COMISSÃO AERONÁUTICA BRASILEIRA EM WASHINGTON",
+      "pi": "CA1736INFCD",
+      "creditAvailable": 47455.8,
+      "creditAvailableText": "US$ 47.455,80",
+      "debitCredit": "C",
+      "matchKey": "120090|20SA|CA1736INFCD|339040"
+    },
+    {
+      "id": "credit-line-068",
+      "sourceLine": 68,
+      "isf": "N",
+      "accountIndicator": "1",
+      "ptres": "229175",
+      "action": "20SA",
+      "actionDescription": "MANUTENÇÃO DE SISTEMAS DE INFORMAÇÕES MILITARES",
+      "ptresDescription": "MANUTENÇÃO DE SISTEMAS DE INFORMAÇÕES MILITARES",
+      "fundingSource": "3050000140",
+      "expenseNature": "449052",
+      "ugCode": "120090",
+      "om": "CABW",
+      "ugName": "COMISSÃO AERONÁUTICA BRASILEIRA EM WASHINGTON",
+      "pi": "CA1736INFTI",
+      "creditAvailable": 12581.05,
+      "creditAvailableText": "US$ 12.581,05",
+      "debitCredit": "C",
+      "matchKey": "120090|20SA|CA1736INFTI|449052"
+    },
+    {
+      "id": "credit-line-069",
+      "sourceLine": 69,
+      "isf": "N",
+      "accountIndicator": "1",
+      "ptres": "229177",
+      "action": "2048",
+      "actionDescription": "MANUTENÇÃO E SUPRIMENTO DE MATERIAL AERONÁUTICO",
+      "ptresDescription": "MANUTENÇÃO E SUPRIMENTO DE MATERIAL AERONÁUTICO",
+      "fundingSource": "1000000000",
+      "expenseNature": "339030",
+      "ugCode": "120026",
+      "om": "PAMA-LS",
+      "ugName": "PARQUE DE MATERIAL AERONÁUTICO DE LAGOA SANTA",
+      "pi": "CA0802APOIO",
+      "creditAvailable": 6344.29,
+      "creditAvailableText": "US$ 6.344,29",
+      "debitCredit": "C",
+      "matchKey": "120026|2048|CA0802APOIO|339030"
+    },
+    {
+      "id": "credit-line-070",
+      "sourceLine": 70,
+      "isf": "N",
+      "accountIndicator": "1",
+      "ptres": "229177",
+      "action": "2048",
+      "actionDescription": "MANUTENÇÃO E SUPRIMENTO DE MATERIAL AERONÁUTICO",
+      "ptresDescription": "MANUTENÇÃO E SUPRIMENTO DE MATERIAL AERONÁUTICO",
+      "fundingSource": "1000000000",
+      "expenseNature": "339039",
+      "ugCode": "120038",
+      "om": "DIRMAB",
+      "ugName": "DIRETORIA DE MATERIAL AERONÁUTICO E BÉLICO",
+      "pi": "CA0802APOIO",
+      "creditAvailable": 1050.0,
+      "creditAvailableText": "US$ 1.050,00",
+      "debitCredit": "C",
+      "matchKey": "120038|2048|CA0802APOIO|339039"
+    },
+    {
+      "id": "credit-line-071",
+      "sourceLine": 71,
+      "isf": "N",
+      "accountIndicator": "1",
+      "ptres": "229177",
+      "action": "2048",
+      "actionDescription": "MANUTENÇÃO E SUPRIMENTO DE MATERIAL AERONÁUTICO",
+      "ptresDescription": "MANUTENÇÃO E SUPRIMENTO DE MATERIAL AERONÁUTICO",
+      "fundingSource": "1050000140",
+      "expenseNature": "339030",
+      "ugCode": "120026",
+      "om": "PAMA-LS",
+      "ugName": "PARQUE DE MATERIAL AERONÁUTICO DE LAGOA SANTA",
+      "pi": "CA0802APOIO",
+      "creditAvailable": 34343.47,
+      "creditAvailableText": "US$ 34.343,47",
+      "debitCredit": "C",
+      "matchKey": "120026|2048|CA0802APOIO|339030"
+    },
+    {
+      "id": "credit-line-072",
+      "sourceLine": 72,
+      "isf": "N",
+      "accountIndicator": "1",
+      "ptres": "229177",
+      "action": "2048",
+      "actionDescription": "MANUTENÇÃO E SUPRIMENTO DE MATERIAL AERONÁUTICO",
+      "ptresDescription": "MANUTENÇÃO E SUPRIMENTO DE MATERIAL AERONÁUTICO",
+      "fundingSource": "1050000140",
+      "expenseNature": "339030",
+      "ugCode": "120026",
+      "om": "PAMA-LS",
+      "ugName": "PARQUE DE MATERIAL AERONÁUTICO DE LAGOA SANTA",
+      "pi": "CA0802INSTR",
+      "creditAvailable": 69809.34,
+      "creditAvailableText": "US$ 69.809,34",
+      "debitCredit": "C",
+      "matchKey": "120026|2048|CA0802INSTR|339030"
+    },
+    {
+      "id": "credit-line-073",
+      "sourceLine": 73,
+      "isf": "N",
+      "accountIndicator": "1",
+      "ptres": "229177",
+      "action": "2048",
+      "actionDescription": "MANUTENÇÃO E SUPRIMENTO DE MATERIAL AERONÁUTICO",
+      "ptresDescription": "MANUTENÇÃO E SUPRIMENTO DE MATERIAL AERONÁUTICO",
+      "fundingSource": "1050000140",
+      "expenseNature": "339030",
+      "ugCode": "120026",
+      "om": "PAMA-LS",
+      "ugName": "PARQUE DE MATERIAL AERONÁUTICO DE LAGOA SANTA",
+      "pi": "CA0802TRNSP",
+      "creditAvailable": 12902.36,
+      "creditAvailableText": "US$ 12.902,36",
+      "debitCredit": "C",
+      "matchKey": "120026|2048|CA0802TRNSP|339030"
+    },
+    {
+      "id": "credit-line-074",
+      "sourceLine": 74,
+      "isf": "N",
+      "accountIndicator": "1",
+      "ptres": "229177",
+      "action": "2048",
+      "actionDescription": "MANUTENÇÃO E SUPRIMENTO DE MATERIAL AERONÁUTICO",
+      "ptresDescription": "MANUTENÇÃO E SUPRIMENTO DE MATERIAL AERONÁUTICO",
+      "fundingSource": "1050000140",
+      "expenseNature": "339030",
+      "ugCode": "120026",
+      "om": "PAMA-LS",
+      "ugName": "PARQUE DE MATERIAL AERONÁUTICO DE LAGOA SANTA",
+      "pi": "CA080200T25",
+      "creditAvailable": 91.59,
+      "creditAvailableText": "US$ 91,59",
+      "debitCredit": "C",
+      "matchKey": "120026|2048|CA080200T25|339030"
+    },
+    {
+      "id": "credit-line-075",
+      "sourceLine": 75,
+      "isf": "N",
+      "accountIndicator": "1",
+      "ptres": "229177",
+      "action": "2048",
+      "actionDescription": "MANUTENÇÃO E SUPRIMENTO DE MATERIAL AERONÁUTICO",
+      "ptresDescription": "MANUTENÇÃO E SUPRIMENTO DE MATERIAL AERONÁUTICO",
+      "fundingSource": "1050000140",
+      "expenseNature": "339030",
+      "ugCode": "120049",
+      "om": "PAMA-GL",
+      "ugName": "PARQUE DE MATERIAL AERONÁUTICO DO GALEÃO",
+      "pi": "CA0802APOIO",
+      "creditAvailable": 48.4,
+      "creditAvailableText": "US$ 48,40",
+      "debitCredit": "C",
+      "matchKey": "120049|2048|CA0802APOIO|339030"
+    },
+    {
+      "id": "credit-line-076",
+      "sourceLine": 76,
+      "isf": "N",
+      "accountIndicator": "1",
+      "ptres": "229177",
+      "action": "2048",
+      "actionDescription": "MANUTENÇÃO E SUPRIMENTO DE MATERIAL AERONÁUTICO",
+      "ptresDescription": "MANUTENÇÃO E SUPRIMENTO DE MATERIAL AERONÁUTICO",
+      "fundingSource": "1050000140",
+      "expenseNature": "339030",
+      "ugCode": "120049",
+      "om": "PAMA-GL",
+      "ugName": "PARQUE DE MATERIAL AERONÁUTICO DO GALEÃO",
+      "pi": "CA0802TRNSP",
+      "creditAvailable": 25858.15,
+      "creditAvailableText": "US$ 25.858,15",
+      "debitCredit": "C",
+      "matchKey": "120049|2048|CA0802TRNSP|339030"
+    },
+    {
+      "id": "credit-line-077",
+      "sourceLine": 77,
+      "isf": "N",
+      "accountIndicator": "1",
+      "ptres": "229177",
+      "action": "2048",
+      "actionDescription": "MANUTENÇÃO E SUPRIMENTO DE MATERIAL AERONÁUTICO",
+      "ptresDescription": "MANUTENÇÃO E SUPRIMENTO DE MATERIAL AERONÁUTICO",
+      "fundingSource": "1050000140",
+      "expenseNature": "339030",
+      "ugCode": "120068",
+      "om": "PAMA-SP",
+      "ugName": "PARQUE DE MATERIAL AERONÁUTICO DE SÃO PAULO",
+      "pi": "CA0802APOIO",
+      "creditAvailable": 70572.38,
+      "creditAvailableText": "US$ 70.572,38",
+      "debitCredit": "C",
+      "matchKey": "120068|2048|CA0802APOIO|339030"
+    },
+    {
+      "id": "credit-line-078",
+      "sourceLine": 78,
+      "isf": "N",
+      "accountIndicator": "1",
+      "ptres": "229177",
+      "action": "2048",
+      "actionDescription": "MANUTENÇÃO E SUPRIMENTO DE MATERIAL AERONÁUTICO",
+      "ptresDescription": "MANUTENÇÃO E SUPRIMENTO DE MATERIAL AERONÁUTICO",
+      "fundingSource": "1050000140",
+      "expenseNature": "339030",
+      "ugCode": "120068",
+      "om": "PAMA-SP",
+      "ugName": "PARQUE DE MATERIAL AERONÁUTICO DE SÃO PAULO",
+      "pi": "CA0802FIGHT",
+      "creditAvailable": 520675.47,
+      "creditAvailableText": "US$ 520.675,47",
+      "debitCredit": "C",
+      "matchKey": "120068|2048|CA0802FIGHT|339030"
+    },
+    {
+      "id": "credit-line-079",
+      "sourceLine": 79,
+      "isf": "N",
+      "accountIndicator": "1",
+      "ptres": "229177",
+      "action": "2048",
+      "actionDescription": "MANUTENÇÃO E SUPRIMENTO DE MATERIAL AERONÁUTICO",
+      "ptresDescription": "MANUTENÇÃO E SUPRIMENTO DE MATERIAL AERONÁUTICO",
+      "fundingSource": "1050000140",
+      "expenseNature": "339030",
+      "ugCode": "120068",
+      "om": "PAMA-SP",
+      "ugName": "PARQUE DE MATERIAL AERONÁUTICO DE SÃO PAULO",
+      "pi": "CA080200SAR",
+      "creditAvailable": 22986.08,
+      "creditAvailableText": "US$ 22.986,08",
+      "debitCredit": "C",
+      "matchKey": "120068|2048|CA080200SAR|339030"
+    },
+    {
+      "id": "credit-line-080",
+      "sourceLine": 80,
+      "isf": "N",
+      "accountIndicator": "1",
+      "ptres": "229177",
+      "action": "2048",
+      "actionDescription": "MANUTENÇÃO E SUPRIMENTO DE MATERIAL AERONÁUTICO",
+      "ptresDescription": "MANUTENÇÃO E SUPRIMENTO DE MATERIAL AERONÁUTICO",
+      "fundingSource": "1050000140",
+      "expenseNature": "339039",
+      "ugCode": "120026",
+      "om": "PAMA-LS",
+      "ugName": "PARQUE DE MATERIAL AERONÁUTICO DE LAGOA SANTA",
+      "pi": "CA0802APOIO",
+      "creditAvailable": 5700.0,
+      "creditAvailableText": "US$ 5.700,00",
+      "debitCredit": "C",
+      "matchKey": "120026|2048|CA0802APOIO|339039"
+    },
+    {
+      "id": "credit-line-081",
+      "sourceLine": 81,
+      "isf": "N",
+      "accountIndicator": "1",
+      "ptres": "229177",
+      "action": "2048",
+      "actionDescription": "MANUTENÇÃO E SUPRIMENTO DE MATERIAL AERONÁUTICO",
+      "ptresDescription": "MANUTENÇÃO E SUPRIMENTO DE MATERIAL AERONÁUTICO",
+      "fundingSource": "1050000140",
+      "expenseNature": "339039",
+      "ugCode": "120026",
+      "om": "PAMA-LS",
+      "ugName": "PARQUE DE MATERIAL AERONÁUTICO DE LAGOA SANTA",
+      "pi": "CA0802FIGHT",
+      "creditAvailable": 1358934.57,
+      "creditAvailableText": "US$ 1.358.934,57",
+      "debitCredit": "C",
+      "matchKey": "120026|2048|CA0802FIGHT|339039"
+    },
+    {
+      "id": "credit-line-082",
+      "sourceLine": 82,
+      "isf": "N",
+      "accountIndicator": "1",
+      "ptres": "229177",
+      "action": "2048",
+      "actionDescription": "MANUTENÇÃO E SUPRIMENTO DE MATERIAL AERONÁUTICO",
+      "ptresDescription": "MANUTENÇÃO E SUPRIMENTO DE MATERIAL AERONÁUTICO",
+      "fundingSource": "1050000140",
+      "expenseNature": "339039",
+      "ugCode": "120026",
+      "om": "PAMA-LS",
+      "ugName": "PARQUE DE MATERIAL AERONÁUTICO DE LAGOA SANTA",
+      "pi": "CA0802INSTR",
+      "creditAvailable": 8998.99,
+      "creditAvailableText": "US$ 8.998,99",
+      "debitCredit": "C",
+      "matchKey": "120026|2048|CA0802INSTR|339039"
+    },
+    {
+      "id": "credit-line-083",
+      "sourceLine": 83,
+      "isf": "N",
+      "accountIndicator": "1",
+      "ptres": "229177",
+      "action": "2048",
+      "actionDescription": "MANUTENÇÃO E SUPRIMENTO DE MATERIAL AERONÁUTICO",
+      "ptresDescription": "MANUTENÇÃO E SUPRIMENTO DE MATERIAL AERONÁUTICO",
+      "fundingSource": "1050000140",
+      "expenseNature": "339039",
+      "ugCode": "120026",
+      "om": "PAMA-LS",
+      "ugName": "PARQUE DE MATERIAL AERONÁUTICO DE LAGOA SANTA",
+      "pi": "CA0802TRNSP",
+      "creditAvailable": 4859.3,
+      "creditAvailableText": "US$ 4.859,30",
+      "debitCredit": "C",
+      "matchKey": "120026|2048|CA0802TRNSP|339039"
+    },
+    {
+      "id": "credit-line-084",
+      "sourceLine": 84,
+      "isf": "N",
+      "accountIndicator": "1",
+      "ptres": "229177",
+      "action": "2048",
+      "actionDescription": "MANUTENÇÃO E SUPRIMENTO DE MATERIAL AERONÁUTICO",
+      "ptresDescription": "MANUTENÇÃO E SUPRIMENTO DE MATERIAL AERONÁUTICO",
+      "fundingSource": "1050000140",
+      "expenseNature": "339039",
+      "ugCode": "120049",
+      "om": "PAMA-GL",
+      "ugName": "PARQUE DE MATERIAL AERONÁUTICO DO GALEÃO",
+      "pi": "CA0802TRNSP",
+      "creditAvailable": 25061.05,
+      "creditAvailableText": "US$ 25.061,05",
+      "debitCredit": "C",
+      "matchKey": "120049|2048|CA0802TRNSP|339039"
+    },
+    {
+      "id": "credit-line-085",
+      "sourceLine": 85,
+      "isf": "N",
+      "accountIndicator": "1",
+      "ptres": "229177",
+      "action": "2048",
+      "actionDescription": "MANUTENÇÃO E SUPRIMENTO DE MATERIAL AERONÁUTICO",
+      "ptresDescription": "MANUTENÇÃO E SUPRIMENTO DE MATERIAL AERONÁUTICO",
+      "fundingSource": "1050000140",
+      "expenseNature": "339039",
+      "ugCode": "120049",
+      "om": "PAMA-GL",
+      "ugName": "PARQUE DE MATERIAL AERONÁUTICO DO GALEÃO",
+      "pi": "CA080200VIP",
+      "creditAvailable": 30375.01,
+      "creditAvailableText": "US$ 30.375,01",
+      "debitCredit": "C",
+      "matchKey": "120049|2048|CA080200VIP|339039"
+    },
+    {
+      "id": "credit-line-086",
+      "sourceLine": 86,
+      "isf": "N",
+      "accountIndicator": "1",
+      "ptres": "229177",
+      "action": "2048",
+      "actionDescription": "MANUTENÇÃO E SUPRIMENTO DE MATERIAL AERONÁUTICO",
+      "ptresDescription": "MANUTENÇÃO E SUPRIMENTO DE MATERIAL AERONÁUTICO",
+      "fundingSource": "1050000140",
+      "expenseNature": "339039",
+      "ugCode": "120068",
+      "om": "PAMA-SP",
+      "ugName": "PARQUE DE MATERIAL AERONÁUTICO DE SÃO PAULO",
+      "pi": "CA0802FIGHT",
+      "creditAvailable": 168.08,
+      "creditAvailableText": "US$ 168,08",
+      "debitCredit": "C",
+      "matchKey": "120068|2048|CA0802FIGHT|339039"
+    },
+    {
+      "id": "credit-line-087",
+      "sourceLine": 87,
+      "isf": "N",
+      "accountIndicator": "1",
+      "ptres": "229177",
+      "action": "2048",
+      "actionDescription": "MANUTENÇÃO E SUPRIMENTO DE MATERIAL AERONÁUTICO",
+      "ptresDescription": "MANUTENÇÃO E SUPRIMENTO DE MATERIAL AERONÁUTICO",
+      "fundingSource": "1050000140",
+      "expenseNature": "339039",
+      "ugCode": "120068",
+      "om": "PAMA-SP",
+      "ugName": "PARQUE DE MATERIAL AERONÁUTICO DE SÃO PAULO",
+      "pi": "CA080200SAR",
+      "creditAvailable": 500595.14,
+      "creditAvailableText": "US$ 500.595,14",
+      "debitCredit": "C",
+      "matchKey": "120068|2048|CA080200SAR|339039"
+    },
+    {
+      "id": "credit-line-088",
+      "sourceLine": 88,
+      "isf": "N",
+      "accountIndicator": "1",
+      "ptres": "229177",
+      "action": "2048",
+      "actionDescription": "MANUTENÇÃO E SUPRIMENTO DE MATERIAL AERONÁUTICO",
+      "ptresDescription": "MANUTENÇÃO E SUPRIMENTO DE MATERIAL AERONÁUTICO",
+      "fundingSource": "1050000140",
+      "expenseNature": "339039",
+      "ugCode": "120071",
+      "om": "CELOG",
+      "ugName": "CENTRO LOGÍSTICO DA AERONÁUTICA",
+      "pi": "CA0802APOIO",
+      "creditAvailable": 19228.01,
+      "creditAvailableText": "US$ 19.228,01",
+      "debitCredit": "C",
+      "matchKey": "120071|2048|CA0802APOIO|339039"
+    },
+    {
+      "id": "credit-line-089",
+      "sourceLine": 89,
+      "isf": "N",
+      "accountIndicator": "1",
+      "ptres": "229177",
+      "action": "2048",
+      "actionDescription": "MANUTENÇÃO E SUPRIMENTO DE MATERIAL AERONÁUTICO",
+      "ptresDescription": "MANUTENÇÃO E SUPRIMENTO DE MATERIAL AERONÁUTICO",
+      "fundingSource": "1050000140",
+      "expenseNature": "339039",
+      "ugCode": "120090",
+      "om": "CABW",
+      "ugName": "COMISSÃO AERONÁUTICA BRASILEIRA EM WASHINGTON",
+      "pi": "CA0802APOIO",
+      "creditAvailable": 13750.0,
+      "creditAvailableText": "US$ 13.750,00",
+      "debitCredit": "C",
+      "matchKey": "120090|2048|CA0802APOIO|339039"
+    },
+    {
+      "id": "credit-line-090",
+      "sourceLine": 90,
+      "isf": "N",
+      "accountIndicator": "1",
+      "ptres": "229177",
+      "action": "2048",
+      "actionDescription": "MANUTENÇÃO E SUPRIMENTO DE MATERIAL AERONÁUTICO",
+      "ptresDescription": "MANUTENÇÃO E SUPRIMENTO DE MATERIAL AERONÁUTICO",
+      "fundingSource": "1051000140",
+      "expenseNature": "449052",
+      "ugCode": "120026",
+      "om": "PAMA-LS",
+      "ugName": "PARQUE DE MATERIAL AERONÁUTICO DE LAGOA SANTA",
+      "pi": "CA0802TRNSP",
+      "creditAvailable": 26031.52,
+      "creditAvailableText": "US$ 26.031,52",
+      "debitCredit": "C",
+      "matchKey": "120026|2048|CA0802TRNSP|449052"
+    },
+    {
+      "id": "credit-line-091",
+      "sourceLine": 91,
+      "isf": "N",
+      "accountIndicator": "1",
+      "ptres": "229177",
+      "action": "2048",
+      "actionDescription": "MANUTENÇÃO E SUPRIMENTO DE MATERIAL AERONÁUTICO",
+      "ptresDescription": "MANUTENÇÃO E SUPRIMENTO DE MATERIAL AERONÁUTICO",
+      "fundingSource": "1051000140",
+      "expenseNature": "449052",
+      "ugCode": "120049",
+      "om": "PAMA-GL",
+      "ugName": "PARQUE DE MATERIAL AERONÁUTICO DO GALEÃO",
+      "pi": "CA0802TRNSP",
+      "creditAvailable": 147338.72,
+      "creditAvailableText": "US$ 147.338,72",
+      "debitCredit": "C",
+      "matchKey": "120049|2048|CA0802TRNSP|449052"
+    },
+    {
+      "id": "credit-line-092",
+      "sourceLine": 92,
+      "isf": "N",
+      "accountIndicator": "1",
+      "ptres": "229177",
+      "action": "2048",
+      "actionDescription": "MANUTENÇÃO E SUPRIMENTO DE MATERIAL AERONÁUTICO",
+      "ptresDescription": "MANUTENÇÃO E SUPRIMENTO DE MATERIAL AERONÁUTICO",
+      "fundingSource": "3050000140",
+      "expenseNature": "339030",
+      "ugCode": "120026",
+      "om": "PAMA-LS",
+      "ugName": "PARQUE DE MATERIAL AERONÁUTICO DE LAGOA SANTA",
+      "pi": "CA0802APOIO",
+      "creditAvailable": 11594.42,
+      "creditAvailableText": "US$ 11.594,42",
+      "debitCredit": "C",
+      "matchKey": "120026|2048|CA0802APOIO|339030"
+    },
+    {
+      "id": "credit-line-093",
+      "sourceLine": 93,
+      "isf": "N",
+      "accountIndicator": "1",
+      "ptres": "229177",
+      "action": "2048",
+      "actionDescription": "MANUTENÇÃO E SUPRIMENTO DE MATERIAL AERONÁUTICO",
+      "ptresDescription": "MANUTENÇÃO E SUPRIMENTO DE MATERIAL AERONÁUTICO",
+      "fundingSource": "3050000140",
+      "expenseNature": "339030",
+      "ugCode": "120026",
+      "om": "PAMA-LS",
+      "ugName": "PARQUE DE MATERIAL AERONÁUTICO DE LAGOA SANTA",
+      "pi": "CA0802INSTR",
+      "creditAvailable": 91491.91,
+      "creditAvailableText": "US$ 91.491,91",
+      "debitCredit": "C",
+      "matchKey": "120026|2048|CA0802INSTR|339030"
+    },
+    {
+      "id": "credit-line-094",
+      "sourceLine": 94,
+      "isf": "N",
+      "accountIndicator": "1",
+      "ptres": "229177",
+      "action": "2048",
+      "actionDescription": "MANUTENÇÃO E SUPRIMENTO DE MATERIAL AERONÁUTICO",
+      "ptresDescription": "MANUTENÇÃO E SUPRIMENTO DE MATERIAL AERONÁUTICO",
+      "fundingSource": "3050000140",
+      "expenseNature": "339030",
+      "ugCode": "120026",
+      "om": "PAMA-LS",
+      "ugName": "PARQUE DE MATERIAL AERONÁUTICO DE LAGOA SANTA",
+      "pi": "CA0802TRNSP",
+      "creditAvailable": 21079.04,
+      "creditAvailableText": "US$ 21.079,04",
+      "debitCredit": "C",
+      "matchKey": "120026|2048|CA0802TRNSP|339030"
+    },
+    {
+      "id": "credit-line-095",
+      "sourceLine": 95,
+      "isf": "N",
+      "accountIndicator": "1",
+      "ptres": "229177",
+      "action": "2048",
+      "actionDescription": "MANUTENÇÃO E SUPRIMENTO DE MATERIAL AERONÁUTICO",
+      "ptresDescription": "MANUTENÇÃO E SUPRIMENTO DE MATERIAL AERONÁUTICO",
+      "fundingSource": "3050000140",
+      "expenseNature": "339030",
+      "ugCode": "120068",
+      "om": "PAMA-SP",
+      "ugName": "PARQUE DE MATERIAL AERONÁUTICO DE SÃO PAULO",
+      "pi": "CA0802APOIO",
+      "creditAvailable": 1640.58,
+      "creditAvailableText": "US$ 1.640,58",
+      "debitCredit": "C",
+      "matchKey": "120068|2048|CA0802APOIO|339030"
+    },
+    {
+      "id": "credit-line-096",
+      "sourceLine": 96,
+      "isf": "N",
+      "accountIndicator": "1",
+      "ptres": "229177",
+      "action": "2048",
+      "actionDescription": "MANUTENÇÃO E SUPRIMENTO DE MATERIAL AERONÁUTICO",
+      "ptresDescription": "MANUTENÇÃO E SUPRIMENTO DE MATERIAL AERONÁUTICO",
+      "fundingSource": "3050000140",
+      "expenseNature": "339030",
+      "ugCode": "120068",
+      "om": "PAMA-SP",
+      "ugName": "PARQUE DE MATERIAL AERONÁUTICO DE SÃO PAULO",
+      "pi": "CA0802FIGHT",
+      "creditAvailable": 152958.89,
+      "creditAvailableText": "US$ 152.958,89",
+      "debitCredit": "C",
+      "matchKey": "120068|2048|CA0802FIGHT|339030"
+    },
+    {
+      "id": "credit-line-097",
+      "sourceLine": 97,
+      "isf": "N",
+      "accountIndicator": "1",
+      "ptres": "229177",
+      "action": "2048",
+      "actionDescription": "MANUTENÇÃO E SUPRIMENTO DE MATERIAL AERONÁUTICO",
+      "ptresDescription": "MANUTENÇÃO E SUPRIMENTO DE MATERIAL AERONÁUTICO",
+      "fundingSource": "3050000140",
+      "expenseNature": "339039",
+      "ugCode": "120026",
+      "om": "PAMA-LS",
+      "ugName": "PARQUE DE MATERIAL AERONÁUTICO DE LAGOA SANTA",
+      "pi": "CA0802INSTR",
+      "creditAvailable": 2603.12,
+      "creditAvailableText": "US$ 2.603,12",
+      "debitCredit": "C",
+      "matchKey": "120026|2048|CA0802INSTR|339039"
+    },
+    {
+      "id": "credit-line-098",
+      "sourceLine": 98,
+      "isf": "N",
+      "accountIndicator": "1",
+      "ptres": "229177",
+      "action": "2048",
+      "actionDescription": "MANUTENÇÃO E SUPRIMENTO DE MATERIAL AERONÁUTICO",
+      "ptresDescription": "MANUTENÇÃO E SUPRIMENTO DE MATERIAL AERONÁUTICO",
+      "fundingSource": "3050000140",
+      "expenseNature": "339039",
+      "ugCode": "120026",
+      "om": "PAMA-LS",
+      "ugName": "PARQUE DE MATERIAL AERONÁUTICO DE LAGOA SANTA",
+      "pi": "CA0802TRNSP",
+      "creditAvailable": 544.44,
+      "creditAvailableText": "US$ 544,44",
+      "debitCredit": "C",
+      "matchKey": "120026|2048|CA0802TRNSP|339039"
+    },
+    {
+      "id": "credit-line-099",
+      "sourceLine": 99,
+      "isf": "N",
+      "accountIndicator": "1",
+      "ptres": "229177",
+      "action": "2048",
+      "actionDescription": "MANUTENÇÃO E SUPRIMENTO DE MATERIAL AERONÁUTICO",
+      "ptresDescription": "MANUTENÇÃO E SUPRIMENTO DE MATERIAL AERONÁUTICO",
+      "fundingSource": "3050000140",
+      "expenseNature": "339039",
+      "ugCode": "120049",
+      "om": "PAMA-GL",
+      "ugName": "PARQUE DE MATERIAL AERONÁUTICO DO GALEÃO",
+      "pi": "CA0802TRNSP",
+      "creditAvailable": 64310.02,
+      "creditAvailableText": "US$ 64.310,02",
+      "debitCredit": "C",
+      "matchKey": "120049|2048|CA0802TRNSP|339039"
+    },
+    {
+      "id": "credit-line-100",
+      "sourceLine": 100,
+      "isf": "N",
+      "accountIndicator": "1",
+      "ptres": "229177",
+      "action": "2048",
+      "actionDescription": "MANUTENÇÃO E SUPRIMENTO DE MATERIAL AERONÁUTICO",
+      "ptresDescription": "MANUTENÇÃO E SUPRIMENTO DE MATERIAL AERONÁUTICO",
+      "fundingSource": "3050000140",
+      "expenseNature": "339039",
+      "ugCode": "120049",
+      "om": "PAMA-GL",
+      "ugName": "PARQUE DE MATERIAL AERONÁUTICO DO GALEÃO",
+      "pi": "CA080200VIP",
+      "creditAvailable": 14855.81,
+      "creditAvailableText": "US$ 14.855,81",
+      "debitCredit": "C",
+      "matchKey": "120049|2048|CA080200VIP|339039"
+    },
+    {
+      "id": "credit-line-101",
+      "sourceLine": 101,
+      "isf": "N",
+      "accountIndicator": "1",
+      "ptres": "229177",
+      "action": "2048",
+      "actionDescription": "MANUTENÇÃO E SUPRIMENTO DE MATERIAL AERONÁUTICO",
+      "ptresDescription": "MANUTENÇÃO E SUPRIMENTO DE MATERIAL AERONÁUTICO",
+      "fundingSource": "3050000140",
+      "expenseNature": "339039",
+      "ugCode": "120068",
+      "om": "PAMA-SP",
+      "ugName": "PARQUE DE MATERIAL AERONÁUTICO DE SÃO PAULO",
+      "pi": "CA080200VIP",
+      "creditAvailable": 1538.0,
+      "creditAvailableText": "US$ 1.538,00",
+      "debitCredit": "C",
+      "matchKey": "120068|2048|CA080200VIP|339039"
+    },
+    {
+      "id": "credit-line-102",
+      "sourceLine": 102,
+      "isf": "N",
+      "accountIndicator": "1",
+      "ptres": "229177",
+      "action": "2048",
+      "actionDescription": "MANUTENÇÃO E SUPRIMENTO DE MATERIAL AERONÁUTICO",
+      "ptresDescription": "MANUTENÇÃO E SUPRIMENTO DE MATERIAL AERONÁUTICO",
+      "fundingSource": "3050000140",
+      "expenseNature": "339039",
+      "ugCode": "120071",
+      "om": "CELOG",
+      "ugName": "CENTRO LOGÍSTICO DA AERONÁUTICA",
+      "pi": "CA0802APOIO",
+      "creditAvailable": 23000.0,
+      "creditAvailableText": "US$ 23.000,00",
+      "debitCredit": "C",
+      "matchKey": "120071|2048|CA0802APOIO|339039"
+    },
+    {
+      "id": "credit-line-103",
+      "sourceLine": 103,
+      "isf": "N",
+      "accountIndicator": "1",
+      "ptres": "229177",
+      "action": "2048",
+      "actionDescription": "MANUTENÇÃO E SUPRIMENTO DE MATERIAL AERONÁUTICO",
+      "ptresDescription": "MANUTENÇÃO E SUPRIMENTO DE MATERIAL AERONÁUTICO",
+      "fundingSource": "3050000140",
+      "expenseNature": "339039",
+      "ugCode": "120090",
+      "om": "CABW",
+      "ugName": "COMISSÃO AERONÁUTICA BRASILEIRA EM WASHINGTON",
+      "pi": "CA0802APOIO",
+      "creditAvailable": 50000.0,
+      "creditAvailableText": "US$ 50.000,00",
+      "debitCredit": "C",
+      "matchKey": "120090|2048|CA0802APOIO|339039"
+    },
+    {
+      "id": "credit-line-104",
+      "sourceLine": 104,
+      "isf": "N",
+      "accountIndicator": "1",
+      "ptres": "229177",
+      "action": "2048",
+      "actionDescription": "MANUTENÇÃO E SUPRIMENTO DE MATERIAL AERONÁUTICO",
+      "ptresDescription": "MANUTENÇÃO E SUPRIMENTO DE MATERIAL AERONÁUTICO",
+      "fundingSource": "3050000140",
+      "expenseNature": "449052",
+      "ugCode": "120049",
+      "om": "PAMA-GL",
+      "ugName": "PARQUE DE MATERIAL AERONÁUTICO DO GALEÃO",
+      "pi": "CA0802TRNSP",
+      "creditAvailable": 400.16,
+      "creditAvailableText": "US$ 400,16",
+      "debitCredit": "C",
+      "matchKey": "120049|2048|CA0802TRNSP|449052"
+    },
+    {
+      "id": "credit-line-105",
+      "sourceLine": 105,
+      "isf": "N",
+      "accountIndicator": "1",
+      "ptres": "229177",
+      "action": "2048",
+      "actionDescription": "MANUTENÇÃO E SUPRIMENTO DE MATERIAL AERONÁUTICO",
+      "ptresDescription": "MANUTENÇÃO E SUPRIMENTO DE MATERIAL AERONÁUTICO",
+      "fundingSource": "3050000140",
+      "expenseNature": "449052",
+      "ugCode": "120049",
+      "om": "PAMA-GL",
+      "ugName": "PARQUE DE MATERIAL AERONÁUTICO DO GALEÃO",
+      "pi": "CA080200IVR",
+      "creditAvailable": 23850.5,
+      "creditAvailableText": "US$ 23.850,50",
+      "debitCredit": "C",
+      "matchKey": "120049|2048|CA080200IVR|449052"
+    },
+    {
+      "id": "credit-line-106",
+      "sourceLine": 106,
+      "isf": "N",
+      "accountIndicator": "1",
+      "ptres": "229179",
+      "action": "2868",
+      "actionDescription": "COMBUSTÍVEIS E LUBRIFICANTES DE AVIAÇÃO",
+      "ptresDescription": "COMBUSTÍVEIS E LUBRIFICANTES DE AVIAÇÃO",
+      "fundingSource": "1000000000",
+      "expenseNature": "339030",
+      "ugCode": "120090",
+      "om": "CABW",
+      "ugName": "COMISSÃO AERONÁUTICA BRASILEIRA EM WASHINGTON",
+      "pi": "CA08020COMB",
+      "creditAvailable": 7444.92,
+      "creditAvailableText": "US$ 7.444,92",
+      "debitCredit": "C",
+      "matchKey": "120090|2868|CA08020COMB|339030"
+    },
+    {
+      "id": "credit-line-107",
+      "sourceLine": 107,
+      "isf": "N",
+      "accountIndicator": "1",
+      "ptres": "229179",
+      "action": "2868",
+      "actionDescription": "COMBUSTÍVEIS E LUBRIFICANTES DE AVIAÇÃO",
+      "ptresDescription": "COMBUSTÍVEIS E LUBRIFICANTES DE AVIAÇÃO",
+      "fundingSource": "1050000140",
+      "expenseNature": "339030",
+      "ugCode": "120068",
+      "om": "PAMA-SP",
+      "ugName": "PARQUE DE MATERIAL AERONÁUTICO DE SÃO PAULO",
+      "pi": "CA08020COMB",
+      "creditAvailable": 169194.4,
+      "creditAvailableText": "US$ 169.194,40",
+      "debitCredit": "C",
+      "matchKey": "120068|2868|CA08020COMB|339030"
+    },
+    {
+      "id": "credit-line-108",
+      "sourceLine": 108,
+      "isf": "N",
+      "accountIndicator": "1",
+      "ptres": "229179",
+      "action": "2868",
+      "actionDescription": "COMBUSTÍVEIS E LUBRIFICANTES DE AVIAÇÃO",
+      "ptresDescription": "COMBUSTÍVEIS E LUBRIFICANTES DE AVIAÇÃO",
+      "fundingSource": "1050000140",
+      "expenseNature": "339030",
+      "ugCode": "120071",
+      "om": "CELOG",
+      "ugName": "CENTRO LOGÍSTICO DA AERONÁUTICA",
+      "pi": "CA08020COMB",
+      "creditAvailable": 7042.65,
+      "creditAvailableText": "US$ 7.042,65",
+      "debitCredit": "C",
+      "matchKey": "120071|2868|CA08020COMB|339030"
+    },
+    {
+      "id": "credit-line-109",
+      "sourceLine": 109,
+      "isf": "N",
+      "accountIndicator": "1",
+      "ptres": "229179",
+      "action": "2868",
+      "actionDescription": "COMBUSTÍVEIS E LUBRIFICANTES DE AVIAÇÃO",
+      "ptresDescription": "COMBUSTÍVEIS E LUBRIFICANTES DE AVIAÇÃO",
+      "fundingSource": "1050000140",
+      "expenseNature": "339030",
+      "ugCode": "120090",
+      "om": "CABW",
+      "ugName": "COMISSÃO AERONÁUTICA BRASILEIRA EM WASHINGTON",
+      "pi": "CA08020COMB",
+      "creditAvailable": 48344.18,
+      "creditAvailableText": "US$ 48.344,18",
+      "debitCredit": "C",
+      "matchKey": "120090|2868|CA08020COMB|339030"
+    },
+    {
+      "id": "credit-line-110",
+      "sourceLine": 110,
+      "isf": "N",
+      "accountIndicator": "1",
+      "ptres": "229209",
+      "action": "00UU",
+      "actionDescription": "CONTRIBUIÇÕES A ORGANISMOS INTERNACIONAIS",
+      "ptresDescription": "CONTRIBUIÇÕES A ORGANISMOS INTERNACIONAIS",
+      "fundingSource": "1050000140",
+      "expenseNature": "338041",
+      "ugCode": "120111",
+      "om": "EMAER",
+      "ugName": "ESTADO-MAIOR DA AERONÁUTICA",
+      "pi": "EM051948402",
+      "creditAvailable": 444.6,
+      "creditAvailableText": "US$ 444,60",
+      "debitCredit": "C",
+      "matchKey": "120111|00UU|EM051948402|338041"
+    },
+    {
+      "id": "credit-line-111",
+      "sourceLine": 111,
+      "isf": "N",
+      "accountIndicator": "1",
+      "ptres": "229226",
+      "action": "21A0",
+      "actionDescription": "APRESTAMENTO DAS FORÇAS ARMADAS",
+      "ptresDescription": "APRESTAMENTO DAS FORÇAS ARMADAS",
+      "fundingSource": "1000000000",
+      "expenseNature": "339030",
+      "ugCode": "120047",
+      "om": "PAMB-RJ",
+      "ugName": "PARQUE DE MATERIAL BÉLICO DA AERONÁUTICA DO RIO DE JANEIRO",
+      "pi": "CA0802ARSEN",
+      "creditAvailable": 5796.9,
+      "creditAvailableText": "US$ 5.796,90",
+      "debitCredit": "C",
+      "matchKey": "120047|21A0|CA0802ARSEN|339030"
+    },
+    {
+      "id": "credit-line-112",
+      "sourceLine": 112,
+      "isf": "N",
+      "accountIndicator": "1",
+      "ptres": "229226",
+      "action": "21A0",
+      "actionDescription": "APRESTAMENTO DAS FORÇAS ARMADAS",
+      "ptresDescription": "APRESTAMENTO DAS FORÇAS ARMADAS",
+      "fundingSource": "3050000140",
+      "expenseNature": "339030",
+      "ugCode": "120047",
+      "om": "PAMB-RJ",
+      "ugName": "PARQUE DE MATERIAL BÉLICO DA AERONÁUTICA DO RIO DE JANEIRO",
+      "pi": "CA0802ARSEN",
+      "creditAvailable": 53129.14,
+      "creditAvailableText": "US$ 53.129,14",
+      "debitCredit": "C",
+      "matchKey": "120047|21A0|CA0802ARSEN|339030"
+    },
+    {
+      "id": "credit-line-113",
+      "sourceLine": 113,
+      "isf": "N",
+      "accountIndicator": "1",
+      "ptres": "229226",
+      "action": "21A0",
+      "actionDescription": "APRESTAMENTO DAS FORÇAS ARMADAS",
+      "ptresDescription": "APRESTAMENTO DAS FORÇAS ARMADAS",
+      "fundingSource": "3050000140",
+      "expenseNature": "339039",
+      "ugCode": "120047",
+      "om": "PAMB-RJ",
+      "ugName": "PARQUE DE MATERIAL BÉLICO DA AERONÁUTICA DO RIO DE JANEIRO",
+      "pi": "CA0802ARSEN",
+      "creditAvailable": 0.01,
+      "creditAvailableText": "US$ 0,01",
+      "debitCredit": "C",
+      "matchKey": "120047|21A0|CA0802ARSEN|339039"
+    },
+    {
+      "id": "credit-line-114",
+      "sourceLine": 114,
+      "isf": "N",
+      "accountIndicator": "1",
+      "ptres": "229258",
+      "action": "21GO",
+      "actionDescription": "FUNCIONAMENTO DAS INSTITUIÇÕES CIENTÍFICAS",
+      "ptresDescription": "FUNCIONAMENTO DAS INSTITUIÇÕES CIENTÍFICAS",
+      "fundingSource": "1050000416",
+      "expenseNature": "339039",
+      "ugCode": "120143",
+      "om": "IFI",
+      "ugName": "INSTITUTO DE FOMENTO E COORDENAÇÃO INDUSTRIAL",
+      "pi": "DT063100100",
+      "creditAvailable": 217.73,
+      "creditAvailableText": "US$ 217,73",
+      "debitCredit": "C",
+      "matchKey": "120143|21GO|DT063100100|339039"
+    },
+    {
+      "id": "credit-line-115",
+      "sourceLine": 115,
+      "isf": "N",
+      "accountIndicator": "1",
+      "ptres": "229260",
+      "action": "20XB",
+      "actionDescription": "PESQUISA E DESENVOLVIMENTO NO SETOR AERONÁUTICO",
+      "ptresDescription": "PESQUISA E DESENVOLVIMENTO NO SETOR AERONÁUTICO",
+      "fundingSource": "1050000140",
+      "expenseNature": "339039",
+      "ugCode": "120299",
+      "om": "IPEV",
+      "ugName": "INSTITUTO DE PESQUISAS E ENSAIOS EM VOO",
+      "pi": "DT0907PSD03",
+      "creditAvailable": 2000.0,
+      "creditAvailableText": "US$ 2.000,00",
+      "debitCredit": "C",
+      "matchKey": "120299|20XB|DT0907PSD03|339039"
+    },
+    {
+      "id": "credit-line-116",
+      "sourceLine": 116,
+      "isf": "N",
+      "accountIndicator": "1",
+      "ptres": "229284",
+      "action": "21A0",
+      "actionDescription": "APRESTAMENTO DAS FORÇAS ARMADAS",
+      "ptresDescription": "APRESTAMENTO DAS FORÇAS ARMADAS",
+      "fundingSource": "1050000140",
+      "expenseNature": "339039",
+      "ugCode": "120090",
+      "om": "CABW",
+      "ugName": "COMISSÃO AERONÁUTICA BRASILEIRA EM WASHINGTON",
+      "pi": "EM163401PTX",
+      "creditAvailable": 300.0,
+      "creditAvailableText": "US$ 300,00",
+      "debitCredit": "C",
+      "matchKey": "120090|21A0|EM163401PTX|339039"
+    },
+    {
+      "id": "credit-line-117",
+      "sourceLine": 117,
+      "isf": "N",
+      "accountIndicator": "1",
+      "ptres": "249587",
+      "action": "20IH",
+      "actionDescription": "MODERNIZAÇÃO E REVITALIZAÇÃO DE AERONAVE - T2 / MODERNIZAÇÃO E REVITALIZAÇÃO DE AERONAVE - C97",
+      "ptresDescription": "MODERNIZAÇÃO E REVITALIZAÇÃO DE AERONAVE - T2",
+      "fundingSource": "1000000000",
+      "expenseNature": "339030",
+      "ugCode": "120026",
+      "om": "PAMA-LS",
+      "ugName": "PARQUE DE MATERIAL AERONÁUTICO DE LAGOA SANTA",
+      "pi": "CA0802PJT25",
+      "creditAvailable": 57593.01,
+      "creditAvailableText": "US$ 57.593,01",
+      "debitCredit": "C",
+      "matchKey": "120026|20IH|CA0802PJT25|339030"
+    },
+    {
+      "id": "credit-line-118",
+      "sourceLine": 118,
+      "isf": "N",
+      "accountIndicator": "1",
+      "ptres": "249589",
+      "action": "20IH",
+      "actionDescription": "MODERNIZAÇÃO E REVITALIZAÇÃO DE AERONAVE - T2 / MODERNIZAÇÃO E REVITALIZAÇÃO DE AERONAVE - C97",
+      "ptresDescription": "MODERNIZAÇÃO E REVITALIZAÇÃO DE AERONAVE - C97",
+      "fundingSource": "1000000000",
+      "expenseNature": "339030",
+      "ugCode": "120026",
+      "om": "PAMA-LS",
+      "ugName": "PARQUE DE MATERIAL AERONÁUTICO DE LAGOA SANTA",
+      "pi": "CA0802PJC97",
+      "creditAvailable": 128237.6,
+      "creditAvailableText": "US$ 128.237,60",
+      "debitCredit": "C",
+      "matchKey": "120026|20IH|CA0802PJC97|339030"
+    },
+    {
+      "id": "credit-line-119",
+      "sourceLine": 119,
+      "isf": "N",
+      "accountIndicator": "1",
+      "ptres": "249589",
+      "action": "20IH",
+      "actionDescription": "MODERNIZAÇÃO E REVITALIZAÇÃO DE AERONAVE - T2 / MODERNIZAÇÃO E REVITALIZAÇÃO DE AERONAVE - C97",
+      "ptresDescription": "MODERNIZAÇÃO E REVITALIZAÇÃO DE AERONAVE - C97",
+      "fundingSource": "1000000000",
+      "expenseNature": "449052",
+      "ugCode": "120026",
+      "om": "PAMA-LS",
+      "ugName": "PARQUE DE MATERIAL AERONÁUTICO DE LAGOA SANTA",
+      "pi": "CA0802PJC97",
+      "creditAvailable": 1830.24,
+      "creditAvailableText": "US$ 1.830,24",
+      "debitCredit": "C",
+      "matchKey": "120026|20IH|CA0802PJC97|449052"
+    },
+    {
+      "id": "credit-line-120",
+      "sourceLine": 120,
+      "isf": "N",
+      "accountIndicator": "1",
+      "ptres": "259974",
+      "action": "20X1",
+      "actionDescription": "PARTICIPAÇÃO BRASILEIRA EM OPERAÇÕES",
+      "ptresDescription": "PARTICIPAÇÃO BRASILEIRA EM OPERAÇÕES",
+      "fundingSource": "1000000000",
+      "expenseNature": "339039",
+      "ugCode": "120111",
+      "om": "EMAER",
+      "ugName": "ESTADO-MAIOR DA AERONÁUTICA",
+      "pi": "D0000980000",
+      "creditAvailable": 704.15,
+      "creditAvailableText": "US$ 704,15",
+      "debitCredit": "C",
+      "matchKey": "120111|20X1|D0000980000|339039"
+    },
+    {
+      "id": "credit-line-121",
+      "sourceLine": 121,
+      "isf": "N",
+      "accountIndicator": "2",
+      "ptres": "214550",
+      "action": "2004",
+      "actionDescription": "ASSISTÊNCIA MÉDICA E ODONTOLÓGICA",
+      "ptresDescription": "ASSISTÊNCIA MÉDICA E ODONTOLÓGICA",
+      "fundingSource": "1005000140",
+      "expenseNature": "339039",
+      "ugCode": "120090",
+      "om": "CABW",
+      "ugName": "COMISSÃO AERONÁUTICA BRASILEIRA EM WASHINGTON",
+      "pi": "CG190904200",
+      "creditAvailable": 300000.0,
+      "creditAvailableText": "US$ 300.000,00",
+      "debitCredit": "C",
+      "matchKey": "120090|2004|CG190904200|339039"
+    }
+  ],
+  "groupedByMatchKey": [
+    {
+      "matchKey": "120048|20XV|DC170401TEL|339030",
+      "ugCode": "120048",
+      "om": "PAME-RJ",
+      "ugName": "PARQUE DE MATERIAL DE ELETRÔNICA DA AERONÁUTICA DO RIO DE JANEIRO",
+      "action": "20XV",
+      "actionDescription": "OPERAÇÃO E MANUTENÇÃO DE EQUIPAMENTOS DO SISCEAB",
+      "pi": "DC170401TEL",
+      "expenseNature": "339030",
+      "creditAvailable": 2096514.38,
+      "creditAvailableText": "US$ 2.096.514,38",
+      "launches": 1,
+      "ptres": [
+        "229166"
+      ],
+      "fundingSources": [
+        "1052000140"
+      ],
+      "sourceLines": [
+        50
+      ]
+    },
+    {
+      "matchKey": "120026|2048|CA0802FIGHT|339039",
+      "ugCode": "120026",
+      "om": "PAMA-LS",
+      "ugName": "PARQUE DE MATERIAL AERONÁUTICO DE LAGOA SANTA",
+      "action": "2048",
+      "actionDescription": "MANUTENÇÃO E SUPRIMENTO DE MATERIAL AERONÁUTICO",
+      "pi": "CA0802FIGHT",
+      "expenseNature": "339039",
+      "creditAvailable": 1358934.57,
+      "creditAvailableText": "US$ 1.358.934,57",
+      "launches": 1,
+      "ptres": [
+        "229177"
+      ],
+      "fundingSources": [
+        "1050000140"
+      ],
+      "sourceLines": [
+        81
+      ]
+    },
+    {
+      "matchKey": "120127|20XV|DC080401LOG|449052",
+      "ugCode": "120127",
+      "om": "CISCEA",
+      "ugName": "COMISSÃO DE IMPLANTAÇÃO DO SISTEMA DE CONTROLE DO ESPAÇO AÉREO",
+      "action": "20XV",
+      "actionDescription": "OPERAÇÃO E MANUTENÇÃO DE EQUIPAMENTOS DO SISCEAB",
+      "pi": "DC080401LOG",
+      "expenseNature": "449052",
+      "creditAvailable": 1250802.0,
+      "creditAvailableText": "US$ 1.250.802,00",
+      "launches": 1,
+      "ptres": [
+        "229166"
+      ],
+      "fundingSources": [
+        "1052000140"
+      ],
+      "sourceLines": [
+        66
+      ]
+    },
+    {
+      "matchKey": "120068|2048|CA0802FIGHT|339030",
+      "ugCode": "120068",
+      "om": "PAMA-SP",
+      "ugName": "PARQUE DE MATERIAL AERONÁUTICO DE SÃO PAULO",
+      "action": "2048",
+      "actionDescription": "MANUTENÇÃO E SUPRIMENTO DE MATERIAL AERONÁUTICO",
+      "pi": "CA0802FIGHT",
+      "expenseNature": "339030",
+      "creditAvailable": 673634.36,
+      "creditAvailableText": "US$ 673.634,36",
+      "launches": 2,
+      "ptres": [
+        "229177"
+      ],
+      "fundingSources": [
+        "1050000140",
+        "3050000140"
+      ],
+      "sourceLines": [
+        78,
+        96
+      ]
+    },
+    {
+      "matchKey": "120068|2048|CA080200SAR|339039",
+      "ugCode": "120068",
+      "om": "PAMA-SP",
+      "ugName": "PARQUE DE MATERIAL AERONÁUTICO DE SÃO PAULO",
+      "action": "2048",
+      "actionDescription": "MANUTENÇÃO E SUPRIMENTO DE MATERIAL AERONÁUTICO",
+      "pi": "CA080200SAR",
+      "expenseNature": "339039",
+      "creditAvailable": 500595.14,
+      "creditAvailableText": "US$ 500.595,14",
+      "launches": 1,
+      "ptres": [
+        "229177"
+      ],
+      "fundingSources": [
+        "1050000140"
+      ],
+      "sourceLines": [
+        87
+      ]
+    },
+    {
+      "matchKey": "120090|2004|CG190904200|339039",
+      "ugCode": "120090",
+      "om": "CABW",
+      "ugName": "COMISSÃO AERONÁUTICA BRASILEIRA EM WASHINGTON",
+      "action": "2004",
+      "actionDescription": "ASSISTÊNCIA MÉDICA E ODONTOLÓGICA",
+      "pi": "CG190904200",
+      "expenseNature": "339039",
+      "creditAvailable": 300000.0,
+      "creditAvailableText": "US$ 300.000,00",
+      "launches": 1,
+      "ptres": [
+        "214550"
+      ],
+      "fundingSources": [
+        "1005000140"
+      ],
+      "sourceLines": [
+        121
+      ]
+    },
+    {
+      "matchKey": "120048|20XV|DC170401TEL|339040",
+      "ugCode": "120048",
+      "om": "PAME-RJ",
+      "ugName": "PARQUE DE MATERIAL DE ELETRÔNICA DA AERONÁUTICA DO RIO DE JANEIRO",
+      "action": "20XV",
+      "actionDescription": "OPERAÇÃO E MANUTENÇÃO DE EQUIPAMENTOS DO SISCEAB",
+      "pi": "DC170401TEL",
+      "expenseNature": "339040",
+      "creditAvailable": 217454.79,
+      "creditAvailableText": "US$ 217.454,79",
+      "launches": 1,
+      "ptres": [
+        "229166"
+      ],
+      "fundingSources": [
+        "1052000140"
+      ],
+      "sourceLines": [
+        64
+      ]
+    },
+    {
+      "matchKey": "120048|20XV|DC012101SAR|339030",
+      "ugCode": "120048",
+      "om": "PAME-RJ",
+      "ugName": "PARQUE DE MATERIAL DE ELETRÔNICA DA AERONÁUTICA DO RIO DE JANEIRO",
+      "action": "20XV",
+      "actionDescription": "OPERAÇÃO E MANUTENÇÃO DE EQUIPAMENTOS DO SISCEAB",
+      "pi": "DC012101SAR",
+      "expenseNature": "339030",
+      "creditAvailable": 199100.21,
+      "creditAvailableText": "US$ 199.100,21",
+      "launches": 1,
+      "ptres": [
+        "229166"
+      ],
+      "fundingSources": [
+        "1052000140"
+      ],
+      "sourceLines": [
+        49
+      ]
+    },
+    {
+      "matchKey": "120068|2868|CA08020COMB|339030",
+      "ugCode": "120068",
+      "om": "PAMA-SP",
+      "ugName": "PARQUE DE MATERIAL AERONÁUTICO DE SÃO PAULO",
+      "action": "2868",
+      "actionDescription": "COMBUSTÍVEIS E LUBRIFICANTES DE AVIAÇÃO",
+      "pi": "CA08020COMB",
+      "expenseNature": "339030",
+      "creditAvailable": 169194.4,
+      "creditAvailableText": "US$ 169.194,40",
+      "launches": 1,
+      "ptres": [
+        "229179"
+      ],
+      "fundingSources": [
+        "1050000140"
+      ],
+      "sourceLines": [
+        107
+      ]
+    },
+    {
+      "matchKey": "120026|2048|CA0802INSTR|339030",
+      "ugCode": "120026",
+      "om": "PAMA-LS",
+      "ugName": "PARQUE DE MATERIAL AERONÁUTICO DE LAGOA SANTA",
+      "action": "2048",
+      "actionDescription": "MANUTENÇÃO E SUPRIMENTO DE MATERIAL AERONÁUTICO",
+      "pi": "CA0802INSTR",
+      "expenseNature": "339030",
+      "creditAvailable": 161301.25,
+      "creditAvailableText": "US$ 161.301,25",
+      "launches": 2,
+      "ptres": [
+        "229177"
+      ],
+      "fundingSources": [
+        "1050000140",
+        "3050000140"
+      ],
+      "sourceLines": [
+        72,
+        93
+      ]
+    },
+    {
+      "matchKey": "120049|2048|CA0802TRNSP|449052",
+      "ugCode": "120049",
+      "om": "PAMA-GL",
+      "ugName": "PARQUE DE MATERIAL AERONÁUTICO DO GALEÃO",
+      "action": "2048",
+      "actionDescription": "MANUTENÇÃO E SUPRIMENTO DE MATERIAL AERONÁUTICO",
+      "pi": "CA0802TRNSP",
+      "expenseNature": "449052",
+      "creditAvailable": 147738.88,
+      "creditAvailableText": "US$ 147.738,88",
+      "launches": 2,
+      "ptres": [
+        "229177"
+      ],
+      "fundingSources": [
+        "1051000140",
+        "3050000140"
+      ],
+      "sourceLines": [
+        91,
+        104
+      ]
+    },
+    {
+      "matchKey": "120026|20IH|CA0802PJC97|339030",
+      "ugCode": "120026",
+      "om": "PAMA-LS",
+      "ugName": "PARQUE DE MATERIAL AERONÁUTICO DE LAGOA SANTA",
+      "action": "20IH",
+      "actionDescription": "MODERNIZAÇÃO E REVITALIZAÇÃO DE AERONAVE - T2 / MODERNIZAÇÃO E REVITALIZAÇÃO DE AERONAVE - C97",
+      "pi": "CA0802PJC97",
+      "expenseNature": "339030",
+      "creditAvailable": 128237.6,
+      "creditAvailableText": "US$ 128.237,60",
+      "launches": 1,
+      "ptres": [
+        "249589"
+      ],
+      "fundingSources": [
+        "1000000000"
+      ],
+      "sourceLines": [
+        118
+      ]
+    },
+    {
+      "matchKey": "120026|20XV|CA08020INSP|339039",
+      "ugCode": "120026",
+      "om": "PAMA-LS",
+      "ugName": "PARQUE DE MATERIAL AERONÁUTICO DE LAGOA SANTA",
+      "action": "20XV",
+      "actionDescription": "OPERAÇÃO E MANUTENÇÃO DE EQUIPAMENTOS DO SISCEAB",
+      "pi": "CA08020INSP",
+      "expenseNature": "339039",
+      "creditAvailable": 118090.59,
+      "creditAvailableText": "US$ 118.090,59",
+      "launches": 1,
+      "ptres": [
+        "229166"
+      ],
+      "fundingSources": [
+        "1052000140"
+      ],
+      "sourceLines": [
+        55
+      ]
+    },
+    {
+      "matchKey": "120049|2048|CA0802TRNSP|339039",
+      "ugCode": "120049",
+      "om": "PAMA-GL",
+      "ugName": "PARQUE DE MATERIAL AERONÁUTICO DO GALEÃO",
+      "action": "2048",
+      "actionDescription": "MANUTENÇÃO E SUPRIMENTO DE MATERIAL AERONÁUTICO",
+      "pi": "CA0802TRNSP",
+      "expenseNature": "339039",
+      "creditAvailable": 89371.07,
+      "creditAvailableText": "US$ 89.371,07",
+      "launches": 2,
+      "ptres": [
+        "229177"
+      ],
+      "fundingSources": [
+        "1050000140",
+        "3050000140"
+      ],
+      "sourceLines": [
+        84,
+        99
+      ]
+    },
+    {
+      "matchKey": "120036|20XV|DC060402100|449052",
+      "ugCode": "120036",
+      "om": "DECEA",
+      "ugName": "DEPARTAMENTO DE CONTROLE DO ESPAÇO AÉREO",
+      "action": "20XV",
+      "actionDescription": "OPERAÇÃO E MANUTENÇÃO DE EQUIPAMENTOS DO SISCEAB",
+      "pi": "DC060402100",
+      "expenseNature": "449052",
+      "creditAvailable": 74990.0,
+      "creditAvailableText": "US$ 74.990,00",
+      "launches": 1,
+      "ptres": [
+        "229166"
+      ],
+      "fundingSources": [
+        "1052000140"
+      ],
+      "sourceLines": [
+        65
+      ]
+    },
+    {
+      "matchKey": "120068|2048|CA0802APOIO|339030",
+      "ugCode": "120068",
+      "om": "PAMA-SP",
+      "ugName": "PARQUE DE MATERIAL AERONÁUTICO DE SÃO PAULO",
+      "action": "2048",
+      "actionDescription": "MANUTENÇÃO E SUPRIMENTO DE MATERIAL AERONÁUTICO",
+      "pi": "CA0802APOIO",
+      "expenseNature": "339030",
+      "creditAvailable": 72212.96,
+      "creditAvailableText": "US$ 72.212,96",
+      "launches": 2,
+      "ptres": [
+        "229177"
+      ],
+      "fundingSources": [
+        "1050000140",
+        "3050000140"
+      ],
+      "sourceLines": [
+        77,
+        95
+      ]
+    },
+    {
+      "matchKey": "120090|2048|CA0802APOIO|339039",
+      "ugCode": "120090",
+      "om": "CABW",
+      "ugName": "COMISSÃO AERONÁUTICA BRASILEIRA EM WASHINGTON",
+      "action": "2048",
+      "actionDescription": "MANUTENÇÃO E SUPRIMENTO DE MATERIAL AERONÁUTICO",
+      "pi": "CA0802APOIO",
+      "expenseNature": "339039",
+      "creditAvailable": 63750.0,
+      "creditAvailableText": "US$ 63.750,00",
+      "launches": 2,
+      "ptres": [
+        "229177"
+      ],
+      "fundingSources": [
+        "1050000140",
+        "3050000140"
+      ],
+      "sourceLines": [
+        89,
+        103
+      ]
+    },
+    {
+      "matchKey": "120047|21A0|CA0802ARSEN|339030",
+      "ugCode": "120047",
+      "om": "PAMB-RJ",
+      "ugName": "PARQUE DE MATERIAL BÉLICO DA AERONÁUTICA DO RIO DE JANEIRO",
+      "action": "21A0",
+      "actionDescription": "APRESTAMENTO DAS FORÇAS ARMADAS",
+      "pi": "CA0802ARSEN",
+      "expenseNature": "339030",
+      "creditAvailable": 58926.04,
+      "creditAvailableText": "US$ 58.926,04",
+      "launches": 2,
+      "ptres": [
+        "229226"
+      ],
+      "fundingSources": [
+        "1000000000",
+        "3050000140"
+      ],
+      "sourceLines": [
+        111,
+        112
+      ]
+    },
+    {
+      "matchKey": "120026|20IH|CA0802PJT25|339030",
+      "ugCode": "120026",
+      "om": "PAMA-LS",
+      "ugName": "PARQUE DE MATERIAL AERONÁUTICO DE LAGOA SANTA",
+      "action": "20IH",
+      "actionDescription": "MODERNIZAÇÃO E REVITALIZAÇÃO DE AERONAVE - T2 / MODERNIZAÇÃO E REVITALIZAÇÃO DE AERONAVE - C97",
+      "pi": "CA0802PJT25",
+      "expenseNature": "339030",
+      "creditAvailable": 57593.01,
+      "creditAvailableText": "US$ 57.593,01",
+      "launches": 1,
+      "ptres": [
+        "249587"
+      ],
+      "fundingSources": [
+        "1000000000"
+      ],
+      "sourceLines": [
+        117
+      ]
+    },
+    {
+      "matchKey": "120090|2868|CA08020COMB|339030",
+      "ugCode": "120090",
+      "om": "CABW",
+      "ugName": "COMISSÃO AERONÁUTICA BRASILEIRA EM WASHINGTON",
+      "action": "2868",
+      "actionDescription": "COMBUSTÍVEIS E LUBRIFICANTES DE AVIAÇÃO",
+      "pi": "CA08020COMB",
+      "expenseNature": "339030",
+      "creditAvailable": 55789.1,
+      "creditAvailableText": "US$ 55.789,10",
+      "launches": 2,
+      "ptres": [
+        "229179"
+      ],
+      "fundingSources": [
+        "1000000000",
+        "1050000140"
+      ],
+      "sourceLines": [
+        106,
+        109
+      ]
+    },
+    {
+      "matchKey": "120026|2048|CA0802APOIO|339030",
+      "ugCode": "120026",
+      "om": "PAMA-LS",
+      "ugName": "PARQUE DE MATERIAL AERONÁUTICO DE LAGOA SANTA",
+      "action": "2048",
+      "actionDescription": "MANUTENÇÃO E SUPRIMENTO DE MATERIAL AERONÁUTICO",
+      "pi": "CA0802APOIO",
+      "expenseNature": "339030",
+      "creditAvailable": 52282.18,
+      "creditAvailableText": "US$ 52.282,18",
+      "launches": 3,
+      "ptres": [
+        "229177"
+      ],
+      "fundingSources": [
+        "1000000000",
+        "1050000140",
+        "3050000140"
+      ],
+      "sourceLines": [
+        69,
+        71,
+        92
+      ]
+    },
+    {
+      "matchKey": "120038|20X7|OCS90015000|339039",
+      "ugCode": "120038",
+      "om": "DIRMAB",
+      "ugName": "DIRETORIA DE MATERIAL AERONÁUTICO E BÉLICO",
+      "action": "20X7",
+      "actionDescription": "EMPREGO CONJUNTO OU COMBINADO DAS FFAA",
+      "pi": "OCS90015000",
+      "expenseNature": "339039",
+      "creditAvailable": 48878.97,
+      "creditAvailableText": "US$ 48.878,97",
+      "launches": 1,
+      "ptres": [
+        "228715"
+      ],
+      "fundingSources": [
+        "1000000000"
+      ],
+      "sourceLines": [
+        41
+      ]
+    },
+    {
+      "matchKey": "120090|20SA|CA1736INFCD|339040",
+      "ugCode": "120090",
+      "om": "CABW",
+      "ugName": "COMISSÃO AERONÁUTICA BRASILEIRA EM WASHINGTON",
+      "action": "20SA",
+      "actionDescription": "MANUTENÇÃO DE SISTEMAS DE INFORMAÇÕES MILITARES",
+      "pi": "CA1736INFCD",
+      "expenseNature": "339040",
+      "creditAvailable": 47455.8,
+      "creditAvailableText": "US$ 47.455,80",
+      "launches": 1,
+      "ptres": [
+        "229175"
+      ],
+      "fundingSources": [
+        "1050000140"
+      ],
+      "sourceLines": [
+        67
+      ]
+    },
+    {
+      "matchKey": "120049|2048|CA080200VIP|339039",
+      "ugCode": "120049",
+      "om": "PAMA-GL",
+      "ugName": "PARQUE DE MATERIAL AERONÁUTICO DO GALEÃO",
+      "action": "2048",
+      "actionDescription": "MANUTENÇÃO E SUPRIMENTO DE MATERIAL AERONÁUTICO",
+      "pi": "CA080200VIP",
+      "expenseNature": "339039",
+      "creditAvailable": 45230.82,
+      "creditAvailableText": "US$ 45.230,82",
+      "launches": 2,
+      "ptres": [
+        "229177"
+      ],
+      "fundingSources": [
+        "1050000140",
+        "3050000140"
+      ],
+      "sourceLines": [
+        85,
+        100
+      ]
+    },
+    {
+      "matchKey": "120071|2048|CA0802APOIO|339039",
+      "ugCode": "120071",
+      "om": "CELOG",
+      "ugName": "CENTRO LOGÍSTICO DA AERONÁUTICA",
+      "action": "2048",
+      "actionDescription": "MANUTENÇÃO E SUPRIMENTO DE MATERIAL AERONÁUTICO",
+      "pi": "CA0802APOIO",
+      "expenseNature": "339039",
+      "creditAvailable": 42228.01,
+      "creditAvailableText": "US$ 42.228,01",
+      "launches": 2,
+      "ptres": [
+        "229177"
+      ],
+      "fundingSources": [
+        "1050000140",
+        "3050000140"
+      ],
+      "sourceLines": [
+        88,
+        102
+      ]
+    },
+    {
+      "matchKey": "120038|20X7|OCS90003000|339039",
+      "ugCode": "120038",
+      "om": "DIRMAB",
+      "ugName": "DIRETORIA DE MATERIAL AERONÁUTICO E BÉLICO",
+      "action": "20X7",
+      "actionDescription": "EMPREGO CONJUNTO OU COMBINADO DAS FFAA",
+      "pi": "OCS90003000",
+      "expenseNature": "339039",
+      "creditAvailable": 35442.91,
+      "creditAvailableText": "US$ 35.442,91",
+      "launches": 1,
+      "ptres": [
+        "228715"
+      ],
+      "fundingSources": [
+        "1000000000"
+      ],
+      "sourceLines": [
+        39
+      ]
+    },
+    {
+      "matchKey": "120026|2048|CA0802TRNSP|339030",
+      "ugCode": "120026",
+      "om": "PAMA-LS",
+      "ugName": "PARQUE DE MATERIAL AERONÁUTICO DE LAGOA SANTA",
+      "action": "2048",
+      "actionDescription": "MANUTENÇÃO E SUPRIMENTO DE MATERIAL AERONÁUTICO",
+      "pi": "CA0802TRNSP",
+      "expenseNature": "339030",
+      "creditAvailable": 33981.4,
+      "creditAvailableText": "US$ 33.981,40",
+      "launches": 2,
+      "ptres": [
+        "229177"
+      ],
+      "fundingSources": [
+        "1050000140",
+        "3050000140"
+      ],
+      "sourceLines": [
+        73,
+        94
+      ]
+    },
+    {
+      "matchKey": "120038|20X7|OCS90014000|339039",
+      "ugCode": "120038",
+      "om": "DIRMAB",
+      "ugName": "DIRETORIA DE MATERIAL AERONÁUTICO E BÉLICO",
+      "action": "20X7",
+      "actionDescription": "EMPREGO CONJUNTO OU COMBINADO DAS FFAA",
+      "pi": "OCS90014000",
+      "expenseNature": "339039",
+      "creditAvailable": 32803.47,
+      "creditAvailableText": "US$ 32.803,47",
+      "launches": 1,
+      "ptres": [
+        "228715"
+      ],
+      "fundingSources": [
+        "1000000000"
+      ],
+      "sourceLines": [
+        40
+      ]
+    },
+    {
+      "matchKey": "120026|2048|CA0802TRNSP|449052",
+      "ugCode": "120026",
+      "om": "PAMA-LS",
+      "ugName": "PARQUE DE MATERIAL AERONÁUTICO DE LAGOA SANTA",
+      "action": "2048",
+      "actionDescription": "MANUTENÇÃO E SUPRIMENTO DE MATERIAL AERONÁUTICO",
+      "pi": "CA0802TRNSP",
+      "expenseNature": "449052",
+      "creditAvailable": 26031.52,
+      "creditAvailableText": "US$ 26.031,52",
+      "launches": 1,
+      "ptres": [
+        "229177"
+      ],
+      "fundingSources": [
+        "1051000140"
+      ],
+      "sourceLines": [
+        90
+      ]
+    },
+    {
+      "matchKey": "120049|2048|CA0802TRNSP|339030",
+      "ugCode": "120049",
+      "om": "PAMA-GL",
+      "ugName": "PARQUE DE MATERIAL AERONÁUTICO DO GALEÃO",
+      "action": "2048",
+      "actionDescription": "MANUTENÇÃO E SUPRIMENTO DE MATERIAL AERONÁUTICO",
+      "pi": "CA0802TRNSP",
+      "expenseNature": "339030",
+      "creditAvailable": 25858.15,
+      "creditAvailableText": "US$ 25.858,15",
+      "launches": 1,
+      "ptres": [
+        "229177"
+      ],
+      "fundingSources": [
+        "1050000140"
+      ],
+      "sourceLines": [
+        76
+      ]
+    },
+    {
+      "matchKey": "120049|2048|CA080200IVR|449052",
+      "ugCode": "120049",
+      "om": "PAMA-GL",
+      "ugName": "PARQUE DE MATERIAL AERONÁUTICO DO GALEÃO",
+      "action": "2048",
+      "actionDescription": "MANUTENÇÃO E SUPRIMENTO DE MATERIAL AERONÁUTICO",
+      "pi": "CA080200IVR",
+      "expenseNature": "449052",
+      "creditAvailable": 23850.5,
+      "creditAvailableText": "US$ 23.850,50",
+      "launches": 1,
+      "ptres": [
+        "229177"
+      ],
+      "fundingSources": [
+        "3050000140"
+      ],
+      "sourceLines": [
+        105
+      ]
+    },
+    {
+      "matchKey": "120068|2048|CA080200SAR|339030",
+      "ugCode": "120068",
+      "om": "PAMA-SP",
+      "ugName": "PARQUE DE MATERIAL AERONÁUTICO DE SÃO PAULO",
+      "action": "2048",
+      "actionDescription": "MANUTENÇÃO E SUPRIMENTO DE MATERIAL AERONÁUTICO",
+      "pi": "CA080200SAR",
+      "expenseNature": "339030",
+      "creditAvailable": 22986.08,
+      "creditAvailableText": "US$ 22.986,08",
+      "launches": 1,
+      "ptres": [
+        "229177"
+      ],
+      "fundingSources": [
+        "1050000140"
+      ],
+      "sourceLines": [
+        79
+      ]
+    },
+    {
+      "matchKey": "120036|20XV|DC163401PTX|339039",
+      "ugCode": "120036",
+      "om": "DECEA",
+      "ugName": "DEPARTAMENTO DE CONTROLE DO ESPAÇO AÉREO",
+      "action": "20XV",
+      "actionDescription": "OPERAÇÃO E MANUTENÇÃO DE EQUIPAMENTOS DO SISCEAB",
+      "pi": "DC163401PTX",
+      "expenseNature": "339039",
+      "creditAvailable": 19802.88,
+      "creditAvailableText": "US$ 19.802,88",
+      "launches": 1,
+      "ptres": [
+        "229166"
+      ],
+      "fundingSources": [
+        "1052000140"
+      ],
+      "sourceLines": [
+        58
+      ]
+    },
+    {
+      "matchKey": "120036|20XV|DC060401100|339039",
+      "ugCode": "120036",
+      "om": "DECEA",
+      "ugName": "DEPARTAMENTO DE CONTROLE DO ESPAÇO AÉREO",
+      "action": "20XV",
+      "actionDescription": "OPERAÇÃO E MANUTENÇÃO DE EQUIPAMENTOS DO SISCEAB",
+      "pi": "DC060401100",
+      "expenseNature": "339039",
+      "creditAvailable": 18353.21,
+      "creditAvailableText": "US$ 18.353,21",
+      "launches": 1,
+      "ptres": [
+        "229166"
+      ],
+      "fundingSources": [
+        "1052000140"
+      ],
+      "sourceLines": [
+        57
+      ]
+    },
+    {
+      "matchKey": "120090|2000|CA063100600|339039",
+      "ugCode": "120090",
+      "om": "CABW",
+      "ugName": "COMISSÃO AERONÁUTICA BRASILEIRA EM WASHINGTON",
+      "action": "2000",
+      "actionDescription": "ADMINISTRAÇÃO DA UNIDADE",
+      "pi": "CA063100600",
+      "expenseNature": "339039",
+      "creditAvailable": 12741.7,
+      "creditAvailableText": "US$ 12.741,70",
+      "launches": 1,
+      "ptres": [
+        "168919"
+      ],
+      "fundingSources": [
+        "1050000140"
+      ],
+      "sourceLines": [
+        29
+      ]
+    },
+    {
+      "matchKey": "120090|20SA|CA1736INFTI|449052",
+      "ugCode": "120090",
+      "om": "CABW",
+      "ugName": "COMISSÃO AERONÁUTICA BRASILEIRA EM WASHINGTON",
+      "action": "20SA",
+      "actionDescription": "MANUTENÇÃO DE SISTEMAS DE INFORMAÇÕES MILITARES",
+      "pi": "CA1736INFTI",
+      "expenseNature": "449052",
+      "creditAvailable": 12581.05,
+      "creditAvailableText": "US$ 12.581,05",
+      "launches": 1,
+      "ptres": [
+        "229175"
+      ],
+      "fundingSources": [
+        "3050000140"
+      ],
+      "sourceLines": [
+        68
+      ]
+    },
+    {
+      "matchKey": "120068|20XV|CA080200VIP|339039",
+      "ugCode": "120068",
+      "om": "PAMA-SP",
+      "ugName": "PARQUE DE MATERIAL AERONÁUTICO DE SÃO PAULO",
+      "action": "20XV",
+      "actionDescription": "OPERAÇÃO E MANUTENÇÃO DE EQUIPAMENTOS DO SISCEAB",
+      "pi": "CA080200VIP",
+      "expenseNature": "339039",
+      "creditAvailable": 12012.0,
+      "creditAvailableText": "US$ 12.012,00",
+      "launches": 1,
+      "ptres": [
+        "229166"
+      ],
+      "fundingSources": [
+        "1052000140"
+      ],
+      "sourceLines": [
+        62
+      ]
+    },
+    {
+      "matchKey": "120026|2048|CA0802INSTR|339039",
+      "ugCode": "120026",
+      "om": "PAMA-LS",
+      "ugName": "PARQUE DE MATERIAL AERONÁUTICO DE LAGOA SANTA",
+      "action": "2048",
+      "actionDescription": "MANUTENÇÃO E SUPRIMENTO DE MATERIAL AERONÁUTICO",
+      "pi": "CA0802INSTR",
+      "expenseNature": "339039",
+      "creditAvailable": 11602.11,
+      "creditAvailableText": "US$ 11.602,11",
+      "launches": 2,
+      "ptres": [
+        "229177"
+      ],
+      "fundingSources": [
+        "1050000140",
+        "3050000140"
+      ],
+      "sourceLines": [
+        82,
+        97
+      ]
+    },
+    {
+      "matchKey": "120136|212O|CG0622DPS03|339033",
+      "ugCode": "120136",
+      "om": "DIRAP",
+      "ugName": "DIRETORIA DE ADMINISTRAÇÃO DO PESSOAL",
+      "action": "212O",
+      "actionDescription": "MOVIMENTAÇÃO DE MILITARES",
+      "pi": "CG0622DPS03",
+      "expenseNature": "339033",
+      "creditAvailable": 9500.0,
+      "creditAvailableText": "US$ 9.500,00",
+      "launches": 1,
+      "ptres": [
+        "229140"
+      ],
+      "fundingSources": [
+        "1000000000"
+      ],
+      "sourceLines": [
+        44
+      ]
+    },
+    {
+      "matchKey": "120091|2000|CA063100600|339039",
+      "ugCode": "120091",
+      "om": "CABE",
+      "ugName": "COMISSÃO AERONÁUTICA BRASILEIRA NA EUROPA",
+      "action": "2000",
+      "actionDescription": "ADMINISTRAÇÃO DA UNIDADE",
+      "pi": "CA063100600",
+      "expenseNature": "339039",
+      "creditAvailable": 8390.54,
+      "creditAvailableText": "US$ 8.390,54",
+      "launches": 1,
+      "ptres": [
+        "168919"
+      ],
+      "fundingSources": [
+        "1050000140"
+      ],
+      "sourceLines": [
+        30
+      ]
+    },
+    {
+      "matchKey": "120090|2004|CG190904100|339093",
+      "ugCode": "120090",
+      "om": "CABW",
+      "ugName": "COMISSÃO AERONÁUTICA BRASILEIRA EM WASHINGTON",
+      "action": "2004",
+      "actionDescription": "ASSISTÊNCIA MÉDICA E ODONTOLÓGICA",
+      "pi": "CG190904100",
+      "expenseNature": "339093",
+      "creditAvailable": 7213.68,
+      "creditAvailableText": "US$ 7.213,68",
+      "launches": 1,
+      "ptres": [
+        "214537"
+      ],
+      "fundingSources": [
+        "1000000000"
+      ],
+      "sourceLines": [
+        34
+      ]
+    },
+    {
+      "matchKey": "120071|2868|CA08020COMB|339030",
+      "ugCode": "120071",
+      "om": "CELOG",
+      "ugName": "CENTRO LOGÍSTICO DA AERONÁUTICA",
+      "action": "2868",
+      "actionDescription": "COMBUSTÍVEIS E LUBRIFICANTES DE AVIAÇÃO",
+      "pi": "CA08020COMB",
+      "expenseNature": "339030",
+      "creditAvailable": 7042.65,
+      "creditAvailableText": "US$ 7.042,65",
+      "launches": 1,
+      "ptres": [
+        "229179"
+      ],
+      "fundingSources": [
+        "1050000140"
+      ],
+      "sourceLines": [
+        108
+      ]
+    },
+    {
+      "matchKey": "120049|20XV|CA080200SAR|339039",
+      "ugCode": "120049",
+      "om": "PAMA-GL",
+      "ugName": "PARQUE DE MATERIAL AERONÁUTICO DO GALEÃO",
+      "action": "20XV",
+      "actionDescription": "OPERAÇÃO E MANUTENÇÃO DE EQUIPAMENTOS DO SISCEAB",
+      "pi": "CA080200SAR",
+      "expenseNature": "339039",
+      "creditAvailable": 6922.76,
+      "creditAvailableText": "US$ 6.922,76",
+      "launches": 1,
+      "ptres": [
+        "229166"
+      ],
+      "fundingSources": [
+        "1052000140"
+      ],
+      "sourceLines": [
+        61
+      ]
+    },
+    {
+      "matchKey": "120111|2000|EM0469ADITA|339039",
+      "ugCode": "120111",
+      "om": "EMAER",
+      "ugName": "ESTADO-MAIOR DA AERONÁUTICA",
+      "action": "2000",
+      "actionDescription": "ADMINISTRAÇÃO DA UNIDADE",
+      "pi": "EM0469ADITA",
+      "expenseNature": "339039",
+      "creditAvailable": 6831.69,
+      "creditAvailableText": "US$ 6.831,69",
+      "launches": 1,
+      "ptres": [
+        "168919"
+      ],
+      "fundingSources": [
+        "1050000140"
+      ],
+      "sourceLines": [
+        31
+      ]
+    },
+    {
+      "matchKey": "120026|2048|CA0802APOIO|339039",
+      "ugCode": "120026",
+      "om": "PAMA-LS",
+      "ugName": "PARQUE DE MATERIAL AERONÁUTICO DE LAGOA SANTA",
+      "action": "2048",
+      "actionDescription": "MANUTENÇÃO E SUPRIMENTO DE MATERIAL AERONÁUTICO",
+      "pi": "CA0802APOIO",
+      "expenseNature": "339039",
+      "creditAvailable": 5700.0,
+      "creditAvailableText": "US$ 5.700,00",
+      "launches": 1,
+      "ptres": [
+        "229177"
+      ],
+      "fundingSources": [
+        "1050000140"
+      ],
+      "sourceLines": [
+        80
+      ]
+    },
+    {
+      "matchKey": "120026|2048|CA0802TRNSP|339039",
+      "ugCode": "120026",
+      "om": "PAMA-LS",
+      "ugName": "PARQUE DE MATERIAL AERONÁUTICO DE LAGOA SANTA",
+      "action": "2048",
+      "actionDescription": "MANUTENÇÃO E SUPRIMENTO DE MATERIAL AERONÁUTICO",
+      "pi": "CA0802TRNSP",
+      "expenseNature": "339039",
+      "creditAvailable": 5403.74,
+      "creditAvailableText": "US$ 5.403,74",
+      "launches": 2,
+      "ptres": [
+        "229177"
+      ],
+      "fundingSources": [
+        "1050000140",
+        "3050000140"
+      ],
+      "sourceLines": [
+        83,
+        98
+      ]
+    },
+    {
+      "matchKey": "120036|20XV|DC060401100|339030",
+      "ugCode": "120036",
+      "om": "DECEA",
+      "ugName": "DEPARTAMENTO DE CONTROLE DO ESPAÇO AÉREO",
+      "action": "20XV",
+      "actionDescription": "OPERAÇÃO E MANUTENÇÃO DE EQUIPAMENTOS DO SISCEAB",
+      "pi": "DC060401100",
+      "expenseNature": "339030",
+      "creditAvailable": 5060.17,
+      "creditAvailableText": "US$ 5.060,17",
+      "launches": 1,
+      "ptres": [
+        "229166"
+      ],
+      "fundingSources": [
+        "1052000140"
+      ],
+      "sourceLines": [
+        48
+      ]
+    },
+    {
+      "matchKey": "120090|2000|SF063100003|449052",
+      "ugCode": "120090",
+      "om": "CABW",
+      "ugName": "COMISSÃO AERONÁUTICA BRASILEIRA EM WASHINGTON",
+      "action": "2000",
+      "actionDescription": "ADMINISTRAÇÃO DA UNIDADE",
+      "pi": "SF063100003",
+      "expenseNature": "449052",
+      "creditAvailable": 4838.86,
+      "creditAvailableText": "US$ 4.838,86",
+      "launches": 1,
+      "ptres": [
+        "168901"
+      ],
+      "fundingSources": [
+        "1000000000"
+      ],
+      "sourceLines": [
+        22
+      ]
+    },
+    {
+      "matchKey": "120090|20XV|CA063100200|339039",
+      "ugCode": "120090",
+      "om": "CABW",
+      "ugName": "COMISSÃO AERONÁUTICA BRASILEIRA EM WASHINGTON",
+      "action": "20XV",
+      "actionDescription": "OPERAÇÃO E MANUTENÇÃO DE EQUIPAMENTOS DO SISCEAB",
+      "pi": "CA063100200",
+      "expenseNature": "339039",
+      "creditAvailable": 4104.64,
+      "creditAvailableText": "US$ 4.104,64",
+      "launches": 1,
+      "ptres": [
+        "229166"
+      ],
+      "fundingSources": [
+        "1052000140"
+      ],
+      "sourceLines": [
+        63
+      ]
+    },
+    {
+      "matchKey": "120111|2000|EM0469ADITA|449052",
+      "ugCode": "120111",
+      "om": "EMAER",
+      "ugName": "ESTADO-MAIOR DA AERONÁUTICA",
+      "action": "2000",
+      "actionDescription": "ADMINISTRAÇÃO DA UNIDADE",
+      "pi": "EM0469ADITA",
+      "expenseNature": "449052",
+      "creditAvailable": 4010.0,
+      "creditAvailableText": "US$ 4.010,00",
+      "launches": 1,
+      "ptres": [
+        "168901"
+      ],
+      "fundingSources": [
+        "1000000000"
+      ],
+      "sourceLines": [
+        23
+      ]
+    },
+    {
+      "matchKey": "120090|2000|CA063100109|339039",
+      "ugCode": "120090",
+      "om": "CABW",
+      "ugName": "COMISSÃO AERONÁUTICA BRASILEIRA EM WASHINGTON",
+      "action": "2000",
+      "actionDescription": "ADMINISTRAÇÃO DA UNIDADE",
+      "pi": "CA063100109",
+      "expenseNature": "339039",
+      "creditAvailable": 3539.7,
+      "creditAvailableText": "US$ 3.539,70",
+      "launches": 1,
+      "ptres": [
+        "168919"
+      ],
+      "fundingSources": [
+        "1050000140"
+      ],
+      "sourceLines": [
+        27
+      ]
+    },
+    {
+      "matchKey": "120036|20XV|DC060401100|339033",
+      "ugCode": "120036",
+      "om": "DECEA",
+      "ugName": "DEPARTAMENTO DE CONTROLE DO ESPAÇO AÉREO",
+      "action": "20XV",
+      "actionDescription": "OPERAÇÃO E MANUTENÇÃO DE EQUIPAMENTOS DO SISCEAB",
+      "pi": "DC060401100",
+      "expenseNature": "339033",
+      "creditAvailable": 3220.99,
+      "creditAvailableText": "US$ 3.220,99",
+      "launches": 1,
+      "ptres": [
+        "229166"
+      ],
+      "fundingSources": [
+        "1052000140"
+      ],
+      "sourceLines": [
+        53
+      ]
+    },
+    {
+      "matchKey": "120106|2913|GB2016ATV01|339039",
+      "ugCode": "120106",
+      "om": "CENIPA",
+      "ugName": "CENTRO DE INVESTIGAÇÃO E PREVENÇÃO DE ACIDENTES AERONÁUTICOS",
+      "action": "2913",
+      "actionDescription": "INVESTIGAÇÃO E PREVENÇÃO DE ACIDENTES AERONÁUTICOS",
+      "pi": "GB2016ATV01",
+      "expenseNature": "339039",
+      "creditAvailable": 2700.0,
+      "creditAvailableText": "US$ 2.700,00",
+      "launches": 1,
+      "ptres": [
+        "229163"
+      ],
+      "fundingSources": [
+        "1052000140"
+      ],
+      "sourceLines": [
+        45
+      ]
+    },
+    {
+      "matchKey": "120115|151S|P0011690200|339039",
+      "ugCode": "120115",
+      "om": "COMAE",
+      "ugName": "COMANDO DE OPERAÇÕES AEROESPACIAIS",
+      "action": "151S",
+      "actionDescription": "IMPLANTAÇÃO E DESENVOLVIMENTO",
+      "pi": "P0011690200",
+      "expenseNature": "339039",
+      "creditAvailable": 2000.0,
+      "creditAvailableText": "US$ 2.000,00",
+      "launches": 1,
+      "ptres": [
+        "228676"
+      ],
+      "fundingSources": [
+        "1000000000"
+      ],
+      "sourceLines": [
+        35
+      ]
+    },
+    {
+      "matchKey": "120299|20XB|DT0907PSD03|339039",
+      "ugCode": "120299",
+      "om": "IPEV",
+      "ugName": "INSTITUTO DE PESQUISAS E ENSAIOS EM VOO",
+      "action": "20XB",
+      "actionDescription": "PESQUISA E DESENVOLVIMENTO NO SETOR AERONÁUTICO",
+      "pi": "DT0907PSD03",
+      "expenseNature": "339039",
+      "creditAvailable": 2000.0,
+      "creditAvailableText": "US$ 2.000,00",
+      "launches": 1,
+      "ptres": [
+        "229260"
+      ],
+      "fundingSources": [
+        "1050000140"
+      ],
+      "sourceLines": [
+        115
+      ]
+    },
+    {
+      "matchKey": "120026|20IH|CA0802PJC97|449052",
+      "ugCode": "120026",
+      "om": "PAMA-LS",
+      "ugName": "PARQUE DE MATERIAL AERONÁUTICO DE LAGOA SANTA",
+      "action": "20IH",
+      "actionDescription": "MODERNIZAÇÃO E REVITALIZAÇÃO DE AERONAVE - T2 / MODERNIZAÇÃO E REVITALIZAÇÃO DE AERONAVE - C97",
+      "pi": "CA0802PJC97",
+      "expenseNature": "449052",
+      "creditAvailable": 1830.24,
+      "creditAvailableText": "US$ 1.830,24",
+      "launches": 1,
+      "ptres": [
+        "249589"
+      ],
+      "fundingSources": [
+        "1000000000"
+      ],
+      "sourceLines": [
+        119
+      ]
+    },
+    {
+      "matchKey": "120111|2000|D0000010000|339039",
+      "ugCode": "120111",
+      "om": "EMAER",
+      "ugName": "ESTADO-MAIOR DA AERONÁUTICA",
+      "action": "2000",
+      "actionDescription": "ADMINISTRAÇÃO DA UNIDADE",
+      "pi": "D0000010000",
+      "expenseNature": "339039",
+      "creditAvailable": 1690.05,
+      "creditAvailableText": "US$ 1.690,05",
+      "launches": 1,
+      "ptres": [
+        "168579"
+      ],
+      "fundingSources": [
+        "1000000000"
+      ],
+      "sourceLines": [
+        20
+      ]
+    },
+    {
+      "matchKey": "120068|2048|CA080200VIP|339039",
+      "ugCode": "120068",
+      "om": "PAMA-SP",
+      "ugName": "PARQUE DE MATERIAL AERONÁUTICO DE SÃO PAULO",
+      "action": "2048",
+      "actionDescription": "MANUTENÇÃO E SUPRIMENTO DE MATERIAL AERONÁUTICO",
+      "pi": "CA080200VIP",
+      "expenseNature": "339039",
+      "creditAvailable": 1538.0,
+      "creditAvailableText": "US$ 1.538,00",
+      "launches": 1,
+      "ptres": [
+        "229177"
+      ],
+      "fundingSources": [
+        "3050000140"
+      ],
+      "sourceLines": [
+        101
+      ]
+    },
+    {
+      "matchKey": "120111|20X7|D0000010000|339039",
+      "ugCode": "120111",
+      "om": "EMAER",
+      "ugName": "ESTADO-MAIOR DA AERONÁUTICA",
+      "action": "20X7",
+      "actionDescription": "EMPREGO CONJUNTO OU COMBINADO DAS FFAA",
+      "pi": "D0000010000",
+      "expenseNature": "339039",
+      "creditAvailable": 1185.67,
+      "creditAvailableText": "US$ 1.185,67",
+      "launches": 1,
+      "ptres": [
+        "228692"
+      ],
+      "fundingSources": [
+        "1000000000"
+      ],
+      "sourceLines": [
+        38
+      ]
+    },
+    {
+      "matchKey": "120038|2048|CA0802APOIO|339039",
+      "ugCode": "120038",
+      "om": "DIRMAB",
+      "ugName": "DIRETORIA DE MATERIAL AERONÁUTICO E BÉLICO",
+      "action": "2048",
+      "actionDescription": "MANUTENÇÃO E SUPRIMENTO DE MATERIAL AERONÁUTICO",
+      "pi": "CA0802APOIO",
+      "expenseNature": "339039",
+      "creditAvailable": 1050.0,
+      "creditAvailableText": "US$ 1.050,00",
+      "launches": 1,
+      "ptres": [
+        "229177"
+      ],
+      "fundingSources": [
+        "1000000000"
+      ],
+      "sourceLines": [
+        70
+      ]
+    },
+    {
+      "matchKey": "120111|20X5|D0000010000|339039",
+      "ugCode": "120111",
+      "om": "EMAER",
+      "ugName": "ESTADO-MAIOR DA AERONÁUTICA",
+      "action": "20X5",
+      "actionDescription": "OPERAÇÕES DE COMANDO E CONTROLE DA DEFESA NACIONAL",
+      "pi": "D0000010000",
+      "expenseNature": "339039",
+      "creditAvailable": 937.53,
+      "creditAvailableText": "US$ 937,53",
+      "launches": 1,
+      "ptres": [
+        "228769"
+      ],
+      "fundingSources": [
+        "1000000000"
+      ],
+      "sourceLines": [
+        42
+      ]
+    },
+    {
+      "matchKey": "120026|20XV|CA0802TRNSP|339039",
+      "ugCode": "120026",
+      "om": "PAMA-LS",
+      "ugName": "PARQUE DE MATERIAL AERONÁUTICO DE LAGOA SANTA",
+      "action": "20XV",
+      "actionDescription": "OPERAÇÃO E MANUTENÇÃO DE EQUIPAMENTOS DO SISCEAB",
+      "pi": "CA0802TRNSP",
+      "expenseNature": "339039",
+      "creditAvailable": 776.34,
+      "creditAvailableText": "US$ 776,34",
+      "launches": 1,
+      "ptres": [
+        "229166"
+      ],
+      "fundingSources": [
+        "1052000140"
+      ],
+      "sourceLines": [
+        54
+      ]
+    },
+    {
+      "matchKey": "120111|2D55|D0000010000|339039",
+      "ugCode": "120111",
+      "om": "EMAER",
+      "ugName": "ESTADO-MAIOR DA AERONÁUTICA",
+      "action": "2D55",
+      "actionDescription": "ADIDÂNCIAS MILITARES NO EXTERIOR",
+      "pi": "D0000010000",
+      "expenseNature": "339039",
+      "creditAvailable": 748.61,
+      "creditAvailableText": "US$ 748,61",
+      "launches": 1,
+      "ptres": [
+        "228786"
+      ],
+      "fundingSources": [
+        "1000000000"
+      ],
+      "sourceLines": [
+        43
+      ]
+    },
+    {
+      "matchKey": "120111|20X1|D0000980000|339039",
+      "ugCode": "120111",
+      "om": "EMAER",
+      "ugName": "ESTADO-MAIOR DA AERONÁUTICA",
+      "action": "20X1",
+      "actionDescription": "PARTICIPAÇÃO BRASILEIRA EM OPERAÇÕES",
+      "pi": "D0000980000",
+      "expenseNature": "339039",
+      "creditAvailable": 704.15,
+      "creditAvailableText": "US$ 704,15",
+      "launches": 1,
+      "ptres": [
+        "259974"
+      ],
+      "fundingSources": [
+        "1000000000"
+      ],
+      "sourceLines": [
+        120
+      ]
+    },
+    {
+      "matchKey": "120111|2000|EM0469ADITA|339030",
+      "ugCode": "120111",
+      "om": "EMAER",
+      "ugName": "ESTADO-MAIOR DA AERONÁUTICA",
+      "action": "2000",
+      "actionDescription": "ADMINISTRAÇÃO DA UNIDADE",
+      "pi": "EM0469ADITA",
+      "expenseNature": "339030",
+      "creditAvailable": 700.25,
+      "creditAvailableText": "US$ 700,25",
+      "launches": 1,
+      "ptres": [
+        "168919"
+      ],
+      "fundingSources": [
+        "1050000140"
+      ],
+      "sourceLines": [
+        24
+      ]
+    },
+    {
+      "matchKey": "120111|20X7|D0000010000|339030",
+      "ugCode": "120111",
+      "om": "EMAER",
+      "ugName": "ESTADO-MAIOR DA AERONÁUTICA",
+      "action": "20X7",
+      "actionDescription": "EMPREGO CONJUNTO OU COMBINADO DAS FFAA",
+      "pi": "D0000010000",
+      "expenseNature": "339030",
+      "creditAvailable": 513.82,
+      "creditAvailableText": "US$ 513,82",
+      "launches": 1,
+      "ptres": [
+        "228692"
+      ],
+      "fundingSources": [
+        "1000000000"
+      ],
+      "sourceLines": [
+        36
+      ]
+    },
+    {
+      "matchKey": "120111|00UU|EM051948402|338041",
+      "ugCode": "120111",
+      "om": "EMAER",
+      "ugName": "ESTADO-MAIOR DA AERONÁUTICA",
+      "action": "00UU",
+      "actionDescription": "CONTRIBUIÇÕES A ORGANISMOS INTERNACIONAIS",
+      "pi": "EM051948402",
+      "expenseNature": "338041",
+      "creditAvailable": 444.6,
+      "creditAvailableText": "US$ 444,60",
+      "launches": 1,
+      "ptres": [
+        "229209"
+      ],
+      "fundingSources": [
+        "1050000140"
+      ],
+      "sourceLines": [
+        110
+      ]
+    },
+    {
+      "matchKey": "120090|2000|CA063100100|339039",
+      "ugCode": "120090",
+      "om": "CABW",
+      "ugName": "COMISSÃO AERONÁUTICA BRASILEIRA EM WASHINGTON",
+      "action": "2000",
+      "actionDescription": "ADMINISTRAÇÃO DA UNIDADE",
+      "pi": "CA063100100",
+      "expenseNature": "339039",
+      "creditAvailable": 300.0,
+      "creditAvailableText": "US$ 300,00",
+      "launches": 1,
+      "ptres": [
+        "168919"
+      ],
+      "fundingSources": [
+        "1050000140"
+      ],
+      "sourceLines": [
+        26
+      ]
+    },
+    {
+      "matchKey": "120090|21A0|EM163401PTX|339039",
+      "ugCode": "120090",
+      "om": "CABW",
+      "ugName": "COMISSÃO AERONÁUTICA BRASILEIRA EM WASHINGTON",
+      "action": "21A0",
+      "actionDescription": "APRESTAMENTO DAS FORÇAS ARMADAS",
+      "pi": "EM163401PTX",
+      "expenseNature": "339039",
+      "creditAvailable": 300.0,
+      "creditAvailableText": "US$ 300,00",
+      "launches": 1,
+      "ptres": [
+        "229284"
+      ],
+      "fundingSources": [
+        "1050000140"
+      ],
+      "sourceLines": [
+        116
+      ]
+    },
+    {
+      "matchKey": "120111|20X7|D0000010000|339033",
+      "ugCode": "120111",
+      "om": "EMAER",
+      "ugName": "ESTADO-MAIOR DA AERONÁUTICA",
+      "action": "20X7",
+      "actionDescription": "EMPREGO CONJUNTO OU COMBINADO DAS FFAA",
+      "pi": "D0000010000",
+      "expenseNature": "339033",
+      "creditAvailable": 281.03,
+      "creditAvailableText": "US$ 281,03",
+      "launches": 1,
+      "ptres": [
+        "228692"
+      ],
+      "fundingSources": [
+        "1000000000"
+      ],
+      "sourceLines": [
+        37
+      ]
+    },
+    {
+      "matchKey": "120143|21GO|DT063100100|339039",
+      "ugCode": "120143",
+      "om": "IFI",
+      "ugName": "INSTITUTO DE FOMENTO E COORDENAÇÃO INDUSTRIAL",
+      "action": "21GO",
+      "actionDescription": "FUNCIONAMENTO DAS INSTITUIÇÕES CIENTÍFICAS",
+      "pi": "DT063100100",
+      "expenseNature": "339039",
+      "creditAvailable": 217.73,
+      "creditAvailableText": "US$ 217,73",
+      "launches": 1,
+      "ptres": [
+        "229258"
+      ],
+      "fundingSources": [
+        "1050000416"
+      ],
+      "sourceLines": [
+        114
+      ]
+    },
+    {
+      "matchKey": "120111|2000|EM0469ADITA|339040",
+      "ugCode": "120111",
+      "om": "EMAER",
+      "ugName": "ESTADO-MAIOR DA AERONÁUTICA",
+      "action": "2000",
+      "actionDescription": "ADMINISTRAÇÃO DA UNIDADE",
+      "pi": "EM0469ADITA",
+      "expenseNature": "339040",
+      "creditAvailable": 200.0,
+      "creditAvailableText": "US$ 200,00",
+      "launches": 1,
+      "ptres": [
+        "168919"
+      ],
+      "fundingSources": [
+        "1050000140"
+      ],
+      "sourceLines": [
+        33
+      ]
+    },
+    {
+      "matchKey": "120068|2048|CA0802FIGHT|339039",
+      "ugCode": "120068",
+      "om": "PAMA-SP",
+      "ugName": "PARQUE DE MATERIAL AERONÁUTICO DE SÃO PAULO",
+      "action": "2048",
+      "actionDescription": "MANUTENÇÃO E SUPRIMENTO DE MATERIAL AERONÁUTICO",
+      "pi": "CA0802FIGHT",
+      "expenseNature": "339039",
+      "creditAvailable": 168.08,
+      "creditAvailableText": "US$ 168,08",
+      "launches": 1,
+      "ptres": [
+        "229177"
+      ],
+      "fundingSources": [
+        "1050000140"
+      ],
+      "sourceLines": [
+        86
+      ]
+    },
+    {
+      "matchKey": "120090|2000|CA063100102|449052",
+      "ugCode": "120090",
+      "om": "CABW",
+      "ugName": "COMISSÃO AERONÁUTICA BRASILEIRA EM WASHINGTON",
+      "action": "2000",
+      "actionDescription": "ADMINISTRAÇÃO DA UNIDADE",
+      "pi": "CA063100102",
+      "expenseNature": "449052",
+      "creditAvailable": 134.59,
+      "creditAvailableText": "US$ 134,59",
+      "launches": 1,
+      "ptres": [
+        "168901"
+      ],
+      "fundingSources": [
+        "1000000000"
+      ],
+      "sourceLines": [
+        21
+      ]
+    },
+    {
+      "matchKey": "120026|2048|CA080200T25|339030",
+      "ugCode": "120026",
+      "om": "PAMA-LS",
+      "ugName": "PARQUE DE MATERIAL AERONÁUTICO DE LAGOA SANTA",
+      "action": "2048",
+      "actionDescription": "MANUTENÇÃO E SUPRIMENTO DE MATERIAL AERONÁUTICO",
+      "pi": "CA080200T25",
+      "expenseNature": "339030",
+      "creditAvailable": 91.59,
+      "creditAvailableText": "US$ 91,59",
+      "launches": 1,
+      "ptres": [
+        "229177"
+      ],
+      "fundingSources": [
+        "1050000140"
+      ],
+      "sourceLines": [
+        74
+      ]
+    },
+    {
+      "matchKey": "120049|2048|CA0802APOIO|339030",
+      "ugCode": "120049",
+      "om": "PAMA-GL",
+      "ugName": "PARQUE DE MATERIAL AERONÁUTICO DO GALEÃO",
+      "action": "2048",
+      "actionDescription": "MANUTENÇÃO E SUPRIMENTO DE MATERIAL AERONÁUTICO",
+      "pi": "CA0802APOIO",
+      "expenseNature": "339030",
+      "creditAvailable": 48.4,
+      "creditAvailableText": "US$ 48,40",
+      "launches": 1,
+      "ptres": [
+        "229177"
+      ],
+      "fundingSources": [
+        "1050000140"
+      ],
+      "sourceLines": [
+        75
+      ]
+    },
+    {
+      "matchKey": "120090|2000|CA063100200|339039",
+      "ugCode": "120090",
+      "om": "CABW",
+      "ugName": "COMISSÃO AERONÁUTICA BRASILEIRA EM WASHINGTON",
+      "action": "2000",
+      "actionDescription": "ADMINISTRAÇÃO DA UNIDADE",
+      "pi": "CA063100200",
+      "expenseNature": "339039",
+      "creditAvailable": 40.38,
+      "creditAvailableText": "US$ 40,38",
+      "launches": 1,
+      "ptres": [
+        "168919"
+      ],
+      "fundingSources": [
+        "1050000140"
+      ],
+      "sourceLines": [
+        28
+      ]
+    },
+    {
+      "matchKey": "120111|2000|EM0519ADITA|339039",
+      "ugCode": "120111",
+      "om": "EMAER",
+      "ugName": "ESTADO-MAIOR DA AERONÁUTICA",
+      "action": "2000",
+      "actionDescription": "ADMINISTRAÇÃO DA UNIDADE",
+      "pi": "EM0519ADITA",
+      "expenseNature": "339039",
+      "creditAvailable": 13.07,
+      "creditAvailableText": "US$ 13,07",
+      "launches": 1,
+      "ptres": [
+        "168919"
+      ],
+      "fundingSources": [
+        "1050000140"
+      ],
+      "sourceLines": [
+        32
+      ]
+    },
+    {
+      "matchKey": "120111|2000|EM0519ADITA|339030",
+      "ugCode": "120111",
+      "om": "EMAER",
+      "ugName": "ESTADO-MAIOR DA AERONÁUTICA",
+      "action": "2000",
+      "actionDescription": "ADMINISTRAÇÃO DA UNIDADE",
+      "pi": "EM0519ADITA",
+      "expenseNature": "339030",
+      "creditAvailable": 0.74,
+      "creditAvailableText": "US$ 0,74",
+      "launches": 1,
+      "ptres": [
+        "168919"
+      ],
+      "fundingSources": [
+        "1050000140"
+      ],
+      "sourceLines": [
+        25
+      ]
+    },
+    {
+      "matchKey": "120036|20XV|DC012102SAR|339030",
+      "ugCode": "120036",
+      "om": "DECEA",
+      "ugName": "DEPARTAMENTO DE CONTROLE DO ESPAÇO AÉREO",
+      "action": "20XV",
+      "actionDescription": "OPERAÇÃO E MANUTENÇÃO DE EQUIPAMENTOS DO SISCEAB",
+      "pi": "DC012102SAR",
+      "expenseNature": "339030",
+      "creditAvailable": 0.09,
+      "creditAvailableText": "US$ 0,09",
+      "launches": 1,
+      "ptres": [
+        "229166"
+      ],
+      "fundingSources": [
+        "1052000140"
+      ],
+      "sourceLines": [
+        47
+      ]
+    },
+    {
+      "matchKey": "120036|20XV|DC010401ATM|339039",
+      "ugCode": "120036",
+      "om": "DECEA",
+      "ugName": "DEPARTAMENTO DE CONTROLE DO ESPAÇO AÉREO",
+      "action": "20XV",
+      "actionDescription": "OPERAÇÃO E MANUTENÇÃO DE EQUIPAMENTOS DO SISCEAB",
+      "pi": "DC010401ATM",
+      "expenseNature": "339039",
+      "creditAvailable": 0.05,
+      "creditAvailableText": "US$ 0,05",
+      "launches": 1,
+      "ptres": [
+        "229166"
+      ],
+      "fundingSources": [
+        "1052000140"
+      ],
+      "sourceLines": [
+        56
+      ]
+    },
+    {
+      "matchKey": "120026|20XV|CA08020INSP|339030",
+      "ugCode": "120026",
+      "om": "PAMA-LS",
+      "ugName": "PARQUE DE MATERIAL AERONÁUTICO DE LAGOA SANTA",
+      "action": "20XV",
+      "actionDescription": "OPERAÇÃO E MANUTENÇÃO DE EQUIPAMENTOS DO SISCEAB",
+      "pi": "CA08020INSP",
+      "expenseNature": "339030",
+      "creditAvailable": 0.01,
+      "creditAvailableText": "US$ 0,01",
+      "launches": 1,
+      "ptres": [
+        "229166"
+      ],
+      "fundingSources": [
+        "1052000140"
+      ],
+      "sourceLines": [
+        46
+      ]
+    },
+    {
+      "matchKey": "120047|21A0|CA0802ARSEN|339039",
+      "ugCode": "120047",
+      "om": "PAMB-RJ",
+      "ugName": "PARQUE DE MATERIAL BÉLICO DA AERONÁUTICA DO RIO DE JANEIRO",
+      "action": "21A0",
+      "actionDescription": "APRESTAMENTO DAS FORÇAS ARMADAS",
+      "pi": "CA0802ARSEN",
+      "expenseNature": "339039",
+      "creditAvailable": 0.01,
+      "creditAvailableText": "US$ 0,01",
+      "launches": 1,
+      "ptres": [
+        "229226"
+      ],
+      "fundingSources": [
+        "3050000140"
+      ],
+      "sourceLines": [
+        113
+      ]
+    },
+    {
+      "matchKey": "120048|20XV|DC080401LOG|339039",
+      "ugCode": "120048",
+      "om": "PAME-RJ",
+      "ugName": "PARQUE DE MATERIAL DE ELETRÔNICA DA AERONÁUTICA DO RIO DE JANEIRO",
+      "action": "20XV",
+      "actionDescription": "OPERAÇÃO E MANUTENÇÃO DE EQUIPAMENTOS DO SISCEAB",
+      "pi": "DC080401LOG",
+      "expenseNature": "339039",
+      "creditAvailable": 0.01,
+      "creditAvailableText": "US$ 0,01",
+      "launches": 1,
+      "ptres": [
+        "229166"
+      ],
+      "fundingSources": [
+        "1052000140"
+      ],
+      "sourceLines": [
+        59
+      ]
+    },
+    {
+      "matchKey": "120049|20XV|CA080200IVR|339039",
+      "ugCode": "120049",
+      "om": "PAMA-GL",
+      "ugName": "PARQUE DE MATERIAL AERONÁUTICO DO GALEÃO",
+      "action": "20XV",
+      "actionDescription": "OPERAÇÃO E MANUTENÇÃO DE EQUIPAMENTOS DO SISCEAB",
+      "pi": "CA080200IVR",
+      "expenseNature": "339039",
+      "creditAvailable": 0.01,
+      "creditAvailableText": "US$ 0,01",
+      "launches": 1,
+      "ptres": [
+        "229166"
+      ],
+      "fundingSources": [
+        "1052000140"
+      ],
+      "sourceLines": [
+        60
+      ]
+    },
+    {
+      "matchKey": "120068|20XV|CA080200SAR|339030",
+      "ugCode": "120068",
+      "om": "PAMA-SP",
+      "ugName": "PARQUE DE MATERIAL AERONÁUTICO DE SÃO PAULO",
+      "action": "20XV",
+      "actionDescription": "OPERAÇÃO E MANUTENÇÃO DE EQUIPAMENTOS DO SISCEAB",
+      "pi": "CA080200SAR",
+      "expenseNature": "339030",
+      "creditAvailable": 0.01,
+      "creditAvailableText": "US$ 0,01",
+      "launches": 1,
+      "ptres": [
+        "229166"
+      ],
+      "fundingSources": [
+        "1052000140"
+      ],
+      "sourceLines": [
+        52
+      ]
+    },
+    {
+      "matchKey": "120068|20XV|CA08020VANT|339030",
+      "ugCode": "120068",
+      "om": "PAMA-SP",
+      "ugName": "PARQUE DE MATERIAL AERONÁUTICO DE SÃO PAULO",
+      "action": "20XV",
+      "actionDescription": "OPERAÇÃO E MANUTENÇÃO DE EQUIPAMENTOS DO SISCEAB",
+      "pi": "CA08020VANT",
+      "expenseNature": "339030",
+      "creditAvailable": 0.01,
+      "creditAvailableText": "US$ 0,01",
+      "launches": 1,
+      "ptres": [
+        "229166"
+      ],
+      "fundingSources": [
+        "1052000140"
+      ],
+      "sourceLines": [
+        51
+      ]
+    }
+  ]
+}

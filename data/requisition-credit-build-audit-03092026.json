@@ -1,0 +1,203 @@
+{
+  "build": "requisitions-available-03092026-r2",
+  "position": "01/09/2026",
+  "sourceSpreadsheet": "REQUISIÇÕES DISPONÍVEIS PARA EMPENHO - 01092026.xlsx",
+  "sourceSpreadsheetSha256": "125b2daeb4821011282e26fae0b3d7c124403b2d65bca49d382bb7a96fdcb733",
+  "creditSource": "CONRAZAO(20260903-153318).TXt",
+  "creditSourceSha256": "7b640b69051594d8884d7e6976ec41c992f698d18b0a749095ee1e51743ad580",
+  "recordCount": 59,
+  "uniqueRequestCount": 59,
+  "omCount": 3,
+  "requestValueTotal": 834465.59,
+  "committedValueTotal": 0.0,
+  "balanceToCommitTotal": 834465.59,
+  "wildcardPolicy": {
+    "action": "Campo vazio significa Qualquer Ação.",
+    "pi": "Campo vazio significa Qualquer Plano Interno.",
+    "expenseNature": "Campo ausente significa Qualquer Natureza de Despesa.",
+    "creditUsage": "O crédito compatível é utilizado uma única vez, sem dupla contagem entre grupos de requisições."
+  },
+  "matchingPolicy": "OM/UG obrigatória; Ação, PI e Natureza de Despesa em branco funcionam como wildcards. O crédito é particionado entre os grupos compatíveis e considerado uma única vez.",
+  "crossing": {
+    "groupCount": 3,
+    "compatibleCredit": 3753217.78,
+    "creditRemaining": 2918752.19,
+    "deficit": 0.0,
+    "groups": [
+      {
+        "ugCode": "120049",
+        "om": "PAMA-GL",
+        "requestCount": 17,
+        "requestValue": 233578.75,
+        "committedValue": 0,
+        "balanceToCommit": 233578.75,
+        "creditAvailable": 339020.59,
+        "creditRemaining": 105441.84,
+        "deficit": 0,
+        "coveragePercent": 145.14,
+        "status": "Crédito suficiente",
+        "matchedActions": [
+          "2048",
+          "20XV"
+        ],
+        "matchedPis": [
+          "CA080200IVR",
+          "CA080200SAR",
+          "CA080200VIP",
+          "CA0802APOIO",
+          "CA0802TRNSP"
+        ],
+        "matchedNatures": [
+          "339030",
+          "339039",
+          "449052"
+        ]
+      },
+      {
+        "ugCode": "120026",
+        "om": "PAMA-LS",
+        "requestCount": 13,
+        "requestValue": 172816.48,
+        "committedValue": 0,
+        "balanceToCommit": 172816.48,
+        "creditAvailable": 1961856.15,
+        "creditRemaining": 1789039.67,
+        "deficit": 0,
+        "coveragePercent": 1135.23,
+        "status": "Crédito suficiente",
+        "matchedActions": [
+          "2048",
+          "20IH",
+          "20XV"
+        ],
+        "matchedPis": [
+          "CA080200T25",
+          "CA08020INSP",
+          "CA0802APOIO",
+          "CA0802FIGHT",
+          "CA0802INSTR",
+          "CA0802PJC97",
+          "CA0802PJT25",
+          "CA0802TRNSP"
+        ],
+        "matchedNatures": [
+          "339030",
+          "339039",
+          "449052"
+        ]
+      },
+      {
+        "ugCode": "120068",
+        "om": "PAMA-SP",
+        "requestCount": 29,
+        "requestValue": 428070.36,
+        "committedValue": 0,
+        "balanceToCommit": 428070.36,
+        "creditAvailable": 1452341.04,
+        "creditRemaining": 1024270.68,
+        "deficit": 0,
+        "coveragePercent": 339.28,
+        "status": "Crédito suficiente",
+        "matchedActions": [
+          "2048",
+          "20XV",
+          "2868"
+        ],
+        "matchedPis": [
+          "CA080200SAR",
+          "CA080200VIP",
+          "CA08020COMB",
+          "CA08020VANT",
+          "CA0802APOIO",
+          "CA0802FIGHT"
+        ],
+        "matchedNatures": [
+          "339030",
+          "339039"
+        ]
+      }
+    ]
+  },
+  "checks": {
+    "sourceSpreadsheetExists": true,
+    "sourceConrazaoExists": true,
+    "recordCountIs59": true,
+    "bacNumbersAreUnique": true,
+    "allRequestsHaveMappedUg": true,
+    "allActionsAreWildcard": true,
+    "allPisAreWildcard": true,
+    "allNaturesAreWildcard": true,
+    "requestTotalMatches": true,
+    "committedTotalMatches": true,
+    "balanceTotalMatches": true,
+    "balanceEqualsValueLessCommitted": true,
+    "crossHasThreeOmGroups": true,
+    "crossRequestCountIs59": true,
+    "crossDemandMatchesRequests": true,
+    "crossCreditIsNonDuplicated": true,
+    "crossRemainingMatches": true,
+    "crossDeficitIsZero": true,
+    "allOmGroupsHaveSufficientCredit": true,
+    "creditBaseRemains102Lines": true,
+    "creditBaseTotalPreserved": true,
+    "updatedPagesHaveNoDuplicateIds": true,
+    "updatedPagesHaveNoMissingLocalLinks": true,
+    "latestCreditBuildPreserved": true,
+    "accountabilityBuildPreserved": true,
+    "paymentsBuildPreserved": true,
+    "repairBuildPreserved": true,
+    "contractsBuildPreserved": true,
+    "rpBuildPreserved": true,
+    "processesBuildPreserved": true,
+    "PAMA-GL_requestCount": true,
+    "PAMA-GL_demand": true,
+    "PAMA-GL_credit": true,
+    "PAMA-LS_requestCount": true,
+    "PAMA-LS_demand": true,
+    "PAMA-LS_credit": true,
+    "PAMA-SP_requestCount": true,
+    "PAMA-SP_demand": true,
+    "PAMA-SP_credit": true
+  },
+  "htmlChecks": {
+    "requisicoes.html": {
+      "duplicateIds": [],
+      "missingLocalLinks": []
+    },
+    "requisicoes-disponiveis-empenho.html": {
+      "duplicateIds": [],
+      "missingLocalLinks": []
+    },
+    "requisicoes-cruzamento-credito.html": {
+      "duplicateIds": [],
+      "missingLocalLinks": []
+    },
+    "credito-detalhamento-orcamentario.html": {
+      "duplicateIds": [],
+      "missingLocalLinks": []
+    }
+  },
+  "npmCheck": {
+    "returnCode": 0,
+    "summary": "Sintaxe JavaScript aprovada para todos os módulos do projeto."
+  },
+  "npmTest": {
+    "returnCode": 0,
+    "tests": 67,
+    "passed": 67,
+    "failed": 0
+  },
+  "fileHashes": {
+    "requisicoes.html": "46551657387f5b8f8367d2f70523f4623c6b51bd47eb22b108afbc628e1ae20d",
+    "requisicoes-disponiveis-empenho.html": "50bfbb2b37b4f693aa62e5c836b454ca01adb998a26288e3d53136e47d5e66b1",
+    "requisicoes-cruzamento-credito.html": "f72895ffda8c19bae68a623766a57c1e211599469d0efded87d7290b42953ba4",
+    "assets/data/requisitions-available-current.json": "b2ab713e68f5b20e81a9f21415b17ce2e99fd0f324a865e555cbbff045c4a70d",
+    "assets/data/requisitions-available-01092026.json": "b2ab713e68f5b20e81a9f21415b17ce2e99fd0f324a865e555cbbff045c4a70d",
+    "assets/data/credit-budget-detailed-current.json": "324c409b9372d62696b380d2463b8132a4706b6009a75488cf43338388d636b8",
+    "assets/js/requisition-core.js": "94f79937b097ada0252c8d6cb06047200df10d0228e631f26f892b8054aef28a",
+    "assets/js/requisitions-available-panel.js": "319e74479ad035e1c3d2e2b3b5e0ccff619bedeee618fad50c0e8eb1e3b5dbc6",
+    "assets/js/requisition-credit-cross-panel.js": "3015563a01773efb98a83dc763e79639dbaf652108213e68a7d70401c1ee15e5",
+    "tests/requisition-core.test.mjs": "58622ef3d27344d891a84bdc459fb6b5ae4f103b9c86b05b0e2001529f20e686",
+    "css/style.css": "fdab5957063fe4d68a8d5298acc91aad7c4cec0754d67321593498a4eb2c480e"
+  }
+}

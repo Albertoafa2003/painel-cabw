@@ -1,0 +1,827 @@
+{
+  "source": "RelContrFin MONITORAMENTO CTT EM ANDAMENTO - ALERTA(3).xls",
+  "referenceDate": {
+    "iso": "2026-07-15",
+    "br": "15/07/2026"
+  },
+  "sourceRows": 83,
+  "sourceUniqueContracts": 83,
+  "panelRowsBefore": 83,
+  "panelRowsAfter": 83,
+  "matchedAndUpdated": 82,
+  "recordsWithChanges": 82,
+  "sourceOnlyNotImported": [
+    "027/CABW/2021"
+  ],
+  "preservedOutsideSource": [
+    "34/2017-CENSIPAM"
+  ],
+  "duplicateNumbersAfterUpdate": [],
+  "changedContracts": [
+    {
+      "numero": "010/CABW/2020",
+      "fields": [
+        "totalEmpenhado",
+        "totalFaturado",
+        "saldoSilomsExt",
+        "valorAEmpenhar",
+        "totalEmpenhadoUsd",
+        "totalFaturadoUsd",
+        "diasParaVencimento"
+      ]
+    },
+    {
+      "numero": "015/CABW/2021",
+      "fields": [
+        "saldoSilomsExt",
+        "valorAEmpenhar",
+        "diasParaVencimento",
+        "observacao"
+      ]
+    },
+    {
+      "numero": "012/CABW/2020",
+      "fields": [
+        "totalEmpenhado",
+        "totalFaturado",
+        "saldoSilomsExt",
+        "valorAEmpenhar",
+        "totalEmpenhadoUsd",
+        "totalFaturadoUsd",
+        "diasParaVencimento"
+      ]
+    },
+    {
+      "numero": "016/CABW/2021",
+      "fields": [
+        "totalEmpenhado",
+        "totalFaturado",
+        "saldoSilomsExt",
+        "valorAEmpenhar",
+        "totalEmpenhadoUsd",
+        "totalFaturadoUsd",
+        "diasParaVencimento"
+      ]
+    },
+    {
+      "numero": "033/CABW/2021",
+      "fields": [
+        "objetoResumo",
+        "totalEmpenhado",
+        "totalFaturado",
+        "saldoSilomsExt",
+        "valorAEmpenhar",
+        "totalEmpenhadoUsd",
+        "totalFaturadoUsd",
+        "diasParaVencimento"
+      ]
+    },
+    {
+      "numero": "022/CABW/2021",
+      "fields": [
+        "totalEmpenhado",
+        "totalFaturado",
+        "saldoSilomsExt",
+        "valorAEmpenhar",
+        "totalEmpenhadoUsd",
+        "totalFaturadoUsd",
+        "diasParaVencimento"
+      ]
+    },
+    {
+      "numero": "016/CABW/2022",
+      "fields": [
+        "totalEmpenhado",
+        "saldoSilomsExt",
+        "valorAEmpenhar",
+        "totalEmpenhadoUsd",
+        "diasParaVencimento",
+        "observacao"
+      ]
+    },
+    {
+      "numero": "025/CABW/2022",
+      "fields": [
+        "objetoResumo",
+        "totalEmpenhado",
+        "totalFaturado",
+        "saldoSilomsExt",
+        "totalEmpenhadoUsd",
+        "totalFaturadoUsd",
+        "diasParaVencimento"
+      ]
+    },
+    {
+      "numero": "156/CAE-PAME-RJ/2022",
+      "fields": [
+        "totalEmpenhado",
+        "totalFaturado",
+        "saldoSilomsExt",
+        "valorAEmpenhar",
+        "totalEmpenhadoUsd",
+        "totalFaturadoUsd",
+        "diasParaVencimento"
+      ]
+    },
+    {
+      "numero": "020/CABW/2022",
+      "fields": [
+        "saldoSilomsExt",
+        "diasParaVencimento"
+      ]
+    },
+    {
+      "numero": "021/CABW/2022",
+      "fields": [
+        "objetoResumo",
+        "totalEmpenhado",
+        "totalFaturado",
+        "saldoSilomsExt",
+        "valorAEmpenhar",
+        "totalEmpenhadoUsd",
+        "totalFaturadoUsd",
+        "diasParaVencimento"
+      ]
+    },
+    {
+      "numero": "001/CABW/2023",
+      "fields": [
+        "saldoSilomsExt",
+        "valorAEmpenhar",
+        "diasParaVencimento"
+      ]
+    },
+    {
+      "numero": "033/CABW/2022",
+      "fields": [
+        "objetoResumo",
+        "totalEmpenhado",
+        "totalFaturado",
+        "saldoSilomsExt",
+        "valorAEmpenhar",
+        "totalEmpenhadoUsd",
+        "totalFaturadoUsd",
+        "diasParaVencimento"
+      ]
+    },
+    {
+      "numero": "027/CELOG-PAMAGL/2023",
+      "fields": [
+        "totalEmpenhado",
+        "totalFaturado",
+        "saldoSilomsExt",
+        "valorAEmpenhar",
+        "totalEmpenhadoUsd",
+        "totalFaturadoUsd",
+        "diasParaVencimento"
+      ]
+    },
+    {
+      "numero": "060/CAE-PAME-RJ/2023",
+      "fields": [
+        "totalEmpenhado",
+        "totalFaturado",
+        "saldoSilomsExt",
+        "valorAEmpenhar",
+        "totalEmpenhadoUsd",
+        "totalFaturadoUsd",
+        "diasParaVencimento"
+      ]
+    },
+    {
+      "numero": "061/CAE-PAME-RJ/2023",
+      "fields": [
+        "totalEmpenhado",
+        "saldoSilomsExt",
+        "valorAEmpenhar",
+        "totalEmpenhadoUsd",
+        "diasParaVencimento"
+      ]
+    },
+    {
+      "numero": "023/CABW/2023",
+      "fields": [
+        "totalFaturado",
+        "saldoSilomsExt",
+        "totalFaturadoUsd",
+        "diasParaVencimento"
+      ]
+    },
+    {
+      "numero": "017/CABW-DIRMAB/2023",
+      "fields": [
+        "diasParaVencimento"
+      ]
+    },
+    {
+      "numero": "019/CABW-DIREF/2023",
+      "fields": [
+        "totalEmpenhado",
+        "totalFaturado",
+        "saldoSilomsExt",
+        "valorAEmpenhar",
+        "totalEmpenhadoUsd",
+        "totalFaturadoUsd",
+        "diasParaVencimento"
+      ]
+    },
+    {
+      "numero": "022/CABW/2023",
+      "fields": [
+        "totalEmpenhado",
+        "totalFaturado",
+        "saldoSilomsExt",
+        "totalFaturadoUsd",
+        "diasParaVencimento"
+      ]
+    },
+    {
+      "numero": "002/CABW/2024",
+      "fields": [
+        "objetoResumo",
+        "totalEmpenhado",
+        "totalFaturado",
+        "valorAEmpenhar",
+        "totalEmpenhadoUsd",
+        "totalFaturadoUsd",
+        "diasParaVencimento"
+      ]
+    },
+    {
+      "numero": "001/CABW-CISCEA/2024",
+      "fields": [
+        "diasParaVencimento"
+      ]
+    },
+    {
+      "numero": "006/CABW/2024",
+      "fields": [
+        "objetoResumo",
+        "totalEmpenhado",
+        "totalFaturado",
+        "saldoSilomsExt",
+        "valorAEmpenhar",
+        "totalEmpenhadoUsd",
+        "totalFaturadoUsd",
+        "diasParaVencimento"
+      ]
+    },
+    {
+      "numero": "007/CABW-PAMASP/2024",
+      "fields": [
+        "totalEmpenhado",
+        "totalFaturado",
+        "saldoSilomsExt",
+        "valorAEmpenhar",
+        "totalEmpenhadoUsd",
+        "totalFaturadoUsd",
+        "diasParaVencimento"
+      ]
+    },
+    {
+      "numero": "014/CABW/2024",
+      "fields": [
+        "totalFaturado",
+        "saldoSilomsExt",
+        "totalFaturadoUsd",
+        "diasParaVencimento"
+      ]
+    },
+    {
+      "numero": "015/CABW/2024",
+      "fields": [
+        "diasParaVencimento"
+      ]
+    },
+    {
+      "numero": "030/CABW-PAMERJ/2024",
+      "fields": [
+        "valorAEmpenhar",
+        "diasParaVencimento"
+      ]
+    },
+    {
+      "numero": "029/CABW-PAMASP/2024",
+      "fields": [
+        "valorContrato",
+        "totalEmpenhado",
+        "saldoSilomsExt",
+        "valorAEmpenhar",
+        "totalEmpenhadoUsd",
+        "diasParaVencimento"
+      ]
+    },
+    {
+      "numero": "014/CABW-CENIPA/2025",
+      "fields": [
+        "diasParaVencimento"
+      ]
+    },
+    {
+      "numero": "028/CABW-PAMAGL/2024",
+      "fields": [
+        "diasParaVencimento"
+      ]
+    },
+    {
+      "numero": "019/CABW-CENIPA/2025",
+      "fields": [
+        "diasParaVencimento"
+      ]
+    },
+    {
+      "numero": "027/CABW/2024",
+      "fields": [
+        "diasParaVencimento"
+      ]
+    },
+    {
+      "numero": "035/CABW/2024",
+      "fields": [
+        "objetoResumo",
+        "totalEmpenhado",
+        "totalFaturado",
+        "saldoSilomsExt",
+        "valorAEmpenhar",
+        "totalEmpenhadoUsd",
+        "totalFaturadoUsd",
+        "diasParaVencimento",
+        "statusPlanilha",
+        "situacaoCode"
+      ]
+    },
+    {
+      "numero": "034/CABW/2024",
+      "fields": [
+        "objetoResumo",
+        "totalEmpenhado",
+        "totalFaturado",
+        "saldoSilomsExt",
+        "valorAEmpenhar",
+        "totalEmpenhadoUsd",
+        "totalFaturadoUsd",
+        "diasParaVencimento",
+        "statusPlanilha",
+        "situacaoCode"
+      ]
+    },
+    {
+      "numero": "038/CABW/2024",
+      "fields": [
+        "objetoResumo",
+        "totalEmpenhado",
+        "totalFaturado",
+        "saldoSilomsExt",
+        "valorAEmpenhar",
+        "totalEmpenhadoUsd",
+        "totalFaturadoUsd",
+        "diasParaVencimento",
+        "statusPlanilha",
+        "situacaoCode"
+      ]
+    },
+    {
+      "numero": "033/CABW/2024",
+      "fields": [
+        "objetoResumo",
+        "totalEmpenhado",
+        "totalFaturado",
+        "saldoSilomsExt",
+        "valorAEmpenhar",
+        "totalEmpenhadoUsd",
+        "totalFaturadoUsd",
+        "diasParaVencimento",
+        "statusPlanilha",
+        "situacaoCode"
+      ]
+    },
+    {
+      "numero": "027/CABW-PAMAGL/2025",
+      "fields": [
+        "diasParaVencimento"
+      ]
+    },
+    {
+      "numero": "040/CABW/2024",
+      "fields": [
+        "valorAEmpenhar",
+        "diasParaVencimento"
+      ]
+    },
+    {
+      "numero": "048/CABW/2024",
+      "fields": [
+        "diasParaVencimento"
+      ]
+    },
+    {
+      "numero": "051/CELOG-PAMASP/2024",
+      "fields": [
+        "totalEmpenhado",
+        "totalFaturado",
+        "saldoSilomsExt",
+        "valorAEmpenhar",
+        "totalEmpenhadoUsd",
+        "totalFaturadoUsd",
+        "diasParaVencimento"
+      ]
+    },
+    {
+      "numero": "039/CABW-PAMALS/2024",
+      "fields": [
+        "totalFaturado",
+        "saldoSilomsExt",
+        "totalFaturadoUsd",
+        "diasParaVencimento"
+      ]
+    },
+    {
+      "numero": "002/CABW-PAMASP/2025",
+      "fields": [
+        "diasParaVencimento"
+      ]
+    },
+    {
+      "numero": "001/CABW-PAMASP/2025",
+      "fields": [
+        "diasParaVencimento"
+      ]
+    },
+    {
+      "numero": "005/CABW-PAMASP/2025",
+      "fields": [
+        "diasParaVencimento"
+      ]
+    },
+    {
+      "numero": "004/CAE-PAMERJ/2025",
+      "fields": [
+        "saldoSilomsExt",
+        "diasParaVencimento"
+      ]
+    },
+    {
+      "numero": "003/CABW-PAMASP/2025",
+      "fields": [
+        "diasParaVencimento"
+      ]
+    },
+    {
+      "numero": "005/CAE-CABW-CISCEA/2024",
+      "fields": [
+        "totalFaturado",
+        "saldoSilomsExt",
+        "totalFaturadoUsd",
+        "diasParaVencimento"
+      ]
+    },
+    {
+      "numero": "050/CABW-PAMASP/2024",
+      "fields": [
+        "diasParaVencimento"
+      ]
+    },
+    {
+      "numero": "043/CABW/2024",
+      "fields": [
+        "totalEmpenhado",
+        "totalFaturado",
+        "saldoSilomsExt",
+        "valorAEmpenhar",
+        "totalEmpenhadoUsd",
+        "totalFaturadoUsd",
+        "diasParaVencimento"
+      ]
+    },
+    {
+      "numero": "045/CABW/2024",
+      "fields": [
+        "totalFaturado",
+        "saldoSilomsExt",
+        "totalFaturadoUsd",
+        "diasParaVencimento"
+      ]
+    },
+    {
+      "numero": "044/CABW/2024",
+      "fields": [
+        "diasParaVencimento"
+      ]
+    },
+    {
+      "numero": "046/CABW/2024",
+      "fields": [
+        "totalEmpenhado",
+        "totalFaturado",
+        "totalEmpenhadoUsd",
+        "totalFaturadoUsd",
+        "diasParaVencimento"
+      ]
+    },
+    {
+      "numero": "256/CAE-CABW-PAME-RJ/2024",
+      "fields": [
+        "totalEmpenhado",
+        "saldoSilomsExt",
+        "valorAEmpenhar",
+        "totalEmpenhadoUsd",
+        "diasParaVencimento"
+      ]
+    },
+    {
+      "numero": "009/CABW-PAMERJ/2025",
+      "fields": [
+        "totalEmpenhado",
+        "totalFaturado",
+        "saldoSilomsExt",
+        "totalEmpenhadoUsd",
+        "totalFaturadoUsd",
+        "diasParaVencimento"
+      ]
+    },
+    {
+      "numero": "011/CABW-PAMERJ/2025",
+      "fields": [
+        "diasParaVencimento"
+      ]
+    },
+    {
+      "numero": "007/CABW/2025",
+      "fields": [
+        "totalEmpenhado",
+        "totalFaturado",
+        "saldoSilomsExt",
+        "valorAEmpenhar",
+        "totalEmpenhadoUsd",
+        "totalFaturadoUsd",
+        "diasParaVencimento"
+      ]
+    },
+    {
+      "numero": "006/CABW/2025",
+      "fields": [
+        "totalFaturado",
+        "saldoSilomsExt",
+        "totalFaturadoUsd",
+        "diasParaVencimento"
+      ]
+    },
+    {
+      "numero": "028/CABW-PAMAGL/2025",
+      "fields": [
+        "diasParaVencimento"
+      ]
+    },
+    {
+      "numero": "020/CABW-PAMASP/2025",
+      "fields": [
+        "diasParaVencimento"
+      ]
+    },
+    {
+      "numero": "015/CABW/2025",
+      "fields": [
+        "objetoResumo",
+        "totalEmpenhado",
+        "totalFaturado",
+        "saldoSilomsExt",
+        "valorAEmpenhar",
+        "totalEmpenhadoUsd",
+        "totalFaturadoUsd",
+        "diasParaVencimento"
+      ]
+    },
+    {
+      "numero": "110/CAE-CABW-CISCEA/2025",
+      "fields": [
+        "diasParaVencimento"
+      ]
+    },
+    {
+      "numero": "120/CAE-DECEA/2025",
+      "fields": [
+        "totalEmpenhado",
+        "totalFaturado",
+        "valorAEmpenhar",
+        "totalEmpenhadoUsd",
+        "totalFaturadoUsd",
+        "diasParaVencimento"
+      ]
+    },
+    {
+      "numero": "022/CABW-PAMASP/2025",
+      "fields": [
+        "dataAssinatura",
+        "dataInicio",
+        "dataFinal"
+      ]
+    },
+    {
+      "numero": "001/CABW-CISCEA/2025",
+      "fields": [
+        "totalFaturado",
+        "saldoSilomsExt",
+        "totalFaturadoUsd",
+        "diasParaVencimento"
+      ]
+    },
+    {
+      "numero": "033/CELOG-PAMAGL/2025",
+      "fields": [
+        "diasParaVencimento"
+      ]
+    },
+    {
+      "numero": "017/CABW-CISCEA/2025",
+      "fields": [
+        "diasParaVencimento"
+      ]
+    },
+    {
+      "numero": "018/CABW-CISCEA/2025",
+      "fields": [
+        "diasParaVencimento"
+      ]
+    },
+    {
+      "numero": "016/CABW/2025",
+      "fields": [
+        "objetoResumo",
+        "totalFaturado",
+        "saldoSilomsExt",
+        "totalFaturadoUsd",
+        "diasParaVencimento"
+      ]
+    },
+    {
+      "numero": "250550/CABW/2025",
+      "fields": [
+        "diasParaVencimento"
+      ]
+    },
+    {
+      "numero": "021/CABW-PAMASP/2025",
+      "fields": [
+        "totalFaturado",
+        "saldoSilomsExt",
+        "totalFaturadoUsd",
+        "diasParaVencimento"
+      ]
+    },
+    {
+      "numero": "250577/CABW/2025",
+      "fields": [
+        "totalFaturado",
+        "saldoSilomsExt",
+        "valorAEmpenhar",
+        "totalFaturadoUsd",
+        "diasParaVencimento"
+      ]
+    },
+    {
+      "numero": "025/CABW-CISCEA/2025",
+      "fields": [
+        "diasParaVencimento"
+      ]
+    },
+    {
+      "numero": "026/CABW-CISCEA/2025",
+      "fields": [
+        "diasParaVencimento"
+      ]
+    },
+    {
+      "numero": "003/CABW/2026",
+      "fields": [
+        "objetoResumo",
+        "totalEmpenhado",
+        "totalFaturado",
+        "saldoSilomsExt",
+        "valorAEmpenhar",
+        "totalEmpenhadoUsd",
+        "totalFaturadoUsd",
+        "diasParaVencimento"
+      ]
+    },
+    {
+      "numero": "002/CABW/2026",
+      "fields": [
+        "diasParaVencimento"
+      ]
+    },
+    {
+      "numero": "001/CABW/2026",
+      "fields": [
+        "totalFaturado",
+        "saldoSilomsExt",
+        "valorAEmpenhar",
+        "totalFaturadoUsd",
+        "diasParaVencimento"
+      ]
+    },
+    {
+      "numero": "004/CABW/2026",
+      "fields": [
+        "saldoSilomsExt",
+        "diasParaVencimento"
+      ]
+    },
+    {
+      "numero": "005/CABW/2026",
+      "fields": [
+        "objetoResumo",
+        "diasParaVencimento"
+      ]
+    },
+    {
+      "numero": "260113/CABW/2026",
+      "fields": [
+        "totalEmpenhado",
+        "totalFaturado",
+        "saldoSilomsExt",
+        "valorAEmpenhar",
+        "totalEmpenhadoUsd",
+        "totalFaturadoUsd",
+        "diasParaVencimento"
+      ]
+    },
+    {
+      "numero": "005/CELOG-PAMASP/2026",
+      "fields": [
+        "totalEmpenhado",
+        "saldoSilomsExt",
+        "valorAEmpenhar",
+        "totalEmpenhadoUsd"
+      ]
+    },
+    {
+      "numero": "006/CABW/2026",
+      "fields": [
+        "objetoResumo",
+        "totalFaturado",
+        "saldoSilomsExt",
+        "totalFaturadoUsd",
+        "diasParaVencimento"
+      ]
+    },
+    {
+      "numero": "007/CABW/2026",
+      "fields": [
+        "objetoResumo",
+        "totalFaturado",
+        "saldoSilomsExt",
+        "valorAEmpenhar",
+        "totalFaturadoUsd",
+        "diasParaVencimento"
+      ]
+    }
+  ],
+  "summary": {
+    "totalMonitored": 82,
+    "excludedRecords": 1,
+    "withObservation": 26,
+    "alertCount": 31,
+    "urgentCount": 6,
+    "totalEmpenhadoUsd": 250091829.23,
+    "totalFaturadoUsd": 148516758.62,
+    "saldoAFaturarUsd": 101575070.61,
+    "percentualFaturadoSobreEmpenhado": 59.38,
+    "statusSummary": [
+      {
+        "code": "vencido",
+        "label": "Vencido",
+        "count": 0
+      },
+      {
+        "code": "ate-30",
+        "label": "Até 30 dias",
+        "count": 6
+      },
+      {
+        "code": "31-90",
+        "label": "31 a 90 dias",
+        "count": 8
+      },
+      {
+        "code": "91-150",
+        "label": "91 a 150 dias",
+        "count": 17
+      },
+      {
+        "code": "regular",
+        "label": "Acima de 150 dias",
+        "count": 50
+      },
+      {
+        "code": "sem-data",
+        "label": "Sem data de vigência",
+        "count": 1
+      },
+      {
+        "code": "desconsiderar",
+        "label": "Desconsiderar",
+        "count": 1
+      }
+    ]
+  }
+}

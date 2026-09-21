@@ -1,0 +1,87 @@
+{
+  "version": "20260803-credit-r1",
+  "builtAt": "2026-08-03T17:39:15.889554+00:00",
+  "sourceFile": "RELATÓRIO_CRÉDITO_DISPONÍVEL_CABW_03082026(1).docx",
+  "position": "03/08/2026",
+  "summaryRows": 13,
+  "ugRankingRows": 16,
+  "detailRowsNewPosition": 34,
+  "actionRankingRows": 15,
+  "creditReceivedActionRows": 20,
+  "validation": {
+    "ugTotal": 5511774.14,
+    "actionTotal": 5511774.14,
+    "detailTotal": 5511774.14,
+    "receivedTotal": 118642863.68,
+    "expectedAvailable": 5511774.14,
+    "expectedReceived": 118642863.68
+  },
+  "parliamentaryAmendment": {
+    "PTRES": "260949",
+    "UG beneficiária": "120106 - CENIPA - CENTRO DE INVESTIGAÇÃO E PREVENÇÃO DE ACIDENTES AERONÁUTICOS",
+    "Unidade Orçamentária": "52111 - COMANDO DA AERONÁUTICA",
+    "Ação Orçamentária": "2000 - ADMINISTRAÇÃO DA UNIDADE",
+    "Crédito disponível": "US$ 42.213,00",
+    "Programa de Trabalho": "05122003220000053 - ADMINISTRAÇÃO DA UNIDADE - NO DISTRITO FEDERAL",
+    "Resultado Lei": "6 - DESPESA DISCRICIONÁRIA DECORRENTE DE EMENDA INDIVIDUAL",
+    "Tipo de crédito": "A - INICIAL (LOA)",
+    "Plano Orçamentário": "0000 - ADMINISTRAÇÃO DA UNIDADE - DESPESAS DIVERSAS",
+    "Autor/Emenda": "202641360023 - IZALCI LUCAS / EMENDA 23",
+    "IDUSO": "0 - RECURSOS NÃO DESTINADOS À CONTRAPARTIDA"
+  },
+  "preservedFeatures": {
+    "repairProcessesBuild": true,
+    "repairProcessesRecords": 113,
+    "auxDlAuthorized": true
+  },
+  "criticalFiles": {
+    "credito-visao-executiva.html": {
+      "sha256": "0b949e678bc3493556ec92783af362330fbe87ba910420e088202cd54ac838c6",
+      "bytes": 9599
+    },
+    "ug.html": {
+      "sha256": "c63b5569c5fb49819f5d28ecd21a18b2c96dd02fc4af32143c8e71403b858359",
+      "bytes": 7443
+    },
+    "action.html": {
+      "sha256": "1caf984bb1b8d440970c26a17becf5888cd31d173ed834b6688c368b654575a0",
+      "bytes": 31195
+    },
+    "detail.html": {
+      "sha256": "a4ee4e21c99a3f5ea2b449a7784ed64a2d6444684088c1ff8da5c24e648fe73f",
+      "bytes": 113842
+    },
+    "consistency.html": {
+      "sha256": "c55572e16b25ffbde6f25a62d635a9f250d818cc39ca7fb66ebe84c03d57fb7d",
+      "bytes": 6828
+    },
+    "governanca-cabw-numeros.html": {
+      "sha256": "7bd6bfcf9fd8bf58108e37dce9e7b4ceceb65b111dbfddf50cfd85a0ba0f7c79",
+      "bytes": 11030
+    },
+    "assets/data/credit-current.json": {
+      "sha256": "3c40765082ae6a436c1ef97de981775715f261dd043c2d2ade0dc73e2d991959",
+      "bytes": 46562
+    },
+    "assets/data/credit-03082026.json": {
+      "sha256": "3c40765082ae6a436c1ef97de981775715f261dd043c2d2ade0dc73e2d991959",
+      "bytes": 46562
+    },
+    "assets/js/repair-import-core.js": {
+      "sha256": "00d954db5a82cb9f7b2ae6cfc638b60973cbbc5c368b8838214a780cb913ba43",
+      "bytes": 12494
+    },
+    "assets/js/repair-processes-panel.js": {
+      "sha256": "beda6b00bb3a71689e8f988d87ad502cc26ec3394e63fe226da1d191f012543d",
+      "bytes": 67123
+    },
+    "assets/data/repair-processes-current.json": {
+      "sha256": "3693fdddc61ef05600b3d90a62823a5f5b10f7a0ae54160fab7c25d690660eda",
+      "bytes": 302640
+    },
+    "assets/js/authorized-emails.js": {
+      "sha256": "81c8a3e06d9aa8040e6acb25fd769316f1ea988008bcc089a5f9af81f1f74d82",
+      "bytes": 692
+    }
+  }
+}

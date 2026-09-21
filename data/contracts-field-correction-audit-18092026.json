@@ -1,0 +1,27 @@
+{
+  "updateDate": "2026-09-18",
+  "scope": "Correção do Ordenador de Despesas do Contrato 001/CABW-PAMASP/2025",
+  "source": {
+    "file": "CT 001_CABW-PAMASP_2025.pdf",
+    "subject": "PAG No. 67102.240648/2024-25 CONTRACT No. 001/CABWPAMASP/2025 - Notas PRESCON BR",
+    "sourceDate": "2026-09-18",
+    "evidence": "O documento informa que o contrato é de titularidade do PAMA-SP."
+  },
+  "contract": {
+    "numero": "001/CABW-PAMASP/2025",
+    "empresa": "FLORIDA SUPPLY USA, INC.",
+    "unidade": "PAMASP",
+    "field": "ordenadorDespesas",
+    "before": "CABW",
+    "afterCanonical": "PAMASP",
+    "afterDisplay": "PAMA-SP"
+  },
+  "preserved": {
+    "contractCount": 137,
+    "allOtherFields": true,
+    "otherContractsUnchanged": true,
+    "creditPosition": "2026-09-11",
+    "requisitionPosition": "2026-09-14",
+    "contractSpreadsheetPosition": "2026-09-11"
+  }
+}

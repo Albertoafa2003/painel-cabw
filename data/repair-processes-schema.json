@@ -1,0 +1,168 @@
+{
+  "collections": {
+    "repairProcesses": "Itens reparáveis importados ou cadastrados manualmente",
+    "repairProcessImports": "Histórico resumido e auditável de cada lote mensal",
+    "repairProcessesConfig/current": "Configuração do lote ativo exibido no painel"
+  },
+  "stableKey": "SHA-256 de PO + REQUISIÇÃO + PN + SN após normalização",
+  "sourceSheet": "PO's 2025 - 2026",
+  "sourceFields": {
+    "PO": "po",
+    "COTAÇÃO SISCAB": "cotacaoSiscab",
+    "NUP": "nup",
+    "TTE": "evaluationFee",
+    "DATA EMISSÃO PO": "poIssueDate",
+    "STATUS REAL DO MATERIAL": "realStatus",
+    "REQUISIÇÃO": "requisition",
+    "PN": "partNumber",
+    "SN": "serialNumber",
+    "COND": "condition",
+    "MAT EXP ou REC REPARADOR": "receivedAtRepairerDate",
+    "TRACKING ENVIO REPARADOR": "trackingToRepairer",
+    "PRAZO p/ ENVIO TDR p/ REPARADOR": "tdrDueDate",
+    "TDR ENV PARQUE": "tdrDeliveryRaw / tdrSentDate / tdrDelivered",
+    "SUBPROC #": "subprocessRaw",
+    "FICHA RECEBIDA": "fichaRaw / fichaDate",
+    "SERVIÇO APROVADO?": "serviceDecision",
+    "SVC AUTORIZADO / SOL RETORNO AS IS": "serviceAuthorizationOrAsIsDate",
+    "PRAZO ENTREGA (DIAS)": "repairDeliveryDays",
+    "DPE FINAL": "dpeFinalDate ou dpeFinalIndicator",
+    "TRACKING/VOLUME RETORNO REPARADOR -> DEPÓSITO": "returnTrackingVolume",
+    "RETORNO MAT": "returnMaterialDate",
+    "CAGE CODE REPARADOR": "repairerCage",
+    "NOME REPARADOR": "repairerName",
+    "NUP (PAG)": "nup"
+  },
+  "excludedPoRule": "POs iniciadas em 24T são excluídas do painel e arquivadas no Firestore durante a importação.",
+  "tdrRule": "Coluna N com none ou data = entregue; N vazia e data atual posterior à coluna M = atrasado.",
+  "documentaryRule": "O=none: subprocesso não necessário; P=none: ficha não necessária; O e P vazias: TDR ainda não recebido.",
+  "ignoredColumns": [
+    "ALERTA PRÓXIMA ETAPA",
+    "VALOR ATUAL DO ITEM",
+    "OBS"
+  ],
+  "manualFieldsPreservedOnImport": [
+    "processNumber",
+    "description",
+    "itemValue",
+    "repairValue",
+    "currency",
+    "manualNotes"
+  ],
+  "buildVersion": "20260921-reparaveis-r1",
+  "statusUpdate": {
+    "sourceFile": "CONTROLE REPARO - SGT ROZENDO - atz PAINEL 21SET.xlsx",
+    "sourceSheet": "PO's 2025 - 2026",
+    "referenceDate": "2026-09-21",
+    "matchKey": "PO",
+    "mappingFile": "Correlação.xlsx",
+    "mappingSheet": "Planilha1",
+    "canonicalStatuses": [
+      "1-Empenho Aprovado",
+      "2-Item Chegou CTLA",
+      "3-Item Exp CTLA",
+      "4-Item chegou CABW/CABE",
+      "5-Item Exp Reparador",
+      "6-Item no Reparador",
+      "7-Item Recebido",
+      "8-Embarcado",
+      "9-Recebido Parque",
+      "10-Encerrado"
+    ],
+    "visualStages": [
+      "Brasil/ OM Requisitante",
+      "Brasil / CTLA",
+      "Trânsito ao Reparador",
+      "Reparador",
+      "CABW/CABE (retorno)",
+      "ETAPA NÃO MAPEADA"
+    ],
+    "rule": "A Etapa Visual é derivada do Status Real conforme a planilha de correlação. Uma mesma etapa pode abranger mais de um status por representar a localização do material.",
+    "mappingVersion": 6,
+    "mappingCorrection": {
+      "8-Embarcado": "CABW/CABE (retorno)",
+      "9-Recebido Parque": "Brasil/ OM Requisitante",
+      "10-Encerrado": "Brasil/ OM Requisitante"
+    },
+    "acceptedAliases": {
+      "3-Rep chegou CTLA": "2-Item Chegou CTLA",
+      "3-Item Exp pelo CTLA": "3-Item Exp CTLA",
+      "5-Item Exp ao Reparador": "5-Item Exp Reparador"
+    }
+  },
+  "returnRule": {
+    "sourceFile": "CONTROLE REPARO - SGT ROZENDO - atz PAINEL 21SET.xlsx",
+    "sourceSheet": "PO's 2025 - 2026",
+    "referenceDate": "2026-09-21",
+    "columns": {
+      "SVC AUTORIZADO / SOL RETORNO AS IS": "serviceAuthorizationOrAsIsDate",
+      "PRAZO ENTREGA (DIAS)": "repairDeliveryDays",
+      "DPE FINAL": "dpeFinalDate",
+      "RETORNO MAT": "returnMaterialDate"
+    },
+    "classification": {
+      "notAuthorized": "Se B, C ou D estiverem vazias, não existe prazo e o item não é atrasado.",
+      "returnedLate": "Se E possuir data posterior a D, o item retornou com atraso.",
+      "overdue": "Se E estiver vazia e a data atual for posterior a D, o item está atrasado.",
+      "returnedOnTime": "Se E for igual ou anterior a D, o item retornou no prazo."
+    },
+    "confirmedCorrections": [
+      "PO 25T000160: autorização considerada em 13/07/2025, preservada por confirmação do usuário em 21/09/2026.",
+      "PO 26T000800: DPE vazia; item sem prazo e sem atraso."
+    ]
+  },
+  "originOmNormalization": {
+    "updatedAt": "2026-08-20",
+    "mapping": {
+      "EL": "PAME-RJ",
+      "GL": "PAMA-GL",
+      "PB": "PAMB-RJ",
+      "SP": "PAMA-SP"
+    },
+    "rule": "Os dois primeiros caracteres da requisição continuam sendo usados para identificar a origem, mas o painel, os filtros, as consultas e os PDFs exibem a nomenclatura institucional completa.",
+    "canonicalOptions": [
+      "PAME-RJ",
+      "PAMA-GL",
+      "PAMB-RJ",
+      "PAMA-SP"
+    ]
+  },
+  "returnKpiPresentation": {
+    "updatedAt": "2026-08-20",
+    "returnedLate": "Itens com data efetiva de retorno posterior à DPE.",
+    "overdueNotReturned": "Itens sem retorno registrado e com DPE anterior à data atual.",
+    "separateCards": true
+  },
+  "pagUpdate": {
+    "sourceFile": "CONTROLE REPARO - SGT ROZENDO - atz PAINEL 21SET.xlsx",
+    "sourceSheet": "PO's 2025 - 2026",
+    "referenceDate": "2026-09-21",
+    "matchRule": "NUP lido diretamente da coluna NUP (PAG); COTAÇÃO SISCAB, ausente na planilha de 21/09/2026, preservada da base suplementar anterior para registros já existentes.",
+    "fields": {
+      "NUP (PAG)": "nup",
+      "COTAÇÃO SISCAB (quando disponível em bases anteriores)": "cotacaoSiscab"
+    },
+    "filters": [
+      "COTAÇÃO SISCAB",
+      "NUP"
+    ],
+    "detailedPdfColumns": [
+      "COTAÇÃO SISCAB",
+      "NUP"
+    ],
+    "confirmedCorrections": [
+      {
+        "po": "26T000910",
+        "nup": "67102.260284/2026-61"
+      },
+      {
+        "po": "26T000915",
+        "nup": "67102.260285/2026-14"
+      }
+    ]
+  },
+  "sourceSheetCandidates": [
+    "PO's 2025 - 2026",
+    "BD Monitoramento"
+  ]
+}

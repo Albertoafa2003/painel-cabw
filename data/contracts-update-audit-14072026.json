@@ -1,0 +1,33 @@
+{
+  "referenceDate": "14/07/2026",
+  "sourceRows": 136,
+  "sourceUniqueNumbers": 136,
+  "siteContracts": 136,
+  "siteUniqueNumbers": 136,
+  "categoryCounts": {
+    "fms": 53,
+    "administrativos": 21,
+    "finalisticos": 62
+  },
+  "removed": [
+    "027/CABW/2021"
+  ],
+  "added": [
+    "34/2017-CENSIPAM"
+  ],
+  "monitoringRecords": 83,
+  "monitoringUniqueNumbers": 83,
+  "newContractClassification": {
+    "numero": "34/2017-CENSIPAM",
+    "categoria": "finalisticos",
+    "unidade": "CENSIPAM",
+    "grandeComando": "Ministério da Defesa — MD",
+    "acao": "20X4",
+    "ordenadorDespesas": "CENSIPAM",
+    "cage": "SY384",
+    "tipoContratoMonitoramento": "DEMANDA PONTUAL",
+    "observacao": "",
+    "situacaoGerencial": "Acima de 150 dias",
+    "diasParaVencimento": 186
+  }
+}

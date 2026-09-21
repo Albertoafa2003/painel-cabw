@@ -1,0 +1,54 @@
+{
+  "build": "repair-pag-27082026-r1",
+  "sourceFile": "27AGO - CONTROLE REPARO - PAG.xlsx",
+  "sourceSheet": "BD Monitoramento",
+  "referenceDate": "2026-08-27",
+  "recordsUpdated": 113,
+  "uniquePos": 60,
+  "uniqueQuotations": 38,
+  "uniqueNups": 38,
+  "confirmedCorrections": [
+    {
+      "po": "26T000910",
+      "cotacaoSiscab": "260284",
+      "nup": "67102.260284/2026-61"
+    },
+    {
+      "po": "26T000915",
+      "cotacaoSiscab": "260285",
+      "nup": "67102.260285/2026-14"
+    }
+  ],
+  "checks": {
+    "recordCount113": true,
+    "uniquePos60": true,
+    "allCotacaoInformed": true,
+    "allNupInformed": true,
+    "nupMatchesQuotation": true,
+    "noDuplicateIds": true,
+    "noUnrelatedRecordFieldsChanged": true,
+    "credit27082026Preserved": true,
+    "repairOverdueBuildPreserved": true,
+    "contractsBuildPreserved": true,
+    "rpBuildPreserved": true,
+    "processesBuildPreserved": true,
+    "metadataReferenceDatePreserved": true,
+    "pagReferenceDateIs27082026": true
+  },
+  "fileHashes": {
+    "governanca-reparaveis.html": "c109704a275101d94bf05d9a8ab1a27a23f6d6be2dbd4d1b6633082591feaa75",
+    "assets/data/repair-processes-current.json": "2c2f1791f19bc9ec8cb5d6f4820a05349499c8acca32b30db18f377da6fca6aa",
+    "assets/js/repair-processes-current-data.js": "df0f70864a50ddef96f3484683033ce97fd9e10db3957f96fadd92fb6ee80a40",
+    "assets/js/repair-processes-panel.js": "71c5f43e0e3da7f9b0f99f50b4647f0f5938006a0562a48ac0d5f19a69980e76",
+    "assets/js/repair-import-core.js": "9642a5f03fb5244754a125769f59f58ca91796d99e45214c10987a39688c92c4",
+    "assets/data/repair-processes-schema.json": "40158bf345ee5c18ee6c5c48e9c65bf6624e1da93b83044004d045623a2dba14",
+    "tests/repair-import.test.mjs": "5d74c130fd1766a7d03a0375750d06fa352599a6bb6fdb81750175e781dbc40a",
+    "INSTRUCOES_IMPORTACAO_MENSAL_REPARAVEIS.md": "d8d07c0c265602b56905ce70a57a289fdfb5838e789291c28db2934d7499cfd9"
+  },
+  "tests": {
+    "executed": 30,
+    "passed": 30,
+    "failed": 0,
+    "npmCheck": "approved"
+  }
+}

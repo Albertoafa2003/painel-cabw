@@ -1,0 +1,852 @@
+{
+  "build": "20260820-origin-om-r1",
+  "updatedAt": "2026-08-20",
+  "mapping": {
+    "EL": "PAME-RJ",
+    "GL": "PAMA-GL",
+    "PB": "PAMB-RJ",
+    "SP": "PAMA-SP"
+  },
+  "records": 113,
+  "changesApplied": 113,
+  "beforeCounts": {
+    "EL": 4,
+    "SP": 76,
+    "GL": 31,
+    "PB": 2
+  },
+  "afterCounts": {
+    "PAME-RJ": 4,
+    "PAMA-SP": 76,
+    "PAMA-GL": 31,
+    "PAMB-RJ": 2
+  },
+  "changes": [
+    {
+      "id": "ac792758d82ffb4b06b5a983af174bec7d22c4858f5fbf896466641aef98029b",
+      "po": "25T000026",
+      "requisition": "ELRR218044R",
+      "from": "EL",
+      "to": "PAME-RJ"
+    },
+    {
+      "id": "1caf91943f06284022fbd2359dafe95f8ba7cbc946f42c739c990e7956552e70",
+      "po": "25T000118",
+      "requisition": "SPRR27701F5",
+      "from": "SP",
+      "to": "PAMA-SP"
+    },
+    {
+      "id": "d947a215cfd15d696ef2c0354051c921099799baf7056b96deafd67ecb9ebbcd",
+      "po": "25T000126",
+      "requisition": "SPRR29701F5",
+      "from": "SP",
+      "to": "PAMA-SP"
+    },
+    {
+      "id": "e8d2d58d9d32efbed96c41b535b6e705c60b2d8f0cd272d7b3c0cca91d82b22f",
+      "po": "25T000140",
+      "requisition": "SPRR14203F5",
+      "from": "SP",
+      "to": "PAMA-SP"
+    },
+    {
+      "id": "4c78230246a6c37afdd9412efa1a92435dca1608afcb862ff40ba21f86f4b57d",
+      "po": "25T000140",
+      "requisition": "SPRR15801F5",
+      "from": "SP",
+      "to": "PAMA-SP"
+    },
+    {
+      "id": "7a142c2bf4f0ab189a7b74a0e7a73fef3ced5077f4c5145a1319da94250284e3",
+      "po": "25T000142",
+      "requisition": "SPRR17701F5",
+      "from": "SP",
+      "to": "PAMA-SP"
+    },
+    {
+      "id": "44325dc10cc7134029d18cad76c88a1248c225ef395c387b26075da4a8947cfa",
+      "po": "25T000142",
+      "requisition": "SPRR17702F5",
+      "from": "SP",
+      "to": "PAMA-SP"
+    },
+    {
+      "id": "2b9ed105d6d5ee6a4e98b1a4bf1772d0a1ab6c02740d860e06e592f197ef5e53",
+      "po": "25T000142",
+      "requisition": "SPRR20601F5",
+      "from": "SP",
+      "to": "PAMA-SP"
+    },
+    {
+      "id": "6ecea4ecd0718734e8275f7f5dc0329bedf245896be9e7b3762fbf06f3abbd4f",
+      "po": "25T000143",
+      "requisition": "SPRR19701F5",
+      "from": "SP",
+      "to": "PAMA-SP"
+    },
+    {
+      "id": "6077ef51c6c92bab151c8aa8bfd7cade498eaef49b4d2287fb1a5b0be90c4b63",
+      "po": "25T000160",
+      "requisition": "SPRR17302F5",
+      "from": "SP",
+      "to": "PAMA-SP"
+    },
+    {
+      "id": "2421515b682c38d8086b8b860cbfec381cda79e477630284a3a30d4ceb27f697",
+      "po": "25T000161",
+      "requisition": "SPRR28801F5",
+      "from": "SP",
+      "to": "PAMA-SP"
+    },
+    {
+      "id": "5884fc752ac5b3630d814d2027fe81943a6f094c651182280b259416daa9d8df",
+      "po": "25T000161",
+      "requisition": "SPRR28802F5",
+      "from": "SP",
+      "to": "PAMA-SP"
+    },
+    {
+      "id": "edb994e103c849f567f81de74417ce9ca6d776f019aad97319ca1ef4d3efa87a",
+      "po": "25T000161",
+      "requisition": "SPRR28901F5",
+      "from": "SP",
+      "to": "PAMA-SP"
+    },
+    {
+      "id": "ed07289957e841f264668a8de5c0d1633f1754c8ceecee71cef07e82b88c65ef",
+      "po": "25T000161",
+      "requisition": "SPRR29601F5",
+      "from": "SP",
+      "to": "PAMA-SP"
+    },
+    {
+      "id": "e76f38ffcb688bbb3b347648768014426a9b9b9eb1032af82b06178c685ca491",
+      "po": "25T000161",
+      "requisition": "SPRR29602F5",
+      "from": "SP",
+      "to": "PAMA-SP"
+    },
+    {
+      "id": "f025620441a2b46299e29765be879a491b7dfe71184ebb4ff6e89727a4b69f15",
+      "po": "25T000715",
+      "requisition": "SPSR03701F5",
+      "from": "SP",
+      "to": "PAMA-SP"
+    },
+    {
+      "id": "7f4a31628cdbc3e597f7e3d050af35eb8cfa123fd609e7f664d0865488986828",
+      "po": "25T000718",
+      "requisition": "SPSR03101F5",
+      "from": "SP",
+      "to": "PAMA-SP"
+    },
+    {
+      "id": "8954aba81286ed9a339af67b9546b55cb2dc33079169bdd88f5f6451d2317039",
+      "po": "25T000718",
+      "requisition": "SPSR03102F5",
+      "from": "SP",
+      "to": "PAMA-SP"
+    },
+    {
+      "id": "5fe1b7e81b6c115686a2d202a2eb664a52799d5a43a1c866f81bd384f4ec56f5",
+      "po": "25T000718",
+      "requisition": "SPSR03103F5",
+      "from": "SP",
+      "to": "PAMA-SP"
+    },
+    {
+      "id": "d440e5d63692cd64e0895b4bcf71e404009af1eb7bcf88ce9226f43a5d327011",
+      "po": "25T000718",
+      "requisition": "SPSR03104F5",
+      "from": "SP",
+      "to": "PAMA-SP"
+    },
+    {
+      "id": "7d2acde28f3ff7710e9cf98ed4f63f8d83f198fa505aa5a8cfd0127e336136db",
+      "po": "25T000718",
+      "requisition": "SPSR03401F5",
+      "from": "SP",
+      "to": "PAMA-SP"
+    },
+    {
+      "id": "673a3e32b1e8ac36b057fa2d7114bcc1d3252713039f05af5d098f3995a307bd",
+      "po": "25T000719",
+      "requisition": "SPSR04301F5",
+      "from": "SP",
+      "to": "PAMA-SP"
+    },
+    {
+      "id": "8ca193c40180204d2cda2532ddf457f372a6d2f84a375268869d1ea4ae29273a",
+      "po": "25T000719",
+      "requisition": "SPSR04302F5",
+      "from": "SP",
+      "to": "PAMA-SP"
+    },
+    {
+      "id": "fcd906a3ac660fcd21e289394fa3aba1dda4b12b0f5f1621d2135310c58f5281",
+      "po": "25T000720",
+      "requisition": "SPSR07101F5",
+      "from": "SP",
+      "to": "PAMA-SP"
+    },
+    {
+      "id": "b51a15eb420694a3c04f6d5501a866e6d357cc74c266b49183dc46538e9ec787",
+      "po": "25T000720",
+      "requisition": "SPSR07102F5",
+      "from": "SP",
+      "to": "PAMA-SP"
+    },
+    {
+      "id": "9c8cad49e085991ab1728b6d3384c026eb2192595d8ecaf1774a59ba7c9a9ad5",
+      "po": "25T000721",
+      "requisition": "SPSR04303F5",
+      "from": "SP",
+      "to": "PAMA-SP"
+    },
+    {
+      "id": "7c15408390b0b480b7609382ff7cef769dd92924770551e5f21e9030526d0e5e",
+      "po": "25T000721",
+      "requisition": "SPSR04304F5",
+      "from": "SP",
+      "to": "PAMA-SP"
+    },
+    {
+      "id": "c5d74fb2ebd81debd2ca24bbd591c6740b307420860816edb42b84070cfff679",
+      "po": "25T000721",
+      "requisition": "SPSR04501F5",
+      "from": "SP",
+      "to": "PAMA-SP"
+    },
+    {
+      "id": "f566aa6a1a161e3fcc72b5efc87fd274df7942eca5261fdc8c751acad8750fad",
+      "po": "25T000721",
+      "requisition": "SPSR04502F5",
+      "from": "SP",
+      "to": "PAMA-SP"
+    },
+    {
+      "id": "72e866fec5dec07c30bac5d98f79a8f23fb2a7a248a73ee8de5cceddef50a4eb",
+      "po": "25T000722",
+      "requisition": "SPSR07002F5",
+      "from": "SP",
+      "to": "PAMA-SP"
+    },
+    {
+      "id": "1ae694747a0a092509a2d7dab37a4917bb9642272e718d929d8e60e8b6e6f653",
+      "po": "25T000722",
+      "requisition": "SPSR07003F5",
+      "from": "SP",
+      "to": "PAMA-SP"
+    },
+    {
+      "id": "93de5870e03523f98540568c992ec5a7df15293c8abe12057c03c82d4640a093",
+      "po": "25T000723",
+      "requisition": "SPSR07110F5",
+      "from": "SP",
+      "to": "PAMA-SP"
+    },
+    {
+      "id": "200142d8ec96cd0e577037d851b2449f23a8d586c84c8b38eeafe23567510d54",
+      "po": "25T000723",
+      "requisition": "SPSR08501F5",
+      "from": "SP",
+      "to": "PAMA-SP"
+    },
+    {
+      "id": "770a09a9370ce25a9948595ab121f718db3a3c207b6819e0666da2be113ab2ca",
+      "po": "25T000724",
+      "requisition": "SPSR07103F5",
+      "from": "SP",
+      "to": "PAMA-SP"
+    },
+    {
+      "id": "7905389798678aa032ff26831e66abd9f441b82bc3dd63352e80d65caa9386d3",
+      "po": "25T000724",
+      "requisition": "SPSR07104F5",
+      "from": "SP",
+      "to": "PAMA-SP"
+    },
+    {
+      "id": "b6204ece4bee4aa0488ba1bf71cd367409e90c6e3887386c4c4c19c7f76bc0ea",
+      "po": "25T000724",
+      "requisition": "SPSR07105F5",
+      "from": "SP",
+      "to": "PAMA-SP"
+    },
+    {
+      "id": "5dc5d1daebadfbea313ef0f6be4f2f398a2ed872753ddc610441bc6595f78b75",
+      "po": "25T000934",
+      "requisition": "GLSR04901P3",
+      "from": "GL",
+      "to": "PAMA-GL"
+    },
+    {
+      "id": "660f31fa2fc7a3dc0b5e3b85eae6d475c84bd05b6cc85bd682d6e4cb2a5069bd",
+      "po": "25T000934",
+      "requisition": "GLSR04904P3",
+      "from": "GL",
+      "to": "PAMA-GL"
+    },
+    {
+      "id": "c0cd7c5fc7322ea985871f434389360e4fbba58369c640834600b799b2ee1df1",
+      "po": "25T000940",
+      "requisition": "GLSR04905P3",
+      "from": "GL",
+      "to": "PAMA-GL"
+    },
+    {
+      "id": "9b8cb86dbc8b0bfd702a82f6d4ea806509f488db1ad6692751414056a997c024",
+      "po": "25T000942",
+      "requisition": "GLSR07102P3",
+      "from": "GL",
+      "to": "PAMA-GL"
+    },
+    {
+      "id": "3b1e76f6743417b2db587ad6be83944fbe29f3a0155b87752adbd97a08e7c847",
+      "po": "25T001028",
+      "requisition": "GLSR00801P3",
+      "from": "GL",
+      "to": "PAMA-GL"
+    },
+    {
+      "id": "5633795b141f24ef68bd779a6806d154a9af9b2ed278d8a82ced3d8a3f7cad29",
+      "po": "25T001028",
+      "requisition": "GLSR00802P3",
+      "from": "GL",
+      "to": "PAMA-GL"
+    },
+    {
+      "id": "42c6cb5fa73c0d8357bf2a637d2c4fe8867151beb55e39c91a7acbbc4269136f",
+      "po": "25T001204",
+      "requisition": "PBSR16701PY",
+      "from": "PB",
+      "to": "PAMB-RJ"
+    },
+    {
+      "id": "b82e8dc7f4dcc5cda4d8f219a4909bef40ec509c2dd31a9ab88c8a085b0f22b6",
+      "po": "25T001205",
+      "requisition": "PBSR16402PY",
+      "from": "PB",
+      "to": "PAMB-RJ"
+    },
+    {
+      "id": "7c85c9c67ac35445ed74d53bb3ef7219b708449e3dd0e0ace0f73d2ab60e0509",
+      "po": "25T001225",
+      "requisition": "GLSR04902P3",
+      "from": "GL",
+      "to": "PAMA-GL"
+    },
+    {
+      "id": "9a62bf4bb1d86d3fbe822e3348a0de4a5108f8b786d7613a3b745d6e1a118bcf",
+      "po": "25T001225",
+      "requisition": "GLSR04906P3",
+      "from": "GL",
+      "to": "PAMA-GL"
+    },
+    {
+      "id": "9625b638d6039e97a45a8346598c8405a3395fcd28585711c79ff4e0502c68e6",
+      "po": "25T001226",
+      "requisition": "GLSR07602P3",
+      "from": "GL",
+      "to": "PAMA-GL"
+    },
+    {
+      "id": "13b17796a7dc2e822578cfb17e264a4ddbe3ff7a978401fe3a3ca530f4d1652a",
+      "po": "25T001226",
+      "requisition": "GLSR07603P3",
+      "from": "GL",
+      "to": "PAMA-GL"
+    },
+    {
+      "id": "58e6578cfe44e3cbf142a9927e3d818d34b501c4cb473b36c1c512426f284c47",
+      "po": "25T001227",
+      "requisition": "GLSR07604P3",
+      "from": "GL",
+      "to": "PAMA-GL"
+    },
+    {
+      "id": "5c30bb2ac6cbefee991b142b3b79b08cc157b8df13b9d0d8eb3a912299241732",
+      "po": "25T001227",
+      "requisition": "GLSR07605P3",
+      "from": "GL",
+      "to": "PAMA-GL"
+    },
+    {
+      "id": "6e4faaacdd13b050e9eb809cd4493de42a795c1e3c21572ca8715012fbc9d777",
+      "po": "25T001342",
+      "requisition": "SPSR04904T1",
+      "from": "SP",
+      "to": "PAMA-SP"
+    },
+    {
+      "id": "da042c02dd36158aba848f3681b47d6d154490ad4cdb337107b5098b07954c02",
+      "po": "25T001342",
+      "requisition": "SPSR04905T1",
+      "from": "SP",
+      "to": "PAMA-SP"
+    },
+    {
+      "id": "479fbaec292e005ac944eea6b593ca830619c332c43297ecb2282e490d5e8fca",
+      "po": "25T001409",
+      "requisition": "SPSR07301F5",
+      "from": "SP",
+      "to": "PAMA-SP"
+    },
+    {
+      "id": "f30e13e3b6136c65e37984a487bef75dd5c8584a97029e98a0940b34065d8c64",
+      "po": "25T001420",
+      "requisition": "GLSR00803P3",
+      "from": "GL",
+      "to": "PAMA-GL"
+    },
+    {
+      "id": "561d86aec1878e70a6f18f17629022cac6fde4867b4932c54fa816d3eb88fb47",
+      "po": "25T001449",
+      "requisition": "GLSR07830P3",
+      "from": "GL",
+      "to": "PAMA-GL"
+    },
+    {
+      "id": "071d4615dfe5ed03467f96bcf6b997eca76dc8fb720fb448b56c3086d60ca43d",
+      "po": "25T001450",
+      "requisition": "GLSR07840P3",
+      "from": "GL",
+      "to": "PAMA-GL"
+    },
+    {
+      "id": "5773ad5a5495a79b3cf532ead95fbf84cf80e450ae7e0a56370a2ecd0ff80241",
+      "po": "25T001451",
+      "requisition": "GLSR07828P3",
+      "from": "GL",
+      "to": "PAMA-GL"
+    },
+    {
+      "id": "29e4eca805daf9c5f35ef22a643118479715e07ff2aecf70198659a9b607a76d",
+      "po": "25T001451",
+      "requisition": "GLSR07829P3",
+      "from": "GL",
+      "to": "PAMA-GL"
+    },
+    {
+      "id": "1033e9f4c7d812a20c73e7ec5e41565dcb16487c63a67c48cd5d160350368ddc",
+      "po": "25T001644",
+      "requisition": "SPSR05001T1",
+      "from": "SP",
+      "to": "PAMA-SP"
+    },
+    {
+      "id": "6915b882bccdd9bbc01e9ece3bda9b4fb2723978a33bdc4856d4beffb7f65d21",
+      "po": "25T001644",
+      "requisition": "SPSR05002T1",
+      "from": "SP",
+      "to": "PAMA-SP"
+    },
+    {
+      "id": "e24bbea464d7b1fc0f8ae929856ab7d6a6a7d1fed4ed81ece4d53717cdac65f9",
+      "po": "25T001645",
+      "requisition": "SPSR06509T1",
+      "from": "SP",
+      "to": "PAMA-SP"
+    },
+    {
+      "id": "13ffec832aabee49ab10f3f82dfd9bb2cbf4635588f19e6c2628080f24d90dd3",
+      "po": "25T001650",
+      "requisition": "SPSR11801A7",
+      "from": "SP",
+      "to": "PAMA-SP"
+    },
+    {
+      "id": "1e30bbcf6e063485bdbdc9c36cae6ddb58953ae96c00da9d926b72ad5cb9b8b3",
+      "po": "25T001650",
+      "requisition": "SPSR11901A7",
+      "from": "SP",
+      "to": "PAMA-SP"
+    },
+    {
+      "id": "f0b751eb44e81f2ded02340c292733551ead132762538a903849e7ef0d4a7267",
+      "po": "25T001785",
+      "requisition": "SPSR07106F5",
+      "from": "SP",
+      "to": "PAMA-SP"
+    },
+    {
+      "id": "9990a99529df6e8d1988108d1c484c8e59d835f8218739bf1e2b33e9ea4c026f",
+      "po": "25T001785",
+      "requisition": "SPSR07107F5",
+      "from": "SP",
+      "to": "PAMA-SP"
+    },
+    {
+      "id": "fa2eed7999a2e7c5721e477420cc29f7370a9067723a3dd271674e23ef9b2ab9",
+      "po": "25T001785",
+      "requisition": "SPSR07108F5",
+      "from": "SP",
+      "to": "PAMA-SP"
+    },
+    {
+      "id": "da747b19aabba03399f3a063c91748a9727a0c539fd339a32df160c92c9d653b",
+      "po": "25T001785",
+      "requisition": "SPSR07109F5",
+      "from": "SP",
+      "to": "PAMA-SP"
+    },
+    {
+      "id": "22fa3aed7e911a3487fdcb4cf859ca7832e889ae7bf6b587803c6b94d601b172",
+      "po": "25T001786",
+      "requisition": "SPSR08502F5",
+      "from": "SP",
+      "to": "PAMA-SP"
+    },
+    {
+      "id": "d54486308c66b8eb2071949c220c586f364e450e886fdc6e9d8d99ac17627ed5",
+      "po": "25T001817",
+      "requisition": "GLSR03615P3",
+      "from": "GL",
+      "to": "PAMA-GL"
+    },
+    {
+      "id": "809de63a5937ff3b2deb9d10493d759a9ef44d040f2303670123b1a5f465c73a",
+      "po": "25T001819",
+      "requisition": "GLSR04903P3",
+      "from": "GL",
+      "to": "PAMA-GL"
+    },
+    {
+      "id": "b5140f2cab8a8e47f1ada17b8aebe6b7ff78ee3bb2b3182ae193774c2c80d156",
+      "po": "25T001819",
+      "requisition": "GLSR07601P3",
+      "from": "GL",
+      "to": "PAMA-GL"
+    },
+    {
+      "id": "2e17af1ad5271232b6b93b08bf4dd1f0e00b59bb19612342343291d8e5eebf03",
+      "po": "25T001921",
+      "requisition": "SPSR17602A7",
+      "from": "SP",
+      "to": "PAMA-SP"
+    },
+    {
+      "id": "8593fe9cb247106fe37c2b57c82455191e57aa582a5c3d2eb1cf7ad6f115b935",
+      "po": "25T001922",
+      "requisition": "SPSR17501A7",
+      "from": "SP",
+      "to": "PAMA-SP"
+    },
+    {
+      "id": "fcea3157f5efd54ced491a53a11b986c23e9a741c7c535e04fbab3e1a51300a2",
+      "po": "25T001922",
+      "requisition": "SPSR17502A7",
+      "from": "SP",
+      "to": "PAMA-SP"
+    },
+    {
+      "id": "6d2a9a04f5adb3efe3b699b84c9f663fab953a2c5ed13f9d5c5acf3f11ff6e1f",
+      "po": "25T001961",
+      "requisition": "SPSR11401A7",
+      "from": "SP",
+      "to": "PAMA-SP"
+    },
+    {
+      "id": "cadf8ad8efb1793e240fd9720dc0f8087ed92651221bda0f6899372725b9b39b",
+      "po": "25T002073",
+      "requisition": "SPSR17701A7",
+      "from": "SP",
+      "to": "PAMA-SP"
+    },
+    {
+      "id": "faf3f6cea3c957eb6099642bd71af7e11edc404441b87d41a6e4d1b96ac6c363",
+      "po": "25T002074",
+      "requisition": "SPSR17702A7",
+      "from": "SP",
+      "to": "PAMA-SP"
+    },
+    {
+      "id": "9bb4f297819d1e9c54cab4fbde27f4121a7b0cfb00d8405090d4fe75c7b847a2",
+      "po": "25T002083",
+      "requisition": "SPSR17801F5",
+      "from": "SP",
+      "to": "PAMA-SP"
+    },
+    {
+      "id": "693257a25b1ebf084774151c680aa66c56a11ddc13ce06ecb7252731500c8ae3",
+      "po": "25T002083",
+      "requisition": "SPSR17802F5",
+      "from": "SP",
+      "to": "PAMA-SP"
+    },
+    {
+      "id": "ef0c0862f7baf69472882a076db8b5895efd11fdb87d4e16f7926620eee514cc",
+      "po": "25T002083",
+      "requisition": "SPSR17803F5",
+      "from": "SP",
+      "to": "PAMA-SP"
+    },
+    {
+      "id": "e50540fc8528dba099620470f6966eac9c08f02d2f4481eef73b8a5d0b109719",
+      "po": "25T002108",
+      "requisition": "SPSR20901F5",
+      "from": "SP",
+      "to": "PAMA-SP"
+    },
+    {
+      "id": "611f9f8db7fc593de15549de18914ae17a442ceccae59fe8efaec12f14ddb55f",
+      "po": "26T000006",
+      "requisition": "ELSR162014R",
+      "from": "EL",
+      "to": "PAME-RJ"
+    },
+    {
+      "id": "8aae20c1a426ac60b8ea4d9c26570b2e24b0c05c92adaeb32a3996986f14c816",
+      "po": "26T000006",
+      "requisition": "ELSR162024R",
+      "from": "EL",
+      "to": "PAME-RJ"
+    },
+    {
+      "id": "6491ea82ec626156b26398727c5ea8439dafe663ef59925cdd9d278981df4942",
+      "po": "26T000006",
+      "requisition": "ELSR162034R",
+      "from": "EL",
+      "to": "PAME-RJ"
+    },
+    {
+      "id": "ce58b491f2fdf50c8a0cd9389d6f0329e8449dba4caf02cfc21e3a3016a303b0",
+      "po": "26T000138",
+      "requisition": "SPSR04801A7",
+      "from": "SP",
+      "to": "PAMA-SP"
+    },
+    {
+      "id": "03a535d4340a3e1aa4756c80fd73876974afd9e2832a2840325090a51e912b9f",
+      "po": "26T000139",
+      "requisition": "SPSR04902A7",
+      "from": "SP",
+      "to": "PAMA-SP"
+    },
+    {
+      "id": "2624b6b4280f36d65cfe03a7bfafb34072f1ead46930424c48febb3a1e615cf8",
+      "po": "26T000548",
+      "requisition": "SPTR06201F5",
+      "from": "SP",
+      "to": "PAMA-SP"
+    },
+    {
+      "id": "c47a037a309214d74bd92ca2922d4a4556b4cd445ea9f3e91738cb2be1e6c662",
+      "po": "26T000548",
+      "requisition": "SPTR06202F5",
+      "from": "SP",
+      "to": "PAMA-SP"
+    },
+    {
+      "id": "354f857e75d58d4700c43128fee82edd5112b12697a3958d8fccfc075c0e2052",
+      "po": "26T000548",
+      "requisition": "SPTR06204F5",
+      "from": "SP",
+      "to": "PAMA-SP"
+    },
+    {
+      "id": "7400396e6286c665ead3ad2feff32f9cf18128dcf8d02b4f4805a2c7100b5a83",
+      "po": "26T000548",
+      "requisition": "SPTR06205F5",
+      "from": "SP",
+      "to": "PAMA-SP"
+    },
+    {
+      "id": "fe1b903d44f9a43aa64afccb89539988236d1fea197b118e83257cb55e1940fc",
+      "po": "26T000735",
+      "requisition": "SPTR07202T1",
+      "from": "SP",
+      "to": "PAMA-SP"
+    },
+    {
+      "id": "08cc5935317172e66f9cb48b8550b9ac22fb449a1e68c63a7b23713330ba46bd",
+      "po": "26T000736",
+      "requisition": "SPTR07201T1",
+      "from": "SP",
+      "to": "PAMA-SP"
+    },
+    {
+      "id": "69862657e189730baf5d04353aee32a9b5b4f2f6dd84f05d446d142afbe242ae",
+      "po": "26T000736",
+      "requisition": "SPTR07203T1",
+      "from": "SP",
+      "to": "PAMA-SP"
+    },
+    {
+      "id": "55fda86bca6c75a05f267705b315f2d72d1e47e194dbce6545300d433e30d586",
+      "po": "26T000736",
+      "requisition": "SPTR07204T1",
+      "from": "SP",
+      "to": "PAMA-SP"
+    },
+    {
+      "id": "fc55ab84e905af3d7ade9c6563a6fcd498cf1b0886dcd46aadc5ba18a0a7cce6",
+      "po": "26T000736",
+      "requisition": "SPTR07205T1",
+      "from": "SP",
+      "to": "PAMA-SP"
+    },
+    {
+      "id": "8f13b7e69b402a66118872de0dbdf36d0132e469bbbab51693969066a523a0a0",
+      "po": "26T000750",
+      "requisition": "SPTR06203F5",
+      "from": "SP",
+      "to": "PAMA-SP"
+    },
+    {
+      "id": "e22ba159aa344704fef25daeb77ac819afdb1e83dee263c0d4055c752dfa42f9",
+      "po": "26T000750",
+      "requisition": "SPTR07001F5",
+      "from": "SP",
+      "to": "PAMA-SP"
+    },
+    {
+      "id": "8283a23c6cd4c95d873ef8213135925dbc90bddcc60d190cf526e3d5162f6118",
+      "po": "26T000750",
+      "requisition": "SPTR07102F5",
+      "from": "SP",
+      "to": "PAMA-SP"
+    },
+    {
+      "id": "d6ade00772366f07519f367d76e5688af62fab84403b2629b69f647bc3793c68",
+      "po": "26T000750",
+      "requisition": "SPTR07103F5",
+      "from": "SP",
+      "to": "PAMA-SP"
+    },
+    {
+      "id": "5108694dc13a4b579efcd9617a86ff45b440005cfe07527d8b2b5bb32204cd1b",
+      "po": "26T000750",
+      "requisition": "SPTR08201F5",
+      "from": "SP",
+      "to": "PAMA-SP"
+    },
+    {
+      "id": "61bddfb5be4aa466889316c09a7506a2775979e87054b1ede1acbb17fabba5b4",
+      "po": "26T000798",
+      "requisition": "GLSR08701P3",
+      "from": "GL",
+      "to": "PAMA-GL"
+    },
+    {
+      "id": "a2da08794bf1771237b24f28de0a46d4df804e960e10c40c109d73b4a3560d36",
+      "po": "26T000799",
+      "requisition": "GLSR07101P3",
+      "from": "GL",
+      "to": "PAMA-GL"
+    },
+    {
+      "id": "ad81c6d63a95c5000392fb0efe88583951d7f0aed4f662e82a75df317f1bc401",
+      "po": "26T000799",
+      "requisition": "GLSR07122P3",
+      "from": "GL",
+      "to": "PAMA-GL"
+    },
+    {
+      "id": "e3ae2d74df848010037b24a9902ae077aca3f7f3c740bbed135347e622356ad2",
+      "po": "26T000800",
+      "requisition": "GLSR07110P3",
+      "from": "GL",
+      "to": "PAMA-GL"
+    },
+    {
+      "id": "053d560d8f393b0cdf4c3275580e5db75506c968ccef1501052ed9100c7e7d23",
+      "po": "26T000800",
+      "requisition": "GLSR07111P3",
+      "from": "GL",
+      "to": "PAMA-GL"
+    },
+    {
+      "id": "2c3f951f8b86274089e337ed85942f9d6328b6d0260a154ffdf67ae168729f05",
+      "po": "26T000800",
+      "requisition": "GLSR07112P3",
+      "from": "GL",
+      "to": "PAMA-GL"
+    },
+    {
+      "id": "d4c2650a518bc3279915dda956e4f9bd69ab0c7b6a53d044e8edb227fda9eb87",
+      "po": "26T000800",
+      "requisition": "GLSR07113P3",
+      "from": "GL",
+      "to": "PAMA-GL"
+    },
+    {
+      "id": "3a5649e7e6677e8e6eea9c71732e8d74b85352256b7ac4e810fde77eefd618bb",
+      "po": "26T000814",
+      "requisition": "GLSR07121P3",
+      "from": "GL",
+      "to": "PAMA-GL"
+    },
+    {
+      "id": "5ef9d467790e623f4cfaee466bc40ef6f45b85adf9b9226387c695e6a3780cea",
+      "po": "26T000815",
+      "requisition": "GLSR07839P3",
+      "from": "GL",
+      "to": "PAMA-GL"
+    },
+    {
+      "id": "d2c4dd3bf91812cced5ce229e3549336aab4c1ea115bb7d8506cbc429a1737db",
+      "po": "26T000815",
+      "requisition": "GLSR07841P3",
+      "from": "GL",
+      "to": "PAMA-GL"
+    },
+    {
+      "id": "e1f4595ddca04fe7639d06d63b6bba99604ea161f9f16bd22fd613c81937685f",
+      "po": "26T000818",
+      "requisition": "GLSR07123P3",
+      "from": "GL",
+      "to": "PAMA-GL"
+    },
+    {
+      "id": "e3806d6e071ac4b7e51c724dc9a7390d5e549e8ab6b5b19c20108198897faf23",
+      "po": "26T000910",
+      "requisition": "SPTR09701F5",
+      "from": "SP",
+      "to": "PAMA-SP"
+    },
+    {
+      "id": "1af971d28b06a8b8b8f4014cb21b8f392f46af3d78d59627d0b3c369b872aded",
+      "po": "26T000915",
+      "requisition": "SPTR09803A7",
+      "from": "SP",
+      "to": "PAMA-SP"
+    }
+  ],
+  "unintendedChanges": [],
+  "checks": {
+    "allRecordsCanonical": true,
+    "all113Changed": true,
+    "countsMatch": true,
+    "noUnintendedFieldsChanged": true,
+    "oldCodesNotInOriginField": true,
+    "latestCreditBuildPreserved": true,
+    "returnBuildPreserved": true,
+    "statusBuildPreserved": true,
+    "contractsBuildPreserved": true,
+    "rpBuildPreserved": true,
+    "processesBuildPreserved": true
+  },
+  "commandResults": {
+    "npmCheck": {
+      "returncode": 0,
+      "stdout": "\n> check\n> node --check assets/js/repair-import-core.js && node --check assets/js/repair-processes-panel.js\n\n",
+      "stderr": ""
+    },
+    "npmTest": {
+      "returncode": 0,
+      "stdout": "\n> test\n> node --test tests/repair-import.test.mjs\n\nTAP version 13\n# Subtest: normalização geral e controles none\nok 1 - normalização geral e controles none\n  ---\n  duration_ms: 0.754499\n  type: 'test'\n  ...\n# Subtest: PO 24T é reconhecida como fora do escopo\nok 2 - PO 24T é reconhecida como fora do escopo\n  ---\n  duration_ms: 0.21589\n  type: 'test'\n  ...\n# Subtest: TTE válida é mantida sem moeda\nok 3 - TTE válida é mantida sem moeda\n  ---\n  duration_ms: 0.720588\n  type: 'test'\n  ...\n# Subtest: TDR com none ou data é entregue\nok 4 - TDR com none ou data é entregue\n  ---\n  duration_ms: 0.1956\n  type: 'test'\n  ...\n# Subtest: TDR vencido com N vazia é atrasado\nok 5 - TDR vencido com N vazia é atrasado\n  ---\n  duration_ms: 0.158365\n  type: 'test'\n  ...\n# Subtest: situação documental segue O e P\nok 6 - situação documental segue O e P\n  ---\n  duration_ms: 0.177103\n  type: 'test'\n  ...\n# Subtest: dez Status Reais oficiais estão disponíveis no filtro\nok 7 - dez Status Reais oficiais estão disponíveis no filtro\n  ---\n  duration_ms: 0.129161\n  type: 'test'\n  ...\n# Subtest: seis Etapas Visuais oficiais estão disponíveis no filtro\nok 8 - seis Etapas Visuais oficiais estão disponíveis no filtro\n  ---\n  duration_ms: 0.091876\n  type: 'test'\n  ...\n# Subtest: correlação visual agrupa múltiplos status na mesma localização\nok 9 - correlação visual agrupa múltiplos status na mesma localização\n  ---\n  duration_ms: 0.416628\n  type: 'test'\n  ...\n# Subtest: variações da planilha e nomenclaturas antigas são canonicalizadas\nok 10 - variações da planilha e nomenclaturas antigas são canonicalizadas\n  ---\n  duration_ms: 0.334236\n  type: 'test'\n  ...\n# Subtest: base de status 19/08 possui 113 registros únicos e nenhuma PO 24T\nok 11 - base de status 19/08 possui 113 registros únicos e nenhuma PO 24T\n  ---\n  duration_ms: 0.218404\n  type: 'test'\n  ...\n# Subtest: todos os registros possuem status e etapa conforme as opções oficiais\nok 12 - todos os registros possuem status e etapa conforme as opções oficiais\n  ---\n  duration_ms: 0.145656\n  type: 'test'\n  ...\n# Subtest: contagens de status e etapas correspondem à planilha de atualização\nok 13 - contagens de status e etapas correspondem à planilha de atualização\n  ---\n  duration_ms: 0.089123\n  type: 'test'\n  ...\n# Subtest: todas as 113 linhas mantêm TTE válida e dados anteriores\nok 14 - todas as 113 linhas mantêm TTE válida e dados anteriores\n  ---\n  duration_ms: 0.072738\n  type: 'test'\n  ...\n# Subtest: reimportação idêntica não duplica\nok 15 - reimportação idêntica não duplica\n  ---\n  duration_ms: 4.715484\n  type: 'test'\n  ...\n# Subtest: chave estável é determinística\nok 16 - chave estável é determinística\n  ---\n  duration_ms: 8.995552\n  type: 'test'\n  ...\n# Subtest: retorno sem autorização ou sem prazo não é atrasado\nok 17 - retorno sem autorização ou sem prazo não é atrasado\n  ---\n  duration_ms: 0.258283\n  type: 'test'\n  ...\n# Subtest: retorno efetivo posterior à DPE é classificado como retornado com atraso\nok 18 - retorno efetivo posterior à DPE é classificado como retornado com atraso\n  ---\n  duration_ms: 0.173086\n  type: 'test'\n  ...\n# Subtest: item sem retorno após a DPE está atrasado\nok 19 - item sem retorno após a DPE está atrasado\n  ---\n  duration_ms: 0.141099\n  type: 'test'\n  ...\n# Subtest: retorno igual ou anterior à DPE é classificado no prazo\nok 20 - retorno igual ou anterior à DPE é classificado no prazo\n  ---\n  duration_ms: 0.129943\n  type: 'test'\n  ...\n# Subtest: base de retorno 20/08 aplica correções confirmadas\nok 21 - base de retorno 20/08 aplica correções confirmadas\n  ---\n  duration_ms: 0.223782\n  type: 'test'\n  ...\n# Subtest: contagens de retorno correspondem à planilha atualizada\nok 22 - contagens de retorno correspondem à planilha atualizada\n  ---\n  duration_ms: 0.12151\n  type: 'test'\n  ...\n# Subtest: Parques e OMs são normalizados para as nomenclaturas institucionais\nok 23 - Parques e OMs são normalizados para as nomenclaturas institucionais\n  ---\n  duration_ms: 0.398391\n  type: 'test'\n  ...\n# Subtest: base ativa não contém abreviações antigas no campo Parque / OM\nok 24 - base ativa não contém abreviações antigas no campo Parque / OM\n  ---\n  duration_ms: 0.12824\n  type: 'test'\n  ...\n1..24\n# tests 24\n# suites 0\n# pass 24\n# fail 0\n# cancelled 0\n# skipped 0\n# todo 0\n# duration_ms 80.704772\n",
+      "stderr": ""
+    }
+  },
+  "fileHashes": {
+    "governanca-reparaveis.html": "2a7484b140a7fb573ead34c3a892322ed094dc39ed90b076584f92b00709e7c2",
+    "assets/js/repair-import-core.js": "a97837af6f3ff1a69fab28d33bc3773a773eb2d32290de08e4e6de8de587107a",
+    "assets/js/repair-processes-panel.js": "dc5485136da2b24228c9c3c8f3ee95fc3fb1ce189103278b5fc66c36b1a46b68",
+    "assets/js/repair-processes-current-data.js": "1fbb9d830ad27798d3240c82008c3d6668013eeb09fc52fa335a1de8e494f026",
+    "assets/data/repair-processes-current.json": "12548da347a4fab63d06efcdb74db2cfe4bebc39d17a96f0650b2fd4a39161b5",
+    "assets/data/repair-processes-schema.json": "029bac66d426bb91c86823310101c632c6e32ec54959137c3edb435ded8be6b3",
+    "tests/repair-import.test.mjs": "f4647bedd9c7c32ef43f8f2a8ec696f4170432ecd56936dbf395ab741990e00c"
+  }
+}

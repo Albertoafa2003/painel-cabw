@@ -1,0 +1,903 @@
+{
+  "build": "20260819-status-r1",
+  "statusSource": {
+    "statusSourceFileName": "19AGO V3 - CONTROLE REPARO - SGT ROZENDO.xlsx",
+    "statusSourceSheet": "BD Monitoramento",
+    "statusReferenceDate": "2026-08-19",
+    "statusSourceRows": "2 a 114",
+    "statusUpdateRows": 113,
+    "statusUpdateUniquePos": 60,
+    "mappingSourceFileName": "Correlação.xlsx",
+    "mappingSourceSheet": "Planilha1",
+    "mappingRows": "2 a 11",
+    "mappingVersion": 3
+  },
+  "sourceFileHashes": {
+    "19AGO V3 - CONTROLE REPARO - SGT ROZENDO.xlsx": "2eedfef6e2cffa6787177325b390168625ce0f2cfe53fd3f9297c4c5342f3825",
+    "Correlação.xlsx": "2c54d8653d6f6e96c8740e10a9e594fea931d6d5642fe49e158033213031a917"
+  },
+  "correlation": [
+    {
+      "sourceRow": 2,
+      "status": "1-Empenho Aprovado",
+      "statusSource": "1-Empenho Aprovado",
+      "visualStage": "Brasil/ OM Requisitante"
+    },
+    {
+      "sourceRow": 3,
+      "status": "2-Item Chegou CTLA",
+      "statusSource": "2-Item Chegou CTLA",
+      "visualStage": "Brasil / CTLA"
+    },
+    {
+      "sourceRow": 4,
+      "status": "3-Item Exp CTLA",
+      "statusSource": "3-Item Exp CTLA",
+      "visualStage": "Trânsito ao Reparador"
+    },
+    {
+      "sourceRow": 5,
+      "status": "4-Item chegou CABW/CABE",
+      "statusSource": "4-Item chegou CABW/CABE",
+      "visualStage": "Trânsito ao Reparador"
+    },
+    {
+      "sourceRow": 6,
+      "status": "5-Item Exp Reparador",
+      "statusSource": "5-Item Exp Reparador",
+      "visualStage": "Trânsito ao Reparador"
+    },
+    {
+      "sourceRow": 7,
+      "status": "6-Item no Reparador",
+      "statusSource": "6-Item no Reparador",
+      "visualStage": "Reparador"
+    },
+    {
+      "sourceRow": 8,
+      "status": "7-Item Recebido",
+      "statusSource": "7-Item Recebido",
+      "visualStage": "CABW/CABE (retorno)"
+    },
+    {
+      "sourceRow": 9,
+      "status": "8-Embarcado",
+      "statusSource": "8-Embarcado",
+      "visualStage": "ETAPA NÃO MAPEADA"
+    },
+    {
+      "sourceRow": 10,
+      "status": "9-Recebido Parque",
+      "statusSource": "9-Recebido Parque",
+      "visualStage": "ETAPA NÃO MAPEADA"
+    },
+    {
+      "sourceRow": 11,
+      "status": "10-Encerrado",
+      "statusSource": "10-Encerrado",
+      "visualStage": "ETAPA NÃO MAPEADA"
+    }
+  ],
+  "poUpdates": [
+    {
+      "po": "25T000026",
+      "itemCount": 1,
+      "sourceRows": [
+        2
+      ],
+      "realStatus": "7-Item Recebido",
+      "visualStage": "CABW/CABE (retorno)",
+      "sourceStatuses": [
+        "7-Item Recebido"
+      ]
+    },
+    {
+      "po": "25T000118",
+      "itemCount": 1,
+      "sourceRows": [
+        3
+      ],
+      "realStatus": "7-Item Recebido",
+      "visualStage": "CABW/CABE (retorno)",
+      "sourceStatuses": [
+        "7-Item Recebido"
+      ]
+    },
+    {
+      "po": "25T000126",
+      "itemCount": 1,
+      "sourceRows": [
+        4
+      ],
+      "realStatus": "7-Item Recebido",
+      "visualStage": "CABW/CABE (retorno)",
+      "sourceStatuses": [
+        "7-Item Recebido"
+      ]
+    },
+    {
+      "po": "25T000140",
+      "itemCount": 2,
+      "sourceRows": [
+        5,
+        6
+      ],
+      "realStatus": "7-Item Recebido",
+      "visualStage": "CABW/CABE (retorno)",
+      "sourceStatuses": [
+        "7-Item Recebido"
+      ]
+    },
+    {
+      "po": "25T000142",
+      "itemCount": 3,
+      "sourceRows": [
+        7,
+        8,
+        9
+      ],
+      "realStatus": "7-Item Recebido",
+      "visualStage": "CABW/CABE (retorno)",
+      "sourceStatuses": [
+        "7-Item Recebido"
+      ]
+    },
+    {
+      "po": "25T000143",
+      "itemCount": 1,
+      "sourceRows": [
+        10
+      ],
+      "realStatus": "7-Item Recebido",
+      "visualStage": "CABW/CABE (retorno)",
+      "sourceStatuses": [
+        "7-Item Recebido"
+      ]
+    },
+    {
+      "po": "25T000160",
+      "itemCount": 1,
+      "sourceRows": [
+        11
+      ],
+      "realStatus": "7-Item Recebido",
+      "visualStage": "CABW/CABE (retorno)",
+      "sourceStatuses": [
+        "7-Item Recebido"
+      ]
+    },
+    {
+      "po": "25T000161",
+      "itemCount": 5,
+      "sourceRows": [
+        12,
+        13,
+        14,
+        15,
+        16
+      ],
+      "realStatus": "7-Item Recebido",
+      "visualStage": "CABW/CABE (retorno)",
+      "sourceStatuses": [
+        "7-Item Recebido"
+      ]
+    },
+    {
+      "po": "25T000715",
+      "itemCount": 1,
+      "sourceRows": [
+        17
+      ],
+      "realStatus": "7-Item Recebido",
+      "visualStage": "CABW/CABE (retorno)",
+      "sourceStatuses": [
+        "7-Item Recebido"
+      ]
+    },
+    {
+      "po": "25T000718",
+      "itemCount": 5,
+      "sourceRows": [
+        18,
+        19,
+        20,
+        21,
+        22
+      ],
+      "realStatus": "7-Item Recebido",
+      "visualStage": "CABW/CABE (retorno)",
+      "sourceStatuses": [
+        "7-Item Recebido"
+      ]
+    },
+    {
+      "po": "25T000719",
+      "itemCount": 2,
+      "sourceRows": [
+        23,
+        24
+      ],
+      "realStatus": "7-Item Recebido",
+      "visualStage": "CABW/CABE (retorno)",
+      "sourceStatuses": [
+        "7-Item Recebido"
+      ]
+    },
+    {
+      "po": "25T000720",
+      "itemCount": 2,
+      "sourceRows": [
+        25,
+        26
+      ],
+      "realStatus": "7-Item Recebido",
+      "visualStage": "CABW/CABE (retorno)",
+      "sourceStatuses": [
+        "7-Item Recebido"
+      ]
+    },
+    {
+      "po": "25T000721",
+      "itemCount": 4,
+      "sourceRows": [
+        27,
+        28,
+        29,
+        30
+      ],
+      "realStatus": "7-Item Recebido",
+      "visualStage": "CABW/CABE (retorno)",
+      "sourceStatuses": [
+        "7-Item Recebido"
+      ]
+    },
+    {
+      "po": "25T000722",
+      "itemCount": 2,
+      "sourceRows": [
+        31,
+        32
+      ],
+      "realStatus": "7-Item Recebido",
+      "visualStage": "CABW/CABE (retorno)",
+      "sourceStatuses": [
+        "7-Item Recebido"
+      ]
+    },
+    {
+      "po": "25T000723",
+      "itemCount": 2,
+      "sourceRows": [
+        33,
+        34
+      ],
+      "realStatus": "7-Item Recebido",
+      "visualStage": "CABW/CABE (retorno)",
+      "sourceStatuses": [
+        "7-Item Recebido"
+      ]
+    },
+    {
+      "po": "25T000724",
+      "itemCount": 3,
+      "sourceRows": [
+        35,
+        36,
+        37
+      ],
+      "realStatus": "7-Item Recebido",
+      "visualStage": "CABW/CABE (retorno)",
+      "sourceStatuses": [
+        "7-Item Recebido"
+      ]
+    },
+    {
+      "po": "25T000934",
+      "itemCount": 2,
+      "sourceRows": [
+        38,
+        39
+      ],
+      "realStatus": "6-Item no Reparador",
+      "visualStage": "Reparador",
+      "sourceStatuses": [
+        "6-Item no Reparador"
+      ]
+    },
+    {
+      "po": "25T000940",
+      "itemCount": 1,
+      "sourceRows": [
+        40
+      ],
+      "realStatus": "7-Item Recebido",
+      "visualStage": "CABW/CABE (retorno)",
+      "sourceStatuses": [
+        "7-Item Recebido"
+      ]
+    },
+    {
+      "po": "25T000942",
+      "itemCount": 1,
+      "sourceRows": [
+        41
+      ],
+      "realStatus": "7-Item Recebido",
+      "visualStage": "CABW/CABE (retorno)",
+      "sourceStatuses": [
+        "7-Item Recebido"
+      ]
+    },
+    {
+      "po": "25T001028",
+      "itemCount": 2,
+      "sourceRows": [
+        42,
+        43
+      ],
+      "realStatus": "6-Item no Reparador",
+      "visualStage": "Reparador",
+      "sourceStatuses": [
+        "6-Item no Reparador"
+      ]
+    },
+    {
+      "po": "25T001204",
+      "itemCount": 1,
+      "sourceRows": [
+        44
+      ],
+      "realStatus": "6-Item no Reparador",
+      "visualStage": "Reparador",
+      "sourceStatuses": [
+        "6-Item no Reparador"
+      ]
+    },
+    {
+      "po": "25T001205",
+      "itemCount": 1,
+      "sourceRows": [
+        45
+      ],
+      "realStatus": "6-Item no Reparador",
+      "visualStage": "Reparador",
+      "sourceStatuses": [
+        "6-Item no Reparador"
+      ]
+    },
+    {
+      "po": "25T001225",
+      "itemCount": 2,
+      "sourceRows": [
+        46,
+        47
+      ],
+      "realStatus": "6-Item no Reparador",
+      "visualStage": "Reparador",
+      "sourceStatuses": [
+        "6-Item no Reparador"
+      ]
+    },
+    {
+      "po": "25T001226",
+      "itemCount": 2,
+      "sourceRows": [
+        48,
+        49
+      ],
+      "realStatus": "7-Item Recebido",
+      "visualStage": "CABW/CABE (retorno)",
+      "sourceStatuses": [
+        "7-Item Recebido"
+      ]
+    },
+    {
+      "po": "25T001227",
+      "itemCount": 2,
+      "sourceRows": [
+        50,
+        51
+      ],
+      "realStatus": "7-Item Recebido",
+      "visualStage": "CABW/CABE (retorno)",
+      "sourceStatuses": [
+        "7-Item Recebido"
+      ]
+    },
+    {
+      "po": "25T001342",
+      "itemCount": 2,
+      "sourceRows": [
+        52,
+        53
+      ],
+      "realStatus": "7-Item Recebido",
+      "visualStage": "CABW/CABE (retorno)",
+      "sourceStatuses": [
+        "7-Item Recebido"
+      ]
+    },
+    {
+      "po": "25T001409",
+      "itemCount": 1,
+      "sourceRows": [
+        54
+      ],
+      "realStatus": "7-Item Recebido",
+      "visualStage": "CABW/CABE (retorno)",
+      "sourceStatuses": [
+        "7-Item Recebido"
+      ]
+    },
+    {
+      "po": "25T001420",
+      "itemCount": 1,
+      "sourceRows": [
+        55
+      ],
+      "realStatus": "6-Item no Reparador",
+      "visualStage": "Reparador",
+      "sourceStatuses": [
+        "6-Item no Reparador"
+      ]
+    },
+    {
+      "po": "25T001449",
+      "itemCount": 1,
+      "sourceRows": [
+        56
+      ],
+      "realStatus": "7-Item Recebido",
+      "visualStage": "CABW/CABE (retorno)",
+      "sourceStatuses": [
+        "7-Item Recebido"
+      ]
+    },
+    {
+      "po": "25T001450",
+      "itemCount": 1,
+      "sourceRows": [
+        57
+      ],
+      "realStatus": "7-Item Recebido",
+      "visualStage": "CABW/CABE (retorno)",
+      "sourceStatuses": [
+        "7-Item Recebido"
+      ]
+    },
+    {
+      "po": "25T001451",
+      "itemCount": 2,
+      "sourceRows": [
+        58,
+        59
+      ],
+      "realStatus": "7-Item Recebido",
+      "visualStage": "CABW/CABE (retorno)",
+      "sourceStatuses": [
+        "7-Item Recebido"
+      ]
+    },
+    {
+      "po": "25T001644",
+      "itemCount": 2,
+      "sourceRows": [
+        60,
+        61
+      ],
+      "realStatus": "7-Item Recebido",
+      "visualStage": "CABW/CABE (retorno)",
+      "sourceStatuses": [
+        "7-Item Recebido"
+      ]
+    },
+    {
+      "po": "25T001645",
+      "itemCount": 1,
+      "sourceRows": [
+        62
+      ],
+      "realStatus": "7-Item Recebido",
+      "visualStage": "CABW/CABE (retorno)",
+      "sourceStatuses": [
+        "7-Item Recebido"
+      ]
+    },
+    {
+      "po": "25T001650",
+      "itemCount": 2,
+      "sourceRows": [
+        63,
+        64
+      ],
+      "realStatus": "7-Item Recebido",
+      "visualStage": "CABW/CABE (retorno)",
+      "sourceStatuses": [
+        "7-Item Recebido"
+      ]
+    },
+    {
+      "po": "25T001785",
+      "itemCount": 4,
+      "sourceRows": [
+        65,
+        66,
+        67,
+        68
+      ],
+      "realStatus": "7-Item Recebido",
+      "visualStage": "CABW/CABE (retorno)",
+      "sourceStatuses": [
+        "7-Item Recebido"
+      ]
+    },
+    {
+      "po": "25T001786",
+      "itemCount": 1,
+      "sourceRows": [
+        69
+      ],
+      "realStatus": "7-Item Recebido",
+      "visualStage": "CABW/CABE (retorno)",
+      "sourceStatuses": [
+        "7-Item Recebido"
+      ]
+    },
+    {
+      "po": "25T001817",
+      "itemCount": 1,
+      "sourceRows": [
+        70
+      ],
+      "realStatus": "6-Item no Reparador",
+      "visualStage": "Reparador",
+      "sourceStatuses": [
+        "6-Item no Reparador"
+      ]
+    },
+    {
+      "po": "25T001819",
+      "itemCount": 2,
+      "sourceRows": [
+        71,
+        72
+      ],
+      "realStatus": "7-Item Recebido",
+      "visualStage": "CABW/CABE (retorno)",
+      "sourceStatuses": [
+        "7-Item Recebido"
+      ]
+    },
+    {
+      "po": "25T001921",
+      "itemCount": 1,
+      "sourceRows": [
+        73
+      ],
+      "realStatus": "7-Item Recebido",
+      "visualStage": "CABW/CABE (retorno)",
+      "sourceStatuses": [
+        "7-Item Recebido"
+      ]
+    },
+    {
+      "po": "25T001922",
+      "itemCount": 2,
+      "sourceRows": [
+        74,
+        75
+      ],
+      "realStatus": "7-Item Recebido",
+      "visualStage": "CABW/CABE (retorno)",
+      "sourceStatuses": [
+        "7-Item Recebido"
+      ]
+    },
+    {
+      "po": "25T001961",
+      "itemCount": 1,
+      "sourceRows": [
+        76
+      ],
+      "realStatus": "6-Item no Reparador",
+      "visualStage": "Reparador",
+      "sourceStatuses": [
+        "6-Item no Reparador"
+      ]
+    },
+    {
+      "po": "25T002073",
+      "itemCount": 1,
+      "sourceRows": [
+        77
+      ],
+      "realStatus": "7-Item Recebido",
+      "visualStage": "CABW/CABE (retorno)",
+      "sourceStatuses": [
+        "7-Item Recebido"
+      ]
+    },
+    {
+      "po": "25T002074",
+      "itemCount": 1,
+      "sourceRows": [
+        78
+      ],
+      "realStatus": "7-Item Recebido",
+      "visualStage": "CABW/CABE (retorno)",
+      "sourceStatuses": [
+        "7-Item Recebido"
+      ]
+    },
+    {
+      "po": "25T002083",
+      "itemCount": 3,
+      "sourceRows": [
+        79,
+        80,
+        81
+      ],
+      "realStatus": "7-Item Recebido",
+      "visualStage": "CABW/CABE (retorno)",
+      "sourceStatuses": [
+        "7-Item Recebido"
+      ]
+    },
+    {
+      "po": "25T002108",
+      "itemCount": 1,
+      "sourceRows": [
+        82
+      ],
+      "realStatus": "6-Item no Reparador",
+      "visualStage": "Reparador",
+      "sourceStatuses": [
+        "6-Item no Reparador"
+      ]
+    },
+    {
+      "po": "26T000006",
+      "itemCount": 3,
+      "sourceRows": [
+        83,
+        84,
+        85
+      ],
+      "realStatus": "6-Item no Reparador",
+      "visualStage": "Reparador",
+      "sourceStatuses": [
+        "6-Item no Reparador"
+      ]
+    },
+    {
+      "po": "26T000138",
+      "itemCount": 1,
+      "sourceRows": [
+        86
+      ],
+      "realStatus": "6-Item no Reparador",
+      "visualStage": "Reparador",
+      "sourceStatuses": [
+        "6-Item no Reparador"
+      ]
+    },
+    {
+      "po": "26T000139",
+      "itemCount": 1,
+      "sourceRows": [
+        87
+      ],
+      "realStatus": "7-Item Recebido",
+      "visualStage": "CABW/CABE (retorno)",
+      "sourceStatuses": [
+        "7-Item Recebido"
+      ]
+    },
+    {
+      "po": "26T000548",
+      "itemCount": 4,
+      "sourceRows": [
+        88,
+        89,
+        90,
+        91
+      ],
+      "realStatus": "4-Item chegou CABW/CABE",
+      "visualStage": "Trânsito ao Reparador",
+      "sourceStatuses": [
+        "4-Item chegou CABW/E"
+      ]
+    },
+    {
+      "po": "26T000735",
+      "itemCount": 1,
+      "sourceRows": [
+        92
+      ],
+      "realStatus": "2-Item Chegou CTLA",
+      "visualStage": "Brasil / CTLA",
+      "sourceStatuses": [
+        "2-Item chegou CTLA"
+      ]
+    },
+    {
+      "po": "26T000736",
+      "itemCount": 4,
+      "sourceRows": [
+        93,
+        94,
+        95,
+        96
+      ],
+      "realStatus": "2-Item Chegou CTLA",
+      "visualStage": "Brasil / CTLA",
+      "sourceStatuses": [
+        "2-Item chegou CTLA"
+      ]
+    },
+    {
+      "po": "26T000750",
+      "itemCount": 5,
+      "sourceRows": [
+        97,
+        98,
+        99,
+        100,
+        101
+      ],
+      "realStatus": "2-Item Chegou CTLA",
+      "visualStage": "Brasil / CTLA",
+      "sourceStatuses": [
+        "2-Item chegou CTLA"
+      ]
+    },
+    {
+      "po": "26T000798",
+      "itemCount": 1,
+      "sourceRows": [
+        102
+      ],
+      "realStatus": "2-Item Chegou CTLA",
+      "visualStage": "Brasil / CTLA",
+      "sourceStatuses": [
+        "2-Item chegou CTLA"
+      ]
+    },
+    {
+      "po": "26T000799",
+      "itemCount": 2,
+      "sourceRows": [
+        103,
+        104
+      ],
+      "realStatus": "2-Item Chegou CTLA",
+      "visualStage": "Brasil / CTLA",
+      "sourceStatuses": [
+        "2-Item chegou CTLA"
+      ]
+    },
+    {
+      "po": "26T000800",
+      "itemCount": 4,
+      "sourceRows": [
+        105,
+        106,
+        107,
+        108
+      ],
+      "realStatus": "2-Item Chegou CTLA",
+      "visualStage": "Brasil / CTLA",
+      "sourceStatuses": [
+        "2-Item chegou CTLA"
+      ]
+    },
+    {
+      "po": "26T000814",
+      "itemCount": 1,
+      "sourceRows": [
+        109
+      ],
+      "realStatus": "1-Empenho Aprovado",
+      "visualStage": "Brasil/ OM Requisitante",
+      "sourceStatuses": [
+        "1-Empenho Aprovado"
+      ]
+    },
+    {
+      "po": "26T000815",
+      "itemCount": 2,
+      "sourceRows": [
+        110,
+        111
+      ],
+      "realStatus": "1-Empenho Aprovado",
+      "visualStage": "Brasil/ OM Requisitante",
+      "sourceStatuses": [
+        "1-Empenho Aprovado"
+      ]
+    },
+    {
+      "po": "26T000818",
+      "itemCount": 1,
+      "sourceRows": [
+        112
+      ],
+      "realStatus": "2-Item Chegou CTLA",
+      "visualStage": "Brasil / CTLA",
+      "sourceStatuses": [
+        "2-Item chegou CTLA"
+      ]
+    },
+    {
+      "po": "26T000910",
+      "itemCount": 1,
+      "sourceRows": [
+        113
+      ],
+      "realStatus": "2-Item Chegou CTLA",
+      "visualStage": "Brasil / CTLA",
+      "sourceStatuses": [
+        "2-Item chegou CTLA"
+      ]
+    },
+    {
+      "po": "26T000915",
+      "itemCount": 1,
+      "sourceRows": [
+        114
+      ],
+      "realStatus": "5-Item Exp Reparador",
+      "visualStage": "Trânsito ao Reparador",
+      "sourceStatuses": [
+        "5-Item Exp ao Reparador"
+      ]
+    }
+  ],
+  "counts": {
+    "recordsUpdated": 113,
+    "uniquePos": 60,
+    "statusChangesApplied": 110,
+    "visualStageChangesApplied": 103,
+    "statusCounts": {
+      "7-Item Recebido": 70,
+      "6-Item no Reparador": 16,
+      "4-Item chegou CABW/CABE": 4,
+      "2-Item Chegou CTLA": 19,
+      "1-Empenho Aprovado": 3,
+      "5-Item Exp Reparador": 1
+    },
+    "stageCounts": {
+      "CABW/CABE (retorno)": 70,
+      "Reparador": 16,
+      "Trânsito ao Reparador": 5,
+      "Brasil / CTLA": 19,
+      "Brasil/ OM Requisitante": 3
+    }
+  },
+  "validation": {
+    "noConflictingStatusByPo": true,
+    "samePoSetAsCurrentBundle": true,
+    "sameItemCountByPo": true,
+    "uniqueRecordIds": true,
+    "noPo2024": true,
+    "noUnapprovedFieldChanges": true,
+    "allRealStatusesCanonical": true,
+    "allVisualStagesCanonical": true
+  },
+  "changedFields": {
+    "visualStage": 103,
+    "statusMappingVersion": 113,
+    "statusMappingSheet": 113,
+    "statusUpdatedAt": 113,
+    "realStatus": 110,
+    "statusSourceRow": 113,
+    "statusMappingFileName": 113,
+    "statusMappingSourceRow": 113,
+    "statusSourceFileName": 113,
+    "statusReferenceDate": 113,
+    "realStatusSource": 110,
+    "statusUpdatedBy": 113,
+    "statusVisualStageSource": 113,
+    "statusSourceSheet": 113
+  }
+}

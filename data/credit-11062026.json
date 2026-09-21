@@ -1,0 +1,679 @@
+{
+  "position": "11/06/2026",
+  "summary": [
+    [
+      "20/05/2026",
+      "US$ 3.623.185,99",
+      "US$ 65.571.398,47",
+      "5,53%",
+      "US$ 61.948.212,48",
+      "58"
+    ],
+    [
+      "27/05/2026",
+      "US$ 4.721.584,23",
+      "US$ 67.154.474,76",
+      "7,03%",
+      "US$ 62.432.890,53",
+      "60"
+    ],
+    [
+      "08/06/2026",
+      "US$ 4.220.076,27",
+      "US$ 70.193.484,43",
+      "6,01%",
+      "US$ 65.973.408,16",
+      "60"
+    ],
+    [
+      "10/06/2026",
+      "US$ 4.291.490,99",
+      "US$ 70.273.351,51",
+      "6,11%",
+      "US$ 65.981.860,52",
+      "63"
+    ],
+    [
+      "11/06/2026",
+      "US$ 30.231.064,82",
+      "US$ 73.202.275,69",
+      "41,30%",
+      "US$ 42.971.210,87",
+      "68"
+    ]
+  ],
+  "executive": {
+    "Conta contábil analisada": "622110000 - Crédito Disponível",
+    "UG emitente": "120090 - Comissão Aeronáutica Brasileira em Washington",
+    "Gestão emitente": "00001 - Tesouro Nacional",
+    "Posição do CONRAZÃO": "Junho/2026 - aberto",
+    "Arquivo CONRAZÃO gerado em": "11/06/2026 às 10:44:26",
+    "Quantidade de lançamentos analisados": "68",
+    "Total do crédito disponível": "US$ 30.231.064,82",
+    "Maior concentração por UG": "120036 - DECEA: US$ 23.011.074,01 (76,12%)",
+    "Maior concentração por Ação Orçamentária": "20XV - OPERAÇÃO E MANUTENÇÃO DE EQUIPAMENTOS DO SISCEAB: US$ 27.228.289,91 (90,07%)",
+    "Crédito total recebido em 2026": "US$ 73.202.275,69",
+    "Crédito disponível sobre o total recebido": "41,30%",
+    "Crédito movimentado/comprometido por diferença": "US$ 42.971.210,87"
+  },
+  "ugRanking": [
+    {
+      "Código UG": "120036",
+      "Sigla": "DECEA",
+      "Unidade Gestora": "DEPARTAMENTO DE CONTROLE DO ESPAÇO AÉREO",
+      "Lanç.": "6",
+      "Crédito Disponível": "US$ 23.011.074,01",
+      "% do Total": "76,12%"
+    },
+    {
+      "Código UG": "120026",
+      "Sigla": "PAMA-LS",
+      "Unidade Gestora": "PARQUE DE MATERIAL AERONÁUTICO DE LAGOA SANTA",
+      "Lanç.": "16",
+      "Crédito Disponível": "US$ 3.684.588,28",
+      "% do Total": "12,19%"
+    },
+    {
+      "Código UG": "120049",
+      "Sigla": "PAMA-GL",
+      "Unidade Gestora": "PARQUE DE MATERIAL AERONÁUTICO DO GALEÃO",
+      "Lanç.": "6",
+      "Crédito Disponível": "US$ 1.000.840,68",
+      "% do Total": "3,31%"
+    },
+    {
+      "Código UG": "120127",
+      "Sigla": "CISCEA",
+      "Unidade Gestora": "COMISSÃO DE IMPLANTAÇÃO DO SISTEMA DE CONTROLE DO ESPAÇO AÉREO",
+      "Lanç.": "1",
+      "Crédito Disponível": "US$ 949.003,80",
+      "% do Total": "3,14%"
+    },
+    {
+      "Código UG": "120038",
+      "Sigla": "DIRMAB",
+      "Unidade Gestora": "DIRETORIA DE MATERIAL AERONÁUTICO E BÉLICO",
+      "Lanç.": "3",
+      "Crédito Disponível": "US$ 846.848,61",
+      "% do Total": "2,80%"
+    },
+    {
+      "Código UG": "120090",
+      "Sigla": "CABW",
+      "Unidade Gestora": "COMISSÃO AERONÁUTICA BRASILEIRA EM WASHINGTON",
+      "Lanç.": "5",
+      "Crédito Disponível": "US$ 446.536,58",
+      "% do Total": "1,48%"
+    },
+    {
+      "Código UG": "120047",
+      "Sigla": "PAMB-RJ",
+      "Unidade Gestora": "PARQUE DE MATERIAL BÉLICO DA AERONÁUTICA DO RIO DE JANEIRO",
+      "Lanç.": "2",
+      "Crédito Disponível": "US$ 85.518,60",
+      "% do Total": "0,28%"
+    },
+    {
+      "Código UG": "120111",
+      "Sigla": "EMAER",
+      "Unidade Gestora": "ESTADO-MAIOR DA AERONÁUTICA",
+      "Lanç.": "11",
+      "Crédito Disponível": "US$ 52.260,56",
+      "% do Total": "0,17%"
+    },
+    {
+      "Código UG": "120071",
+      "Sigla": "CELOG",
+      "Unidade Gestora": "CENTRO LOGÍSTICO DA AERONÁUTICA",
+      "Lanç.": "3",
+      "Crédito Disponível": "US$ 35.444,80",
+      "% do Total": "0,12%"
+    },
+    {
+      "Código UG": "120141",
+      "Sigla": "IAE",
+      "Unidade Gestora": "INSTITUTO DE AERONÁUTICA E ESPAÇO",
+      "Lanç.": "1",
+      "Crédito Disponível": "US$ 34.985,84",
+      "% do Total": "0,12%"
+    },
+    {
+      "Código UG": "120136",
+      "Sigla": "DIRAP",
+      "Unidade Gestora": "DIRETORIA DE ADMINISTRAÇÃO DO PESSOAL",
+      "Lanç.": "1",
+      "Crédito Disponível": "US$ 32.799,62",
+      "% do Total": "0,11%"
+    },
+    {
+      "Código UG": "120068",
+      "Sigla": "PAMA-SP",
+      "Unidade Gestora": "PARQUE DE MATERIAL AERONÁUTICO DE SÃO PAULO",
+      "Lanç.": "7",
+      "Crédito Disponível": "US$ 23.787,95",
+      "% do Total": "0,08%"
+    },
+    {
+      "Código UG": "120700",
+      "Sigla": "DIREF",
+      "Unidade Gestora": "DIRETORIA DE ECONOMIA E FINANÇAS DA AERONÁUTICA",
+      "Lanç.": "2",
+      "Crédito Disponível": "US$ 12.814,94",
+      "% do Total": "0,04%"
+    },
+    {
+      "Código UG": "120091",
+      "Sigla": "CABE",
+      "Unidade Gestora": "COMISSÃO AERONÁUTICA BRASILEIRA NA EUROPA",
+      "Lanç.": "1",
+      "Crédito Disponível": "US$ 8.390,54",
+      "% do Total": "0,03%"
+    },
+    {
+      "Código UG": "120197",
+      "Sigla": "IAOP",
+      "Unidade Gestora": "INSTITUTO DE APLICAÇÕES OPERACIONAIS",
+      "Lanç.": "1",
+      "Crédito Disponível": "US$ 4.170,00",
+      "% do Total": "0,01%"
+    },
+    {
+      "Código UG": "120115",
+      "Sigla": "COMAE",
+      "Unidade Gestora": "COMANDO DE OPERAÇÕES AEROESPACIAIS",
+      "Lanç.": "1",
+      "Crédito Disponível": "US$ 2.000,00",
+      "% do Total": "0,01%"
+    },
+    {
+      "Código UG": "120048",
+      "Sigla": "PAME-RJ",
+      "Unidade Gestora": "PARQUE DE MATERIAL DE ELETRÔNICA DA AERONÁUTICA DO RIO DE JANEIRO",
+      "Lanç.": "1",
+      "Crédito Disponível": "US$ 0,01",
+      "% do Total": "0,00%"
+    }
+  ],
+  "detailByUGPTRES": [
+    {
+      "UG": "120026",
+      "Sigla": "PAMA-LS",
+      "Unidade Gestora": "PARQUE DE MATERIAL AERONÁUTICO DE LAGOA SANTA",
+      "PTRES": "229166",
+      "Ação": "20XV",
+      "Descrição da Ação": "OPERAÇÃO E MANUTENÇÃO DE EQUIPAMENTOS DO SISCEAB",
+      "Lanç.": "4",
+      "Crédito Disponível": "US$ 2.212.963,28"
+    },
+    {
+      "UG": "120026",
+      "Sigla": "PAMA-LS",
+      "Unidade Gestora": "PARQUE DE MATERIAL AERONÁUTICO DE LAGOA SANTA",
+      "PTRES": "229177",
+      "Ação": "2048",
+      "Descrição da Ação": "MANUTENÇÃO E SUPRIMENTO DE MATERIAL AERONÁUTICO",
+      "Lanç.": "10",
+      "Crédito Disponível": "US$ 1.330.693,90"
+    },
+    {
+      "UG": "120026",
+      "Sigla": "PAMA-LS",
+      "Unidade Gestora": "PARQUE DE MATERIAL AERONÁUTICO DE LAGOA SANTA",
+      "PTRES": "249587",
+      "Ação": "20IH",
+      "Descrição da Ação": "MODERNIZAÇÃO E REVITALIZAÇÃO DE AERONAVE - T2",
+      "Lanç.": "1",
+      "Crédito Disponível": "US$ 140.293,45"
+    },
+    {
+      "UG": "120026",
+      "Sigla": "PAMA-LS",
+      "Unidade Gestora": "PARQUE DE MATERIAL AERONÁUTICO DE LAGOA SANTA",
+      "PTRES": "249589",
+      "Ação": "20IH",
+      "Descrição da Ação": "MODERNIZAÇÃO E REVITALIZAÇÃO DE AERONAVE - C97",
+      "Lanç.": "1",
+      "Crédito Disponível": "US$ 637,65"
+    },
+    {
+      "UG": "120036",
+      "Sigla": "DECEA",
+      "Unidade Gestora": "DEPARTAMENTO DE CONTROLE DO ESPAÇO AÉREO",
+      "PTRES": "229166",
+      "Ação": "20XV",
+      "Descrição da Ação": "OPERAÇÃO E MANUTENÇÃO DE EQUIPAMENTOS DO SISCEAB",
+      "Lanç.": "6",
+      "Crédito Disponível": "US$ 23.011.074,01"
+    },
+    {
+      "UG": "120038",
+      "Sigla": "DIRMAB",
+      "Unidade Gestora": "DIRETORIA DE MATERIAL AERONÁUTICO E BÉLICO",
+      "PTRES": "251050",
+      "Ação": "21EM",
+      "Descrição da Ação": "EMPREGO DAS FORÇAS ARMADAS",
+      "Lanç.": "1",
+      "Crédito Disponível": "US$ 504.206,16"
+    },
+    {
+      "UG": "120038",
+      "Sigla": "DIRMAB",
+      "Unidade Gestora": "DIRETORIA DE MATERIAL AERONÁUTICO E BÉLICO",
+      "PTRES": "228692",
+      "Ação": "20X7",
+      "Descrição da Ação": "EMPREGO CONJUNTO OU COMBINADO DAS FFAA",
+      "Lanç.": "1",
+      "Crédito Disponível": "US$ 341.592,45"
+    },
+    {
+      "UG": "120038",
+      "Sigla": "DIRMAB",
+      "Unidade Gestora": "DIRETORIA DE MATERIAL AERONÁUTICO E BÉLICO",
+      "PTRES": "229177",
+      "Ação": "2048",
+      "Descrição da Ação": "MANUTENÇÃO E SUPRIMENTO DE MATERIAL AERONÁUTICO",
+      "Lanç.": "1",
+      "Crédito Disponível": "US$ 1.050,00"
+    },
+    {
+      "UG": "120047",
+      "Sigla": "PAMB-RJ",
+      "Unidade Gestora": "PARQUE DE MATERIAL BÉLICO DA AERONÁUTICA DO RIO DE JANEIRO",
+      "PTRES": "229226",
+      "Ação": "21A0",
+      "Descrição da Ação": "APRESTAMENTO DAS FFAA",
+      "Lanç.": "2",
+      "Crédito Disponível": "US$ 85.518,60"
+    },
+    {
+      "UG": "120048",
+      "Sigla": "PAME-RJ",
+      "Unidade Gestora": "PARQUE DE MATERIAL DE ELETRÔNICA DA AERONÁUTICA DO RIO DE JANEIRO",
+      "PTRES": "229166",
+      "Ação": "20XV",
+      "Descrição da Ação": "OPERAÇÃO E MANUTENÇÃO DE EQUIPAMENTOS DO SISCEAB",
+      "Lanç.": "1",
+      "Crédito Disponível": "US$ 0,01"
+    },
+    {
+      "UG": "120049",
+      "Sigla": "PAMA-GL",
+      "Unidade Gestora": "PARQUE DE MATERIAL AERONÁUTICO DO GALEÃO",
+      "PTRES": "229166",
+      "Ação": "20XV",
+      "Descrição da Ação": "OPERAÇÃO E MANUTENÇÃO DE EQUIPAMENTOS DO SISCEAB",
+      "Lanç.": "4",
+      "Crédito Disponível": "US$ 999.581,69"
+    },
+    {
+      "UG": "120049",
+      "Sigla": "PAMA-GL",
+      "Unidade Gestora": "PARQUE DE MATERIAL AERONÁUTICO DO GALEÃO",
+      "PTRES": "229177",
+      "Ação": "2048",
+      "Descrição da Ação": "MANUTENÇÃO E SUPRIMENTO DE MATERIAL AERONÁUTICO",
+      "Lanç.": "2",
+      "Crédito Disponível": "US$ 1.258,99"
+    },
+    {
+      "UG": "120068",
+      "Sigla": "PAMA-SP",
+      "Unidade Gestora": "PARQUE DE MATERIAL AERONÁUTICO DE SÃO PAULO",
+      "PTRES": "229166",
+      "Ação": "20XV",
+      "Descrição da Ação": "OPERAÇÃO E MANUTENÇÃO DE EQUIPAMENTOS DO SISCEAB",
+      "Lanç.": "3",
+      "Crédito Disponível": "US$ 20.592,02"
+    },
+    {
+      "UG": "120068",
+      "Sigla": "PAMA-SP",
+      "Unidade Gestora": "PARQUE DE MATERIAL AERONÁUTICO DE SÃO PAULO",
+      "PTRES": "229177",
+      "Ação": "2048",
+      "Descrição da Ação": "MANUTENÇÃO E SUPRIMENTO DE MATERIAL AERONÁUTICO",
+      "Lanç.": "4",
+      "Crédito Disponível": "US$ 3.195,93"
+    },
+    {
+      "UG": "120071",
+      "Sigla": "CELOG",
+      "Unidade Gestora": "CENTRO LOGÍSTICO DA AERONÁUTICA",
+      "PTRES": "229177",
+      "Ação": "2048",
+      "Descrição da Ação": "MANUTENÇÃO E SUPRIMENTO DE MATERIAL AERONÁUTICO",
+      "Lanç.": "2",
+      "Crédito Disponível": "US$ 23.000,01"
+    },
+    {
+      "UG": "120071",
+      "Sigla": "CELOG",
+      "Unidade Gestora": "CENTRO LOGÍSTICO DA AERONÁUTICA",
+      "PTRES": "204352",
+      "Ação": "2000",
+      "Descrição da Ação": "ADMINISTRAÇÃO DA UNIDADE",
+      "Lanç.": "1",
+      "Crédito Disponível": "US$ 12.444,79"
+    },
+    {
+      "UG": "120090",
+      "Sigla": "CABW",
+      "Unidade Gestora": "COMISSÃO AERONÁUTICA BRASILEIRA EM WASHINGTON",
+      "PTRES": "229179",
+      "Ação": "2868",
+      "Descrição da Ação": "COMBUSTÍVEIS E LUBRIFICANTES DE AVIAÇÃO",
+      "Lanç.": "1",
+      "Crédito Disponível": "US$ 409.688,58"
+    },
+    {
+      "UG": "120090",
+      "Sigla": "CABW",
+      "Unidade Gestora": "COMISSÃO AERONÁUTICA BRASILEIRA EM WASHINGTON",
+      "PTRES": "229166",
+      "Ação": "20XV",
+      "Descrição da Ação": "OPERAÇÃO E MANUTENÇÃO DE EQUIPAMENTOS DO SISCEAB",
+      "Lanç.": "1",
+      "Crédito Disponível": "US$ 35.075,10"
+    },
+    {
+      "UG": "120090",
+      "Sigla": "CABW",
+      "Unidade Gestora": "COMISSÃO AERONÁUTICA BRASILEIRA EM WASHINGTON",
+      "PTRES": "214550",
+      "Ação": "2004",
+      "Descrição da Ação": "ASSISTÊNCIA MÉDICA E ODONTOLÓGICA",
+      "Lanç.": "1",
+      "Crédito Disponível": "US$ 1.000,00"
+    },
+    {
+      "UG": "120090",
+      "Sigla": "CABW",
+      "Unidade Gestora": "COMISSÃO AERONÁUTICA BRASILEIRA EM WASHINGTON",
+      "PTRES": "168919",
+      "Ação": "2000",
+      "Descrição da Ação": "ADMINISTRAÇÃO DA UNIDADE",
+      "Lanç.": "1",
+      "Crédito Disponível": "US$ 556,96"
+    },
+    {
+      "UG": "120090",
+      "Sigla": "CABW",
+      "Unidade Gestora": "COMISSÃO AERONÁUTICA BRASILEIRA EM WASHINGTON",
+      "PTRES": "214537",
+      "Ação": "2004",
+      "Descrição da Ação": "ASSISTÊNCIA MÉDICA E ODONTOLÓGICA",
+      "Lanç.": "1",
+      "Crédito Disponível": "US$ 215,94"
+    },
+    {
+      "UG": "120091",
+      "Sigla": "CABE",
+      "Unidade Gestora": "COMISSÃO AERONÁUTICA BRASILEIRA NA EUROPA",
+      "PTRES": "168919",
+      "Ação": "2000",
+      "Descrição da Ação": "ADMINISTRAÇÃO DA UNIDADE",
+      "Lanç.": "1",
+      "Crédito Disponível": "US$ 8.390,54"
+    },
+    {
+      "UG": "120111",
+      "Sigla": "EMAER",
+      "Unidade Gestora": "ESTADO-MAIOR DA AERONÁUTICA",
+      "PTRES": "168919",
+      "Ação": "2000",
+      "Descrição da Ação": "ADMINISTRAÇÃO DA UNIDADE",
+      "Lanç.": "5",
+      "Crédito Disponível": "US$ 41.760,16"
+    },
+    {
+      "UG": "120111",
+      "Sigla": "EMAER",
+      "Unidade Gestora": "ESTADO-MAIOR DA AERONÁUTICA",
+      "PTRES": "168901",
+      "Ação": "2000",
+      "Descrição da Ação": "ADMINISTRAÇÃO DA UNIDADE",
+      "Lanç.": "1",
+      "Crédito Disponível": "US$ 4.010,00"
+    },
+    {
+      "UG": "120111",
+      "Sigla": "EMAER",
+      "Unidade Gestora": "ESTADO-MAIOR DA AERONÁUTICA",
+      "PTRES": "259974",
+      "Ação": "20X1",
+      "Descrição da Ação": "PARTICIPAÇÃO BRASILEIRA EM OPERAÇÕES",
+      "Lanç.": "1",
+      "Crédito Disponível": "US$ 3.267,10"
+    },
+    {
+      "UG": "120111",
+      "Sigla": "EMAER",
+      "Unidade Gestora": "ESTADO-MAIOR DA AERONÁUTICA",
+      "PTRES": "228676",
+      "Ação": "151S",
+      "Descrição da Ação": "IMPLANTAÇÃO E DESENVOLVIMENTO",
+      "Lanç.": "2",
+      "Crédito Disponível": "US$ 2.030,10"
+    },
+    {
+      "UG": "120111",
+      "Sigla": "EMAER",
+      "Unidade Gestora": "ESTADO-MAIOR DA AERONÁUTICA",
+      "PTRES": "228786",
+      "Ação": "2D55",
+      "Descrição da Ação": "ADIDÂNCIAS MILITARES NO EXTERIOR",
+      "Lanç.": "1",
+      "Crédito Disponível": "US$ 748,61"
+    },
+    {
+      "UG": "120111",
+      "Sigla": "EMAER",
+      "Unidade Gestora": "ESTADO-MAIOR DA AERONÁUTICA",
+      "PTRES": "229209",
+      "Ação": "00UU",
+      "Descrição da Ação": "CONTRIBUIÇÕES A ORGANISMOS INTERNACIONAIS",
+      "Lanç.": "1",
+      "Crédito Disponível": "US$ 444,59"
+    },
+    {
+      "UG": "120115",
+      "Sigla": "COMAE",
+      "Unidade Gestora": "COMANDO DE OPERAÇÕES AEROESPACIAIS",
+      "PTRES": "228676",
+      "Ação": "151S",
+      "Descrição da Ação": "IMPLANTAÇÃO E DESENVOLVIMENTO",
+      "Lanç.": "1",
+      "Crédito Disponível": "US$ 2.000,00"
+    },
+    {
+      "UG": "120127",
+      "Sigla": "CISCEA",
+      "Unidade Gestora": "COMISSÃO DE IMPLANTAÇÃO DO SISTEMA DE CONTROLE DO ESPAÇO AÉREO",
+      "PTRES": "229166",
+      "Ação": "20XV",
+      "Descrição da Ação": "OPERAÇÃO E MANUTENÇÃO DE EQUIPAMENTOS DO SISCEAB",
+      "Lanç.": "1",
+      "Crédito Disponível": "US$ 949.003,80"
+    },
+    {
+      "UG": "120136",
+      "Sigla": "DIRAP",
+      "Unidade Gestora": "DIRETORIA DE ADMINISTRAÇÃO DO PESSOAL",
+      "PTRES": "229140",
+      "Ação": "2120",
+      "Descrição da Ação": "MOVIMENTAÇÃO DE MILITARES",
+      "Lanç.": "1",
+      "Crédito Disponível": "US$ 32.799,62"
+    },
+    {
+      "UG": "120141",
+      "Sigla": "IAE",
+      "Unidade Gestora": "INSTITUTO DE AERONÁUTICA E ESPAÇO",
+      "PTRES": "233453",
+      "Ação": "21AI",
+      "Descrição da Ação": "FUNCIONAMENTO E ATUALIZAÇÃO DE INFRAESTRUTURA",
+      "Lanç.": "1",
+      "Crédito Disponível": "US$ 34.985,84"
+    },
+    {
+      "UG": "120197",
+      "Sigla": "IAOP",
+      "Unidade Gestora": "INSTITUTO DE APLICAÇÕES OPERACIONAIS",
+      "PTRES": "229301",
+      "Ação": "21GO",
+      "Descrição da Ação": "FUNCIONAMENTO DAS INSTITUIÇÕES CIENTÍFICAS",
+      "Lanç.": "1",
+      "Crédito Disponível": "US$ 4.170,00"
+    },
+    {
+      "UG": "120700",
+      "Sigla": "DIREF",
+      "Unidade Gestora": "DIRETORIA DE ECONOMIA E FINANÇAS DA AERONÁUTICA",
+      "PTRES": "168901",
+      "Ação": "2000",
+      "Descrição da Ação": "ADMINISTRAÇÃO DA UNIDADE",
+      "Lanç.": "1",
+      "Crédito Disponível": "US$ 8.244,33"
+    },
+    {
+      "UG": "120700",
+      "Sigla": "DIREF",
+      "Unidade Gestora": "DIRETORIA DE ECONOMIA E FINANÇAS DA AERONÁUTICA",
+      "PTRES": "168919",
+      "Ação": "2000",
+      "Descrição da Ação": "ADMINISTRAÇÃO DA UNIDADE",
+      "Lanç.": "1",
+      "Crédito Disponível": "US$ 4.570,61"
+    }
+  ],
+  "actionRanking": [
+    {
+      "Ação": "20XV",
+      "Descrição": "OPERAÇÃO E MANUTENÇÃO DE EQUIPAMENTOS DO SISCEAB",
+      "PTRES Vinculados": "229166",
+      "Lanç.": "20",
+      "Crédito Disponível": "US$ 27.228.289,91",
+      "% do Total": "90,07%"
+    },
+    {
+      "Ação": "2048",
+      "Descrição": "MANUTENÇÃO E SUPRIMENTO DE MATERIAL AERONÁUTICO",
+      "PTRES Vinculados": "229177",
+      "Lanç.": "19",
+      "Crédito Disponível": "US$ 1.359.198,83",
+      "% do Total": "4,50%"
+    },
+    {
+      "Ação": "21EM",
+      "Descrição": "EMPREGO DAS FORÇAS ARMADAS",
+      "PTRES Vinculados": "251050",
+      "Lanç.": "1",
+      "Crédito Disponível": "US$ 504.206,16",
+      "% do Total": "1,67%"
+    },
+    {
+      "Ação": "2868",
+      "Descrição": "COMBUSTÍVEIS E LUBRIFICANTES DE AVIAÇÃO",
+      "PTRES Vinculados": "229179",
+      "Lanç.": "1",
+      "Crédito Disponível": "US$ 409.688,58",
+      "% do Total": "1,36%"
+    },
+    {
+      "Ação": "20X7",
+      "Descrição": "EMPREGO CONJUNTO OU COMBINADO DAS FFAA",
+      "PTRES Vinculados": "228692",
+      "Lanç.": "1",
+      "Crédito Disponível": "US$ 341.592,45",
+      "% do Total": "1,13%"
+    },
+    {
+      "Ação": "20IH",
+      "Descrição": "MODERNIZAÇÃO E REVITALIZAÇÃO DE AERONAVE - T2 / MODERNIZAÇÃO E REVITALIZAÇÃO DE AERONAVE - C97",
+      "PTRES Vinculados": "249587, 249589",
+      "Lanç.": "2",
+      "Crédito Disponível": "US$ 140.931,10",
+      "% do Total": "0,47%"
+    },
+    {
+      "Ação": "21A0",
+      "Descrição": "APRESTAMENTO DAS FFAA",
+      "PTRES Vinculados": "229226",
+      "Lanç.": "2",
+      "Crédito Disponível": "US$ 85.518,60",
+      "% do Total": "0,28%"
+    },
+    {
+      "Ação": "2000",
+      "Descrição": "ADMINISTRAÇÃO DA UNIDADE",
+      "PTRES Vinculados": "168901, 168919, 204352",
+      "Lanç.": "11",
+      "Crédito Disponível": "US$ 79.977,39",
+      "% do Total": "0,26%"
+    },
+    {
+      "Ação": "21AI",
+      "Descrição": "FUNCIONAMENTO E ATUALIZAÇÃO DE INFRAESTRUTURA",
+      "PTRES Vinculados": "233453",
+      "Lanç.": "1",
+      "Crédito Disponível": "US$ 34.985,84",
+      "% do Total": "0,12%"
+    },
+    {
+      "Ação": "2120",
+      "Descrição": "MOVIMENTAÇÃO DE MILITARES",
+      "PTRES Vinculados": "229140",
+      "Lanç.": "1",
+      "Crédito Disponível": "US$ 32.799,62",
+      "% do Total": "0,11%"
+    },
+    {
+      "Ação": "21GO",
+      "Descrição": "FUNCIONAMENTO DAS INSTITUIÇÕES CIENTÍFICAS",
+      "PTRES Vinculados": "229301",
+      "Lanç.": "1",
+      "Crédito Disponível": "US$ 4.170,00",
+      "% do Total": "0,01%"
+    },
+    {
+      "Ação": "151S",
+      "Descrição": "IMPLANTAÇÃO E DESENVOLVIMENTO",
+      "PTRES Vinculados": "228676",
+      "Lanç.": "3",
+      "Crédito Disponível": "US$ 4.030,10",
+      "% do Total": "0,01%"
+    },
+    {
+      "Ação": "20X1",
+      "Descrição": "PARTICIPAÇÃO BRASILEIRA EM OPERAÇÕES",
+      "PTRES Vinculados": "259974",
+      "Lanç.": "1",
+      "Crédito Disponível": "US$ 3.267,10",
+      "% do Total": "0,01%"
+    },
+    {
+      "Ação": "2004",
+      "Descrição": "ASSISTÊNCIA MÉDICA E ODONTOLÓGICA",
+      "PTRES Vinculados": "214537, 214550",
+      "Lanç.": "2",
+      "Crédito Disponível": "US$ 1.215,94",
+      "% do Total": "0,00%"
+    },
+    {
+      "Ação": "2D55",
+      "Descrição": "ADIDÂNCIAS MILITARES NO EXTERIOR",
+      "PTRES Vinculados": "228786",
+      "Lanç.": "1",
+      "Crédito Disponível": "US$ 748,61",
+      "% do Total": "0,00%"
+    },
+    {
+      "Ação": "00UU",
+      "Descrição": "CONTRIBUIÇÕES A ORGANISMOS INTERNACIONAIS",
+      "PTRES Vinculados": "229209",
+      "Lanç.": "1",
+      "Crédito Disponível": "US$ 444,59",
+      "% do Total": "0,00%"
+    }
+  ]
+}

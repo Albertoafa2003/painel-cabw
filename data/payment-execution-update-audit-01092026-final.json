@@ -1,0 +1,93 @@
+{
+  "build": "20260901-payments-data-final-r2",
+  "source": {
+    "sourceFileName": "pagamentos.html",
+    "sourceFileSha256": "87f6f6bfd92347a5d4db3b30ce213d60f8479e9aa1b34f9641f5fb065ae9cb8e",
+    "sourceTitle": "Pagamentos - CABW",
+    "sourceSubtitle": "Valores consolidados por favorecido, Plano Interno (PI) e Ação de Governo.",
+    "incorporatedAt": "2026-09-01",
+    "accountingReferenceDate": null,
+    "accountingReferenceNote": "O arquivo de origem não informa data de posição contábil.",
+    "currency": null,
+    "currencyNote": "A moeda não é informada no arquivo de origem; os valores são exibidos sem símbolo monetário.",
+    "recordCount": 756,
+    "distinctNes": 617,
+    "distinctFavoredNames": 143,
+    "distinctFavoredCodeNamePairs": 151,
+    "distinctPis": 49,
+    "distinctActions": 16,
+    "zeroValueRows": 104,
+    "positiveValueRows": 652,
+    "negativeValueRows": 0,
+    "exactDuplicateRows": 0,
+    "totalValue": 34747706.13,
+    "fields": [
+      "ne",
+      "favCod",
+      "fav",
+      "acaoCod",
+      "acao",
+      "piCod",
+      "pi",
+      "valor"
+    ],
+    "sourcePreservationPolicy": "Os códigos, nomes e descrições foram preservados exatamente conforme o arquivo enviado, sem correções silenciosas."
+  },
+  "statistics": {
+    "records": 756,
+    "totalValue": 34747706.13,
+    "distinctNes": 617,
+    "distinctFavoredNames": 143,
+    "distinctPis": 49,
+    "distinctActions": 16,
+    "zeroValueRows": 104
+  },
+  "changes": [
+    "Base consolidada incorporada com filtros por favorecido, PI, Ação de Governo e busca geral.",
+    "Indicadores, gráficos, tabela detalhada e exportações em PDF/CSV.",
+    "Acompanhamento operacional no Firestore preservado.",
+    "Terminologia ajustada para Pagamentos consolidados, sem inferir situação não declarada pela fonte.",
+    "Contraste do cabeçalho azul aprimorado."
+  ],
+  "checks": {
+    "recordCountIs756": true,
+    "totalValueMatches": true,
+    "distinctNesIs617": true,
+    "distinctFavoredNamesIs143": true,
+    "distinctPisIs49": true,
+    "distinctActionsIs16": true,
+    "zeroRowsIs104": true,
+    "noDuplicateHtmlIds": true,
+    "noMissingLocalReferences": true,
+    "consolidatedSectionPresent": true,
+    "operationalSectionPresent": true,
+    "semanticHeadingCorrected": true,
+    "heroContrastPatched": true,
+    "credit01092026Preserved": true,
+    "repairPag27082026Preserved": true,
+    "paymentMenuPreserved": true
+  },
+  "duplicateHtmlIds": [],
+  "missingLocalReferences": [],
+  "commands": {
+    "check": {
+      "returncode": 0,
+      "stdout": "\n> check\n> node --check assets/js/repair-import-core.js && node --check assets/js/repair-processes-panel.js && node --check assets/js/payment-tracking-core.js && node --check assets/js/payment-tracking-panel.js && node --check assets/js/payment-execution-panel.js\n\n",
+      "stderr": ""
+    },
+    "test": {
+      "returncode": 0,
+      "stdout": "\n> test\n> node --test tests/repair-import.test.mjs tests/payment-tracking.test.mjs tests/payment-execution.test.mjs\n\nTAP version 13\n# Subtest: a base consolidada contém 756 lançamentos\nok 1 - a base consolidada contém 756 lançamentos\n  ---\n  duration_ms: 1.156137\n  type: 'test'\n  ...\n# Subtest: o total da base é 34.747.706,13\nok 2 - o total da base é 34.747.706,13\n  ---\n  duration_ms: 0.464482\n  type: 'test'\n  ...\n# Subtest: os quantitativos consolidados conferem\nok 3 - os quantitativos consolidados conferem\n  ---\n  duration_ms: 3.159553\n  type: 'test'\n  ...\n# Subtest: os 104 lançamentos de valor zero foram preservados\nok 4 - os 104 lançamentos de valor zero foram preservados\n  ---\n  duration_ms: 0.237018\n  type: 'test'\n  ...\n# Subtest: não existem valores negativos nem duplicidades exatas\nok 5 - não existem valores negativos nem duplicidades exatas\n  ---\n  duration_ms: 4.276411\n  type: 'test'\n  ...\n# Subtest: a página integra a visão consolidada sem remover o acompanhamento operacional\nok 6 - a página integra a visão consolidada sem remover o acompanhamento operacional\n  ---\n  duration_ms: 0.473416\n  type: 'test'\n  ...\n# Subtest: normaliza variações de status\nok 7 - normaliza variações de status\n  ---\n  duration_ms: 1.928724\n  type: 'test'\n  ...\n# Subtest: correlaciona status com etapa gerencial\nok 8 - correlaciona status com etapa gerencial\n  ---\n  duration_ms: 0.388317\n  type: 'test'\n  ...\n# Subtest: normaliza moedas usuais\nok 9 - normaliza moedas usuais\n  ---\n  duration_ms: 0.400535\n  type: 'test'\n  ...\n# Subtest: interpreta números em padrões brasileiro e internacional\nok 10 - interpreta números em padrões brasileiro e internacional\n  ---\n  duration_ms: 0.415157\n  type: 'test'\n  ...\n# Subtest: interpreta datas em formatos comuns\nok 11 - interpreta datas em formatos comuns\n  ---\n  duration_ms: 1.203518\n  type: 'test'\n  ...\n# Subtest: classifica pagamento vencido e não pago\nok 12 - classifica pagamento vencido e não pago\n  ---\n  duration_ms: 0.46964\n  type: 'test'\n  ...\n# Subtest: classifica pagamentos realizados no prazo e com atraso\nok 13 - classifica pagamentos realizados no prazo e com atraso\n  ---\n  duration_ms: 0.443249\n  type: 'test'\n  ...\n# Subtest: não classifica registro sem vencimento como atraso\nok 14 - não classifica registro sem vencimento como atraso\n  ---\n  duration_ms: 0.277078\n  type: 'test'\n  ...\n# Subtest: identifica cabeçalhos equivalentes\nok 15 - identifica cabeçalhos equivalentes\n  ---\n  duration_ms: 1.302167\n  type: 'test'\n  ...\n# Subtest: normaliza linha importada e calcula valor líquido\nok 16 - normaliza linha importada e calcula valor líquido\n  ---\n  duration_ms: 17.359655\n  type: 'test'\n  ...\n# Subtest: gera chave e hash determinísticos\nok 17 - gera chave e hash determinísticos\n  ---\n  duration_ms: 2.631335\n  type: 'test'\n  ...\n# Subtest: compara campos importados e consolida por moeda\nok 18 - compara campos importados e consolida por moeda\n  ---\n  duration_ms: 11.261042\n  type: 'test'\n  ...\n# Subtest: não apresenta valor ausente como zero\nok 19 - não apresenta valor ausente como zero\n  ---\n  duration_ms: 0.122856\n  type: 'test'\n  ...\n# Subtest: normalização geral e controles none\nok 20 - normalização geral e controles none\n  ---\n  duration_ms: 0.881883\n  type: 'test'\n  ...\n# Subtest: PO 24T é reconhecida como fora do escopo\nok 21 - PO 24T é reconhecida como fora do escopo\n  ---\n  duration_ms: 0.216317\n  type: 'test'\n  ...\n# Subtest: TTE válida é mantida sem moeda\nok 22 - TTE válida é mantida sem moeda\n  ---\n  duration_ms: 0.68874\n  type: 'test'\n  ...\n# Subtest: TDR com none ou data é entregue\nok 23 - TDR com none ou data é entregue\n  ---\n  duration_ms: 0.201204\n  type: 'test'\n  ...\n# Subtest: TDR vencido com N vazia é atrasado\nok 24 - TDR vencido com N vazia é atrasado\n  ---\n  duration_ms: 0.17231\n  type: 'test'\n  ...\n# Subtest: situação documental segue O e P\nok 25 - situação documental segue O e P\n  ---\n  duration_ms: 0.189697\n  type: 'test'\n  ...\n# Subtest: dez Status Reais oficiais estão disponíveis no filtro\nok 26 - dez Status Reais oficiais estão disponíveis no filtro\n  ---\n  duration_ms: 0.099049\n  type: 'test'\n  ...\n# Subtest: seis Etapas Visuais oficiais estão disponíveis no filtro\nok 27 - seis Etapas Visuais oficiais estão disponíveis no filtro\n  ---\n  duration_ms: 0.08624\n  type: 'test'\n  ...\n# Subtest: correlação visual agrupa múltiplos status na mesma localização\nok 28 - correlação visual agrupa múltiplos status na mesma localização\n  ---\n  duration_ms: 0.684454\n  type: 'test'\n  ...\n# Subtest: variações da planilha e nomenclaturas antigas são canonicalizadas\nok 29 - variações da planilha e nomenclaturas antigas são canonicalizadas\n  ---\n  duration_ms: 0.318671\n  type: 'test'\n  ...\n# Subtest: base de status 19/08 possui 113 registros únicos e nenhuma PO 24T\nok 30 - base de status 19/08 possui 113 registros únicos e nenhuma PO 24T\n  ---\n  duration_ms: 1.283499\n  type: 'test'\n  ...\n# Subtest: todos os registros possuem status e etapa conforme as opções oficiais\nok 31 - todos os registros possuem status e etapa conforme as opções oficiais\n  ---\n  duration_ms: 0.208705\n  type: 'test'\n  ...\n# Subtest: contagens de status e etapas correspondem à planilha de atualização\nok 32 - contagens de status e etapas correspondem à planilha de atualização\n  ---\n  duration_ms: 0.130187\n  type: 'test'\n  ...\n# Subtest: todas as 113 linhas mantêm TTE válida e dados anteriores\nok 33 - todas as 113 linhas mantêm TTE válida e dados anteriores\n  ---\n  duration_ms: 0.075424\n  type: 'test'\n  ...\n# Subtest: reimportação idêntica não duplica\nok 34 - reimportação idêntica não duplica\n  ---\n  duration_ms: 6.935297\n  type: 'test'\n  ...\n# Subtest: chave estável é determinística\nok 35 - chave estável é determinística\n  ---\n  duration_ms: 14.169927\n  type: 'test'\n  ...\n# Subtest: retorno sem autorização ou sem prazo não é atrasado\nok 36 - retorno sem autorização ou sem prazo não é atrasado\n  ---\n  duration_ms: 0.557863\n  type: 'test'\n  ...\n# Subtest: retorno efetivo posterior à DPE é classificado como retornado com atraso\nok 37 - retorno efetivo posterior à DPE é classificado como retornado com atraso\n  ---\n  duration_ms: 0.179431\n  type: 'test'\n  ...\n# Subtest: item sem retorno após a DPE está atrasado\nok 38 - item sem retorno após a DPE está atrasado\n  ---\n  duration_ms: 0.160582\n  type: 'test'\n  ...\n# Subtest: retorno igual ou anterior à DPE é classificado no prazo\nok 39 - retorno igual ou anterior à DPE é classificado no prazo\n  ---\n  duration_ms: 0.140823\n  type: 'test'\n  ...\n# Subtest: base de retorno 20/08 aplica correções confirmadas\nok 40 - base de retorno 20/08 aplica correções confirmadas\n  ---\n  duration_ms: 0.29765\n  type: 'test'\n  ...\n# Subtest: contagens de retorno correspondem à planilha atualizada\nok 41 - contagens de retorno correspondem à planilha atualizada\n  ---\n  duration_ms: 0.148224\n  type: 'test'\n  ...\n# Subtest: Parques e OMs são normalizados para as nomenclaturas institucionais\nok 42 - Parques e OMs são normalizados para as nomenclaturas institucionais\n  ---\n  duration_ms: 0.601769\n  type: 'test'\n  ...\n# Subtest: base ativa não contém abreviações antigas no campo Parque / OM\nok 43 - base ativa não contém abreviações antigas no campo Parque / OM\n  ---\n  duration_ms: 0.35053\n  type: 'test'\n  ...\n# Subtest: todos os dez Status Reais oficiais possuem Etapa Visual mapeada\nok 44 - todos os dez Status Reais oficiais possuem Etapa Visual mapeada\n  ---\n  duration_ms: 0.247154\n  type: 'test'\n  ...\n# Subtest: painel separa retornos tardios de itens atrasados ainda sem retorno\nok 45 - painel separa retornos tardios de itens atrasados ainda sem retorno\n  ---\n  duration_ms: 1.689262\n  type: 'test'\n  ...\n# Subtest: metadados registram os dois grupos de atraso separadamente\nok 46 - metadados registram os dois grupos de atraso separadamente\n  ---\n  duration_ms: 0.208094\n  type: 'test'\n  ...\n# Subtest: base ativa possui COTAÇÃO SISCAB e NUP para todos os itens\nok 47 - base ativa possui COTAÇÃO SISCAB e NUP para todos os itens\n  ---\n  duration_ms: 0.438362\n  type: 'test'\n  ...\n# Subtest: correções confirmadas de COTAÇÃO SISCAB e NUP foram aplicadas\nok 48 - correções confirmadas de COTAÇÃO SISCAB e NUP foram aplicadas\n  ---\n  duration_ms: 0.20557\n  type: 'test'\n  ...\n# Subtest: painel inclui filtros e PDF detalhado de COTAÇÃO SISCAB e NUP\nok 49 - painel inclui filtros e PDF detalhado de COTAÇÃO SISCAB e NUP\n  ---\n  duration_ms: 2.167765\n  type: 'test'\n  ...\n1..49\n# tests 49\n# suites 0\n# pass 49\n# fail 0\n# cancelled 0\n# skipped 0\n# todo 0\n# duration_ms 120.029757\n",
+      "stderr": ""
+    }
+  },
+  "fileHashes": {
+    "pagamentos.html": "0d9f0aaec261db792ed429a9490924b8d6e6d416b22fab0aa0b7447308c32fd1",
+    "painel.html": "813ea51c33e5720e14b829adce5690711d0f01cce8edf6ea157a0d6dc7038e60",
+    "css/style.css": "50bf57c24a7f7ce4fab73ef447e0bd0a75202c18e8d63ecc33e2168ebf241bff",
+    "assets/data/payment-execution-current.json": "0ab1505a366a4ee2a8712ef4da66caea22da88f64202da6a0fd80ab109fb1f38",
+    "assets/js/payment-execution-panel.js": "380fabb6beb47d9accdcbfc51a10bf1c2c9c783497f8dcb1931ac0c235e98333",
+    "tests/payment-execution.test.mjs": "d9ce84f8f743b2171c02047e77fe962fdfe24bc4f165602284b8dc43b9b56c04",
+    "package.json": "f825c752b512dffbd1cc09662941692db0a1541ce4b1e85547170d4be1f09641"
+  }
+}

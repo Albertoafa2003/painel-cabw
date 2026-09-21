@@ -1,0 +1,266 @@
+{
+  "build": "20260901-payments-data-r1",
+  "metadata": {
+    "sourceFileName": "pagamentos.html",
+    "sourceFileSha256": "87f6f6bfd92347a5d4db3b30ce213d60f8479e9aa1b34f9641f5fb065ae9cb8e",
+    "sourceTitle": "Pagamentos - CABW",
+    "sourceSubtitle": "Valores consolidados por favorecido, Plano Interno (PI) e Ação de Governo.",
+    "incorporatedAt": "2026-09-01",
+    "accountingReferenceDate": null,
+    "accountingReferenceNote": "O arquivo de origem não informa data de posição contábil.",
+    "currency": null,
+    "currencyNote": "A moeda não é informada no arquivo de origem; os valores são exibidos sem símbolo monetário.",
+    "recordCount": 756,
+    "distinctNes": 617,
+    "distinctFavoredNames": 143,
+    "distinctFavoredCodeNamePairs": 151,
+    "distinctPis": 49,
+    "distinctActions": 16,
+    "zeroValueRows": 104,
+    "positiveValueRows": 652,
+    "negativeValueRows": 0,
+    "exactDuplicateRows": 0,
+    "totalValue": 34747706.13,
+    "fields": [
+      "ne",
+      "favCod",
+      "fav",
+      "acaoCod",
+      "acao",
+      "piCod",
+      "pi",
+      "valor"
+    ],
+    "sourcePreservationPolicy": "Os códigos, nomes e descrições foram preservados exatamente conforme o arquivo enviado, sem correções silenciosas."
+  },
+  "topFavored": [
+    {
+      "label": "EXW07F5X5 - ACE AERONAUTICS, LLC",
+      "value": 16043978.51
+    },
+    {
+      "label": "EXW0L9657 - VECTOR AEROSPACE ENGINE SERVICES-ATLANTIC INC",
+      "value": 2632608.52
+    },
+    {
+      "label": "EXW011WBE - PARK AIR SYSTEMS LTD",
+      "value": 1778609.11
+    },
+    {
+      "label": "EXW06WZB6 - LOCKHEED MARTIN GLOBAL, INC.DBA LMGI",
+      "value": 1735495.23
+    },
+    {
+      "label": "EXW03CRH1 - UNITED HEALTHCARE SERVICES, INC.",
+      "value": 1464972.4
+    },
+    {
+      "label": "EXW0A3028 - S.I.T.T.I SPECIALI IMPIANTI - TELEFONICI",
+      "value": 1213402.4
+    },
+    {
+      "label": "EXW0W2525 - DEPARTMENT OF THE AIR FORCE",
+      "value": 1040449.21
+    },
+    {
+      "label": "EXW08UE16 - GAMA IVB SOLUTIONS LLC",
+      "value": 962801.08
+    },
+    {
+      "label": "EXW0F8224 - THALES AIR SYSTEMS SA",
+      "value": 610598.59
+    },
+    {
+      "label": "EXW055176 - VSE AVIATION, INC.",
+      "value": 563004.0
+    },
+    {
+      "label": "EXW04SFW4 - WORLDWIDE AIRCRAFT SERVICES, INC",
+      "value": 543136.73
+    },
+    {
+      "label": "EXW0413E6 - ESDA GLOBAL LLC",
+      "value": 522120.38
+    },
+    {
+      "label": "EXW0W4595 - FLIGHTSAFETY INTERNATIONAL",
+      "value": 421154.85
+    },
+    {
+      "label": "EXW001JJ0 - WORLD FUEL SERVICES INC",
+      "value": 404189.41
+    },
+    {
+      "label": "EXW07B563 - EMBRI-DIDDLE AERONAUTICAL UNIVERSITY",
+      "value": 401834.86
+    },
+    {
+      "label": "EXW03X182 - TECHNO-SCIENCES, LLC",
+      "value": 372758.02
+    },
+    {
+      "label": "EXW0H1L04 - SITA INFORMATION NETWORKING COMPUTING BV",
+      "value": 319527.21
+    },
+    {
+      "label": "EXW0L1629 - INTERNATIONAL CIVIL AVIATION ORG. - ICAO",
+      "value": 316203.0
+    },
+    {
+      "label": "EXW08HXS0 - AIR TECH DEFENSE CORP",
+      "value": 294894.92
+    },
+    {
+      "label": "EXW0SVF42 - PANAMERICAN TECHNOLOGY GROUP S.A.",
+      "value": 293375.32
+    }
+  ],
+  "valuesByAction": [
+    {
+      "label": "20XV - OPERACAO DO SISTEMA DE CONTROLE DO ESPACO AEREO BRASILEIRO -",
+      "value": 26976430.86
+    },
+    {
+      "label": "2048 - MANUTENCAO E SUPRIMENTO DE MATERIAL AERONAUTICO",
+      "value": 2265138.52
+    },
+    {
+      "label": "21EM - EMPREGO DAS FORCAS ARMADAS E DO CENTRO GESTOR E OPERACIONAL",
+      "value": 1270201.84
+    },
+    {
+      "label": "2000 - ADMINISTRACAO DA UNIDADE",
+      "value": 971688.87
+    },
+    {
+      "label": "2004 - ASSISTENCIA MEDICA E ODONTOLOGICA AOS SERVIDORES CIVIS, EMPR",
+      "value": 961333.22
+    },
+    {
+      "label": "20IH - MODERNIZACAO E REVITALIZACAO DE AERONAVES E SISTEMAS EMBARCA",
+      "value": 869031.48
+    },
+    {
+      "label": "2868 - COMBUSTIVEIS E LUBRIFICANTES DE AVIACAO",
+      "value": 780449.42
+    },
+    {
+      "label": "20X7 - EMPREGO CONJUNTO OU COMBINADO DAS FORCAS ARMADAS",
+      "value": 419685.14
+    },
+    {
+      "label": "00UU - CONTRIBUICOES REGULARES A ORGANISMOS INTERNACIONAIS DE DIREI",
+      "value": 114834.83
+    },
+    {
+      "label": "212O - MOVIMENTACAO DE MILITARES",
+      "value": 77087.31
+    },
+    {
+      "label": "21A0 - APRESTAMENTO DAS FORCAS - MANUTENCAO DA PRONTIDAO E DA CAPAC",
+      "value": 21471.0
+    },
+    {
+      "label": "20X5 - OPERACOES DE COMANDO E CONTROLE DA DEFESA NACIONAL",
+      "value": 7998.0
+    },
+    {
+      "label": "21GO - FUNCIONAMENTO DAS INSTITUICOES CIENTIFICAS, TECNOLOGICAS E D",
+      "value": 6909.0
+    },
+    {
+      "label": "20X1 - PARTICIPACAO BRASILEIRA EM OPERACOES DE PAZ E SEGURANCA INTE",
+      "value": 2562.95
+    },
+    {
+      "label": "151S - IMPLANTACAO E DESENVOLVIMENTO DO PROGRAMA ESTRATEGICO DE SIS",
+      "value": 2030.1
+    },
+    {
+      "label": "2D55 - IMPLEMENTACAO DE POLITICA, ESTRATEGIA E ASSUNTOS INTERNACION",
+      "value": 853.59
+    }
+  ],
+  "valuesByPiTop20": [
+    {
+      "label": "DC012102SAR - PROJETO BUSCA E SALVAMENTO - DECEA",
+      "value": 16043978.51
+    },
+    {
+      "label": "DC080401LOG - ATIVIDADE LOGISTICA - DECEA",
+      "value": 4195288.04
+    },
+    {
+      "label": "CA080200SAR - LOGISTICA DE AERONAVES DE BUSCA E SALVAMENTO",
+      "value": 2211403.21
+    },
+    {
+      "label": "DC170402TEL - PROJETO TELECOMUNICACOES - DECEA",
+      "value": 1778609.11
+    },
+    {
+      "label": "CA0802FIGHT - LOGISTICA DE AERONAVES DE AVIACAO DE CACA",
+      "value": 1342226.81
+    },
+    {
+      "label": "OCS90001000 - OP CATRIMANI II",
+      "value": 1270201.84
+    },
+    {
+      "label": "CG190904200 - ATENDIMENTO MEDICO HOSPITALAR - COMPLEMENTAR",
+      "value": 916676.14
+    },
+    {
+      "label": "CA08020COMB - COMBUSTIVEL DE AVIACAO",
+      "value": 780449.42
+    },
+    {
+      "label": "CA0802INSTR - LOGISTICA DE AERONAVES DE INSTRUCAO",
+      "value": 757309.51
+    },
+    {
+      "label": "CA0802APOIO - APOIO LOGISTICO",
+      "value": 748046.64
+    },
+    {
+      "label": "CA0802PJC97 - MODERNIZACAO DO C-97",
+      "value": 600707.77
+    },
+    {
+      "label": "CA0602SSEXT - SEGURO SAUDE AUXILIARES - EXTERIOR",
+      "value": 558588.26
+    },
+    {
+      "label": "DC163401PTX - PLAMTAX - DECEA",
+      "value": 421154.85
+    },
+    {
+      "label": "OCS90005000 - EXERCICIO CONJUNTO ESCUDO TINIA",
+      "value": 413523.84
+    },
+    {
+      "label": "DC163401RHU - ATIVIDADE RECURSOS HUMANOS - DECEA",
+      "value": 401834.86
+    },
+    {
+      "label": "CA0802PUBLI - LOGISTICA - PUBLICACOES",
+      "value": 293375.32
+    },
+    {
+      "label": "DC010402OPM - PROJETO OPERACOES AEREAS - DECEA",
+      "value": 276711.31
+    },
+    {
+      "label": "CA0802PJT25 - MODERNIZACAO DO T-25",
+      "value": 268323.71
+    },
+    {
+      "label": "CA0802TRNSP - LOGISTICA DE AERONAVES DE TRANSPORTE",
+      "value": 186666.22
+    },
+    {
+      "label": "CA080200T25 - LOGISTICA AERONAVE T-25",
+      "value": 181045.3
+    }
+  ]
+}

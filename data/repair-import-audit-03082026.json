@@ -1,0 +1,23 @@
+{
+  "buildVersion": "20260803-r4",
+  "sourceFileName": "CONTROLE REPARO - SGT ROZENDO - 03082026.xlsx",
+  "sourceSheet": "BD Monitoramento",
+  "referenceDate": "2026-08-03",
+  "records": 113,
+  "uniqueKeys": 113,
+  "po24InCurrentBundle": 0,
+  "po24ArchivedFromPriorBundle": 162,
+  "tdrCounts": {
+    "delivered": 80,
+    "overdue": 6,
+    "not-calculable": 27
+  },
+  "documentaryCounts": {
+    "not-required": 31,
+    "registered": 45,
+    "ficha-recorded-no-subprocess": 4,
+    "tdr-not-received": 33
+  },
+  "tteInformed": 113,
+  "rejectedRows": 0
+}
