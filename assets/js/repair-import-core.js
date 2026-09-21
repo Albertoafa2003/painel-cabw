@@ -46,6 +46,7 @@ const STATUS_ALIAS_MAP = Object.freeze({
   "1-empenho aprovado": "1-Empenho Aprovado",
   "2-item chegou ctla": "2-Item Chegou CTLA",
   "3-item exp ctla": "3-Item Exp CTLA",
+  "3-item exp pelo ctla": "3-Item Exp CTLA",
   "3-rep chegou ctla": "2-Item Chegou CTLA",
   "4-item chegou cabw/cabe": "4-Item chegou CABW/CABE",
   "4-item chegou cabw/e": "4-Item chegou CABW/CABE",
@@ -73,7 +74,7 @@ export const REQUIRED_HEADERS = Object.freeze([
 ]);
 
 export const IMPORTED_FIELDS = Object.freeze([
-  "po", "evaluationFee", "evaluationFeeCurrency", "evaluationFeeRaw", "evaluationFeeDiscardReason",
+  "po", "nup", "evaluationFee", "evaluationFeeCurrency", "evaluationFeeRaw", "evaluationFeeDiscardReason",
   "poIssueDate", "realStatus", "realStatusSource", "realStatusDiscardReason", "visualStage", "requisition", "originOm", "originOmSource", "originOmShortCode", "originOmNormalizationVersion", "originDerived",
   "partNumber", "serialNumber", "condition", "conditionSource", "conditionDiscardReason", "receivedAtRepairerDate", "trackingToRepairer",
   "tdrDueDate", "tdrDeliveryRaw", "tdrDeliveryIndicator", "tdrSentDate", "tdrDelivered",

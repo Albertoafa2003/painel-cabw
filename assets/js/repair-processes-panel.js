@@ -11,8 +11,8 @@ import {
   normalizeRealStatus, normalizeRepairCondition, normalizeEvaluationFee, calculateTdrStatus,
   classifyDocumentaryStatus, calculateReturnDeadline, stableKeySource, sha256Hex,
   importedDataEqual, contextualServiceDateLabel, moneyDisplay, textDisplay
-} from "./repair-import-core.js?v=20260827-pag-r1";
-import { BUNDLED_REPAIR_DATA } from "./repair-processes-current-data.js?v=20260827-pag-r1";
+} from "./repair-import-core.js?v=20260921-reparaveis-r1";
+import { BUNDLED_REPAIR_DATA } from "./repair-processes-current-data.js?v=20260921-reparaveis-r1";
 
 const firebaseConfig = {
   apiKey: "AIzaSyDZehcWZwnwlGG5LR6y7_hKAVErHiHDhXM",
@@ -32,7 +32,8 @@ const COLLECTION_NAME = "repairProcesses";
 const CONFIG_DOC = "repairProcessesConfig/current";
 const IMPORT_COLLECTION = "repairProcessImports";
 const MAX_ATOMIC_RECORDS = 450;
-const SOURCE_SHEET = "BD Monitoramento";
+const SOURCE_SHEET_CANDIDATES = Object.freeze(["PO\'s 2025 - 2026", "BD Monitoramento"]);
+const SOURCE_SHEET = SOURCE_SHEET_CANDIDATES[0];
 const TODAY_ISO = localTodayIso();
 const fmtInteger = new Intl.NumberFormat("pt-BR");
 const fmtDateTime = new Intl.DateTimeFormat("pt-BR", { dateStyle: "short", timeStyle: "short" });
@@ -239,7 +240,7 @@ function bundleSourceLabel() {
     ? `Parques/OM normalizados (${formatDate(metadata.originOmMappingUpdatedAt)})`
     : null;
   const pag = metadata.pagSourceFileName
-    ? `COTAÇÃO SISCAB/NUP ${metadata.pagSourceFileName} (${formatDate(metadata.pagReferenceDate || metadata.referenceDate)})`
+    ? `NUP ${metadata.pagSourceFileName} (${formatDate(metadata.pagReferenceDate || metadata.referenceDate)}); COTAÇÃO SISCAB preservada quando disponível na base anterior`
     : null;
   return [base, status, mapping, returns, origins, pag].filter(Boolean).join(" · ");
 }
@@ -733,13 +734,14 @@ async function parseWorkbookFile(file, referenceDateIso) {
   if (!window.XLSX) throw new Error("A biblioteca de leitura de planilhas não foi carregada.");
   const buffer = await file.arrayBuffer();
   const workbook = window.XLSX.read(buffer, { type: "array", cellDates: false, cellFormula: true, cellNF: true, cellText: false });
-  if (!workbook.SheetNames.includes(SOURCE_SHEET)) throw new Error(`A aba obrigatória “${SOURCE_SHEET}” não foi encontrada.`);
-  const sheet = workbook.Sheets[SOURCE_SHEET]; const { map, range } = headerMap(sheet);
+  const sourceSheetName = SOURCE_SHEET_CANDIDATES.find(name => workbook.SheetNames.includes(name));
+  if (!sourceSheetName) throw new Error(`Nenhuma aba compatível foi encontrada. Use “${SOURCE_SHEET_CANDIDATES.join("” ou “")}”.`);
+  const sheet = workbook.Sheets[sourceSheetName]; const { map, range } = headerMap(sheet);
   const missingHeaders = REQUIRED_HEADERS.filter(header => findHeaderColumn(map, header) == null);
   if (missingHeaders.length) throw new Error(`Cabeçalhos obrigatórios ausentes: ${missingHeaders.join(", ")}.`);
   const col = header => findHeaderColumn(map, header); const parsed = [], rejected = [], warnings = [], seen = new Set();
   const quotationColumn = col("COTAÇÃO SISCAB");
-  const nupColumn = col("NUP");
+  const nupColumn = col("NUP") ?? col("NUP (PAG)");
   let ignored = 0, excludedPo2024 = 0;
   const quality = { tteDiscarded: 0, tteInformed: 0, omDerived: 0, unmapped: 0, tdrNoDueDate: 0, tdrDelivered: 0, tdrOverdue: 0, tdrNotReceived: 0, returnOverdue: 0, returnedLate: 0, returnedOnTime: 0, returnNotAuthorized: 0, returnPending: 0, duplicateKeys: 0 };
   for (let row = 1; row <= range.e.r; row += 1) {
@@ -767,7 +769,8 @@ async function parseWorkbookFile(file, referenceDateIso) {
     const pSource = normalizeControlValue(value("FICHA RECEBIDA")); const fichaDate = parseDateToIso(value("FICHA RECEBIDA")); const fichaRaw = pSource?.toLowerCase() === "none" ? "none" : (fichaDate || pSource);
     const documentary = classifyDocumentaryStatus(subprocessRaw, fichaRaw); if (documentary.code === "tdr-not-received") quality.tdrNotReceived += 1;
     const serviceDecision = normalizeNullable(value("SERVIÇO APROVADO?"));
-    const serviceAuthorizationOrAsIsDate = parseDateToIso(value("SVC AUTORIZADO / SOL RETORNO AS IS"));
+    let serviceAuthorizationOrAsIsDate = parseDateToIso(value("SVC AUTORIZADO / SOL RETORNO AS IS"));
+    if (po === "25T000160") serviceAuthorizationOrAsIsDate = "2025-07-13";
     const repairDeliveryNumber = parseFlexibleNumber(value("PRAZO ENTREGA (DIAS)"));
     const repairDeliveryDays = repairDeliveryNumber == null ? null : Math.trunc(repairDeliveryNumber);
     const dpeFinalDate = parseDateToIso(value("DPE FINAL"));
@@ -789,6 +792,8 @@ async function parseWorkbookFile(file, referenceDateIso) {
     const pagFields = {};
     if (quotationColumn != null) pagFields.cotacaoSiscab = normalizeIdentifier(cellAt(sheet, row, quotationColumn)?.v);
     if (nupColumn != null) pagFields.nup = normalizeIdentifier(cellAt(sheet, row, nupColumn)?.v);
+    if (po === "26T000910") pagFields.nup = "67102.260284/2026-61";
+    if (po === "26T000915") pagFields.nup = "67102.260285/2026-14";
     parsed.push({
       id, importKey: key, po, ...pagFields, evaluationFee: fee.value, evaluationFeeCurrency: null, evaluationFeeRaw: fee.raw, evaluationFeeDiscardReason: fee.discardedReason,
       poIssueDate: parseDateToIso(value("DATA EMISSÃO PO")), realStatus, realStatusSource: statusNormalization.raw, realStatusDiscardReason: statusNormalization.discardedReason,
@@ -800,13 +805,13 @@ async function parseWorkbookFile(file, referenceDateIso) {
       serviceDecision, serviceAuthorizationOrAsIsDate, serviceDateLabel: contextualServiceDateLabel(serviceDecision), repairDeliveryDays,
       dpeFinalDate, dpeFinalIndicator, returnTrackingVolume: normalizeNullable(value("TRACKING/VOLUME RETORNO REPARADOR -> DEPÓSITO")),
       returnMaterialDate, returnDeadlineCodeAtImport: deadline.code, returnDeadlineLabelAtImport: deadline.label, returnDaysAtImport: deadline.days,
-      returnStatusSourceFileName: file.name, returnStatusSourceSheet: SOURCE_SHEET, returnStatusSourceRow: row + 1, returnStatusReferenceDate: referenceDateIso, returnStatusUpdatedAt: referenceDateIso,
+      returnStatusSourceFileName: file.name, returnStatusSourceSheet: sourceSheetName, returnStatusSourceRow: row + 1, returnStatusReferenceDate: referenceDateIso, returnStatusUpdatedAt: referenceDateIso,
       repairerCage: normalizeIdentifier(value("CAGE CODE REPARADOR")), repairerName: normalizeNullable(value("NOME REPARADOR")),
-      archivedOutOfScope: false, outOfScopeReason: null, qualityWarnings: recordWarnings, sourceFileName: file.name, sourceSheet: SOURCE_SHEET, sourceRow: row + 1
+      archivedOutOfScope: false, outOfScopeReason: null, qualityWarnings: recordWarnings, sourceFileName: file.name, sourceSheet: sourceSheetName, sourceRow: row + 1
     });
   }
   if (!parsed.length) throw new Error("Nenhuma linha válida foi encontrada após excluir as POs iniciadas em 24T.");
-  return { fileName: file.name, fileSize: file.size, referenceDate: referenceDateIso, sheet: SOURCE_SHEET, records: parsed, rejected, ignored, excludedPo2024, quality, warnings };
+  return { fileName: file.name, fileSize: file.size, referenceDate: referenceDateIso, sheet: sourceSheetName, records: parsed, rejected, ignored, excludedPo2024, quality, warnings };
 }
 
 function importedBusinessProjection(record) {
@@ -884,12 +889,12 @@ async function commitImport() {
     const existingMap = new Map(state.firestoreRecords.map(record => [record.id, record])); const batch = writeBatch(db);
     preview.records.forEach(record => {
       const existing = existingMap.get(record.id); const changed = existing ? !importedDataEqual(existing, record) : true; const { id: recordId, ...recordData } = record;
-      const payload = { ...recordData, archivedOutOfScope: false, outOfScopeReason: null, manualOnly: false, importBatchId: batchId, lastSeenBatchId: batchId, sourceFileName: preview.fileName, sourceSheet: SOURCE_SHEET, importedAt: serverTimestamp(), importedBy: state.user.uid, importedByName: state.user.displayName || state.user.email || "" };
+      const payload = { ...recordData, archivedOutOfScope: false, outOfScopeReason: null, manualOnly: false, importBatchId: batchId, lastSeenBatchId: batchId, sourceFileName: preview.fileName, sourceSheet: preview.sheet || SOURCE_SHEET, importedAt: serverTimestamp(), importedBy: state.user.uid, importedByName: state.user.displayName || state.user.email || "" };
       if (!existing) payload.createdAt = serverTimestamp(); if (!existing || changed) payload.updatedAt = serverTimestamp();
       batch.set(doc(db, COLLECTION_NAME, recordId), payload, { merge: true });
     });
     po2024Records.forEach(record => batch.set(doc(db, COLLECTION_NAME, record.id), { archivedOutOfScope: true, outOfScopeReason: "PO-2024", archivedAt: serverTimestamp(), archivedBy: state.user.uid, updatedAt: serverTimestamp() }, { merge: true }));
-    const metadata = { activeBatchId: batchId, sourceFileName: preview.fileName, sourceSheet: SOURCE_SHEET, referenceDate: preview.referenceDate, buildVersion: "20260827-pag-r1", validRows: preview.records.length, excludedPo2024: (preview.excludedPo2024 || 0) + po2024Records.length, newCount: preview.newCount, updatedCount: preview.updatedCount, unchangedCount: preview.unchangedCount, rejectedCount: preview.rejected.length, ignoredRows: preview.ignored, missingRecordIds: preview.missingIds, quality: preview.quality, importedAt: serverTimestamp(), importedBy: state.user.uid, importedByName: state.user.displayName || state.user.email || "" };
+    const metadata = { activeBatchId: batchId, sourceFileName: preview.fileName, sourceSheet: preview.sheet || SOURCE_SHEET, referenceDate: preview.referenceDate, buildVersion: "20260921-reparaveis-r1", validRows: preview.records.length, excludedPo2024: (preview.excludedPo2024 || 0) + po2024Records.length, newCount: preview.newCount, updatedCount: preview.updatedCount, unchangedCount: preview.unchangedCount, rejectedCount: preview.rejected.length, ignoredRows: preview.ignored, missingRecordIds: preview.missingIds, quality: preview.quality, importedAt: serverTimestamp(), importedBy: state.user.uid, importedByName: state.user.displayName || state.user.email || "" };
     batch.set(doc(db, "repairProcessesConfig", "current"), metadata, { merge: true }); batch.set(doc(db, IMPORT_COLLECTION, batchId), { ...metadata, batchId, rejectedRows: preview.rejected.slice(0, 100) });
     await batch.commit(); await logAction("Importação mensal de materiais reparáveis", { batchId, fileName: preview.fileName, validRows: preview.records.length, archivedPo2024: po2024Records.length, newCount: preview.newCount, updatedCount: preview.updatedCount, unchangedCount: preview.unchangedCount, missingCount: preview.missingIds.length });
     setImportMessage(`Importação concluída: ${preview.records.length} registros ativos e ${po2024Records.length} PO(s) 24T arquivada(s).`, "success"); state.importPreview = null; els.importFile.value = ""; renderImportPreview(); await loadImportHistory();
