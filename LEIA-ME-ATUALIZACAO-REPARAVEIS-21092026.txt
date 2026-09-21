@@ -1,0 +1,25 @@
+ATUALIZAÇÃO — MATERIAIS REPARÁVEIS — 21/09/2026
+
+Fonte: CONTROLE REPARO - SGT ROZENDO - atz PAINEL 21SET.xlsx
+Aba: PO's 2025 - 2026
+Referência: 21/09/2026
+Registros ativos: 160
+POs únicas: 81
+Registros mantidos: 113
+Registros adicionados: 47
+Registros removidos: 0
+
+DECISÃO CONFIRMADA — OPÇÃO B
+As correções previamente confirmadas prevalecem sobre divergências da planilha:
+- 25T000160: SVC AUTORIZADO / SOL RETORNO AS IS = 13/07/2025.
+- 26T000910: NUP = 67102.260284/2026-61.
+- 26T000915: NUP = 67102.260285/2026-14.
+- 26T000800: DPE vazia permanece sem prazo.
+
+PUBLICAÇÃO
+1. Extraia todo o conteúdo do ZIP na raiz da branch de atualização.
+2. Abra Pull Request para a main protegida.
+3. Após o deploy do GitHub Pages, use Ctrl+F5.
+4. No painel Governança > Materiais Reparáveis, confirme a referência de 21/09/2026 e 160 registros.
+
+Consulte BUILD_VERIFICACAO_REPARAVEIS_21092026.json e assets/data/repair-update-audit-21092026.json.

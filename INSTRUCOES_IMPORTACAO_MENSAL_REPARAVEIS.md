@@ -1,26 +1,18 @@
 # Importação mensal — Materiais Reparáveis
 
-Versão do painel: **20260820-origin-om-r1**
+Versão do painel: **20260921-reparaveis-r1**
 
-## Base cadastral incluída no pacote
-- Arquivo-base: `CONTROLE REPARO - SGT ROZENDO - 03082026.xlsx`
-- Aba-base: `BD Monitoramento`
-- Referência dos dados cadastrais: 03/08/2026
-- Registros ativos: **113**
-- POs iniciadas em 24T: **0**
+## Base vigente incluída no pacote
+- Arquivo-base: `CONTROLE REPARO - SGT ROZENDO - atz PAINEL 21SET.xlsx`
+- Aba preferencial: `PO's 2025 - 2026`
+- Aba compatível legada: `BD Monitoramento`
+- Referência: **21/09/2026**
+- Registros ativos: **160**
+- POs únicas: **81**
+- Chave estável: **PO + REQUISIÇÃO + PN + SN**
+- POs iniciadas em `24T` continuam fora do escopo.
 
-## Atualização de status e localização
-- Arquivo de status: `19AGO V3 - CONTROLE REPARO - SGT ROZENDO.xlsx`
-- Aba: `BD Monitoramento`
-- Referência: **19/08/2026**
-- Linhas atualizadas: **113**
-- POs únicas: **60**
-- Chave de correspondência: **PO**
-- Planilha de correlação: `Correlação.xlsx`
-
-A Etapa Visual é derivada exclusivamente do Status Real e representa a localização do material. Por isso, uma mesma etapa pode abranger mais de um status.
-
-### Status Real e Etapa Visual oficiais
+## Regras de status e etapa visual
 | Status Real | Etapa Visual |
 |---|---|
 | 1-Empenho Aprovado | Brasil/ OM Requisitante |
@@ -34,70 +26,38 @@ A Etapa Visual é derivada exclusivamente do Status Real e representa a localiza
 | 9-Recebido Parque | Brasil/ OM Requisitante |
 | 10-Encerrado | Brasil/ OM Requisitante |
 
-Variações de escrita presentes nas planilhas são canonicalizadas, mantendo o valor original em `realStatusSource` para auditoria.
+Variações observadas na planilha são canonicalizadas, inclusive `3-Rep chegou CTLA` → `2-Item Chegou CTLA`, `3-Item Exp pelo CTLA` → `3-Item Exp CTLA` e `5-Item Exp ao Reparador` → `5-Item Exp Reparador`. O valor original é mantido em `realStatusSource`.
 
-## Regras mantidas
-1. POs iniciadas em `24T` são excluídas do painel. Na importação Firestore, registros antigos 24T são arquivados.
-2. A data de vencimento do TDR é a data existente na coluna M.
-3. Coluna N com `none` ou data significa TDR entregue.
-4. Coluna N vazia e data atual posterior à coluna M significa TDR atrasado.
-5. Coluna O com `none` significa subprocesso não necessário.
-6. Coluna P com `none` significa ficha não necessária.
-7. Colunas O e P vazias significam TDR ainda não recebido.
-8. A TTE é exibida no detalhamento quando válida, sem atribuição automática de moeda.
-9. A condição `EXCHANGE` permanece fora das opções ativas.
-10. Campos manuais gravados no Firestore são preservados quando a base local mais recente é exibida.
+## Prazos e retorno
+- `SVC AUTORIZADO / SOL RETORNO AS IS`, `PRAZO ENTREGA (DIAS)` e `DPE FINAL` definem o prazo de retorno.
+- `RETORNO MAT` registra o retorno efetivo.
+- Sem autorização, prazo ou DPE suficientes, o item é tratado como **sem prazo de retorno**, e não como atrasado.
+- Retorno posterior à DPE = **retornou com atraso**.
+- DPE vencida sem retorno = **atrasado — sem retorno**.
+
+## Correções confirmadas que prevalecem sobre a planilha
+Por decisão expressa do usuário em **21/09/2026 (Opção B)**:
+1. PO `25T000160`: manter `SVC AUTORIZADO / SOL RETORNO AS IS` em **13/07/2025**.
+2. PO `26T000910`: manter NUP **67102.260284/2026-61**.
+3. PO `26T000915`: manter NUP **67102.260285/2026-14**.
+4. PO `26T000800`: DPE vazia permanece tratada como ausência de prazo.
+
+## NUP e COTAÇÃO SISCAB
+- O NUP é lido da coluna `NUP (PAG)` da base de 21/09/2026.
+- A base atual não contém coluna de `COTAÇÃO SISCAB`; por isso, esse campo é preservado para os **113 registros pré-existentes** quando já disponível na base suplementar de 27/08/2026.
+- Novos itens sem COTAÇÃO SISCAB permanecem como **Não informado**.
+
+## Parque / OM
+Os dois primeiros caracteres da requisição continuam sendo normalizados:
+- EL = PAME-RJ
+- GL = PAMA-GL
+- PB = PAMB-RJ
+- SP = PAMA-SP
+
+## Importação pelo painel
+O importador aceita a aba `PO's 2025 - 2026` e mantém compatibilidade com `BD Monitoramento`. A operação faz upsert pela chave estável e não exclui automaticamente registros ausentes. Campos manuais do Firestore continuam preservados.
 
 ## Publicação
 1. Extraia todo o ZIP na raiz do repositório.
-2. Confirme que `governanca-reparaveis.html`, `assets/js/repair-import-core.js`, `assets/js/repair-processes-panel.js`, `assets/js/repair-processes-current-data.js` e `assets/data/repair-processes-current.json` aparecem como modificados no commit.
-3. Publique as regras do arquivo `FIRESTORE_REGRAS_MATERIAIS_REPARAVEIS.txt`, caso ainda não estejam vigentes.
-4. Após o deploy, use `Ctrl + F5`. O script possui cache-busting `?v=20260820-origin-om-r1`.
-
-
-## Regra de prazo e atraso do retorno — atualização de 20/08/2026
-
-- **SVC AUTORIZADO / SOL RETORNO AS IS**: data da autorização do serviço ou do retorno AS IS.
-- **PRAZO ENTREGA (DIAS)**: quantidade de dias concedida para o retorno.
-- **DPE FINAL**: data final para a entrega do item.
-- **RETORNO MAT**: data em que o material efetivamente retornou.
-- Se qualquer um dos três elementos necessários para o prazo — autorização, quantidade de dias ou DPE — não estiver informado, o item deve ser classificado como **serviço ainda não autorizado / sem prazo de retorno**, sem atraso.
-- Se a data de retorno for posterior à DPE, classificar como **item retornou com atraso**.
-- Se não houver data de retorno e a data atual for posterior à DPE, classificar como **retorno atrasado — item ainda não retornou**.
-- Se a data de retorno for igual ou anterior à DPE, classificar como **item retornou no prazo**.
-- Correções confirmadas: PO `25T000160` com autorização em `13/07/2025`; PO `26T000800` com `#REF!` tratado como campo vazio.
-- A etapa visual `10-Encerrado` corresponde a **Brasil/ OM Requisitante**.
-
-## Normalização de Parque / OM — atualização de 20/08/2026
-
-Os códigos derivados dos dois primeiros caracteres da requisição devem ser exibidos com a nomenclatura institucional abaixo:
-
-| Código de origem | Nomenclatura exibida |
-|---|---|
-| EL | PAME-RJ |
-| GL | PAMA-GL |
-| PB | PAMB-RJ |
-| SP | PAMA-SP |
-
-A normalização é aplicada à base local, aos registros lidos do Firestore, às novas importações, aos filtros, à busca, ao detalhamento e aos relatórios PDF. O código original é preservado apenas nos metadados de auditoria.
-
-
-### Indicadores de retorno
-
-O painel apresenta dois indicadores distintos:
-
-- **Retornaram com atraso:** a data efetiva de retorno é posterior à DPE.
-- **Atrasados — sem retorno:** a DPE venceu e não existe data de retorno registrada.
-
-A Etapa Visual **ETAPA NÃO MAPEADA** permanece disponível apenas para eventual status futuro sem correlação oficial.
-
-
-## Atualização suplementar de COTAÇÃO SISCAB e NUP — 27/08/2026
-
-O painel utiliza os campos `cotacaoSiscab` e `nup` associados a cada item pela PO e pela linha da planilha `27AGO - CONTROLE REPARO - PAG.xlsx`.
-
-- Os filtros **COTAÇÃO SISCAB** e **NUP** aceitam consulta parcial ou integral.
-- A busca geral também considera esses dois campos.
-- O detalhamento e o PDF detalhado exibem COTAÇÃO SISCAB e NUP.
-- Quando uma planilha completa futura contiver esses cabeçalhos, o importador os reconhecerá como campos opcionais.
-- As correções confirmadas para as POs `26T000910` e `26T000915` estão registradas na auditoria do build.
+2. Confirme as alterações em `governanca-reparaveis.html`, `assets/js/repair-import-core.js`, `assets/js/repair-processes-panel.js`, `assets/js/repair-processes-current-data.js` e `assets/data/repair-processes-current.json`.
+3. Após o deploy, use `Ctrl + F5`.

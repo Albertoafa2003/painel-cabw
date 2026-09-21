@@ -1,0 +1,118 @@
+{
+  "buildName": "Atualização Materiais Reparáveis — 21/09/2026",
+  "generatedAt": "2026-09-21",
+  "source": {
+    "fileName": "CONTROLE REPARO - SGT ROZENDO - atz PAINEL 21SET.xlsx",
+    "sha256": "8a6fe1f838af06974aa5cd75b3b640368318eb86affb79dca320c39329fe15bf",
+    "sheet": "PO's 2025 - 2026",
+    "sourceRows": "2 a 161",
+    "referenceDate": "2026-09-21"
+  },
+  "userDecision": "Opção B — manter correções anteriormente confirmadas",
+  "data": {
+    "activeRecords": 160,
+    "uniquePOs": 81,
+    "uniqueStableKeys": 160,
+    "retained": 113,
+    "added": 47,
+    "removed": 0,
+    "changedRetained": 13,
+    "statusCounts": {
+      "7-Item Recebido": 74,
+      "6-Item no Reparador": 16,
+      "2-Item Chegou CTLA": 51,
+      "3-Item Exp CTLA": 3,
+      "5-Item Exp Reparador": 1,
+      "1-Empenho Aprovado": 15
+    },
+    "stageCounts": {
+      "CABW/CABE (retorno)": 74,
+      "Reparador": 16,
+      "Brasil / CTLA": 51,
+      "Trânsito ao Reparador": 4,
+      "Brasil/ OM Requisitante": 15
+    },
+    "originOmCounts": {
+      "PAME-RJ": 4,
+      "PAMA-SP": 123,
+      "PAMA-GL": 31,
+      "PAMB-RJ": 2
+    },
+    "tdrCounts": {
+      "delivered": 85,
+      "overdue": 5,
+      "not-calculable": 66,
+      "pending": 4
+    },
+    "returnDeadlineCounts": {
+      "returned-on-time": 20,
+      "returned-late": 54,
+      "not-authorized": 79,
+      "overdue": 3,
+      "on-time": 3,
+      "due-30": 1
+    },
+    "quotationSiscabPreserved": 113,
+    "nupCount": 160
+  },
+  "preservedCorrections": [
+    {
+      "po": "25T000160",
+      "field": "serviceAuthorizationOrAsIsDate",
+      "sourceValue": "2025-08-13",
+      "appliedValue": "2025-07-13"
+    },
+    {
+      "po": "26T000910",
+      "field": "nup",
+      "sourceValue": "67102.250284/2025-72",
+      "appliedValue": "67102.260284/2026-61"
+    },
+    {
+      "po": "26T000915",
+      "field": "nup",
+      "sourceValue": "67102.250285/2025-17",
+      "appliedValue": "67102.260285/2026-14"
+    }
+  ],
+  "scope": {
+    "updatedFiles": [
+      "governanca-reparaveis.html",
+      "assets/js/repair-import-core.js",
+      "assets/js/repair-processes-panel.js",
+      "assets/js/repair-processes-current-data.js",
+      "assets/data/repair-processes-current.json",
+      "assets/data/repair-processes-schema.json",
+      "assets/data/repair-update-audit-21092026.json",
+      "tests/repair-import.test.mjs",
+      "INSTRUCOES_IMPORTACAO_MENSAL_REPARAVEIS.md"
+    ],
+    "otherSiteModulesPreserved": true
+  },
+  "validation": {
+    "pythonValidationScript": "/mnt/data/validate_reparaveis_21092026.py",
+    "errors": [],
+    "htmlFilesChecked": 39,
+    "duplicateHtmlIds": 0,
+    "missingLocalReferences": 0,
+    "jsFilesSyntaxChecked": 25,
+    "jsSyntaxFailures": 0,
+    "nodeTests": 102,
+    "nodeTestsPassed": 102,
+    "nodeTestsFailed": 0,
+    "packageFilesBeforeBuildManifest": 236
+  },
+  "preservedSitePositions": {
+    "credit": "11/09/2026",
+    "requisitions": "14/09/2026",
+    "contracts": "11/09/2026",
+    "contractCount": 137,
+    "requisitionCount": 90
+  },
+  "notes": [
+    "POs iniciadas em 24T permanecem fora do escopo.",
+    "COTAÇÃO SISCAB foi preservada para registros preexistentes quando ausente na nova planilha.",
+    "A importação mensal aceita a aba PO's 2025 - 2026 e mantém compatibilidade com BD Monitoramento.",
+    "Upsert continua baseado em PO + Requisição + PN + SN; registros ausentes não são excluídos automaticamente do Firestore."
+  ]
+}

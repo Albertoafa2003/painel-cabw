@@ -47,7 +47,7 @@
 <section aria-label="Importação mensal da planilha de materiais reparáveis" class="rep-card rep-import-card" hidden="" id="repImportPanel">
 <div class="rep-card-heading">
 <span class="rep-card-icon"><i class="bi bi-cloud-arrow-up"></i></span>
-<div><h2>Importação mensal</h2><p>Selecione a planilha .xlsx. A importação usa somente a aba “BD Monitoramento”, faz upsert pela chave PO + REQUISIÇÃO + PN + SN e não exclui automaticamente itens ausentes.</p></div>
+<div><h2>Importação mensal</h2><p>Selecione a planilha .xlsx. A importação aceita a aba “PO's 2025 - 2026” (preferencial) e, para compatibilidade, “BD Monitoramento”; faz upsert pela chave PO + REQUISIÇÃO + PN + SN e não exclui automaticamente itens ausentes.</p></div>
 </div>
 <div class="rep-import-fields">
 <label><span>Arquivo .xlsx</span><input accept=".xlsx,application/vnd.openxmlformats-officedocument.spreadsheetml.sheet" class="form-control-file" id="repImportFile" type="file"/></label>
@@ -173,6 +173,6 @@
 <script src="https://code.jquery.com/jquery-3.6.0.slim.min.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/js/bootstrap.bundle.min.js"></script>
 <script src="assets/js/auth.js" type="module"></script>
-<script src="assets/js/repair-processes-panel.js?v=20260827-pag-r1" type="module"></script>
+<script src="assets/js/repair-processes-panel.js?v=20260921-reparaveis-r1" type="module"></script>
 </body>
 </html>
