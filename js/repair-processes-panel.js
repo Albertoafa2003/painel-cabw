@@ -1,0 +1,1053 @@
+import { initializeApp, getApp, getApps } from "https://www.gstatic.com/firebasejs/12.15.0/firebase-app.js";
+import { getAuth, onAuthStateChanged } from "https://www.gstatic.com/firebasejs/12.15.0/firebase-auth.js";
+import {
+  getFirestore, collection, doc, getDoc, getDocs, onSnapshot, query, orderBy, limit,
+  writeBatch, setDoc, deleteDoc, addDoc, serverTimestamp
+} from "https://www.gstatic.com/firebasejs/12.15.0/firebase-firestore.js";
+import {
+  REQUIRED_HEADERS, IMPORTED_FIELDS, MANUAL_FIELDS, REAL_STATUS_OPTIONS, VISUAL_STAGE_OPTIONS,
+  normalizeNullable, normalizeIdentifier, normalizeHeader, normalizeSearch, parseFlexibleNumber,
+  parseDateToIso, mapVisualStage, deriveOriginOm, normalizeOriginOm, normalizeControlValue, isPo2024,
+  normalizeRealStatus, normalizeRepairCondition, normalizeEvaluationFee, calculateTdrStatus,
+  classifyDocumentaryStatus, calculateReturnDeadline, stableKeySource, sha256Hex,
+  importedDataEqual, contextualServiceDateLabel, moneyDisplay, textDisplay
+} from "./repair-import-core.js?v=20260921-reparaveis-r1";
+import { BUNDLED_REPAIR_DATA } from "./repair-processes-current-data.js?v=20260921-reparaveis-r1";
+
+const firebaseConfig = {
+  apiKey: "AIzaSyDZehcWZwnwlGG5LR6y7_hKAVErHiHDhXM",
+  authDomain: "painel-cabw.firebaseapp.com",
+  projectId: "painel-cabw",
+  storageBucket: "painel-cabw.firebasestorage.app",
+  messagingSenderId: "6881251447",
+  appId: "1:6881251447:web:b497f601fb005d65d13672",
+  measurementId: "G-D2C4E646PM"
+};
+
+const app = getApps().length ? getApp() : initializeApp(firebaseConfig);
+const auth = getAuth(app);
+const db = getFirestore(app);
+
+const COLLECTION_NAME = "repairProcesses";
+const CONFIG_DOC = "repairProcessesConfig/current";
+const IMPORT_COLLECTION = "repairProcessImports";
+const MAX_ATOMIC_RECORDS = 450;
+const SOURCE_SHEET_CANDIDATES = Object.freeze(["PO\'s 2025 - 2026", "BD Monitoramento"]);
+const SOURCE_SHEET = SOURCE_SHEET_CANDIDATES[0];
+const TODAY_ISO = localTodayIso();
+const fmtInteger = new Intl.NumberFormat("pt-BR");
+const fmtDateTime = new Intl.DateTimeFormat("pt-BR", { dateStyle: "short", timeStyle: "short" });
+
+const FLOW_STEPS = [
+  { code: "brazil-origin", label: "Brasil/ OM Requisitante", icon: "bi-building", stages: ["Brasil/ OM Requisitante"] },
+  { code: "brazil-ctla", label: "Brasil / CTLA", icon: "bi-box-arrow-in-down", stages: ["Brasil / CTLA"] },
+  { code: "to-repairer", label: "Trânsito ao Reparador", icon: "bi-truck", stages: ["Trânsito ao Reparador"] },
+  { code: "repairer", label: "Reparador", icon: "bi-tools", stages: ["Reparador"] },
+  { code: "cabw-cabe-return", label: "CABW/CABE (retorno)", icon: "bi-geo-alt", stages: ["CABW/CABE (retorno)"] },
+  { code: "unmapped", label: "ETAPA NÃO MAPEADA", icon: "bi-question-circle", stages: ["ETAPA NÃO MAPEADA"] }
+];
+
+const state = {
+  user: null,
+  isAdmin: false,
+  firestoreRecords: [],
+  config: null,
+  records: [],
+  absentRecords: [],
+  filtered: [],
+  sourceMode: "bundle",
+  flowGroup: "",
+  importPreview: null,
+  importHistory: [],
+  subscriptions: [],
+  firestoreError: null
+};
+
+const els = {};
+const $ = id => document.getElementById(id);
+const PAG_SUPPLEMENTAL_FIELDS = Object.freeze([
+  "cotacaoSiscab", "nup", "pagSourceFileName", "pagSourceSheet", "pagSourceRow",
+  "pagReferenceDate", "pagUpdatedAt", "pagCorrectionNote"
+]);
+const BUNDLED_RECORDS_BY_ID = new Map(BUNDLED_REPAIR_DATA.records.map(record => [record.id, record]));
+
+function localTodayIso() {
+  const date = new Date();
+  return `${date.getFullYear()}-${String(date.getMonth() + 1).padStart(2, "0")}-${String(date.getDate()).padStart(2, "0")}`;
+}
+
+function escapeHtml(value) {
+  return String(value ?? "").replace(/[&<>'"]/g, char => ({
+    "&": "&amp;", "<": "&lt;", ">": "&gt;", "'": "&#39;", '"': "&quot;"
+  }[char]));
+}
+
+function formatDate(value) {
+  const iso = normalizeNullable(value);
+  if (!iso) return "Não informado";
+  const match = String(iso).match(/^(\d{4})-(\d{2})-(\d{2})/);
+  return match ? `${match[3]}/${match[2]}/${match[1]}` : String(value);
+}
+
+function toJsDate(value) {
+  if (!value) return null;
+  if (typeof value.toDate === "function") return value.toDate();
+  if (typeof value === "object" && Number.isFinite(value.seconds)) return new Date(value.seconds * 1000);
+  const date = new Date(value);
+  return Number.isNaN(date.getTime()) ? null : date;
+}
+
+function formatDateTime(value) {
+  const date = toJsDate(value);
+  return date ? fmtDateTime.format(date) : "Não informado";
+}
+
+function referenceDate() {
+  if (state.sourceMode.startsWith("bundle")) return BUNDLED_REPAIR_DATA.metadata.referenceDate || TODAY_ISO;
+  return state.config?.referenceDate || BUNDLED_REPAIR_DATA.metadata.referenceDate || TODAY_ISO;
+}
+
+function sourceRealStatus(record) {
+  return normalizeNullable(record.realStatusSource) || normalizeNullable(record.realStatus);
+}
+
+function activeRealStatus(record) {
+  return normalizeRealStatus(sourceRealStatus(record)).value;
+}
+
+function sourceCondition(record) {
+  return normalizeNullable(record.conditionSource) || normalizeNullable(record.condition);
+}
+
+function activeCondition(record) {
+  return normalizeRepairCondition(sourceCondition(record)).value;
+}
+
+function activeOriginOm(record) {
+  return normalizeOriginOm(record?.originOm).value || normalizeNullable(record?.originOm);
+}
+
+function derived(record) {
+  const visualStage = mapVisualStage(activeRealStatus(record));
+  const tdr = calculateTdrStatus(record.tdrDueDate, record.tdrDeliveryRaw, record.tdrSentDate, TODAY_ISO);
+  const documentary = classifyDocumentaryStatus(record.subprocessRaw, record.fichaRaw);
+  const deadline = calculateReturnDeadline(record, TODAY_ISO);
+  return { visualStage, tdr, documentary, deadline };
+}
+
+function recordFromSnapshot(snapshot) {
+  const record = { id: snapshot.id, ...(snapshot.data() || {}) };
+  const origin = normalizeOriginOm(record.originOm);
+  return {
+    ...record,
+    originOm: origin.value || record.originOm || null,
+    originOmSource: record.originOmSource || origin.raw || record.originOm || null,
+    originOmShortCode: record.originOmShortCode || origin.shortCode || null
+  };
+}
+
+function recordInCurrentScope(record) {
+  return Boolean(record?.po && record?.requisition && record?.partNumber && record?.serialNumber)
+    && !isPo2024(record.po)
+    && record.archivedOutOfScope !== true;
+}
+
+function currentFirestoreRecords() {
+  const eligible = state.firestoreRecords.filter(recordInCurrentScope);
+  if (!eligible.length) return [];
+  const activeBatchId = state.config?.activeBatchId;
+  if (!activeBatchId) return eligible;
+  return eligible.filter(record => record.lastSeenBatchId === activeBatchId || record.manualOnly === true);
+}
+
+function bundledDataIsNewer() {
+  const bundled = BUNDLED_REPAIR_DATA.metadata.referenceDate || "";
+  const firestore = state.config?.referenceDate || "";
+  return !firestore || bundled >= firestore;
+}
+
+function mergeSupplementalFromBundle(primaryRecord, bundledRecord) {
+  if (!bundledRecord) return { ...primaryRecord };
+  const merged = { ...primaryRecord };
+  PAG_SUPPLEMENTAL_FIELDS.forEach(field => {
+    if (merged[field] === undefined || merged[field] === null || merged[field] === "") {
+      merged[field] = bundledRecord[field] ?? null;
+    }
+  });
+  return merged;
+}
+
+function mergeBundledAndManualFields(bundleRecord, firestoreRecord) {
+  if (!firestoreRecord) return { ...bundleRecord };
+  const merged = { ...bundleRecord };
+  MANUAL_FIELDS.forEach(field => {
+    if (firestoreRecord[field] !== undefined && firestoreRecord[field] !== null) {
+      merged[field] = firestoreRecord[field];
+    }
+  });
+  ["createdAt", "createdBy", "createdByName", "updatedAt", "updatedBy", "updatedByName"].forEach(field => {
+    if (firestoreRecord[field] !== undefined && firestoreRecord[field] !== null) {
+      merged[field] = firestoreRecord[field];
+    }
+  });
+  return merged;
+}
+
+function rebuildRecordSet() {
+  const current = currentFirestoreRecords();
+  const eligibleFirestore = state.firestoreRecords.filter(recordInCurrentScope);
+  if (current.length && !bundledDataIsNewer()) {
+    state.sourceMode = "firestore";
+    state.records = current.map(record => mergeSupplementalFromBundle(record, BUNDLED_RECORDS_BY_ID.get(record.id)));
+    const currentIds = new Set(current.map(record => record.id));
+    state.absentRecords = eligibleFirestore
+      .filter(record => !currentIds.has(record.id))
+      .map(record => mergeSupplementalFromBundle(record, BUNDLED_RECORDS_BY_ID.get(record.id)));
+  } else {
+    state.sourceMode = current.length ? "bundle-newer" : "bundle";
+    const firestoreById = new Map(eligibleFirestore.map(record => [record.id, record]));
+    const bundledRecords = BUNDLED_REPAIR_DATA.records
+      .filter(recordInCurrentScope)
+      .map(record => mergeBundledAndManualFields(record, firestoreById.get(record.id)));
+    const bundledIds = new Set(bundledRecords.map(record => record.id));
+    const manualOnly = current
+      .filter(record => record.manualOnly === true && !bundledIds.has(record.id))
+      .map(record => ({ ...record }));
+    state.records = [...bundledRecords, ...manualOnly];
+    state.absentRecords = eligibleFirestore.filter(
+      record => !bundledIds.has(record.id) && record.manualOnly !== true
+    );
+  }
+  populateFilters();
+  applyFilters();
+  renderSource();
+}
+
+function bundleSourceLabel() {
+  const metadata = BUNDLED_REPAIR_DATA.metadata;
+  const baseReference = metadata.dataReferenceDate || metadata.referenceDate;
+  const base = `base cadastral ${metadata.sourceFileName} (${formatDate(baseReference)})`;
+  const status = metadata.statusSourceFileName
+    ? `status/localização ${metadata.statusSourceFileName} (${formatDate(metadata.statusReferenceDate || metadata.referenceDate)})`
+    : null;
+  const mapping = metadata.statusMappingFileName
+    ? `correlação ${metadata.statusMappingFileName}`
+    : null;
+  const returns = metadata.returnStatusSourceFileName
+    ? `prazos/retornos ${metadata.returnStatusSourceFileName} (${formatDate(metadata.returnStatusReferenceDate || metadata.referenceDate)})`
+    : null;
+  const origins = metadata.originOmMappingUpdatedAt
+    ? `Parques/OM normalizados (${formatDate(metadata.originOmMappingUpdatedAt)})`
+    : null;
+  const pag = metadata.pagSourceFileName
+    ? `NUP ${metadata.pagSourceFileName} (${formatDate(metadata.pagReferenceDate || metadata.referenceDate)}); COTAÇÃO SISCAB preservada quando disponível na base anterior`
+    : null;
+  return [base, status, mapping, returns, origins, pag].filter(Boolean).join(" · ");
+}
+
+function reportSourceLabel() {
+  if (state.sourceMode === "firestore") {
+    return `Firestore · ${state.config?.sourceFileName || "fonte não informada"} · ${state.config?.activeBatchId || "sem lote ativo"}`;
+  }
+  return `${bundleSourceLabel()} · versão ${BUNDLED_REPAIR_DATA.metadata.buildVersion}`;
+}
+
+function renderSource() {
+  if (!els.source) return;
+  if (state.sourceMode === "firestore") {
+    const file = state.config?.sourceFileName || "Fonte não informada";
+    const batch = state.config?.activeBatchId || "sem lote ativo";
+    const when = state.config?.importedAt ? formatDateTime(state.config.importedAt) : "data não informada";
+    els.source.textContent = `Fonte: Firestore · ${file} · aba ${state.config?.sourceSheet || SOURCE_SHEET} · lote ${batch} · importado em ${when}`;
+    els.source.classList.remove("rep-source-error");
+  } else {
+    const prefix = state.sourceMode === "bundle-newer" ? "Fonte local mais recente" : "Fonte local inicial";
+    const suffix = state.sourceMode === "bundle-newer"
+      ? " O lote existente no Firestore é anterior ou da mesma data e foi desconsiderado nesta visualização; campos manuais cadastrados foram preservados."
+      : " Administradores podem importar a planilha completa para centralizar a base no Firestore.";
+    els.source.textContent = `${prefix}: ${bundleSourceLabel()} · ${fmtInteger.format(BUNDLED_REPAIR_DATA.metadata.validRows)} registros válidos · versão ${BUNDLED_REPAIR_DATA.metadata.buildVersion}.${suffix}`;
+    els.source.classList.toggle("rep-source-error", Boolean(state.firestoreError));
+  }
+}
+
+function uniqueValues(field, derivedField = false) {
+  return Array.from(new Set(state.records.map(record => derivedField ? derived(record)[field] : record[field]).filter(Boolean)))
+    .sort((a, b) => String(a).localeCompare(String(b), "pt-BR", { numeric: true }));
+}
+
+function fillSelect(select, values, placeholder) {
+  if (!select) return;
+  const previous = select.value;
+  select.innerHTML = `<option value="">${escapeHtml(placeholder)}</option>` + values.map(value => `<option value="${escapeHtml(value)}">${escapeHtml(value)}</option>`).join("");
+  if (values.includes(previous)) select.value = previous;
+}
+
+function populateFilters() {
+  const activeStatuses = Array.from(new Set(state.records.map(activeRealStatus).filter(Boolean)));
+  const extraStatuses = activeStatuses
+    .filter(status => !REAL_STATUS_OPTIONS.includes(status))
+    .sort((a, b) => String(a).localeCompare(String(b), "pt-BR", { numeric: true }));
+  const statuses = [...REAL_STATUS_OPTIONS, ...extraStatuses];
+  const conditions = Array.from(new Set(state.records.map(activeCondition).filter(Boolean)))
+    .sort((a, b) => String(a).localeCompare(String(b), "pt-BR", { numeric: true }));
+  const documents = Array.from(new Set(
+    state.records.map(record => derived(record).documentary.label).filter(Boolean)
+  )).sort((a, b) => a.localeCompare(b, "pt-BR"));
+  fillSelect(els.statusFilter, statuses, "Todos os status");
+  fillSelect(els.stageFilter, VISUAL_STAGE_OPTIONS, "Todas as etapas");
+  fillSelect(els.originFilter, Array.from(new Set(state.records.map(activeOriginOm).filter(Boolean))).sort((a, b) => String(a).localeCompare(String(b), "pt-BR", { numeric: true })), "Todas as OMs");
+  fillSelect(els.repairerFilter, uniqueValues("repairerName"), "Todos os reparadores");
+  fillSelect(els.conditionFilter, conditions, "Todas as condições");
+  fillSelect(els.documentFilter, documents, "Todas as situações documentais");
+  fillSelect(els.cageFilter, uniqueValues("repairerCage"), "Todos os CAGE Codes");
+}
+
+function readFilters() {
+  return {
+    po: normalizeSearch(els.poFilter.value), quotation: normalizeSearch(els.quotationFilter.value),
+    nup: normalizeSearch(els.nupFilter.value), requisition: normalizeSearch(els.requisitionFilter.value),
+    status: els.statusFilter.value, stage: els.stageFilter.value, origin: els.originFilter.value,
+    repairer: els.repairerFilter.value, condition: els.conditionFilter.value,
+    evaluationFee: els.evaluationFeeFilter.value, tdr: els.tdrFilter.value,
+    documentary: els.documentFilter.value, cage: els.cageFilter.value, deadline: els.deadlineFilter.value,
+    search: normalizeSearch(els.search.value), sort: els.sort.value, includeAbsent: els.includeAbsent.checked
+  };
+}
+
+function searchableText(record) {
+  return normalizeSearch([
+    record.po, record.cotacaoSiscab, record.nup, record.requisition, record.partNumber, record.serialNumber, activeOriginOm(record),
+    record.trackingToRepairer, record.returnTrackingVolume, record.repairerCage, record.repairerName,
+    sourceRealStatus(record), sourceCondition(record), record.processNumber, record.description, record.manualNotes,
+    record.evaluationFee, record.tdrDeliveryRaw, record.subprocessRaw, record.fichaRaw, record.documentaryStatusLabel
+  ].join(" "));
+}
+
+function applyFilters() {
+  const filters = readFilters();
+  const base = (filters.includeAbsent ? [...state.records, ...state.absentRecords] : state.records.slice()).filter(recordInCurrentScope);
+  let records = base.filter(record => {
+    const info = derived(record);
+    if (filters.po && !normalizeSearch(record.po).includes(filters.po)) return false;
+    if (filters.quotation && !normalizeSearch(record.cotacaoSiscab).includes(filters.quotation)) return false;
+    if (filters.nup && !normalizeSearch(record.nup).includes(filters.nup)) return false;
+    if (filters.requisition && !normalizeSearch(record.requisition).includes(filters.requisition)) return false;
+    if (filters.status && activeRealStatus(record) !== filters.status) return false;
+    if (filters.stage && info.visualStage !== filters.stage) return false;
+    if (filters.origin && activeOriginOm(record) !== filters.origin) return false;
+    if (filters.repairer && record.repairerName !== filters.repairer) return false;
+    if (filters.condition && activeCondition(record) !== filters.condition) return false;
+    if (filters.cage && record.repairerCage !== filters.cage) return false;
+    if (filters.evaluationFee === "informed" && record.evaluationFee == null) return false;
+    if (filters.evaluationFee === "missing" && record.evaluationFee != null) return false;
+    if (filters.tdr && info.tdr.code !== filters.tdr) return false;
+    if (filters.documentary && info.documentary.label !== filters.documentary) return false;
+    if (filters.deadline === "any-late" && !["overdue", "returned-late"].includes(info.deadline.code)) return false;
+    if (filters.deadline && filters.deadline !== "any-late" && info.deadline.code !== filters.deadline) return false;
+    if (filters.search && !searchableText(record).includes(filters.search)) return false;
+    if (state.flowGroup) { const step = FLOW_STEPS.find(item => item.code === state.flowGroup); if (step && !step.stages.includes(info.visualStage)) return false; }
+    return true;
+  });
+  records.sort((a, b) => {
+    const da = derived(a), dbi = derived(b);
+    if (filters.sort === "dpe") return (a.dpeFinalDate || "9999-12-31").localeCompare(b.dpeFinalDate || "9999-12-31");
+    if (filters.sort === "tdr") return (da.tdr.dueDate || "9999-12-31").localeCompare(dbi.tdr.dueDate || "9999-12-31");
+    if (filters.sort === "po") return String(a.po || "").localeCompare(String(b.po || ""), "pt-BR", { numeric: true });
+    if (filters.sort === "requisition") return String(a.requisition || "").localeCompare(String(b.requisition || ""), "pt-BR", { numeric: true });
+    if (filters.sort === "repairer") return String(a.repairerName || "").localeCompare(String(b.repairerName || ""), "pt-BR");
+    const aDate = toJsDate(a.updatedAt || a.importedAt) || new Date(0), bDate = toJsDate(b.updatedAt || b.importedAt) || new Date(0);
+    return bDate - aDate || Number(a.sourceRow || 0) - Number(b.sourceRow || 0);
+  });
+  state.filtered = records; renderAll();
+}
+
+function clearFilters() {
+  [els.poFilter, els.quotationFilter, els.nupFilter, els.requisitionFilter, els.search].forEach(element => { element.value = ""; });
+  [els.statusFilter, els.stageFilter, els.originFilter, els.repairerFilter, els.conditionFilter, els.evaluationFeeFilter, els.tdrFilter, els.documentFilter, els.cageFilter, els.deadlineFilter].forEach(element => { element.value = ""; });
+  els.sort.value = "updated"; els.includeAbsent.checked = false; state.flowGroup = ""; applyFilters();
+}
+
+function aggregateMoney(records, field) {
+  const known = records.filter(record => record[field] !== null && record[field] !== undefined && Number.isFinite(Number(record[field])));
+  if (!known.length) return { value: "Não informado", note: `0 de ${records.length} itens com valor informado` };
+  const totals = new Map();
+  known.forEach(record => {
+    const currency = record.currency || "Moeda não informada";
+    totals.set(currency, (totals.get(currency) || 0) + Number(record[field]));
+  });
+  const value = Array.from(totals.entries()).map(([currency, total]) => currency === "Moeda não informada"
+    ? `${new Intl.NumberFormat("pt-BR", { minimumFractionDigits: 2, maximumFractionDigits: 2 }).format(total)} — Moeda não informada`
+    : moneyDisplay(total, currency)).join(" / ");
+  return { value, note: known.length === records.length ? "total dos itens filtrados" : `Total parcial — ${known.length} de ${records.length} itens com valor informado` };
+}
+
+function renderKpis() {
+  const records = state.filtered;
+  const enriched = records.map(record => ({ record, ...derived(record) }));
+  const itemValue = aggregateMoney(records, "itemValue");
+  const repairValue = aggregateMoney(records, "repairValue");
+  els.kpiTotal.textContent = fmtInteger.format(records.length);
+  els.kpiRepair.textContent = fmtInteger.format(enriched.filter(item => item.visualStage === "CABW/CABE (retorno)").length);
+  els.kpiTransit.textContent = fmtInteger.format(enriched.filter(item => item.visualStage === "Trânsito ao Reparador").length);
+  els.kpiReturnedLate.textContent = fmtInteger.format(enriched.filter(item => item.deadline.code === "returned-late").length);
+  els.kpiOverdue.textContent = fmtInteger.format(enriched.filter(item => item.deadline.code === "overdue").length);
+  els.kpiCompleted.textContent = fmtInteger.format(enriched.filter(item => item.visualStage === "Brasil / CTLA").length);
+  els.kpiTdr.textContent = fmtInteger.format(enriched.filter(item => ["overdue", "due-soon"].includes(item.tdr.code)).length);
+  els.kpiItemValue.textContent = itemValue.value;
+  els.kpiItemValueNote.textContent = itemValue.note;
+  els.kpiRepairValue.textContent = repairValue.value;
+  els.kpiRepairValueNote.textContent = repairValue.note;
+  els.results.textContent = `${fmtInteger.format(records.length)} item(ns) exibido(s)`;
+  els.tableCount.textContent = `${fmtInteger.format(records.length)} registro(s)`;
+}
+
+function renderFlow() {
+  const counts = new Map(FLOW_STEPS.map(step => [step.code, 0]));
+  state.filtered.forEach(record => {
+    const stage = derived(record).visualStage;
+    const step = FLOW_STEPS.find(item => item.stages.includes(stage));
+    if (step) counts.set(step.code, (counts.get(step.code) || 0) + 1);
+  });
+  els.flowGrid.innerHTML = FLOW_STEPS.map((step, index) => {
+    const active = state.flowGroup === step.code ? " is-active" : "";
+    const connector = index < FLOW_STEPS.length - 1 ? '<span class="rep-flow-connector"><i class="bi bi-chevron-right"></i></span>' : "";
+    return `<button type="button" class="rep-flow-step${active}" data-flow="${step.code}">
+      <span class="rep-flow-step__icon"><i class="bi ${step.icon}"></i></span>
+      <strong>${escapeHtml(step.label)}</strong><span>${fmtInteger.format(counts.get(step.code) || 0)} item(ns)</span>
+    </button>${connector}`;
+  }).join("");
+  els.clearFlow.hidden = !state.flowGroup;
+  els.flowGrid.querySelectorAll("[data-flow]").forEach(button => button.addEventListener("click", () => {
+    state.flowGroup = state.flowGroup === button.dataset.flow ? "" : button.dataset.flow;
+    applyFilters();
+  }));
+}
+
+function statusBadge(record) {
+  const stage = derived(record).visualStage;
+  const type = stage === "CABW/CABE (retorno)"
+    ? "completed"
+    : stage === "Trânsito ao Reparador"
+      ? "transit"
+      : stage === "Reparador"
+        ? "repair"
+        : stage === "ETAPA NÃO MAPEADA"
+          ? "alert"
+          : "open";
+  return `<span class="rep-badge rep-badge--${type}">${escapeHtml(textDisplay(activeRealStatus(record)))}</span>`;
+}
+
+function tdrBadge(record) {
+  const info = derived(record).tdr;
+  return `<span class="rep-deadline rep-deadline--${escapeHtml(info.code)}">${escapeHtml(info.label)}</span>`;
+}
+
+function deadlineBadge(record) {
+  const info = derived(record).deadline;
+  return `<span class="rep-deadline rep-deadline--${escapeHtml(info.code)}">${escapeHtml(info.label)}</span>`;
+}
+
+function renderStatusSummary() {
+  const map = new Map();
+  state.filtered.forEach(record => { const status = activeRealStatus(record) || "Não informado"; map.set(status, (map.get(status) || 0) + 1); });
+  const rows = Array.from(map.entries()).sort((a, b) => b[1] - a[1] || a[0].localeCompare(b[0], "pt-BR"));
+  const max = Math.max(...rows.map(row => row[1]), 1);
+  els.statusSummary.innerHTML = rows.length ? rows.map(([status, count]) => `<div class="rep-summary-row">
+    <div><strong>${escapeHtml(status)}</strong><span>${fmtInteger.format(count)} item(ns)</span></div>
+    <span class="rep-summary-bar"><i style="width:${Math.max(4, count / max * 100)}%"></i></span>
+  </div>`).join("") : '<p class="rep-empty-message">Nenhum status disponível.</p>';
+}
+
+function attentionScore(record) {
+  const info = derived(record);
+  if (info.deadline.code === "overdue") return 1000 + Math.abs(info.deadline.days || 0);
+  if (info.tdr.code === "overdue") return 800 + Math.abs(info.tdr.days || 0);
+  if (info.tdr.code === "due-soon") return 700 - (info.tdr.days || 0);
+  if (info.visualStage === "ETAPA NÃO MAPEADA") return 650;
+  if ((record.qualityWarnings || []).length) return 300 + record.qualityWarnings.length;
+  return 0;
+}
+
+function renderAttentionList() {
+  const attention = state.filtered.map(record => ({ record, score: attentionScore(record) })).filter(item => item.score > 0).sort((a, b) => b.score - a.score).slice(0, 8);
+  els.attentionList.innerHTML = attention.length ? attention.map(({ record }) => {
+    const info = derived(record);
+    const reason = info.deadline.code === "overdue" ? info.deadline.label : info.tdr.code === "overdue" || info.tdr.code === "due-soon" ? info.tdr.label : info.visualStage === "ETAPA NÃO MAPEADA" ? "Status sem mapeamento visual" : (record.qualityWarnings || ["Dados incompletos"])[0];
+    return `<button type="button" class="rep-attention-item" data-view-id="${record.id}">
+      <div><strong>${escapeHtml(record.po)}</strong><span>${escapeHtml(record.requisition)} · PN ${escapeHtml(record.partNumber)} · SN ${escapeHtml(record.serialNumber)}</span></div>
+      <small>${escapeHtml(reason)}</small>
+    </button>`;
+  }).join("") : '<p class="rep-empty-message">Nenhum item crítico para os filtros selecionados.</p>';
+  bindViewButtons(els.attentionList);
+}
+
+function buildQualityCounts(records) {
+  const counts = {
+    tteInformed: 0, tteMissing: 0, omDerived: 0, unmapped: 0, tdrNoDueDate: 0, tdrOverdue: 0, tdrDelivered: 0,
+    tdrNotReceived: 0, documentaryNotRequired: 0, returnOverdue: 0, returnedLate: 0, returnedOnTime: 0,
+    returnNotAuthorized: 0, returnPending: 0, manualProcessMissing: 0, manualDescriptionMissing: 0,
+    itemValueMissing: 0, repairValueMissing: 0, absent: state.absentRecords.filter(recordInCurrentScope).length
+  };
+  records.forEach(record => {
+    const info = derived(record);
+    record.evaluationFee == null ? counts.tteMissing += 1 : counts.tteInformed += 1;
+    if (record.originDerived) counts.omDerived += 1;
+    if (info.visualStage === "ETAPA NÃO MAPEADA") counts.unmapped += 1;
+    if (!record.tdrDueDate && info.tdr.code !== "delivered") counts.tdrNoDueDate += 1;
+    if (info.tdr.code === "overdue") counts.tdrOverdue += 1;
+    if (info.tdr.code === "delivered") counts.tdrDelivered += 1;
+    if (info.documentary.code === "tdr-not-received") counts.tdrNotReceived += 1;
+    if (["not-required", "ficha-recorded-no-subprocess", "subprocess-recorded-no-ficha"].includes(info.documentary.code)) counts.documentaryNotRequired += 1;
+    if (info.deadline.code === "overdue") counts.returnOverdue += 1;
+    if (info.deadline.code === "returned-late") counts.returnedLate += 1;
+    if (info.deadline.code === "returned-on-time") counts.returnedOnTime += 1;
+    if (info.deadline.code === "not-authorized") counts.returnNotAuthorized += 1;
+    if (["due-today", "due-30", "on-time"].includes(info.deadline.code)) counts.returnPending += 1;
+    if (!normalizeNullable(record.processNumber)) counts.manualProcessMissing += 1;
+    if (!normalizeNullable(record.description)) counts.manualDescriptionMissing += 1;
+    if (record.itemValue == null) counts.itemValueMissing += 1;
+    if (record.repairValue == null) counts.repairValueMissing += 1;
+  });
+  return counts;
+}
+
+function renderQuality() {
+  const counts = buildQualityCounts(state.filtered);
+  const items = [
+    ["TTE informada", counts.tteInformed, "bi-cash-stack"], ["TTE não informada", counts.tteMissing, "bi-cash"],
+    ["OM derivada da requisição", counts.omDerived, "bi-building-check"], ["Status sem etapa visual mapeada", counts.unmapped, "bi-question-diamond"],
+    ["TDR entregue", counts.tdrDelivered, "bi-check2-circle"], ["TDR atrasado", counts.tdrOverdue, "bi-calendar-x"],
+    ["Prazo do TDR não informado", counts.tdrNoDueDate, "bi-calendar-minus"], ["TDR ainda não recebido (O e P em branco)", counts.tdrNotReceived, "bi-inbox"],
+    ["Subprocesso/ficha não necessários", counts.documentaryNotRequired, "bi-file-earmark-minus"],
+    ["Retorno atrasado — ainda não retornou", counts.returnOverdue, "bi-hourglass-bottom"],
+    ["Item retornou com atraso", counts.returnedLate, "bi-clock-history"],
+    ["Item retornou no prazo", counts.returnedOnTime, "bi-check2-circle"],
+    ["Serviço não autorizado / sem prazo", counts.returnNotAuthorized, "bi-calendar-minus"],
+    ["Retorno pendente dentro do prazo", counts.returnPending, "bi-calendar-check"],
+    ["Número do processo não informado", counts.manualProcessMissing, "bi-folder-x"], ["Descrição do item não informada", counts.manualDescriptionMissing, "bi-card-text"],
+    ["Valor do item não informado", counts.itemValueMissing, "bi-currency-dollar"], ["Valor do reparo não informado", counts.repairValueMissing, "bi-receipt"],
+    ["Ausentes do lote atual preservados", counts.absent, "bi-archive"]
+  ];
+  els.qualityGrid.innerHTML = items.map(([label, count, icon]) => `<article class="rep-quality-item${count ? " has-warning" : ""}"><i class="bi ${icon}"></i><div><strong>${fmtInteger.format(count)}</strong><span>${escapeHtml(label)}</span></div></article>`).join("");
+}
+
+function renderTable() {
+  const tbody = els.table.querySelector("tbody");
+  tbody.innerHTML = state.filtered.map(record => {
+    const info = derived(record);
+    return `<tr>
+      <td><strong>${escapeHtml(record.po)}</strong><small>${escapeHtml(formatDate(record.poIssueDate))}</small></td>
+      <td><strong>${escapeHtml(textDisplay(record.cotacaoSiscab))}</strong></td>
+      <td class="rep-nowrap">${escapeHtml(textDisplay(record.nup))}</td>
+      <td>${escapeHtml(record.requisition)}</td>
+      <td><strong>PN ${escapeHtml(record.partNumber)}</strong><small>SN ${escapeHtml(record.serialNumber)}</small></td>
+      <td>${escapeHtml(textDisplay(activeOriginOm(record)))}${record.originDerived ? '<small class="rep-derived-note">derivada</small>' : ""}</td>
+      <td>${escapeHtml(textDisplay(activeCondition(record)))}</td>
+      <td>${statusBadge(record)}<small>${escapeHtml(info.visualStage)}</small></td>
+      <td>${escapeHtml(textDisplay(record.repairerName))}<small>CAGE ${escapeHtml(textDisplay(record.repairerCage))}</small></td>
+      <td>${tdrBadge(record)}<small>Limite: ${escapeHtml(formatDate(info.tdr.dueDate))}</small></td>
+      <td>${deadlineBadge(record)}<small>DPE: ${escapeHtml(record.dpeFinalIndicator || formatDate(record.dpeFinalDate))}</small></td>
+      <td class="rep-row-actions"><button type="button" class="rep-icon-button" data-view-id="${record.id}" title="Ver detalhes"><i class="bi bi-eye"></i></button>${state.isAdmin ? `<button type="button" class="rep-icon-button" data-edit-id="${record.id}" title="Editar dados complementares"><i class="bi bi-pencil"></i></button><button type="button" class="rep-icon-button rep-icon-button--danger" data-delete-id="${record.id}" title="Excluir"><i class="bi bi-trash"></i></button>` : ""}</td>
+    </tr>`;
+  }).join("");
+
+  els.mobileList.innerHTML = state.filtered.map(record => {
+    const info = derived(record);
+    return `<article class="rep-mobile-card">
+      <div class="rep-mobile-card__header"><div><span>${escapeHtml(record.po)}</span><strong>${escapeHtml(record.requisition)}</strong></div>${deadlineBadge(record)}</div>
+      <dl><div><dt>COTAÇÃO SISCAB</dt><dd>${escapeHtml(textDisplay(record.cotacaoSiscab))}</dd></div>
+      <div><dt>NUP</dt><dd>${escapeHtml(textDisplay(record.nup))}</dd></div>
+      <div><dt>PN / SN</dt><dd>${escapeHtml(record.partNumber)} / ${escapeHtml(record.serialNumber)}</dd></div>
+      <div><dt>Status</dt><dd>${escapeHtml(textDisplay(activeRealStatus(record)))}</dd></div><div><dt>Etapa</dt><dd>${escapeHtml(info.visualStage)}</dd></div>
+      <div><dt>Reparador</dt><dd>${escapeHtml(textDisplay(record.repairerName))}</dd></div><div><dt>TDR</dt><dd>${escapeHtml(info.tdr.label)}</dd></div></dl>
+      <div class="rep-mobile-card__actions"><button type="button" class="rep-btn rep-btn--light" data-view-id="${record.id}"><i class="bi bi-eye"></i> Detalhes</button>${state.isAdmin ? `<button type="button" class="rep-btn rep-btn--outline" data-edit-id="${record.id}"><i class="bi bi-pencil"></i> Complementar</button>` : ""}</div>
+    </article>`;
+  }).join("");
+
+  els.emptyState.hidden = state.filtered.length > 0;
+  bindViewButtons(tbody); bindViewButtons(els.mobileList); bindEditButtons(tbody); bindEditButtons(els.mobileList);
+  tbody.querySelectorAll("[data-delete-id]").forEach(button => button.addEventListener("click", () => deleteRecord(button.dataset.deleteId)));
+}
+
+function renderAll() {
+  renderKpis(); renderFlow(); renderStatusSummary(); renderAttentionList(); renderQuality(); renderTable();
+}
+
+function bindViewButtons(root) {
+  root.querySelectorAll("[data-view-id]").forEach(button => button.addEventListener("click", () => openDetail(button.dataset.viewId)));
+}
+
+function bindEditButtons(root) {
+  root.querySelectorAll("[data-edit-id]").forEach(button => button.addEventListener("click", () => openEdit(button.dataset.editId)));
+}
+
+function findRecord(id) {
+  return [...state.records, ...state.absentRecords].find(record => record.id === id);
+}
+
+function detailRow(label, value, extra = "") {
+  return `<div class="rep-detail-row"><dt>${escapeHtml(label)}</dt><dd>${escapeHtml(textDisplay(value))}${extra}</dd></div>`;
+}
+
+function controlDisplay(value, dateValue = null) {
+  const text = normalizeControlValue(value);
+  if (!text) return "Não informado";
+  if (text.toLowerCase() === "none") return "Não necessário / entregue sem data, conforme planilha";
+  return dateValue ? formatDate(dateValue) : text;
+}
+
+function openDetail(id) {
+  const record = findRecord(id); if (!record) return;
+  const info = derived(record); const warnings = [...(record.qualityWarnings || [])];
+  if (record.evaluationFeeDiscardReason) warnings.push("Taxa de avaliação desconsiderada pela regra de qualidade.");
+  if (record.originDerived) warnings.push(`Parque / OM derivado da requisição e normalizado como ${activeOriginOm(record) || "Não informado"}.`);
+  if (info.visualStage === "ETAPA NÃO MAPEADA") warnings.push("Status real sem mapeamento visual ativo.");
+  if ((record.tdrDeliveryIndicator === "none" || record.tdrSentDate) && info.documentary.code === "tdr-not-received") warnings.push("Divergência: a coluna N indica TDR entregue, mas O e P estão em branco.");
+  els.detailTitle.textContent = `${record.po} · ${record.requisition}`;
+  const tte = record.evaluationFee == null ? "Não informado" : `${new Intl.NumberFormat("pt-BR", { minimumFractionDigits: 2, maximumFractionDigits: 2 }).format(record.evaluationFee)} — Moeda não informada`;
+  els.detailContent.innerHTML = `
+    <section class="rep-detail-group"><h3>Identificação</h3><dl>${detailRow("Número do processo", record.processNumber)}${detailRow("Descrição do item", record.description)}${detailRow("Chave estável", record.importKey)}${detailRow("Status real", activeRealStatus(record))}${detailRow("Etapa visual", info.visualStage)}${detailRow("Situação no lote", state.sourceMode.startsWith("bundle") || record.lastSeenBatchId === state.config?.activeBatchId ? "Presente no lote atual" : "Ausente do lote atual — registro preservado")}</dl></section>
+    <section class="rep-detail-group"><h3>Empenho, cotação e processo</h3><dl>${detailRow("Empenho / PO", record.po)}${detailRow("COTAÇÃO SISCAB", record.cotacaoSiscab)}${detailRow("NUP", record.nup)}${detailRow("Data de emissão", formatDate(record.poIssueDate))}${detailRow("Requisição", record.requisition)}${detailRow("Parque / OM", activeOriginOm(record), record.originDerived ? ' <span class="rep-inline-alert">derivada da requisição e normalizada</span>' : "")}</dl></section>
+    <section class="rep-detail-group"><h3>Item</h3><dl>${detailRow("Part Number", record.partNumber)}${detailRow("Serial Number", record.serialNumber)}${detailRow("Condição", activeCondition(record))}${detailRow("Valor do item", moneyDisplay(record.itemValue, record.currency))}</dl></section>
+    <section class="rep-detail-group"><h3>Reparador</h3><dl>${detailRow("CAGE Code", record.repairerCage)}${detailRow("Nome do reparador", record.repairerName)}${detailRow("Valor do reparo contratado", moneyDisplay(record.repairValue, record.currency))}${detailRow("Taxa de Avaliação — TTE", tte)}</dl></section>
+    <section class="rep-detail-group"><h3>Envio ao reparador</h3><dl>${detailRow("Data de recebimento no reparador", formatDate(record.receivedAtRepairerDate))}${detailRow("Tracking do envio", record.trackingToRepairer)}</dl></section>
+    <section class="rep-detail-group"><h3>TDR e documentação</h3><dl>${detailRow("Prazo do TDR — coluna M", formatDate(record.tdrDueDate))}${detailRow("Entrega do TDR — coluna N", record.tdrSentDate ? formatDate(record.tdrSentDate) : (String(record.tdrDeliveryRaw || "").toLowerCase() === "none" ? "Entregue — sem data informada" : null))}${detailRow("Situação do TDR", info.tdr.label)}${detailRow("Subprocesso — coluna O", controlDisplay(record.subprocessRaw))}${detailRow("Ficha recebida — coluna P", controlDisplay(record.fichaRaw, record.fichaDate))}${detailRow("Situação documental", info.documentary.label)}${detailRow("Decisão sobre o serviço", record.serviceDecision)}${detailRow(record.serviceDateLabel || contextualServiceDateLabel(record.serviceDecision), formatDate(record.serviceAuthorizationOrAsIsDate))}</dl></section>
+    <section class="rep-detail-group"><h3>Execução e prazo</h3><dl>${detailRow("Data de autorização do serviço/retorno", formatDate(record.serviceAuthorizationOrAsIsDate))}${detailRow("Prazo para retorno", record.repairDeliveryDays == null ? null : `${record.repairDeliveryDays} dia(s)`)}${detailRow("Data final para entrega — DPE", formatDate(record.dpeFinalDate))}${detailRow("Data efetiva do retorno", formatDate(record.returnMaterialDate))}${detailRow("Situação do retorno", info.deadline.label)}</dl></section>
+    <section class="rep-detail-group"><h3>Retorno</h3><dl>${detailRow("Tracking / volume de retorno", record.returnTrackingVolume)}${detailRow("Recebimento no depósito CABW", formatDate(record.returnMaterialDate))}</dl></section>
+    <section class="rep-detail-group"><h3>Dados complementares</h3><dl>${detailRow("Moeda", record.currency)}${detailRow("Observações manuais", record.manualNotes)}</dl></section>
+    <section class="rep-detail-group"><h3>Metadados da importação</h3><dl>${detailRow("Arquivo-base", record.sourceFileName)}${detailRow("Aba-base", record.sourceSheet)}${detailRow("Linha de origem", record.sourceRow)}${detailRow("Lote", record.importBatchId)}${detailRow("Importado em", formatDateTime(record.importedAt))}${detailRow("Importado por", record.importedByName || record.importedBy || "Não informado")}${detailRow("Arquivo de status", record.statusSourceFileName)}${detailRow("Aba de status", record.statusSourceSheet)}${detailRow("Linha do status", record.statusSourceRow)}${detailRow("Referência do status", formatDate(record.statusReferenceDate))}${detailRow("Planilha de correlação", record.statusMappingFileName)}${detailRow("Linha da correlação", record.statusMappingSourceRow)}${detailRow("Arquivo de prazos/retornos", record.returnStatusSourceFileName)}${detailRow("Aba de prazos/retornos", record.returnStatusSourceSheet)}${detailRow("Linha de prazos/retornos", record.returnStatusSourceRow)}${detailRow("Referência dos prazos/retornos", formatDate(record.returnStatusReferenceDate))}${detailRow("Correção aplicada", record.returnCorrectionNote)}${detailRow("Arquivo de COTAÇÃO/NUP", record.pagSourceFileName)}${detailRow("Aba de COTAÇÃO/NUP", record.pagSourceSheet)}${detailRow("Linha de COTAÇÃO/NUP", record.pagSourceRow)}${detailRow("Referência de COTAÇÃO/NUP", formatDate(record.pagReferenceDate))}${detailRow("Correção de COTAÇÃO/NUP", record.pagCorrectionNote)}${detailRow("Atualizado em", formatDateTime(record.updatedAt || record.pagUpdatedAt || record.returnStatusUpdatedAt || record.statusUpdatedAt))}</dl></section>
+    <section class="rep-detail-group rep-detail-group--warnings"><h3>Avisos de qualidade</h3>${warnings.length ? `<ul>${Array.from(new Set(warnings)).map(warning => `<li>${escapeHtml(warning)}</li>`).join("")}</ul>` : '<p>Nenhuma divergência identificada neste registro.</p>'}</section>`;
+  els.detailEdit.hidden = !state.isAdmin; els.detailEdit.dataset.editId = record.id; els.detailDialog.showModal();
+}
+
+function closeDialog(dialog) { if (dialog?.open) dialog.close(); }
+
+function openEdit(id = "") {
+  const record = id ? findRecord(id) : null;
+  els.editForm.reset(); els.editMessage.textContent = ""; els.editMessage.className = "rep-form-message";
+  els.editRecordId.value = record?.id || "";
+  const existing = Boolean(record);
+  els.editTitle.textContent = existing ? "Complementar dados do item" : "Cadastrar item manualmente";
+  [els.editPo, els.editRequisition, els.editPn, els.editSn].forEach(input => { input.readOnly = existing; });
+  els.editPo.value = record?.po || ""; els.editRequisition.value = record?.requisition || ""; els.editPn.value = record?.partNumber || ""; els.editSn.value = record?.serialNumber || "";
+  els.editProcess.value = record?.processNumber || ""; els.editDescription.value = record?.description || "";
+  els.editItemValue.value = record?.itemValue ?? ""; els.editRepairValue.value = record?.repairValue ?? ""; els.editCurrency.value = record?.currency || "";
+  els.editNotes.value = record?.manualNotes || ""; els.editOrigin.value = record ? (activeOriginOm(record) || "") : ""; els.editStatus.value = record ? (activeRealStatus(record) || "") : "";
+  els.editRepairer.value = record?.repairerName || ""; els.editCage.value = record?.repairerCage || "";
+  els.editDialog.showModal();
+}
+
+async function saveManual(event) {
+  event.preventDefault();
+  if (!state.isAdmin || !state.user) return;
+  const existingId = els.editRecordId.value;
+  const po = normalizeIdentifier(els.editPo.value), requisition = normalizeIdentifier(els.editRequisition.value), pn = normalizeIdentifier(els.editPn.value), sn = normalizeIdentifier(els.editSn.value);
+  if (!po || !requisition || !pn || !sn) {
+    setEditMessage("Empenho/PO, requisição, PN e SN são obrigatórios.", "error"); return;
+  }
+  const id = existingId || await sha256Hex(stableKeySource(po, requisition, pn, sn));
+  const payload = {
+    processNumber: normalizeNullable(els.editProcess.value), description: normalizeNullable(els.editDescription.value),
+    itemValue: parseFlexibleNumber(els.editItemValue.value), repairValue: parseFlexibleNumber(els.editRepairValue.value),
+    currency: normalizeNullable(els.editCurrency.value), manualNotes: normalizeNullable(els.editNotes.value),
+    updatedAt: serverTimestamp(), updatedBy: state.user.uid, updatedByName: state.user.displayName || state.user.email || ""
+  };
+  if (!existingId) {
+    Object.assign(payload, {
+      po, requisition, partNumber: pn, serialNumber: sn, importKey: stableKeySource(po, requisition, pn, sn),
+      originOm: normalizeOriginOm(els.editOrigin.value).value, originOmSource: normalizeOriginOm(els.editOrigin.value).raw, originOmShortCode: normalizeOriginOm(els.editOrigin.value).shortCode, originOmNormalizationVersion: 2, originDerived: false,
+      realStatus: normalizeRealStatus(els.editStatus.value).value, realStatusSource: normalizeRealStatus(els.editStatus.value).raw,
+      realStatusDiscardReason: normalizeRealStatus(els.editStatus.value).discardedReason, visualStage: mapVisualStage(normalizeRealStatus(els.editStatus.value).value),
+      repairerName: normalizeNullable(els.editRepairer.value), repairerCage: normalizeNullable(els.editCage.value),
+      manualOnly: true, createdAt: serverTimestamp(), createdBy: state.user.uid, createdByName: state.user.displayName || state.user.email || ""
+    });
+  }
+  try {
+    await setDoc(doc(db, COLLECTION_NAME, id), payload, { merge: true });
+    await logAction(existingId ? "Atualização de material reparável" : "Cadastro manual de material reparável", { recordId: id, po, requisition });
+    closeDialog(els.editDialog);
+  } catch (error) {
+    console.error(error); setEditMessage(error.code === "permission-denied" ? "A gravação foi negada pelas regras do Firestore." : "Não foi possível salvar o registro.", "error");
+  }
+}
+
+function setEditMessage(message, type) {
+  els.editMessage.textContent = message; els.editMessage.className = `rep-form-message is-visible rep-form-message--${type}`;
+}
+
+async function deleteRecord(id) {
+  if (!state.isAdmin || !id) return;
+  const record = findRecord(id); if (!record) return;
+  if (!window.confirm(`Excluir definitivamente o item ${record.po} / ${record.requisition}? Esta ação é administrativa e não é executada automaticamente pela importação.`)) return;
+  try {
+    await deleteDoc(doc(db, COLLECTION_NAME, id));
+    await logAction("Exclusão de material reparável", { recordId: id, po: record.po, requisition: record.requisition });
+  } catch (error) {
+    window.alert(error.code === "permission-denied" ? "Exclusão negada pelas regras do Firestore." : "Não foi possível excluir o registro.");
+  }
+}
+
+async function determineAdmin(user) {
+  try { return (await getDoc(doc(db, "admins", user.uid))).exists(); } catch { return false; }
+}
+
+async function logAction(action, details = {}) {
+  if (!state.user) return;
+  try {
+    await addDoc(collection(db, "accessLogs"), {
+      uid: state.user.uid, name: state.user.displayName || state.user.email || "", email: state.user.email || "",
+      action, panel: "Controle de Materiais Reparáveis", path: "governanca-reparaveis.html",
+      details: JSON.stringify(details), timestamp: serverTimestamp(), timestampClient: new Date().toISOString()
+    });
+  } catch (error) { console.warn("Log não gravado", error); }
+}
+
+function headerMap(sheet) {
+  const range = window.XLSX.utils.decode_range(sheet["!ref"] || "A1:A1");
+  const map = new Map();
+  for (let col = range.s.c; col <= range.e.c; col += 1) {
+    const cell = sheet[window.XLSX.utils.encode_cell({ r: 0, c: col })];
+    if (cell) map.set(normalizeHeader(cell.v), col);
+  }
+  return { map, range };
+}
+
+function findHeaderColumn(map, header) {
+  const target = normalizeHeader(header);
+  for (const [key, value] of map.entries()) if (key === target) return value;
+  return null;
+}
+
+function cellAt(sheet, row, col) {
+  if (col == null) return null;
+  return sheet[window.XLSX.utils.encode_cell({ r: row, c: col })] || null;
+}
+
+function workbookDateFromName(name) {
+  const matches = String(name).match(/(\d{2})(\d{2})(\d{4})(?!\d)/g);
+  if (!matches?.length) return TODAY_ISO;
+  const value = matches[matches.length - 1];
+  return `${value.slice(4, 8)}-${value.slice(2, 4)}-${value.slice(0, 2)}`;
+}
+
+async function parseWorkbookFile(file, referenceDateIso) {
+  if (!window.XLSX) throw new Error("A biblioteca de leitura de planilhas não foi carregada.");
+  const buffer = await file.arrayBuffer();
+  const workbook = window.XLSX.read(buffer, { type: "array", cellDates: false, cellFormula: true, cellNF: true, cellText: false });
+  const sourceSheetName = SOURCE_SHEET_CANDIDATES.find(name => workbook.SheetNames.includes(name));
+  if (!sourceSheetName) throw new Error(`Nenhuma aba compatível foi encontrada. Use “${SOURCE_SHEET_CANDIDATES.join("” ou “")}”.`);
+  const sheet = workbook.Sheets[sourceSheetName]; const { map, range } = headerMap(sheet);
+  const missingHeaders = REQUIRED_HEADERS.filter(header => findHeaderColumn(map, header) == null);
+  if (missingHeaders.length) throw new Error(`Cabeçalhos obrigatórios ausentes: ${missingHeaders.join(", ")}.`);
+  const col = header => findHeaderColumn(map, header); const parsed = [], rejected = [], warnings = [], seen = new Set();
+  const quotationColumn = col("COTAÇÃO SISCAB");
+  const nupColumn = col("NUP") ?? col("NUP (PAG)");
+  let ignored = 0, excludedPo2024 = 0;
+  const quality = { tteDiscarded: 0, tteInformed: 0, omDerived: 0, unmapped: 0, tdrNoDueDate: 0, tdrDelivered: 0, tdrOverdue: 0, tdrNotReceived: 0, returnOverdue: 0, returnedLate: 0, returnedOnTime: 0, returnNotAuthorized: 0, returnPending: 0, duplicateKeys: 0 };
+  for (let row = 1; row <= range.e.r; row += 1) {
+    const value = header => cellAt(sheet, row, col(header))?.v; const formula = header => cellAt(sheet, row, col(header))?.f || "";
+    const po = normalizeIdentifier(value("PO")), requisition = normalizeIdentifier(value("REQUISIÇÃO")), pn = normalizeIdentifier(value("PN")), sn = normalizeIdentifier(value("SN"));
+    const essentials = [po, requisition, pn, sn];
+    if (!essentials.some(Boolean)) { ignored += 1; continue; }
+    if (!essentials.every(Boolean)) { rejected.push({ sourceRow: row + 1, reason: "PO, REQUISIÇÃO, PN e SN são obrigatórios." }); continue; }
+    if (isPo2024(po)) { excludedPo2024 += 1; continue; }
+    const key = stableKeySource(po, requisition, pn, sn); const id = await sha256Hex(key);
+    if (seen.has(id)) { quality.duplicateKeys += 1; rejected.push({ sourceRow: row + 1, reason: "Chave PO + REQUISIÇÃO + PN + SN duplicada no arquivo." }); continue; }
+    seen.add(id);
+    const origin = deriveOriginOm(null, requisition); if (origin.derived) quality.omDerived += 1;
+    const fee = normalizeEvaluationFee({ po, rawValue: value("TTE"), formula: formula("TTE") }); fee.value == null ? quality.tteDiscarded += Number(Boolean(fee.discardedReason)) : quality.tteInformed += 1;
+    const statusNormalization = normalizeRealStatus(value("STATUS REAL DO MATERIAL")); const realStatus = statusNormalization.value; const visualStage = mapVisualStage(realStatus); if (visualStage === "ETAPA NÃO MAPEADA") quality.unmapped += 1;
+    const conditionNormalization = normalizeRepairCondition(value("COND"));
+    const receivedAtRepairerDate = parseDateToIso(value("MAT EXP ou REC REPARADOR"));
+    const tdrDueDate = parseDateToIso(value("PRAZO p/ ENVIO TDR p/ REPARADOR"));
+    const nRawSource = normalizeControlValue(value("TDR ENV PARQUE")); const tdrSentDate = parseDateToIso(value("TDR ENV PARQUE"));
+    const tdrDeliveryRaw = nRawSource?.toLowerCase() === "none" ? "none" : (tdrSentDate || nRawSource);
+    const tdrDeliveryIndicator = nRawSource?.toLowerCase() === "none" ? "none" : (tdrSentDate ? "date" : null);
+    const tdr = calculateTdrStatus(tdrDueDate, tdrDeliveryRaw, tdrSentDate, referenceDateIso);
+    if (tdr.code === "delivered") quality.tdrDelivered += 1; if (tdr.code === "overdue") quality.tdrOverdue += 1; if (!tdrDueDate && tdr.code !== "delivered") quality.tdrNoDueDate += 1;
+    const oSource = normalizeControlValue(value("SUBPROC #")); const subprocessRaw = oSource?.toLowerCase() === "none" ? "none" : oSource;
+    const pSource = normalizeControlValue(value("FICHA RECEBIDA")); const fichaDate = parseDateToIso(value("FICHA RECEBIDA")); const fichaRaw = pSource?.toLowerCase() === "none" ? "none" : (fichaDate || pSource);
+    const documentary = classifyDocumentaryStatus(subprocessRaw, fichaRaw); if (documentary.code === "tdr-not-received") quality.tdrNotReceived += 1;
+    const serviceDecision = normalizeNullable(value("SERVIÇO APROVADO?"));
+    let serviceAuthorizationOrAsIsDate = parseDateToIso(value("SVC AUTORIZADO / SOL RETORNO AS IS"));
+    if (po === "25T000160") serviceAuthorizationOrAsIsDate = "2025-07-13";
+    const repairDeliveryNumber = parseFlexibleNumber(value("PRAZO ENTREGA (DIAS)"));
+    const repairDeliveryDays = repairDeliveryNumber == null ? null : Math.trunc(repairDeliveryNumber);
+    const dpeFinalDate = parseDateToIso(value("DPE FINAL"));
+    const dpeFinalIndicator = null;
+    const returnMaterialDate = parseDateToIso(value("RETORNO MAT"));
+    const deadline = calculateReturnDeadline({ serviceAuthorizationOrAsIsDate, repairDeliveryDays, dpeFinalDate, returnMaterialDate }, referenceDateIso);
+    if (deadline.code === "overdue") quality.returnOverdue += 1;
+    if (deadline.code === "returned-late") quality.returnedLate += 1;
+    if (deadline.code === "returned-on-time") quality.returnedOnTime += 1;
+    if (deadline.code === "not-authorized") quality.returnNotAuthorized += 1;
+    if (["due-today", "due-30", "on-time"].includes(deadline.code)) quality.returnPending += 1;
+    const recordWarnings = [];
+    if (origin.derived) recordWarnings.push(`Parque / OM derivado da requisição e normalizado como ${origin.value}`);
+    if (fee.discardedReason) recordWarnings.push("TTE descartada pela regra de qualidade");
+    if (visualStage === "ETAPA NÃO MAPEADA") recordWarnings.push(`Status sem mapeamento visual ativo: ${statusNormalization.raw || "Não informado"}`);
+    if (!tdrDueDate && tdr.code !== "delivered") recordWarnings.push("Prazo do TDR não informado na coluna M");
+    if (documentary.code === "tdr-not-received") recordWarnings.push("TDR ainda não recebido: colunas O e P em branco");
+    if ((!serviceAuthorizationOrAsIsDate || repairDeliveryDays == null || !dpeFinalDate) && [serviceAuthorizationOrAsIsDate, repairDeliveryDays, dpeFinalDate].some(value => value !== null)) recordWarnings.push("Dados de autorização/prazo incompletos; item tratado como sem prazo de retorno e não atrasado");
+    const pagFields = {};
+    if (quotationColumn != null) pagFields.cotacaoSiscab = normalizeIdentifier(cellAt(sheet, row, quotationColumn)?.v);
+    if (nupColumn != null) pagFields.nup = normalizeIdentifier(cellAt(sheet, row, nupColumn)?.v);
+    if (po === "26T000910") pagFields.nup = "67102.260284/2026-61";
+    if (po === "26T000915") pagFields.nup = "67102.260285/2026-14";
+    parsed.push({
+      id, importKey: key, po, ...pagFields, evaluationFee: fee.value, evaluationFeeCurrency: null, evaluationFeeRaw: fee.raw, evaluationFeeDiscardReason: fee.discardedReason,
+      poIssueDate: parseDateToIso(value("DATA EMISSÃO PO")), realStatus, realStatusSource: statusNormalization.raw, realStatusDiscardReason: statusNormalization.discardedReason,
+      visualStage, requisition, originOm: origin.value, originOmSource: origin.source, originOmShortCode: origin.shortCode, originOmNormalizationVersion: 2, originDerived: origin.derived, partNumber: pn, serialNumber: sn,
+      condition: conditionNormalization.value, conditionSource: conditionNormalization.raw, conditionDiscardReason: conditionNormalization.discardedReason,
+      receivedAtRepairerDate, trackingToRepairer: normalizeNullable(value("TRACKING ENVIO REPARADOR")), tdrDueDate,
+      tdrDeliveryRaw, tdrDeliveryIndicator, tdrSentDate, tdrDelivered: tdr.code === "delivered",
+      subprocessRaw, fichaRaw, fichaDate, documentaryStatusCode: documentary.code, documentaryStatusLabel: documentary.label,
+      serviceDecision, serviceAuthorizationOrAsIsDate, serviceDateLabel: contextualServiceDateLabel(serviceDecision), repairDeliveryDays,
+      dpeFinalDate, dpeFinalIndicator, returnTrackingVolume: normalizeNullable(value("TRACKING/VOLUME RETORNO REPARADOR -> DEPÓSITO")),
+      returnMaterialDate, returnDeadlineCodeAtImport: deadline.code, returnDeadlineLabelAtImport: deadline.label, returnDaysAtImport: deadline.days,
+      returnStatusSourceFileName: file.name, returnStatusSourceSheet: sourceSheetName, returnStatusSourceRow: row + 1, returnStatusReferenceDate: referenceDateIso, returnStatusUpdatedAt: referenceDateIso,
+      repairerCage: normalizeIdentifier(value("CAGE CODE REPARADOR")), repairerName: normalizeNullable(value("NOME REPARADOR")),
+      archivedOutOfScope: false, outOfScopeReason: null, qualityWarnings: recordWarnings, sourceFileName: file.name, sourceSheet: sourceSheetName, sourceRow: row + 1
+    });
+  }
+  if (!parsed.length) throw new Error("Nenhuma linha válida foi encontrada após excluir as POs iniciadas em 24T.");
+  return { fileName: file.name, fileSize: file.size, referenceDate: referenceDateIso, sheet: sourceSheetName, records: parsed, rejected, ignored, excludedPo2024, quality, warnings };
+}
+
+function importedBusinessProjection(record) {
+  const result = {};
+  IMPORTED_FIELDS.forEach(field => { result[field] = record?.[field] ?? null; });
+  return result;
+}
+
+function buildPreview(parsed) {
+  const existingMap = new Map(state.firestoreRecords.map(record => [record.id, record]));
+  let newCount = 0, updatedCount = 0, unchangedCount = 0;
+  parsed.records.forEach(record => {
+    const existing = existingMap.get(record.id);
+    if (!existing) newCount += 1;
+    else if (importedDataEqual(existing, record)) unchangedCount += 1;
+    else updatedCount += 1;
+  });
+  const incoming = new Set(parsed.records.map(record => record.id));
+  const currentIds = new Set(currentFirestoreRecords().filter(record => !record.manualOnly).map(record => record.id));
+  const missingIds = Array.from(currentIds).filter(id => !incoming.has(id));
+  return { ...parsed, newCount, updatedCount, unchangedCount, missingIds };
+}
+
+async function previewImport() {
+  if (!state.isAdmin) return;
+  const file = els.importFile.files?.[0];
+  if (!file) { setImportMessage("Selecione um arquivo .xlsx.", "error"); return; }
+  if (!/\.xlsx$/i.test(file.name)) { setImportMessage("Formato inválido. Selecione um arquivo .xlsx.", "error"); return; }
+  const competence = els.importDate.value || workbookDateFromName(file.name);
+  els.importDate.value = competence;
+  setImportMessage("Lendo e validando a planilha...", "info");
+  els.importPreviewButton.disabled = true;
+  try {
+    const parsed = await parseWorkbookFile(file, competence);
+    state.importPreview = buildPreview(parsed);
+    renderImportPreview();
+    setImportMessage("Pré-visualização concluída. Revise os totais antes de confirmar.", "success");
+  } catch (error) {
+    console.error(error); state.importPreview = null; renderImportPreview(); setImportMessage(error.message || "Não foi possível processar a planilha.", "error");
+  } finally { els.importPreviewButton.disabled = false; }
+}
+
+function renderImportPreview() {
+  const preview = state.importPreview; els.importCommitButton.disabled = !preview; els.importPreviewPanel.hidden = !preview;
+  if (!preview) { els.importPreviewGrid.innerHTML = ""; els.importWarnings.innerHTML = ""; return; }
+  const cards = [["Arquivo", preview.fileName], ["Competência", formatDate(preview.referenceDate)], ["Linhas válidas", preview.records.length], ["POs 24T excluídas", preview.excludedPo2024 || 0], ["Novas", preview.newCount], ["Alteradas", preview.updatedCount], ["Sem alteração", preview.unchangedCount], ["Rejeitadas", preview.rejected.length], ["Linhas vazias/fórmulas ignoradas", preview.ignored], ["Ausentes no lote", preview.missingIds.length]];
+  els.importPreviewGrid.innerHTML = cards.map(([label, value]) => `<article><span>${escapeHtml(label)}</span><strong>${escapeHtml(value)}</strong></article>`).join("");
+  const warnings = [];
+  if (preview.excludedPo2024) warnings.push(`${preview.excludedPo2024} PO(s) iniciada(s) em 24T excluída(s) do escopo.`);
+  if (preview.quality.tdrOverdue) warnings.push(`${preview.quality.tdrOverdue} TDR(s) atrasado(s) pela data da coluna M.`);
+  if (preview.quality.tdrNoDueDate) warnings.push(`${preview.quality.tdrNoDueDate} item(ns) sem prazo informado na coluna M.`);
+  if (preview.quality.tdrNotReceived) warnings.push(`${preview.quality.tdrNotReceived} item(ns) com O e P em branco: TDR ainda não recebido.`);
+  if (preview.quality.returnOverdue) warnings.push(`${preview.quality.returnOverdue} item(ns) com retorno atrasado e ainda não recebido.`);
+  if (preview.quality.returnedLate) warnings.push(`${preview.quality.returnedLate} item(ns) retornaram após o prazo da coluna D.`);
+  if (preview.quality.returnNotAuthorized) warnings.push(`${preview.quality.returnNotAuthorized} item(ns) sem autorização/prazo de retorno; não classificados como atrasados.`);
+  if (preview.missingIds.length) warnings.push(`${preview.missingIds.length} registro(s) não aparecem no novo arquivo; serão preservados e sinalizados como ausentes.`);
+  if (preview.rejected.length) warnings.push(`${preview.rejected.length} linha(s) rejeitada(s).`);
+  els.importWarnings.innerHTML = warnings.length ? `<ul>${warnings.map(item => `<li>${escapeHtml(item)}</li>`).join("")}</ul>` : '<p>Nenhum aviso de qualidade relevante.</p>';
+}
+
+function setImportMessage(message, type) {
+  els.importMessage.textContent = message || "";
+  els.importMessage.className = `rep-form-message${message ? ` is-visible rep-form-message--${type}` : ""}`;
+}
+
+async function commitImport() {
+  const preview = state.importPreview; if (!preview || !state.isAdmin || !state.user) return;
+  const po2024Records = state.firestoreRecords.filter(record => isPo2024(record.po) && record.archivedOutOfScope !== true);
+  const operationCount = preview.records.length + po2024Records.length + 2;
+  if (operationCount > MAX_ATOMIC_RECORDS) { setImportMessage(`A operação exigiria ${operationCount} gravações e ultrapassa o limite atômico de ${MAX_ATOMIC_RECORDS}. Nenhum dado foi gravado.`, "error"); return; }
+  els.importCommitButton.disabled = true; setImportMessage("Gravando o lote e arquivando POs 24T no Firestore...", "info");
+  try {
+    const fileHash = (await sha256Hex(`${preview.fileName}|${preview.fileSize}|${preview.records.length}`)).slice(0, 10);
+    const batchId = `rep-${preview.referenceDate.replaceAll("-", "")}-${Date.now()}-${fileHash}`;
+    const existingMap = new Map(state.firestoreRecords.map(record => [record.id, record])); const batch = writeBatch(db);
+    preview.records.forEach(record => {
+      const existing = existingMap.get(record.id); const changed = existing ? !importedDataEqual(existing, record) : true; const { id: recordId, ...recordData } = record;
+      const payload = { ...recordData, archivedOutOfScope: false, outOfScopeReason: null, manualOnly: false, importBatchId: batchId, lastSeenBatchId: batchId, sourceFileName: preview.fileName, sourceSheet: preview.sheet || SOURCE_SHEET, importedAt: serverTimestamp(), importedBy: state.user.uid, importedByName: state.user.displayName || state.user.email || "" };
+      if (!existing) payload.createdAt = serverTimestamp(); if (!existing || changed) payload.updatedAt = serverTimestamp();
+      batch.set(doc(db, COLLECTION_NAME, recordId), payload, { merge: true });
+    });
+    po2024Records.forEach(record => batch.set(doc(db, COLLECTION_NAME, record.id), { archivedOutOfScope: true, outOfScopeReason: "PO-2024", archivedAt: serverTimestamp(), archivedBy: state.user.uid, updatedAt: serverTimestamp() }, { merge: true }));
+    const metadata = { activeBatchId: batchId, sourceFileName: preview.fileName, sourceSheet: preview.sheet || SOURCE_SHEET, referenceDate: preview.referenceDate, buildVersion: "20260921-reparaveis-r1", validRows: preview.records.length, excludedPo2024: (preview.excludedPo2024 || 0) + po2024Records.length, newCount: preview.newCount, updatedCount: preview.updatedCount, unchangedCount: preview.unchangedCount, rejectedCount: preview.rejected.length, ignoredRows: preview.ignored, missingRecordIds: preview.missingIds, quality: preview.quality, importedAt: serverTimestamp(), importedBy: state.user.uid, importedByName: state.user.displayName || state.user.email || "" };
+    batch.set(doc(db, "repairProcessesConfig", "current"), metadata, { merge: true }); batch.set(doc(db, IMPORT_COLLECTION, batchId), { ...metadata, batchId, rejectedRows: preview.rejected.slice(0, 100) });
+    await batch.commit(); await logAction("Importação mensal de materiais reparáveis", { batchId, fileName: preview.fileName, validRows: preview.records.length, archivedPo2024: po2024Records.length, newCount: preview.newCount, updatedCount: preview.updatedCount, unchangedCount: preview.unchangedCount, missingCount: preview.missingIds.length });
+    setImportMessage(`Importação concluída: ${preview.records.length} registros ativos e ${po2024Records.length} PO(s) 24T arquivada(s).`, "success"); state.importPreview = null; els.importFile.value = ""; renderImportPreview(); await loadImportHistory();
+  } catch (error) { console.error(error); setImportMessage(error.code === "permission-denied" ? "Importação negada. Publique as regras atualizadas do Firestore." : `Falha na importação. Nenhum lote foi confirmado: ${error.message || error.code || "erro desconhecido"}.`, "error"); }
+  finally { els.importCommitButton.disabled = !state.importPreview; }
+}
+
+async function loadImportHistory() {
+  try {
+    const snapshot = await getDocs(query(collection(db, IMPORT_COLLECTION), orderBy("importedAt", "desc"), limit(8)));
+    state.importHistory = snapshot.docs.map(recordFromSnapshot);
+  } catch { state.importHistory = []; }
+  renderImportHistory();
+}
+
+function renderImportHistory() {
+  if (!els.importHistory) return;
+  els.importHistory.innerHTML = state.importHistory.length ? state.importHistory.map(item => `<article class="rep-import-history-item">
+    <div><strong>${escapeHtml(item.sourceFileName || "Arquivo não informado")}</strong><span>${formatDate(item.referenceDate)} · ${formatDateTime(item.importedAt)}</span></div>
+    <small>${fmtInteger.format(item.validRows || 0)} válidos · ${fmtInteger.format(item.newCount || 0)} novos · ${fmtInteger.format(item.updatedCount || 0)} alterados · ${fmtInteger.format(item.unchangedCount || 0)} sem alteração</small>
+  </article>`).join("") : '<p class="rep-empty-message">Nenhuma importação registrada no Firestore.</p>';
+}
+
+function filterSummaryText() {
+  const filters = readFilters(), values = [];
+  if (filters.po) values.push(`PO: ${els.poFilter.value}`); if (filters.quotation) values.push(`COTAÇÃO SISCAB: ${els.quotationFilter.value}`); if (filters.nup) values.push(`NUP: ${els.nupFilter.value}`); if (filters.requisition) values.push(`Requisição: ${els.requisitionFilter.value}`);
+  if (filters.status) values.push(`Status: ${filters.status}`); if (filters.stage) values.push(`Etapa: ${filters.stage}`);
+  if (filters.origin) values.push(`OM: ${filters.origin}`); if (filters.repairer) values.push(`Reparador: ${filters.repairer}`);
+  if (filters.condition) values.push(`Condição: ${filters.condition}`); if (filters.evaluationFee) values.push(`TTE: ${filters.evaluationFee}`);
+  if (filters.tdr) values.push(`TDR: ${filters.tdr}`); if (filters.documentary) values.push(`Documentação: ${filters.documentary}`); if (filters.deadline) values.push(`Prazo: ${els.deadlineFilter.options[els.deadlineFilter.selectedIndex]?.text || filters.deadline}`);
+  if (filters.search) values.push(`Busca: ${els.search.value}`); if (filters.includeAbsent) values.push("Inclui ausentes do lote atual");
+  return values.length ? values.join(" · ") : "Sem filtros adicionais";
+}
+
+function setupPdf(title, orientation = "portrait", format = "a4") {
+  const { jsPDF } = window.jspdf;
+  const pdf = new jsPDF({ orientation, unit: "mm", format });
+  pdf.setFillColor(1, 45, 107);
+  pdf.rect(0, 0, pdf.internal.pageSize.getWidth(), 24, "F");
+  pdf.setTextColor(255, 255, 255);
+  pdf.setFont("helvetica", "bold");
+  pdf.setFontSize(14);
+  pdf.text("PAINEL CABW", 14, 10);
+  pdf.setFontSize(11);
+  pdf.text(title, 14, 18);
+  pdf.setTextColor(20, 35, 70);
+  pdf.setFont("helvetica", "normal");
+  pdf.setFontSize(8);
+  pdf.text(`Gerado em ${fmtDateTime.format(new Date())}`, 14, 30);
+
+  const pageWidth = pdf.internal.pageSize.getWidth();
+  const sourceLines = pdf.splitTextToSize(
+    `Fonte/lote: ${reportSourceLabel()}`,
+    pageWidth - 28
+  );
+  pdf.text(sourceLines, 14, 35);
+  const sourceBottom = 35 + Math.max(0, sourceLines.length - 1) * 4;
+
+  const filters = pdf.splitTextToSize(
+    `Filtros: ${filterSummaryText()}`,
+    pageWidth - 28
+  );
+  const filtersY = sourceBottom + 5;
+  pdf.text(filters, 14, filtersY);
+  return { pdf, startY: filtersY + 4 + filters.length * 4 };
+}
+
+function ensurePdf() {
+  if (!state.filtered.length) { window.alert("Não há registros para o relatório com os filtros atuais."); return false; }
+  if (!window.jspdf?.jsPDF) { window.alert("A biblioteca de PDF não foi carregada."); return false; }
+  return true;
+}
+
+function generateSummaryPdf() {
+  if (!ensurePdf()) return; const records = state.filtered, enriched = records.map(record => ({ record, ...derived(record) }));
+  const { pdf, startY } = setupPdf("Relatório Gerencial — Materiais Reparáveis"); const itemValue = aggregateMoney(records, "itemValue"), repairValue = aggregateMoney(records, "repairValue");
+  pdf.autoTable({ startY, head: [["Indicador", "Valor"]], body: [
+    ["Itens controlados", String(records.length)], ["TDR entregue", String(enriched.filter(item => item.tdr.code === "delivered").length)],
+    ["TDR atrasado/próximo", String(enriched.filter(item => ["overdue", "due-soon"].includes(item.tdr.code)).length)],
+    ["TDR ainda não recebido", String(enriched.filter(item => item.documentary.code === "tdr-not-received").length)],
+    ["Atrasados — ainda não retornaram", String(enriched.filter(item => item.deadline.code === "overdue").length)],
+    ["Retornaram com atraso", String(enriched.filter(item => item.deadline.code === "returned-late").length)],
+    ["Retornaram no prazo", String(enriched.filter(item => item.deadline.code === "returned-on-time").length)],
+    ["Sem autorização / sem prazo", String(enriched.filter(item => item.deadline.code === "not-authorized").length)],
+    ["Valor dos itens", `${itemValue.value} (${itemValue.note})`], ["Reparos contratados", `${repairValue.value} (${repairValue.note})`]
+  ], headStyles: { fillColor: [1, 58, 126] }, styles: { fontSize: 8 } });
+  let y = pdf.lastAutoTable.finalY + 6; const status = new Map(); records.forEach(record => { const value = activeRealStatus(record) || "Não informado"; status.set(value, (status.get(value) || 0) + 1); });
+  pdf.autoTable({ startY: y, head: [["Status real", "Itens"]], body: Array.from(status.entries()).sort((a, b) => b[1] - a[1]), headStyles: { fillColor: [1, 58, 126] }, styles: { fontSize: 7 } });
+  y = pdf.lastAutoTable.finalY + 6; const documents = new Map(); enriched.forEach(item => documents.set(item.documentary.label, (documents.get(item.documentary.label) || 0) + 1));
+  pdf.autoTable({ startY: y, head: [["Situação documental", "Itens"]], body: Array.from(documents.entries()).sort((a, b) => b[1] - a[1]), headStyles: { fillColor: [1, 58, 126] }, styles: { fontSize: 7 } });
+  y = pdf.lastAutoTable.finalY + 6; const attention = enriched.filter(item => ["overdue", "due-soon"].includes(item.tdr.code) || item.deadline.code === "overdue").slice(0, 30);
+  if (attention.length) pdf.autoTable({ startY: y, head: [["PO", "Requisição", "PN/SN", "TDR", "Documentação", "Retorno"]], body: attention.map(item => [item.record.po, item.record.requisition, `${item.record.partNumber} / ${item.record.serialNumber}`, item.tdr.label, item.documentary.label, item.deadline.label]), headStyles: { fillColor: [179, 37, 53] }, styles: { fontSize: 6.5 } });
+  pdf.save(`materiais-reparaveis-gerencial-${TODAY_ISO}.pdf`);
+}
+
+function generateDetailedPdf() {
+  if (!ensurePdf()) return; const { pdf, startY } = setupPdf("Relatório Detalhado — Materiais Reparáveis", "landscape", "a3");
+  pdf.autoTable({
+    startY, head: [["PO", "COTAÇÃO SISCAB", "NUP", "Requisição", "PN", "SN", "OM", "Status", "Etapa", "Reparador", "TTE", "TDR", "Subprocesso/Ficha", "DPE/Retorno"]],
+    body: state.filtered.map(record => { const info = derived(record); const tte = record.evaluationFee == null ? "Não informado" : `${new Intl.NumberFormat("pt-BR", { minimumFractionDigits: 2, maximumFractionDigits: 2 }).format(record.evaluationFee)} — moeda não informada`; return [record.po, textDisplay(record.cotacaoSiscab), textDisplay(record.nup), record.requisition, record.partNumber, record.serialNumber, textDisplay(activeOriginOm(record)), textDisplay(activeRealStatus(record)), info.visualStage, textDisplay(record.repairerName), tte, info.tdr.label, info.documentary.label, info.deadline.label]; }),
+    headStyles: { fillColor: [1, 58, 126], fontSize: 5.8 }, styles: { fontSize: 4.9, cellPadding: 0.9, overflow: "linebreak" },
+    columnStyles: { 1: { cellWidth: 22 }, 2: { cellWidth: 38 }, 3: { cellWidth: 26 }, 4: { cellWidth: 24 }, 5: { cellWidth: 20 } },
+    didDrawPage: () => { pdf.setFontSize(7); pdf.setTextColor(90, 100, 120); pdf.text(`Página ${pdf.internal.getNumberOfPages()}`, pdf.internal.pageSize.getWidth() - 22, pdf.internal.pageSize.getHeight() - 6); }
+  }); pdf.save(`materiais-reparaveis-detalhado-${TODAY_ISO}.pdf`);
+}
+
+function renderAdminControls() {
+  document.querySelectorAll("[data-repair-admin]").forEach(element => { element.hidden = !state.isAdmin; });
+}
+
+function subscribeData() {
+  state.subscriptions.forEach(unsubscribe => unsubscribe?.()); state.subscriptions = [];
+  let configLoaded = false, recordsLoaded = false;
+  const update = () => { if (configLoaded && recordsLoaded) rebuildRecordSet(); };
+  state.subscriptions.push(onSnapshot(doc(db, "repairProcessesConfig", "current"), snapshot => {
+    state.config = snapshot.exists() ? { id: snapshot.id, ...snapshot.data() } : null; configLoaded = true; update();
+  }, error => { console.warn(error); state.firestoreError = error; state.config = null; configLoaded = true; update(); }));
+  state.subscriptions.push(onSnapshot(collection(db, COLLECTION_NAME), snapshot => {
+    state.firestoreRecords = snapshot.docs.map(recordFromSnapshot); recordsLoaded = true; state.firestoreError = null; update();
+  }, error => { console.error(error); state.firestoreError = error; state.firestoreRecords = []; recordsLoaded = true; update(); }));
+}
+
+function cacheElements() {
+  Object.assign(els, {
+    source: $("repSourceInfo"), importToggle: $("repImportToggle"), manualNew: $("repManualNew"), importPanel: $("repImportPanel"), importFile: $("repImportFile"), importDate: $("repImportDate"), importPreviewButton: $("repImportPreviewButton"), importCommitButton: $("repImportCommitButton"), importCancelButton: $("repImportCancelButton"), importPreviewPanel: $("repImportPreviewPanel"), importPreviewGrid: $("repImportPreviewGrid"), importWarnings: $("repImportWarnings"), importMessage: $("repImportMessage"), importHistory: $("repImportHistory"),
+    poFilter: $("repPoFilter"), quotationFilter: $("repQuotationFilter"), nupFilter: $("repNupFilter"), requisitionFilter: $("repRequisitionFilter"), statusFilter: $("repStatusFilter"), stageFilter: $("repStageFilter"), originFilter: $("repOriginFilter"), repairerFilter: $("repRepairerFilter"), conditionFilter: $("repConditionFilter"), evaluationFeeFilter: $("repEvaluationFeeFilter"), tdrFilter: $("repTdrFilter"), documentFilter: $("repDocumentFilter"), cageFilter: $("repCageFilter"), deadlineFilter: $("repDeadlineFilter"), search: $("repSearch"), sort: $("repSort"), includeAbsent: $("repIncludeAbsent"), clearFilters: $("repClearFilters"), results: $("repResults"),
+    pdfSummary: $("repPdfSummary"), pdfDetailed: $("repPdfDetailed"), kpiTotal: $("repKpiTotal"), kpiRepair: $("repKpiRepair"), kpiTransit: $("repKpiTransit"), kpiReturnedLate: $("repKpiReturnedLate"), kpiOverdue: $("repKpiOverdue"), kpiCompleted: $("repKpiCompleted"), kpiTdr: $("repKpiTdr"), kpiItemValue: $("repKpiItemValue"), kpiItemValueNote: $("repKpiItemValueNote"), kpiRepairValue: $("repKpiRepairValue"), kpiRepairValueNote: $("repKpiRepairValueNote"),
+    flowGrid: $("repFlowGrid"), clearFlow: $("repClearFlow"), statusSummary: $("repStatusSummary"), attentionList: $("repAttentionList"), qualityGrid: $("repQualityGrid"), table: $("repTable"), tableCount: $("repTableCount"), mobileList: $("repMobileList"), emptyState: $("repEmptyState"),
+    detailDialog: $("repDetailDialog"), detailTitle: $("repDetailTitle"), detailContent: $("repDetailContent"), detailClose: $("repDetailClose"), detailEdit: $("repDetailEdit"),
+    editDialog: $("repEditDialog"), editForm: $("repEditForm"), editTitle: $("repEditTitle"), editClose: $("repEditClose"), editCancel: $("repEditCancel"), editMessage: $("repEditMessage"), editRecordId: $("repEditRecordId"), editPo: $("repEditPo"), editRequisition: $("repEditRequisition"), editPn: $("repEditPn"), editSn: $("repEditSn"), editProcess: $("repEditProcess"), editDescription: $("repEditDescription"), editItemValue: $("repEditItemValue"), editRepairValue: $("repEditRepairValue"), editCurrency: $("repEditCurrency"), editNotes: $("repEditNotes"), editOrigin: $("repEditOrigin"), editStatus: $("repEditStatus"), editRepairer: $("repEditRepairer"), editCage: $("repEditCage")
+  });
+}
+
+function bindEvents() {
+  [els.statusFilter, els.stageFilter, els.originFilter, els.repairerFilter, els.conditionFilter, els.evaluationFeeFilter, els.tdrFilter, els.documentFilter, els.cageFilter, els.deadlineFilter, els.sort, els.includeAbsent].forEach(element => element.addEventListener("change", applyFilters));
+  [els.poFilter, els.quotationFilter, els.nupFilter, els.requisitionFilter, els.search].forEach(element => element.addEventListener("input", applyFilters));
+  els.clearFilters.addEventListener("click", clearFilters); els.clearFlow.addEventListener("click", () => { state.flowGroup = ""; applyFilters(); });
+  els.pdfSummary.addEventListener("click", generateSummaryPdf); els.pdfDetailed.addEventListener("click", generateDetailedPdf);
+  els.importToggle.addEventListener("click", () => { els.importPanel.hidden = !els.importPanel.hidden; if (!els.importPanel.hidden) els.importFile.focus(); });
+  els.importCancelButton.addEventListener("click", () => { state.importPreview = null; els.importFile.value = ""; renderImportPreview(); setImportMessage("", "info"); els.importPanel.hidden = true; });
+  els.importPreviewButton.addEventListener("click", previewImport); els.importCommitButton.addEventListener("click", commitImport);
+  els.importFile.addEventListener("change", () => { if (els.importFile.files?.[0]) els.importDate.value = workbookDateFromName(els.importFile.files[0].name); });
+  els.manualNew.addEventListener("click", () => openEdit());
+  els.detailClose.addEventListener("click", () => closeDialog(els.detailDialog)); els.detailEdit.addEventListener("click", () => { const id = els.detailEdit.dataset.editId; closeDialog(els.detailDialog); openEdit(id); });
+  els.editClose.addEventListener("click", () => closeDialog(els.editDialog)); els.editCancel.addEventListener("click", () => closeDialog(els.editDialog)); els.editForm.addEventListener("submit", saveManual);
+  [els.detailDialog, els.editDialog].forEach(dialog => dialog.addEventListener("click", event => { if (event.target === dialog) closeDialog(dialog); }));
+}
+
+document.addEventListener("DOMContentLoaded", () => {
+  cacheElements(); bindEvents(); els.importDate.value = BUNDLED_REPAIR_DATA.metadata.referenceDate;
+  rebuildRecordSet();
+  onAuthStateChanged(auth, async user => {
+    if (!user) return;
+    state.user = user; state.isAdmin = await determineAdmin(user); renderAdminControls(); subscribeData(); loadImportHistory();
+  });
+});
