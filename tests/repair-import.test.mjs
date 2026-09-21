@@ -152,17 +152,21 @@ test("variações da planilha e nomenclaturas antigas são canonicalizadas", () 
     "5-Item Exp Reparador"
   );
   assert.equal(
+    normalizeRealStatus("3-Item Exp pelo CTLA").value,
+    "3-Item Exp CTLA"
+  );
+  assert.equal(
     normalizeRealStatus("7-Rep Recebido").value,
     "7-Item Recebido"
   );
 });
 
-test("base de status 19/08 possui 113 registros únicos e nenhuma PO 24T", () => {
-  assert.equal(payload.metadata.referenceDate, "2026-08-20");
-  assert.equal(payload.metadata.statusReferenceDate, "2026-08-19");
-  assert.equal(payload.metadata.validRows, 113);
-  assert.equal(payload.records.length, 113);
-  assert.equal(new Set(payload.records.map(item => item.id)).size, 113);
+test("base de 21/09 possui 160 registros únicos e nenhuma PO 24T", () => {
+  assert.equal(payload.metadata.referenceDate, "2026-09-21");
+  assert.equal(payload.metadata.statusReferenceDate, "2026-09-21");
+  assert.equal(payload.metadata.validRows, 160);
+  assert.equal(payload.records.length, 160);
+  assert.equal(new Set(payload.records.map(item => item.id)).size, 160);
   assert.equal(payload.records.some(item => /^24T/i.test(item.po)), false);
 });
 
@@ -179,7 +183,7 @@ test("todos os registros possuem status e etapa conforme as opções oficiais", 
     payload.records.every(
       item =>
         item.statusSourceFileName ===
-        "19AGO V3 - CONTROLE REPARO - SGT ROZENDO.xlsx"
+        "CONTROLE REPARO - SGT ROZENDO - atz PAINEL 21SET.xlsx"
     ),
     true
   );
@@ -187,26 +191,26 @@ test("todos os registros possuem status e etapa conforme as opções oficiais", 
 
 test("contagens de status e etapas correspondem à planilha de atualização", () => {
   assert.deepEqual(payload.metadata.statusCounts, {
-    "7-Item Recebido": 70,
+    "7-Item Recebido": 74,
     "6-Item no Reparador": 16,
-    "4-Item chegou CABW/CABE": 4,
-    "2-Item Chegou CTLA": 19,
-    "1-Empenho Aprovado": 3,
-    "5-Item Exp Reparador": 1
+    "2-Item Chegou CTLA": 51,
+    "3-Item Exp CTLA": 3,
+    "5-Item Exp Reparador": 1,
+    "1-Empenho Aprovado": 15
   });
   assert.deepEqual(payload.metadata.stageCounts, {
-    "CABW/CABE (retorno)": 70,
+    "CABW/CABE (retorno)": 74,
     "Reparador": 16,
-    "Trânsito ao Reparador": 5,
-    "Brasil / CTLA": 19,
-    "Brasil/ OM Requisitante": 3
+    "Brasil / CTLA": 51,
+    "Trânsito ao Reparador": 4,
+    "Brasil/ OM Requisitante": 15
   });
 });
 
-test("todas as 113 linhas mantêm TTE válida e dados anteriores", () => {
+test("todas as 160 linhas mantêm TTE válida", () => {
   assert.equal(
     payload.records.filter(item => item.evaluationFee != null).length,
-    113
+    160
   );
 });
 
@@ -216,7 +220,13 @@ test("reimportação idêntica não duplica", () => {
   payload.records.forEach(item => {
     if (importedDataEqual(current.get(item.id), item)) unchanged += 1;
   });
-  assert.equal(unchanged, 113);
+  assert.equal(unchanged, 160);
+});
+
+test("alteração de NUP é reconhecida como mudança importada", () => {
+  const sample = payload.records.find(item => item.po === "26T000910");
+  assert.ok(sample);
+  assert.equal(importedDataEqual(sample, { ...sample, nup: "67102.999999/2026-99" }), false);
 });
 
 test("chave estável é determinística", async () => {
@@ -283,9 +293,9 @@ test("retorno igual ou anterior à DPE é classificado no prazo", () => {
   );
 });
 
-test("base de retorno 20/08 aplica correções confirmadas", () => {
-  assert.equal(payload.metadata.referenceDate, "2026-08-20");
-  assert.equal(payload.metadata.returnStatusSourceFileName, "19AGO - CONTROLE REPARO - SGT ROZENDO.xlsx");
+test("base de retorno 21/09 aplica correções confirmadas", () => {
+  assert.equal(payload.metadata.referenceDate, "2026-09-21");
+  assert.equal(payload.metadata.returnStatusSourceFileName, "CONTROLE REPARO - SGT ROZENDO - atz PAINEL 21SET.xlsx");
   const po160 = payload.records.find(item => item.po === "25T000160");
   assert.equal(po160.serviceAuthorizationOrAsIsDate, "2025-07-13");
   const po800 = payload.records.find(item => item.po === "26T000800" && item.sourceRow === 105);
@@ -296,10 +306,11 @@ test("base de retorno 20/08 aplica correções confirmadas", () => {
 test("contagens de retorno correspondem à planilha atualizada", () => {
   assert.deepEqual(payload.metadata.returnDeadlineCounts, {
     "returned-on-time": 20,
-    "returned-late": 50,
-    "not-authorized": 33,
-    "overdue": 7,
-    "on-time": 3
+    "returned-late": 54,
+    "not-authorized": 79,
+    "overdue": 3,
+    "on-time": 3,
+    "due-30": 1
   });
 });
 
@@ -327,11 +338,11 @@ test("base ativa não contém abreviações antigas no campo Parque / OM", () =>
   assert.equal(payload.records.every(item => allowed.has(item.originOm)), true);
   assert.deepEqual(payload.metadata.originOmCounts, {
     "PAME-RJ": 4,
-    "PAMA-SP": 76,
+    "PAMA-SP": 123,
     "PAMA-GL": 31,
     "PAMB-RJ": 2
   });
-  assert.equal(payload.metadata.originOmChangesApplied, 113);
+  assert.equal(payload.metadata.originOmChangesApplied, 160);
 });
 
 
@@ -361,18 +372,18 @@ test("painel separa retornos tardios de itens atrasados ainda sem retorno", () =
 
 test("metadados registram os dois grupos de atraso separadamente", () => {
   assert.deepEqual(payload.metadata.returnKpiCounts, {
-    returnedLate: 50,
-    overdueNotReturned: 7
+    returnedLate: 54,
+    overdueNotReturned: 3
   });
   assert.equal(payload.metadata.returnKpiSplitVersion, 2);
 });
 
 
-test("base ativa possui COTAÇÃO SISCAB e NUP para todos os itens", () => {
-  assert.equal(payload.records.length, 113);
-  assert.equal(payload.records.every(item => /^\d{6}$/.test(String(item.cotacaoSiscab || ""))), true);
+test("base ativa possui NUP para todos e preserva COTAÇÃO SISCAB da base anterior", () => {
+  assert.equal(payload.records.length, 160);
+  assert.equal(payload.records.filter(item => /^\d{6}$/.test(String(item.cotacaoSiscab || ""))).length, 113);
   assert.equal(payload.records.every(item => /^67102\.\d{6}\/\d{4}-\d{2}$/.test(String(item.nup || ""))), true);
-  assert.equal(new Set(payload.records.map(item => item.po)).size, 60);
+  assert.equal(new Set(payload.records.map(item => item.po)).size, 81);
 });
 
 test("correções confirmadas de COTAÇÃO SISCAB e NUP foram aplicadas", () => {
@@ -392,4 +403,11 @@ test("painel inclui filtros e PDF detalhado de COTAÇÃO SISCAB e NUP", () => {
   assert.match(panel, /"COTAÇÃO SISCAB", "NUP"/);
   assert.match(panel, /record\.cotacaoSiscab/);
   assert.match(panel, /record\.nup/);
+});
+
+
+test("importador aceita a aba atual e o cabeçalho NUP (PAG)", () => {
+  const panel = fs.readFileSync(path.join(__dirname, "../assets/js/repair-processes-panel.js"), "utf8");
+  assert.match(panel, /PO\\'s 2025 - 2026|PO\'s 2025 - 2026/);
+  assert.match(panel, /col\("NUP"\) \?\? col\("NUP \(PAG\)"\)/);
 });
