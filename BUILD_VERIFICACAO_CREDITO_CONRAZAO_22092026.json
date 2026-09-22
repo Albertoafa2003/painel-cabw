@@ -1,0 +1,153 @@
+{
+  "build": "CREDITO_CONRAZAO_22092026",
+  "generatedAtUtc": "2026-09-22T12:46:39.021553+00:00",
+  "basePackage": "cabw_site_reparaveis_21092026_VERIFICADO.zip",
+  "sources": {
+    "report": {
+      "file": "RELATÓRIO_CRÉDITO_DISPONÍVEL_CABW_22092026(1).docx",
+      "sha256": "6928efb43a4caddd4797e0b9861ead088fdad9350a687dc98fac9c0df7e8bf1f"
+    },
+    "conrazao": {
+      "file": "CONRAZAO(20260922-122545).TX",
+      "sha256": "5670a387bb7aff4705227aa802b35c8e34b4b59bda87021addcd9ed257fb3621"
+    }
+  },
+  "credit": {
+    "position": "22/09/2026",
+    "availableUsd": 2367676.08,
+    "received2026Usd": 129588112.12,
+    "availablePercent": 1.83,
+    "differenceUsd": 127220436.04,
+    "launches": 102,
+    "groupedCommitmentKeys": 88,
+    "ugCount": 15,
+    "actionCount": 17,
+    "piCount": 47,
+    "expenseNatureCount": 8,
+    "fundingSourceCount": 7,
+    "largestUg": "120026 - PAMA-LS",
+    "largestUgUsd": 900096.22,
+    "largestAction": "2048",
+    "largestActionUsd": 1357205.85
+  },
+  "requisitionsCross": {
+    "requisitionsPosition": "14/09/2026",
+    "requestCount": 90,
+    "requestValue": 2577417.71,
+    "committedValue": 0,
+    "balanceToCommit": 2577417.71,
+    "creditAvailable": 1352451.2,
+    "creditRemaining": 276105.91,
+    "deficit": 1501072.42,
+    "groups": [
+      {
+        "om": "PAMA-GL",
+        "ugCode": "120049",
+        "nature": "449052",
+        "requestCount": 20,
+        "balanceToCommit": 392317.75,
+        "creditAvailable": 133726.65,
+        "creditRemaining": 0,
+        "deficit": 258591.1,
+        "status": "Crédito insuficiente"
+      },
+      {
+        "om": "PAMA-GL",
+        "ugCode": "120049",
+        "nature": "339030",
+        "requestCount": 3,
+        "balanceToCommit": 1691.75,
+        "creditAvailable": 25906.55,
+        "creditRemaining": 24214.8,
+        "deficit": 0,
+        "status": "Crédito suficiente"
+      },
+      {
+        "om": "PAMA-LS",
+        "ugCode": "120026",
+        "nature": "339030",
+        "requestCount": 40,
+        "balanceToCommit": 1809381.85,
+        "creditAvailable": 706560.31,
+        "creditRemaining": 0,
+        "deficit": 1102821.54,
+        "status": "Crédito insuficiente"
+      },
+      {
+        "om": "PAMA-LS",
+        "ugCode": "120026",
+        "nature": "449052",
+        "requestCount": 1,
+        "balanceToCommit": 16256,
+        "creditAvailable": 27861.76,
+        "creditRemaining": 11605.76,
+        "deficit": 0,
+        "status": "Crédito suficiente"
+      },
+      {
+        "om": "PAMA-SP",
+        "ugCode": "120068",
+        "nature": "339030",
+        "requestCount": 14,
+        "balanceToCommit": 204392.5,
+        "creditAvailable": 444677.85,
+        "creditRemaining": 240285.35,
+        "deficit": 0,
+        "status": "Crédito suficiente"
+      },
+      {
+        "om": "PAMA-SP",
+        "ugCode": "120068",
+        "nature": "339039",
+        "requestCount": 12,
+        "balanceToCommit": 153377.86,
+        "creditAvailable": 13718.08,
+        "creditRemaining": 0,
+        "deficit": 139659.78,
+        "status": "Crédito insuficiente"
+      }
+    ],
+    "sufficient": 3,
+    "insufficient": 3
+  },
+  "preservedBases": {
+    "contracts": "11/09/2026",
+    "repairables": "21/09/2026",
+    "requisitions": "14/09/2026"
+  },
+  "updatedAreas": [
+    "Crédito Disponível - Visão Executiva",
+    "Análise por UG",
+    "Análise por Ação",
+    "Detalhamento Analítico",
+    "PI e Natureza de Despesa",
+    "Consistência",
+    "Crédito x Requisições",
+    "Requisições - texto de referência",
+    "CABW em Números"
+  ],
+  "validation": {
+    "npmTestsPassed": 102,
+    "npmTestsFailed": 0,
+    "javascriptSyntax": "approved",
+    "htmlPagesChecked": 39,
+    "missingLocalReferences": 0,
+    "duplicateHtmlIds": 0,
+    "reportConrazaoReconciled": true
+  },
+  "keyFilesSha256": {
+    "assets/data/credit-current.json": "77ea08e3bb0f066d746257453ce10dc7f85630fcb6fbc9de25508d1f15b448d7",
+    "assets/data/credit-budget-detailed-current.json": "1f86d0fcc9512806218650e9927f1b0142fb1eaa6ffdd50f6cdb81be110eec78",
+    "assets/data/requisition-credit-cross-summary-22092026.json": "b891195a461460e1c706b3cedeb5aa7d0539f70aca1479c84bd8adfc53953d29",
+    "assets/js/requisition-credit-cross-panel.js": "28abecfdd28fc0d0738c0fb3d2cf9d458331318b750225dbc859b436fe35fda1",
+    "assets/js/cabw-numeros.js": "cf5d3274591d607733f329ebe73862911b78098fa23352617fafc4e67291d2c5",
+    "credito-visao-executiva.html": "f741f4a2f7bf67e6ef00a8466bd65f8c89feb02bb6eb8df9676e953b9bcec318",
+    "ug.html": "d7fa27c1f88a59f21bdcd2180069ec6621f0419f8688edaa5ff53fc35531916b",
+    "action.html": "7fb29fd4151b0afe6474a35557a4306c8b79406687cd30db1a879ea4574ce95d",
+    "detail.html": "57888a7b9dfbfbb8f053abc0f879a5a58601f858af3ed81a04bf8a9468c3d981",
+    "consistency.html": "366175d762495aae5af5458e1ea347febf35beaa23c5e7a936867d2f99269a86",
+    "credito-detalhamento-orcamentario.html": "63a34049ca5a20c8008ec85adb7d8fddaa3ac7dbb1eef564b8317a7e40c48516",
+    "requisicoes-cruzamento-credito.html": "77fb76e2630a8deb27596484628364e5272bf8e9d6488b88b52b02ecc6f450ce",
+    "governanca-cabw-numeros.html": "5a7623b4690a107610e2b37c6afe6fd4177a7f7c532177de85c0ae638f0cdf26"
+  }
+}
