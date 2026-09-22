@@ -1,0 +1,14 @@
+{
+  "currency": "USD",
+  "counterCurrency": "BRL",
+  "rate": 5.1161,
+  "date": "2026-09-22",
+  "type": "Fechamento",
+  "side": "Venda",
+  "source": "Banco Central do Brasil — PTAX",
+  "sourceUrl": "https://ptax.bcb.gov.br/ptax_internet/consultarUltimaCotacaoDolar.do",
+  "retrievedOn": "2026-09-22",
+  "evidence": "Página oficial consultada: fechamento de 22/09/2026, compra 5,1155; venda 5,1161.",
+  "mode": "snapshot",
+  "thresholdBrl": 120000
+}

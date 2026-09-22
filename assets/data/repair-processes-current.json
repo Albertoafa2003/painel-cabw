@@ -276,7 +276,16 @@
       "removed": 0,
       "changedRetained": 13
     },
-    "preservedCorrectionsPolicy": "Opção B confirmada em 21/09/2026: manter correções anteriores em caso de divergência com a nova planilha."
+    "preservedCorrectionsPolicy": "Opção B confirmada em 21/09/2026: manter correções anteriores em caso de divergência com a nova planilha.",
+    "patrimonialSource": {
+      "file": "CONTROLE REPARO - SGT ROZENDO - atz PAINEL 21SET(1).xlsx",
+      "sha256": "8a6fe1f838af06974aa5cd75b3b640368318eb86affb79dca320c39329fe15bf",
+      "column": "VALOR ATUAL DO ITEM",
+      "currency": "USD",
+      "referenceDate": "2026-09-22",
+      "knownItems": 83,
+      "unknownItems": 77
+    }
   },
   "records": [
     {
@@ -375,7 +384,14 @@
       "pagSourceRow": 2,
       "pagReferenceDate": "2026-09-21",
       "pagUpdatedAt": "2026-09-21",
-      "pagCorrectionNote": null
+      "pagCorrectionNote": null,
+      "patrimonialValueUsd": null,
+      "patrimonialCurrency": "USD",
+      "patrimonialSourceFile": "CONTROLE REPARO - SGT ROZENDO - atz PAINEL 21SET(1).xlsx",
+      "patrimonialSourceSheet": "PO's 2025 - 2026",
+      "patrimonialSourceRow": 2,
+      "patrimonialReferenceDate": "2026-09-22",
+      "patrimonialValueField": "VALOR ATUAL DO ITEM"
     },
     {
       "id": "1caf91943f06284022fbd2359dafe95f8ba7cbc946f42c739c990e7956552e70",
@@ -473,7 +489,14 @@
       "pagSourceRow": 3,
       "pagReferenceDate": "2026-09-21",
       "pagUpdatedAt": "2026-09-21",
-      "pagCorrectionNote": null
+      "pagCorrectionNote": null,
+      "patrimonialValueUsd": null,
+      "patrimonialCurrency": "USD",
+      "patrimonialSourceFile": "CONTROLE REPARO - SGT ROZENDO - atz PAINEL 21SET(1).xlsx",
+      "patrimonialSourceSheet": "PO's 2025 - 2026",
+      "patrimonialSourceRow": 3,
+      "patrimonialReferenceDate": "2026-09-22",
+      "patrimonialValueField": "VALOR ATUAL DO ITEM"
     },
     {
       "id": "d947a215cfd15d696ef2c0354051c921099799baf7056b96deafd67ecb9ebbcd",
@@ -571,7 +594,14 @@
       "pagSourceRow": 4,
       "pagReferenceDate": "2026-09-21",
       "pagUpdatedAt": "2026-09-21",
-      "pagCorrectionNote": null
+      "pagCorrectionNote": null,
+      "patrimonialValueUsd": null,
+      "patrimonialCurrency": "USD",
+      "patrimonialSourceFile": "CONTROLE REPARO - SGT ROZENDO - atz PAINEL 21SET(1).xlsx",
+      "patrimonialSourceSheet": "PO's 2025 - 2026",
+      "patrimonialSourceRow": 4,
+      "patrimonialReferenceDate": "2026-09-22",
+      "patrimonialValueField": "VALOR ATUAL DO ITEM"
     },
     {
       "id": "e8d2d58d9d32efbed96c41b535b6e705c60b2d8f0cd272d7b3c0cca91d82b22f",
@@ -669,7 +699,14 @@
       "pagSourceRow": 5,
       "pagReferenceDate": "2026-09-21",
       "pagUpdatedAt": "2026-09-21",
-      "pagCorrectionNote": null
+      "pagCorrectionNote": null,
+      "patrimonialValueUsd": null,
+      "patrimonialCurrency": "USD",
+      "patrimonialSourceFile": "CONTROLE REPARO - SGT ROZENDO - atz PAINEL 21SET(1).xlsx",
+      "patrimonialSourceSheet": "PO's 2025 - 2026",
+      "patrimonialSourceRow": 5,
+      "patrimonialReferenceDate": "2026-09-22",
+      "patrimonialValueField": "VALOR ATUAL DO ITEM"
     },
     {
       "id": "4c78230246a6c37afdd9412efa1a92435dca1608afcb862ff40ba21f86f4b57d",
@@ -767,7 +804,14 @@
       "pagSourceRow": 6,
       "pagReferenceDate": "2026-09-21",
       "pagUpdatedAt": "2026-09-21",
-      "pagCorrectionNote": null
+      "pagCorrectionNote": null,
+      "patrimonialValueUsd": null,
+      "patrimonialCurrency": "USD",
+      "patrimonialSourceFile": "CONTROLE REPARO - SGT ROZENDO - atz PAINEL 21SET(1).xlsx",
+      "patrimonialSourceSheet": "PO's 2025 - 2026",
+      "patrimonialSourceRow": 6,
+      "patrimonialReferenceDate": "2026-09-22",
+      "patrimonialValueField": "VALOR ATUAL DO ITEM"
     },
     {
       "id": "7a142c2bf4f0ab189a7b74a0e7a73fef3ced5077f4c5145a1319da94250284e3",
@@ -865,7 +909,14 @@
       "pagSourceRow": 7,
       "pagReferenceDate": "2026-09-21",
       "pagUpdatedAt": "2026-09-21",
-      "pagCorrectionNote": null
+      "pagCorrectionNote": null,
+      "patrimonialValueUsd": null,
+      "patrimonialCurrency": "USD",
+      "patrimonialSourceFile": "CONTROLE REPARO - SGT ROZENDO - atz PAINEL 21SET(1).xlsx",
+      "patrimonialSourceSheet": "PO's 2025 - 2026",
+      "patrimonialSourceRow": 7,
+      "patrimonialReferenceDate": "2026-09-22",
+      "patrimonialValueField": "VALOR ATUAL DO ITEM"
     },
     {
       "id": "44325dc10cc7134029d18cad76c88a1248c225ef395c387b26075da4a8947cfa",
@@ -963,7 +1014,14 @@
       "pagSourceRow": 8,
       "pagReferenceDate": "2026-09-21",
       "pagUpdatedAt": "2026-09-21",
-      "pagCorrectionNote": null
+      "pagCorrectionNote": null,
+      "patrimonialValueUsd": null,
+      "patrimonialCurrency": "USD",
+      "patrimonialSourceFile": "CONTROLE REPARO - SGT ROZENDO - atz PAINEL 21SET(1).xlsx",
+      "patrimonialSourceSheet": "PO's 2025 - 2026",
+      "patrimonialSourceRow": 8,
+      "patrimonialReferenceDate": "2026-09-22",
+      "patrimonialValueField": "VALOR ATUAL DO ITEM"
     },
     {
       "id": "2b9ed105d6d5ee6a4e98b1a4bf1772d0a1ab6c02740d860e06e592f197ef5e53",
@@ -1061,7 +1119,14 @@
       "pagSourceRow": 9,
       "pagReferenceDate": "2026-09-21",
       "pagUpdatedAt": "2026-09-21",
-      "pagCorrectionNote": null
+      "pagCorrectionNote": null,
+      "patrimonialValueUsd": null,
+      "patrimonialCurrency": "USD",
+      "patrimonialSourceFile": "CONTROLE REPARO - SGT ROZENDO - atz PAINEL 21SET(1).xlsx",
+      "patrimonialSourceSheet": "PO's 2025 - 2026",
+      "patrimonialSourceRow": 9,
+      "patrimonialReferenceDate": "2026-09-22",
+      "patrimonialValueField": "VALOR ATUAL DO ITEM"
     },
     {
       "id": "6ecea4ecd0718734e8275f7f5dc0329bedf245896be9e7b3762fbf06f3abbd4f",
@@ -1159,7 +1224,14 @@
       "pagSourceRow": 10,
       "pagReferenceDate": "2026-09-21",
       "pagUpdatedAt": "2026-09-21",
-      "pagCorrectionNote": null
+      "pagCorrectionNote": null,
+      "patrimonialValueUsd": null,
+      "patrimonialCurrency": "USD",
+      "patrimonialSourceFile": "CONTROLE REPARO - SGT ROZENDO - atz PAINEL 21SET(1).xlsx",
+      "patrimonialSourceSheet": "PO's 2025 - 2026",
+      "patrimonialSourceRow": 10,
+      "patrimonialReferenceDate": "2026-09-22",
+      "patrimonialValueField": "VALOR ATUAL DO ITEM"
     },
     {
       "id": "6077ef51c6c92bab151c8aa8bfd7cade498eaef49b4d2287fb1a5b0be90c4b63",
@@ -1258,7 +1330,14 @@
       "pagSourceRow": 11,
       "pagReferenceDate": "2026-09-21",
       "pagUpdatedAt": "2026-09-21",
-      "pagCorrectionNote": null
+      "pagCorrectionNote": null,
+      "patrimonialValueUsd": null,
+      "patrimonialCurrency": "USD",
+      "patrimonialSourceFile": "CONTROLE REPARO - SGT ROZENDO - atz PAINEL 21SET(1).xlsx",
+      "patrimonialSourceSheet": "PO's 2025 - 2026",
+      "patrimonialSourceRow": 11,
+      "patrimonialReferenceDate": "2026-09-22",
+      "patrimonialValueField": "VALOR ATUAL DO ITEM"
     },
     {
       "id": "2421515b682c38d8086b8b860cbfec381cda79e477630284a3a30d4ceb27f697",
@@ -1356,7 +1435,14 @@
       "pagSourceRow": 12,
       "pagReferenceDate": "2026-09-21",
       "pagUpdatedAt": "2026-09-21",
-      "pagCorrectionNote": null
+      "pagCorrectionNote": null,
+      "patrimonialValueUsd": null,
+      "patrimonialCurrency": "USD",
+      "patrimonialSourceFile": "CONTROLE REPARO - SGT ROZENDO - atz PAINEL 21SET(1).xlsx",
+      "patrimonialSourceSheet": "PO's 2025 - 2026",
+      "patrimonialSourceRow": 12,
+      "patrimonialReferenceDate": "2026-09-22",
+      "patrimonialValueField": "VALOR ATUAL DO ITEM"
     },
     {
       "id": "5884fc752ac5b3630d814d2027fe81943a6f094c651182280b259416daa9d8df",
@@ -1454,7 +1540,14 @@
       "pagSourceRow": 13,
       "pagReferenceDate": "2026-09-21",
       "pagUpdatedAt": "2026-09-21",
-      "pagCorrectionNote": null
+      "pagCorrectionNote": null,
+      "patrimonialValueUsd": null,
+      "patrimonialCurrency": "USD",
+      "patrimonialSourceFile": "CONTROLE REPARO - SGT ROZENDO - atz PAINEL 21SET(1).xlsx",
+      "patrimonialSourceSheet": "PO's 2025 - 2026",
+      "patrimonialSourceRow": 13,
+      "patrimonialReferenceDate": "2026-09-22",
+      "patrimonialValueField": "VALOR ATUAL DO ITEM"
     },
     {
       "id": "edb994e103c849f567f81de74417ce9ca6d776f019aad97319ca1ef4d3efa87a",
@@ -1552,7 +1645,14 @@
       "pagSourceRow": 14,
       "pagReferenceDate": "2026-09-21",
       "pagUpdatedAt": "2026-09-21",
-      "pagCorrectionNote": null
+      "pagCorrectionNote": null,
+      "patrimonialValueUsd": null,
+      "patrimonialCurrency": "USD",
+      "patrimonialSourceFile": "CONTROLE REPARO - SGT ROZENDO - atz PAINEL 21SET(1).xlsx",
+      "patrimonialSourceSheet": "PO's 2025 - 2026",
+      "patrimonialSourceRow": 14,
+      "patrimonialReferenceDate": "2026-09-22",
+      "patrimonialValueField": "VALOR ATUAL DO ITEM"
     },
     {
       "id": "ed07289957e841f264668a8de5c0d1633f1754c8ceecee71cef07e82b88c65ef",
@@ -1650,7 +1750,14 @@
       "pagSourceRow": 15,
       "pagReferenceDate": "2026-09-21",
       "pagUpdatedAt": "2026-09-21",
-      "pagCorrectionNote": null
+      "pagCorrectionNote": null,
+      "patrimonialValueUsd": null,
+      "patrimonialCurrency": "USD",
+      "patrimonialSourceFile": "CONTROLE REPARO - SGT ROZENDO - atz PAINEL 21SET(1).xlsx",
+      "patrimonialSourceSheet": "PO's 2025 - 2026",
+      "patrimonialSourceRow": 15,
+      "patrimonialReferenceDate": "2026-09-22",
+      "patrimonialValueField": "VALOR ATUAL DO ITEM"
     },
     {
       "id": "e76f38ffcb688bbb3b347648768014426a9b9b9eb1032af82b06178c685ca491",
@@ -1748,7 +1855,14 @@
       "pagSourceRow": 16,
       "pagReferenceDate": "2026-09-21",
       "pagUpdatedAt": "2026-09-21",
-      "pagCorrectionNote": null
+      "pagCorrectionNote": null,
+      "patrimonialValueUsd": null,
+      "patrimonialCurrency": "USD",
+      "patrimonialSourceFile": "CONTROLE REPARO - SGT ROZENDO - atz PAINEL 21SET(1).xlsx",
+      "patrimonialSourceSheet": "PO's 2025 - 2026",
+      "patrimonialSourceRow": 16,
+      "patrimonialReferenceDate": "2026-09-22",
+      "patrimonialValueField": "VALOR ATUAL DO ITEM"
     },
     {
       "id": "f025620441a2b46299e29765be879a491b7dfe71184ebb4ff6e89727a4b69f15",
@@ -1846,7 +1960,14 @@
       "pagSourceRow": 17,
       "pagReferenceDate": "2026-09-21",
       "pagUpdatedAt": "2026-09-21",
-      "pagCorrectionNote": null
+      "pagCorrectionNote": null,
+      "patrimonialValueUsd": null,
+      "patrimonialCurrency": "USD",
+      "patrimonialSourceFile": "CONTROLE REPARO - SGT ROZENDO - atz PAINEL 21SET(1).xlsx",
+      "patrimonialSourceSheet": "PO's 2025 - 2026",
+      "patrimonialSourceRow": 17,
+      "patrimonialReferenceDate": "2026-09-22",
+      "patrimonialValueField": "VALOR ATUAL DO ITEM"
     },
     {
       "id": "7f4a31628cdbc3e597f7e3d050af35eb8cfa123fd609e7f664d0865488986828",
@@ -1944,7 +2065,14 @@
       "pagSourceRow": 18,
       "pagReferenceDate": "2026-09-21",
       "pagUpdatedAt": "2026-09-21",
-      "pagCorrectionNote": null
+      "pagCorrectionNote": null,
+      "patrimonialValueUsd": null,
+      "patrimonialCurrency": "USD",
+      "patrimonialSourceFile": "CONTROLE REPARO - SGT ROZENDO - atz PAINEL 21SET(1).xlsx",
+      "patrimonialSourceSheet": "PO's 2025 - 2026",
+      "patrimonialSourceRow": 18,
+      "patrimonialReferenceDate": "2026-09-22",
+      "patrimonialValueField": "VALOR ATUAL DO ITEM"
     },
     {
       "id": "8954aba81286ed9a339af67b9546b55cb2dc33079169bdd88f5f6451d2317039",
@@ -2042,7 +2170,14 @@
       "pagSourceRow": 19,
       "pagReferenceDate": "2026-09-21",
       "pagUpdatedAt": "2026-09-21",
-      "pagCorrectionNote": null
+      "pagCorrectionNote": null,
+      "patrimonialValueUsd": null,
+      "patrimonialCurrency": "USD",
+      "patrimonialSourceFile": "CONTROLE REPARO - SGT ROZENDO - atz PAINEL 21SET(1).xlsx",
+      "patrimonialSourceSheet": "PO's 2025 - 2026",
+      "patrimonialSourceRow": 19,
+      "patrimonialReferenceDate": "2026-09-22",
+      "patrimonialValueField": "VALOR ATUAL DO ITEM"
     },
     {
       "id": "5fe1b7e81b6c115686a2d202a2eb664a52799d5a43a1c866f81bd384f4ec56f5",
@@ -2140,7 +2275,14 @@
       "pagSourceRow": 20,
       "pagReferenceDate": "2026-09-21",
       "pagUpdatedAt": "2026-09-21",
-      "pagCorrectionNote": null
+      "pagCorrectionNote": null,
+      "patrimonialValueUsd": null,
+      "patrimonialCurrency": "USD",
+      "patrimonialSourceFile": "CONTROLE REPARO - SGT ROZENDO - atz PAINEL 21SET(1).xlsx",
+      "patrimonialSourceSheet": "PO's 2025 - 2026",
+      "patrimonialSourceRow": 20,
+      "patrimonialReferenceDate": "2026-09-22",
+      "patrimonialValueField": "VALOR ATUAL DO ITEM"
     },
     {
       "id": "d440e5d63692cd64e0895b4bcf71e404009af1eb7bcf88ce9226f43a5d327011",
@@ -2238,7 +2380,14 @@
       "pagSourceRow": 21,
       "pagReferenceDate": "2026-09-21",
       "pagUpdatedAt": "2026-09-21",
-      "pagCorrectionNote": null
+      "pagCorrectionNote": null,
+      "patrimonialValueUsd": null,
+      "patrimonialCurrency": "USD",
+      "patrimonialSourceFile": "CONTROLE REPARO - SGT ROZENDO - atz PAINEL 21SET(1).xlsx",
+      "patrimonialSourceSheet": "PO's 2025 - 2026",
+      "patrimonialSourceRow": 21,
+      "patrimonialReferenceDate": "2026-09-22",
+      "patrimonialValueField": "VALOR ATUAL DO ITEM"
     },
     {
       "id": "7d2acde28f3ff7710e9cf98ed4f63f8d83f198fa505aa5a8cfd0127e336136db",
@@ -2336,7 +2485,14 @@
       "pagSourceRow": 22,
       "pagReferenceDate": "2026-09-21",
       "pagUpdatedAt": "2026-09-21",
-      "pagCorrectionNote": null
+      "pagCorrectionNote": null,
+      "patrimonialValueUsd": null,
+      "patrimonialCurrency": "USD",
+      "patrimonialSourceFile": "CONTROLE REPARO - SGT ROZENDO - atz PAINEL 21SET(1).xlsx",
+      "patrimonialSourceSheet": "PO's 2025 - 2026",
+      "patrimonialSourceRow": 22,
+      "patrimonialReferenceDate": "2026-09-22",
+      "patrimonialValueField": "VALOR ATUAL DO ITEM"
     },
     {
       "id": "673a3e32b1e8ac36b057fa2d7114bcc1d3252713039f05af5d098f3995a307bd",
@@ -2434,7 +2590,14 @@
       "pagSourceRow": 23,
       "pagReferenceDate": "2026-09-21",
       "pagUpdatedAt": "2026-09-21",
-      "pagCorrectionNote": null
+      "pagCorrectionNote": null,
+      "patrimonialValueUsd": null,
+      "patrimonialCurrency": "USD",
+      "patrimonialSourceFile": "CONTROLE REPARO - SGT ROZENDO - atz PAINEL 21SET(1).xlsx",
+      "patrimonialSourceSheet": "PO's 2025 - 2026",
+      "patrimonialSourceRow": 23,
+      "patrimonialReferenceDate": "2026-09-22",
+      "patrimonialValueField": "VALOR ATUAL DO ITEM"
     },
     {
       "id": "8ca193c40180204d2cda2532ddf457f372a6d2f84a375268869d1ea4ae29273a",
@@ -2532,7 +2695,14 @@
       "pagSourceRow": 24,
       "pagReferenceDate": "2026-09-21",
       "pagUpdatedAt": "2026-09-21",
-      "pagCorrectionNote": null
+      "pagCorrectionNote": null,
+      "patrimonialValueUsd": null,
+      "patrimonialCurrency": "USD",
+      "patrimonialSourceFile": "CONTROLE REPARO - SGT ROZENDO - atz PAINEL 21SET(1).xlsx",
+      "patrimonialSourceSheet": "PO's 2025 - 2026",
+      "patrimonialSourceRow": 24,
+      "patrimonialReferenceDate": "2026-09-22",
+      "patrimonialValueField": "VALOR ATUAL DO ITEM"
     },
     {
       "id": "fcd906a3ac660fcd21e289394fa3aba1dda4b12b0f5f1621d2135310c58f5281",
@@ -2630,7 +2800,14 @@
       "pagSourceRow": 25,
       "pagReferenceDate": "2026-09-21",
       "pagUpdatedAt": "2026-09-21",
-      "pagCorrectionNote": null
+      "pagCorrectionNote": null,
+      "patrimonialValueUsd": null,
+      "patrimonialCurrency": "USD",
+      "patrimonialSourceFile": "CONTROLE REPARO - SGT ROZENDO - atz PAINEL 21SET(1).xlsx",
+      "patrimonialSourceSheet": "PO's 2025 - 2026",
+      "patrimonialSourceRow": 25,
+      "patrimonialReferenceDate": "2026-09-22",
+      "patrimonialValueField": "VALOR ATUAL DO ITEM"
     },
     {
       "id": "b51a15eb420694a3c04f6d5501a866e6d357cc74c266b49183dc46538e9ec787",
@@ -2728,7 +2905,14 @@
       "pagSourceRow": 26,
       "pagReferenceDate": "2026-09-21",
       "pagUpdatedAt": "2026-09-21",
-      "pagCorrectionNote": null
+      "pagCorrectionNote": null,
+      "patrimonialValueUsd": null,
+      "patrimonialCurrency": "USD",
+      "patrimonialSourceFile": "CONTROLE REPARO - SGT ROZENDO - atz PAINEL 21SET(1).xlsx",
+      "patrimonialSourceSheet": "PO's 2025 - 2026",
+      "patrimonialSourceRow": 26,
+      "patrimonialReferenceDate": "2026-09-22",
+      "patrimonialValueField": "VALOR ATUAL DO ITEM"
     },
     {
       "id": "9c8cad49e085991ab1728b6d3384c026eb2192595d8ecaf1774a59ba7c9a9ad5",
@@ -2826,7 +3010,14 @@
       "pagSourceRow": 27,
       "pagReferenceDate": "2026-09-21",
       "pagUpdatedAt": "2026-09-21",
-      "pagCorrectionNote": null
+      "pagCorrectionNote": null,
+      "patrimonialValueUsd": null,
+      "patrimonialCurrency": "USD",
+      "patrimonialSourceFile": "CONTROLE REPARO - SGT ROZENDO - atz PAINEL 21SET(1).xlsx",
+      "patrimonialSourceSheet": "PO's 2025 - 2026",
+      "patrimonialSourceRow": 27,
+      "patrimonialReferenceDate": "2026-09-22",
+      "patrimonialValueField": "VALOR ATUAL DO ITEM"
     },
     {
       "id": "7c15408390b0b480b7609382ff7cef769dd92924770551e5f21e9030526d0e5e",
@@ -2924,7 +3115,14 @@
       "pagSourceRow": 28,
       "pagReferenceDate": "2026-09-21",
       "pagUpdatedAt": "2026-09-21",
-      "pagCorrectionNote": null
+      "pagCorrectionNote": null,
+      "patrimonialValueUsd": null,
+      "patrimonialCurrency": "USD",
+      "patrimonialSourceFile": "CONTROLE REPARO - SGT ROZENDO - atz PAINEL 21SET(1).xlsx",
+      "patrimonialSourceSheet": "PO's 2025 - 2026",
+      "patrimonialSourceRow": 28,
+      "patrimonialReferenceDate": "2026-09-22",
+      "patrimonialValueField": "VALOR ATUAL DO ITEM"
     },
     {
       "id": "c5d74fb2ebd81debd2ca24bbd591c6740b307420860816edb42b84070cfff679",
@@ -3022,7 +3220,14 @@
       "pagSourceRow": 29,
       "pagReferenceDate": "2026-09-21",
       "pagUpdatedAt": "2026-09-21",
-      "pagCorrectionNote": null
+      "pagCorrectionNote": null,
+      "patrimonialValueUsd": null,
+      "patrimonialCurrency": "USD",
+      "patrimonialSourceFile": "CONTROLE REPARO - SGT ROZENDO - atz PAINEL 21SET(1).xlsx",
+      "patrimonialSourceSheet": "PO's 2025 - 2026",
+      "patrimonialSourceRow": 29,
+      "patrimonialReferenceDate": "2026-09-22",
+      "patrimonialValueField": "VALOR ATUAL DO ITEM"
     },
     {
       "id": "f566aa6a1a161e3fcc72b5efc87fd274df7942eca5261fdc8c751acad8750fad",
@@ -3120,7 +3325,14 @@
       "pagSourceRow": 30,
       "pagReferenceDate": "2026-09-21",
       "pagUpdatedAt": "2026-09-21",
-      "pagCorrectionNote": null
+      "pagCorrectionNote": null,
+      "patrimonialValueUsd": null,
+      "patrimonialCurrency": "USD",
+      "patrimonialSourceFile": "CONTROLE REPARO - SGT ROZENDO - atz PAINEL 21SET(1).xlsx",
+      "patrimonialSourceSheet": "PO's 2025 - 2026",
+      "patrimonialSourceRow": 30,
+      "patrimonialReferenceDate": "2026-09-22",
+      "patrimonialValueField": "VALOR ATUAL DO ITEM"
     },
     {
       "id": "72e866fec5dec07c30bac5d98f79a8f23fb2a7a248a73ee8de5cceddef50a4eb",
@@ -3218,7 +3430,14 @@
       "pagSourceRow": 31,
       "pagReferenceDate": "2026-09-21",
       "pagUpdatedAt": "2026-09-21",
-      "pagCorrectionNote": null
+      "pagCorrectionNote": null,
+      "patrimonialValueUsd": null,
+      "patrimonialCurrency": "USD",
+      "patrimonialSourceFile": "CONTROLE REPARO - SGT ROZENDO - atz PAINEL 21SET(1).xlsx",
+      "patrimonialSourceSheet": "PO's 2025 - 2026",
+      "patrimonialSourceRow": 31,
+      "patrimonialReferenceDate": "2026-09-22",
+      "patrimonialValueField": "VALOR ATUAL DO ITEM"
     },
     {
       "id": "1ae694747a0a092509a2d7dab37a4917bb9642272e718d929d8e60e8b6e6f653",
@@ -3316,7 +3535,14 @@
       "pagSourceRow": 32,
       "pagReferenceDate": "2026-09-21",
       "pagUpdatedAt": "2026-09-21",
-      "pagCorrectionNote": null
+      "pagCorrectionNote": null,
+      "patrimonialValueUsd": null,
+      "patrimonialCurrency": "USD",
+      "patrimonialSourceFile": "CONTROLE REPARO - SGT ROZENDO - atz PAINEL 21SET(1).xlsx",
+      "patrimonialSourceSheet": "PO's 2025 - 2026",
+      "patrimonialSourceRow": 32,
+      "patrimonialReferenceDate": "2026-09-22",
+      "patrimonialValueField": "VALOR ATUAL DO ITEM"
     },
     {
       "id": "93de5870e03523f98540568c992ec5a7df15293c8abe12057c03c82d4640a093",
@@ -3414,7 +3640,14 @@
       "pagSourceRow": 33,
       "pagReferenceDate": "2026-09-21",
       "pagUpdatedAt": "2026-09-21",
-      "pagCorrectionNote": null
+      "pagCorrectionNote": null,
+      "patrimonialValueUsd": null,
+      "patrimonialCurrency": "USD",
+      "patrimonialSourceFile": "CONTROLE REPARO - SGT ROZENDO - atz PAINEL 21SET(1).xlsx",
+      "patrimonialSourceSheet": "PO's 2025 - 2026",
+      "patrimonialSourceRow": 33,
+      "patrimonialReferenceDate": "2026-09-22",
+      "patrimonialValueField": "VALOR ATUAL DO ITEM"
     },
     {
       "id": "200142d8ec96cd0e577037d851b2449f23a8d586c84c8b38eeafe23567510d54",
@@ -3512,7 +3745,14 @@
       "pagSourceRow": 34,
       "pagReferenceDate": "2026-09-21",
       "pagUpdatedAt": "2026-09-21",
-      "pagCorrectionNote": null
+      "pagCorrectionNote": null,
+      "patrimonialValueUsd": null,
+      "patrimonialCurrency": "USD",
+      "patrimonialSourceFile": "CONTROLE REPARO - SGT ROZENDO - atz PAINEL 21SET(1).xlsx",
+      "patrimonialSourceSheet": "PO's 2025 - 2026",
+      "patrimonialSourceRow": 34,
+      "patrimonialReferenceDate": "2026-09-22",
+      "patrimonialValueField": "VALOR ATUAL DO ITEM"
     },
     {
       "id": "7905389798678aa032ff26831e66abd9f441b82bc3dd63352e80d65caa9386d3",
@@ -3610,7 +3850,14 @@
       "pagSourceRow": 35,
       "pagReferenceDate": "2026-09-21",
       "pagUpdatedAt": "2026-09-21",
-      "pagCorrectionNote": null
+      "pagCorrectionNote": null,
+      "patrimonialValueUsd": null,
+      "patrimonialCurrency": "USD",
+      "patrimonialSourceFile": "CONTROLE REPARO - SGT ROZENDO - atz PAINEL 21SET(1).xlsx",
+      "patrimonialSourceSheet": "PO's 2025 - 2026",
+      "patrimonialSourceRow": 35,
+      "patrimonialReferenceDate": "2026-09-22",
+      "patrimonialValueField": "VALOR ATUAL DO ITEM"
     },
     {
       "id": "b6204ece4bee4aa0488ba1bf71cd367409e90c6e3887386c4c4c19c7f76bc0ea",
@@ -3708,7 +3955,14 @@
       "pagSourceRow": 36,
       "pagReferenceDate": "2026-09-21",
       "pagUpdatedAt": "2026-09-21",
-      "pagCorrectionNote": null
+      "pagCorrectionNote": null,
+      "patrimonialValueUsd": null,
+      "patrimonialCurrency": "USD",
+      "patrimonialSourceFile": "CONTROLE REPARO - SGT ROZENDO - atz PAINEL 21SET(1).xlsx",
+      "patrimonialSourceSheet": "PO's 2025 - 2026",
+      "patrimonialSourceRow": 36,
+      "patrimonialReferenceDate": "2026-09-22",
+      "patrimonialValueField": "VALOR ATUAL DO ITEM"
     },
     {
       "id": "770a09a9370ce25a9948595ab121f718db3a3c207b6819e0666da2be113ab2ca",
@@ -3806,7 +4060,14 @@
       "pagSourceRow": 37,
       "pagReferenceDate": "2026-09-21",
       "pagUpdatedAt": "2026-09-21",
-      "pagCorrectionNote": null
+      "pagCorrectionNote": null,
+      "patrimonialValueUsd": null,
+      "patrimonialCurrency": "USD",
+      "patrimonialSourceFile": "CONTROLE REPARO - SGT ROZENDO - atz PAINEL 21SET(1).xlsx",
+      "patrimonialSourceSheet": "PO's 2025 - 2026",
+      "patrimonialSourceRow": 37,
+      "patrimonialReferenceDate": "2026-09-22",
+      "patrimonialValueField": "VALOR ATUAL DO ITEM"
     },
     {
       "id": "5dc5d1daebadfbea313ef0f6be4f2f398a2ed872753ddc610441bc6595f78b75",
@@ -3905,7 +4166,14 @@
       "pagSourceRow": 38,
       "pagReferenceDate": "2026-09-21",
       "pagUpdatedAt": "2026-09-21",
-      "pagCorrectionNote": null
+      "pagCorrectionNote": null,
+      "patrimonialValueUsd": 29745.78,
+      "patrimonialCurrency": "USD",
+      "patrimonialSourceFile": "CONTROLE REPARO - SGT ROZENDO - atz PAINEL 21SET(1).xlsx",
+      "patrimonialSourceSheet": "PO's 2025 - 2026",
+      "patrimonialSourceRow": 38,
+      "patrimonialReferenceDate": "2026-09-22",
+      "patrimonialValueField": "VALOR ATUAL DO ITEM"
     },
     {
       "id": "660f31fa2fc7a3dc0b5e3b85eae6d475c84bd05b6cc85bd682d6e4cb2a5069bd",
@@ -4004,7 +4272,14 @@
       "pagSourceRow": 39,
       "pagReferenceDate": "2026-09-21",
       "pagUpdatedAt": "2026-09-21",
-      "pagCorrectionNote": null
+      "pagCorrectionNote": null,
+      "patrimonialValueUsd": 1046.78,
+      "patrimonialCurrency": "USD",
+      "patrimonialSourceFile": "CONTROLE REPARO - SGT ROZENDO - atz PAINEL 21SET(1).xlsx",
+      "patrimonialSourceSheet": "PO's 2025 - 2026",
+      "patrimonialSourceRow": 39,
+      "patrimonialReferenceDate": "2026-09-22",
+      "patrimonialValueField": "VALOR ATUAL DO ITEM"
     },
     {
       "id": "c0cd7c5fc7322ea985871f434389360e4fbba58369c640834600b799b2ee1df1",
@@ -4102,7 +4377,14 @@
       "pagSourceRow": 40,
       "pagReferenceDate": "2026-09-21",
       "pagUpdatedAt": "2026-09-21",
-      "pagCorrectionNote": null
+      "pagCorrectionNote": null,
+      "patrimonialValueUsd": null,
+      "patrimonialCurrency": "USD",
+      "patrimonialSourceFile": "CONTROLE REPARO - SGT ROZENDO - atz PAINEL 21SET(1).xlsx",
+      "patrimonialSourceSheet": "PO's 2025 - 2026",
+      "patrimonialSourceRow": 40,
+      "patrimonialReferenceDate": "2026-09-22",
+      "patrimonialValueField": "VALOR ATUAL DO ITEM"
     },
     {
       "id": "9b8cb86dbc8b0bfd702a82f6d4ea806509f488db1ad6692751414056a997c024",
@@ -4200,7 +4482,14 @@
       "pagSourceRow": 41,
       "pagReferenceDate": "2026-09-21",
       "pagUpdatedAt": "2026-09-21",
-      "pagCorrectionNote": null
+      "pagCorrectionNote": null,
+      "patrimonialValueUsd": null,
+      "patrimonialCurrency": "USD",
+      "patrimonialSourceFile": "CONTROLE REPARO - SGT ROZENDO - atz PAINEL 21SET(1).xlsx",
+      "patrimonialSourceSheet": "PO's 2025 - 2026",
+      "patrimonialSourceRow": 41,
+      "patrimonialReferenceDate": "2026-09-22",
+      "patrimonialValueField": "VALOR ATUAL DO ITEM"
     },
     {
       "id": "3b1e76f6743417b2db587ad6be83944fbe29f3a0155b87752adbd97a08e7c847",
@@ -4298,7 +4587,14 @@
       "pagSourceRow": 42,
       "pagReferenceDate": "2026-09-21",
       "pagUpdatedAt": "2026-09-21",
-      "pagCorrectionNote": null
+      "pagCorrectionNote": null,
+      "patrimonialValueUsd": null,
+      "patrimonialCurrency": "USD",
+      "patrimonialSourceFile": "CONTROLE REPARO - SGT ROZENDO - atz PAINEL 21SET(1).xlsx",
+      "patrimonialSourceSheet": "PO's 2025 - 2026",
+      "patrimonialSourceRow": 42,
+      "patrimonialReferenceDate": "2026-09-22",
+      "patrimonialValueField": "VALOR ATUAL DO ITEM"
     },
     {
       "id": "5633795b141f24ef68bd779a6806d154a9af9b2ed278d8a82ced3d8a3f7cad29",
@@ -4396,7 +4692,14 @@
       "pagSourceRow": 43,
       "pagReferenceDate": "2026-09-21",
       "pagUpdatedAt": "2026-09-21",
-      "pagCorrectionNote": null
+      "pagCorrectionNote": null,
+      "patrimonialValueUsd": null,
+      "patrimonialCurrency": "USD",
+      "patrimonialSourceFile": "CONTROLE REPARO - SGT ROZENDO - atz PAINEL 21SET(1).xlsx",
+      "patrimonialSourceSheet": "PO's 2025 - 2026",
+      "patrimonialSourceRow": 43,
+      "patrimonialReferenceDate": "2026-09-22",
+      "patrimonialValueField": "VALOR ATUAL DO ITEM"
     },
     {
       "id": "42c6cb5fa73c0d8357bf2a637d2c4fe8867151beb55e39c91a7acbbc4269136f",
@@ -4494,7 +4797,14 @@
       "pagSourceRow": 44,
       "pagReferenceDate": "2026-09-21",
       "pagUpdatedAt": "2026-09-21",
-      "pagCorrectionNote": null
+      "pagCorrectionNote": null,
+      "patrimonialValueUsd": null,
+      "patrimonialCurrency": "USD",
+      "patrimonialSourceFile": "CONTROLE REPARO - SGT ROZENDO - atz PAINEL 21SET(1).xlsx",
+      "patrimonialSourceSheet": "PO's 2025 - 2026",
+      "patrimonialSourceRow": 44,
+      "patrimonialReferenceDate": "2026-09-22",
+      "patrimonialValueField": "VALOR ATUAL DO ITEM"
     },
     {
       "id": "b82e8dc7f4dcc5cda4d8f219a4909bef40ec509c2dd31a9ab88c8a085b0f22b6",
@@ -4592,7 +4902,14 @@
       "pagSourceRow": 45,
       "pagReferenceDate": "2026-09-21",
       "pagUpdatedAt": "2026-09-21",
-      "pagCorrectionNote": null
+      "pagCorrectionNote": null,
+      "patrimonialValueUsd": null,
+      "patrimonialCurrency": "USD",
+      "patrimonialSourceFile": "CONTROLE REPARO - SGT ROZENDO - atz PAINEL 21SET(1).xlsx",
+      "patrimonialSourceSheet": "PO's 2025 - 2026",
+      "patrimonialSourceRow": 45,
+      "patrimonialReferenceDate": "2026-09-22",
+      "patrimonialValueField": "VALOR ATUAL DO ITEM"
     },
     {
       "id": "7c85c9c67ac35445ed74d53bb3ef7219b708449e3dd0e0ace0f73d2ab60e0509",
@@ -4691,7 +5008,14 @@
       "pagSourceRow": 46,
       "pagReferenceDate": "2026-09-21",
       "pagUpdatedAt": "2026-09-21",
-      "pagCorrectionNote": null
+      "pagCorrectionNote": null,
+      "patrimonialValueUsd": 14240,
+      "patrimonialCurrency": "USD",
+      "patrimonialSourceFile": "CONTROLE REPARO - SGT ROZENDO - atz PAINEL 21SET(1).xlsx",
+      "patrimonialSourceSheet": "PO's 2025 - 2026",
+      "patrimonialSourceRow": 46,
+      "patrimonialReferenceDate": "2026-09-22",
+      "patrimonialValueField": "VALOR ATUAL DO ITEM"
     },
     {
       "id": "9a62bf4bb1d86d3fbe822e3348a0de4a5108f8b786d7613a3b745d6e1a118bcf",
@@ -4790,7 +5114,14 @@
       "pagSourceRow": 47,
       "pagReferenceDate": "2026-09-21",
       "pagUpdatedAt": "2026-09-21",
-      "pagCorrectionNote": null
+      "pagCorrectionNote": null,
+      "patrimonialValueUsd": 4808.78,
+      "patrimonialCurrency": "USD",
+      "patrimonialSourceFile": "CONTROLE REPARO - SGT ROZENDO - atz PAINEL 21SET(1).xlsx",
+      "patrimonialSourceSheet": "PO's 2025 - 2026",
+      "patrimonialSourceRow": 47,
+      "patrimonialReferenceDate": "2026-09-22",
+      "patrimonialValueField": "VALOR ATUAL DO ITEM"
     },
     {
       "id": "9625b638d6039e97a45a8346598c8405a3395fcd28585711c79ff4e0502c68e6",
@@ -4888,7 +5219,14 @@
       "pagSourceRow": 48,
       "pagReferenceDate": "2026-09-21",
       "pagUpdatedAt": "2026-09-21",
-      "pagCorrectionNote": null
+      "pagCorrectionNote": null,
+      "patrimonialValueUsd": null,
+      "patrimonialCurrency": "USD",
+      "patrimonialSourceFile": "CONTROLE REPARO - SGT ROZENDO - atz PAINEL 21SET(1).xlsx",
+      "patrimonialSourceSheet": "PO's 2025 - 2026",
+      "patrimonialSourceRow": 48,
+      "patrimonialReferenceDate": "2026-09-22",
+      "patrimonialValueField": "VALOR ATUAL DO ITEM"
     },
     {
       "id": "13b17796a7dc2e822578cfb17e264a4ddbe3ff7a978401fe3a3ca530f4d1652a",
@@ -4986,7 +5324,14 @@
       "pagSourceRow": 49,
       "pagReferenceDate": "2026-09-21",
       "pagUpdatedAt": "2026-09-21",
-      "pagCorrectionNote": null
+      "pagCorrectionNote": null,
+      "patrimonialValueUsd": null,
+      "patrimonialCurrency": "USD",
+      "patrimonialSourceFile": "CONTROLE REPARO - SGT ROZENDO - atz PAINEL 21SET(1).xlsx",
+      "patrimonialSourceSheet": "PO's 2025 - 2026",
+      "patrimonialSourceRow": 49,
+      "patrimonialReferenceDate": "2026-09-22",
+      "patrimonialValueField": "VALOR ATUAL DO ITEM"
     },
     {
       "id": "58e6578cfe44e3cbf142a9927e3d818d34b501c4cb473b36c1c512426f284c47",
@@ -5084,7 +5429,14 @@
       "pagSourceRow": 50,
       "pagReferenceDate": "2026-09-21",
       "pagUpdatedAt": "2026-09-21",
-      "pagCorrectionNote": null
+      "pagCorrectionNote": null,
+      "patrimonialValueUsd": null,
+      "patrimonialCurrency": "USD",
+      "patrimonialSourceFile": "CONTROLE REPARO - SGT ROZENDO - atz PAINEL 21SET(1).xlsx",
+      "patrimonialSourceSheet": "PO's 2025 - 2026",
+      "patrimonialSourceRow": 50,
+      "patrimonialReferenceDate": "2026-09-22",
+      "patrimonialValueField": "VALOR ATUAL DO ITEM"
     },
     {
       "id": "5c30bb2ac6cbefee991b142b3b79b08cc157b8df13b9d0d8eb3a912299241732",
@@ -5182,7 +5534,14 @@
       "pagSourceRow": 51,
       "pagReferenceDate": "2026-09-21",
       "pagUpdatedAt": "2026-09-21",
-      "pagCorrectionNote": null
+      "pagCorrectionNote": null,
+      "patrimonialValueUsd": null,
+      "patrimonialCurrency": "USD",
+      "patrimonialSourceFile": "CONTROLE REPARO - SGT ROZENDO - atz PAINEL 21SET(1).xlsx",
+      "patrimonialSourceSheet": "PO's 2025 - 2026",
+      "patrimonialSourceRow": 51,
+      "patrimonialReferenceDate": "2026-09-22",
+      "patrimonialValueField": "VALOR ATUAL DO ITEM"
     },
     {
       "id": "6e4faaacdd13b050e9eb809cd4493de42a795c1e3c21572ca8715012fbc9d777",
@@ -5280,7 +5639,14 @@
       "pagSourceRow": 52,
       "pagReferenceDate": "2026-09-21",
       "pagUpdatedAt": "2026-09-21",
-      "pagCorrectionNote": null
+      "pagCorrectionNote": null,
+      "patrimonialValueUsd": null,
+      "patrimonialCurrency": "USD",
+      "patrimonialSourceFile": "CONTROLE REPARO - SGT ROZENDO - atz PAINEL 21SET(1).xlsx",
+      "patrimonialSourceSheet": "PO's 2025 - 2026",
+      "patrimonialSourceRow": 52,
+      "patrimonialReferenceDate": "2026-09-22",
+      "patrimonialValueField": "VALOR ATUAL DO ITEM"
     },
     {
       "id": "da042c02dd36158aba848f3681b47d6d154490ad4cdb337107b5098b07954c02",
@@ -5378,7 +5744,14 @@
       "pagSourceRow": 53,
       "pagReferenceDate": "2026-09-21",
       "pagUpdatedAt": "2026-09-21",
-      "pagCorrectionNote": null
+      "pagCorrectionNote": null,
+      "patrimonialValueUsd": null,
+      "patrimonialCurrency": "USD",
+      "patrimonialSourceFile": "CONTROLE REPARO - SGT ROZENDO - atz PAINEL 21SET(1).xlsx",
+      "patrimonialSourceSheet": "PO's 2025 - 2026",
+      "patrimonialSourceRow": 53,
+      "patrimonialReferenceDate": "2026-09-22",
+      "patrimonialValueField": "VALOR ATUAL DO ITEM"
     },
     {
       "id": "479fbaec292e005ac944eea6b593ca830619c332c43297ecb2282e490d5e8fca",
@@ -5476,7 +5849,14 @@
       "pagSourceRow": 54,
       "pagReferenceDate": "2026-09-21",
       "pagUpdatedAt": "2026-09-21",
-      "pagCorrectionNote": null
+      "pagCorrectionNote": null,
+      "patrimonialValueUsd": null,
+      "patrimonialCurrency": "USD",
+      "patrimonialSourceFile": "CONTROLE REPARO - SGT ROZENDO - atz PAINEL 21SET(1).xlsx",
+      "patrimonialSourceSheet": "PO's 2025 - 2026",
+      "patrimonialSourceRow": 54,
+      "patrimonialReferenceDate": "2026-09-22",
+      "patrimonialValueField": "VALOR ATUAL DO ITEM"
     },
     {
       "id": "f30e13e3b6136c65e37984a487bef75dd5c8584a97029e98a0940b34065d8c64",
@@ -5574,7 +5954,14 @@
       "pagSourceRow": 55,
       "pagReferenceDate": "2026-09-21",
       "pagUpdatedAt": "2026-09-21",
-      "pagCorrectionNote": null
+      "pagCorrectionNote": null,
+      "patrimonialValueUsd": null,
+      "patrimonialCurrency": "USD",
+      "patrimonialSourceFile": "CONTROLE REPARO - SGT ROZENDO - atz PAINEL 21SET(1).xlsx",
+      "patrimonialSourceSheet": "PO's 2025 - 2026",
+      "patrimonialSourceRow": 55,
+      "patrimonialReferenceDate": "2026-09-22",
+      "patrimonialValueField": "VALOR ATUAL DO ITEM"
     },
     {
       "id": "561d86aec1878e70a6f18f17629022cac6fde4867b4932c54fa816d3eb88fb47",
@@ -5672,7 +6059,14 @@
       "pagSourceRow": 56,
       "pagReferenceDate": "2026-09-21",
       "pagUpdatedAt": "2026-09-21",
-      "pagCorrectionNote": null
+      "pagCorrectionNote": null,
+      "patrimonialValueUsd": null,
+      "patrimonialCurrency": "USD",
+      "patrimonialSourceFile": "CONTROLE REPARO - SGT ROZENDO - atz PAINEL 21SET(1).xlsx",
+      "patrimonialSourceSheet": "PO's 2025 - 2026",
+      "patrimonialSourceRow": 56,
+      "patrimonialReferenceDate": "2026-09-22",
+      "patrimonialValueField": "VALOR ATUAL DO ITEM"
     },
     {
       "id": "071d4615dfe5ed03467f96bcf6b997eca76dc8fb720fb448b56c3086d60ca43d",
@@ -5770,7 +6164,14 @@
       "pagSourceRow": 57,
       "pagReferenceDate": "2026-09-21",
       "pagUpdatedAt": "2026-09-21",
-      "pagCorrectionNote": null
+      "pagCorrectionNote": null,
+      "patrimonialValueUsd": null,
+      "patrimonialCurrency": "USD",
+      "patrimonialSourceFile": "CONTROLE REPARO - SGT ROZENDO - atz PAINEL 21SET(1).xlsx",
+      "patrimonialSourceSheet": "PO's 2025 - 2026",
+      "patrimonialSourceRow": 57,
+      "patrimonialReferenceDate": "2026-09-22",
+      "patrimonialValueField": "VALOR ATUAL DO ITEM"
     },
     {
       "id": "5773ad5a5495a79b3cf532ead95fbf84cf80e450ae7e0a56370a2ecd0ff80241",
@@ -5868,7 +6269,14 @@
       "pagSourceRow": 58,
       "pagReferenceDate": "2026-09-21",
       "pagUpdatedAt": "2026-09-21",
-      "pagCorrectionNote": null
+      "pagCorrectionNote": null,
+      "patrimonialValueUsd": null,
+      "patrimonialCurrency": "USD",
+      "patrimonialSourceFile": "CONTROLE REPARO - SGT ROZENDO - atz PAINEL 21SET(1).xlsx",
+      "patrimonialSourceSheet": "PO's 2025 - 2026",
+      "patrimonialSourceRow": 58,
+      "patrimonialReferenceDate": "2026-09-22",
+      "patrimonialValueField": "VALOR ATUAL DO ITEM"
     },
     {
       "id": "29e4eca805daf9c5f35ef22a643118479715e07ff2aecf70198659a9b607a76d",
@@ -5966,7 +6374,14 @@
       "pagSourceRow": 59,
       "pagReferenceDate": "2026-09-21",
       "pagUpdatedAt": "2026-09-21",
-      "pagCorrectionNote": null
+      "pagCorrectionNote": null,
+      "patrimonialValueUsd": null,
+      "patrimonialCurrency": "USD",
+      "patrimonialSourceFile": "CONTROLE REPARO - SGT ROZENDO - atz PAINEL 21SET(1).xlsx",
+      "patrimonialSourceSheet": "PO's 2025 - 2026",
+      "patrimonialSourceRow": 59,
+      "patrimonialReferenceDate": "2026-09-22",
+      "patrimonialValueField": "VALOR ATUAL DO ITEM"
     },
     {
       "id": "1033e9f4c7d812a20c73e7ec5e41565dcb16487c63a67c48cd5d160350368ddc",
@@ -6064,7 +6479,14 @@
       "pagSourceRow": 60,
       "pagReferenceDate": "2026-09-21",
       "pagUpdatedAt": "2026-09-21",
-      "pagCorrectionNote": null
+      "pagCorrectionNote": null,
+      "patrimonialValueUsd": null,
+      "patrimonialCurrency": "USD",
+      "patrimonialSourceFile": "CONTROLE REPARO - SGT ROZENDO - atz PAINEL 21SET(1).xlsx",
+      "patrimonialSourceSheet": "PO's 2025 - 2026",
+      "patrimonialSourceRow": 60,
+      "patrimonialReferenceDate": "2026-09-22",
+      "patrimonialValueField": "VALOR ATUAL DO ITEM"
     },
     {
       "id": "6915b882bccdd9bbc01e9ece3bda9b4fb2723978a33bdc4856d4beffb7f65d21",
@@ -6162,7 +6584,14 @@
       "pagSourceRow": 61,
       "pagReferenceDate": "2026-09-21",
       "pagUpdatedAt": "2026-09-21",
-      "pagCorrectionNote": null
+      "pagCorrectionNote": null,
+      "patrimonialValueUsd": null,
+      "patrimonialCurrency": "USD",
+      "patrimonialSourceFile": "CONTROLE REPARO - SGT ROZENDO - atz PAINEL 21SET(1).xlsx",
+      "patrimonialSourceSheet": "PO's 2025 - 2026",
+      "patrimonialSourceRow": 61,
+      "patrimonialReferenceDate": "2026-09-22",
+      "patrimonialValueField": "VALOR ATUAL DO ITEM"
     },
     {
       "id": "e24bbea464d7b1fc0f8ae929856ab7d6a6a7d1fed4ed81ece4d53717cdac65f9",
@@ -6260,7 +6689,14 @@
       "pagSourceRow": 62,
       "pagReferenceDate": "2026-09-21",
       "pagUpdatedAt": "2026-09-21",
-      "pagCorrectionNote": null
+      "pagCorrectionNote": null,
+      "patrimonialValueUsd": null,
+      "patrimonialCurrency": "USD",
+      "patrimonialSourceFile": "CONTROLE REPARO - SGT ROZENDO - atz PAINEL 21SET(1).xlsx",
+      "patrimonialSourceSheet": "PO's 2025 - 2026",
+      "patrimonialSourceRow": 62,
+      "patrimonialReferenceDate": "2026-09-22",
+      "patrimonialValueField": "VALOR ATUAL DO ITEM"
     },
     {
       "id": "13ffec832aabee49ab10f3f82dfd9bb2cbf4635588f19e6c2628080f24d90dd3",
@@ -6358,7 +6794,14 @@
       "pagSourceRow": 63,
       "pagReferenceDate": "2026-09-21",
       "pagUpdatedAt": "2026-09-21",
-      "pagCorrectionNote": null
+      "pagCorrectionNote": null,
+      "patrimonialValueUsd": null,
+      "patrimonialCurrency": "USD",
+      "patrimonialSourceFile": "CONTROLE REPARO - SGT ROZENDO - atz PAINEL 21SET(1).xlsx",
+      "patrimonialSourceSheet": "PO's 2025 - 2026",
+      "patrimonialSourceRow": 63,
+      "patrimonialReferenceDate": "2026-09-22",
+      "patrimonialValueField": "VALOR ATUAL DO ITEM"
     },
     {
       "id": "1e30bbcf6e063485bdbdc9c36cae6ddb58953ae96c00da9d926b72ad5cb9b8b3",
@@ -6456,7 +6899,14 @@
       "pagSourceRow": 64,
       "pagReferenceDate": "2026-09-21",
       "pagUpdatedAt": "2026-09-21",
-      "pagCorrectionNote": null
+      "pagCorrectionNote": null,
+      "patrimonialValueUsd": null,
+      "patrimonialCurrency": "USD",
+      "patrimonialSourceFile": "CONTROLE REPARO - SGT ROZENDO - atz PAINEL 21SET(1).xlsx",
+      "patrimonialSourceSheet": "PO's 2025 - 2026",
+      "patrimonialSourceRow": 64,
+      "patrimonialReferenceDate": "2026-09-22",
+      "patrimonialValueField": "VALOR ATUAL DO ITEM"
     },
     {
       "id": "f0b751eb44e81f2ded02340c292733551ead132762538a903849e7ef0d4a7267",
@@ -6554,7 +7004,14 @@
       "pagSourceRow": 65,
       "pagReferenceDate": "2026-09-21",
       "pagUpdatedAt": "2026-09-21",
-      "pagCorrectionNote": null
+      "pagCorrectionNote": null,
+      "patrimonialValueUsd": null,
+      "patrimonialCurrency": "USD",
+      "patrimonialSourceFile": "CONTROLE REPARO - SGT ROZENDO - atz PAINEL 21SET(1).xlsx",
+      "patrimonialSourceSheet": "PO's 2025 - 2026",
+      "patrimonialSourceRow": 65,
+      "patrimonialReferenceDate": "2026-09-22",
+      "patrimonialValueField": "VALOR ATUAL DO ITEM"
     },
     {
       "id": "9990a99529df6e8d1988108d1c484c8e59d835f8218739bf1e2b33e9ea4c026f",
@@ -6652,7 +7109,14 @@
       "pagSourceRow": 66,
       "pagReferenceDate": "2026-09-21",
       "pagUpdatedAt": "2026-09-21",
-      "pagCorrectionNote": null
+      "pagCorrectionNote": null,
+      "patrimonialValueUsd": null,
+      "patrimonialCurrency": "USD",
+      "patrimonialSourceFile": "CONTROLE REPARO - SGT ROZENDO - atz PAINEL 21SET(1).xlsx",
+      "patrimonialSourceSheet": "PO's 2025 - 2026",
+      "patrimonialSourceRow": 66,
+      "patrimonialReferenceDate": "2026-09-22",
+      "patrimonialValueField": "VALOR ATUAL DO ITEM"
     },
     {
       "id": "fa2eed7999a2e7c5721e477420cc29f7370a9067723a3dd271674e23ef9b2ab9",
@@ -6750,7 +7214,14 @@
       "pagSourceRow": 67,
       "pagReferenceDate": "2026-09-21",
       "pagUpdatedAt": "2026-09-21",
-      "pagCorrectionNote": null
+      "pagCorrectionNote": null,
+      "patrimonialValueUsd": null,
+      "patrimonialCurrency": "USD",
+      "patrimonialSourceFile": "CONTROLE REPARO - SGT ROZENDO - atz PAINEL 21SET(1).xlsx",
+      "patrimonialSourceSheet": "PO's 2025 - 2026",
+      "patrimonialSourceRow": 67,
+      "patrimonialReferenceDate": "2026-09-22",
+      "patrimonialValueField": "VALOR ATUAL DO ITEM"
     },
     {
       "id": "da747b19aabba03399f3a063c91748a9727a0c539fd339a32df160c92c9d653b",
@@ -6848,7 +7319,14 @@
       "pagSourceRow": 68,
       "pagReferenceDate": "2026-09-21",
       "pagUpdatedAt": "2026-09-21",
-      "pagCorrectionNote": null
+      "pagCorrectionNote": null,
+      "patrimonialValueUsd": null,
+      "patrimonialCurrency": "USD",
+      "patrimonialSourceFile": "CONTROLE REPARO - SGT ROZENDO - atz PAINEL 21SET(1).xlsx",
+      "patrimonialSourceSheet": "PO's 2025 - 2026",
+      "patrimonialSourceRow": 68,
+      "patrimonialReferenceDate": "2026-09-22",
+      "patrimonialValueField": "VALOR ATUAL DO ITEM"
     },
     {
       "id": "22fa3aed7e911a3487fdcb4cf859ca7832e889ae7bf6b587803c6b94d601b172",
@@ -6946,7 +7424,14 @@
       "pagSourceRow": 69,
       "pagReferenceDate": "2026-09-21",
       "pagUpdatedAt": "2026-09-21",
-      "pagCorrectionNote": null
+      "pagCorrectionNote": null,
+      "patrimonialValueUsd": null,
+      "patrimonialCurrency": "USD",
+      "patrimonialSourceFile": "CONTROLE REPARO - SGT ROZENDO - atz PAINEL 21SET(1).xlsx",
+      "patrimonialSourceSheet": "PO's 2025 - 2026",
+      "patrimonialSourceRow": 69,
+      "patrimonialReferenceDate": "2026-09-22",
+      "patrimonialValueField": "VALOR ATUAL DO ITEM"
     },
     {
       "id": "d54486308c66b8eb2071949c220c586f364e450e886fdc6e9d8d99ac17627ed5",
@@ -7044,7 +7529,14 @@
       "pagSourceRow": 70,
       "pagReferenceDate": "2026-09-21",
       "pagUpdatedAt": "2026-09-21",
-      "pagCorrectionNote": null
+      "pagCorrectionNote": null,
+      "patrimonialValueUsd": null,
+      "patrimonialCurrency": "USD",
+      "patrimonialSourceFile": "CONTROLE REPARO - SGT ROZENDO - atz PAINEL 21SET(1).xlsx",
+      "patrimonialSourceSheet": "PO's 2025 - 2026",
+      "patrimonialSourceRow": 70,
+      "patrimonialReferenceDate": "2026-09-22",
+      "patrimonialValueField": "VALOR ATUAL DO ITEM"
     },
     {
       "id": "b5140f2cab8a8e47f1ada17b8aebe6b7ff78ee3bb2b3182ae193774c2c80d156",
@@ -7142,7 +7634,14 @@
       "pagSourceRow": 71,
       "pagReferenceDate": "2026-09-21",
       "pagUpdatedAt": "2026-09-21",
-      "pagCorrectionNote": null
+      "pagCorrectionNote": null,
+      "patrimonialValueUsd": null,
+      "patrimonialCurrency": "USD",
+      "patrimonialSourceFile": "CONTROLE REPARO - SGT ROZENDO - atz PAINEL 21SET(1).xlsx",
+      "patrimonialSourceSheet": "PO's 2025 - 2026",
+      "patrimonialSourceRow": 71,
+      "patrimonialReferenceDate": "2026-09-22",
+      "patrimonialValueField": "VALOR ATUAL DO ITEM"
     },
     {
       "id": "809de63a5937ff3b2deb9d10493d759a9ef44d040f2303670123b1a5f465c73a",
@@ -7240,7 +7739,14 @@
       "pagSourceRow": 72,
       "pagReferenceDate": "2026-09-21",
       "pagUpdatedAt": "2026-09-21",
-      "pagCorrectionNote": null
+      "pagCorrectionNote": null,
+      "patrimonialValueUsd": null,
+      "patrimonialCurrency": "USD",
+      "patrimonialSourceFile": "CONTROLE REPARO - SGT ROZENDO - atz PAINEL 21SET(1).xlsx",
+      "patrimonialSourceSheet": "PO's 2025 - 2026",
+      "patrimonialSourceRow": 72,
+      "patrimonialReferenceDate": "2026-09-22",
+      "patrimonialValueField": "VALOR ATUAL DO ITEM"
     },
     {
       "id": "2e17af1ad5271232b6b93b08bf4dd1f0e00b59bb19612342343291d8e5eebf03",
@@ -7338,7 +7844,14 @@
       "pagSourceRow": 73,
       "pagReferenceDate": "2026-09-21",
       "pagUpdatedAt": "2026-09-21",
-      "pagCorrectionNote": null
+      "pagCorrectionNote": null,
+      "patrimonialValueUsd": null,
+      "patrimonialCurrency": "USD",
+      "patrimonialSourceFile": "CONTROLE REPARO - SGT ROZENDO - atz PAINEL 21SET(1).xlsx",
+      "patrimonialSourceSheet": "PO's 2025 - 2026",
+      "patrimonialSourceRow": 73,
+      "patrimonialReferenceDate": "2026-09-22",
+      "patrimonialValueField": "VALOR ATUAL DO ITEM"
     },
     {
       "id": "8593fe9cb247106fe37c2b57c82455191e57aa582a5c3d2eb1cf7ad6f115b935",
@@ -7436,7 +7949,14 @@
       "pagSourceRow": 74,
       "pagReferenceDate": "2026-09-21",
       "pagUpdatedAt": "2026-09-21",
-      "pagCorrectionNote": null
+      "pagCorrectionNote": null,
+      "patrimonialValueUsd": null,
+      "patrimonialCurrency": "USD",
+      "patrimonialSourceFile": "CONTROLE REPARO - SGT ROZENDO - atz PAINEL 21SET(1).xlsx",
+      "patrimonialSourceSheet": "PO's 2025 - 2026",
+      "patrimonialSourceRow": 74,
+      "patrimonialReferenceDate": "2026-09-22",
+      "patrimonialValueField": "VALOR ATUAL DO ITEM"
     },
     {
       "id": "fcea3157f5efd54ced491a53a11b986c23e9a741c7c535e04fbab3e1a51300a2",
@@ -7534,7 +8054,14 @@
       "pagSourceRow": 75,
       "pagReferenceDate": "2026-09-21",
       "pagUpdatedAt": "2026-09-21",
-      "pagCorrectionNote": null
+      "pagCorrectionNote": null,
+      "patrimonialValueUsd": null,
+      "patrimonialCurrency": "USD",
+      "patrimonialSourceFile": "CONTROLE REPARO - SGT ROZENDO - atz PAINEL 21SET(1).xlsx",
+      "patrimonialSourceSheet": "PO's 2025 - 2026",
+      "patrimonialSourceRow": 75,
+      "patrimonialReferenceDate": "2026-09-22",
+      "patrimonialValueField": "VALOR ATUAL DO ITEM"
     },
     {
       "id": "6d2a9a04f5adb3efe3b699b84c9f663fab953a2c5ed13f9d5c5acf3f11ff6e1f",
@@ -7632,7 +8159,14 @@
       "pagSourceRow": 76,
       "pagReferenceDate": "2026-09-21",
       "pagUpdatedAt": "2026-09-21",
-      "pagCorrectionNote": null
+      "pagCorrectionNote": null,
+      "patrimonialValueUsd": null,
+      "patrimonialCurrency": "USD",
+      "patrimonialSourceFile": "CONTROLE REPARO - SGT ROZENDO - atz PAINEL 21SET(1).xlsx",
+      "patrimonialSourceSheet": "PO's 2025 - 2026",
+      "patrimonialSourceRow": 76,
+      "patrimonialReferenceDate": "2026-09-22",
+      "patrimonialValueField": "VALOR ATUAL DO ITEM"
     },
     {
       "id": "cadf8ad8efb1793e240fd9720dc0f8087ed92651221bda0f6899372725b9b39b",
@@ -7730,7 +8264,14 @@
       "pagSourceRow": 77,
       "pagReferenceDate": "2026-09-21",
       "pagUpdatedAt": "2026-09-21",
-      "pagCorrectionNote": null
+      "pagCorrectionNote": null,
+      "patrimonialValueUsd": null,
+      "patrimonialCurrency": "USD",
+      "patrimonialSourceFile": "CONTROLE REPARO - SGT ROZENDO - atz PAINEL 21SET(1).xlsx",
+      "patrimonialSourceSheet": "PO's 2025 - 2026",
+      "patrimonialSourceRow": 77,
+      "patrimonialReferenceDate": "2026-09-22",
+      "patrimonialValueField": "VALOR ATUAL DO ITEM"
     },
     {
       "id": "faf3f6cea3c957eb6099642bd71af7e11edc404441b87d41a6e4d1b96ac6c363",
@@ -7828,7 +8369,14 @@
       "pagSourceRow": 78,
       "pagReferenceDate": "2026-09-21",
       "pagUpdatedAt": "2026-09-21",
-      "pagCorrectionNote": null
+      "pagCorrectionNote": null,
+      "patrimonialValueUsd": null,
+      "patrimonialCurrency": "USD",
+      "patrimonialSourceFile": "CONTROLE REPARO - SGT ROZENDO - atz PAINEL 21SET(1).xlsx",
+      "patrimonialSourceSheet": "PO's 2025 - 2026",
+      "patrimonialSourceRow": 78,
+      "patrimonialReferenceDate": "2026-09-22",
+      "patrimonialValueField": "VALOR ATUAL DO ITEM"
     },
     {
       "id": "9bb4f297819d1e9c54cab4fbde27f4121a7b0cfb00d8405090d4fe75c7b847a2",
@@ -7926,7 +8474,14 @@
       "pagSourceRow": 79,
       "pagReferenceDate": "2026-09-21",
       "pagUpdatedAt": "2026-09-21",
-      "pagCorrectionNote": null
+      "pagCorrectionNote": null,
+      "patrimonialValueUsd": null,
+      "patrimonialCurrency": "USD",
+      "patrimonialSourceFile": "CONTROLE REPARO - SGT ROZENDO - atz PAINEL 21SET(1).xlsx",
+      "patrimonialSourceSheet": "PO's 2025 - 2026",
+      "patrimonialSourceRow": 79,
+      "patrimonialReferenceDate": "2026-09-22",
+      "patrimonialValueField": "VALOR ATUAL DO ITEM"
     },
     {
       "id": "693257a25b1ebf084774151c680aa66c56a11ddc13ce06ecb7252731500c8ae3",
@@ -8024,7 +8579,14 @@
       "pagSourceRow": 80,
       "pagReferenceDate": "2026-09-21",
       "pagUpdatedAt": "2026-09-21",
-      "pagCorrectionNote": null
+      "pagCorrectionNote": null,
+      "patrimonialValueUsd": null,
+      "patrimonialCurrency": "USD",
+      "patrimonialSourceFile": "CONTROLE REPARO - SGT ROZENDO - atz PAINEL 21SET(1).xlsx",
+      "patrimonialSourceSheet": "PO's 2025 - 2026",
+      "patrimonialSourceRow": 80,
+      "patrimonialReferenceDate": "2026-09-22",
+      "patrimonialValueField": "VALOR ATUAL DO ITEM"
     },
     {
       "id": "ef0c0862f7baf69472882a076db8b5895efd11fdb87d4e16f7926620eee514cc",
@@ -8122,7 +8684,14 @@
       "pagSourceRow": 81,
       "pagReferenceDate": "2026-09-21",
       "pagUpdatedAt": "2026-09-21",
-      "pagCorrectionNote": null
+      "pagCorrectionNote": null,
+      "patrimonialValueUsd": null,
+      "patrimonialCurrency": "USD",
+      "patrimonialSourceFile": "CONTROLE REPARO - SGT ROZENDO - atz PAINEL 21SET(1).xlsx",
+      "patrimonialSourceSheet": "PO's 2025 - 2026",
+      "patrimonialSourceRow": 81,
+      "patrimonialReferenceDate": "2026-09-22",
+      "patrimonialValueField": "VALOR ATUAL DO ITEM"
     },
     {
       "id": "e50540fc8528dba099620470f6966eac9c08f02d2f4481eef73b8a5d0b109719",
@@ -8221,7 +8790,14 @@
       "pagSourceRow": 82,
       "pagReferenceDate": "2026-09-21",
       "pagUpdatedAt": "2026-09-21",
-      "pagCorrectionNote": null
+      "pagCorrectionNote": null,
+      "patrimonialValueUsd": null,
+      "patrimonialCurrency": "USD",
+      "patrimonialSourceFile": "CONTROLE REPARO - SGT ROZENDO - atz PAINEL 21SET(1).xlsx",
+      "patrimonialSourceSheet": "PO's 2025 - 2026",
+      "patrimonialSourceRow": 82,
+      "patrimonialReferenceDate": "2026-09-22",
+      "patrimonialValueField": "VALOR ATUAL DO ITEM"
     },
     {
       "id": "611f9f8db7fc593de15549de18914ae17a442ceccae59fe8efaec12f14ddb55f",
@@ -8319,7 +8895,14 @@
       "pagSourceRow": 83,
       "pagReferenceDate": "2026-09-21",
       "pagUpdatedAt": "2026-09-21",
-      "pagCorrectionNote": null
+      "pagCorrectionNote": null,
+      "patrimonialValueUsd": 40250,
+      "patrimonialCurrency": "USD",
+      "patrimonialSourceFile": "CONTROLE REPARO - SGT ROZENDO - atz PAINEL 21SET(1).xlsx",
+      "patrimonialSourceSheet": "PO's 2025 - 2026",
+      "patrimonialSourceRow": 83,
+      "patrimonialReferenceDate": "2026-09-22",
+      "patrimonialValueField": "VALOR ATUAL DO ITEM"
     },
     {
       "id": "8aae20c1a426ac60b8ea4d9c26570b2e24b0c05c92adaeb32a3996986f14c816",
@@ -8417,7 +9000,14 @@
       "pagSourceRow": 84,
       "pagReferenceDate": "2026-09-21",
       "pagUpdatedAt": "2026-09-21",
-      "pagCorrectionNote": null
+      "pagCorrectionNote": null,
+      "patrimonialValueUsd": 40250,
+      "patrimonialCurrency": "USD",
+      "patrimonialSourceFile": "CONTROLE REPARO - SGT ROZENDO - atz PAINEL 21SET(1).xlsx",
+      "patrimonialSourceSheet": "PO's 2025 - 2026",
+      "patrimonialSourceRow": 84,
+      "patrimonialReferenceDate": "2026-09-22",
+      "patrimonialValueField": "VALOR ATUAL DO ITEM"
     },
     {
       "id": "6491ea82ec626156b26398727c5ea8439dafe663ef59925cdd9d278981df4942",
@@ -8515,7 +9105,14 @@
       "pagSourceRow": 85,
       "pagReferenceDate": "2026-09-21",
       "pagUpdatedAt": "2026-09-21",
-      "pagCorrectionNote": null
+      "pagCorrectionNote": null,
+      "patrimonialValueUsd": 40250,
+      "patrimonialCurrency": "USD",
+      "patrimonialSourceFile": "CONTROLE REPARO - SGT ROZENDO - atz PAINEL 21SET(1).xlsx",
+      "patrimonialSourceSheet": "PO's 2025 - 2026",
+      "patrimonialSourceRow": 85,
+      "patrimonialReferenceDate": "2026-09-22",
+      "patrimonialValueField": "VALOR ATUAL DO ITEM"
     },
     {
       "id": "ce58b491f2fdf50c8a0cd9389d6f0329e8449dba4caf02cfc21e3a3016a303b0",
@@ -8613,7 +9210,14 @@
       "pagSourceRow": 86,
       "pagReferenceDate": "2026-09-21",
       "pagUpdatedAt": "2026-09-21",
-      "pagCorrectionNote": null
+      "pagCorrectionNote": null,
+      "patrimonialValueUsd": 5606.98,
+      "patrimonialCurrency": "USD",
+      "patrimonialSourceFile": "CONTROLE REPARO - SGT ROZENDO - atz PAINEL 21SET(1).xlsx",
+      "patrimonialSourceSheet": "PO's 2025 - 2026",
+      "patrimonialSourceRow": 86,
+      "patrimonialReferenceDate": "2026-09-22",
+      "patrimonialValueField": "VALOR ATUAL DO ITEM"
     },
     {
       "id": "03a535d4340a3e1aa4756c80fd73876974afd9e2832a2840325090a51e912b9f",
@@ -8711,7 +9315,14 @@
       "pagSourceRow": 87,
       "pagReferenceDate": "2026-09-21",
       "pagUpdatedAt": "2026-09-21",
-      "pagCorrectionNote": null
+      "pagCorrectionNote": null,
+      "patrimonialValueUsd": 26500,
+      "patrimonialCurrency": "USD",
+      "patrimonialSourceFile": "CONTROLE REPARO - SGT ROZENDO - atz PAINEL 21SET(1).xlsx",
+      "patrimonialSourceSheet": "PO's 2025 - 2026",
+      "patrimonialSourceRow": 87,
+      "patrimonialReferenceDate": "2026-09-22",
+      "patrimonialValueField": "VALOR ATUAL DO ITEM"
     },
     {
       "id": "2624b6b4280f36d65cfe03a7bfafb34072f1ead46930424c48febb3a1e615cf8",
@@ -8809,7 +9420,14 @@
       "pagSourceRow": 88,
       "pagReferenceDate": "2026-09-21",
       "pagUpdatedAt": "2026-09-21",
-      "pagCorrectionNote": null
+      "pagCorrectionNote": null,
+      "patrimonialValueUsd": 26500,
+      "patrimonialCurrency": "USD",
+      "patrimonialSourceFile": "CONTROLE REPARO - SGT ROZENDO - atz PAINEL 21SET(1).xlsx",
+      "patrimonialSourceSheet": "PO's 2025 - 2026",
+      "patrimonialSourceRow": 88,
+      "patrimonialReferenceDate": "2026-09-22",
+      "patrimonialValueField": "VALOR ATUAL DO ITEM"
     },
     {
       "id": "c47a037a309214d74bd92ca2922d4a4556b4cd445ea9f3e91738cb2be1e6c662",
@@ -8907,7 +9525,14 @@
       "pagSourceRow": 89,
       "pagReferenceDate": "2026-09-21",
       "pagUpdatedAt": "2026-09-21",
-      "pagCorrectionNote": null
+      "pagCorrectionNote": null,
+      "patrimonialValueUsd": 26500,
+      "patrimonialCurrency": "USD",
+      "patrimonialSourceFile": "CONTROLE REPARO - SGT ROZENDO - atz PAINEL 21SET(1).xlsx",
+      "patrimonialSourceSheet": "PO's 2025 - 2026",
+      "patrimonialSourceRow": 89,
+      "patrimonialReferenceDate": "2026-09-22",
+      "patrimonialValueField": "VALOR ATUAL DO ITEM"
     },
     {
       "id": "354f857e75d58d4700c43128fee82edd5112b12697a3958d8fccfc075c0e2052",
@@ -9005,7 +9630,14 @@
       "pagSourceRow": 90,
       "pagReferenceDate": "2026-09-21",
       "pagUpdatedAt": "2026-09-21",
-      "pagCorrectionNote": null
+      "pagCorrectionNote": null,
+      "patrimonialValueUsd": 26500,
+      "patrimonialCurrency": "USD",
+      "patrimonialSourceFile": "CONTROLE REPARO - SGT ROZENDO - atz PAINEL 21SET(1).xlsx",
+      "patrimonialSourceSheet": "PO's 2025 - 2026",
+      "patrimonialSourceRow": 90,
+      "patrimonialReferenceDate": "2026-09-22",
+      "patrimonialValueField": "VALOR ATUAL DO ITEM"
     },
     {
       "id": "7400396e6286c665ead3ad2feff32f9cf18128dcf8d02b4f4805a2c7100b5a83",
@@ -9103,7 +9735,14 @@
       "pagSourceRow": 91,
       "pagReferenceDate": "2026-09-21",
       "pagUpdatedAt": "2026-09-21",
-      "pagCorrectionNote": null
+      "pagCorrectionNote": null,
+      "patrimonialValueUsd": 26500,
+      "patrimonialCurrency": "USD",
+      "patrimonialSourceFile": "CONTROLE REPARO - SGT ROZENDO - atz PAINEL 21SET(1).xlsx",
+      "patrimonialSourceSheet": "PO's 2025 - 2026",
+      "patrimonialSourceRow": 91,
+      "patrimonialReferenceDate": "2026-09-22",
+      "patrimonialValueField": "VALOR ATUAL DO ITEM"
     },
     {
       "id": "fe1b903d44f9a43aa64afccb89539988236d1fea197b118e83257cb55e1940fc",
@@ -9203,7 +9842,14 @@
       "pagSourceRow": 92,
       "pagReferenceDate": "2026-09-21",
       "pagUpdatedAt": "2026-09-21",
-      "pagCorrectionNote": null
+      "pagCorrectionNote": null,
+      "patrimonialValueUsd": 8754.07,
+      "patrimonialCurrency": "USD",
+      "patrimonialSourceFile": "CONTROLE REPARO - SGT ROZENDO - atz PAINEL 21SET(1).xlsx",
+      "patrimonialSourceSheet": "PO's 2025 - 2026",
+      "patrimonialSourceRow": 92,
+      "patrimonialReferenceDate": "2026-09-22",
+      "patrimonialValueField": "VALOR ATUAL DO ITEM"
     },
     {
       "id": "08cc5935317172e66f9cb48b8550b9ac22fb449a1e68c63a7b23713330ba46bd",
@@ -9303,7 +9949,14 @@
       "pagSourceRow": 93,
       "pagReferenceDate": "2026-09-21",
       "pagUpdatedAt": "2026-09-21",
-      "pagCorrectionNote": null
+      "pagCorrectionNote": null,
+      "patrimonialValueUsd": 8754.07,
+      "patrimonialCurrency": "USD",
+      "patrimonialSourceFile": "CONTROLE REPARO - SGT ROZENDO - atz PAINEL 21SET(1).xlsx",
+      "patrimonialSourceSheet": "PO's 2025 - 2026",
+      "patrimonialSourceRow": 93,
+      "patrimonialReferenceDate": "2026-09-22",
+      "patrimonialValueField": "VALOR ATUAL DO ITEM"
     },
     {
       "id": "69862657e189730baf5d04353aee32a9b5b4f2f6dd84f05d446d142afbe242ae",
@@ -9403,7 +10056,14 @@
       "pagSourceRow": 94,
       "pagReferenceDate": "2026-09-21",
       "pagUpdatedAt": "2026-09-21",
-      "pagCorrectionNote": null
+      "pagCorrectionNote": null,
+      "patrimonialValueUsd": 8754.07,
+      "patrimonialCurrency": "USD",
+      "patrimonialSourceFile": "CONTROLE REPARO - SGT ROZENDO - atz PAINEL 21SET(1).xlsx",
+      "patrimonialSourceSheet": "PO's 2025 - 2026",
+      "patrimonialSourceRow": 94,
+      "patrimonialReferenceDate": "2026-09-22",
+      "patrimonialValueField": "VALOR ATUAL DO ITEM"
     },
     {
       "id": "55fda86bca6c75a05f267705b315f2d72d1e47e194dbce6545300d433e30d586",
@@ -9503,7 +10163,14 @@
       "pagSourceRow": 95,
       "pagReferenceDate": "2026-09-21",
       "pagUpdatedAt": "2026-09-21",
-      "pagCorrectionNote": null
+      "pagCorrectionNote": null,
+      "patrimonialValueUsd": 8754.07,
+      "patrimonialCurrency": "USD",
+      "patrimonialSourceFile": "CONTROLE REPARO - SGT ROZENDO - atz PAINEL 21SET(1).xlsx",
+      "patrimonialSourceSheet": "PO's 2025 - 2026",
+      "patrimonialSourceRow": 95,
+      "patrimonialReferenceDate": "2026-09-22",
+      "patrimonialValueField": "VALOR ATUAL DO ITEM"
     },
     {
       "id": "fc55ab84e905af3d7ade9c6563a6fcd498cf1b0886dcd46aadc5ba18a0a7cce6",
@@ -9603,7 +10270,14 @@
       "pagSourceRow": 96,
       "pagReferenceDate": "2026-09-21",
       "pagUpdatedAt": "2026-09-21",
-      "pagCorrectionNote": null
+      "pagCorrectionNote": null,
+      "patrimonialValueUsd": 14776.74,
+      "patrimonialCurrency": "USD",
+      "patrimonialSourceFile": "CONTROLE REPARO - SGT ROZENDO - atz PAINEL 21SET(1).xlsx",
+      "patrimonialSourceSheet": "PO's 2025 - 2026",
+      "patrimonialSourceRow": 96,
+      "patrimonialReferenceDate": "2026-09-22",
+      "patrimonialValueField": "VALOR ATUAL DO ITEM"
     },
     {
       "id": "8f13b7e69b402a66118872de0dbdf36d0132e469bbbab51693969066a523a0a0",
@@ -9703,7 +10377,14 @@
       "pagSourceRow": 97,
       "pagReferenceDate": "2026-09-21",
       "pagUpdatedAt": "2026-09-21",
-      "pagCorrectionNote": null
+      "pagCorrectionNote": null,
+      "patrimonialValueUsd": 26500,
+      "patrimonialCurrency": "USD",
+      "patrimonialSourceFile": "CONTROLE REPARO - SGT ROZENDO - atz PAINEL 21SET(1).xlsx",
+      "patrimonialSourceSheet": "PO's 2025 - 2026",
+      "patrimonialSourceRow": 97,
+      "patrimonialReferenceDate": "2026-09-22",
+      "patrimonialValueField": "VALOR ATUAL DO ITEM"
     },
     {
       "id": "e22ba159aa344704fef25daeb77ac819afdb1e83dee263c0d4055c752dfa42f9",
@@ -9803,7 +10484,14 @@
       "pagSourceRow": 98,
       "pagReferenceDate": "2026-09-21",
       "pagUpdatedAt": "2026-09-21",
-      "pagCorrectionNote": null
+      "pagCorrectionNote": null,
+      "patrimonialValueUsd": 18319.04,
+      "patrimonialCurrency": "USD",
+      "patrimonialSourceFile": "CONTROLE REPARO - SGT ROZENDO - atz PAINEL 21SET(1).xlsx",
+      "patrimonialSourceSheet": "PO's 2025 - 2026",
+      "patrimonialSourceRow": 98,
+      "patrimonialReferenceDate": "2026-09-22",
+      "patrimonialValueField": "VALOR ATUAL DO ITEM"
     },
     {
       "id": "8283a23c6cd4c95d873ef8213135925dbc90bddcc60d190cf526e3d5162f6118",
@@ -9903,7 +10591,14 @@
       "pagSourceRow": 99,
       "pagReferenceDate": "2026-09-21",
       "pagUpdatedAt": "2026-09-21",
-      "pagCorrectionNote": null
+      "pagCorrectionNote": null,
+      "patrimonialValueUsd": 18319.04,
+      "patrimonialCurrency": "USD",
+      "patrimonialSourceFile": "CONTROLE REPARO - SGT ROZENDO - atz PAINEL 21SET(1).xlsx",
+      "patrimonialSourceSheet": "PO's 2025 - 2026",
+      "patrimonialSourceRow": 99,
+      "patrimonialReferenceDate": "2026-09-22",
+      "patrimonialValueField": "VALOR ATUAL DO ITEM"
     },
     {
       "id": "d6ade00772366f07519f367d76e5688af62fab84403b2629b69f647bc3793c68",
@@ -10003,7 +10698,14 @@
       "pagSourceRow": 100,
       "pagReferenceDate": "2026-09-21",
       "pagUpdatedAt": "2026-09-21",
-      "pagCorrectionNote": null
+      "pagCorrectionNote": null,
+      "patrimonialValueUsd": 18319.04,
+      "patrimonialCurrency": "USD",
+      "patrimonialSourceFile": "CONTROLE REPARO - SGT ROZENDO - atz PAINEL 21SET(1).xlsx",
+      "patrimonialSourceSheet": "PO's 2025 - 2026",
+      "patrimonialSourceRow": 100,
+      "patrimonialReferenceDate": "2026-09-22",
+      "patrimonialValueField": "VALOR ATUAL DO ITEM"
     },
     {
       "id": "5108694dc13a4b579efcd9617a86ff45b440005cfe07527d8b2b5bb32204cd1b",
@@ -10103,7 +10805,14 @@
       "pagSourceRow": 101,
       "pagReferenceDate": "2026-09-21",
       "pagUpdatedAt": "2026-09-21",
-      "pagCorrectionNote": null
+      "pagCorrectionNote": null,
+      "patrimonialValueUsd": 26402.46,
+      "patrimonialCurrency": "USD",
+      "patrimonialSourceFile": "CONTROLE REPARO - SGT ROZENDO - atz PAINEL 21SET(1).xlsx",
+      "patrimonialSourceSheet": "PO's 2025 - 2026",
+      "patrimonialSourceRow": 101,
+      "patrimonialReferenceDate": "2026-09-22",
+      "patrimonialValueField": "VALOR ATUAL DO ITEM"
     },
     {
       "id": "61bddfb5be4aa466889316c09a7506a2775979e87054b1ede1acbb17fabba5b4",
@@ -10203,7 +10912,14 @@
       "pagSourceRow": 102,
       "pagReferenceDate": "2026-09-21",
       "pagUpdatedAt": "2026-09-21",
-      "pagCorrectionNote": null
+      "pagCorrectionNote": null,
+      "patrimonialValueUsd": 5268.8,
+      "patrimonialCurrency": "USD",
+      "patrimonialSourceFile": "CONTROLE REPARO - SGT ROZENDO - atz PAINEL 21SET(1).xlsx",
+      "patrimonialSourceSheet": "PO's 2025 - 2026",
+      "patrimonialSourceRow": 102,
+      "patrimonialReferenceDate": "2026-09-22",
+      "patrimonialValueField": "VALOR ATUAL DO ITEM"
     },
     {
       "id": "a2da08794bf1771237b24f28de0a46d4df804e960e10c40c109d73b4a3560d36",
@@ -10303,7 +11019,14 @@
       "pagSourceRow": 103,
       "pagReferenceDate": "2026-09-21",
       "pagUpdatedAt": "2026-09-21",
-      "pagCorrectionNote": null
+      "pagCorrectionNote": null,
+      "patrimonialValueUsd": 194863.82,
+      "patrimonialCurrency": "USD",
+      "patrimonialSourceFile": "CONTROLE REPARO - SGT ROZENDO - atz PAINEL 21SET(1).xlsx",
+      "patrimonialSourceSheet": "PO's 2025 - 2026",
+      "patrimonialSourceRow": 103,
+      "patrimonialReferenceDate": "2026-09-22",
+      "patrimonialValueField": "VALOR ATUAL DO ITEM"
     },
     {
       "id": "ad81c6d63a95c5000392fb0efe88583951d7f0aed4f662e82a75df317f1bc401",
@@ -10403,7 +11126,14 @@
       "pagSourceRow": 104,
       "pagReferenceDate": "2026-09-21",
       "pagUpdatedAt": "2026-09-21",
-      "pagCorrectionNote": null
+      "pagCorrectionNote": null,
+      "patrimonialValueUsd": 15148.83,
+      "patrimonialCurrency": "USD",
+      "patrimonialSourceFile": "CONTROLE REPARO - SGT ROZENDO - atz PAINEL 21SET(1).xlsx",
+      "patrimonialSourceSheet": "PO's 2025 - 2026",
+      "patrimonialSourceRow": 104,
+      "patrimonialReferenceDate": "2026-09-22",
+      "patrimonialValueField": "VALOR ATUAL DO ITEM"
     },
     {
       "id": "e3ae2d74df848010037b24a9902ae077aca3f7f3c740bbed135347e622356ad2",
@@ -10503,7 +11233,14 @@
       "pagSourceRow": 105,
       "pagReferenceDate": "2026-09-21",
       "pagUpdatedAt": "2026-09-21",
-      "pagCorrectionNote": null
+      "pagCorrectionNote": null,
+      "patrimonialValueUsd": 15148.83,
+      "patrimonialCurrency": "USD",
+      "patrimonialSourceFile": "CONTROLE REPARO - SGT ROZENDO - atz PAINEL 21SET(1).xlsx",
+      "patrimonialSourceSheet": "PO's 2025 - 2026",
+      "patrimonialSourceRow": 105,
+      "patrimonialReferenceDate": "2026-09-22",
+      "patrimonialValueField": "VALOR ATUAL DO ITEM"
     },
     {
       "id": "053d560d8f393b0cdf4c3275580e5db75506c968ccef1501052ed9100c7e7d23",
@@ -10603,7 +11340,14 @@
       "pagSourceRow": 106,
       "pagReferenceDate": "2026-09-21",
       "pagUpdatedAt": "2026-09-21",
-      "pagCorrectionNote": null
+      "pagCorrectionNote": null,
+      "patrimonialValueUsd": 15148.83,
+      "patrimonialCurrency": "USD",
+      "patrimonialSourceFile": "CONTROLE REPARO - SGT ROZENDO - atz PAINEL 21SET(1).xlsx",
+      "patrimonialSourceSheet": "PO's 2025 - 2026",
+      "patrimonialSourceRow": 106,
+      "patrimonialReferenceDate": "2026-09-22",
+      "patrimonialValueField": "VALOR ATUAL DO ITEM"
     },
     {
       "id": "d4c2650a518bc3279915dda956e4f9bd69ab0c7b6a53d044e8edb227fda9eb87",
@@ -10703,7 +11447,14 @@
       "pagSourceRow": 107,
       "pagReferenceDate": "2026-09-21",
       "pagUpdatedAt": "2026-09-21",
-      "pagCorrectionNote": null
+      "pagCorrectionNote": null,
+      "patrimonialValueUsd": 35898.63,
+      "patrimonialCurrency": "USD",
+      "patrimonialSourceFile": "CONTROLE REPARO - SGT ROZENDO - atz PAINEL 21SET(1).xlsx",
+      "patrimonialSourceSheet": "PO's 2025 - 2026",
+      "patrimonialSourceRow": 107,
+      "patrimonialReferenceDate": "2026-09-22",
+      "patrimonialValueField": "VALOR ATUAL DO ITEM"
     },
     {
       "id": "2c3f951f8b86274089e337ed85942f9d6328b6d0260a154ffdf67ae168729f05",
@@ -10803,7 +11554,14 @@
       "pagSourceRow": 108,
       "pagReferenceDate": "2026-09-21",
       "pagUpdatedAt": "2026-09-21",
-      "pagCorrectionNote": null
+      "pagCorrectionNote": null,
+      "patrimonialValueUsd": 60757.91,
+      "patrimonialCurrency": "USD",
+      "patrimonialSourceFile": "CONTROLE REPARO - SGT ROZENDO - atz PAINEL 21SET(1).xlsx",
+      "patrimonialSourceSheet": "PO's 2025 - 2026",
+      "patrimonialSourceRow": 108,
+      "patrimonialReferenceDate": "2026-09-22",
+      "patrimonialValueField": "VALOR ATUAL DO ITEM"
     },
     {
       "id": "3a5649e7e6677e8e6eea9c71732e8d74b85352256b7ac4e810fde77eefd618bb",
@@ -10902,7 +11660,14 @@
       "pagSourceRow": 109,
       "pagReferenceDate": "2026-09-21",
       "pagUpdatedAt": "2026-09-21",
-      "pagCorrectionNote": null
+      "pagCorrectionNote": null,
+      "patrimonialValueUsd": 15788.88,
+      "patrimonialCurrency": "USD",
+      "patrimonialSourceFile": "CONTROLE REPARO - SGT ROZENDO - atz PAINEL 21SET(1).xlsx",
+      "patrimonialSourceSheet": "PO's 2025 - 2026",
+      "patrimonialSourceRow": 109,
+      "patrimonialReferenceDate": "2026-09-22",
+      "patrimonialValueField": "VALOR ATUAL DO ITEM"
     },
     {
       "id": "5ef9d467790e623f4cfaee466bc40ef6f45b85adf9b9226387c695e6a3780cea",
@@ -11001,7 +11766,14 @@
       "pagSourceRow": 110,
       "pagReferenceDate": "2026-09-21",
       "pagUpdatedAt": "2026-09-21",
-      "pagCorrectionNote": null
+      "pagCorrectionNote": null,
+      "patrimonialValueUsd": 8694.67,
+      "patrimonialCurrency": "USD",
+      "patrimonialSourceFile": "CONTROLE REPARO - SGT ROZENDO - atz PAINEL 21SET(1).xlsx",
+      "patrimonialSourceSheet": "PO's 2025 - 2026",
+      "patrimonialSourceRow": 110,
+      "patrimonialReferenceDate": "2026-09-22",
+      "patrimonialValueField": "VALOR ATUAL DO ITEM"
     },
     {
       "id": "d2c4dd3bf91812cced5ce229e3549336aab4c1ea115bb7d8506cbc429a1737db",
@@ -11100,7 +11872,14 @@
       "pagSourceRow": 111,
       "pagReferenceDate": "2026-09-21",
       "pagUpdatedAt": "2026-09-21",
-      "pagCorrectionNote": null
+      "pagCorrectionNote": null,
+      "patrimonialValueUsd": 8694.67,
+      "patrimonialCurrency": "USD",
+      "patrimonialSourceFile": "CONTROLE REPARO - SGT ROZENDO - atz PAINEL 21SET(1).xlsx",
+      "patrimonialSourceSheet": "PO's 2025 - 2026",
+      "patrimonialSourceRow": 111,
+      "patrimonialReferenceDate": "2026-09-22",
+      "patrimonialValueField": "VALOR ATUAL DO ITEM"
     },
     {
       "id": "e1f4595ddca04fe7639d06d63b6bba99604ea161f9f16bd22fd613c81937685f",
@@ -11200,7 +11979,14 @@
       "pagSourceRow": 112,
       "pagReferenceDate": "2026-09-21",
       "pagUpdatedAt": "2026-09-21",
-      "pagCorrectionNote": null
+      "pagCorrectionNote": null,
+      "patrimonialValueUsd": 15148.83,
+      "patrimonialCurrency": "USD",
+      "patrimonialSourceFile": "CONTROLE REPARO - SGT ROZENDO - atz PAINEL 21SET(1).xlsx",
+      "patrimonialSourceSheet": "PO's 2025 - 2026",
+      "patrimonialSourceRow": 112,
+      "patrimonialReferenceDate": "2026-09-22",
+      "patrimonialValueField": "VALOR ATUAL DO ITEM"
     },
     {
       "id": "e3806d6e071ac4b7e51c724dc9a7390d5e549e8ab6b5b19c20108198897faf23",
@@ -11301,7 +12087,14 @@
       "pagSourceRow": 113,
       "pagReferenceDate": "2026-09-21",
       "pagUpdatedAt": "2026-09-21",
-      "pagCorrectionNote": "NUP mantido em 67102.260284/2026-61 conforme correção anteriormente confirmada pelo usuário (Opção B em 21/09/2026)."
+      "pagCorrectionNote": "NUP mantido em 67102.260284/2026-61 conforme correção anteriormente confirmada pelo usuário (Opção B em 21/09/2026).",
+      "patrimonialValueUsd": 26500,
+      "patrimonialCurrency": "USD",
+      "patrimonialSourceFile": "CONTROLE REPARO - SGT ROZENDO - atz PAINEL 21SET(1).xlsx",
+      "patrimonialSourceSheet": "PO's 2025 - 2026",
+      "patrimonialSourceRow": 113,
+      "patrimonialReferenceDate": "2026-09-22",
+      "patrimonialValueField": "VALOR ATUAL DO ITEM"
     },
     {
       "id": "1af971d28b06a8b8b8f4014cb21b8f392f46af3d78d59627d0b3c369b872aded",
@@ -11401,7 +12194,14 @@
       "pagSourceRow": 114,
       "pagReferenceDate": "2026-09-21",
       "pagUpdatedAt": "2026-09-21",
-      "pagCorrectionNote": "NUP mantido em 67102.260285/2026-14 conforme correção anteriormente confirmada pelo usuário (Opção B em 21/09/2026)."
+      "pagCorrectionNote": "NUP mantido em 67102.260285/2026-14 conforme correção anteriormente confirmada pelo usuário (Opção B em 21/09/2026).",
+      "patrimonialValueUsd": 15733,
+      "patrimonialCurrency": "USD",
+      "patrimonialSourceFile": "CONTROLE REPARO - SGT ROZENDO - atz PAINEL 21SET(1).xlsx",
+      "patrimonialSourceSheet": "PO's 2025 - 2026",
+      "patrimonialSourceRow": 114,
+      "patrimonialReferenceDate": "2026-09-22",
+      "patrimonialValueField": "VALOR ATUAL DO ITEM"
     },
     {
       "id": "089cf010f807bbf6b8aef85b4cc08766ac007cf109bc3f8a89a1b40454e592c4",
@@ -11501,7 +12301,14 @@
       "pagSourceRow": 115,
       "pagReferenceDate": "2026-09-21",
       "pagUpdatedAt": "2026-09-21",
-      "pagCorrectionNote": null
+      "pagCorrectionNote": null,
+      "patrimonialValueUsd": 31271,
+      "patrimonialCurrency": "USD",
+      "patrimonialSourceFile": "CONTROLE REPARO - SGT ROZENDO - atz PAINEL 21SET(1).xlsx",
+      "patrimonialSourceSheet": "PO's 2025 - 2026",
+      "patrimonialSourceRow": 115,
+      "patrimonialReferenceDate": "2026-09-22",
+      "patrimonialValueField": "VALOR ATUAL DO ITEM"
     },
     {
       "id": "9ebdc40884a78a519b24a932b20aa7fa60a758696d55e7425816621e2d853c65",
@@ -11601,7 +12408,14 @@
       "pagSourceRow": 116,
       "pagReferenceDate": "2026-09-21",
       "pagUpdatedAt": "2026-09-21",
-      "pagCorrectionNote": null
+      "pagCorrectionNote": null,
+      "patrimonialValueUsd": 31271,
+      "patrimonialCurrency": "USD",
+      "patrimonialSourceFile": "CONTROLE REPARO - SGT ROZENDO - atz PAINEL 21SET(1).xlsx",
+      "patrimonialSourceSheet": "PO's 2025 - 2026",
+      "patrimonialSourceRow": 116,
+      "patrimonialReferenceDate": "2026-09-22",
+      "patrimonialValueField": "VALOR ATUAL DO ITEM"
     },
     {
       "id": "ae871bf51f76aec3f858c6821ccef7e3a8d244573953e7feba9b04a6d544366b",
@@ -11701,7 +12515,14 @@
       "pagSourceRow": 117,
       "pagReferenceDate": "2026-09-21",
       "pagUpdatedAt": "2026-09-21",
-      "pagCorrectionNote": null
+      "pagCorrectionNote": null,
+      "patrimonialValueUsd": 31271,
+      "patrimonialCurrency": "USD",
+      "patrimonialSourceFile": "CONTROLE REPARO - SGT ROZENDO - atz PAINEL 21SET(1).xlsx",
+      "patrimonialSourceSheet": "PO's 2025 - 2026",
+      "patrimonialSourceRow": 117,
+      "patrimonialReferenceDate": "2026-09-22",
+      "patrimonialValueField": "VALOR ATUAL DO ITEM"
     },
     {
       "id": "d26b9d1cb166c914dcfb0b6e2b8c7d9d6b6a0d60ea8953066613b3b85f3eb645",
@@ -11801,7 +12622,14 @@
       "pagSourceRow": 118,
       "pagReferenceDate": "2026-09-21",
       "pagUpdatedAt": "2026-09-21",
-      "pagCorrectionNote": null
+      "pagCorrectionNote": null,
+      "patrimonialValueUsd": 31271,
+      "patrimonialCurrency": "USD",
+      "patrimonialSourceFile": "CONTROLE REPARO - SGT ROZENDO - atz PAINEL 21SET(1).xlsx",
+      "patrimonialSourceSheet": "PO's 2025 - 2026",
+      "patrimonialSourceRow": 118,
+      "patrimonialReferenceDate": "2026-09-22",
+      "patrimonialValueField": "VALOR ATUAL DO ITEM"
     },
     {
       "id": "d05a9f852593d94f24ba8d7e02ff559c3f7f1c9b88ba1b2a3964176958d02bfd",
@@ -11901,7 +12729,14 @@
       "pagSourceRow": 119,
       "pagReferenceDate": "2026-09-21",
       "pagUpdatedAt": "2026-09-21",
-      "pagCorrectionNote": null
+      "pagCorrectionNote": null,
+      "patrimonialValueUsd": 17850,
+      "patrimonialCurrency": "USD",
+      "patrimonialSourceFile": "CONTROLE REPARO - SGT ROZENDO - atz PAINEL 21SET(1).xlsx",
+      "patrimonialSourceSheet": "PO's 2025 - 2026",
+      "patrimonialSourceRow": 119,
+      "patrimonialReferenceDate": "2026-09-22",
+      "patrimonialValueField": "VALOR ATUAL DO ITEM"
     },
     {
       "id": "82db933dfc43524c2128378c0a53cf2cd9183201dd9b94f4f62aa7aa92ee25fd",
@@ -12001,7 +12836,14 @@
       "pagSourceRow": 120,
       "pagReferenceDate": "2026-09-21",
       "pagUpdatedAt": "2026-09-21",
-      "pagCorrectionNote": null
+      "pagCorrectionNote": null,
+      "patrimonialValueUsd": 31271,
+      "patrimonialCurrency": "USD",
+      "patrimonialSourceFile": "CONTROLE REPARO - SGT ROZENDO - atz PAINEL 21SET(1).xlsx",
+      "patrimonialSourceSheet": "PO's 2025 - 2026",
+      "patrimonialSourceRow": 120,
+      "patrimonialReferenceDate": "2026-09-22",
+      "patrimonialValueField": "VALOR ATUAL DO ITEM"
     },
     {
       "id": "20b5a5cd57f56db97c22259e2e41e0813f2c1e22c445d21ab49a02d8a89f9dae",
@@ -12101,7 +12943,14 @@
       "pagSourceRow": 121,
       "pagReferenceDate": "2026-09-21",
       "pagUpdatedAt": "2026-09-21",
-      "pagCorrectionNote": null
+      "pagCorrectionNote": null,
+      "patrimonialValueUsd": 31271,
+      "patrimonialCurrency": "USD",
+      "patrimonialSourceFile": "CONTROLE REPARO - SGT ROZENDO - atz PAINEL 21SET(1).xlsx",
+      "patrimonialSourceSheet": "PO's 2025 - 2026",
+      "patrimonialSourceRow": 121,
+      "patrimonialReferenceDate": "2026-09-22",
+      "patrimonialValueField": "VALOR ATUAL DO ITEM"
     },
     {
       "id": "0731a75de956556d3490d2fca088dd98efa0b0eafcb7e4a33240773551b4dfef",
@@ -12201,7 +13050,14 @@
       "pagSourceRow": 122,
       "pagReferenceDate": "2026-09-21",
       "pagUpdatedAt": "2026-09-21",
-      "pagCorrectionNote": null
+      "pagCorrectionNote": null,
+      "patrimonialValueUsd": 15733,
+      "patrimonialCurrency": "USD",
+      "patrimonialSourceFile": "CONTROLE REPARO - SGT ROZENDO - atz PAINEL 21SET(1).xlsx",
+      "patrimonialSourceSheet": "PO's 2025 - 2026",
+      "patrimonialSourceRow": 122,
+      "patrimonialReferenceDate": "2026-09-22",
+      "patrimonialValueField": "VALOR ATUAL DO ITEM"
     },
     {
       "id": "66bbef121301259dfe05989befc79d1faf952f676682f27947fc53894ad9236d",
@@ -12301,7 +13157,14 @@
       "pagSourceRow": 123,
       "pagReferenceDate": "2026-09-21",
       "pagUpdatedAt": "2026-09-21",
-      "pagCorrectionNote": null
+      "pagCorrectionNote": null,
+      "patrimonialValueUsd": 15733,
+      "patrimonialCurrency": "USD",
+      "patrimonialSourceFile": "CONTROLE REPARO - SGT ROZENDO - atz PAINEL 21SET(1).xlsx",
+      "patrimonialSourceSheet": "PO's 2025 - 2026",
+      "patrimonialSourceRow": 123,
+      "patrimonialReferenceDate": "2026-09-22",
+      "patrimonialValueField": "VALOR ATUAL DO ITEM"
     },
     {
       "id": "91d51daf158b6e794e38b07697d84700169851fd21875a13272fc03759e5e835",
@@ -12401,7 +13264,14 @@
       "pagSourceRow": 124,
       "pagReferenceDate": "2026-09-21",
       "pagUpdatedAt": "2026-09-21",
-      "pagCorrectionNote": null
+      "pagCorrectionNote": null,
+      "patrimonialValueUsd": 15754.97,
+      "patrimonialCurrency": "USD",
+      "patrimonialSourceFile": "CONTROLE REPARO - SGT ROZENDO - atz PAINEL 21SET(1).xlsx",
+      "patrimonialSourceSheet": "PO's 2025 - 2026",
+      "patrimonialSourceRow": 124,
+      "patrimonialReferenceDate": "2026-09-22",
+      "patrimonialValueField": "VALOR ATUAL DO ITEM"
     },
     {
       "id": "ed596847c37720dda6f128e84c5fd3f21f7795e01647e380394ac484369ff327",
@@ -12501,7 +13371,14 @@
       "pagSourceRow": 125,
       "pagReferenceDate": "2026-09-21",
       "pagUpdatedAt": "2026-09-21",
-      "pagCorrectionNote": null
+      "pagCorrectionNote": null,
+      "patrimonialValueUsd": 15754.97,
+      "patrimonialCurrency": "USD",
+      "patrimonialSourceFile": "CONTROLE REPARO - SGT ROZENDO - atz PAINEL 21SET(1).xlsx",
+      "patrimonialSourceSheet": "PO's 2025 - 2026",
+      "patrimonialSourceRow": 125,
+      "patrimonialReferenceDate": "2026-09-22",
+      "patrimonialValueField": "VALOR ATUAL DO ITEM"
     },
     {
       "id": "703af3fa1acf9ed48bfcc4bc5b7eb0cf058473b26667971789c618b7cf2677dc",
@@ -12601,7 +13478,14 @@
       "pagSourceRow": 126,
       "pagReferenceDate": "2026-09-21",
       "pagUpdatedAt": "2026-09-21",
-      "pagCorrectionNote": null
+      "pagCorrectionNote": null,
+      "patrimonialValueUsd": 15754.97,
+      "patrimonialCurrency": "USD",
+      "patrimonialSourceFile": "CONTROLE REPARO - SGT ROZENDO - atz PAINEL 21SET(1).xlsx",
+      "patrimonialSourceSheet": "PO's 2025 - 2026",
+      "patrimonialSourceRow": 126,
+      "patrimonialReferenceDate": "2026-09-22",
+      "patrimonialValueField": "VALOR ATUAL DO ITEM"
     },
     {
       "id": "7e86d10802b30f91eae594983dffea6218c6bdeb0f9efe00218072877c399c12",
@@ -12701,7 +13585,14 @@
       "pagSourceRow": 127,
       "pagReferenceDate": "2026-09-21",
       "pagUpdatedAt": "2026-09-21",
-      "pagCorrectionNote": null
+      "pagCorrectionNote": null,
+      "patrimonialValueUsd": 15754.97,
+      "patrimonialCurrency": "USD",
+      "patrimonialSourceFile": "CONTROLE REPARO - SGT ROZENDO - atz PAINEL 21SET(1).xlsx",
+      "patrimonialSourceSheet": "PO's 2025 - 2026",
+      "patrimonialSourceRow": 127,
+      "patrimonialReferenceDate": "2026-09-22",
+      "patrimonialValueField": "VALOR ATUAL DO ITEM"
     },
     {
       "id": "219004127bc84aa29b8e8a28f542df932ad37feb517f316bafbb847a1037144f",
@@ -12801,7 +13692,14 @@
       "pagSourceRow": 128,
       "pagReferenceDate": "2026-09-21",
       "pagUpdatedAt": "2026-09-21",
-      "pagCorrectionNote": null
+      "pagCorrectionNote": null,
+      "patrimonialValueUsd": 15733,
+      "patrimonialCurrency": "USD",
+      "patrimonialSourceFile": "CONTROLE REPARO - SGT ROZENDO - atz PAINEL 21SET(1).xlsx",
+      "patrimonialSourceSheet": "PO's 2025 - 2026",
+      "patrimonialSourceRow": 128,
+      "patrimonialReferenceDate": "2026-09-22",
+      "patrimonialValueField": "VALOR ATUAL DO ITEM"
     },
     {
       "id": "519c78ce59b2fe25352893b4d5cf0f7b22996724e52bb965447f4f510335b948",
@@ -12901,7 +13799,14 @@
       "pagSourceRow": 129,
       "pagReferenceDate": "2026-09-21",
       "pagUpdatedAt": "2026-09-21",
-      "pagCorrectionNote": null
+      "pagCorrectionNote": null,
+      "patrimonialValueUsd": 31271,
+      "patrimonialCurrency": "USD",
+      "patrimonialSourceFile": "CONTROLE REPARO - SGT ROZENDO - atz PAINEL 21SET(1).xlsx",
+      "patrimonialSourceSheet": "PO's 2025 - 2026",
+      "patrimonialSourceRow": 129,
+      "patrimonialReferenceDate": "2026-09-22",
+      "patrimonialValueField": "VALOR ATUAL DO ITEM"
     },
     {
       "id": "fb957fb89f7aea02109ac226b8a164389a3512aeff560f72b0d2efe94a948c57",
@@ -13001,7 +13906,14 @@
       "pagSourceRow": 130,
       "pagReferenceDate": "2026-09-21",
       "pagUpdatedAt": "2026-09-21",
-      "pagCorrectionNote": null
+      "pagCorrectionNote": null,
+      "patrimonialValueUsd": 15733,
+      "patrimonialCurrency": "USD",
+      "patrimonialSourceFile": "CONTROLE REPARO - SGT ROZENDO - atz PAINEL 21SET(1).xlsx",
+      "patrimonialSourceSheet": "PO's 2025 - 2026",
+      "patrimonialSourceRow": 130,
+      "patrimonialReferenceDate": "2026-09-22",
+      "patrimonialValueField": "VALOR ATUAL DO ITEM"
     },
     {
       "id": "bf41d49da5fbf87254648d59d724b62f0d1b286c7aea40d035201db8974ec529",
@@ -13101,7 +14013,14 @@
       "pagSourceRow": 131,
       "pagReferenceDate": "2026-09-21",
       "pagUpdatedAt": "2026-09-21",
-      "pagCorrectionNote": null
+      "pagCorrectionNote": null,
+      "patrimonialValueUsd": 26500,
+      "patrimonialCurrency": "USD",
+      "patrimonialSourceFile": "CONTROLE REPARO - SGT ROZENDO - atz PAINEL 21SET(1).xlsx",
+      "patrimonialSourceSheet": "PO's 2025 - 2026",
+      "patrimonialSourceRow": 131,
+      "patrimonialReferenceDate": "2026-09-22",
+      "patrimonialValueField": "VALOR ATUAL DO ITEM"
     },
     {
       "id": "91aacac2b51526dff7c50dcc84f80ce0c36bf85341a24a6fe6dd32d46adde990",
@@ -13201,7 +14120,14 @@
       "pagSourceRow": 132,
       "pagReferenceDate": "2026-09-21",
       "pagUpdatedAt": "2026-09-21",
-      "pagCorrectionNote": null
+      "pagCorrectionNote": null,
+      "patrimonialValueUsd": 17513.85,
+      "patrimonialCurrency": "USD",
+      "patrimonialSourceFile": "CONTROLE REPARO - SGT ROZENDO - atz PAINEL 21SET(1).xlsx",
+      "patrimonialSourceSheet": "PO's 2025 - 2026",
+      "patrimonialSourceRow": 132,
+      "patrimonialReferenceDate": "2026-09-22",
+      "patrimonialValueField": "VALOR ATUAL DO ITEM"
     },
     {
       "id": "fd6c6e0633a9b4d6ced006e07b1887aed716dff500cf1827af102e7e73663b6a",
@@ -13301,7 +14227,14 @@
       "pagSourceRow": 133,
       "pagReferenceDate": "2026-09-21",
       "pagUpdatedAt": "2026-09-21",
-      "pagCorrectionNote": null
+      "pagCorrectionNote": null,
+      "patrimonialValueUsd": 17513.85,
+      "patrimonialCurrency": "USD",
+      "patrimonialSourceFile": "CONTROLE REPARO - SGT ROZENDO - atz PAINEL 21SET(1).xlsx",
+      "patrimonialSourceSheet": "PO's 2025 - 2026",
+      "patrimonialSourceRow": 133,
+      "patrimonialReferenceDate": "2026-09-22",
+      "patrimonialValueField": "VALOR ATUAL DO ITEM"
     },
     {
       "id": "33fa5d7f802b008c0cbc054ebf14c6d77c490ef05de290b74a42246bea6c02fc",
@@ -13401,7 +14334,14 @@
       "pagSourceRow": 134,
       "pagReferenceDate": "2026-09-21",
       "pagUpdatedAt": "2026-09-21",
-      "pagCorrectionNote": null
+      "pagCorrectionNote": null,
+      "patrimonialValueUsd": 26500,
+      "patrimonialCurrency": "USD",
+      "patrimonialSourceFile": "CONTROLE REPARO - SGT ROZENDO - atz PAINEL 21SET(1).xlsx",
+      "patrimonialSourceSheet": "PO's 2025 - 2026",
+      "patrimonialSourceRow": 134,
+      "patrimonialReferenceDate": "2026-09-22",
+      "patrimonialValueField": "VALOR ATUAL DO ITEM"
     },
     {
       "id": "8301413604228bd0471e5a4c79fe0d5928f14a5f6676f9f8b251ac27e0543450",
@@ -13501,7 +14441,14 @@
       "pagSourceRow": 135,
       "pagReferenceDate": "2026-09-21",
       "pagUpdatedAt": "2026-09-21",
-      "pagCorrectionNote": null
+      "pagCorrectionNote": null,
+      "patrimonialValueUsd": 17128.09,
+      "patrimonialCurrency": "USD",
+      "patrimonialSourceFile": "CONTROLE REPARO - SGT ROZENDO - atz PAINEL 21SET(1).xlsx",
+      "patrimonialSourceSheet": "PO's 2025 - 2026",
+      "patrimonialSourceRow": 135,
+      "patrimonialReferenceDate": "2026-09-22",
+      "patrimonialValueField": "VALOR ATUAL DO ITEM"
     },
     {
       "id": "a8f8e7bbb4d548bfc237b024ffa78511cacd0a91a581d2ec1b1ef8c92e07ced0",
@@ -13601,7 +14548,14 @@
       "pagSourceRow": 136,
       "pagReferenceDate": "2026-09-21",
       "pagUpdatedAt": "2026-09-21",
-      "pagCorrectionNote": null
+      "pagCorrectionNote": null,
+      "patrimonialValueUsd": 17128.09,
+      "patrimonialCurrency": "USD",
+      "patrimonialSourceFile": "CONTROLE REPARO - SGT ROZENDO - atz PAINEL 21SET(1).xlsx",
+      "patrimonialSourceSheet": "PO's 2025 - 2026",
+      "patrimonialSourceRow": 136,
+      "patrimonialReferenceDate": "2026-09-22",
+      "patrimonialValueField": "VALOR ATUAL DO ITEM"
     },
     {
       "id": "39d691bf39b660414704dc3570f1123cf1f9e5baf8fbc4ad886808e19b2d9853",
@@ -13701,7 +14655,14 @@
       "pagSourceRow": 137,
       "pagReferenceDate": "2026-09-21",
       "pagUpdatedAt": "2026-09-21",
-      "pagCorrectionNote": null
+      "pagCorrectionNote": null,
+      "patrimonialValueUsd": 17128.09,
+      "patrimonialCurrency": "USD",
+      "patrimonialSourceFile": "CONTROLE REPARO - SGT ROZENDO - atz PAINEL 21SET(1).xlsx",
+      "patrimonialSourceSheet": "PO's 2025 - 2026",
+      "patrimonialSourceRow": 137,
+      "patrimonialReferenceDate": "2026-09-22",
+      "patrimonialValueField": "VALOR ATUAL DO ITEM"
     },
     {
       "id": "df2096284c00b8bda6ec6b7d70d556320f48fc8e893e5454503122b73f0c1478",
@@ -13801,7 +14762,14 @@
       "pagSourceRow": 138,
       "pagReferenceDate": "2026-09-21",
       "pagUpdatedAt": "2026-09-21",
-      "pagCorrectionNote": null
+      "pagCorrectionNote": null,
+      "patrimonialValueUsd": 17128.09,
+      "patrimonialCurrency": "USD",
+      "patrimonialSourceFile": "CONTROLE REPARO - SGT ROZENDO - atz PAINEL 21SET(1).xlsx",
+      "patrimonialSourceSheet": "PO's 2025 - 2026",
+      "patrimonialSourceRow": 138,
+      "patrimonialReferenceDate": "2026-09-22",
+      "patrimonialValueField": "VALOR ATUAL DO ITEM"
     },
     {
       "id": "6c29ee686234aa34a324c513dcaf81faaa6f0cba13efe10481a63cc0fe6deabb",
@@ -13901,7 +14869,14 @@
       "pagSourceRow": 139,
       "pagReferenceDate": "2026-09-21",
       "pagUpdatedAt": "2026-09-21",
-      "pagCorrectionNote": null
+      "pagCorrectionNote": null,
+      "patrimonialValueUsd": 17128.09,
+      "patrimonialCurrency": "USD",
+      "patrimonialSourceFile": "CONTROLE REPARO - SGT ROZENDO - atz PAINEL 21SET(1).xlsx",
+      "patrimonialSourceSheet": "PO's 2025 - 2026",
+      "patrimonialSourceRow": 139,
+      "patrimonialReferenceDate": "2026-09-22",
+      "patrimonialValueField": "VALOR ATUAL DO ITEM"
     },
     {
       "id": "9960688db531477edc7d665011d7df9a711dc4a45e3e8c66a38591f542a6b1c0",
@@ -14001,7 +14976,14 @@
       "pagSourceRow": 140,
       "pagReferenceDate": "2026-09-21",
       "pagUpdatedAt": "2026-09-21",
-      "pagCorrectionNote": null
+      "pagCorrectionNote": null,
+      "patrimonialValueUsd": 45000,
+      "patrimonialCurrency": "USD",
+      "patrimonialSourceFile": "CONTROLE REPARO - SGT ROZENDO - atz PAINEL 21SET(1).xlsx",
+      "patrimonialSourceSheet": "PO's 2025 - 2026",
+      "patrimonialSourceRow": 140,
+      "patrimonialReferenceDate": "2026-09-22",
+      "patrimonialValueField": "VALOR ATUAL DO ITEM"
     },
     {
       "id": "06777f82524c8cfa18242e730f1ff7b0fe2194b7a0a14cc2766ae5f069850969",
@@ -14101,7 +15083,14 @@
       "pagSourceRow": 141,
       "pagReferenceDate": "2026-09-21",
       "pagUpdatedAt": "2026-09-21",
-      "pagCorrectionNote": null
+      "pagCorrectionNote": null,
+      "patrimonialValueUsd": 45000,
+      "patrimonialCurrency": "USD",
+      "patrimonialSourceFile": "CONTROLE REPARO - SGT ROZENDO - atz PAINEL 21SET(1).xlsx",
+      "patrimonialSourceSheet": "PO's 2025 - 2026",
+      "patrimonialSourceRow": 141,
+      "patrimonialReferenceDate": "2026-09-22",
+      "patrimonialValueField": "VALOR ATUAL DO ITEM"
     },
     {
       "id": "45d86b4c0648f32853909176e8e5895b2edcc29c27542d7f42057519352530bb",
@@ -14201,7 +15190,14 @@
       "pagSourceRow": 142,
       "pagReferenceDate": "2026-09-21",
       "pagUpdatedAt": "2026-09-21",
-      "pagCorrectionNote": null
+      "pagCorrectionNote": null,
+      "patrimonialValueUsd": 45000,
+      "patrimonialCurrency": "USD",
+      "patrimonialSourceFile": "CONTROLE REPARO - SGT ROZENDO - atz PAINEL 21SET(1).xlsx",
+      "patrimonialSourceSheet": "PO's 2025 - 2026",
+      "patrimonialSourceRow": 142,
+      "patrimonialReferenceDate": "2026-09-22",
+      "patrimonialValueField": "VALOR ATUAL DO ITEM"
     },
     {
       "id": "b8ad0d232268440c0f391cc1b43a7333a9aa0f48ed44deced15a90168d110914",
@@ -14301,7 +15297,14 @@
       "pagSourceRow": 143,
       "pagReferenceDate": "2026-09-21",
       "pagUpdatedAt": "2026-09-21",
-      "pagCorrectionNote": null
+      "pagCorrectionNote": null,
+      "patrimonialValueUsd": 45000,
+      "patrimonialCurrency": "USD",
+      "patrimonialSourceFile": "CONTROLE REPARO - SGT ROZENDO - atz PAINEL 21SET(1).xlsx",
+      "patrimonialSourceSheet": "PO's 2025 - 2026",
+      "patrimonialSourceRow": 143,
+      "patrimonialReferenceDate": "2026-09-22",
+      "patrimonialValueField": "VALOR ATUAL DO ITEM"
     },
     {
       "id": "c980c224d3793916ed73a46d123729c78434bc6cd537d310f2a43cf67d77a695",
@@ -14401,7 +15404,14 @@
       "pagSourceRow": 144,
       "pagReferenceDate": "2026-09-21",
       "pagUpdatedAt": "2026-09-21",
-      "pagCorrectionNote": null
+      "pagCorrectionNote": null,
+      "patrimonialValueUsd": 45000,
+      "patrimonialCurrency": "USD",
+      "patrimonialSourceFile": "CONTROLE REPARO - SGT ROZENDO - atz PAINEL 21SET(1).xlsx",
+      "patrimonialSourceSheet": "PO's 2025 - 2026",
+      "patrimonialSourceRow": 144,
+      "patrimonialReferenceDate": "2026-09-22",
+      "patrimonialValueField": "VALOR ATUAL DO ITEM"
     },
     {
       "id": "7e48755d3be27fc8fb3b8f9b3dffebe32e81982cec3d5ea3195b0a2fc2dbb68a",
@@ -14501,7 +15511,14 @@
       "pagSourceRow": 145,
       "pagReferenceDate": "2026-09-21",
       "pagUpdatedAt": "2026-09-21",
-      "pagCorrectionNote": null
+      "pagCorrectionNote": null,
+      "patrimonialValueUsd": 45000,
+      "patrimonialCurrency": "USD",
+      "patrimonialSourceFile": "CONTROLE REPARO - SGT ROZENDO - atz PAINEL 21SET(1).xlsx",
+      "patrimonialSourceSheet": "PO's 2025 - 2026",
+      "patrimonialSourceRow": 145,
+      "patrimonialReferenceDate": "2026-09-22",
+      "patrimonialValueField": "VALOR ATUAL DO ITEM"
     },
     {
       "id": "45462436aad52eefb698852184369d70b80fcaceff93ff8b37075142be9d8a28",
@@ -14601,7 +15618,14 @@
       "pagSourceRow": 146,
       "pagReferenceDate": "2026-09-21",
       "pagUpdatedAt": "2026-09-21",
-      "pagCorrectionNote": null
+      "pagCorrectionNote": null,
+      "patrimonialValueUsd": 45000,
+      "patrimonialCurrency": "USD",
+      "patrimonialSourceFile": "CONTROLE REPARO - SGT ROZENDO - atz PAINEL 21SET(1).xlsx",
+      "patrimonialSourceSheet": "PO's 2025 - 2026",
+      "patrimonialSourceRow": 146,
+      "patrimonialReferenceDate": "2026-09-22",
+      "patrimonialValueField": "VALOR ATUAL DO ITEM"
     },
     {
       "id": "c3d557af2d5eee3467b67c8da97914e274b553f91e43a3a7517218ced9f841dd",
@@ -14701,7 +15725,14 @@
       "pagSourceRow": 147,
       "pagReferenceDate": "2026-09-21",
       "pagUpdatedAt": "2026-09-21",
-      "pagCorrectionNote": null
+      "pagCorrectionNote": null,
+      "patrimonialValueUsd": 45000,
+      "patrimonialCurrency": "USD",
+      "patrimonialSourceFile": "CONTROLE REPARO - SGT ROZENDO - atz PAINEL 21SET(1).xlsx",
+      "patrimonialSourceSheet": "PO's 2025 - 2026",
+      "patrimonialSourceRow": 147,
+      "patrimonialReferenceDate": "2026-09-22",
+      "patrimonialValueField": "VALOR ATUAL DO ITEM"
     },
     {
       "id": "7fa8c7ecdd524f2372b22b4e5ddc670d6ae5fbf24b0fd46e29005bcfbb39eba8",
@@ -14801,7 +15832,14 @@
       "pagSourceRow": 148,
       "pagReferenceDate": "2026-09-21",
       "pagUpdatedAt": "2026-09-21",
-      "pagCorrectionNote": null
+      "pagCorrectionNote": null,
+      "patrimonialValueUsd": 45000,
+      "patrimonialCurrency": "USD",
+      "patrimonialSourceFile": "CONTROLE REPARO - SGT ROZENDO - atz PAINEL 21SET(1).xlsx",
+      "patrimonialSourceSheet": "PO's 2025 - 2026",
+      "patrimonialSourceRow": 148,
+      "patrimonialReferenceDate": "2026-09-22",
+      "patrimonialValueField": "VALOR ATUAL DO ITEM"
     },
     {
       "id": "c039b3ba39032458881b858d318c43c5baedc962d720d627d86034ef33b43a8c",
@@ -14901,7 +15939,14 @@
       "pagSourceRow": 149,
       "pagReferenceDate": "2026-09-21",
       "pagUpdatedAt": "2026-09-21",
-      "pagCorrectionNote": null
+      "pagCorrectionNote": null,
+      "patrimonialValueUsd": 45000,
+      "patrimonialCurrency": "USD",
+      "patrimonialSourceFile": "CONTROLE REPARO - SGT ROZENDO - atz PAINEL 21SET(1).xlsx",
+      "patrimonialSourceSheet": "PO's 2025 - 2026",
+      "patrimonialSourceRow": 149,
+      "patrimonialReferenceDate": "2026-09-22",
+      "patrimonialValueField": "VALOR ATUAL DO ITEM"
     },
     {
       "id": "c0245ff07cd9cdb8def816258f786d14d617f0be06d6bc817c6885de1e5075db",
@@ -15001,7 +16046,14 @@
       "pagSourceRow": 150,
       "pagReferenceDate": "2026-09-21",
       "pagUpdatedAt": "2026-09-21",
-      "pagCorrectionNote": null
+      "pagCorrectionNote": null,
+      "patrimonialValueUsd": 26402.46,
+      "patrimonialCurrency": "USD",
+      "patrimonialSourceFile": "CONTROLE REPARO - SGT ROZENDO - atz PAINEL 21SET(1).xlsx",
+      "patrimonialSourceSheet": "PO's 2025 - 2026",
+      "patrimonialSourceRow": 150,
+      "patrimonialReferenceDate": "2026-09-22",
+      "patrimonialValueField": "VALOR ATUAL DO ITEM"
     },
     {
       "id": "5a26f9fdeb28a0eec2e3dbee026bac0b582f57aa75fe1195efabb349d7677d87",
@@ -15101,7 +16153,14 @@
       "pagSourceRow": 151,
       "pagReferenceDate": "2026-09-21",
       "pagUpdatedAt": "2026-09-21",
-      "pagCorrectionNote": null
+      "pagCorrectionNote": null,
+      "patrimonialValueUsd": 26402.46,
+      "patrimonialCurrency": "USD",
+      "patrimonialSourceFile": "CONTROLE REPARO - SGT ROZENDO - atz PAINEL 21SET(1).xlsx",
+      "patrimonialSourceSheet": "PO's 2025 - 2026",
+      "patrimonialSourceRow": 151,
+      "patrimonialReferenceDate": "2026-09-22",
+      "patrimonialValueField": "VALOR ATUAL DO ITEM"
     },
     {
       "id": "a8bd5ca32ec640e20a7b471537dbce3811ed8c9d1b9da8d2570c9fad2ed0c113",
@@ -15201,7 +16260,14 @@
       "pagSourceRow": 152,
       "pagReferenceDate": "2026-09-21",
       "pagUpdatedAt": "2026-09-21",
-      "pagCorrectionNote": null
+      "pagCorrectionNote": null,
+      "patrimonialValueUsd": 26402.46,
+      "patrimonialCurrency": "USD",
+      "patrimonialSourceFile": "CONTROLE REPARO - SGT ROZENDO - atz PAINEL 21SET(1).xlsx",
+      "patrimonialSourceSheet": "PO's 2025 - 2026",
+      "patrimonialSourceRow": 152,
+      "patrimonialReferenceDate": "2026-09-22",
+      "patrimonialValueField": "VALOR ATUAL DO ITEM"
     },
     {
       "id": "b79a13b0949d225fe3a40a5faf64a3cc1300da056cb64544138a26c5696d5cfe",
@@ -15301,7 +16367,14 @@
       "pagSourceRow": 153,
       "pagReferenceDate": "2026-09-21",
       "pagUpdatedAt": "2026-09-21",
-      "pagCorrectionNote": null
+      "pagCorrectionNote": null,
+      "patrimonialValueUsd": 26402.46,
+      "patrimonialCurrency": "USD",
+      "patrimonialSourceFile": "CONTROLE REPARO - SGT ROZENDO - atz PAINEL 21SET(1).xlsx",
+      "patrimonialSourceSheet": "PO's 2025 - 2026",
+      "patrimonialSourceRow": 153,
+      "patrimonialReferenceDate": "2026-09-22",
+      "patrimonialValueField": "VALOR ATUAL DO ITEM"
     },
     {
       "id": "bbe055183f49871fd897e8a3fde05e3501b438b5e5dfb1a3369a7330f071c7bc",
@@ -15401,7 +16474,14 @@
       "pagSourceRow": 154,
       "pagReferenceDate": "2026-09-21",
       "pagUpdatedAt": "2026-09-21",
-      "pagCorrectionNote": null
+      "pagCorrectionNote": null,
+      "patrimonialValueUsd": 18319.04,
+      "patrimonialCurrency": "USD",
+      "patrimonialSourceFile": "CONTROLE REPARO - SGT ROZENDO - atz PAINEL 21SET(1).xlsx",
+      "patrimonialSourceSheet": "PO's 2025 - 2026",
+      "patrimonialSourceRow": 154,
+      "patrimonialReferenceDate": "2026-09-22",
+      "patrimonialValueField": "VALOR ATUAL DO ITEM"
     },
     {
       "id": "a673dc3ef7cff07b2e87fb8d1965e3e812e1d19d4b7e39a269341da7fc744552",
@@ -15501,7 +16581,14 @@
       "pagSourceRow": 155,
       "pagReferenceDate": "2026-09-21",
       "pagUpdatedAt": "2026-09-21",
-      "pagCorrectionNote": null
+      "pagCorrectionNote": null,
+      "patrimonialValueUsd": 18319.04,
+      "patrimonialCurrency": "USD",
+      "patrimonialSourceFile": "CONTROLE REPARO - SGT ROZENDO - atz PAINEL 21SET(1).xlsx",
+      "patrimonialSourceSheet": "PO's 2025 - 2026",
+      "patrimonialSourceRow": 155,
+      "patrimonialReferenceDate": "2026-09-22",
+      "patrimonialValueField": "VALOR ATUAL DO ITEM"
     },
     {
       "id": "0147c893b72f3413cc07dc4d0da6bdc8b1b7ea6375d422d497ccdc645d89873d",
@@ -15601,7 +16688,14 @@
       "pagSourceRow": 156,
       "pagReferenceDate": "2026-09-21",
       "pagUpdatedAt": "2026-09-21",
-      "pagCorrectionNote": null
+      "pagCorrectionNote": null,
+      "patrimonialValueUsd": 15733,
+      "patrimonialCurrency": "USD",
+      "patrimonialSourceFile": "CONTROLE REPARO - SGT ROZENDO - atz PAINEL 21SET(1).xlsx",
+      "patrimonialSourceSheet": "PO's 2025 - 2026",
+      "patrimonialSourceRow": 156,
+      "patrimonialReferenceDate": "2026-09-22",
+      "patrimonialValueField": "VALOR ATUAL DO ITEM"
     },
     {
       "id": "d0fbc99658b85ca008f320c0483e292798aa90fb9c6729b11f210899871ca1da",
@@ -15701,7 +16795,14 @@
       "pagSourceRow": 157,
       "pagReferenceDate": "2026-09-21",
       "pagUpdatedAt": "2026-09-21",
-      "pagCorrectionNote": null
+      "pagCorrectionNote": null,
+      "patrimonialValueUsd": 15733,
+      "patrimonialCurrency": "USD",
+      "patrimonialSourceFile": "CONTROLE REPARO - SGT ROZENDO - atz PAINEL 21SET(1).xlsx",
+      "patrimonialSourceSheet": "PO's 2025 - 2026",
+      "patrimonialSourceRow": 157,
+      "patrimonialReferenceDate": "2026-09-22",
+      "patrimonialValueField": "VALOR ATUAL DO ITEM"
     },
     {
       "id": "6d806a3423472269d0d8f595cec74454d75223b3c1da77731a287c01f3fb38d8",
@@ -15801,7 +16902,14 @@
       "pagSourceRow": 158,
       "pagReferenceDate": "2026-09-21",
       "pagUpdatedAt": "2026-09-21",
-      "pagCorrectionNote": null
+      "pagCorrectionNote": null,
+      "patrimonialValueUsd": 15733,
+      "patrimonialCurrency": "USD",
+      "patrimonialSourceFile": "CONTROLE REPARO - SGT ROZENDO - atz PAINEL 21SET(1).xlsx",
+      "patrimonialSourceSheet": "PO's 2025 - 2026",
+      "patrimonialSourceRow": 158,
+      "patrimonialReferenceDate": "2026-09-22",
+      "patrimonialValueField": "VALOR ATUAL DO ITEM"
     },
     {
       "id": "3cd2073a9fc42053720bba8a43322179e0f4f398e717b7fe0a70961ed5f56316",
@@ -15901,7 +17009,14 @@
       "pagSourceRow": 159,
       "pagReferenceDate": "2026-09-21",
       "pagUpdatedAt": "2026-09-21",
-      "pagCorrectionNote": null
+      "pagCorrectionNote": null,
+      "patrimonialValueUsd": 23901.82,
+      "patrimonialCurrency": "USD",
+      "patrimonialSourceFile": "CONTROLE REPARO - SGT ROZENDO - atz PAINEL 21SET(1).xlsx",
+      "patrimonialSourceSheet": "PO's 2025 - 2026",
+      "patrimonialSourceRow": 159,
+      "patrimonialReferenceDate": "2026-09-22",
+      "patrimonialValueField": "VALOR ATUAL DO ITEM"
     },
     {
       "id": "deb4e6526a9ad0777ed9568efea70b6b00c4d36b8d4264d9a91452625147ea7f",
@@ -16001,7 +17116,14 @@
       "pagSourceRow": 160,
       "pagReferenceDate": "2026-09-21",
       "pagUpdatedAt": "2026-09-21",
-      "pagCorrectionNote": null
+      "pagCorrectionNote": null,
+      "patrimonialValueUsd": 15733,
+      "patrimonialCurrency": "USD",
+      "patrimonialSourceFile": "CONTROLE REPARO - SGT ROZENDO - atz PAINEL 21SET(1).xlsx",
+      "patrimonialSourceSheet": "PO's 2025 - 2026",
+      "patrimonialSourceRow": 160,
+      "patrimonialReferenceDate": "2026-09-22",
+      "patrimonialValueField": "VALOR ATUAL DO ITEM"
     },
     {
       "id": "280cf0210f96db5ad7b3d70ac47777f416f67a6d95eb4f6187977df28898d8d7",
@@ -16101,7 +17223,14 @@
       "pagSourceRow": 161,
       "pagReferenceDate": "2026-09-21",
       "pagUpdatedAt": "2026-09-21",
-      "pagCorrectionNote": null
+      "pagCorrectionNote": null,
+      "patrimonialValueUsd": 37163,
+      "patrimonialCurrency": "USD",
+      "patrimonialSourceFile": "CONTROLE REPARO - SGT ROZENDO - atz PAINEL 21SET(1).xlsx",
+      "patrimonialSourceSheet": "PO's 2025 - 2026",
+      "patrimonialSourceRow": 161,
+      "patrimonialReferenceDate": "2026-09-22",
+      "patrimonialValueField": "VALOR ATUAL DO ITEM"
     }
   ],
   "rejectedRows": []

@@ -1,0 +1,775 @@
+{
+  "reconstructedPackage": true,
+  "sourceFile": "CONTROLE REPARO - SGT ROZENDO - atz PAINEL 21SET(1).xlsx",
+  "sourceSha256": "8a6fe1f838af06974aa5cd75b3b640368318eb86affb79dca320c39329fe15bf",
+  "itemCount": 160,
+  "uniquePOs": 81,
+  "valued": 83,
+  "notValued": 77,
+  "fx": {
+    "currency": "USD",
+    "counterCurrency": "BRL",
+    "rate": 5.1161,
+    "date": "2026-09-22",
+    "type": "Fechamento",
+    "side": "Venda",
+    "source": "Banco Central do Brasil — PTAX",
+    "sourceUrl": "https://ptax.bcb.gov.br/ptax_internet/consultarUltimaCotacaoDolar.do",
+    "retrievedOn": "2026-09-22",
+    "evidence": "Página oficial consultada: fechamento de 22/09/2026, compra 5,1155; venda 5,1161.",
+    "mode": "snapshot",
+    "thresholdBrl": 120000
+  },
+  "alertCount": 40,
+  "totalValueUsd": "2151758.39",
+  "valuationChanges": [
+    {
+      "id": "5dc5d1daebadfbea313ef0f6be4f2f398a2ed872753ddc610441bc6595f78b75",
+      "po": "25T000934",
+      "requisition": "GLSR04901P3",
+      "pn": "BR61-101",
+      "sn": "1978-03",
+      "valueUsd": 29745.78,
+      "sourceRow": 38
+    },
+    {
+      "id": "660f31fa2fc7a3dc0b5e3b85eae6d475c84bd05b6cc85bd682d6e4cb2a5069bd",
+      "po": "25T000934",
+      "requisition": "GLSR04904P3",
+      "pn": "6798233L",
+      "sn": "10019",
+      "valueUsd": 1046.78,
+      "sourceRow": 39
+    },
+    {
+      "id": "7c85c9c67ac35445ed74d53bb3ef7219b708449e3dd0e0ace0f73d2ab60e0509",
+      "po": "25T001225",
+      "requisition": "GLSR04902P3",
+      "pn": "BR61-103",
+      "sn": "2138-01",
+      "valueUsd": 14240,
+      "sourceRow": 46
+    },
+    {
+      "id": "9a62bf4bb1d86d3fbe822e3348a0de4a5108f8b786d7613a3b745d6e1a118bcf",
+      "po": "25T001225",
+      "requisition": "GLSR04906P3",
+      "pn": "H153C",
+      "sn": "0183",
+      "valueUsd": 4808.78,
+      "sourceRow": 47
+    },
+    {
+      "id": "611f9f8db7fc593de15549de18914ae17a442ceccae59fe8efaec12f14ddb55f",
+      "po": "26T000006",
+      "requisition": "ELSR162014R",
+      "pn": "W63-2-100",
+      "sn": "011",
+      "valueUsd": 40250,
+      "sourceRow": 83
+    },
+    {
+      "id": "8aae20c1a426ac60b8ea4d9c26570b2e24b0c05c92adaeb32a3996986f14c816",
+      "po": "26T000006",
+      "requisition": "ELSR162024R",
+      "pn": "W63-2-100",
+      "sn": "013",
+      "valueUsd": 40250,
+      "sourceRow": 84
+    },
+    {
+      "id": "6491ea82ec626156b26398727c5ea8439dafe663ef59925cdd9d278981df4942",
+      "po": "26T000006",
+      "requisition": "ELSR162034R",
+      "pn": "W63-2-100",
+      "sn": "099",
+      "valueUsd": 40250,
+      "sourceRow": 85
+    },
+    {
+      "id": "ce58b491f2fdf50c8a0cd9389d6f0329e8449dba4caf02cfc21e3a3016a303b0",
+      "po": "26T000138",
+      "requisition": "SPSR04801A7",
+      "pn": "025323-101-03",
+      "sn": "3158",
+      "valueUsd": 5606.98,
+      "sourceRow": 86
+    },
+    {
+      "id": "03a535d4340a3e1aa4756c80fd73876974afd9e2832a2840325090a51e912b9f",
+      "po": "26T000139",
+      "requisition": "SPSR04902A7",
+      "pn": "3244834-6",
+      "sn": "C62124",
+      "valueUsd": 26500,
+      "sourceRow": 87
+    },
+    {
+      "id": "2624b6b4280f36d65cfe03a7bfafb34072f1ead46930424c48febb3a1e615cf8",
+      "po": "26T000548",
+      "requisition": "SPTR06201F5",
+      "pn": "20110",
+      "sn": "4139-4",
+      "valueUsd": 26500,
+      "sourceRow": 88
+    },
+    {
+      "id": "c47a037a309214d74bd92ca2922d4a4556b4cd445ea9f3e91738cb2be1e6c662",
+      "po": "26T000548",
+      "requisition": "SPTR06202F5",
+      "pn": "20110",
+      "sn": "5046-20",
+      "valueUsd": 26500,
+      "sourceRow": 89
+    },
+    {
+      "id": "354f857e75d58d4700c43128fee82edd5112b12697a3958d8fccfc075c0e2052",
+      "po": "26T000548",
+      "requisition": "SPTR06204F5",
+      "pn": "20110",
+      "sn": "5046-1",
+      "valueUsd": 26500,
+      "sourceRow": 90
+    },
+    {
+      "id": "7400396e6286c665ead3ad2feff32f9cf18128dcf8d02b4f4805a2c7100b5a83",
+      "po": "26T000548",
+      "requisition": "SPTR06205F5",
+      "pn": "20110",
+      "sn": "4139-1",
+      "valueUsd": 26500,
+      "sourceRow": 91
+    },
+    {
+      "id": "fe1b903d44f9a43aa64afccb89539988236d1fea197b118e83257cb55e1940fc",
+      "po": "26T000735",
+      "requisition": "SPTR07202T1",
+      "pn": "3244790-1",
+      "sn": "A87570",
+      "valueUsd": 8754.07,
+      "sourceRow": 92
+    },
+    {
+      "id": "08cc5935317172e66f9cb48b8550b9ac22fb449a1e68c63a7b23713330ba46bd",
+      "po": "26T000736",
+      "requisition": "SPTR07201T1",
+      "pn": "3244790-1",
+      "sn": "A87568",
+      "valueUsd": 8754.07,
+      "sourceRow": 93
+    },
+    {
+      "id": "69862657e189730baf5d04353aee32a9b5b4f2f6dd84f05d446d142afbe242ae",
+      "po": "26T000736",
+      "requisition": "SPTR07203T1",
+      "pn": "3244790-1",
+      "sn": "A87579",
+      "valueUsd": 8754.07,
+      "sourceRow": 94
+    },
+    {
+      "id": "55fda86bca6c75a05f267705b315f2d72d1e47e194dbce6545300d433e30d586",
+      "po": "26T000736",
+      "requisition": "SPTR07204T1",
+      "pn": "3244790-1",
+      "sn": "A87650",
+      "valueUsd": 8754.07,
+      "sourceRow": 95
+    },
+    {
+      "id": "fc55ab84e905af3d7ade9c6563a6fcd498cf1b0886dcd46aadc5ba18a0a7cce6",
+      "po": "26T000736",
+      "requisition": "SPTR07205T1",
+      "pn": "3244790-2",
+      "sn": "C23213",
+      "valueUsd": 14776.74,
+      "sourceRow": 96
+    },
+    {
+      "id": "8f13b7e69b402a66118872de0dbdf36d0132e469bbbab51693969066a523a0a0",
+      "po": "26T000750",
+      "requisition": "SPTR06203F5",
+      "pn": "20110",
+      "sn": "2192-45",
+      "valueUsd": 26500,
+      "sourceRow": 97
+    },
+    {
+      "id": "e22ba159aa344704fef25daeb77ac819afdb1e83dee263c0d4055c752dfa42f9",
+      "po": "26T000750",
+      "requisition": "SPTR07001F5",
+      "pn": "181RA38R176",
+      "sn": "6324",
+      "valueUsd": 18319.04,
+      "sourceRow": 98
+    },
+    {
+      "id": "8283a23c6cd4c95d873ef8213135925dbc90bddcc60d190cf526e3d5162f6118",
+      "po": "26T000750",
+      "requisition": "SPTR07102F5",
+      "pn": "181RA38R176",
+      "sn": "3217",
+      "valueUsd": 18319.04,
+      "sourceRow": 99
+    },
+    {
+      "id": "d6ade00772366f07519f367d76e5688af62fab84403b2629b69f647bc3793c68",
+      "po": "26T000750",
+      "requisition": "SPTR07103F5",
+      "pn": "181RA38R176",
+      "sn": "5487",
+      "valueUsd": 18319.04,
+      "sourceRow": 100
+    },
+    {
+      "id": "5108694dc13a4b579efcd9617a86ff45b440005cfe07527d8b2b5bb32204cd1b",
+      "po": "26T000750",
+      "requisition": "SPTR08201F5",
+      "pn": "5035L000-1",
+      "sn": "L1350",
+      "valueUsd": 26402.46,
+      "sourceRow": 101
+    },
+    {
+      "id": "61bddfb5be4aa466889316c09a7506a2775979e87054b1ede1acbb17fabba5b4",
+      "po": "26T000798",
+      "requisition": "GLSR08701P3",
+      "pn": "F103D000-15",
+      "sn": "842",
+      "valueUsd": 5268.8,
+      "sourceRow": 102
+    },
+    {
+      "id": "a2da08794bf1771237b24f28de0a46d4df804e960e10c40c109d73b4a3560d36",
+      "po": "26T000799",
+      "requisition": "GLSR07101P3",
+      "pn": "A-8-0047-A0",
+      "sn": "2",
+      "valueUsd": 194863.82,
+      "sourceRow": 103
+    },
+    {
+      "id": "ad81c6d63a95c5000392fb0efe88583951d7f0aed4f662e82a75df317f1bc401",
+      "po": "26T000799",
+      "requisition": "GLSR07122P3",
+      "pn": "C17053QA01",
+      "sn": "1522",
+      "valueUsd": 15148.83,
+      "sourceRow": 104
+    },
+    {
+      "id": "e3ae2d74df848010037b24a9902ae077aca3f7f3c740bbed135347e622356ad2",
+      "po": "26T000800",
+      "requisition": "GLSR07110P3",
+      "pn": "C17053QA01",
+      "sn": "1521",
+      "valueUsd": 15148.83,
+      "sourceRow": 105
+    },
+    {
+      "id": "053d560d8f393b0cdf4c3275580e5db75506c968ccef1501052ed9100c7e7d23",
+      "po": "26T000800",
+      "requisition": "GLSR07111P3",
+      "pn": "C17053QA01",
+      "sn": "869",
+      "valueUsd": 15148.83,
+      "sourceRow": 106
+    },
+    {
+      "id": "d4c2650a518bc3279915dda956e4f9bd69ab0c7b6a53d044e8edb227fda9eb87",
+      "po": "26T000800",
+      "requisition": "GLSR07113P3",
+      "pn": "261500123-0501",
+      "sn": "10559",
+      "valueUsd": 35898.63,
+      "sourceRow": 107
+    },
+    {
+      "id": "2c3f951f8b86274089e337ed85942f9d6328b6d0260a154ffdf67ae168729f05",
+      "po": "26T000800",
+      "requisition": "GLSR07112P3",
+      "pn": "13245562",
+      "sn": "A0053",
+      "valueUsd": 60757.91,
+      "sourceRow": 108
+    },
+    {
+      "id": "3a5649e7e6677e8e6eea9c71732e8d74b85352256b7ac4e810fde77eefd618bb",
+      "po": "26T000814",
+      "requisition": "GLSR07121P3",
+      "pn": "0860211400000",
+      "sn": "3005",
+      "valueUsd": 15788.88,
+      "sourceRow": 109
+    },
+    {
+      "id": "5ef9d467790e623f4cfaee466bc40ef6f45b85adf9b9226387c695e6a3780cea",
+      "po": "26T000815",
+      "requisition": "GLSR07839P3",
+      "pn": "0864613000800",
+      "sn": "2008",
+      "valueUsd": 8694.67,
+      "sourceRow": 110
+    },
+    {
+      "id": "d2c4dd3bf91812cced5ce229e3549336aab4c1ea115bb7d8506cbc429a1737db",
+      "po": "26T000815",
+      "requisition": "GLSR07841P3",
+      "pn": "0864613000800",
+      "sn": "2007",
+      "valueUsd": 8694.67,
+      "sourceRow": 111
+    },
+    {
+      "id": "e1f4595ddca04fe7639d06d63b6bba99604ea161f9f16bd22fd613c81937685f",
+      "po": "26T000818",
+      "requisition": "GLSR07123P3",
+      "pn": "C17053QA01",
+      "sn": "2235",
+      "valueUsd": 15148.83,
+      "sourceRow": 112
+    },
+    {
+      "id": "e3806d6e071ac4b7e51c724dc9a7390d5e549e8ab6b5b19c20108198897faf23",
+      "po": "26T000910",
+      "requisition": "SPTR09701F5",
+      "pn": "20110",
+      "sn": "5048-7",
+      "valueUsd": 26500,
+      "sourceRow": 113
+    },
+    {
+      "id": "1af971d28b06a8b8b8f4014cb21b8f392f46af3d78d59627d0b3c369b872aded",
+      "po": "26T000915",
+      "requisition": "SPTR09803A7",
+      "pn": "3032151",
+      "sn": "HLAAAB110",
+      "valueUsd": 15733,
+      "sourceRow": 114
+    },
+    {
+      "id": "089cf010f807bbf6b8aef85b4cc08766ac007cf109bc3f8a89a1b40454e592c4",
+      "po": "26T001054",
+      "requisition": "SPTR10003A7",
+      "pn": "3024862",
+      "sn": "15EK13580",
+      "valueUsd": 31271,
+      "sourceRow": 115
+    },
+    {
+      "id": "9ebdc40884a78a519b24a932b20aa7fa60a758696d55e7425816621e2d853c65",
+      "po": "26T001054",
+      "requisition": "SPTR10004A7",
+      "pn": "3024862",
+      "sn": "12140",
+      "valueUsd": 31271,
+      "sourceRow": 116
+    },
+    {
+      "id": "ae871bf51f76aec3f858c6821ccef7e3a8d244573953e7feba9b04a6d544366b",
+      "po": "26T001054",
+      "requisition": "SPTR10005A7",
+      "pn": "3024862",
+      "sn": "HLACW992",
+      "valueUsd": 31271,
+      "sourceRow": 117
+    },
+    {
+      "id": "d26b9d1cb166c914dcfb0b6e2b8c7d9d6b6a0d60ea8953066613b3b85f3eb645",
+      "po": "26T001055",
+      "requisition": "SPTR10006A7",
+      "pn": "3024862",
+      "sn": "BL25",
+      "valueUsd": 31271,
+      "sourceRow": 118
+    },
+    {
+      "id": "d05a9f852593d94f24ba8d7e02ff559c3f7f1c9b88ba1b2a3964176958d02bfd",
+      "po": "26T001056",
+      "requisition": "SPTR13902F5",
+      "pn": "22253350",
+      "sn": "3019",
+      "valueUsd": 17850,
+      "sourceRow": 119
+    },
+    {
+      "id": "82db933dfc43524c2128378c0a53cf2cd9183201dd9b94f4f62aa7aa92ee25fd",
+      "po": "26T001057",
+      "requisition": "SPTR10007T1",
+      "pn": "3024862",
+      "sn": "59CW",
+      "valueUsd": 31271,
+      "sourceRow": 120
+    },
+    {
+      "id": "20b5a5cd57f56db97c22259e2e41e0813f2c1e22c445d21ab49a02d8a89f9dae",
+      "po": "26T001057",
+      "requisition": "SPTR10008T1",
+      "pn": "3024862",
+      "sn": "Y2203",
+      "valueUsd": 31271,
+      "sourceRow": 121
+    },
+    {
+      "id": "0731a75de956556d3490d2fca088dd98efa0b0eafcb7e4a33240773551b4dfef",
+      "po": "26T001058",
+      "requisition": "SPTR09801A7",
+      "pn": "3032151",
+      "sn": "711B",
+      "valueUsd": 15733,
+      "sourceRow": 122
+    },
+    {
+      "id": "66bbef121301259dfe05989befc79d1faf952f676682f27947fc53894ad9236d",
+      "po": "26T001058",
+      "requisition": "SPTR09802A7",
+      "pn": "3032151",
+      "sn": "HLAAA191",
+      "valueUsd": 15733,
+      "sourceRow": 123
+    },
+    {
+      "id": "91d51daf158b6e794e38b07697d84700169851fd21875a13272fc03759e5e835",
+      "po": "26T001059",
+      "requisition": "SPTR09604F5",
+      "pn": "2562A13M",
+      "sn": "346-42",
+      "valueUsd": 15754.97,
+      "sourceRow": 124
+    },
+    {
+      "id": "ed596847c37720dda6f128e84c5fd3f21f7795e01647e380394ac484369ff327",
+      "po": "26T001059",
+      "requisition": "SPTR09605F5",
+      "pn": "2562A13M",
+      "sn": "GST04411",
+      "valueUsd": 15754.97,
+      "sourceRow": 125
+    },
+    {
+      "id": "703af3fa1acf9ed48bfcc4bc5b7eb0cf058473b26667971789c618b7cf2677dc",
+      "po": "26T001059",
+      "requisition": "SPTR09602F5",
+      "pn": "2562A13M",
+      "sn": "377-378",
+      "valueUsd": 15754.97,
+      "sourceRow": 126
+    },
+    {
+      "id": "7e86d10802b30f91eae594983dffea6218c6bdeb0f9efe00218072877c399c12",
+      "po": "26T001059",
+      "requisition": "SPTR09603F5",
+      "pn": "2562A13M",
+      "sn": "495-18",
+      "valueUsd": 15754.97,
+      "sourceRow": 127
+    },
+    {
+      "id": "219004127bc84aa29b8e8a28f542df932ad37feb517f316bafbb847a1037144f",
+      "po": "26T001060",
+      "requisition": "SPTR09806T1",
+      "pn": "3032151",
+      "sn": "2C072",
+      "valueUsd": 15733,
+      "sourceRow": 128
+    },
+    {
+      "id": "519c78ce59b2fe25352893b4d5cf0f7b22996724e52bb965447f4f510335b948",
+      "po": "26T001061",
+      "requisition": "SPTR10009T1",
+      "pn": "3024862",
+      "sn": "2174",
+      "valueUsd": 31271,
+      "sourceRow": 129
+    },
+    {
+      "id": "fb957fb89f7aea02109ac226b8a164389a3512aeff560f72b0d2efe94a948c57",
+      "po": "26T001062",
+      "requisition": "SPTR09805T1",
+      "pn": "3032151",
+      "sn": "414946",
+      "valueUsd": 15733,
+      "sourceRow": 130
+    },
+    {
+      "id": "bf41d49da5fbf87254648d59d724b62f0d1b286c7aea40d035201db8974ec529",
+      "po": "26T001063",
+      "requisition": "SPTR13901F5",
+      "pn": "20110",
+      "sn": "5046-8",
+      "valueUsd": 26500,
+      "sourceRow": 131
+    },
+    {
+      "id": "91aacac2b51526dff7c50dcc84f80ce0c36bf85341a24a6fe6dd32d46adde990",
+      "po": "26T001064",
+      "requisition": "SPTR10501F5",
+      "pn": "22253350",
+      "sn": "2415",
+      "valueUsd": 17513.85,
+      "sourceRow": 132
+    },
+    {
+      "id": "fd6c6e0633a9b4d6ced006e07b1887aed716dff500cf1827af102e7e73663b6a",
+      "po": "26T001064",
+      "requisition": "SPTR10502F5",
+      "pn": "22253350",
+      "sn": "3025",
+      "valueUsd": 17513.85,
+      "sourceRow": 133
+    },
+    {
+      "id": "33fa5d7f802b008c0cbc054ebf14c6d77c490ef05de290b74a42246bea6c02fc",
+      "po": "26T001065",
+      "requisition": "SPTR09606F5",
+      "pn": "20110",
+      "sn": "5046-14",
+      "valueUsd": 26500,
+      "sourceRow": 134
+    },
+    {
+      "id": "8301413604228bd0471e5a4c79fe0d5928f14a5f6676f9f8b251ac27e0543450",
+      "po": "26T001069",
+      "requisition": "SPTR11201F5",
+      "pn": "3260079-0102",
+      "sn": "112119",
+      "valueUsd": 17128.09,
+      "sourceRow": 135
+    },
+    {
+      "id": "a8f8e7bbb4d548bfc237b024ffa78511cacd0a91a581d2ec1b1ef8c92e07ced0",
+      "po": "26T001069",
+      "requisition": "SPTR11202F5",
+      "pn": "3260079-0102",
+      "sn": "10041",
+      "valueUsd": 17128.09,
+      "sourceRow": 136
+    },
+    {
+      "id": "39d691bf39b660414704dc3570f1123cf1f9e5baf8fbc4ad886808e19b2d9853",
+      "po": "26T001069",
+      "requisition": "SPTR11203F5",
+      "pn": "3260079-0102",
+      "sn": "15097",
+      "valueUsd": 17128.09,
+      "sourceRow": 137
+    },
+    {
+      "id": "df2096284c00b8bda6ec6b7d70d556320f48fc8e893e5454503122b73f0c1478",
+      "po": "26T001069",
+      "requisition": "SPTR11204F5",
+      "pn": "3260079-0102",
+      "sn": "15099",
+      "valueUsd": 17128.09,
+      "sourceRow": 138
+    },
+    {
+      "id": "6c29ee686234aa34a324c513dcaf81faaa6f0cba13efe10481a63cc0fe6deabb",
+      "po": "26T001069",
+      "requisition": "SPTR11205F5",
+      "pn": "3260079-0102",
+      "sn": "10044",
+      "valueUsd": 17128.09,
+      "sourceRow": 139
+    },
+    {
+      "id": "9960688db531477edc7d665011d7df9a711dc4a45e3e8c66a38591f542a6b1c0",
+      "po": "26T001069",
+      "requisition": "SPTR11901F5",
+      "pn": "3261163-0101",
+      "sn": "12568",
+      "valueUsd": 45000,
+      "sourceRow": 140
+    },
+    {
+      "id": "06777f82524c8cfa18242e730f1ff7b0fe2194b7a0a14cc2766ae5f069850969",
+      "po": "26T001070",
+      "requisition": "SPTR07701F5",
+      "pn": "3261163-0101",
+      "sn": "54869",
+      "valueUsd": 45000,
+      "sourceRow": 141
+    },
+    {
+      "id": "45d86b4c0648f32853909176e8e5895b2edcc29c27542d7f42057519352530bb",
+      "po": "26T001070",
+      "requisition": "SPTR07801F5",
+      "pn": "3261163-0101",
+      "sn": "188643",
+      "valueUsd": 45000,
+      "sourceRow": 142
+    },
+    {
+      "id": "b8ad0d232268440c0f391cc1b43a7333a9aa0f48ed44deced15a90168d110914",
+      "po": "26T001070",
+      "requisition": "SPTR07802F5",
+      "pn": "3261163-0101",
+      "sn": "140542",
+      "valueUsd": 45000,
+      "sourceRow": 143
+    },
+    {
+      "id": "c980c224d3793916ed73a46d123729c78434bc6cd537d310f2a43cf67d77a695",
+      "po": "26T001070",
+      "requisition": "SPTR07803F5",
+      "pn": "3261163-0101",
+      "sn": "31152",
+      "valueUsd": 45000,
+      "sourceRow": 144
+    },
+    {
+      "id": "7e48755d3be27fc8fb3b8f9b3dffebe32e81982cec3d5ea3195b0a2fc2dbb68a",
+      "po": "26T001070",
+      "requisition": "SPTR07804F5",
+      "pn": "3261163-0101",
+      "sn": "54870",
+      "valueUsd": 45000,
+      "sourceRow": 145
+    },
+    {
+      "id": "45462436aad52eefb698852184369d70b80fcaceff93ff8b37075142be9d8a28",
+      "po": "26T001070",
+      "requisition": "SPTR08901F5",
+      "pn": "3261163-0101",
+      "sn": "146733",
+      "valueUsd": 45000,
+      "sourceRow": 146
+    },
+    {
+      "id": "c3d557af2d5eee3467b67c8da97914e274b553f91e43a3a7517218ced9f841dd",
+      "po": "26T001071",
+      "requisition": "SPTR09702F5",
+      "pn": "3261163-0101",
+      "sn": "9394",
+      "valueUsd": 45000,
+      "sourceRow": 147
+    },
+    {
+      "id": "7fa8c7ecdd524f2372b22b4e5ddc670d6ae5fbf24b0fd46e29005bcfbb39eba8",
+      "po": "26T001071",
+      "requisition": "SPTR09703F5",
+      "pn": "3261163-0101",
+      "sn": "104",
+      "valueUsd": 45000,
+      "sourceRow": 148
+    },
+    {
+      "id": "c039b3ba39032458881b858d318c43c5baedc962d720d627d86034ef33b43a8c",
+      "po": "26T001071",
+      "requisition": "SPTR09704F5",
+      "pn": "3261163-0101",
+      "sn": "58151",
+      "valueUsd": 45000,
+      "sourceRow": 149
+    },
+    {
+      "id": "c0245ff07cd9cdb8def816258f786d14d617f0be06d6bc817c6885de1e5075db",
+      "po": "26T001072",
+      "requisition": "SPTR08202F5",
+      "pn": "5035L000-1",
+      "sn": "L2988",
+      "valueUsd": 26402.46,
+      "sourceRow": 150
+    },
+    {
+      "id": "5a26f9fdeb28a0eec2e3dbee026bac0b582f57aa75fe1195efabb349d7677d87",
+      "po": "26T001072",
+      "requisition": "SPTR08301F5",
+      "pn": "5035L000-1",
+      "sn": "L1929",
+      "valueUsd": 26402.46,
+      "sourceRow": 151
+    },
+    {
+      "id": "a8bd5ca32ec640e20a7b471537dbce3811ed8c9d1b9da8d2570c9fad2ed0c113",
+      "po": "26T001072",
+      "requisition": "SPTR08302F5",
+      "pn": "5035L000-1",
+      "sn": "L1872A",
+      "valueUsd": 26402.46,
+      "sourceRow": 152
+    },
+    {
+      "id": "b79a13b0949d225fe3a40a5faf64a3cc1300da056cb64544138a26c5696d5cfe",
+      "po": "26T001072",
+      "requisition": "SPTR08303F5",
+      "pn": "5035L000-1",
+      "sn": "1923",
+      "valueUsd": 26402.46,
+      "sourceRow": 153
+    },
+    {
+      "id": "bbe055183f49871fd897e8a3fde05e3501b438b5e5dfb1a3369a7330f071c7bc",
+      "po": "26T001073",
+      "requisition": "SPTR07101F5",
+      "pn": "181RA38R176",
+      "sn": "135",
+      "valueUsd": 18319.04,
+      "sourceRow": 154
+    },
+    {
+      "id": "a673dc3ef7cff07b2e87fb8d1965e3e812e1d19d4b7e39a269341da7fc744552",
+      "po": "26T001073",
+      "requisition": "SPTR07104F5",
+      "pn": "181RA38R176",
+      "sn": "2378",
+      "valueUsd": 18319.04,
+      "sourceRow": 155
+    },
+    {
+      "id": "0147c893b72f3413cc07dc4d0da6bdc8b1b7ea6375d422d497ccdc645d89873d",
+      "po": "26T001200",
+      "requisition": "SPTR09807A7",
+      "pn": "3032151",
+      "sn": "C10280",
+      "valueUsd": 15733,
+      "sourceRow": 156
+    },
+    {
+      "id": "d0fbc99658b85ca008f320c0483e292798aa90fb9c6729b11f210899871ca1da",
+      "po": "26T001200",
+      "requisition": "SPTR09808A7",
+      "pn": "3032151",
+      "sn": "4B574",
+      "valueUsd": 15733,
+      "sourceRow": 157
+    },
+    {
+      "id": "6d806a3423472269d0d8f595cec74454d75223b3c1da77731a287c01f3fb38d8",
+      "po": "26T001201",
+      "requisition": "SPTR09810A7",
+      "pn": "3032151",
+      "sn": "HLA502D",
+      "valueUsd": 15733,
+      "sourceRow": 158
+    },
+    {
+      "id": "3cd2073a9fc42053720bba8a43322179e0f4f398e717b7fe0a70961ed5f56316",
+      "po": "26T001202",
+      "requisition": "SPTR10001A7",
+      "pn": "3018262CL",
+      "sn": "B456",
+      "valueUsd": 23901.82,
+      "sourceRow": 159
+    },
+    {
+      "id": "deb4e6526a9ad0777ed9568efea70b6b00c4d36b8d4264d9a91452625147ea7f",
+      "po": "26T001207",
+      "requisition": "SPTR09804A7",
+      "pn": "3032151",
+      "sn": "HLAAA547",
+      "valueUsd": 15733,
+      "sourceRow": 160
+    },
+    {
+      "id": "280cf0210f96db5ad7b3d70ac47777f416f67a6d95eb4f6187977df28898d8d7",
+      "po": "26T001207",
+      "requisition": "SPTR10002A7",
+      "pn": "3043682CL02",
+      "sn": "HLAAA735",
+      "valueUsd": 37163,
+      "sourceRow": 161
+    }
+  ],
+  "operationalFieldsPreserved": true
+}
