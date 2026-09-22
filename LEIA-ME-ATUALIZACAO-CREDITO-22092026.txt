@@ -1,0 +1,28 @@
+ATUALIZAÇÃO DO PAINEL CABW — CRÉDITO DISPONÍVEL — 22/09/2026
+
+Fontes:
+- RELATÓRIO_CRÉDITO_DISPONÍVEL_CABW_22092026(1).docx
+- CONRAZAO(20260922-122545).TX
+
+Atualizações principais:
+- Crédito disponível: US$ 2.367.676,08
+- Crédito recebido em 2026: US$ 129.588.112,12
+- Lançamentos CONRAZÃO: 102
+- Chaves exatas UG + Ação + PI + Natureza: 88
+- Recalculado o painel Crédito x Requisições com as 90 requisições de 14/09/2026.
+- Atualizado CABW em Números e os seis painéis do Menu Crédito Disponível.
+
+Bases preservadas:
+- Requisições: 14/09/2026
+- Contratos: 11/09/2026 (incluindo correção institucional de 18/09)
+- Materiais Reparáveis: 21/09/2026
+
+Validação:
+- 102 testes automatizados aprovados
+- 39 páginas HTML verificadas
+- 0 referências locais quebradas
+- 0 IDs HTML duplicados
+- Sintaxe JavaScript aprovada
+
+Publicação:
+Envie TODO o conteúdo desta pasta à branch de atualização do repositório. Após o Pull Request e o deploy do GitHub Pages, execute Ctrl + F5.
