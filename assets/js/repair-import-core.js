@@ -74,7 +74,7 @@ export const REQUIRED_HEADERS = Object.freeze([
 ]);
 
 export const IMPORTED_FIELDS = Object.freeze([
-  "po", "nup", "evaluationFee", "evaluationFeeCurrency", "evaluationFeeRaw", "evaluationFeeDiscardReason",
+  "po", "nup", "patrimonialValueUsd", "patrimonialCurrency", "patrimonialReferenceDate", "patrimonialSourceFile", "patrimonialSourceSheet", "patrimonialSourceRow", "evaluationFee", "evaluationFeeCurrency", "evaluationFeeRaw", "evaluationFeeDiscardReason",
   "poIssueDate", "realStatus", "realStatusSource", "realStatusDiscardReason", "visualStage", "requisition", "originOm", "originOmSource", "originOmShortCode", "originOmNormalizationVersion", "originDerived",
   "partNumber", "serialNumber", "condition", "conditionSource", "conditionDiscardReason", "receivedAtRepairerDate", "trackingToRepairer",
   "tdrDueDate", "tdrDeliveryRaw", "tdrDeliveryIndicator", "tdrSentDate", "tdrDelivered",
