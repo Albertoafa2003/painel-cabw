@@ -1,0 +1,36 @@
+{
+  "updateDate": "22/09/2026",
+  "sourceReport": "RELATÓRIO_CRÉDITO_DISPONÍVEL_CABW_22092026(1).docx",
+  "sourceConrazao": "CONRAZAO(20260922-122545).TX",
+  "previousPosition": "11/09/2026",
+  "previousCreditAvailable": 3279443.02,
+  "creditAvailable": 2367676.08,
+  "changeCreditAvailable": -911766.94,
+  "previousCreditReceived": 129266335.74,
+  "creditReceived": 129588112.12,
+  "changeCreditReceived": 321776.38,
+  "launches": 102,
+  "groupedKeys": 88,
+  "omCount": 15,
+  "actionCount": 17,
+  "piCount": 47,
+  "expenseNatureCount": 8,
+  "fundingSourceCount": 7,
+  "reconciled": true,
+  "updatedAreas": [
+    "Menu Crédito Disponível",
+    "Visão Executiva",
+    "Análise por UG",
+    "Análise por Ação",
+    "Detalhamento",
+    "PI e Natureza de Despesa",
+    "Consistência",
+    "Crédito x Requisições",
+    "CABW em Números"
+  ],
+  "preservedBases": {
+    "requisitions": "14/09/2026",
+    "contracts": "11/09/2026",
+    "repairables": "21/09/2026"
+  }
+}
