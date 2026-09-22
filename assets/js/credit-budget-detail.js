@@ -1,4 +1,4 @@
-const DATA_URL = "assets/data/credit-budget-detailed-current.json?v=20260911-credit-r1";
+const DATA_URL = "assets/data/credit-budget-detailed-current.json?v=20260922-credit-r1";
 
 const state = { data: null, groups: [], lines: [], filteredGroups: [], filteredLines: [] };
 const ids = ["creditFilterUg", "creditFilterAction", "creditFilterPi", "creditFilterNature", "creditFilterPtres", "creditFilterSource", "creditFilterSearch"];
