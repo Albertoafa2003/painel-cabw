@@ -1,0 +1,16 @@
+import test from 'node:test';
+import assert from 'node:assert/strict';
+import fs from 'node:fs';
+import {itemValuation, assessValue, brlValue, mergeValuation, sortValue, summarizeValues, safeCsv} from '../assets/js/repair-patrimonial-core.js';
+const data=JSON.parse(fs.readFileSync(new URL('../assets/data/repair-processes-current.json',import.meta.url)));
+const fx=JSON.parse(fs.readFileSync(new URL('../assets/data/ptax-patrimonial-reference.json',import.meta.url)));
+test('160 itens distintos / 81 POs',()=>{assert.equal(data.records.length,160);assert.equal(new Set(data.records.map(r=>r.id)).size,160);assert.equal(new Set(data.records.map(r=>r.po)).size,81);});
+test('83 avaliados, 40 no patamar, 43 abaixo e 77 não informados',()=>{const s=summarizeValues(data.records.map(r=>assessValue(r,fx)));assert.equal(s.known,83);assert.equal(s.alert,40);assert.equal(s.below,43);assert.equal(s.unknown,77);assert.equal(s.sumUsd,2151758.39);});
+test('limite inclusivo',()=>{assert.equal(assessValue({patrimonialValueUsd:24000},{rate:5}).classification,'alert');assert.equal(assessValue({patrimonialValueUsd:23999.99},{rate:5}).classification,'below');});
+test('não substituir avaliação ausente por TTE/reparo',()=>{const r={patrimonialValueUsd:null,evaluationFee:200000,repairValue:900000};assert.equal(itemValuation(r).value,null);assert.equal(assessValue(r,fx).classification,'unknown');});
+test('câmbio ausente não produz falsa classificação',()=>{assert.equal(assessValue({patrimonialValueUsd:50000},{}).classification,'unconverted');assert.equal(brlValue(null,5),null);assert.equal(brlValue(20,0),null);});
+test('moeda legada não presumida',()=>{assert.equal(assessValue({itemValue:50000,currency:'EUR'},fx).classification,'unconverted');});
+test('planilha mais recente atualiza só campos de avaliação',()=>{const p={id:'x',manualNotes:'preservar',patrimonialValueUsd:10,patrimonialReferenceDate:'2026-09-01'};const m=mergeValuation(p,{patrimonialValueUsd:20,patrimonialReferenceDate:'2026-09-22'});assert.equal(m.patrimonialValueUsd,20);assert.equal(m.manualNotes,'preservar');});
+test('Firestore com avaliação posterior prevalece',()=>{assert.equal(mergeValuation({patrimonialValueUsd:30,patrimonialReferenceDate:'2026-09-23'},{patrimonialValueUsd:20,patrimonialReferenceDate:'2026-09-22'}).patrimonialValueUsd,30);});
+test('ranking decrescente e ausentes ao fim',()=>{const ranked=sortValue(data.records.map(r=>assessValue(r,fx)));assert.equal(ranked[0].valuation.value,194863.82);assert.equal(ranked.at(-1).valuation.value,null);for(let i=1;i<83;i++)assert.ok(ranked[i-1].valuation.value>=ranked[i].valuation.value);});
+test('CSV evita fórmulas',()=>{assert.ok(safeCsv('=2+2').includes("'=2+2"));});
