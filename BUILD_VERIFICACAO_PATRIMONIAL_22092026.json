@@ -1,0 +1,133 @@
+{
+  "build": "20260922-patrimonial-recreated-r1",
+  "newPages": [
+    "governanca-reparaveis-patrimonio.html"
+  ],
+  "materialCount": 160,
+  "uniquePOs": 81,
+  "knownItemValues": 83,
+  "unknownItemValues": 77,
+  "itemsAtOrAboveThreshold": 40,
+  "thresholdBrl": 120000,
+  "fx": {
+    "currency": "USD",
+    "counterCurrency": "BRL",
+    "rate": 5.1161,
+    "date": "2026-09-22",
+    "type": "Fechamento",
+    "side": "Venda",
+    "source": "Banco Central do Brasil — PTAX",
+    "sourceUrl": "https://ptax.bcb.gov.br/ptax_internet/consultarUltimaCotacaoDolar.do",
+    "retrievedOn": "2026-09-22",
+    "evidence": "Página oficial consultada: fechamento de 22/09/2026, compra 5,1155; venda 5,1161.",
+    "mode": "snapshot",
+    "thresholdBrl": 120000
+  },
+  "inputSource": "CONTROLE REPARO - SGT ROZENDO - atz PAINEL 21SET(1).xlsx",
+  "inputSha256": "8a6fe1f838af06974aa5cd75b3b640368318eb86affb79dca320c39329fe15bf",
+  "operationalFieldsPreserved": true,
+  "basePackage": "cabw_site_credito_22092026_VERIFICADO.zip",
+  "changedExistingFiles": [
+    "assets/data/repair-processes-current.json",
+    "assets/js/repair-processes-panel.js",
+    "assets/js/repair-import-core.js",
+    "assets/js/repair-processes-current-data.js",
+    "governanca-reparaveis.html",
+    "package.json",
+    "governanca.html"
+  ],
+  "preservedBaseFiles": 238,
+  "htmlPages": 40,
+  "missingLocalReferences": [],
+  "duplicateHtmlIds": [],
+  "unitTests": {
+    "total": 112,
+    "passed": 112,
+    "failed": 0
+  },
+  "browser": {
+    "checks": [
+      {
+        "name": "Base 160 itens",
+        "passed": true
+      },
+      {
+        "name": "83 avaliações",
+        "passed": true
+      },
+      {
+        "name": "40 alertas",
+        "passed": true
+      },
+      {
+        "name": "77 sem valor",
+        "passed": true
+      },
+      {
+        "name": "160 linhas",
+        "passed": true
+      },
+      {
+        "name": "PTAX datada",
+        "passed": true
+      },
+      {
+        "name": "Fallback informado",
+        "passed": true
+      },
+      {
+        "name": "Filtro alerta",
+        "passed": true
+      },
+      {
+        "name": "Filtro sem valor",
+        "passed": true
+      },
+      {
+        "name": "Busca PO encontra dois itens",
+        "passed": true
+      },
+      {
+        "name": "Detalhes abertos",
+        "passed": true
+      },
+      {
+        "name": "Detalhes indicam USD",
+        "passed": true
+      },
+      {
+        "name": "Filtro por OM",
+        "passed": true
+      },
+      {
+        "name": "CSV correto",
+        "passed": true
+      },
+      {
+        "name": "Order asc sem valores ao final",
+        "passed": true
+      },
+      {
+        "name": "Mobile sem overflow horizontal de pagina",
+        "passed": true
+      },
+      {
+        "name": "Nenhum erro JS local",
+        "passed": true
+      }
+    ],
+    "errors": [],
+    "scope": "Navegador local, serviços externos bloqueados. Integração ao vivo e jsPDF externo não testados. PDF nativo de impressão gerado."
+  },
+  "pdfTest": {
+    "method": "Impressão nativa Chromium — A3 horizontal",
+    "pages": 11,
+    "inspected": "Primeira e última páginas; sem geração ao vivo por bibliotecas CDN"
+  },
+  "limits": [
+    "Acesso autenticado e leitura real do Firestore não testados.",
+    "Atualização ao vivo pela API PTAX não testada; fechamento 22/09/2026 verificado na página oficial do BCB.",
+    "O ambiente bloqueou navegação HTTP local; os testes de interface usaram conteúdo e scripts locais injetados, sem exercitar autenticação nem a navegação compartilhada.",
+    "Os dados incluídos em um site estático não são protegidos somente pela tela de login."
+  ]
+}

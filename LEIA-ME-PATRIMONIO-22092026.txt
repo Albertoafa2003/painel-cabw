@@ -1,0 +1,23 @@
+PAINEL CABW — MATERIAIS REPARÁVEIS / VALOR PATRIMONIAL
+Pacote recriado e validado em 22/09/2026.
+
+Acesso: Governança > Materiais Reparáveis — Valor Patrimonial.
+O pacote contém o site completo. Extraia e envie o CONTEÚDO extraído para a raiz da branch de atualização; não envie somente o ZIP. Use o processo de revisão/Pull Request já configurado para a main.
+
+Dados: 160 materiais / 81 POs; 83 avaliações em USD e 77 avaliações não informadas.
+Fonte: CONTROLE REPARO - SGT ROZENDO - atz PAINEL 21SET(1).xlsx, coluna VALOR ATUAL DO ITEM.
+Valores associados por PO + REQUISIÇÃO + PN + SN. Campos operacionais e correções anteriores preservados.
+
+Câmbio incluído: PTAX de VENDA, fechamento de 22/09/2026, R$ 5,1161 por USD.
+Fonte oficial verificada: https://ptax.bcb.gov.br/ptax_internet/consultarUltimaCotacaoDolar.do
+O painel tenta consultar o último fechamento na API BCB. Se indisponível, conserva esta referência datada e exibe um aviso; não estima câmbio. Uma nova cotação pode alterar a classificação.
+Alerta: equivalente >= R$ 120.000,00. Com a referência incluída: 40 itens no patamar, 43 abaixo, 77 sem valor. A sinalização é preventiva e não determina instauração automática de TCE.
+
+Relatórios: CSV e PDF da consulta filtrada. O PDF usa jsPDF quando disponível. Se as bibliotecas externas não carregarem, abre a impressão do navegador; selecione Salvar como PDF, A3 e orientação horizontal.
+
+O painel operacional também exibe o valor patrimonial nos detalhes e indicadores. A importação mensal reconhece a coluna VALOR ATUAL DO ITEM em USD. As avaliações são armazenadas em campos patrimonial* separados dos complementos manuais e do valor do reparo.
+Não foram alteradas as regras de Firebase nem efetuadas gravações no Firestore. A consulta do novo painel ao Firestore é somente leitura.
+
+Os arquivos JSON/JS de dados continuam sendo arquivos estáticos; uma tela de login não impede o acesso direto a arquivos publicados. Não publique dados incompatíveis com a política institucional de divulgação.
+
+Conferência técnica: BUILD_VERIFICACAO_PATRIMONIAL_22092026.json.
