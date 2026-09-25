@@ -5,7 +5,8 @@ import { groupCredit, crossCreditAndRequisitions, buildDetailedCrossReportData }
 const load = name => JSON.parse(fs.readFileSync(new URL(`../assets/data/${name}`, import.meta.url),'utf8'));
 const credit = load('credit-current.json');
 const budget = load('credit-budget-detailed-current.json');
-const req = load('requisitions-available-current.json');
+// This regression freezes the portfolio used when the 22/09 credit was incorporated.
+const req = load('requisitions-available-14092026.json');
 const cents = v => Math.round(Number(v)*100);
 const sumCents = (rows, field) => rows.reduce((total,row)=>total+cents(row[field]),0);
 const parseMoney = v => Number(String(v).replace(/US\$\s*/g,'').replace(/\./g,'').replace(',','.'));
@@ -98,7 +99,7 @@ test('history keeps 11/09 and adds 22/09 exactly once',()=>{
   assert.deepEqual(credit.summary.at(-1),['22/09/2026','US$ 2.367.676,08','US$ 129.588.112,12','1,83%','US$ 127.220.436,04','102']);
 });
 
-test('requisitions remain the 14/09 snapshot with 90 PN',()=>{
+test('historical 14/09 snapshot keeps its 90 PN',()=>{
   assert.deepEqual(req,load('requisitions-available-14092026.json'));
   assert.equal(req.records.length,90);
   assert.equal(req.metadata.position,'14/09/2026');
@@ -117,7 +118,7 @@ for(const [ug,nd,count,demand,amount,remaining,deficit] of expected){
   });
 }
 
-test('current crossing does not double count credit or offset deficits',()=>{
+test('22/09 credit with historical 14/09 requests does not double count credit or offset deficits',()=>{
   assert.equal(cross.length,6);
   assert.equal(report.totals.requestCount,90);
   assert.equal(cents(report.totals.balanceToCommit),257741771);

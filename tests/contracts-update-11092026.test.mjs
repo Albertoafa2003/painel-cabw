@@ -104,8 +104,8 @@ test('new MILCLEAN and AETNA aliases preserve exact source identifiers for opera
  assert.equal(resolveContractForPayment({contractPag:'013/CABW/2026'},index).numero,'CT 013/CABW/2026');
  assert.equal(resolveContractForPayment({contractPag:'016/CABW/2026'},index).numero,'CT 016/CABW/2026');
 });
-test('credit and requests latest references and balances are not changed by contract update', () => {
+test('preserved credit reference and historical request snapshot remain consistent', () => {
  const credit=json('assets/data/credit-current.json');assert.equal(credit.position,'22/09/2026');
- const req=json('assets/data/requisitions-available-current.json');assert.equal(req.records.length,90);assert.ok(req.records.every(r=>r.partNumber));
+ const req=json('assets/data/requisitions-available-14092026.json');assert.equal(req.records.length,90);assert.ok(req.records.every(r=>r.partNumber));
  assert.equal(req.metadata.position,'14/09/2026');assert.equal(req.records.reduce((s,r)=>s+cents(r.balanceToCommit),0),257741771);
 });

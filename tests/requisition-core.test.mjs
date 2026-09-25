@@ -247,10 +247,10 @@ test("normalizeRequisition preserves the Part Number", () => {
   assert.equal(record.partNumber, "PN-123/A");
 });
 
-test("current requisition file contains 90 unique BAC numbers, Part Numbers, specific natures and expected totals", () => {
+test("14/09 historical snapshot contains 90 unique BAC numbers, Part Numbers, specific natures and expected totals", () => {
   const data = JSON.parse(
     fs.readFileSync(
-      new URL("../assets/data/requisitions-available-current.json", import.meta.url),
+      new URL("../assets/data/requisitions-available-14092026.json", import.meta.url),
       "utf8",
     ),
   );
