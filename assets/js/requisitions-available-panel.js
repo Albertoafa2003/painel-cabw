@@ -2,10 +2,10 @@ import {
   ANY,
   criterionLabel,
   normalizeRequisition,
-} from "./requisition-core.js?v=20260914-requisitions-r7";
+} from "./requisition-core.js?v=20260925-requisitions-r1";
 
 const DATA_URL =
-  "assets/data/requisitions-available-current.json?v=20260914-requisitions-r7";
+  "assets/data/requisitions-available-current.json?v=20260925-requisitions-r1";
 
 const state = {
   data: null,
@@ -249,6 +249,11 @@ function csvCell(value) {
   return /[;"\n]/.test(text) ? `"${text.replace(/"/g, '""')}"` : text;
 }
 
+function exportPositionTag() {
+  const digits = String(state.data?.metadata?.position || "").replace(/\D/g, "");
+  return digits.length === 8 ? digits : "sem-data";
+}
+
 function exportCsv() {
   const rows = [
     [
@@ -293,7 +298,7 @@ function exportCsv() {
   );
   const anchor = document.createElement("a");
   anchor.href = URL.createObjectURL(blob);
-  anchor.download = "requisicoes-disponiveis-empenho-14092026.csv";
+  anchor.download = `requisicoes-disponiveis-empenho-${exportPositionTag()}.csv`;
   anchor.click();
   URL.revokeObjectURL(anchor.href);
 }
@@ -365,7 +370,7 @@ function exportPdf() {
     },
   });
 
-  doc.save("requisicoes-disponiveis-empenho-14092026.pdf");
+  doc.save(`requisicoes-disponiveis-empenho-${exportPositionTag()}.pdf`);
 }
 
 async function init() {
