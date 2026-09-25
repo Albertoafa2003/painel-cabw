@@ -1,0 +1,1396 @@
+{
+  "build": "requisitions-25092026-r1",
+  "createdAt": "2026-09-25T16:22:27.274244+00:00",
+  "sourceFile": "REQUISIÇÕES DISPONÍVEIS PARA EMPENHO - 25092026.xlsx",
+  "sourceSha256": "3e39ac28111c4b8f29ce70c50c736ab0d33cd269163331cf7210984b5e6953ae",
+  "baseArchive": "Painel_CABW_Patrimonial_22092026.zip",
+  "baseArchiveSha256": "58350948e6eb080ec9bf2d88a7a1c77c11864ab3db888fc577f56febe82cb3e8",
+  "requisitionPosition": "25/09/2026",
+  "creditPositionPreserved": "22/09/2026",
+  "recordCount": 53,
+  "uniqueBacCount": 53,
+  "partNumberCount": 53,
+  "uniquePartNumberCount": 51,
+  "omCount": 4,
+  "retainedCount": 37,
+  "addedCount": 16,
+  "removedFromActiveCount": 53,
+  "sourceRows": "Sheet1!A2:K54",
+  "confirmedNatureCorrections": [
+    {
+      "requestNumber": "PBT055006CP",
+      "sourceRow": 44,
+      "field": "expenseNature",
+      "sourceValue": "349030",
+      "correctedValue": "339030",
+      "reason": "ND corrigida de 349030 para 339030 por confirmação expressa do usuário em 25/09/2026."
+    },
+    {
+      "requestNumber": "PBT055004CP",
+      "sourceRow": 45,
+      "field": "expenseNature",
+      "sourceValue": "349030",
+      "correctedValue": "339030",
+      "reason": "ND corrigida de 349030 para 339030 por confirmação expressa do usuário em 25/09/2026."
+    },
+    {
+      "requestNumber": "PBT056005CP",
+      "sourceRow": 46,
+      "field": "expenseNature",
+      "sourceValue": "349030",
+      "correctedValue": "339030",
+      "reason": "ND corrigida de 349030 para 339030 por confirmação expressa do usuário em 25/09/2026."
+    },
+    {
+      "requestNumber": "PBT056013CP",
+      "sourceRow": 47,
+      "field": "expenseNature",
+      "sourceValue": "349030",
+      "correctedValue": "339030",
+      "reason": "ND corrigida de 349030 para 339030 por confirmação expressa do usuário em 25/09/2026."
+    },
+    {
+      "requestNumber": "PBT056014CP",
+      "sourceRow": 48,
+      "field": "expenseNature",
+      "sourceValue": "349030",
+      "correctedValue": "339030",
+      "reason": "ND corrigida de 349030 para 339030 por confirmação expressa do usuário em 25/09/2026."
+    }
+  ],
+  "requestTotals": {
+    "requestValueTotal": 2760736.52,
+    "committedValueTotal": 0.0,
+    "balanceToCommitTotal": 2760736.52
+  },
+  "crossing": {
+    "creditPosition": "22/09/2026",
+    "requisitionPosition": "25/09/2026",
+    "totals": {
+      "requestCount": 53,
+      "requestValue": 2760736.52,
+      "committedValue": 0,
+      "balanceToCommit": 2760736.52,
+      "creditAvailable": 1385470.69,
+      "creditRemaining": 499456.69,
+      "deficit": 1874722.52,
+      "coveragePercent": 50.184821331664054
+    },
+    "byOm": [
+      {
+        "key": "120049",
+        "ugCode": "120049",
+        "om": "PAMA-GL",
+        "ugName": "PARQUE DE MATERIAL AERONÁUTICO DO GALEÃO",
+        "requestCount": 7,
+        "requestValue": 57401.57,
+        "committedValue": 0,
+        "balanceToCommit": 57401.57,
+        "creditAvailable": 133726.65,
+        "creditRemaining": 76325.08,
+        "deficit": 0,
+        "coveragePercent": 232.9668857489438,
+        "status": "Crédito suficiente"
+      },
+      {
+        "key": "120026",
+        "ugCode": "120026",
+        "om": "PAMA-LS",
+        "ugName": "PARQUE DE MATERIAL AERONÁUTICO DE LAGOA SANTA",
+        "requestCount": 35,
+        "requestValue": 1060996.63,
+        "committedValue": 0,
+        "balanceToCommit": 1060996.63,
+        "creditAvailable": 734422.07,
+        "creditRemaining": 11605.76,
+        "deficit": 338180.32,
+        "coveragePercent": 69.22001910599849,
+        "status": "Crédito insuficiente"
+      },
+      {
+        "key": "120068",
+        "ugCode": "120068",
+        "om": "PAMA-SP",
+        "ugName": "PARQUE DE MATERIAL AERONÁUTICO DE SÃO PAULO",
+        "requestCount": 6,
+        "requestValue": 106660.62,
+        "committedValue": 0,
+        "balanceToCommit": 106660.62,
+        "creditAvailable": 458395.93,
+        "creditRemaining": 411525.85,
+        "deficit": 59790.54,
+        "coveragePercent": 429.7705469928827,
+        "status": "Crédito insuficiente"
+      },
+      {
+        "key": "120047",
+        "ugCode": "120047",
+        "om": "PAMB-RJ",
+        "ugName": "PARQUE DE MATERIAL BÉLICO DA AERONÁUTICA DO RIO DE JANEIRO",
+        "requestCount": 5,
+        "requestValue": 1535677.7,
+        "committedValue": 0,
+        "balanceToCommit": 1535677.7,
+        "creditAvailable": 58926.04,
+        "creditRemaining": 0,
+        "deficit": 1476751.66,
+        "coveragePercent": 3.837135878185898,
+        "status": "Crédito insuficiente"
+      }
+    ],
+    "groups": [
+      {
+        "matchKey": "120049|*|*|449052",
+        "classificationComplete": true,
+        "specificity": 1,
+        "order": 0,
+        "ugCode": "120049",
+        "om": "PAMA-GL",
+        "ugName": "PARQUE DE MATERIAL AERONÁUTICO DO GALEÃO",
+        "action": "*",
+        "pi": "*",
+        "expenseNature": "449052",
+        "requestCount": 7,
+        "requestValue": 57401.57,
+        "committedValue": 0,
+        "balanceToCommit": 57401.57,
+        "requestNumbers": [
+          "GLS045004P3",
+          "GLT099003C1",
+          "GLT099004C1",
+          "GLT138001C1",
+          "GLT138002C1",
+          "GLT138003C1",
+          "GLT056005C5"
+        ],
+        "partNumbers": [
+          "06-5022-6800",
+          "18-4216-6000",
+          "59J6185",
+          "98D27803500001",
+          "B32012-45",
+          "D97B00-003",
+          "HU55148"
+        ],
+        "certames": [
+          "190/2026",
+          "230/2026",
+          "239/2025"
+        ],
+        "vendors": [
+          "07QZ6 - INTERBYTE",
+          "0T652 - AERO SPECIALTIES, INC",
+          "413E6 - ESDA GLOBAL, LLC",
+          "55345 - ALAMO AIRCRAFT, LTD",
+          "7CAV4 - FLORIDA SUPPLY USA, INC",
+          "8UE16 - GAMA IVB SOLUTIONS",
+          "9BVR5 - METTA TRADING, LLC"
+        ],
+        "proposalValidityDates": [
+          "2026-09-26",
+          "2026-10-25",
+          "2026-11-05"
+        ],
+        "sourceRows": [
+          2,
+          3,
+          4,
+          5,
+          6,
+          7,
+          8
+        ],
+        "_index": 0,
+        "creditAvailable": 133726.65,
+        "hasCompatibleCredit": true,
+        "actionDescription": "Qualquer Ação da Organização Militar",
+        "creditRemaining": 76325.08,
+        "deficit": 0,
+        "coveragePercent": 232.9668857489438,
+        "status": "Crédito suficiente",
+        "ptres": [
+          "229177"
+        ],
+        "fundingSources": [
+          "1051000140",
+          "3050000140"
+        ],
+        "creditSourceLines": [
+          89,
+          102,
+          103
+        ],
+        "matchedActions": [
+          "2048"
+        ],
+        "matchedPis": [
+          "CA080200IVR",
+          "CA0802TRNSP"
+        ],
+        "matchedNatures": [
+          "449052"
+        ]
+      },
+      {
+        "matchKey": "120026|*|*|339030",
+        "classificationComplete": true,
+        "specificity": 1,
+        "order": 7,
+        "ugCode": "120026",
+        "om": "PAMA-LS",
+        "ugName": "PARQUE DE MATERIAL AERONÁUTICO DE LAGOA SANTA",
+        "action": "*",
+        "pi": "*",
+        "expenseNature": "339030",
+        "requestCount": 34,
+        "requestValue": 1044740.63,
+        "committedValue": 0,
+        "balanceToCommit": 1044740.63,
+        "requestNumbers": [
+          "LST140005SS",
+          "LST104006A7",
+          "LST162010A7",
+          "LST097002A2",
+          "LST097009A2",
+          "LST140003SS",
+          "LST138003T2",
+          "LST085001U8",
+          "LST091001U8",
+          "LST176003U8",
+          "LST176004U8",
+          "LST176005U8",
+          "LST176007U8",
+          "LST145005U8",
+          "LST176008U8",
+          "LST176009U8",
+          "LST176010U8",
+          "LST183007U8",
+          "LST190003U8",
+          "LST196004U8",
+          "LST196005U8",
+          "LST134002GP",
+          "LST134004GP",
+          "LST134005GP",
+          "LST134006GP",
+          "LST166005SS",
+          "LST175005SS",
+          "LST135002SS",
+          "LST013005UE",
+          "LST028002UE",
+          "LST124005UE",
+          "LST124006UE",
+          "LST124009UE",
+          "LST175001A7"
+        ],
+        "partNumbers": [
+          "8A4DLTP",
+          "200SGL118Q",
+          "229-0324-010",
+          "336-00044-00",
+          "18216G-01",
+          "42854-11",
+          "44820GT",
+          "56462GT",
+          "186400-05",
+          "286630",
+          "288215-001",
+          "288221-001",
+          "489122",
+          "01560530AF-LARGE",
+          "02236006",
+          "2600100-7",
+          "2601266-3",
+          "2613439-1",
+          "2617015-22",
+          "2621000-24",
+          "2622185-22",
+          "2662022-3",
+          "3991601",
+          "5950017-11",
+          "6361620-11",
+          "10618009",
+          "9372103537",
+          "A7929",
+          "BST-2813",
+          "C662041-0102",
+          "GN-36579",
+          "P7036368-01",
+          "S2837-1",
+          "SE1070-7"
+        ],
+        "certames": [
+          "204/2026",
+          "205/2026",
+          "206/2026",
+          "207/2026",
+          "211/2026",
+          "212/2026",
+          "220/2026",
+          "221/2026",
+          "222/2026",
+          "223/2026",
+          "224/2026",
+          "228/2026"
+        ],
+        "vendors": [
+          "0ZTG3 - DEFENSE TECHNOLOGY EQUIPMENT, INC",
+          "1ZNQ1 - LM AEROSPACE CORP",
+          "413E6 - ESDA GLOBAL, LLC",
+          "43730 - CORE INC",
+          "4Z701 - PRC-DESOTO INTERNATIONAL, INC",
+          "5SMW8 - CORPLEX INTERNATIONAL INC",
+          "6VS35 - PV RIO LLC",
+          "7CAV4 - FLORIDA SUPPLY USA, INC",
+          "8UE16 - GAMA IVB SOLUTIONS",
+          "9ZBV0 - SILVER AEROSPACE, LLC"
+        ],
+        "proposalValidityDates": [
+          "2026-10-04",
+          "2026-10-11",
+          "2026-10-29",
+          "2026-11-01"
+        ],
+        "sourceRows": [
+          9,
+          10,
+          11,
+          12,
+          13,
+          15,
+          16,
+          17,
+          18,
+          19,
+          20,
+          21,
+          22,
+          23,
+          24,
+          25,
+          26,
+          27,
+          28,
+          29,
+          30,
+          31,
+          32,
+          33,
+          34,
+          35,
+          36,
+          37,
+          38,
+          39,
+          40,
+          41,
+          42,
+          43
+        ],
+        "_index": 1,
+        "creditAvailable": 706560.31,
+        "hasCompatibleCredit": true,
+        "actionDescription": "Qualquer Ação da Organização Militar",
+        "creditRemaining": 0,
+        "deficit": 338180.32,
+        "coveragePercent": 67.6302126777629,
+        "status": "Crédito insuficiente",
+        "ptres": [
+          "229166",
+          "229177",
+          "249587",
+          "249589"
+        ],
+        "fundingSources": [
+          "1000000000",
+          "1050000140",
+          "1052000140",
+          "3050000140"
+        ],
+        "creditSourceLines": [
+          48,
+          69,
+          71,
+          72,
+          73,
+          74,
+          75,
+          90,
+          91,
+          92,
+          93,
+          116,
+          117
+        ],
+        "matchedActions": [
+          "2048",
+          "20IH",
+          "20XV"
+        ],
+        "matchedPis": [
+          "CA080200P95",
+          "CA080200T25",
+          "CA08020INSP",
+          "CA0802APOIO",
+          "CA0802FIGHT",
+          "CA0802INSTR",
+          "CA0802PJC97",
+          "CA0802PJT25",
+          "CA0802TRNSP"
+        ],
+        "matchedNatures": [
+          "339030"
+        ]
+      },
+      {
+        "matchKey": "120026|*|*|449052",
+        "classificationComplete": true,
+        "specificity": 1,
+        "order": 12,
+        "ugCode": "120026",
+        "om": "PAMA-LS",
+        "ugName": "PARQUE DE MATERIAL AERONÁUTICO DE LAGOA SANTA",
+        "action": "*",
+        "pi": "*",
+        "expenseNature": "449052",
+        "requestCount": 1,
+        "requestValue": 16256,
+        "committedValue": 0,
+        "balanceToCommit": 16256,
+        "requestNumbers": [
+          "LST167001A2"
+        ],
+        "partNumbers": [
+          "ADA120-612"
+        ],
+        "certames": [
+          "209/2026"
+        ],
+        "vendors": [
+          "07QZ6 - INTERBYTE"
+        ],
+        "proposalValidityDates": [
+          "2026-10-04"
+        ],
+        "sourceRows": [
+          14
+        ],
+        "_index": 2,
+        "creditAvailable": 27861.76,
+        "hasCompatibleCredit": true,
+        "actionDescription": "Qualquer Ação da Organização Militar",
+        "creditRemaining": 11605.76,
+        "deficit": 0,
+        "coveragePercent": 171.39370078740157,
+        "status": "Crédito suficiente",
+        "ptres": [
+          "229177",
+          "249589"
+        ],
+        "fundingSources": [
+          "1000000000",
+          "1051000140"
+        ],
+        "creditSourceLines": [
+          88,
+          119
+        ],
+        "matchedActions": [
+          "2048",
+          "20IH"
+        ],
+        "matchedPis": [
+          "CA0802PJC97",
+          "CA0802TRNSP"
+        ],
+        "matchedNatures": [
+          "449052"
+        ]
+      },
+      {
+        "matchKey": "120047|*|*|339030",
+        "classificationComplete": true,
+        "specificity": 1,
+        "order": 42,
+        "ugCode": "120047",
+        "om": "PAMB-RJ",
+        "ugName": "PARQUE DE MATERIAL BÉLICO DA AERONÁUTICA DO RIO DE JANEIRO",
+        "action": "*",
+        "pi": "*",
+        "expenseNature": "339030",
+        "requestCount": 5,
+        "requestValue": 1535677.7,
+        "committedValue": 0,
+        "balanceToCommit": 1535677.7,
+        "requestNumbers": [
+          "PBT055006CP",
+          "PBT055004CP",
+          "PBT056005CP",
+          "PBT056013CP",
+          "PBT056014CP"
+        ],
+        "partNumbers": [
+          "13083-5",
+          "821830-1",
+          "827071-1",
+          "30903933",
+          "M897776-01"
+        ],
+        "certames": [
+          "194/2026",
+          "195/2026",
+          "196/2026",
+          "198/2026"
+        ],
+        "vendors": [
+          "05ZJ1 - INTEGRATED PROCUREMENT TECHNOLOGIES",
+          "1ZNQ1 - LM AEROSPACE CORP",
+          "413E6 - ESDA GLOBAL, LLC",
+          "7CAV4 - FLORIDA SUPPLY USA, INC"
+        ],
+        "proposalValidityDates": [
+          "2026-10-11"
+        ],
+        "sourceRows": [
+          44,
+          45,
+          46,
+          47,
+          48
+        ],
+        "_index": 3,
+        "creditAvailable": 58926.04,
+        "hasCompatibleCredit": true,
+        "actionDescription": "Qualquer Ação da Organização Militar",
+        "creditRemaining": 0,
+        "deficit": 1476751.66,
+        "coveragePercent": 3.837135878185898,
+        "status": "Crédito insuficiente",
+        "ptres": [
+          "229226"
+        ],
+        "fundingSources": [
+          "1000000000",
+          "3050000140"
+        ],
+        "creditSourceLines": [
+          109,
+          110
+        ],
+        "matchedActions": [
+          "21A0"
+        ],
+        "matchedPis": [
+          "CA0802ARSEN"
+        ],
+        "matchedNatures": [
+          "339030"
+        ]
+      },
+      {
+        "matchKey": "120068|*|*|339039",
+        "classificationComplete": true,
+        "specificity": 1,
+        "order": 47,
+        "ugCode": "120068",
+        "om": "PAMA-SP",
+        "ugName": "PARQUE DE MATERIAL AERONÁUTICO DE SÃO PAULO",
+        "action": "*",
+        "pi": "*",
+        "expenseNature": "339039",
+        "requestCount": 5,
+        "requestValue": 73508.62,
+        "committedValue": 0,
+        "balanceToCommit": 73508.62,
+        "requestNumbers": [
+          "SPTR09809A7",
+          "SPTR10010T1",
+          "SPTR12001F5",
+          "SPTR12002F5",
+          "SPTR12003F5"
+        ],
+        "partNumbers": [
+          "3024862",
+          "3032151",
+          "3261163-0101"
+        ],
+        "certames": [
+          "166/2026",
+          "188/2026",
+          "215/2026"
+        ],
+        "vendors": [
+          "0S7P0 - WESCO MANUFACTURING, INC",
+          "1WZW9 - BLUE AEROSPACE LLC",
+          "75W06 - AVIATION INTERNATIONAL SOLUTIONS LLC"
+        ],
+        "proposalValidityDates": [
+          "2026-09-26",
+          "2026-10-17"
+        ],
+        "sourceRows": [
+          49,
+          50,
+          51,
+          52,
+          53
+        ],
+        "_index": 4,
+        "creditAvailable": 13718.08,
+        "hasCompatibleCredit": true,
+        "actionDescription": "Qualquer Ação da Organização Militar",
+        "creditRemaining": 0,
+        "deficit": 59790.54,
+        "coveragePercent": 18.661865778462445,
+        "status": "Crédito insuficiente",
+        "ptres": [
+          "229166",
+          "229177"
+        ],
+        "fundingSources": [
+          "1050000140",
+          "1052000140"
+        ],
+        "creditSourceLines": [
+          64,
+          85
+        ],
+        "matchedActions": [
+          "2048",
+          "20XV"
+        ],
+        "matchedPis": [
+          "CA080200VIP",
+          "CA0802FIGHT"
+        ],
+        "matchedNatures": [
+          "339039"
+        ]
+      },
+      {
+        "matchKey": "120068|*|*|339030",
+        "classificationComplete": true,
+        "specificity": 1,
+        "order": 52,
+        "ugCode": "120068",
+        "om": "PAMA-SP",
+        "ugName": "PARQUE DE MATERIAL AERONÁUTICO DE SÃO PAULO",
+        "action": "*",
+        "pi": "*",
+        "expenseNature": "339030",
+        "requestCount": 1,
+        "requestValue": 33152,
+        "committedValue": 0,
+        "balanceToCommit": 33152,
+        "requestNumbers": [
+          "SPT147001PE"
+        ],
+        "partNumbers": [
+          "4347"
+        ],
+        "certames": [
+          "225/2026"
+        ],
+        "vendors": [
+          "413E6 - ESDA GLOBAL, LLC"
+        ],
+        "proposalValidityDates": [
+          "2026-11-01"
+        ],
+        "sourceRows": [
+          54
+        ],
+        "_index": 5,
+        "creditAvailable": 444677.85,
+        "hasCompatibleCredit": true,
+        "actionDescription": "Qualquer Ação da Organização Militar",
+        "creditRemaining": 411525.85,
+        "deficit": 0,
+        "coveragePercent": 1341.3303873069497,
+        "status": "Crédito suficiente",
+        "ptres": [
+          "229166",
+          "229177",
+          "229179"
+        ],
+        "fundingSources": [
+          "1050000140",
+          "1052000140",
+          "3050000140"
+        ],
+        "creditSourceLines": [
+          52,
+          53,
+          78,
+          79,
+          80,
+          94,
+          95,
+          105
+        ],
+        "matchedActions": [
+          "2048",
+          "20XV",
+          "2868"
+        ],
+        "matchedPis": [
+          "CA080200SAR",
+          "CA08020COMB",
+          "CA08020VANT",
+          "CA0802APOIO",
+          "CA0802FIGHT"
+        ],
+        "matchedNatures": [
+          "339030"
+        ]
+      }
+    ]
+  },
+  "independentReconciliation": [
+    {
+      "ug": "120049",
+      "nd": "449052",
+      "demandCents": 5740157,
+      "creditCents": 13372665,
+      "sourceLines": 3,
+      "passed": true
+    },
+    {
+      "ug": "120026",
+      "nd": "339030",
+      "demandCents": 104474063,
+      "creditCents": 70656031,
+      "sourceLines": 13,
+      "passed": true
+    },
+    {
+      "ug": "120026",
+      "nd": "449052",
+      "demandCents": 1625600,
+      "creditCents": 2786176,
+      "sourceLines": 2,
+      "passed": true
+    },
+    {
+      "ug": "120047",
+      "nd": "339030",
+      "demandCents": 153567770,
+      "creditCents": 5892604,
+      "sourceLines": 2,
+      "passed": true
+    },
+    {
+      "ug": "120068",
+      "nd": "339039",
+      "demandCents": 7350862,
+      "creditCents": 1371808,
+      "sourceLines": 2,
+      "passed": true
+    },
+    {
+      "ug": "120068",
+      "nd": "339030",
+      "demandCents": 3315200,
+      "creditCents": 44467785,
+      "sourceLines": 8,
+      "passed": true
+    }
+  ],
+  "unitTests": {
+    "command": "npm test",
+    "total": 126,
+    "passed": 126,
+    "failed": 0,
+    "historicalFixtures": "Date-specific 14/09 assertions retain their original expectations against the archived snapshot; separate 25/09 tests cover the active portfolio."
+  },
+  "browserVerification": {
+    "scope": "In-memory Chromium DOM testing using exact local panel/core code with in-memory JSON fixtures; module HTTP loading, auth and external CDN libraries are not exercised. PDF calls/data are intercepted, not real PDF binaries. Offline CSS substitute used only for Bootstrap in screenshots.",
+    "checks": [
+      {
+        "name": "Menu references 53 and 25/09",
+        "passed": true,
+        "detail": null
+      },
+      {
+        "name": "53 request rows loaded",
+        "passed": true,
+        "detail": null
+      },
+      {
+        "name": "Four OM options plus all",
+        "passed": true,
+        "detail": null
+      },
+      {
+        "name": "ND 349030 absent from active options",
+        "passed": true,
+        "detail": null
+      },
+      {
+        "name": "Source 25/09 and total 2.760.736,52",
+        "passed": true,
+        "detail": null
+      },
+      {
+        "name": "CSV filename uses 25092026",
+        "passed": true,
+        "detail": null
+      },
+      {
+        "name": "CSV includes all 53 BAC and PN",
+        "passed": true,
+        "detail": null
+      },
+      {
+        "name": "Requests PDF filename",
+        "passed": true,
+        "detail": null
+      },
+      {
+        "name": "Requests PDF payload has 53 rows",
+        "passed": true,
+        "detail": null
+      },
+      {
+        "name": "PAMB filter returns five rows",
+        "passed": true,
+        "detail": null
+      },
+      {
+        "name": "PAMB 1.535.677,70",
+        "passed": true,
+        "detail": null
+      },
+      {
+        "name": "Every PAMB row has ND 339030",
+        "passed": true,
+        "detail": null
+      },
+      {
+        "name": "PN search returns correct BAC",
+        "passed": true,
+        "detail": null
+      },
+      {
+        "name": "Clear restores all requests",
+        "passed": true,
+        "detail": null
+      },
+      {
+        "name": "Six crossing groups",
+        "passed": true,
+        "detail": null
+      },
+      {
+        "name": "Four OM summary rows",
+        "passed": true,
+        "detail": null
+      },
+      {
+        "name": "Distinct credit and request dates",
+        "passed": true,
+        "detail": null
+      },
+      {
+        "name": "crossKpiDemand",
+        "passed": true,
+        "detail": null
+      },
+      {
+        "name": "crossKpiCredit",
+        "passed": true,
+        "detail": null
+      },
+      {
+        "name": "crossKpiRemaining",
+        "passed": true,
+        "detail": null
+      },
+      {
+        "name": "crossKpiDeficit",
+        "passed": true,
+        "detail": null
+      },
+      {
+        "name": "Detailed PDF filename has both references",
+        "passed": true,
+        "detail": null
+      },
+      {
+        "name": "Detailed PDF has four OM request tables",
+        "passed": true,
+        "detail": null
+      },
+      {
+        "name": "Detailed PDF unique BAC count 53",
+        "passed": true,
+        "detail": null
+      },
+      {
+        "name": "Detailed PDF every PN and ND matches data",
+        "passed": true,
+        "detail": null
+      },
+      {
+        "name": "Corrected nature only on PDF data",
+        "passed": true,
+        "detail": null
+      },
+      {
+        "name": "PAMB crossing selects five requests",
+        "passed": true,
+        "detail": null
+      },
+      {
+        "name": "PAMB credit not the entire OM with wrong nature",
+        "passed": true,
+        "detail": null
+      },
+      {
+        "name": "PAMB deficit",
+        "passed": true,
+        "detail": null
+      },
+      {
+        "name": "PAMB PDF has exactly five requests",
+        "passed": true,
+        "detail": null
+      },
+      {
+        "name": "Insufficient filter returns three groups",
+        "passed": true,
+        "detail": null
+      },
+      {
+        "name": "Deficit PDF has 44 requests",
+        "passed": true,
+        "detail": null
+      },
+      {
+        "name": "Empty crossing disables report button",
+        "passed": true,
+        "detail": null
+      },
+      {
+        "name": "Mobile retains latest full result",
+        "passed": true,
+        "detail": null
+      },
+      {
+        "name": "Mobile PAMB filter",
+        "passed": true,
+        "detail": null
+      },
+      {
+        "name": "No page JavaScript errors",
+        "passed": true,
+        "detail": []
+      }
+    ],
+    "passed": 36,
+    "failed": 0,
+    "pageErrors": []
+  },
+  "pdfChecks": {
+    "actualPdfBinariesGenerated": false,
+    "payloadScenarios": [
+      "all requests",
+      "all crossing",
+      "PAMB crossing",
+      "insufficient credit groups"
+    ],
+    "limitation": "PDF calls/data checked with an instrumented jsPDF stub. External CDN libraries and authenticated production were not available in this environment."
+  },
+  "htmlChecks": [
+    {
+      "file": "action.html",
+      "duplicateIds": [],
+      "missingLocalReferences": []
+    },
+    {
+      "file": "admin-historico.html",
+      "duplicateIds": [],
+      "missingLocalReferences": []
+    },
+    {
+      "file": "admin-usuarios.html",
+      "duplicateIds": [],
+      "missingLocalReferences": []
+    },
+    {
+      "file": "administracao.html",
+      "duplicateIds": [],
+      "missingLocalReferences": []
+    },
+    {
+      "file": "cadastro.html",
+      "duplicateIds": [],
+      "missingLocalReferences": []
+    },
+    {
+      "file": "consistency.html",
+      "duplicateIds": [],
+      "missingLocalReferences": []
+    },
+    {
+      "file": "contratos-administrativos.html",
+      "duplicateIds": [],
+      "missingLocalReferences": []
+    },
+    {
+      "file": "contratos-finalisticos.html",
+      "duplicateIds": [],
+      "missingLocalReferences": []
+    },
+    {
+      "file": "contratos.html",
+      "duplicateIds": [],
+      "missingLocalReferences": []
+    },
+    {
+      "file": "credito-detalhamento-orcamentario.html",
+      "duplicateIds": [],
+      "missingLocalReferences": []
+    },
+    {
+      "file": "credito-visao-executiva.html",
+      "duplicateIds": [],
+      "missingLocalReferences": []
+    },
+    {
+      "file": "credito.html",
+      "duplicateIds": [],
+      "missingLocalReferences": []
+    },
+    {
+      "file": "detail.html",
+      "duplicateIds": [],
+      "missingLocalReferences": []
+    },
+    {
+      "file": "evolution.html",
+      "duplicateIds": [],
+      "missingLocalReferences": []
+    },
+    {
+      "file": "fms.html",
+      "duplicateIds": [],
+      "missingLocalReferences": []
+    },
+    {
+      "file": "governanca-cabw-numeros.html",
+      "duplicateIds": [],
+      "missingLocalReferences": []
+    },
+    {
+      "file": "governanca-calendario.html",
+      "duplicateIds": [],
+      "missingLocalReferences": []
+    },
+    {
+      "file": "governanca-monitoramento-contratos.html",
+      "duplicateIds": [],
+      "missingLocalReferences": []
+    },
+    {
+      "file": "governanca-paac.html",
+      "duplicateIds": [],
+      "missingLocalReferences": []
+    },
+    {
+      "file": "governanca-pagamentos.html",
+      "duplicateIds": [],
+      "missingLocalReferences": []
+    },
+    {
+      "file": "governanca-pta.html",
+      "duplicateIds": [],
+      "missingLocalReferences": []
+    },
+    {
+      "file": "governanca-reparaveis-patrimonio.html",
+      "duplicateIds": [],
+      "missingLocalReferences": []
+    },
+    {
+      "file": "governanca-reparaveis.html",
+      "duplicateIds": [],
+      "missingLocalReferences": []
+    },
+    {
+      "file": "governanca-rp.html",
+      "duplicateIds": [],
+      "missingLocalReferences": []
+    },
+    {
+      "file": "governanca.html",
+      "duplicateIds": [],
+      "missingLocalReferences": []
+    },
+    {
+      "file": "index.html",
+      "duplicateIds": [],
+      "missingLocalReferences": []
+    },
+    {
+      "file": "pagamentos.html",
+      "duplicateIds": [],
+      "missingLocalReferences": []
+    },
+    {
+      "file": "painel.html",
+      "duplicateIds": [],
+      "missingLocalReferences": []
+    },
+    {
+      "file": "prestacao-contas-cabw.html",
+      "duplicateIds": [],
+      "missingLocalReferences": []
+    },
+    {
+      "file": "prestacao-contas-oms.html",
+      "duplicateIds": [],
+      "missingLocalReferences": []
+    },
+    {
+      "file": "prestacao-contas.html",
+      "duplicateIds": [],
+      "missingLocalReferences": []
+    },
+    {
+      "file": "processos-administrativos.html",
+      "duplicateIds": [],
+      "missingLocalReferences": []
+    },
+    {
+      "file": "processos-equipamentos-ti.html",
+      "duplicateIds": [],
+      "missingLocalReferences": []
+    },
+    {
+      "file": "processos-finalisticos.html",
+      "duplicateIds": [],
+      "missingLocalReferences": []
+    },
+    {
+      "file": "processos-seguro-saude.html",
+      "duplicateIds": [],
+      "missingLocalReferences": []
+    },
+    {
+      "file": "processos.html",
+      "duplicateIds": [],
+      "missingLocalReferences": []
+    },
+    {
+      "file": "requisicoes-cruzamento-credito.html",
+      "duplicateIds": [],
+      "missingLocalReferences": []
+    },
+    {
+      "file": "requisicoes-disponiveis-empenho.html",
+      "duplicateIds": [],
+      "missingLocalReferences": []
+    },
+    {
+      "file": "requisicoes.html",
+      "duplicateIds": [],
+      "missingLocalReferences": []
+    },
+    {
+      "file": "ug.html",
+      "duplicateIds": [],
+      "missingLocalReferences": []
+    }
+  ],
+  "javascriptSyntax": [
+    {
+      "file": "assets/js/accountability-core.js",
+      "passed": true,
+      "error": ""
+    },
+    {
+      "file": "assets/js/accountability-landing.js",
+      "passed": true,
+      "error": ""
+    },
+    {
+      "file": "assets/js/accountability-panel.js",
+      "passed": true,
+      "error": ""
+    },
+    {
+      "file": "assets/js/admin-system.js",
+      "passed": true,
+      "error": ""
+    },
+    {
+      "file": "assets/js/auth.js",
+      "passed": true,
+      "error": ""
+    },
+    {
+      "file": "assets/js/authorized-emails.js",
+      "passed": true,
+      "error": ""
+    },
+    {
+      "file": "assets/js/cabw-numeros.js",
+      "passed": true,
+      "error": ""
+    },
+    {
+      "file": "assets/js/contract-monitoring-data.js",
+      "passed": true,
+      "error": ""
+    },
+    {
+      "file": "assets/js/contract-monitoring-panel.js",
+      "passed": true,
+      "error": ""
+    },
+    {
+      "file": "assets/js/contracts-data.js",
+      "passed": true,
+      "error": ""
+    },
+    {
+      "file": "assets/js/contracts-panel.js",
+      "passed": true,
+      "error": ""
+    },
+    {
+      "file": "assets/js/credit-budget-detail.js",
+      "passed": true,
+      "error": ""
+    },
+    {
+      "file": "assets/js/patrimonial-reference.js",
+      "passed": true,
+      "error": ""
+    },
+    {
+      "file": "assets/js/payment-execution-panel.js",
+      "passed": true,
+      "error": ""
+    },
+    {
+      "file": "assets/js/payment-tracking-core.js",
+      "passed": true,
+      "error": ""
+    },
+    {
+      "file": "assets/js/payment-tracking-panel.js",
+      "passed": true,
+      "error": ""
+    },
+    {
+      "file": "assets/js/processes-data.js",
+      "passed": true,
+      "error": ""
+    },
+    {
+      "file": "assets/js/processes-reports.js",
+      "passed": true,
+      "error": ""
+    },
+    {
+      "file": "assets/js/repair-import-core.js",
+      "passed": true,
+      "error": ""
+    },
+    {
+      "file": "assets/js/repair-patrimonial-core.js",
+      "passed": true,
+      "error": ""
+    },
+    {
+      "file": "assets/js/repair-patrimonial-firestore.js",
+      "passed": true,
+      "error": ""
+    },
+    {
+      "file": "assets/js/repair-patrimonial-panel.js",
+      "passed": true,
+      "error": ""
+    },
+    {
+      "file": "assets/js/repair-processes-current-data.js",
+      "passed": true,
+      "error": ""
+    },
+    {
+      "file": "assets/js/repair-processes-panel.js",
+      "passed": true,
+      "error": ""
+    },
+    {
+      "file": "assets/js/requisition-core.js",
+      "passed": true,
+      "error": ""
+    },
+    {
+      "file": "assets/js/requisition-credit-cross-panel.js",
+      "passed": true,
+      "error": ""
+    },
+    {
+      "file": "assets/js/requisitions-available-panel.js",
+      "passed": true,
+      "error": ""
+    },
+    {
+      "file": "assets/js/rp-data.js",
+      "passed": true,
+      "error": ""
+    },
+    {
+      "file": "assets/js/rp-panel.js",
+      "passed": true,
+      "error": ""
+    }
+  ],
+  "preservedFileHashes": {
+    "assets/data/credit-current.json": "77ea08e3bb0f066d746257453ce10dc7f85630fcb6fbc9de25508d1f15b448d7",
+    "assets/data/credit-budget-detailed-current.json": "1f86d0fcc9512806218650e9927f1b0142fb1eaa6ffdd50f6cdb81be110eec78",
+    "assets/js/contracts-data.js": "88626c3911aa9fc69a60f296ffe8d556971fcf325d3aa6ca79ae446c63a8a42a",
+    "assets/js/contract-monitoring-data.js": "a7165fd6b994f09e163c41fc44f39ebe106401e12a33da2bbe2ccce058c28017",
+    "assets/data/repair-processes-current.json": "d7b7865708cf7900d3a7ba7f7c3c3cb0c48f960382caa3188bf9efe2967c62c0",
+    "assets/js/repair-processes-current-data.js": "c74fe75f1a0dcbb9b18f8185508580c3b38da58814fa2905ff8a1790b2455c54",
+    "assets/data/ptax-patrimonial-reference.json": "033b2ab4e12938df7fb040897916823c3e9f7aadbb7ad9457e37052162483ae9",
+    "assets/js/patrimonial-reference.js": "ae16441169d54afea39f9399778bd22cd49a7a5e5c970fa39630d7a37e52934f",
+    "assets/js/repair-patrimonial-panel.js": "0572006813913de944f3770b2f5e94ef839623e6692aa28f350df4fbd032df4a",
+    "assets/js/repair-patrimonial-core.js": "6122eb49ac383a5a972c6acd1acf51541df8fbc42020ee5c23d7aba6d5eda286",
+    "assets/js/repair-patrimonial-firestore.js": "0f86ab334e5298c43a8540239518e5cbafad5fa07403baeedcc22612af99b5b8",
+    "governanca-reparaveis-patrimonio.html": "3f3d066e794c46a67358b1ff297aeef1f980cdd9d9dfefc5379c8450ff081810",
+    "assets/data/rp-summary.json": "b9831586fa8d3bcd80370d2e07381735d4d839f53af8bcd0b202b2822c6ed9b2",
+    "assets/js/rp-data.js": "3bee3596d5629b537bb77f7a0fe9430547344d87c724d9ae04178dd5200d57dd",
+    "assets/js/accountability-panel.js": "75825ecc6f8834382cb81d8abdb73ebe01ed36c507ed7967b1ca9d57ca3d11a4",
+    "assets/js/auth.js": "af59391f872fe27532bf2378abd795b54f84259cb5a4b439a65b7e03d80300fb"
+  },
+  "baselineFilesDeleted": [],
+  "baselineFilesModified": [
+    "assets/data/requisitions-available-current.json",
+    "assets/js/requisition-credit-cross-panel.js",
+    "assets/js/requisitions-available-panel.js",
+    "package.json",
+    "requisicoes-cruzamento-credito.html",
+    "requisicoes-disponiveis-empenho.html",
+    "requisicoes.html",
+    "tests/contracts-update-11092026.test.mjs",
+    "tests/credit-update-22092026.test.mjs",
+    "tests/requisition-core.test.mjs"
+  ],
+  "newFilesBeforePackaging": [
+    "tests/requisitions-update-25092026.test.mjs",
+    "assets/data/requisitions-available-update-audit-25092026.json",
+    "assets/data/requisitions-available-25092026.json",
+    "assets/data/requisition-credit-cross-summary-25092026.json"
+  ],
+  "postPublicationChecks": [
+    "Confirm source dates: requisitions 25/09/2026, credit 22/09/2026.",
+    "Confirm 53 rows, 4 OMs, and PAMB Natureza 339030.",
+    "Test login and real PDFs after publishing."
+  ],
+  "repositoryWritePerformed": false,
+  "firestoreWritePerformed": false
+}

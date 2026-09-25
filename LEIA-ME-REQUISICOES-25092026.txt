@@ -1,0 +1,50 @@
+PAINEL CABW — REQUISIÇÕES DE 25/09/2026
+
+Base integral: Painel_CABW_Patrimonial_22092026.zip
+Planilha: REQUISIÇÕES DISPONÍVEIS PARA EMPENHO - 25092026.xlsx
+Aba: Sheet1; linhas 2 a 54.
+A carteira ativa substitui a posição de 14/09/2026.
+A saída de um BAC# da carteira não é interpretada como prova de empenho ou pagamento.
+
+RESULTADO
+53 requisições / 53 BAC# exclusivos / 53 Part Numbers preenchidos / 4 OMs.
+37 requisições mantidas, 16 incluídas, 53 retiradas da carteira ativa anterior.
+Valor das requisições: US$ 2.760.736,52.
+Valor já empenhado: US$ 0,00.
+Saldo a empenhar: US$ 2.760.736,52.
+
+CORREÇÃO EXPRESSAMENTE CONFIRMADA
+As cinco requisições PBT055006CP, PBT055004CP, PBT056005CP, PBT056013CP
+e PBT056014CP utilizam ND 339030, em substituição à ND 349030 da fonte.
+O valor original e a justificativa ficam registrados na auditoria.
+Ação e PI em branco permanecem abrangentes, somente dentro da mesma OM e ND.
+
+CRÉDITO x REQUISIÇÕES
+Crédito preservado: 22/09/2026; não há nova consulta CONRAZÃO nesta atualização.
+Crédito compatível: US$ 1.385.470,69.
+Remanescente nos grupos com crédito suficiente: US$ 499.456,69.
+Déficit nos grupos insuficientes: US$ 1.874.722,52.
+Não são compensados saldos entre OMs ou Naturezas.
+
+PRESERVAÇÃO
+Mantidas todas as demais bases do pacote, incluindo o painel patrimonial,
+seus valores e referência cambial, Materiais Reparáveis, Contratos, RP,
+Pagamentos, Prestação de Contas, Firebase e a correção do Ordenador PAMA-SP.
+Nenhum novo acesso, regra ou coleção do Firestore é necessário.
+Arquivos históricos permanecem preservados.
+
+PUBLICAÇÃO
+1. Extraia o ZIP. Não envie o arquivo ZIP fechado ao GitHub.
+2. Envie todo o conteúdo extraído para a raiz do site em uma branch de atualização.
+3. Inclua as pastas assets, css e tests e os demais arquivos presentes no pacote.
+4. Abra o Pull Request para a main e siga a revisão configurada.
+5. Após o deploy, pressione Ctrl+F5 e confirme as duas datas de referência.
+6. Confira o filtro PAMB-RJ (5 registros, ND 339030) e gere os PDFs.
+7. O arquivo BUILD_VERIFICACAO_REQUISICOES_25092026.json identifica esta versão.
+
+TESTES
+126 testes automatizados aprovados; 40 páginas HTML conferidas.
+36 verificações de interação em memória aprovadas.
+Dados enviados aos PDFs conferidos em quatro cenários. PDFs reais por CDN,
+carregamento HTTP dos módulos e autenticação em produção não foram testados.
+Nenhuma alteração direta foi realizada no repositório nem no Firestore.
